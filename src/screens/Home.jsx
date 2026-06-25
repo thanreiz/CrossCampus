@@ -1,6 +1,7 @@
 ﻿import { Mascot } from '../ui/Mascot.jsx'
 import { Doodles } from '../ui/Primitives.jsx'
 import OnlineBadge from '../ui/OnlineBadge.jsx'
+import { LANGS } from '../lib/lang.js'
 
 // Home = a hallway with doors. Design basis: Stitch "Gabay - Home Hallway".
 const DOORS = [
@@ -36,7 +37,7 @@ const DOORS = [
   },
 ]
 
-export default function Home({ onPick, online = true }) {
+export default function Home({ onPick, online = true, lang = 'taglish', onLang }) {
   return (
     <div className="gb-shell relative min-h-screen overflow-hidden pb-28">
       {/* top app bar */}
@@ -59,6 +60,25 @@ export default function Home({ onPick, online = true }) {
         </span>
         <h1 className="font-display text-3xl font-extrabold leading-tight">Kumusta, Ka-Gabay!</h1>
         <p className="mt-1 text-sm font-bold text-ink/70">Saan tayo pupunta ngayon?</p>
+
+        {/* Language picker — sets lesson + tutor language app-wide (persisted). */}
+        <div className="mt-3 flex items-center gap-2">
+          <span className="text-xs font-extrabold uppercase tracking-wide text-ink/60">Wika</span>
+          <div className="flex gap-1.5">
+            {LANGS.map((l) => (
+              <button
+                key={l.key}
+                onClick={() => onLang?.(l.key)}
+                aria-pressed={lang === l.key}
+                className={`rounded-full border-2 border-outline px-3 py-1 text-xs font-extrabold shadow-hard-sm transition ${
+                  lang === l.key ? 'bg-yellow text-ink' : 'bg-white text-ink/70'
+                }`}
+              >
+                {l.label}
+              </button>
+            ))}
+          </div>
+        </div>
       </div>
 
       {/* hallway floor */}

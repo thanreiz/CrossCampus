@@ -192,7 +192,7 @@ export default function App() {
     case 'games':
       return withNav(
         'games',
-        <Games online={online} competencies={content} mastery={mastery} onAnswered={handleAnswered} />,
+        <Games online={online} competencies={content} mastery={mastery} lang={lang} onAnswered={handleAnswered} />,
       )
 
     default:

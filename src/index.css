@@ -1,0 +1,77 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background-color: #fbf1da;
+  color: #3a2e2a;
+  font-family: 'Nunito', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  /* subtle paper grid doodle backdrop */
+  background-image: radial-gradient(#1c141010 1px, transparent 1px);
+  background-size: 22px 22px;
+  overscroll-behavior: none;
+}
+
+@layer base {
+  h1,
+  h2,
+  h3 {
+    font-family: 'Baloo 2', 'Fredoka', system-ui, sans-serif;
+    color: #3a2e2a;
+  }
+}
+
+@layer components {
+  /* Core neo-brutalist surface: 2.5px outline + hard offset shadow */
+  .gb-card {
+    @apply rounded-card border-[2.5px] border-outline bg-white shadow-hard;
+  }
+  .gb-btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-full border-[2.5px] border-outline
+           px-5 py-3 font-display font-bold text-ink shadow-hard
+           transition-transform active:translate-x-[2px] active:translate-y-[2px] active:shadow-hard-sm
+           disabled:opacity-50 disabled:cursor-not-allowed disabled:active:translate-x-0
+           disabled:active:translate-y-0 disabled:active:shadow-hard;
+  }
+  .gb-chip {
+    @apply inline-flex items-center gap-1 rounded-full border-[2.5px] border-outline
+           px-3 py-1 text-sm font-bold text-ink;
+  }
+}
+
+/* App is a phone-width column, centered on larger screens */
+.gb-shell {
+  width: 100%;
+  max-width: 430px;
+  margin: 0 auto;
+  min-height: 100%;
+  position: relative;
+}
+
+@keyframes gb-pop {
+  0% { transform: scale(0.96); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+.gb-pop {
+  animation: gb-pop 0.22s ease-out both;
+}
+
+@keyframes gb-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+.gb-float {
+  animation: gb-float 3s ease-in-out infinite;
+}

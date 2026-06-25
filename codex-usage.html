@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Codex Usage</title>
+    <style>
+      :root {
+        color-scheme: light;
+        font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        background: #f5f7fb;
+        color: #172033;
+      }
+      body {
+        margin: 0;
+        padding: 32px;
+      }
+      main {
+        max-width: 920px;
+        margin: 0 auto;
+      }
+      h1 {
+        margin: 0 0 8px;
+        font-size: 32px;
+        line-height: 1.1;
+      }
+      p {
+        margin: 0 0 24px;
+        color: #536070;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        background: #ffffff;
+        border: 1px solid #d9e0ea;
+        border-radius: 8px;
+        overflow: hidden;
+      }
+      th, td {
+        padding: 14px 16px;
+        border-bottom: 1px solid #e8edf4;
+        text-align: left;
+        vertical-align: top;
+        overflow-wrap: anywhere;
+      }
+      th {
+        width: 260px;
+        color: #344154;
+        background: #fafbfd;
+      }
+      tr:last-child th, tr:last-child td {
+        border-bottom: 0;
+      }
+      .meter {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+        margin: 0 0 20px;
+      }
+      .panel {
+        background: #ffffff;
+        border: 1px solid #d9e0ea;
+        border-radius: 8px;
+        padding: 16px;
+      }
+      .label {
+        color: #536070;
+        font-size: 13px;
+      }
+      .value {
+        margin-top: 6px;
+        font-size: 28px;
+        font-weight: 700;
+      }
+      @media (max-width: 720px) {
+        body { padding: 18px; }
+        .meter { grid-template-columns: 1fr; }
+        th, td { display: block; width: auto; }
+        th { border-bottom: 0; }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>Codex Usage</h1>
+      <p>Generated from local Codex session logs. Tokens are usage counters, not secret auth tokens.</p>
+      <section class="meter">
+        <div class="panel">
+          <div class="label">Plan</div>
+          <div class="value">pro</div>
+        </div>
+        <div class="panel">
+          <div class="label">Total Tokens</div>
+          <div class="value">786,725</div>
+        </div>
+        <div class="panel">
+          <div class="label">Primary Limit Used</div>
+          <div class="value">2%</div>
+        </div>
+        <div class="panel">
+          <div class="label">Secondary Limit Used</div>
+          <div class="value">20%</div>
+        </div>
+      </section>
+      <table>
+        <tbody>
+        <tr>
+          <th>Auth mode</th>
+          <td>chatgpt</td>
+        </tr>
+        <tr>
+          <th>Account id</th>
+          <td>dbcbfde6-76ac-4cf7-933f-ae3ae4d92abd</td>
+        </tr>
+        <tr>
+          <th>Plan type from Codex logs</th>
+          <td>pro</td>
+        </tr>
+        <tr>
+          <th>20x label</th>
+          <td>Codex reports Pro; local logs do not expose a literal 20x label.</td>
+        </tr>
+        <tr>
+          <th>CLI latest version cache</th>
+          <td>0.142.2</td>
+        </tr>
+        <tr>
+          <th>Last auth refresh</th>
+          <td>2026-06-25T14:50:36.294905800Z</td>
+        </tr>
+        <tr>
+          <th>Latest token event</th>
+          <td>2026-06-25T15:03:46.988Z</td>
+        </tr>
+        <tr>
+          <th>Session file</th>
+          <td>C:\Users\Admin\.codex\sessions\2026\06\25\rollout-2026-06-25T22-53-11-019eff45-48bd-7a31-be80-7060db06dfec.jsonl</td>
+        </tr>
+        <tr>
+          <th>Total tokens</th>
+          <td>786,725</td>
+        </tr>
+        <tr>
+          <th>Input tokens</th>
+          <td>775,621</td>
+        </tr>
+        <tr>
+          <th>Cached input tokens</th>
+          <td>641,152</td>
+        </tr>
+        <tr>
+          <th>Output tokens</th>
+          <td>11,104</td>
+        </tr>
+        <tr>
+          <th>Reasoning output tokens</th>
+          <td>1,730</td>
+        </tr>
+        <tr>
+          <th>Last turn tokens</th>
+          <td>65,501</td>
+        </tr>
+        <tr>
+          <th>Context window</th>
+          <td>258,400</td>
+        </tr>
+        <tr>
+          <th>Latest turn context used</th>
+          <td>25.3%</td>
+        </tr>
+        <tr>
+          <th>Primary limit used</th>
+          <td>2% over 300 minutes</td>
+        </tr>
+        <tr>
+          <th>Primary reset</th>
+          <td>6/26/2026, 1:31:56 AM</td>
+        </tr>
+        <tr>
+          <th>Secondary limit used</th>
+          <td>20% over 10080 minutes</td>
+        </tr>
+        <tr>
+          <th>Secondary reset</th>
+          <td>6/27/2026, 10:21:09 PM</td>
+        </tr>
+        </tbody>
+      </table>
+    </main>
+  </body>
+</html>

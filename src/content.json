@@ -1,0 +1,122 @@
+[
+  {
+    "ref": "G6-NA-PERCENT-01",
+    "domain": "Number and Algebra",
+    "content_standard": "Percentages, and their relationships with fractions and decimals.",
+    "competency": "Relate and convert percent to fractions and decimals (and back).",
+    "performance_standard": "Represent the same quantity flexibly as a percent, a fraction, or a decimal in real-life contexts.",
+    "explanation": {
+      "en": "Percent means 'per hundred'. To turn a percent into a decimal, move the decimal point two places left (50% = 0.50). To turn a percent into a fraction, write it over 100 and simplify (20% = 20/100 = 1/5). To go back to percent, multiply a decimal by 100 (0.25 = 25%).",
+      "fil": "Ang porsyento ay nangangahulugang 'bawat sandaan'. Para gawing decimal ang porsyento, ilipat ang decimal point ng dalawang hakbang pakaliwa (50% = 0.50). Para gawing fraction, isulat ito sa ibabaw ng 100 at i-simplify (20% = 20/100 = 1/5). Pabalik sa porsyento, i-multiply ang decimal sa 100 (0.25 = 25%).",
+      "taglish": "Percent ibig sabihin 'per hundred'. Para maging decimal, ilipat lang yung decimal point ng two places pakaliwa: 50% = 0.50. Para maging fraction, ilagay sa 100 tapos i-simplify: 20% = 20/100 = 1/5. Pabalik sa percent, i-times mo lang sa 100: 0.25 = 25%. Dali lang 'di ba?"
+    },
+    "worked_example": "Sari-sari store sign: '25% off'. 25% = 0.25 (decimal) = 1/4 (fraction). So 25% off means bawas ng sangkapat ng presyo.",
+    "items": [
+      { "q": "50% bilang decimal = ?", "answer": "0.5", "type": "numeric" },
+      { "q": "0.25 bilang percent = ? (bilang lang, walang %)", "answer": "25", "type": "numeric" },
+      { "q": "3/4 bilang percent = ? (bilang lang)", "answer": "75", "type": "numeric" },
+      { "q": "20% sa pinakasimpleng fraction ay 1/? (ilagay ang denominator)", "answer": "5", "type": "numeric" },
+      { "q": "Alin ang KATUMBAS ng 10%?", "answer": "0.1", "type": "mcq", "options": ["0.1", "1.0", "10.0", "0.01"] }
+    ]
+  },
+  {
+    "ref": "G6-NA-PERCENT-02",
+    "domain": "Number and Algebra",
+    "content_standard": "Percentages, and their relationships with fractions and decimals.",
+    "competency": "Identify the percentage, rate, and base in a given problem.",
+    "performance_standard": "Distinguish percentage, rate, and base to set up percent problems correctly.",
+    "explanation": {
+      "en": "In a percent problem there are three parts. The BASE is the whole amount (after 'of'). The RATE is the percent (the number with %). The PERCENTAGE is the part you get. Formula: Percentage = Rate × Base. Example: 25% of 80 = 20 — base 80, rate 25%, percentage 20.",
+      "fil": "Sa problema ng porsyento may tatlong bahagi. Ang BASE ang buong halaga (kasunod ng 'ng/of'). Ang RATE ang porsyento (may %). Ang PERCENTAGE ang bahaging makukuha. Formula: Percentage = Rate × Base. Halimbawa: 25% ng 80 = 20 — base 80, rate 25%, percentage 20.",
+      "taglish": "Sa percent problem may three parts. BASE = yung buong amount (after 'of/ng'). RATE = yung percent na may % sign. PERCENTAGE = yung part na nakukuha mo. Formula: Percentage = Rate × Base. Like 25% of 80 = 20 — base 80, rate 25%, percentage 20. Tandaan: 'of' usually base."
+    },
+    "worked_example": "Palengke: 'May 30% discount sa ₱200 na item.' Base = ₱200, Rate = 30%, Percentage (diskwento) = 0.30 × 200 = ₱60.",
+    "items": [
+      { "q": "Sa '25% of 80 = 20', ano ang BASE?", "answer": "80", "type": "numeric" },
+      { "q": "Sa '25% of 80 = 20', ano ang RATE? (bilang lang, walang %)", "answer": "25", "type": "numeric" },
+      { "q": "Sa '25% of 80 = 20', ano ang PERCENTAGE?", "answer": "20", "type": "numeric" },
+      { "q": "Magkano ang 30% ng 200?", "answer": "60", "type": "numeric" },
+      { "q": "Magkano ang 15% ng 60?", "answer": "9", "type": "numeric" }
+    ]
+  },
+  {
+    "ref": "G6-NA-PERCENT-03",
+    "domain": "Number and Algebra",
+    "content_standard": "Percentages, and their relationships with fractions and decimals.",
+    "competency": "Solve real-life problems involving percent (discount and sale price).",
+    "performance_standard": "Compute discounts and sale prices in everyday buying situations.",
+    "explanation": {
+      "en": "Discount = Rate × Original Price. Sale price = Original Price − Discount. Example: a ₱250 item at 20% off — discount = 0.20 × 250 = ₱50, so you pay 250 − 50 = ₱200.",
+      "fil": "Diskwento = Rate × Orihinal na Presyo. Halagang babayaran = Orihinal na Presyo − Diskwento. Halimbawa: ₱250 na item na 20% off — diskwento = 0.20 × 250 = ₱50, kaya babayaran ay 250 − 50 = ₱200.",
+      "taglish": "Discount = Rate × Original Price. Sale price = Original − Discount. Like ₱250 item na 20% off: discount = 0.20 × 250 = ₱50, kaya bayad mo 250 − 50 = ₱200. Trick: 20% off = babayaran mo yung 80% ng presyo."
+    },
+    "worked_example": "Palengke: ₱250 na item, 20% off. Diskwento = 0.20 × 250 = ₱50. Babayaran = 250 − 50 = ₱200.",
+    "items": [
+      { "q": "₱250 na item, 20% off. Magkano ang BABAYARAN?", "answer": "200", "type": "numeric" },
+      { "q": "₱500 na sapatos, 10% off. Magkano ang DISKWENTO?", "answer": "50", "type": "numeric" },
+      { "q": "₱1200 na bag, 25% off. Magkano ang babayaran?", "answer": "900", "type": "numeric" },
+      { "q": "₱80 na laruan, 5% off. Magkano ang babayaran?", "answer": "76", "type": "numeric" },
+      { "q": "₱360 na damit, 50% off. Magkano ang babayaran?", "answer": "180", "type": "numeric" }
+    ]
+  },
+  {
+    "ref": "G6-NA-RATIO-01",
+    "domain": "Number and Algebra",
+    "content_standard": "Ratio and proportion in describing and comparing quantities.",
+    "competency": "Describe and apply the concepts of ratio and proportion.",
+    "performance_standard": "Use ratio and proportion (tables / double number line) to solve real-life comparison problems.",
+    "explanation": {
+      "en": "A ratio compares two quantities, like 2:3. A proportion says two ratios are equal. To find a missing value, scale both sides by the same factor. Example: 2 cups rice : 3 cups water. For 4 cups rice (×2), you need 6 cups water (×2).",
+      "fil": "Ang ratio ay paghahambing ng dalawang dami, tulad ng 2:3. Ang proportion ay pagkakapantay ng dalawang ratio. Para hanapin ang nawawalang halaga, i-scale ang magkabilang panig sa parehong factor. Halimbawa: 2 tasa bigas : 3 tasa tubig. Para sa 4 tasa bigas (×2), kailangan ng 6 tasa tubig (×2).",
+      "taglish": "Ratio = comparison ng dalawang bagay, like 2:3. Proportion = pag equal yung dalawang ratio. Para mahanap yung missing, i-scale mo both sides sa same number. Like recipe: 2 cups rice : 3 cups water. Kung 4 cups rice ka (times 2), need mo 6 cups water (times 2 din). Pantay lang dapat."
+    },
+    "worked_example": "Recipe: 2 tasa bigas : 3 tasa tubig. Kung gagamit ka ng 4 tasa bigas, i-double mo rin ang tubig: 3 × 2 = 6 tasa tubig.",
+    "items": [
+      { "q": "Recipe 2 tasa bigas : 3 tasa tubig. Kung 4 tasa bigas, ilang tasa tubig?", "answer": "6", "type": "numeric" },
+      { "q": "Ratio 1:4. Kung ang una ay 5, ano ang pangalawa?", "answer": "20", "type": "numeric" },
+      { "q": "3 mansanas = ₱60. Magkano ang 5 mansanas? (pantay na presyo)", "answer": "100", "type": "numeric" },
+      { "q": "I-simplify ang ratio 10:15. Naging 2:?", "answer": "3", "type": "numeric" },
+      { "q": "I-simplify ang 6:8. Naging 3:?", "answer": "4", "type": "numeric" }
+    ]
+  },
+  {
+    "ref": "G6-NA-DEC-01",
+    "domain": "Number and Algebra",
+    "content_standard": "Operations on decimals.",
+    "competency": "Perform the four fundamental operations on decimals.",
+    "performance_standard": "Add, subtract, multiply, and divide decimals in money and measurement situations.",
+    "explanation": {
+      "en": "To add or subtract decimals, line up the decimal points. To multiply, multiply as whole numbers then count the total decimal places. To divide, you can move the decimal point so the divisor becomes a whole number. Always keep the decimal point aligned with money.",
+      "fil": "Sa pagdaragdag o pagbabawas ng decimal, i-align ang decimal points. Sa pagpaparami, i-multiply na parang buong bilang tapos bilangin ang kabuuang decimal places. Sa paghahati, maaaring ilipat ang decimal point para maging buong bilang ang divisor. Laging i-align ang decimal point sa pera.",
+      "taglish": "Pag add o subtract ng decimals, i-align mo yung decimal points. Pag multiply, parang whole numbers lang muna tapos bilangin yung total decimal places. Pag divide, pwede mong ilipat yung decimal point para whole number na yung divisor. Sa pera, laging nakaalign yung tuldok."
+    },
+    "worked_example": "Sari-sari: bumili ka ng ₱12.50 na biskwit at ₱7.25 na juice. Total = 12.50 + 7.25 = ₱19.75.",
+    "items": [
+      { "q": "0.5 + 0.25 = ?", "answer": "0.75", "type": "numeric" },
+      { "q": "1.2 - 0.7 = ?", "answer": "0.5", "type": "numeric" },
+      { "q": "0.3 x 4 = ?", "answer": "1.2", "type": "numeric" },
+      { "q": "2.5 / 5 = ?", "answer": "0.5", "type": "numeric" },
+      { "q": "₱12.50 + ₱7.25 = ? (bilang lang)", "answer": "19.75", "type": "numeric" }
+    ]
+  },
+  {
+    "ref": "G6-NA-GCFLCM-01",
+    "domain": "Number and Algebra",
+    "content_standard": "Number theory: factors and multiples.",
+    "competency": "Find the GCF and LCM of two numbers and apply them to problems.",
+    "performance_standard": "Use GCF and LCM to solve grouping, sharing, and scheduling problems.",
+    "explanation": {
+      "en": "The GCF (Greatest Common Factor) is the largest number that divides both numbers — use it to split things into equal groups. The LCM (Least Common Multiple) is the smallest number both go into — use it for events that repeat. Example: GCF of 12 and 18 is 6; LCM of 4 and 6 is 12.",
+      "fil": "Ang GCF (Greatest Common Factor) ang pinakamalaking bilang na nakakahati sa dalawang bilang — gamit sa paghahati sa pantay na grupo. Ang LCM (Least Common Multiple) ang pinakamaliit na bilang na napupuntahan ng dalawa — gamit sa paulit-ulit na pangyayari. Halimbawa: GCF ng 12 at 18 ay 6; LCM ng 4 at 6 ay 12.",
+      "taglish": "GCF = yung pinakamalaking number na kayang humati sa dalawa — gamit pag nagha-hati ka into equal groups. LCM = yung pinakamaliit na number na pwedeng abutin ng dalawa — gamit pag may paulit-ulit na schedule. Like GCF ng 12 at 18 = 6; LCM ng 4 at 6 = 12."
+    },
+    "worked_example": "May 12 mangga at 18 saging. Para sa pantay na grupo na walang sobra, gamitin ang GCF ng 12 at 18 = 6 na grupo.",
+    "items": [
+      { "q": "GCF ng 12 at 18 = ?", "answer": "6", "type": "numeric" },
+      { "q": "LCM ng 4 at 6 = ?", "answer": "12", "type": "numeric" },
+      { "q": "GCF ng 8 at 20 = ?", "answer": "4", "type": "numeric" },
+      { "q": "LCM ng 3 at 5 = ?", "answer": "15", "type": "numeric" },
+      { "q": "GCF ng 15 at 25 = ?", "answer": "5", "type": "numeric" }
+    ]
+  }
+]

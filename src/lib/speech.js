@@ -70,32 +70,39 @@ function stopAudio() {
   }
 }
 
+// Play an audio blob. Resolves true once playback actually starts, false if
+// the browser blocks/can't play it (e.g. autoplay policy) so the caller can
+// fall back to speechSynthesis.
 function playBlob(blob) {
-  stopAudio()
-  const url = URL.createObjectURL(blob)
-  const audio = new Audio(url)
-  currentAudio = audio
-  audio.onended = () => {
-    if (currentAudio === audio) currentAudio = null
-    URL.revokeObjectURL(url)
-  }
-  audio.play().catch(() => {
-    // Autoplay blocked or decode error -> fall back to robotic voice.
-    URL.revokeObjectURL(url)
-    if (currentAudio === audio) currentAudio = null
+  return new Promise((resolve) => {
+    stopAudio()
+    const url = URL.createObjectURL(blob)
+    const audio = new Audio(url)
+    currentAudio = audio
+    audio.onended = () => {
+      if (currentAudio === audio) currentAudio = null
+      URL.revokeObjectURL(url)
+    }
+    audio.play().then(
+      () => resolve(true),
+      () => {
+        URL.revokeObjectURL(url)
+        if (currentAudio === audio) currentAudio = null
+        resolve(false) // autoplay blocked / decode error
+      },
+    )
   })
 }
 
-// Try ElevenLabs (with cache). Returns true if it produced audio, else false.
-async function speakElevenLabs(text) {
+// Try cloud TTS (with cache). Returns true only if audio actually played.
+async function speakCloud(text) {
   const key = `tts:${hash(text)}`
 
   // Cached audio — works offline once heard, zero cost on repeat.
   try {
     const cached = await get(key)
     if (cached instanceof Blob && cached.size) {
-      playBlob(cached)
-      return true
+      return await playBlob(cached)
     }
   } catch {
     /* fall through */
@@ -111,21 +118,24 @@ async function speakElevenLabs(text) {
     })
     // 501 = TTS unconfigured, 5xx = failure -> use speechSynthesis floor.
     if (!res.ok) return false
+    // Guard against non-audio responses (e.g. dev server returning index.html
+    // when /api isn't running) — otherwise we'd "play" HTML and stay silent.
+    const ct = res.headers.get('content-type') || ''
+    if (!ct.includes('audio')) return false
     const blob = await res.blob()
     if (!blob.size) return false
     set(key, blob).catch(() => {}) // cache for offline replay; don't block
-    playBlob(blob)
-    return true
+    return await playBlob(blob)
   } catch {
     return false
   }
 }
 
-// Public API — same signature as before. Tries ElevenLabs, falls back to local.
+// Public API — same signature as before. Tries cloud TTS, falls back to local.
 export function speak(text) {
   if (!text) return
   stopSpeaking()
-  speakElevenLabs(text).then((ok) => {
+  speakCloud(text).then((ok) => {
     if (!ok) speakLocal(text)
   })
 }

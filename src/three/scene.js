@@ -1,4 +1,5 @@
 ﻿import * as THREE from 'three'
+import { tilingTexture, decorTexture, TEX } from './textures.js'
 
 const ROOM = { halfX: 5, halfZ: 7, height: 3.4 }
 const PLAYER_RADIUS = 0.35
@@ -35,17 +36,21 @@ export const THEMES = {
 // [{ key, name }] for the picker UI.
 export const THEME_LIST = Object.entries(THEMES).map(([key, t]) => ({ key, name: t.name }))
 
-export function buildClassroom({ mount, competency, onNearBoard, onInteract, theme = 'classic' }) {
+export function buildClassroom({ mount, competency, onNearBoard, onInteract, theme = 'classic', boardText, labels = {} }) {
   const startTheme = THEMES[theme] ?? THEMES.classic
+  const BOARD_LABELS = { correct: 'Tama!', tryAgain: 'Subukan ulit', ready: 'Handa na ang klase.', ...labels }
   const scene = new THREE.Scene()
   scene.background = new THREE.Color(startTheme.bg)
   scene.fog = new THREE.Fog(startTheme.bg, 17, 28)
 
-  // Dedicated materials for room surfaces so themes recolor only these.
+  // Dedicated materials for room surfaces. A tiling photo texture provides the
+  // real classroom look; the theme color multiplies it so live "renovation"
+  // still tints walls/floor/ceiling. White-ish theme colors show the texture
+  // close to its natural tone.
   const roomMats = {
-    wall: new THREE.MeshLambertMaterial({ color: startTheme.wall }),
-    floor: new THREE.MeshLambertMaterial({ color: startTheme.floor }),
-    ceiling: new THREE.MeshLambertMaterial({ color: startTheme.ceiling }),
+    wall: new THREE.MeshLambertMaterial({ color: startTheme.wall, map: tilingTexture(TEX.wall, 4, 1.6) }),
+    floor: new THREE.MeshLambertMaterial({ color: startTheme.floor, map: tilingTexture(TEX.floor, 5, 7) }),
+    ceiling: new THREE.MeshLambertMaterial({ color: startTheme.ceiling, map: tilingTexture(TEX.ceiling, 4, 5) }),
   }
   let boardBg = startTheme.board
 
@@ -73,7 +78,7 @@ export function buildClassroom({ mount, competency, onNearBoard, onInteract, the
   let controlsEnabled = true
   let raf = 0
   let nearBoard = false
-  let lastBoardText = competency?.items?.[0]?.q ?? competency?.competency ?? 'Handa na ang klase.'
+  let lastBoardText = boardText ?? competency?.items?.[0]?.q ?? competency?.competency ?? BOARD_LABELS.ready
   let flashTimer = 0
   let jumpVelocity = 0
   let grounded = true
@@ -133,6 +138,7 @@ export function buildClassroom({ mount, competency, onNearBoard, onInteract, the
   scene.add(boardLight)
 
   buildRoom()
+  buildDecor()
   const board = buildBoard()
   buildTeacherArea()
   buildStudentArea()
@@ -285,7 +291,7 @@ export function buildClassroom({ mount, competency, onNearBoard, onInteract, the
     },
     markBoard(ok) {
       window.clearTimeout(flashTimer)
-      drawBoard(ok ? 'Tama!' : 'Subukan ulit', ok)
+      drawBoard(ok ? BOARD_LABELS.correct : BOARD_LABELS.tryAgain, ok)
       flashTimer = window.setTimeout(() => drawBoard(lastBoardText), 850)
     },
     zoom(delta) {
@@ -328,6 +334,38 @@ export function buildClassroom({ mount, competency, onNearBoard, onInteract, the
       const x = -3.7 + i * 1.85
       box({ x, y: 3.25, z: 0, w: 1.1, h: 0.04, d: 13.4, color: 0xffffff })
     }
+  }
+
+  // A flat textured plane (poster / window / rug / corkboard). Unlit so wall
+  // art stays bright and readable regardless of room lighting / theme.
+  function decalPlane(url, { x, y, z, w, h, rotY = 0, rotX = 0 }) {
+    const geo = track(new THREE.PlaneGeometry(w, h))
+    const mat = track(new THREE.MeshBasicMaterial({ map: decorTexture(url) }))
+    const mesh = new THREE.Mesh(geo, mat)
+    mesh.position.set(x, y, z)
+    mesh.rotation.set(rotX, rotY, 0)
+    scene.add(mesh)
+    return mesh
+  }
+
+  function buildDecor() {
+    const front = -ROOM.halfZ + 0.12 // just inside the front wall
+    const back = ROOM.halfZ - 0.12
+    const leftX = -ROOM.halfX + 0.12
+    const rightX = ROOM.halfX - 0.12
+    // posters flanking the chalkboard on the front wall
+    decalPlane(TEX.posters[0], { x: -4.0, y: 1.95, z: front, w: 1.4, h: 1.85 })
+    decalPlane(TEX.posters[1], { x: 4.0, y: 1.95, z: front, w: 1.4, h: 1.85 })
+    // window (city view) + a poster on the left wall
+    decalPlane(TEX.window, { x: leftX, y: 1.95, z: -1.4, w: 2.6, h: 1.7, rotY: Math.PI / 2 })
+    decalPlane(TEX.posters[3], { x: leftX, y: 1.95, z: 1.8, w: 1.7, h: 1.2, rotY: Math.PI / 2 })
+    // posters on the right wall
+    decalPlane(TEX.posters[2], { x: rightX, y: 2.0, z: -2.2, w: 1.5, h: 1.9, rotY: -Math.PI / 2 })
+    decalPlane(TEX.posters[4], { x: rightX, y: 1.95, z: 1.6, w: 1.5, h: 1.9, rotY: -Math.PI / 2 })
+    // corkboard on the back wall
+    decalPlane(TEX.corkboard, { x: 0, y: 2.0, z: back, w: 3.4, h: 2.0, rotY: Math.PI })
+    // warm rug on the floor in front of the board
+    decalPlane(TEX.rug, { x: 0, y: 0.06, z: -3.0, w: 4.2, h: 3.0, rotX: -Math.PI / 2 })
   }
 
   function buildBoard() {

@@ -3,6 +3,7 @@ import content from './content.json'
 import { loadMastery, loadDue, recordAnswer, pickNext } from './lib/mastery.js'
 import { initVoices } from './lib/speech.js'
 import { loadLang, saveLang, DEFAULT_LANG } from './lib/lang.js'
+import { t } from './lib/i18n.js'
 import Splash from './screens/Splash.jsx'
 import Home from './screens/Home.jsx'
 import StartChoice from './screens/StartChoice.jsx'
@@ -69,7 +70,7 @@ export default function App() {
     return (
       <>
         {node}
-        <BottomNav active={activeKey} onNav={navTo} />
+        <BottomNav active={activeKey} onNav={navTo} lang={lang} />
       </>
     )
   }
@@ -88,7 +89,7 @@ export default function App() {
 
   switch (screen) {
     case 'splash':
-      return <Splash onStart={() => setScreen('home')} />
+      return <Splash lang={lang} onStart={() => setScreen('home')} />
 
     case 'home':
       return withNav(
@@ -110,6 +111,7 @@ export default function App() {
         'lessons',
         <StartChoice
           online={online}
+          lang={lang}
           next={current ?? next}
           mastery={mastery}
           onAuto={() => setScreen('topics')}
@@ -123,6 +125,7 @@ export default function App() {
         'practice',
         <TopicPicker
           online={online}
+          lang={lang}
           competencies={content}
           mastery={mastery}
           onPick={goBrief}
@@ -135,6 +138,7 @@ export default function App() {
         'practice',
         <LessonBrief
           online={online}
+          lang={lang}
           competency={active}
           score={mastery[active.ref] ?? 0.5}
           onEnter={() => setScreen('classroom')}
@@ -161,7 +165,7 @@ export default function App() {
         <Suspense
           fallback={
             <div className="flex min-h-screen items-center justify-center bg-[#27433b] font-display text-xl text-cream">
-              Inihahanda ang 3D klase...
+              {t('3d.preparing', lang)}
             </div>
           }
         >
@@ -181,6 +185,7 @@ export default function App() {
         'profile',
         <Progress
           online={online}
+          lang={lang}
           competencies={content}
           mastery={mastery}
           next={next}

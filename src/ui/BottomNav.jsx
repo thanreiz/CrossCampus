@@ -1,18 +1,21 @@
 // Persistent bottom navigation — design basis: Stitch tab bar.
 // 4 tabs: Lessons, Practice, Games, Profile. SVG icons (no emoji).
 
+import { makeT } from '../lib/i18n.js'
+
 const ITEMS = [
-  { key: 'lessons', label: 'Lessons', Icon: BookIcon },
-  { key: 'practice', label: 'Practice', Icon: PencilIcon },
-  { key: 'games', label: 'Games', Icon: GameIcon },
-  { key: 'profile', label: 'Profile', Icon: PersonIcon },
+  { key: 'lessons', tkey: 'nav.lessons', Icon: BookIcon },
+  { key: 'practice', tkey: 'nav.practice', Icon: PencilIcon },
+  { key: 'games', tkey: 'nav.games', Icon: GameIcon },
+  { key: 'profile', tkey: 'nav.profile', Icon: PersonIcon },
 ]
 
-export default function BottomNav({ active, onNav }) {
+export default function BottomNav({ active, onNav, lang = 'taglish' }) {
+  const tt = makeT(lang)
   return (
     <nav className="fixed inset-x-0 bottom-0 z-50 mx-auto max-w-[430px] border-t-[2.5px] border-outline bg-white px-2 py-1.5">
       <div className="flex items-stretch justify-around gap-1">
-        {ITEMS.map(({ key, label, Icon }) => {
+        {ITEMS.map(({ key, tkey, Icon }) => {
           const on = active === key
           return (
             <button
@@ -24,7 +27,7 @@ export default function BottomNav({ active, onNav }) {
             >
               <Icon />
               <span className={`text-[13px] font-extrabold ${on ? 'text-ink' : 'text-ink/55'}`}>
-                {label}
+                {tt(tkey)}
               </span>
             </button>
           )

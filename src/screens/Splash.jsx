@@ -1,15 +1,17 @@
 import { Mascot } from '../ui/Mascot.jsx'
 import { Button, Doodles, Sparkle } from '../ui/Primitives.jsx'
+import { makeT } from '../lib/i18n.js'
 
 // Splash — design basis: Stitch "Gabay - Splash".
-export default function Splash({ onStart }) {
+export default function Splash({ onStart, lang = 'taglish' }) {
+  const tt = makeT(lang)
   return (
     <div className="gb-shell relative flex min-h-screen flex-col items-center justify-center px-6 text-center">
       <Doodles />
 
       {/* top banner */}
-      <span className="absolute top-12 rounded-full border-[2.5px] border-outline bg-mint px-5 py-2 text-sm font-bold shadow-hard-sm">
-        Matuto ng Math kahit walang signal.
+      <span className="absolute top-12 max-w-[90%] rounded-full border-[2.5px] border-outline bg-mint px-5 py-2 text-center text-sm font-bold shadow-hard-sm">
+        {tt('splash.banner')}
       </span>
 
       {/* logo card */}
@@ -24,11 +26,11 @@ export default function Splash({ onStart }) {
       </div>
 
       <Button color="peach" className="mt-10 px-10 text-lg" onClick={onStart}>
-        MAGSIMULA
+        {tt('splash.start')}
       </Button>
 
       <p className="absolute bottom-10 text-xs font-bold text-ink/60">
-        100% OFFLINE LEARNING
+        {tt('splash.offline')}
       </p>
     </div>
   )

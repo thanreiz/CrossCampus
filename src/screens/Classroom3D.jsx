@@ -8,6 +8,7 @@ import { feedbackFor } from '../lib/feedback.js'
 import { recordAttempt } from '../lib/history.js'
 import { topicFull } from '../lib/topics.js'
 import { loadTheme, saveTheme, DEFAULT_THEME } from '../lib/theme.js'
+import { makeT, localize } from '../lib/i18n.js'
 
 // Strip **bold** markup before reading aloud.
 function plain(s) {
@@ -20,6 +21,7 @@ function plain(s) {
 // so codex's richer geometry can replace that one function without touching this file.
 export default function Classroom3D({ competency, score, online, lang = 'taglish', onAnswered, onExit }) {
   const c = competency
+  const tt = makeT(lang)
   const mountRef = useRef(null)
   const sceneRef = useRef(null)
 
@@ -49,6 +51,8 @@ export default function Classroom3D({ competency, score, online, lang = 'taglish
     const api = buildClassroom({
       mount: mountRef.current,
       competency: c,
+      boardText: localize(c.items?.[0]?.q, lang),
+      labels: { correct: tt('3d.board.correct'), tryAgain: tt('3d.board.tryAgain'), ready: tt('3d.board.ready') },
       // fired when the player walks into the blackboard zone
       onNearBoard: (near) => setAtBoard(near),
       onInteract: () => openBoard(),
@@ -65,7 +69,8 @@ export default function Classroom3D({ competency, score, online, lang = 'taglish
 
   // Teacher greeting on entry (voice-out, offline-safe).
   useEffect(() => {
-    if (ready) speak(`Maligayang pagdating sa klase! Lakad sa pisara para magsimula.`, { lang })
+    if (ready) speak(tt('class.welcome3d'), { lang })
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [ready])
 
   // Load the saved "renovation" theme, then apply it once the scene is live.
@@ -85,18 +90,19 @@ export default function Classroom3D({ competency, score, online, lang = 'taglish
   function openBoard() {
     sceneRef.current?.setControls(false) // release pointer lock while answering
     setModal(true)
-    speak(itemRef.current.q, { lang })
+    speak(localize(itemRef.current.q, lang), { lang })
   }
 
   function submit() {
     if (result !== null) return
+    const locItem = { ...item, q: localize(item.q, lang), solution: localize(item.solution, lang) }
     const ok = checkAnswer(item, input)
-    const f = feedbackFor(item, ok, lang, idx)
+    const f = feedbackFor(locItem, ok, lang, idx)
     setResult(ok)
     setFb(f)
     if (ok) setCorrectCount((n) => n + 1)
-    setAnswers((a) => [...a, { q: item.q, your: input.trim(), answer: item.answer, correct: ok, solution: item.solution }])
-    recordAttempt({ ref: c.ref, q: item.q, your: input.trim(), answer: item.answer, correct: ok, feedback: ok ? f.headline : f.body })
+    setAnswers((a) => [...a, { q: locItem.q, your: input.trim(), answer: item.answer, correct: ok, solution: locItem.solution }])
+    recordAttempt({ ref: c.ref, q: locItem.q, your: input.trim(), answer: item.answer, correct: ok, feedback: ok ? f.headline : f.body })
     onAnswered(c.ref, ok)
     speak(ok ? f.headline : `${f.headline} ${plain(f.body)}`, { lang })
     sceneRef.current?.markBoard(ok)
@@ -106,7 +112,7 @@ export default function Classroom3D({ competency, score, online, lang = 'taglish
     if (idx + 1 >= c.items.length) {
       setDone(true)
       setModal(false)
-      speak(`Tapos na! ${correctCount} sa ${c.items.length} tama.`, { lang })
+      speak(tt('class.bubble.done', { correct: correctCount, total: c.items.length }), { lang })
       return
     }
     const n = idx + 1
@@ -114,8 +120,8 @@ export default function Classroom3D({ competency, score, online, lang = 'taglish
     setInput('')
     setResult(null)
     setFb(null)
-    sceneRef.current?.setBoardText(c.items[n].q)
-    speak(c.items[n].q, { lang })
+    sceneRef.current?.setBoardText(localize(c.items[n].q, lang))
+    speak(localize(c.items[n].q, lang), { lang })
   }
 
   function closeModal() {
@@ -132,7 +138,7 @@ export default function Classroom3D({ competency, score, online, lang = 'taglish
 
       {/* top HUD */}
       <div className="pointer-events-none absolute left-0 right-0 top-0 flex items-center justify-between p-3">
-        <button className="pointer-events-auto gb-chip bg-white" onClick={onExit}>Exit</button>
+        <button className="pointer-events-auto gb-chip bg-white" onClick={onExit}>{tt('common.exit')}</button>
         <div className="pointer-events-auto flex items-center gap-2">
           <OnlineBadge online={online} />
           <RefBadge refId={c.ref} domain={c.domain} />
@@ -149,14 +155,14 @@ export default function Classroom3D({ competency, score, online, lang = 'taglish
         <button
           className="gb-chip min-h-[44px] min-w-[44px] bg-white text-xl shadow-hard-sm"
           onClick={() => sceneRef.current?.zoom(-8)}
-          aria-label="Zoom in"
+          aria-label={tt('3d.zoomIn')}
         >
           +
         </button>
         <button
           className="gb-chip min-h-[44px] min-w-[44px] bg-white text-xl shadow-hard-sm"
           onClick={() => sceneRef.current?.zoom(8)}
-          aria-label="Zoom out"
+          aria-label={tt('3d.zoomOut')}
         >
           -
         </button>
@@ -164,14 +170,14 @@ export default function Classroom3D({ competency, score, online, lang = 'taglish
         <button
           className="gb-chip min-h-[44px] min-w-[44px] bg-lavender text-base shadow-hard-sm"
           onClick={() => setThemeOpen((v) => !v)}
-          aria-label="Palitan ang klase"
-          title="Palitan ang klase"
+          aria-label={tt('3d.changeRoom')}
+          title={tt('3d.changeRoom')}
         >
-          Tema
+          {tt('3d.theme')}
         </button>
         {themeOpen && (
           <div className="gb-card gb-pop w-36 bg-white p-2">
-            <p className="mb-1 px-1 text-xs font-extrabold text-ink/60">Palitan ang klase</p>
+            <p className="mb-1 px-1 text-xs font-extrabold text-ink/60">{tt('3d.changeRoom')}</p>
             <div className="grid gap-1.5">
               {THEME_LIST.map((t) => (
                 <button
@@ -181,7 +187,7 @@ export default function Classroom3D({ competency, score, online, lang = 'taglish
                     theme === t.key ? 'bg-yellow' : 'bg-white'
                   }`}
                 >
-                  {t.name}
+                  {tt('theme.' + t.key)}
                 </button>
               ))}
             </div>
@@ -192,7 +198,7 @@ export default function Classroom3D({ competency, score, online, lang = 'taglish
       {ready && !modal && !done && (
         <div className="pointer-events-none absolute bottom-28 left-1/2 -translate-x-1/2 text-center">
           <p className="gb-chip bg-yellow shadow-hard-sm">
-            {atBoard ? 'Tap Sagutin o pindutin ang E / F' : 'Joystick para gumalaw · WASD sa keyboard · scroll para mag-zoom'}
+            {atBoard ? tt('3d.hintAtBoard') : tt('3d.hintMove')}
           </p>
         </div>
       )}
@@ -206,7 +212,7 @@ export default function Classroom3D({ competency, score, online, lang = 'taglish
       {ready && atBoard && !modal && !done && (
         <div className="absolute bottom-10 left-1/2 -translate-x-1/2">
           <Button color="mint" className="min-h-[56px] px-8 text-xl" onClick={openBoard}>
-            Sagutin
+            {tt('3d.answerBoard')}
           </Button>
         </div>
       )}
@@ -214,7 +220,7 @@ export default function Classroom3D({ competency, score, online, lang = 'taglish
       {/* look hint (right side) — drag the right half of the screen to look around */}
       {ready && !modal && (
         <div className="pointer-events-none absolute bottom-8 right-6 max-w-[120px] text-right text-xs font-bold text-cream/70">
-          I-drag ang kanang bahagi para tumingin sa paligid
+          {tt('3d.lookHint')}
         </div>
       )}
 
@@ -222,30 +228,30 @@ export default function Classroom3D({ competency, score, online, lang = 'taglish
       {done && (
         <div className="absolute inset-0 flex items-center justify-center overflow-y-auto bg-black/50 p-4">
           <div className="gb-card bg-white gb-pop my-auto max-h-[90vh] w-full max-w-sm overflow-y-auto p-5 text-center">
-            <p className="font-display text-2xl font-extrabold">Tapos na!</p>
+            <p className="font-display text-2xl font-extrabold">{tt('summary.done')}</p>
             <p className="mt-1 text-lg font-bold">
-              {correctCount} / {c.items.length} tama
+              {tt('summary.scoreLine', { correct: correctCount, total: c.items.length })}
             </p>
             <div className="mt-2 flex justify-center gap-2 text-sm font-bold">
-              <span className="gb-chip bg-mint">Tama: {correctCount}</span>
-              <span className="gb-chip bg-rose">Mali: {c.items.length - correctCount}</span>
+              <span className="gb-chip bg-mint">{tt('common.correct')}: {correctCount}</span>
+              <span className="gb-chip bg-rose">{tt('common.wrong')}: {c.items.length - correctCount}</span>
             </div>
             {answers.some((a) => !a.correct) && (
               <div className="mt-4 text-left">
-                <p className="mb-2 text-sm font-extrabold text-ink/70">Balikan ang mga namali:</p>
+                <p className="mb-2 text-sm font-extrabold text-ink/70">{tt('class.reviewMissed')}</p>
                 <div className="flex flex-col gap-2">
                   {answers.filter((a) => !a.correct).map((a, i) => (
                     <div key={i} className="rounded-card border-2 border-outline bg-cream p-3 text-sm">
-                      <p className="font-bold"><span className="text-ink/60">Tanong:</span> {a.q}</p>
-                      <p className="mt-1 font-bold"><span className="text-ink/60">Sagot mo:</span> <span className="text-rose-700">{a.your || '—'}</span></p>
-                      <p className="mt-1 font-bold"><span className="text-ink/60">Tamang sagot:</span> <span className="text-green-700">{a.answer}</span></p>
-                      {a.solution && <p className="mt-1"><span className="font-bold text-ink/60">Paliwanag:</span> <RichText>{a.solution}</RichText></p>}
+                      <p className="font-bold"><span className="text-ink/60">{tt('common.question')}:</span> {a.q}</p>
+                      <p className="mt-1 font-bold"><span className="text-ink/60">{tt('common.yourAnswer')}:</span> <span className="text-rose-700">{a.your || '—'}</span></p>
+                      <p className="mt-1 font-bold"><span className="text-ink/60">{tt('common.correctAnswer')}:</span> <span className="text-green-700">{a.answer}</span></p>
+                      {a.solution && <p className="mt-1"><span className="font-bold text-ink/60">{tt('common.explanation')}:</span> <RichText>{a.solution}</RichText></p>}
                     </div>
                   ))}
                 </div>
               </div>
             )}
-            <Button color="mint" className="mt-4 w-full text-lg" onClick={onExit}>Tapos</Button>
+            <Button color="mint" className="mt-4 w-full text-lg" onClick={onExit}>{tt('common.done')}</Button>
           </div>
         </div>
       )}
@@ -256,9 +262,9 @@ export default function Classroom3D({ competency, score, online, lang = 'taglish
           <div className="gb-card bg-white gb-pop w-full max-w-md p-5 sm:p-6">
             <div className="mb-2 flex items-center justify-between">
               <span className="text-xs font-bold text-ink/60">
-                Tanong {idx + 1} / {c.items.length}
+                {tt('common.question')} {idx + 1} / {c.items.length}
               </span>
-              <button className="gb-chip min-h-[44px] min-w-[44px] bg-white text-lg" onClick={closeModal}>x</button>
+              <button className="gb-chip min-h-[44px] min-w-[44px] bg-white text-lg" onClick={closeModal} aria-label={tt('common.exit')}>x</button>
             </div>
             {/* immediate feedback at the top of the question */}
             {result !== null && fb && (
@@ -272,7 +278,7 @@ export default function Classroom3D({ competency, score, online, lang = 'taglish
               </div>
             )}
 
-            <p className="font-display text-2xl font-bold leading-snug">{item.q}</p>
+            <p className="font-display text-2xl font-bold leading-snug">{localize(item.q, lang)}</p>
 
             {item.type === 'mcq' && item.options && (
               <div className="mt-3 flex flex-wrap gap-2">
@@ -293,17 +299,17 @@ export default function Classroom3D({ competency, score, online, lang = 'taglish
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
                 onKeyDown={(e) => e.key === 'Enter' && (result === null ? submit() : next())}
-                placeholder="Isulat ang sagot..."
+                placeholder={tt('common.answerPlaceholder')}
                 inputMode={item.type === 'mcq' ? 'text' : 'decimal'}
                 className="min-h-[56px] min-w-0 rounded-full border-[2.5px] border-outline px-5 py-3 text-lg font-bold outline-none focus:bg-cream"
               />
               {result === null ? (
                 <Button color="mint" className="min-h-[56px] px-6 text-lg" onClick={submit}>
-                  Sumagot
+                  {tt('class.answer')}
                 </Button>
               ) : (
                 <Button color="sky" className="min-h-[56px] px-6 text-lg" onClick={next}>
-                  {idx + 1 >= c.items.length ? 'Tapusin' : 'Susunod'}
+                  {idx + 1 >= c.items.length ? tt('common.finish') : tt('common.next')}
                 </Button>
               )}
             </div>

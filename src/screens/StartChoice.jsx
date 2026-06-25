@@ -1,21 +1,13 @@
 ﻿import { Card, Button, Doodles, MasteryBar } from '../ui/Primitives.jsx'
 import { Mascot } from '../ui/Mascot.jsx'
 import OnlineBadge from '../ui/OnlineBadge.jsx'
-
-const TITLES = {
-  'G6-NA-PERCENT-01': 'Percent, Fractions & Decimals',
-  'G6-NA-PERCENT-02': 'Percentage, Rate & Base',
-  'G6-NA-PERCENT-03': 'Percent & Discounts',
-  'G6-NA-RATIO-01': 'Ratio & Proportion',
-  'G6-NA-DEC-01': 'Decimal Operations',
-  'G6-NA-GCFLCM-01': 'GCF & LCM',
-}
+import { topicTitle } from '../lib/topics.js'
 
 // Start choice - design basis: Stitch "Gabay - Start Choice".
 export default function StartChoice({ next, mastery, online = true, onAuto, onBrowse, onBack }) {
   const score = next ? mastery[next.ref] ?? 0.5 : 0.5
   const pct = Math.round(score * 100)
-  const title = next ? TITLES[next.ref] ?? next.competency : ''
+  const title = next ? topicTitle(next.ref, next.competency) : ''
 
   return (
     <div className="gb-shell relative flex min-h-screen flex-col px-5 pb-28 pt-6">

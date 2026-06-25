@@ -2,24 +2,9 @@
 import { Card, Chip, Doodles, MasteryBar } from '../ui/Primitives.jsx'
 import { Mascot } from '../ui/Mascot.jsx'
 import OnlineBadge from '../ui/OnlineBadge.jsx'
-import { masteryLabel } from '../lib/mastery.js'
+import { masteryColor } from '../lib/mastery.js'
+import { topicTitle, topicIcon } from '../lib/topics.js'
 
-const TITLES = {
-  'G6-NA-PERCENT-01': 'Percent, Fractions & Decimals',
-  'G6-NA-PERCENT-02': 'Percentage, Rate & Base',
-  'G6-NA-PERCENT-03': 'Percent & Discounts',
-  'G6-NA-RATIO-01': 'Ratio & Proportion',
-  'G6-NA-DEC-01': 'Decimal Operations',
-  'G6-NA-GCFLCM-01': 'GCF & LCM',
-}
-const ICONS = {
-  'G6-NA-PERCENT-01': '%',
-  'G6-NA-PERCENT-02': 'R',
-  'G6-NA-PERCENT-03': 'SALE',
-  'G6-NA-RATIO-01': ':',
-  'G6-NA-DEC-01': '0.1',
-  'G6-NA-GCFLCM-01': 'x',
-}
 const ICON_BG = ['bg-mint', 'bg-sky', 'bg-rose', 'bg-peach', 'bg-yellow', 'bg-lavender']
 
 // Topic picker - design basis: Stitch "Gabay - Topic Picker".
@@ -50,7 +35,7 @@ export default function TopicPicker({ competencies, mastery, online = true, onPi
       <h1 className="font-display text-3xl font-extrabold leading-tight">
         Anong aaralin natin ngayon?
       </h1>
-      <p className="mb-4 text-sm text-ink/70">Pumili ng topic at magsimula ng practice.</p>
+      <p className="mb-4 text-base font-bold text-ink/70">Pumili ng topic at magsimula ng practice.</p>
 
       {/* filter chips */}
       <div className="mb-5 flex flex-wrap gap-2">
@@ -66,6 +51,7 @@ export default function TopicPicker({ competencies, mastery, online = true, onPi
         {shown.map((c, i) => {
           const score = mastery[c.ref] ?? 0.5
           const pct = Math.round(score * 100)
+          const color = masteryColor(score)
           return (
             <Card
               key={c.ref}
@@ -77,23 +63,23 @@ export default function TopicPicker({ competencies, mastery, online = true, onPi
             >
               <div className="flex items-start gap-3">
                 <span
-                  className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl border-[2.5px] border-outline ${ICON_BG[i % ICON_BG.length]} text-2xl font-extrabold`}
+                  className={`flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl border-[2.5px] border-outline ${ICON_BG[i % ICON_BG.length]} text-2xl font-extrabold`}
                 >
-                  {ICONS[c.ref] ?? '+'}
+                  {topicIcon(c.ref)}
                 </span>
                 <div className="min-w-0 flex-1">
-                  <div className="flex items-center justify-between gap-2">
+                  <div className="flex items-start justify-between gap-2">
                     <h2 className="font-display text-lg font-bold leading-tight">
-                      {TITLES[c.ref] ?? c.competency}
+                      {topicTitle(c.ref, c.competency)}
                     </h2>
-                    <span className="gb-chip bg-yellow shadow-hard-sm shrink-0 text-[10px]">
-                      {masteryLabel(score)}
+                    <span className={`gb-chip ${color.bg} shadow-hard-sm shrink-0 text-[11px]`}>
+                      {color.label}
                     </span>
                   </div>
-                  <p className="mt-0.5 line-clamp-2 text-xs text-ink/70">{c.competency}</p>
+                  <p className="mt-1 line-clamp-2 text-sm text-ink/70">{c.competency}</p>
                   <div className="mt-2 flex items-center gap-2">
                     <MasteryBar score={score} />
-                    <span className="whitespace-nowrap text-xs font-bold">{pct}%</span>
+                    <span className="whitespace-nowrap text-sm font-extrabold">{pct}%</span>
                   </div>
                 </div>
               </div>

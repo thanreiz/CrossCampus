@@ -1,4 +1,25 @@
 ﻿// Neo-brutalist building blocks: thick outlines, hard offset shadows, pills.
+import { topicArea } from '../lib/topics.js'
+import { masteryColor } from '../lib/mastery.js'
+
+// Renders text with **bold** markup so feedback can emphasize the correct
+// answer, a key formula, or an important reminder.
+export function RichText({ children, className = '' }) {
+  const parts = String(children ?? '').split(/(\*\*[^*]+\*\*)/g)
+  return (
+    <span className={className}>
+      {parts.map((p, i) =>
+        p.startsWith('**') && p.endsWith('**') ? (
+          <strong key={i} className="font-extrabold text-ink">
+            {p.slice(2, -2)}
+          </strong>
+        ) : (
+          <span key={i}>{p}</span>
+        ),
+      )}
+    </span>
+  )
+}
 
 export function Button({ color = 'yellow', className = '', children, ...props }) {
   const colors = {
@@ -57,24 +78,24 @@ export function Chip({ color = 'mint', active = false, className = '', children,
   )
 }
 
-// MATATAG curriculum badge - the "not a generic wrapper" proof.
+// MATATAG learning-area badge. Shows the child-friendly area name (e.g.
+// "Number and Algebra") — no "Grade 6" / shortened code in the title.
 export function RefBadge({ refId, domain }) {
-  const short = domain === 'Number and Algebra' ? 'NA' : domain
-  const topic = refId?.split('-')[2] ?? ''
+  const area = topicArea(refId) || domain || 'Number and Algebra'
   return (
-    <span className="gb-chip bg-yellow shadow-hard-sm text-xs">
-      G6 - {short} - {topic.charAt(0) + topic.slice(1).toLowerCase()}
-    </span>
+    <span className="gb-chip bg-yellow shadow-hard-sm text-xs">{area}</span>
   )
 }
 
+// Progress bar colored by the shared 3-band system (red/orange/green).
 export function MasteryBar({ score = 0.5 }) {
   const pct = Math.round((score ?? 0.5) * 100)
+  const { fill } = masteryColor(score)
   return (
     <div className="w-full">
       <div className="h-4 w-full rounded-full border-[2.5px] border-outline bg-white overflow-hidden">
         <div
-          className="h-full bg-mint transition-all duration-500"
+          className={`h-full ${fill} transition-all duration-500`}
           style={{ width: `${pct}%` }}
         />
       </div>

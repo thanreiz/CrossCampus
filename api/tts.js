@@ -17,6 +17,15 @@ import textToSpeech from '@google-cloud/text-to-speech'
 
 const VOICE = process.env.TTS_VOICE || 'fil-PH-Wavenet-A'
 const LANG = process.env.TTS_LANG || 'fil-PH'
+const EN_VOICE = process.env.TTS_VOICE_EN || 'en-US-Neural2-F'
+const EN_LANG = 'en-US'
+
+// Map the app language setting -> { voice, languageCode }. English answers get
+// an English voice; Tagalog/Taglish use the fil-PH voice.
+function voiceFor(lang) {
+  if (lang === 'en') return { name: EN_VOICE, languageCode: EN_LANG }
+  return { name: VOICE, languageCode: LANG }
+}
 
 function getCredentials() {
   if (!process.env.GCP_SA_KEY) return null
@@ -61,11 +70,12 @@ export default async function handler(req, res) {
   if (!text) return res.status(400).json({ error: 'no_text' })
   // Gabay lines are short; cap hard to guard cost/latency.
   const clipped = text.slice(0, 800)
+  const { name, languageCode } = voiceFor(body?.lang)
 
   try {
     const [response] = await client.synthesizeSpeech({
       input: { text: clipped },
-      voice: { languageCode: LANG, name: VOICE },
+      voice: { languageCode, name },
       audioConfig: { audioEncoding: 'MP3', speakingRate: 0.96, pitch: 1.0 },
     })
     const buf = Buffer.from(response.audioContent)

@@ -1,178 +1,200 @@
-﻿import { useMemo, useState } from 'react'
-import { Card, Button, Doodles, RefBadge, MasteryBar } from '../ui/Primitives.jsx'
+import { useMemo, useState } from 'react'
+import { Card, Button, Doodles, RefBadge, MasteryBar, RichText } from '../ui/Primitives.jsx'
 import { Mascot } from '../ui/Mascot.jsx'
 import OnlineBadge from '../ui/OnlineBadge.jsx'
 import { checkAnswer } from '../lib/check.js'
+import { feedbackFor } from '../lib/feedback.js'
+import { recordAttempt } from '../lib/history.js'
+import { topicTitle } from '../lib/topics.js'
 
-const ROUND_SPECS = [
-  {
-    ref: 'G6-NA-DEC-01',
-    title: 'Total sa Sari-sari',
-    customer: 'Bumili si Ana ng biskwit at juice.',
-    shelf: ['Biskwit P12.50', 'Juice P7.25'],
-    q: 'P12.50 + P7.25 = ? (bilang lang)',
-    answer: '19.75',
-    type: 'numeric',
-    hint: 'I-align ang decimal point bago mag-add.',
-  },
-  {
-    ref: 'G6-NA-PERCENT-03',
-    title: 'Sale sa Palengke',
-    customer: 'May 20% off sa item na P250.',
-    shelf: ['Original P250', 'Discount 20%'],
-    q: 'Magkano ang babayaran?',
-    answer: '200',
-    type: 'numeric',
-    hint: '20% off means 80% ang babayaran: 0.80 x 250.',
-  },
-  {
-    ref: 'G6-NA-PERCENT-02',
-    title: 'Hanapin ang Diskwento',
-    customer: 'Sapatos na P500, may 10% off.',
-    shelf: ['Original P500', 'Discount 10%'],
-    q: 'Magkano ang diskwento?',
-    answer: '50',
-    type: 'numeric',
-    hint: 'Discount = rate x base.',
-  },
-  {
-    ref: 'G6-NA-RATIO-01',
-    title: 'Presyo ng Mansanas',
-    customer: '3 mansanas ay P60. Pantay ang presyo bawat isa.',
-    shelf: ['3 mansanas = P60', '5 mansanas = ?'],
-    q: 'Magkano ang 5 mansanas?',
-    answer: '100',
-    type: 'numeric',
-    hint: 'P60 / 3 = P20 bawat mansanas.',
-  },
-  {
-    ref: 'G6-NA-PERCENT-01',
-    title: 'Percent Display',
-    customer: 'May sign na 25% off sa tindahan.',
-    shelf: ['25%', 'Decimal?', 'Fraction?'],
-    q: '25% bilang decimal = ?',
-    answer: '0.25',
-    type: 'numeric',
-    hint: 'Percent to decimal: move two places left.',
-  },
-]
+const COUNT_OPTIONS = [5, 10, 15, 20]
 
-export default function Games({ online = true, competencies = [], mastery = {}, onAnswered = async () => {} }) {
-  const rounds = useMemo(() => {
-    return ROUND_SPECS.map((round) => {
-      const competency = competencies.find((c) => c.ref === round.ref)
-      return { ...round, competency }
-    })
-  }, [competencies])
+function shuffle(arr) {
+  const a = [...arr]
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1))
+    ;[a[i], a[j]] = [a[j], a[i]]
+  }
+  return a
+}
 
+// Build a question pool from the whole Grade 6 curriculum (every competency's
+// items). Repeats the shuffled pool if the learner wants more than we have.
+function buildQuestions(competencies, count) {
+  const pool = []
+  for (const c of competencies) {
+    for (const it of c.items ?? []) {
+      pool.push({ ...it, ref: c.ref, title: topicTitle(c.ref, c.competency) })
+    }
+  }
+  let out = shuffle(pool)
+  while (out.length < count) out = out.concat(shuffle(pool))
+  return out.slice(0, count)
+}
+
+export default function Games({ online = true, competencies = [], mastery = {}, lang = 'taglish', onAnswered = async () => {} }) {
   const [started, setStarted] = useState(false)
-  const [roundIndex, setRoundIndex] = useState(0)
+  const [count, setCount] = useState(10)
+  const [questions, setQuestions] = useState([])
+  const [idx, setIdx] = useState(0)
   const [input, setInput] = useState('')
   const [result, setResult] = useState(null)
+  const [fb, setFb] = useState(null)
   const [coins, setCoins] = useState(0)
   const [streak, setStreak] = useState(0)
   const [answered, setAnswered] = useState(0)
-  const [showHint, setShowHint] = useState(false)
+  const [log, setLog] = useState([])
 
-  const round = rounds[roundIndex]
-  const done = answered >= rounds.length
-  const item = { q: round.q, answer: round.answer, type: round.type }
+  const round = questions[idx]
+  const done = started && answered >= questions.length
   const score = round?.ref ? mastery[round.ref] ?? 0.5 : 0.5
+
+  function startGame() {
+    setQuestions(buildQuestions(competencies, count))
+    setStarted(true)
+    setIdx(0)
+    setInput('')
+    setResult(null)
+    setFb(null)
+    setCoins(0)
+    setStreak(0)
+    setAnswered(0)
+    setLog([])
+  }
 
   async function submit() {
     if (result !== null || !input.trim()) return
-    const ok = checkAnswer(item, input)
+    const ok = checkAnswer(round, input)
+    const f = feedbackFor(round, ok, lang, idx)
     setResult(ok)
+    setFb(f)
     setAnswered((n) => n + 1)
     setCoins((n) => n + (ok ? 10 + streak * 2 : 2))
     setStreak((n) => (ok ? n + 1 : 0))
+    setLog((l) => [...l, { q: round.q, your: input.trim(), answer: round.answer, correct: ok, solution: round.solution }])
+    recordAttempt({ ref: round.ref, q: round.q, your: input.trim(), answer: round.answer, correct: ok, feedback: ok ? f.headline : f.body })
     await onAnswered(round.ref, ok)
   }
 
   function nextRound() {
-    setRoundIndex((i) => (i + 1) % rounds.length)
+    setIdx((i) => i + 1)
     setInput('')
     setResult(null)
-    setShowHint(false)
+    setFb(null)
   }
 
-  function resetGame() {
-    setStarted(true)
-    setRoundIndex(0)
-    setInput('')
-    setResult(null)
-    setCoins(0)
-    setStreak(0)
-    setAnswered(0)
-    setShowHint(false)
-  }
-
+  // ---- Start screen ----
   if (!started) {
     return (
       <div className="gb-shell relative min-h-screen px-5 pb-28 pt-6">
         <Doodles />
         <Header online={online} />
         <section className="relative z-10 mt-5 overflow-hidden rounded-card border-[2.5px] border-outline bg-peach p-5 shadow-hard">
-          <OnlineBadge online={online} className="absolute right-4 top-4" />
-          <div className="flex min-h-[210px] flex-col justify-end rounded-card border-[2.5px] border-outline bg-[#f7d26a] p-4">
+          <div className="flex min-h-[180px] flex-col justify-end rounded-card border-[2.5px] border-outline bg-[#f7d26a] p-4">
             <ShopAwning />
             <h1 className="mt-5 font-display text-3xl font-extrabold leading-tight">Tindahan Game</h1>
-            <p className="mt-1 max-w-[25ch] text-sm font-bold text-ink/75">
+            <p className="mt-1 max-w-[26ch] text-base font-bold text-ink/75">
               Mag-compute ng total, discount, ratio, at percent habang nagtitinda.
             </p>
           </div>
         </section>
 
-        <div className="mt-5 grid gap-3">
-          <InfoPill label="Rounds" value={`${rounds.length} tanong`} />
-          <InfoPill label="Reward" value="Coins + mastery" />
-          <InfoPill label="Topics" value="Grade 6 Number & Algebra" />
+        {/* number of questions (5–20) */}
+        <div className="mt-5">
+          <p className="mb-2 text-base font-extrabold">Ilang tanong ang sasagutan mo?</p>
+          <div className="flex flex-wrap gap-2">
+            {COUNT_OPTIONS.map((n) => (
+              <button
+                key={n}
+                onClick={() => setCount(n)}
+                className={`gb-btn flex-1 text-lg ${count === n ? 'bg-mint' : 'bg-white'}`}
+              >
+                {n}
+              </button>
+            ))}
+          </div>
+          <p className="mt-1 text-xs font-bold text-ink/55">Minimum 5, maximum 20 na tanong.</p>
         </div>
 
-        <Button color="mint" className="mt-5 min-h-[56px] w-full text-lg" onClick={resetGame}>
-          Simulan ang Tindahan
+        <Button color="mint" className="mt-5 min-h-[58px] w-full text-xl" onClick={startGame}>
+          Simulan ang Tindahan ({count} tanong)
         </Button>
       </div>
     )
   }
 
+  // ---- Summary ----
   if (done) {
+    const correct = log.filter((l) => l.correct).length
+    const wrong = log.filter((l) => !l.correct)
     return (
       <div className="gb-shell relative flex min-h-screen flex-col px-5 pb-28 pt-6">
         <Doodles />
         <Header online={online} />
         <Card color="mint" className="gb-pop mt-6 p-6 text-center">
-          <div className="mx-auto mb-4 flex h-24 w-24 items-center justify-center rounded-card border-[2.5px] border-outline bg-white">
+          <div className="mx-auto mb-3 flex h-20 w-20 items-center justify-center rounded-card border-[2.5px] border-outline bg-white">
             <ShopIcon />
           </div>
           <h1 className="font-display text-3xl font-extrabold">Tindahan sarado!</h1>
           <p className="mt-2 text-lg font-extrabold">Kita mo: {coins} coins</p>
-          <p className="mt-1 text-sm font-bold text-ink/70">
-            Na-update ang mastery para sa mga competency na sinagutan mo.
-          </p>
-          <Button color="yellow" className="mt-5 min-h-[52px] w-full" onClick={resetGame}>
-            Laro ulit
-          </Button>
+          <div className="mt-3 grid grid-cols-3 gap-2">
+            <Stat label="Sinagot" value={log.length} color="bg-sky" />
+            <Stat label="Tama" value={correct} color="bg-mint" />
+            <Stat label="Mali" value={wrong.length} color="bg-rose" />
+          </div>
         </Card>
+
+        {wrong.length > 0 && (
+          <div className="mt-5">
+            <p className="mb-2 text-base font-extrabold">Balikan natin ang mga namali:</p>
+            <div className="flex flex-col gap-3">
+              {wrong.map((a, i) => (
+                <Card key={i} color="cream" className="p-4">
+                  <p className="text-base font-bold">
+                    <span className="text-ink/60">Tanong:</span> {a.q}
+                  </p>
+                  <p className="mt-1 text-base font-bold">
+                    <span className="text-ink/60">Sagot mo:</span>{' '}
+                    <span className="text-rose-700">{a.your || '—'}</span>
+                  </p>
+                  <p className="mt-1 text-base font-bold">
+                    <span className="text-ink/60">Tamang sagot:</span>{' '}
+                    <span className="text-green-700">{a.answer}</span>
+                  </p>
+                  {a.solution && (
+                    <p className="mt-1 text-base">
+                      <span className="font-bold text-ink/60">Paliwanag:</span> <RichText>{a.solution}</RichText>
+                    </p>
+                  )}
+                </Card>
+              ))}
+            </div>
+          </div>
+        )}
+
+        <Button color="yellow" className="mt-5 min-h-[54px] w-full text-lg" onClick={() => setStarted(false)}>
+          Laro ulit
+        </Button>
       </div>
     )
   }
 
+  // ---- Play ----
   return (
     <div className="gb-shell relative min-h-screen overflow-hidden px-5 pb-28 pt-6">
       <Doodles />
       <Header online={online} />
 
       <div className="relative z-10 mt-4 flex items-center justify-between gap-2">
-        <RefBadge refId={round.ref} domain={round.competency?.domain ?? 'Number and Algebra'} />
-        <span className="gb-chip bg-yellow shadow-hard-sm text-xs">Coins {coins}</span>
+        <RefBadge refId={round.ref} domain="Number and Algebra" />
+        <span className="gb-chip bg-yellow shadow-hard-sm text-sm">Coins {coins}</span>
       </div>
 
       <Card color="cream" className="gb-pop mt-4 overflow-hidden p-0">
         <div className="border-b-[2.5px] border-outline bg-peach p-4">
           <div className="flex items-center justify-between gap-3">
             <div>
-              <p className="text-xs font-extrabold uppercase text-ink/55">Round {answered + 1} / {rounds.length}</p>
+              <p className="text-sm font-extrabold uppercase text-ink/55">Tanong {answered + 1} / {questions.length}</p>
               <h1 className="font-display text-2xl font-extrabold leading-tight">{round.title}</h1>
             </div>
             <Mascot size={52} float />
@@ -180,21 +202,21 @@ export default function Games({ online = true, competencies = [], mastery = {}, 
         </div>
 
         <div className="grid gap-4 p-4">
-          <div className="rounded-card border-[2.5px] border-outline bg-white p-4 shadow-hard-sm">
-            <ShopAwning small />
-            <div className="mt-3 grid grid-cols-2 gap-2">
-              {round.shelf.map((label) => (
-                <div key={label} className="rounded-2xl border-2 border-outline bg-cream px-3 py-2 text-center text-sm font-extrabold">
-                  {label}
-                </div>
-              ))}
+          {/* immediate feedback banner */}
+          {result !== null && fb && (
+            <div className={`rounded-card border-[2.5px] border-outline p-3 ${result ? 'bg-mint' : 'bg-yellow'}`}>
+              <p className="font-display text-lg font-extrabold">{fb.headline}</p>
+              {!fb.ok && (
+                <p className="mt-1 text-sm font-bold">
+                  <RichText>{fb.body}</RichText>
+                </p>
+              )}
             </div>
-          </div>
+          )}
 
           <div className="rounded-card border-[2.5px] border-outline bg-sky p-4">
-            <p className="text-xs font-extrabold uppercase text-ink/60">Customer</p>
-            <p className="mt-1 font-display text-xl font-bold leading-snug">{round.customer}</p>
-            <p className="mt-3 rounded-2xl border-2 border-outline bg-white p-3 text-lg font-extrabold leading-snug">
+            <p className="text-sm font-extrabold uppercase text-ink/60">Customer</p>
+            <p className="mt-2 rounded-2xl border-2 border-outline bg-white p-3 text-xl font-extrabold leading-snug">
               {round.q}
             </p>
           </div>
@@ -205,44 +227,38 @@ export default function Games({ online = true, competencies = [], mastery = {}, 
               onChange={(e) => setInput(e.target.value)}
               onKeyDown={(e) => e.key === 'Enter' && (result === null ? submit() : nextRound())}
               disabled={result !== null}
-              inputMode="decimal"
+              inputMode={round.type === 'mcq' ? 'text' : 'decimal'}
               placeholder="I-type ang sagot..."
               className="min-h-[58px] rounded-full border-[2.5px] border-outline bg-white px-5 text-xl font-extrabold outline-none focus:bg-cream disabled:opacity-80"
             />
 
-            {result === null ? (
-              <div className="grid grid-cols-[1fr_auto] gap-2">
-                <Button color="mint" className="min-h-[56px] text-lg" onClick={submit}>
-                  Bayaran
-                </Button>
-                <button className="gb-chip min-h-[56px] bg-white px-4" onClick={() => setShowHint((v) => !v)}>
-                  Hint
-                </button>
+            {round.type === 'mcq' && round.options && result === null && (
+              <div className="flex flex-wrap gap-2">
+                {round.options.map((opt) => (
+                  <button
+                    key={opt}
+                    onClick={() => setInput(opt)}
+                    className={`gb-chip text-base ${input === opt ? 'bg-sky shadow-hard-sm' : 'bg-white'}`}
+                  >
+                    {opt}
+                  </button>
+                ))}
               </div>
+            )}
+
+            {result === null ? (
+              <Button color="mint" className="min-h-[58px] text-xl" onClick={submit}>
+                Bayaran
+              </Button>
             ) : (
-              <Button color={result ? 'mint' : 'rose'} className="min-h-[56px] text-lg" onClick={nextRound}>
-                Susunod
+              <Button color={result ? 'mint' : 'rose'} className="min-h-[58px] text-xl" onClick={nextRound}>
+                {answered >= questions.length ? 'Tapusin' : 'Susunod'}
               </Button>
             )}
           </div>
 
-          {showHint && result === null && (
-            <p className="rounded-card border-[2.5px] border-outline bg-yellow p-3 text-sm font-bold">
-              {round.hint}
-            </p>
-          )}
-
-          {result !== null && (
-            <div className={`rounded-card border-[2.5px] border-outline p-4 ${result ? 'bg-mint' : 'bg-rose'}`}>
-              <p className="font-display text-xl font-extrabold">{result ? 'Tama!' : 'Halos!'}</p>
-              <p className="mt-1 text-sm font-bold">
-                {result ? `+${10 + Math.max(0, streak - 1) * 2} coins` : `Sagot: ${round.answer}`}
-              </p>
-            </div>
-          )}
-
           <div>
-            <div className="mb-1 flex justify-between text-xs font-extrabold text-ink/60">
+            <div className="mb-1 flex justify-between text-sm font-extrabold text-ink/60">
               <span>Mastery</span>
               <span>{Math.round(score * 100)}%</span>
             </div>
@@ -254,6 +270,7 @@ export default function Games({ online = true, competencies = [], mastery = {}, 
   )
 }
 
+// Single Online label only — no duplicate at the bottom.
 function Header({ online = true }) {
   return (
     <div className="relative z-10 flex items-center justify-between gap-2">
@@ -266,18 +283,18 @@ function Header({ online = true }) {
   )
 }
 
-function InfoPill({ label, value }) {
+function Stat({ label, value, color }) {
   return (
-    <div className="flex items-center justify-between rounded-card border-[2.5px] border-outline bg-white px-4 py-3 shadow-hard-sm">
-      <span className="text-xs font-extrabold uppercase text-ink/55">{label}</span>
-      <span className="font-bold">{value}</span>
+    <div className={`rounded-card border-[2.5px] border-outline ${color} p-2 text-center`}>
+      <p className="font-display text-2xl font-extrabold leading-none">{value}</p>
+      <p className="mt-1 text-xs font-bold text-ink/70">{label}</p>
     </div>
   )
 }
 
-function ShopAwning({ small = false }) {
+function ShopAwning() {
   return (
-    <div className={`grid ${small ? 'h-10' : 'h-14'} grid-cols-5 overflow-hidden rounded-t-card border-[2.5px] border-outline bg-white`}>
+    <div className="grid h-14 grid-cols-5 overflow-hidden rounded-t-card border-[2.5px] border-outline bg-white">
       {['bg-rose', 'bg-white', 'bg-yellow', 'bg-white', 'bg-rose'].map((color, index) => (
         <span key={index} className={`${color} border-r-2 border-outline last:border-r-0`} />
       ))}
@@ -287,12 +304,10 @@ function ShopAwning({ small = false }) {
 
 function ShopIcon() {
   return (
-    <svg viewBox="0 0 80 80" width="70" height="70" aria-hidden="true">
+    <svg viewBox="0 0 80 80" width="62" height="62" aria-hidden="true">
       <path d="M12 30 L17 14 h46 l5 16 Z" fill="#F4A87C" stroke="#1C1410" strokeWidth="4" strokeLinejoin="round" />
       <rect x="18" y="30" width="44" height="34" rx="3" fill="#A9D8F0" stroke="#1C1410" strokeWidth="4" />
       <rect x="32" y="42" width="16" height="22" fill="#fff" stroke="#1C1410" strokeWidth="4" />
     </svg>
   )
 }
-
-

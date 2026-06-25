@@ -12,11 +12,11 @@
     },
     "worked_example": "Sari-sari store sign: '25% off'. 25% = 0.25 (decimal) = 1/4 (fraction). So 25% off means bawas ng sangkapat ng presyo.",
     "items": [
-      { "q": "50% bilang decimal = ?", "answer": "0.5", "type": "numeric" },
-      { "q": "0.25 bilang percent = ? (bilang lang, walang %)", "answer": "25", "type": "numeric" },
-      { "q": "3/4 bilang percent = ? (bilang lang)", "answer": "75", "type": "numeric" },
-      { "q": "20% sa pinakasimpleng fraction ay 1/? (ilagay ang denominator)", "answer": "5", "type": "numeric" },
-      { "q": "Alin ang KATUMBAS ng 10%?", "answer": "0.1", "type": "mcq", "options": ["0.1", "1.0", "10.0", "0.01"] }
+      { "q": "50% bilang decimal = ?", "answer": "0.5", "type": "numeric", "solution": "Para gawing decimal ang percent, hatiin sa 100: 50 ÷ 100 = **0.5**. (Para mabilis, ilipat ang tuldok ng 2 hakbang pakaliwa.)" },
+      { "q": "0.25 bilang percent = ? (bilang lang, walang %)", "answer": "25", "type": "numeric", "solution": "Para gawing percent ang decimal, i-multiply sa 100: 0.25 × 100 = **25**." },
+      { "q": "3/4 bilang percent = ? (bilang lang)", "answer": "75", "type": "numeric", "solution": "Una, 3 ÷ 4 = 0.75. Tapos × 100 = **75**." },
+      { "q": "20% sa pinakasimpleng fraction ay 1/? (ilagay ang denominator)", "answer": "5", "type": "numeric", "solution": "20% = 20/100. Hatiin ang taas at baba sa 20: 20/100 = **1/5**, kaya ang denominator ay **5**." },
+      { "q": "Alin ang KATUMBAS ng 10%?", "answer": "0.1", "type": "mcq", "options": ["0.1", "1.0", "10.0", "0.01"], "solution": "10% = 10 ÷ 100 = **0.1**. Dalawang hakbang pakaliwa ang tuldok." }
     ]
   },
   {
@@ -32,11 +32,11 @@
     },
     "worked_example": "Palengke: 'May 30% discount sa ₱200 na item.' Base = ₱200, Rate = 30%, Percentage (diskwento) = 0.30 × 200 = ₱60.",
     "items": [
-      { "q": "Sa '25% of 80 = 20', ano ang BASE?", "answer": "80", "type": "numeric" },
-      { "q": "Sa '25% of 80 = 20', ano ang RATE? (bilang lang, walang %)", "answer": "25", "type": "numeric" },
-      { "q": "Sa '25% of 80 = 20', ano ang PERCENTAGE?", "answer": "20", "type": "numeric" },
-      { "q": "Magkano ang 30% ng 200?", "answer": "60", "type": "numeric" },
-      { "q": "Magkano ang 15% ng 60?", "answer": "9", "type": "numeric" }
+      { "q": "Sa '25% of 80 = 20', ano ang BASE?", "answer": "80", "type": "numeric", "solution": "Ang BASE ang buong halaga, ang kasunod ng 'of'. Dito, **80** ang base." },
+      { "q": "Sa '25% of 80 = 20', ano ang RATE? (bilang lang, walang %)", "answer": "25", "type": "numeric", "solution": "Ang RATE ang may % sign. Dito **25%**, kaya ang sagot ay **25**." },
+      { "q": "Sa '25% of 80 = 20', ano ang PERCENTAGE?", "answer": "20", "type": "numeric", "solution": "Ang PERCENTAGE ang bahaging nakuha: Rate × Base = 0.25 × 80 = **20**." },
+      { "q": "Magkano ang 30% ng 200?", "answer": "60", "type": "numeric", "solution": "Percentage = Rate × Base = 0.30 × 200 = **60**." },
+      { "q": "Magkano ang 15% ng 60?", "answer": "9", "type": "numeric", "solution": "0.15 × 60 = **9**." }
     ]
   },
   {
@@ -52,11 +52,11 @@
     },
     "worked_example": "Palengke: ₱250 na item, 20% off. Diskwento = 0.20 × 250 = ₱50. Babayaran = 250 − 50 = ₱200.",
     "items": [
-      { "q": "₱250 na item, 20% off. Magkano ang BABAYARAN?", "answer": "200", "type": "numeric" },
-      { "q": "₱500 na sapatos, 10% off. Magkano ang DISKWENTO?", "answer": "50", "type": "numeric" },
-      { "q": "₱1200 na bag, 25% off. Magkano ang babayaran?", "answer": "900", "type": "numeric" },
-      { "q": "₱80 na laruan, 5% off. Magkano ang babayaran?", "answer": "76", "type": "numeric" },
-      { "q": "₱360 na damit, 50% off. Magkano ang babayaran?", "answer": "180", "type": "numeric" }
+      { "q": "₱250 na item, 20% off. Magkano ang BABAYARAN?", "answer": "200", "type": "numeric", "solution": "Diskwento = 0.20 × 250 = ₱50. Babayaran = 250 − 50 = **₱200**. (Shortcut: 0.80 × 250 = 200.)" },
+      { "q": "₱500 na sapatos, 10% off. Magkano ang DISKWENTO?", "answer": "50", "type": "numeric", "solution": "Diskwento = Rate × Presyo = 0.10 × 500 = **₱50**." },
+      { "q": "₱1200 na bag, 25% off. Magkano ang babayaran?", "answer": "900", "type": "numeric", "solution": "Diskwento = 0.25 × 1200 = ₱300. Babayaran = 1200 − 300 = **₱900**." },
+      { "q": "₱80 na laruan, 5% off. Magkano ang babayaran?", "answer": "76", "type": "numeric", "solution": "Diskwento = 0.05 × 80 = ₱4. Babayaran = 80 − 4 = **₱76**." },
+      { "q": "₱360 na damit, 50% off. Magkano ang babayaran?", "answer": "180", "type": "numeric", "solution": "50% off ay kalahati ng presyo: 360 ÷ 2 = **₱180**." }
     ]
   },
   {
@@ -72,11 +72,11 @@
     },
     "worked_example": "Recipe: 2 tasa bigas : 3 tasa tubig. Kung gagamit ka ng 4 tasa bigas, i-double mo rin ang tubig: 3 × 2 = 6 tasa tubig.",
     "items": [
-      { "q": "Recipe 2 tasa bigas : 3 tasa tubig. Kung 4 tasa bigas, ilang tasa tubig?", "answer": "6", "type": "numeric" },
-      { "q": "Ratio 1:4. Kung ang una ay 5, ano ang pangalawa?", "answer": "20", "type": "numeric" },
-      { "q": "3 mansanas = ₱60. Magkano ang 5 mansanas? (pantay na presyo)", "answer": "100", "type": "numeric" },
-      { "q": "I-simplify ang ratio 10:15. Naging 2:?", "answer": "3", "type": "numeric" },
-      { "q": "I-simplify ang 6:8. Naging 3:?", "answer": "4", "type": "numeric" }
+      { "q": "Recipe 2 tasa bigas : 3 tasa tubig. Kung 4 tasa bigas, ilang tasa tubig?", "answer": "6", "type": "numeric", "solution": "Dumoble ang bigas (2 → 4, kaya ×2). I-double mo rin ang tubig: 3 × 2 = **6** tasa." },
+      { "q": "Ratio 1:4. Kung ang una ay 5, ano ang pangalawa?", "answer": "20", "type": "numeric", "solution": "Ang una ay 1 → 5, kaya ×5. Pangalawa: 4 × 5 = **20**." },
+      { "q": "3 mansanas = ₱60. Magkano ang 5 mansanas? (pantay na presyo)", "answer": "100", "type": "numeric", "solution": "1 mansanas = 60 ÷ 3 = ₱20. 5 mansanas = 5 × 20 = **₱100**." },
+      { "q": "I-simplify ang ratio 10:15. Naging 2:?", "answer": "3", "type": "numeric", "solution": "Hatiin ang dalawa sa GCF na 5: 10 ÷ 5 = 2, 15 ÷ 5 = 3, kaya **2:3**, ang sagot ay **3**." },
+      { "q": "I-simplify ang 6:8. Naging 3:?", "answer": "4", "type": "numeric", "solution": "Hatiin ang dalawa sa 2: 6 ÷ 2 = 3, 8 ÷ 2 = 4, kaya **3:4**, ang sagot ay **4**." }
     ]
   },
   {
@@ -92,11 +92,11 @@
     },
     "worked_example": "Sari-sari: bumili ka ng ₱12.50 na biskwit at ₱7.25 na juice. Total = 12.50 + 7.25 = ₱19.75.",
     "items": [
-      { "q": "0.5 + 0.25 = ?", "answer": "0.75", "type": "numeric" },
-      { "q": "1.2 - 0.7 = ?", "answer": "0.5", "type": "numeric" },
-      { "q": "0.3 x 4 = ?", "answer": "1.2", "type": "numeric" },
-      { "q": "2.5 / 5 = ?", "answer": "0.5", "type": "numeric" },
-      { "q": "₱12.50 + ₱7.25 = ? (bilang lang)", "answer": "19.75", "type": "numeric" }
+      { "q": "0.5 + 0.25 = ?", "answer": "0.75", "type": "numeric", "solution": "I-align ang tuldok: 0.50 + 0.25 = **0.75**." },
+      { "q": "1.2 - 0.7 = ?", "answer": "0.5", "type": "numeric", "solution": "I-align ang tuldok: 1.2 − 0.7 = **0.5**." },
+      { "q": "0.3 x 4 = ?", "answer": "1.2", "type": "numeric", "solution": "3 × 4 = 12. May isang decimal place sa 0.3, kaya **1.2**." },
+      { "q": "2.5 / 5 = ?", "answer": "0.5", "type": "numeric", "solution": "2.5 ÷ 5 = **0.5** (25 ÷ 5 = 5, lagyan ng tuldok)." },
+      { "q": "₱12.50 + ₱7.25 = ? (bilang lang)", "answer": "19.75", "type": "numeric", "solution": "I-align ang tuldok: 12.50 + 7.25 = **19.75**." }
     ]
   },
   {
@@ -112,11 +112,11 @@
     },
     "worked_example": "May 12 mangga at 18 saging. Para sa pantay na grupo na walang sobra, gamitin ang GCF ng 12 at 18 = 6 na grupo.",
     "items": [
-      { "q": "GCF ng 12 at 18 = ?", "answer": "6", "type": "numeric" },
-      { "q": "LCM ng 4 at 6 = ?", "answer": "12", "type": "numeric" },
-      { "q": "GCF ng 8 at 20 = ?", "answer": "4", "type": "numeric" },
-      { "q": "LCM ng 3 at 5 = ?", "answer": "15", "type": "numeric" },
-      { "q": "GCF ng 15 at 25 = ?", "answer": "5", "type": "numeric" }
+      { "q": "GCF ng 12 at 18 = ?", "answer": "6", "type": "numeric", "solution": "Mga factor na pareho sa 12 at 18: 1, 2, 3, 6. Ang pinakamalaki ay **6**." },
+      { "q": "LCM ng 4 at 6 = ?", "answer": "12", "type": "numeric", "solution": "Multiples ng 4: 4, 8, 12. Ng 6: 6, 12. Pinakamaliit na pareho = **12**." },
+      { "q": "GCF ng 8 at 20 = ?", "answer": "4", "type": "numeric", "solution": "Pinakamalaking humahati sa 8 at 20 = **4** (8 = 4×2, 20 = 4×5)." },
+      { "q": "LCM ng 3 at 5 = ?", "answer": "15", "type": "numeric", "solution": "Walang common factor ang 3 at 5, kaya LCM = 3 × 5 = **15**." },
+      { "q": "GCF ng 15 at 25 = ?", "answer": "5", "type": "numeric", "solution": "Pinakamalaking humahati sa 15 at 25 = **5** (15 = 5×3, 25 = 5×5)." }
     ]
   }
 ]

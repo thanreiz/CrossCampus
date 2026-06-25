@@ -22,10 +22,32 @@ const PALETTE = {
   white: 0xfff8f6,
 }
 
-export function buildClassroom({ mount, competency, onNearBoard, onInteract }) {
+// Classroom "renovation" themes — recolor walls / floor / ceiling / sky / board.
+// Learners switch these live from the 3D HUD; choice is persisted.
+export const THEMES = {
+  classic: { name: 'Klasiko', bg: 0xfff1eb, wall: 0xf6e5de, floor: 0xe7d7d0, ceiling: 0xfbf1da, board: '#27433b' },
+  forest: { name: 'Gubat', bg: 0xe6f3e2, wall: 0xcfe8c4, floor: 0x9ec79a, ceiling: 0xeaf6e4, board: '#274a2f' },
+  ocean: { name: 'Dagat', bg: 0xe2f1fb, wall: 0xc4e2f0, floor: 0x9ec9e0, ceiling: 0xeaf4fb, board: '#1f3a4a' },
+  sunset: { name: 'Takipsilim', bg: 0xfde6e0, wall: 0xf6c9b4, floor: 0xe0a98f, ceiling: 0xfde9e0, board: '#5a2f33' },
+  night: { name: 'Gabi', bg: 0x2a2a3a, wall: 0x3a3a52, floor: 0x2e2e44, ceiling: 0x33334a, board: '#14141f' },
+}
+
+// [{ key, name }] for the picker UI.
+export const THEME_LIST = Object.entries(THEMES).map(([key, t]) => ({ key, name: t.name }))
+
+export function buildClassroom({ mount, competency, onNearBoard, onInteract, theme = 'classic' }) {
+  const startTheme = THEMES[theme] ?? THEMES.classic
   const scene = new THREE.Scene()
-  scene.background = new THREE.Color(0xfff1eb)
-  scene.fog = new THREE.Fog(0xfff1eb, 17, 28)
+  scene.background = new THREE.Color(startTheme.bg)
+  scene.fog = new THREE.Fog(startTheme.bg, 17, 28)
+
+  // Dedicated materials for room surfaces so themes recolor only these.
+  const roomMats = {
+    wall: new THREE.MeshLambertMaterial({ color: startTheme.wall }),
+    floor: new THREE.MeshLambertMaterial({ color: startTheme.floor }),
+    ceiling: new THREE.MeshLambertMaterial({ color: startTheme.ceiling }),
+  }
+  let boardBg = startTheme.board
 
   const camera = new THREE.PerspectiveCamera(BASE_FOV, 1, 0.1, 80)
   camera.rotation.order = 'YXZ'
@@ -68,6 +90,11 @@ export function buildClassroom({ mount, competency, onNearBoard, onInteract }) {
     return resource
   }
 
+  // Room-surface materials are theme-controlled; track for disposal.
+  track(roomMats.wall)
+  track(roomMats.floor)
+  track(roomMats.ceiling)
+
   function material(color, kind = 'lambert') {
     const key = `${kind}:${color}`
     if (!materialCache.has(key)) {
@@ -80,8 +107,8 @@ export function buildClassroom({ mount, competency, onNearBoard, onInteract }) {
     return materialCache.get(key)
   }
 
-  function box({ x, y, z, w, h, d, color, collide = false }) {
-    const mesh = new THREE.Mesh(sharedBox, material(color))
+  function box({ x, y, z, w, h, d, color, collide = false, mat }) {
+    const mesh = new THREE.Mesh(sharedBox, mat || material(color))
     mesh.position.set(x, y, z)
     mesh.scale.set(w, h, d)
     scene.add(mesh)
@@ -213,10 +240,17 @@ export function buildClassroom({ mount, competency, onNearBoard, onInteract }) {
     touchState.delete(event.pointerId)
   }
   const onResize = () => resize()
+  // Landscape support: the canvas size lags rotation, so re-fit after it settles.
+  const onOrient = () => {
+    resize()
+    window.setTimeout(resize, 150)
+    window.setTimeout(resize, 400)
+  }
 
   window.addEventListener('keydown', onKeyDown)
   window.addEventListener('keyup', onKeyUp)
   window.addEventListener('resize', onResize)
+  window.addEventListener('orientationchange', onOrient)
   renderer.domElement.addEventListener('click', onCanvasClick)
   renderer.domElement.addEventListener('contextmenu', onContextMenu)
   renderer.domElement.addEventListener('mousedown', onMouseDown)
@@ -258,15 +292,37 @@ export function buildClassroom({ mount, competency, onNearBoard, onInteract }) {
       zoomHeld = false
       targetFov = clamp(targetFov + delta, 42, 82)
     },
+    // On-screen joystick hook. x = strafe (-1 left .. 1 right),
+    // y = screen vertical (-1 up/forward .. 1 down/back). Consumed by
+    // updateMovement via touchMove (side += x, ahead -= y).
+    setMove(x = 0, y = 0) {
+      if (!controlsEnabled) {
+        touchMove.set(0, 0)
+        return
+      }
+      touchMove.set(clamp(x, -1, 1), clamp(y, -1, 1))
+    },
+    // Live "renovation" — recolor the room surfaces, sky, and board.
+    setTheme(key) {
+      const t = THEMES[key] ?? THEMES.classic
+      scene.background.set(t.bg)
+      scene.fog.color.set(t.bg)
+      renderer.setClearColor(t.bg)
+      roomMats.wall.color.set(t.wall)
+      roomMats.floor.color.set(t.floor)
+      roomMats.ceiling.color.set(t.ceiling)
+      boardBg = t.board
+      drawBoard(lastBoardText)
+    },
   }
 
   function buildRoom() {
-    box({ x: 0, y: -0.05, z: 0, w: ROOM.halfX * 2, h: 0.1, d: ROOM.halfZ * 2, color: PALETTE.floor })
-    box({ x: 0, y: ROOM.height, z: 0, w: ROOM.halfX * 2, h: 0.1, d: ROOM.halfZ * 2, color: PALETTE.cream })
-    box({ x: 0, y: ROOM.height / 2, z: -ROOM.halfZ, w: ROOM.halfX * 2, h: ROOM.height, d: 0.2, color: PALETTE.wall })
-    box({ x: 0, y: ROOM.height / 2, z: ROOM.halfZ, w: ROOM.halfX * 2, h: ROOM.height, d: 0.2, color: PALETTE.wall })
-    box({ x: -ROOM.halfX, y: ROOM.height / 2, z: 0, w: 0.2, h: ROOM.height, d: ROOM.halfZ * 2, color: PALETTE.wall })
-    box({ x: ROOM.halfX, y: ROOM.height / 2, z: 0, w: 0.2, h: ROOM.height, d: ROOM.halfZ * 2, color: PALETTE.wall })
+    box({ x: 0, y: -0.05, z: 0, w: ROOM.halfX * 2, h: 0.1, d: ROOM.halfZ * 2, mat: roomMats.floor })
+    box({ x: 0, y: ROOM.height, z: 0, w: ROOM.halfX * 2, h: 0.1, d: ROOM.halfZ * 2, mat: roomMats.ceiling })
+    box({ x: 0, y: ROOM.height / 2, z: -ROOM.halfZ, w: ROOM.halfX * 2, h: ROOM.height, d: 0.2, mat: roomMats.wall })
+    box({ x: 0, y: ROOM.height / 2, z: ROOM.halfZ, w: ROOM.halfX * 2, h: ROOM.height, d: 0.2, mat: roomMats.wall })
+    box({ x: -ROOM.halfX, y: ROOM.height / 2, z: 0, w: 0.2, h: ROOM.height, d: ROOM.halfZ * 2, mat: roomMats.wall })
+    box({ x: ROOM.halfX, y: ROOM.height / 2, z: 0, w: 0.2, h: ROOM.height, d: ROOM.halfZ * 2, mat: roomMats.wall })
 
     for (let i = 0; i < 5; i += 1) {
       const x = -3.7 + i * 1.85
@@ -294,7 +350,7 @@ export function buildClassroom({ mount, competency, onNearBoard, onInteract }) {
 
   function drawBoard(text, flash) {
     const { ctx, texture } = board
-    ctx.fillStyle = flash === true ? '#1f7a56' : flash === false ? '#87333a' : '#27433b'
+    ctx.fillStyle = flash === true ? '#1f7a56' : flash === false ? '#87333a' : boardBg
     ctx.fillRect(0, 0, 1024, 512)
     ctx.strokeStyle = '#b98a5a'
     ctx.lineWidth = 18
@@ -464,6 +520,7 @@ export function buildClassroom({ mount, competency, onNearBoard, onInteract }) {
     window.removeEventListener('keydown', onKeyDown)
     window.removeEventListener('keyup', onKeyUp)
     window.removeEventListener('resize', onResize)
+    window.removeEventListener('orientationchange', onOrient)
     renderer.domElement.removeEventListener('click', onCanvasClick)
     renderer.domElement.removeEventListener('contextmenu', onContextMenu)
     renderer.domElement.removeEventListener('mousedown', onMouseDown)

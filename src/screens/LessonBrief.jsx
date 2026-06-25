@@ -1,23 +1,14 @@
 ﻿import { Card, Button, Doodles, RefBadge, MasteryBar } from '../ui/Primitives.jsx'
 import { Mascot } from '../ui/Mascot.jsx'
 import OnlineBadge from '../ui/OnlineBadge.jsx'
-import { masteryLabel } from '../lib/mastery.js'
-
-// Friendly short titles per competency (the big flashcard headline in the design).
-const TITLES = {
-  'G6-NA-PERCENT-01': 'Percent, Fractions & Decimals',
-  'G6-NA-PERCENT-02': 'Percentage, Rate & Base',
-  'G6-NA-PERCENT-03': 'Percent & Discounts',
-  'G6-NA-RATIO-01': 'Ratio & Proportion',
-  'G6-NA-DEC-01': 'Decimal Operations',
-  'G6-NA-GCFLCM-01': 'GCF & LCM',
-}
+import { masteryColor } from '../lib/mastery.js'
+import { topicTitle, topicArea } from '../lib/topics.js'
 
 // Lesson brief - design basis: Stitch "Gabay - Lesson View".
 // header -> title card -> "Ang gagawin mo" -> progress -> stat tiles -> sticky 2D/3D entry.
 export default function LessonBrief({ competency, score = 0.5, online = true, onEnter, onEnter3D, onBack }) {
   const c = competency
-  const title = TITLES[c.ref] ?? c.competency
+  const title = topicTitle(c.ref, c.competency)
   const pct = Math.round((score ?? 0.5) * 100)
 
   const tasks = [
@@ -82,8 +73,12 @@ export default function LessonBrief({ competency, score = 0.5, online = true, on
       <div className="mt-4 grid grid-cols-2 gap-3">
         <StatTile color="mint" big={`${pct}%`} label="Mastery" />
         <StatTile color="yellow" big={String(c.items.length)} label="Mga Tanong" />
-        <StatTile color="sky" big="NA" label="Number & Algebra" />
-        <StatTile color="rose" big={masteryLabel(score).split(' ')[0]} label="Antas" />
+        <StatTile color="sky" big="N&A" label={topicArea(c.ref)} />
+        <StatTile
+          color={masteryColor(score).bg.replace('bg-', '')}
+          big={{ red: 'Umpisa', orange: 'Kaya pa', green: 'Mabuti' }[masteryColor(score).band]}
+          label="Antas"
+        />
       </div>
 
       {/* mascot line */}

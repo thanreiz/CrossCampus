@@ -85,9 +85,14 @@ export async function askTeacherGabay(question, ref, lang = DEFAULT_LANG) {
   }
 
   // 3. Floor — cached pre-generated explanation in the chosen language
+  const offline = {
+    en: "Sorry, we're offline and on-device AI isn't ready yet. Read the explanation on the board first. 💛",
+    fil: 'Pasensya, offline tayo at wala pang on-device AI. Basahin muna ang paliwanag sa pisara. 💛',
+    taglish: 'Pasensya, offline tayo at wala pang on-device AI. Basahin muna ang paliwanag sa pisara. 💛',
+  }
   const text =
     competency?.explanation?.[lang] ??
     competency?.explanation?.taglish ??
-    'Pasensya, offline tayo at wala pang on-device AI. Basahin muna ang paliwanag sa pisara. 💛'
+    (offline[lang] ?? offline.taglish)
   return { text, source: SOURCE.CACHED, fromCache: false }
 }

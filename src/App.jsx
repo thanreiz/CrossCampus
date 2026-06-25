@@ -55,7 +55,7 @@ export default function App() {
     else if (key === 'games') setScreen('games')
     else if (key === 'profile') setScreen('progress')
   }
-  // Wrap a main screen with the persistent bottom nav.
+
   function withNav(activeKey, node) {
     return (
       <>
@@ -67,7 +67,7 @@ export default function App() {
 
   function goBrief(competency) {
     setActive(competency)
-    setCurrent(competency) // remember as the current lesson (Tuloy stays stable)
+    setCurrent(competency)
     setScreen('brief')
   }
 
@@ -98,6 +98,7 @@ export default function App() {
       return withNav(
         'lessons',
         <StartChoice
+          online={online}
           next={current ?? next}
           mastery={mastery}
           onAuto={() => setScreen('topics')}
@@ -110,6 +111,7 @@ export default function App() {
       return withNav(
         'practice',
         <TopicPicker
+          online={online}
           competencies={content}
           mastery={mastery}
           onPick={goBrief}
@@ -118,14 +120,16 @@ export default function App() {
       )
 
     case 'brief':
-      return (
+      return withNav(
+        'practice',
         <LessonBrief
+          online={online}
           competency={active}
           score={mastery[active.ref] ?? 0.5}
           onEnter={() => setScreen('classroom')}
           onEnter3D={() => setScreen('classroom3d')}
           onBack={() => setScreen('topics')}
-        />
+        />,
       )
 
     case 'classroom':
@@ -162,6 +166,7 @@ export default function App() {
       return withNav(
         'profile',
         <Progress
+          online={online}
           competencies={content}
           mastery={mastery}
           next={next}
@@ -171,11 +176,12 @@ export default function App() {
       )
 
     case 'games':
-      return withNav('games', <Games competencies={content} mastery={mastery} onAnswered={handleAnswered} />)
+      return withNav(
+        'games',
+        <Games online={online} competencies={content} mastery={mastery} onAnswered={handleAnswered} />,
+      )
 
     default:
-      return <Home onPick={() => setScreen('start')} />
+      return <Home online={online} onPick={() => setScreen('start')} />
   }
 }
-
-

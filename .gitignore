@@ -13,6 +13,11 @@ gabay-vertex-key.json
 *-vertex-key.json
 *-sa-key.json
 
+# Generated content for human review — not merged source
+src/content.generated.json
+# Pasted screenshots / scratch images
+image.png
+
 # Dev tooling / scratch — not part of the app
 .tmp-chrome-profile*/
 shots/

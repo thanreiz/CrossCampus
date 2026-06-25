@@ -1,16 +1,43 @@
-// Serverless ElevenLabs text-to-speech for Voice-OUT (Vercel Function, Node).
-// The PWA POSTs { text } here; this returns audio/mpeg bytes for a human-sounding
-// Filipino Gabay voice. ONLINE-ONLY — the client falls back to on-device
+// Serverless Google Cloud Text-to-Speech for Voice-OUT (Vercel Function, Node).
+// The PWA POSTs { text } here; this returns audio/mpeg bytes in a native
+// Filipino (fil-PH) voice. ONLINE-ONLY — the client falls back to on-device
 // speechSynthesis when offline or when this is unconfigured.
 //
-// Env vars (Vercel Project Settings -> Environment Variables):
-//   ELEVENLABS_API_KEY   your ElevenLabs key (server-only, NEVER client)
-//   ELEVENLABS_VOICE_ID  voice id to use (a Filipino-capable voice)
-//   ELEVENLABS_MODEL     optional, default eleven_multilingual_v2 (supports Filipino)
+// Reuses the SAME Vertex service-account creds as api/tutor.js — billed to the
+// GCP project. Requires the Cloud TTS API enabled (texttospeech.googleapis.com).
 //
-// If the key/voice are unset, returns 501 so the client uses speechSynthesis.
+// Env vars (same GCP_SA_KEY as the tutor):
+//   GCP_SA_KEY   service-account JSON, single-line (NEVER client)
+//   TTS_VOICE    optional voice name (default fil-PH-Wavenet-A — female, natural)
+//   TTS_LANG     optional language code (default fil-PH)
+//
+// Unset creds -> 501 so the client uses speechSynthesis.
 
-const MODEL = process.env.ELEVENLABS_MODEL || 'eleven_multilingual_v2'
+import textToSpeech from '@google-cloud/text-to-speech'
+
+const VOICE = process.env.TTS_VOICE || 'fil-PH-Wavenet-A'
+const LANG = process.env.TTS_LANG || 'fil-PH'
+
+function getCredentials() {
+  if (!process.env.GCP_SA_KEY) return null
+  try {
+    return JSON.parse(process.env.GCP_SA_KEY)
+  } catch {
+    return null
+  }
+}
+
+let _client = null
+function ttsClient() {
+  if (_client) return _client
+  const credentials = getCredentials()
+  if (!credentials) return null
+  _client = new textToSpeech.TextToSpeechClient({
+    credentials,
+    projectId: credentials.project_id,
+  })
+  return _client
+}
 
 export default async function handler(req, res) {
   if (req.method !== 'POST') {
@@ -18,10 +45,9 @@ export default async function handler(req, res) {
     return res.status(405).json({ error: 'Method Not Allowed' })
   }
 
-  const apiKey = process.env.ELEVENLABS_API_KEY
-  const voiceId = process.env.ELEVENLABS_VOICE_ID
+  const client = ttsClient()
   // Not configured — signal client to fall back to speechSynthesis.
-  if (!apiKey || !voiceId) return res.status(501).json({ error: 'tts_unconfigured' })
+  if (!client) return res.status(501).json({ error: 'tts_unconfigured' })
 
   let body = req.body
   if (typeof body === 'string') {
@@ -33,33 +59,16 @@ export default async function handler(req, res) {
   }
   const text = (body?.text || '').toString().trim()
   if (!text) return res.status(400).json({ error: 'no_text' })
-  // Guard cost/latency — Gabay lines are short; cap hard.
+  // Gabay lines are short; cap hard to guard cost/latency.
   const clipped = text.slice(0, 800)
 
   try {
-    const r = await fetch(
-      `https://api.elevenlabs.io/v1/text-to-speech/${voiceId}?output_format=mp3_44100_128`,
-      {
-        method: 'POST',
-        headers: {
-          'xi-api-key': apiKey,
-          'Content-Type': 'application/json',
-          Accept: 'audio/mpeg',
-        },
-        body: JSON.stringify({
-          text: clipped,
-          model_id: MODEL,
-          voice_settings: { stability: 0.5, similarity_boost: 0.75 },
-        }),
-      }
-    )
-
-    if (!r.ok) {
-      const detail = await r.text().catch(() => '')
-      return res.status(502).json({ error: 'tts_failed', status: r.status, detail })
-    }
-
-    const buf = Buffer.from(await r.arrayBuffer())
+    const [response] = await client.synthesizeSpeech({
+      input: { text: clipped },
+      voice: { languageCode: LANG, name: VOICE },
+      audioConfig: { audioEncoding: 'MP3', speakingRate: 0.96, pitch: 1.0 },
+    })
+    const buf = Buffer.from(response.audioContent)
     res.setHeader('Content-Type', 'audio/mpeg')
     res.setHeader('Cache-Control', 'public, max-age=86400')
     return res.status(200).send(buf)

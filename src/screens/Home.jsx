@@ -1,5 +1,6 @@
 ﻿import { Mascot } from '../ui/Mascot.jsx'
 import { Doodles } from '../ui/Primitives.jsx'
+import OnlineBadge from '../ui/OnlineBadge.jsx'
 
 // Home = a hallway with doors. Design basis: Stitch "Gabay - Home Hallway".
 const DOORS = [
@@ -46,10 +47,7 @@ export default function Home({ onPick, online = true }) {
           </span>
           <span className="font-display text-2xl font-extrabold">Gabay</span>
         </div>
-        <span className="flex items-center gap-2 rounded-full border-[2.5px] border-outline bg-mint px-3 py-1 shadow-hard-sm">
-          <span className={`h-2.5 w-2.5 rounded-full ${online ? 'animate-pulse bg-green-700' : 'bg-rose'}`} />
-          <span className="text-xs font-bold">{online ? 'Online' : 'Offline'}</span>
-        </span>
+        <OnlineBadge online={online} className="bg-mint" />
       </header>
 
       <Doodles />
@@ -138,4 +136,5 @@ function ShopIcon() {
     </svg>
   )
 }
+
 

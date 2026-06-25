@@ -1,5 +1,6 @@
-import { Card, Button, Doodles, RefBadge, MasteryBar } from '../ui/Primitives.jsx'
+﻿import { Card, Button, Doodles, RefBadge, MasteryBar } from '../ui/Primitives.jsx'
 import { Mascot } from '../ui/Mascot.jsx'
+import OnlineBadge from '../ui/OnlineBadge.jsx'
 import { masteryLabel } from '../lib/mastery.js'
 
 // Friendly short titles per competency (the big flashcard headline in the design).
@@ -12,9 +13,9 @@ const TITLES = {
   'G6-NA-GCFLCM-01': 'GCF & LCM',
 }
 
-// Lesson brief — design basis: Stitch "Gabay - Lesson View".
+// Lesson brief - design basis: Stitch "Gabay - Lesson View".
 // header -> title card -> "Ang gagawin mo" -> progress -> stat tiles -> sticky 2D/3D entry.
-export default function LessonBrief({ competency, score = 0.5, onEnter, onEnter3D, onBack }) {
+export default function LessonBrief({ competency, score = 0.5, online = true, onEnter, onEnter3D, onBack }) {
   const c = competency
   const title = TITLES[c.ref] ?? c.competency
   const pct = Math.round((score ?? 0.5) * 100)
@@ -26,7 +27,7 @@ export default function LessonBrief({ competency, score = 0.5, onEnter, onEnter3
   ]
 
   return (
-    <div className="gb-shell relative flex min-h-screen flex-col px-5 pb-10 pt-6">
+    <div className="gb-shell relative flex min-h-screen flex-col px-5 pb-28 pt-6">
       <Doodles />
 
       {/* header */}
@@ -35,6 +36,7 @@ export default function LessonBrief({ competency, score = 0.5, onEnter, onEnter3
           Back
         </button>
         <div className="flex items-center gap-2">
+          <OnlineBadge online={online} />
           <Mascot size={36} />
           <span className="font-display text-xl font-extrabold">Gabay</span>
         </div>
@@ -93,10 +95,10 @@ export default function LessonBrief({ competency, score = 0.5, onEnter, onEnter3
       {/* entry buttons (inline so nothing is hidden) */}
       <div className="mt-6 grid gap-3">
         <Button color="mint" className="text-lg" onClick={onEnter}>
-          Pumasok sa 2D Klase →
+          Pumasok sa 2D Klase &rarr;
         </Button>
         <Button color="sky" className="text-lg" onClick={onEnter3D}>
-          3D Klase (beta) →
+          3D Klase (beta) &rarr;
         </Button>
       </div>
     </div>
@@ -111,3 +113,7 @@ function StatTile({ color, big, label }) {
     </Card>
   )
 }
+
+
+
+

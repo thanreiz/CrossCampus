@@ -9,6 +9,7 @@
         "build": "vite build",
         "preview": "vite preview",
         "icons": "node scripts/generate-icons.mjs",
+        "gen:content": "node --env-file=.env scripts/generate-content.js",
         "codex:usage": "node scripts/codex-usage.mjs"
     },
     "dependencies": {

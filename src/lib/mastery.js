@@ -1,4 +1,4 @@
-import { get, set } from 'idb-keyval'
+﻿import { get, set } from 'idb-keyval'
 
 // Adaptive mastery engine. Per-competency score 0..1 persisted in IndexedDB.
 // No localStorage/sessionStorage (constraint). idb-keyval handles offline persistence.
@@ -38,7 +38,7 @@ export async function recordAnswer(ref, correct) {
   return mastery[ref]
 }
 
-// "What's next?" — lowest mastery, with due-soon as tie-breaker.
+// "What's next?" - lowest mastery, with due-soon as tie-breaker.
 export function pickNext(competencies, mastery, due) {
   let best = null
   let bestKey = Infinity
@@ -57,8 +57,9 @@ export function pickNext(competencies, mastery, due) {
 
 export function masteryLabel(score) {
   const m = score ?? DEFAULT
-  if (m >= 0.8) return 'Magaling! 🌟'
-  if (m >= 0.6) return 'Mabuti 👍'
-  if (m >= 0.4) return 'Kaya pa 💪'
-  return 'Simulan natin 🌱'
+  if (m >= 0.8) return 'Magaling!'
+  if (m >= 0.6) return 'Mabuti'
+  if (m >= 0.4) return 'Kaya pa'
+  return 'Simulan natin'
 }
+

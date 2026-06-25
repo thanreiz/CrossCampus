@@ -55,11 +55,28 @@ export function pickNext(competencies, mastery, due) {
   return best
 }
 
-export function masteryLabel(score) {
+// Consistent 3-band progress system used everywhere (Profile, bars, cards):
+//   red    "Simulan na natin"  — just starting
+//   orange "Kaya pa"           — getting there
+//   green  "Mabuti"            — strong
+export function masteryBand(score) {
   const m = score ?? DEFAULT
-  if (m >= 0.8) return 'Magaling!'
-  if (m >= 0.6) return 'Mabuti'
-  if (m >= 0.4) return 'Kaya pa'
-  return 'Simulan natin'
+  if (m >= 0.7) return 'green'
+  if (m >= 0.4) return 'orange'
+  return 'red'
+}
+
+const BAND_LABEL = { red: 'Simulan na natin', orange: 'Kaya pa', green: 'Mabuti' }
+// Tailwind bg classes (the only place these colors are decided).
+const BAND_BG = { red: 'bg-rose', orange: 'bg-peach', green: 'bg-mint' }
+const BAND_FILL = { red: 'bg-rose', orange: 'bg-[#f7b955]', green: 'bg-mint' }
+
+export function masteryLabel(score) {
+  return BAND_LABEL[masteryBand(score)]
+}
+
+export function masteryColor(score) {
+  const band = masteryBand(score)
+  return { band, label: BAND_LABEL[band], bg: BAND_BG[band], fill: BAND_FILL[band] }
 }
 

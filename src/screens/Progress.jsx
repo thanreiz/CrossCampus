@@ -8,11 +8,8 @@ export default function Progress({ competencies, mastery, next, onPick, onBack }
   const avg = scores.reduce((a, b) => a + b, 0) / (scores.length || 1)
 
   return (
-    <div className="gb-shell relative flex min-h-screen flex-col px-5 pb-10 pt-6">
+    <div className="gb-shell relative flex min-h-screen flex-col px-5 pb-28 pt-6">
       <Doodles />
-      <button className="mb-4 self-start gb-chip bg-white" onClick={onBack}>
-        ← Bahay
-      </button>
 
       <div className="mb-4 flex items-center gap-3">
         <Mascot size={64} />

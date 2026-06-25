@@ -118,8 +118,12 @@ The claims that most need human verification against a primary or offline/paywal
 
 The highest-confidence findings are the ones grounded directly in currently accessible official sources: the 2024 PSA population count, the 2024 and 2019 PSA household internet figures, the existence of DepEd OER and Project Bukas, and the product scope described in the build plan.
 
-## Sources
+## Sources / References
 
-- PSA NICTHS (household internet access): https://psa.gov.ph/statistics/nicths/node/1684077807
-- PSA Population and Housing (2024 population count): https://psa.gov.ph/statistics/population-and-housing/node/1684077791
-- DepEd official site (OER, Project Bukas): https://www.deped.gov.ph/
+1. PSA NICTHS — household internet access: https://psa.gov.ph/statistics/nicths/node/1684077807
+2. PSA Population and Housing — 2024 population count: https://psa.gov.ph/statistics/population-and-housing/node/1684077791
+3. DepEd official site — OER, Project Bukas: https://www.deped.gov.ph/
+4. TIMSS (Trends in International Mathematics and Science Study): https://en.wikipedia.org/wiki/Trends_in_International_Mathematics_and_Science_Study
+5. PISA (Programme for International Student Assessment): https://en.wikipedia.org/wiki/Programme_for_International_Student_Assessment
+6. 2025 State of the Nation Address (Philippines): https://en.wikipedia.org/wiki/2025_State_of_the_Nation_Address_%28Philippines%29
+7. Freedom of Information Order (Philippines): https://en.wikipedia.org/wiki/Freedom_of_Information_Order_%28Philippines%29

@@ -5,4 +5,18 @@ dist-ssr
 .DS_Store
 .env
 .env.*
+!.env.example
 dev-dist
+
+# Vertex/GCP service-account key — NEVER commit (live credential)
+gabay-vertex-key.json
+*-vertex-key.json
+*-sa-key.json
+
+# Dev tooling / scratch — not part of the app
+.tmp-chrome-profile*/
+shots/
+*.log
+test-results/
+playwright-report/
+memory/

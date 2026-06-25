@@ -1,5 +1,6 @@
-import { Card, Button, Doodles, MasteryBar } from '../ui/Primitives.jsx'
+﻿import { Card, Button, Doodles, MasteryBar } from '../ui/Primitives.jsx'
 import { Mascot } from '../ui/Mascot.jsx'
+import OnlineBadge from '../ui/OnlineBadge.jsx'
 
 const TITLES = {
   'G6-NA-PERCENT-01': 'Percent, Fractions & Decimals',
@@ -10,8 +11,8 @@ const TITLES = {
   'G6-NA-GCFLCM-01': 'GCF & LCM',
 }
 
-// Start choice — design basis: Stitch "Gabay - Start Choice".
-export default function StartChoice({ next, mastery, onAuto, onBrowse, onBack }) {
+// Start choice - design basis: Stitch "Gabay - Start Choice".
+export default function StartChoice({ next, mastery, online = true, onAuto, onBrowse, onBack }) {
   const score = next ? mastery[next.ref] ?? 0.5 : 0.5
   const pct = Math.round(score * 100)
   const title = next ? TITLES[next.ref] ?? next.competency : ''
@@ -26,6 +27,7 @@ export default function StartChoice({ next, mastery, onAuto, onBrowse, onBack })
           Back
         </button>
         <div className="flex items-center gap-2">
+          <OnlineBadge online={online} />
           <Mascot size={36} />
           <span className="font-display text-xl font-extrabold">Gabay</span>
         </div>
@@ -42,7 +44,7 @@ export default function StartChoice({ next, mastery, onAuto, onBrowse, onBack })
       {next && (
         <Card color="mint" className="gb-pop mb-4 p-5">
           <span className="gb-chip bg-white shadow-hard-sm text-[10px] uppercase tracking-wide">
-            01 · Tuloy
+            01 - Tuloy
           </span>
           <h2 className="mt-2 font-display text-2xl font-extrabold leading-tight">
             Ituloy ang aralin
@@ -58,7 +60,7 @@ export default function StartChoice({ next, mastery, onAuto, onBrowse, onBack })
           </div>
 
           <Button color="yellow" className="mt-4 w-full text-lg" onClick={() => onAuto(next)}>
-            Magsimula na →
+            Magsimula na &rarr;
           </Button>
         </Card>
       )}
@@ -66,7 +68,7 @@ export default function StartChoice({ next, mastery, onAuto, onBrowse, onBack })
       {/* 02 - TINGNAN */}
       <Card color="sky" className="gb-pop p-5">
         <span className="gb-chip bg-white shadow-hard-sm text-[10px] uppercase tracking-wide">
-          02 · Tingnan
+          02 - Tingnan
         </span>
         <h2 className="mt-2 font-display text-2xl font-extrabold leading-tight">
           Tingnan lahat ng topics
@@ -75,9 +77,13 @@ export default function StartChoice({ next, mastery, onAuto, onBrowse, onBack })
           Hanapin ang buong listahan ng mga aralin sa Number & Algebra.
         </p>
         <Button color="white" className="mt-4 w-full text-lg" onClick={onBrowse}>
-          Tingnan ang listahan →
+          Tingnan ang listahan &rarr;
         </Button>
       </Card>
     </div>
   )
 }
+
+
+
+

@@ -1,6 +1,7 @@
 ﻿import { useEffect, useMemo, useRef, useState } from 'react'
 import { Button, RefBadge, MasteryBar } from '../ui/Primitives.jsx'
 import { Mascot, SpeechBubble } from '../ui/Mascot.jsx'
+import OnlineBadge from '../ui/OnlineBadge.jsx'
 import { checkAnswer } from '../lib/check.js'
 import { speak, stopSpeaking, isSpeechSupported } from '../lib/speech.js'
 import { askTeacherGabay, SOURCE } from '../lib/tutor.js'
@@ -174,7 +175,10 @@ export default function Classroom({ competency, score, online, onAnswered, onExi
       {/* top bar */}
       <div className="mb-3 flex items-center justify-between gap-2">
         <button className="gb-chip bg-white" onClick={onExit}>Exit</button>
-        <RefBadge refId={c.ref} domain={c.domain} />
+        <div className="flex items-center gap-2">
+          <OnlineBadge online={online} />
+          <RefBadge refId={c.ref} domain={c.domain} />
+        </div>
       </div>
 
       {/* CHALKBOARD */}
@@ -352,5 +356,7 @@ export default function Classroom({ competency, score, online, onAnswered, onExi
     </div>
   )
 }
+
+
 
 

@@ -126,22 +126,31 @@ Manual browser test remaining:
 - ✅ wired into 2D Classroom "🙋 Itaas ang kamay" ask panel (source chip + replay + voice-out)
 
 ### 8. Voice-IN — ✅ `src/lib/voicein.js`
-- ✅ `SpeechRecognition` / `webkitSpeechRecognition` wrapper, `lang='fil-PH'` placeholder
-- ✅ mic enabled only when `navigator.onLine` (App passes `online`; toggles on online/offline events)
-- ✅ recognized text auto-asks Gabay; recognizer stopped on unmount
-- ⬜ pre-test Taglish recognition accuracy on real device before demo (known shaky)
+- ✅ **Gemini audio STT (best Taglish)** — MediaRecorder mic → `POST /api/transcribe` (`api/transcribe.js`, gemini-2.5-flash)
+- ✅ fallback → browser `SpeechRecognition` (`lang='fil-PH'`) when Gemini STT unconfigured/fails
+- ✅ floor → student types
+- ✅ mic enabled only when `navigator.onLine`; recorder/recognizer stopped on unmount
+- ⬜ pre-test Taglish accuracy on real device before demo
 
-### 9. Serverless tutor stub — ✅ `api/tutor.js`
+### 8b. Voice-OUT upgrade — ✅ `src/lib/speech.js` + `api/tts.js`
+- ✅ online → **Google Cloud TTS fil-PH** (`POST /api/tts`, `fil-PH-Wavenet-A`) — reuses Vertex SA creds, billed to $300 credit, **live-tested** (46 KB mp3)
+- ✅ floor → on-device `speechSynthesis` (offline, unchanged)
+- ✅ audio cached in IndexedDB `tts:{hash}` (offline replay, zero-cost repeats)
+- ✅ Cloud TTS API enabled (`texttospeech.googleapis.com`); voice override via `TTS_VOICE`
+- ⚠️ ElevenLabs dropped — free tier blocks library voices via API (402 paid_plan_required)
+
+### 9. Serverless tutor — ✅ `api/tutor.js` — **real Vertex wired**
 - ✅ `/api/tutor` Vercel Function, kept separate from client
-- ✅ returns curriculum-grounded placeholder so the full chain is testable end-to-end
-- ⬜ actual Vertex/Gemini call left as clearly-marked TODO (creds via Vercel env var, never client)
-- ⬜ deploy to Vercel + set service-account env var
+- ✅ **real Gemini call** via modern `@google/genai` (Vertex mode), default `gemini-2.5-pro`
+- ✅ no creds → curriculum-grounded placeholder (chain still testable); error → 502 → client cached floor
+- ✅ GCP auth done: project `gen-lang-client-0532531299`, SA `pantrysnap-ai@…` (Vertex AI User), key created + gitignored, `.env` verified, **live call confirmed** ("Hello, musta?")
+- ⬜ deploy to Vercel + set env vars (GCP_PROJECT, GCP_LOCATION, GCP_SA_KEY, GEMINI_MODEL)
 
 ---
 
 ## Build-time / pre-demo (from plan Â§8, not app code)
-- â¬œ Featherless content generation pipeline (`scripts/generate-content.js`) â€” *currently seeded by hand; optional*
-- â¬œ Nano pre-demo prep (Chrome 148+, flags, `chrome://components` download, airplane-mode verify)
+- ✅ Featherless content generation pipeline (`scripts/generate-content.js`, `npm run gen:content`) — outputs `src/content.generated.json` for review; needs `FEATHERLESS_API_KEY`
+- ✅ Nano **confirmed working on real device** (`availability() === 'available'`); prep in `docs/NANO_SETUP.md`
 - â¬œ rehearse 3-min demo script twice incl. airplane mode
 
 ---

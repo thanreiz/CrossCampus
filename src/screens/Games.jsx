@@ -1,6 +1,7 @@
 ﻿import { useMemo, useState } from 'react'
 import { Card, Button, Doodles, RefBadge, MasteryBar } from '../ui/Primitives.jsx'
 import { Mascot } from '../ui/Mascot.jsx'
+import OnlineBadge from '../ui/OnlineBadge.jsx'
 import { checkAnswer } from '../lib/check.js'
 
 const ROUND_SPECS = [
@@ -56,7 +57,7 @@ const ROUND_SPECS = [
   },
 ]
 
-export default function Games({ competencies = [], mastery = {}, onAnswered = async () => {} }) {
+export default function Games({ online = true, competencies = [], mastery = {}, onAnswered = async () => {} }) {
   const rounds = useMemo(() => {
     return ROUND_SPECS.map((round) => {
       const competency = competencies.find((c) => c.ref === round.ref)
@@ -110,11 +111,9 @@ export default function Games({ competencies = [], mastery = {}, onAnswered = as
     return (
       <div className="gb-shell relative min-h-screen px-5 pb-28 pt-6">
         <Doodles />
-        <Header />
+        <Header online={online} />
         <section className="relative z-10 mt-5 overflow-hidden rounded-card border-[2.5px] border-outline bg-peach p-5 shadow-hard">
-          <div className="absolute right-4 top-4 rounded-full border-2 border-outline bg-white px-3 py-1 text-xs font-extrabold">
-            Offline
-          </div>
+          <OnlineBadge online={online} className="absolute right-4 top-4" />
           <div className="flex min-h-[210px] flex-col justify-end rounded-card border-[2.5px] border-outline bg-[#f7d26a] p-4">
             <ShopAwning />
             <h1 className="mt-5 font-display text-3xl font-extrabold leading-tight">Tindahan Game</h1>
@@ -141,7 +140,7 @@ export default function Games({ competencies = [], mastery = {}, onAnswered = as
     return (
       <div className="gb-shell relative flex min-h-screen flex-col px-5 pb-28 pt-6">
         <Doodles />
-        <Header />
+        <Header online={online} />
         <Card color="mint" className="gb-pop mt-6 p-6 text-center">
           <div className="mx-auto mb-4 flex h-24 w-24 items-center justify-center rounded-card border-[2.5px] border-outline bg-white">
             <ShopIcon />
@@ -162,7 +161,7 @@ export default function Games({ competencies = [], mastery = {}, onAnswered = as
   return (
     <div className="gb-shell relative min-h-screen overflow-hidden px-5 pb-28 pt-6">
       <Doodles />
-      <Header />
+      <Header online={online} />
 
       <div className="relative z-10 mt-4 flex items-center justify-between gap-2">
         <RefBadge refId={round.ref} domain={round.competency?.domain ?? 'Number and Algebra'} />
@@ -255,11 +254,14 @@ export default function Games({ competencies = [], mastery = {}, onAnswered = as
   )
 }
 
-function Header() {
+function Header({ online = true }) {
   return (
-    <div className="relative z-10 flex items-center gap-2">
-      <Mascot size={36} />
-      <span className="font-display text-xl font-extrabold">Gabay Games</span>
+    <div className="relative z-10 flex items-center justify-between gap-2">
+      <div className="flex min-w-0 items-center gap-2">
+        <Mascot size={36} />
+        <span className="font-display text-xl font-extrabold">Gabay Games</span>
+      </div>
+      <OnlineBadge online={online} className="shrink-0" />
     </div>
   )
 }
@@ -292,3 +294,5 @@ function ShopIcon() {
     </svg>
   )
 }
+
+

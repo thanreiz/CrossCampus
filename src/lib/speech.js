@@ -1,7 +1,7 @@
 // Voice-OUT: Teacher Gabay reads replies aloud. Best-available-first chain:
-//   1. online -> POST /api/tts (ElevenLabs Filipino voice, human-sounding)
+//   1. online -> POST /api/tts (Google Cloud TTS fil-PH voice, natural)
 //   2. floor  -> on-device speechSynthesis (works fully OFFLINE, robotic)
-// ElevenLabs audio is cached in IndexedDB (tts:{hash}) so repeats cost nothing
+// Returned audio is cached in IndexedDB (tts:{hash}) so repeats cost nothing
 // and replay works offline once heard.
 
 import { get, set } from 'idb-keyval'

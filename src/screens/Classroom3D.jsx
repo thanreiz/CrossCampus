@@ -1,6 +1,7 @@
 ﻿import { useEffect, useRef, useState } from 'react'
 import { buildClassroom } from '../three/scene.js'
 import { Button, RefBadge } from '../ui/Primitives.jsx'
+import OnlineBadge from '../ui/OnlineBadge.jsx'
 import { checkAnswer } from '../lib/check.js'
 import { speak, stopSpeaking } from '../lib/speech.js'
 
@@ -99,7 +100,8 @@ export default function Classroom3D({ competency, score, online, onAnswered, onE
       {/* top HUD */}
       <div className="pointer-events-none absolute left-0 right-0 top-0 flex items-center justify-between p-3">
         <button className="pointer-events-auto gb-chip bg-white" onClick={onExit}>Exit</button>
-        <div className="pointer-events-auto">
+        <div className="pointer-events-auto flex items-center gap-2">
+          <OnlineBadge online={online} />
           <RefBadge refId={c.ref} domain={c.domain} />
         </div>
       </div>
@@ -217,6 +219,9 @@ export default function Classroom3D({ competency, score, online, onAnswered, onE
     </div>
   )
 }
+
+
+
 
 
 

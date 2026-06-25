@@ -2,42 +2,17 @@
 import { Doodles } from '../ui/Primitives.jsx'
 import OnlineBadge from '../ui/OnlineBadge.jsx'
 import { LANGS } from '../lib/lang.js'
+import { makeT } from '../lib/i18n.js'
 
 // Home = a hallway with doors. Design basis: Stitch "Gabay - Home Hallway".
 const DOORS = [
-  {
-    key: 'lessons',
-    title: 'Mga Aralin',
-    status: 'Bagong aralin',
-    badge: 'OPEN',
-    cta: 'Buksan',
-    color: '#8FD9B6',
-    Icon: BookIcon,
-    locked: false,
-  },
-  {
-    key: 'classroom',
-    title: 'Teacher Gabay',
-    status: 'AI tutor',
-    badge: 'OPEN',
-    cta: 'Pasukin',
-    color: '#A9D8F0',
-    Icon: StarIcon,
-    locked: false,
-  },
-  {
-    key: 'games',
-    title: 'Tindahan Game',
-    status: 'Playable',
-    badge: 'OPEN',
-    cta: 'Laruin',
-    color: '#F4C3D0',
-    Icon: ShopIcon,
-    locked: false,
-  },
+  { key: 'lessons', titleKey: 'home.lessons.title', statusKey: 'home.lessons.status', ctaKey: 'home.lessons.cta', color: '#8FD9B6', Icon: BookIcon, locked: false },
+  { key: 'classroom', titleKey: 'home.classroom.title', statusKey: 'home.classroom.status', ctaKey: 'home.classroom.cta', color: '#A9D8F0', Icon: StarIcon, locked: false },
+  { key: 'games', titleKey: 'home.games.title', statusKey: 'home.games.status', ctaKey: 'home.games.cta', color: '#F4C3D0', Icon: ShopIcon, locked: false },
 ]
 
 export default function Home({ onPick, online = true, lang = 'taglish', onLang }) {
+  const tt = makeT(lang)
   return (
     <div className="gb-shell relative min-h-screen overflow-hidden pb-28">
       {/* top app bar */}
@@ -56,14 +31,14 @@ export default function Home({ onPick, online = true, lang = 'taglish', onLang }
       {/* hero */}
       <div className="relative z-10 px-5 pt-6">
         <span className="gb-chip bg-white shadow-hard-sm mb-2 text-[10px] uppercase tracking-wide">
-          Hallway ng Silid-Aralan
+          {tt('home.hallwayTag')}
         </span>
-        <h1 className="font-display text-3xl font-extrabold leading-tight">Kumusta, Ka-Gabay!</h1>
-        <p className="mt-1 text-sm font-bold text-ink/70">Saan tayo pupunta ngayon?</p>
+        <h1 className="font-display text-3xl font-extrabold leading-tight">{tt('home.greeting')}</h1>
+        <p className="mt-1 text-sm font-bold text-ink/70">{tt('home.subtitle')}</p>
 
         {/* Language picker — sets lesson + tutor language app-wide (persisted). */}
         <div className="mt-3 flex items-center gap-2">
-          <span className="text-xs font-extrabold uppercase tracking-wide text-ink/60">Wika</span>
+          <span className="text-xs font-extrabold uppercase tracking-wide text-ink/60">{tt('common.language')}</span>
           <div className="flex gap-1.5">
             {LANGS.map((l) => (
               <button
@@ -101,10 +76,10 @@ export default function Home({ onPick, online = true, lang = 'taglish', onLang }
                     d.locked ? 'bg-white text-ink/60' : 'bg-white'
                   }`}
                 >
-                  {d.badge}
+                  {tt('home.open')}
                 </span>
                 <span className="rounded-full border-2 border-outline bg-white/80 px-2.5 py-0.5 text-[10px] font-bold">
-                  {d.status}
+                  {tt(d.statusKey)}
                 </span>
               </div>
 
@@ -113,7 +88,7 @@ export default function Home({ onPick, online = true, lang = 'taglish', onLang }
                 <span className="flex h-16 w-16 items-center justify-center rounded-2xl border-[2.5px] border-outline bg-white">
                   <Icon />
                 </span>
-                <h2 className="mt-2 font-display text-xl font-extrabold leading-tight">{d.title}</h2>
+                <h2 className="mt-2 font-display text-xl font-extrabold leading-tight">{tt(d.titleKey)}</h2>
               </div>
 
               {/* inner button */}
@@ -122,7 +97,7 @@ export default function Home({ onPick, online = true, lang = 'taglish', onLang }
                 onClick={() => !d.locked && onPick(d.key)}
                 className="gb-btn mt-3 w-full bg-white disabled:opacity-50"
               >
-                {d.cta} {d.locked ? '' : '->'}
+                {tt(d.ctaKey)} {d.locked ? '' : '->'}
               </button>
             </div>
           )

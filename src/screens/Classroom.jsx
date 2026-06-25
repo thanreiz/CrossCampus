@@ -6,9 +6,11 @@ import { checkAnswer } from '../lib/check.js'
 import { speak, stopSpeaking, pauseSpeaking, resumeSpeaking, isSpeechSupported } from '../lib/speech.js'
 import { askTeacherGabay, SOURCE } from '../lib/tutor.js'
 import { LANGS, answerHint, speechLang } from '../lib/lang.js'
+import { makeT, localize } from '../lib/i18n.js'
 import { feedbackFor } from '../lib/feedback.js'
 import { recordAttempt } from '../lib/history.js'
 import { topicFull } from '../lib/topics.js'
+import { EarIcon, PlayCircleIcon, PauseCircleIcon, RaiseHandIcon } from '../ui/Icons.jsx'
 import {
   createRecognizer,
   isRecognitionSupported,
@@ -16,16 +18,16 @@ import {
   isMediaRecorderSupported,
 } from '../lib/voicein.js'
 
-const SOURCE_LABEL = {
-  [SOURCE.NANO]: 'On-device (offline)',
-  [SOURCE.ONLINE]: 'Teacher Gabay (online)',
-  [SOURCE.CACHED]: 'Naka-cache na paliwanag',
+const SOURCE_KEY = {
+  [SOURCE.NANO]: 'class.source.nano',
+  [SOURCE.ONLINE]: 'class.source.online',
+  [SOURCE.CACHED]: 'class.source.cached',
 }
 
 const TABS = [
-  { key: 'explain', label: 'Paliwanag' },
-  { key: 'example', label: 'Halimbawa' },
-  { key: 'practice', label: 'Pagsasanay' },
+  { key: 'explain', tkey: 'class.tab.explain' },
+  { key: 'example', tkey: 'class.tab.example' },
+  { key: 'practice', tkey: 'class.tab.practice' },
 ]
 
 // Strip **bold** markup before reading text aloud.
@@ -35,6 +37,7 @@ function plain(s) {
 
 export default function Classroom({ competency, score, online, lang = 'taglish', onLang, onAnswered, onExit }) {
   const c = competency
+  const tt = makeT(lang)
   const [tab, setTab] = useState('explain')
 
   const [idx, setIdx] = useState(0)
@@ -59,11 +62,12 @@ export default function Classroom({ competency, score, online, lang = 'taglish',
 
   // What Teacher Gabay "says" — drives both the bubble and voice-out.
   const bubble = useMemo(() => {
-    if (tab === 'explain') return c.explanation[lang]
-    if (tab === 'example') return c.worked_example
-    if (done) return `Tapos na! ${correctCount} sa ${c.items.length} ang tama. Magaling, iskolar!`
+    if (tab === 'explain') return localize(c.explanation, lang)
+    if (tab === 'example') return localize(c.worked_example, lang)
+    if (done) return tt('class.bubble.done', { correct: correctCount, total: c.items.length })
     if (result !== null && fb) return fb.ok ? fb.headline : `${fb.headline} ${plain(fb.body)}`
-    return `Tanong ${idx + 1} sa ${c.items.length}: Isulat ang sagot sa baba. Kaya mo 'yan!`
+    return tt('class.bubble.intro', { n: idx + 1, total: c.items.length })
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [tab, lang, c, done, result, fb, idx, correctCount])
 
   // Auto read aloud whenever Gabay's line changes (voice-out, works offline).
@@ -76,14 +80,15 @@ export default function Classroom({ competency, score, online, lang = 'taglish',
 
   async function submit() {
     if (result !== null) return
+    const locItem = { ...item, q: localize(item.q, lang), solution: localize(item.solution, lang) }
     const ok = checkAnswer(item, input)
-    const f = feedbackFor(item, ok, lang, idx)
+    const f = feedbackFor(locItem, ok, lang, idx)
     setResult(ok)
     setFb(f)
     if (ok) setCorrectCount((n) => n + 1)
-    const entry = { q: item.q, your: input.trim(), answer: item.answer, correct: ok, solution: item.solution }
+    const entry = { q: locItem.q, your: input.trim(), answer: item.answer, correct: ok, solution: locItem.solution }
     setAnswers((a) => [...a, entry])
-    recordAttempt({ ref: c.ref, q: item.q, your: input.trim(), answer: item.answer, correct: ok, feedback: ok ? f.headline : f.body })
+    recordAttempt({ ref: c.ref, q: locItem.q, your: input.trim(), answer: item.answer, correct: ok, feedback: ok ? f.headline : f.body })
     onAnswered(c.ref, ok)
   }
 
@@ -130,7 +135,7 @@ export default function Classroom({ competency, score, online, lang = 'taglish',
       setReply(r)
       speak(r.text, { lang })
     } catch {
-      setReply({ text: 'May problema sa pagsagot. Subukan ulit.', source: SOURCE.CACHED })
+      setReply({ text: tt('class.askError'), source: SOURCE.CACHED })
     } finally {
       setThinking(false)
     }
@@ -159,7 +164,7 @@ export default function Classroom({ competency, score, online, lang = 'taglish',
     if (listening) {
       // Voice cue so the learner isn't left in silence while we transcribe.
       setTranscribing(true)
-      speak('Sandali, pinapakinggan kita...', { lang })
+      speak(tt('class.listeningShort'), { lang })
       recRef.current?.stop()
       return
     }
@@ -196,7 +201,7 @@ export default function Classroom({ competency, score, online, lang = 'taglish',
     <div className="gb-shell relative flex min-h-screen flex-col bg-cream px-4 pb-6 pt-4">
       {/* top bar — hide the Online label while answering so it isn't distracting */}
       <div className="mb-3 flex items-center justify-between gap-2">
-        <button className="gb-chip bg-white text-base" onClick={onExit}>Exit</button>
+        <button className="gb-chip bg-white text-base" onClick={onExit}>{tt('common.exit')}</button>
         <div className="flex items-center gap-2">
           {tab !== 'practice' && <OnlineBadge online={online} />}
           <RefBadge refId={c.ref} domain={c.domain} />
@@ -217,7 +222,7 @@ export default function Classroom({ competency, score, online, lang = 'taglish',
                 tab === t.key ? 'bg-yellow text-ink' : 'text-cream'
               }`}
             >
-              {t.label}
+              {tt(t.tkey)}
             </button>
           ))}
         </div>
@@ -237,17 +242,17 @@ export default function Classroom({ competency, score, online, lang = 'taglish',
                 </button>
               ))}
             </div>
-            <p className="font-display text-lg leading-relaxed">{c.explanation[lang]}</p>
+            <p className="font-display text-lg leading-relaxed">{localize(c.explanation, lang)}</p>
           </>
         )}
 
         {tab === 'example' && (
-          <p className="font-display text-lg leading-relaxed">{c.worked_example}</p>
+          <p className="font-display text-lg leading-relaxed">{localize(c.worked_example, lang)}</p>
         )}
 
         {tab === 'practice' &&
           (done ? (
-            <Summary answers={answers} correctCount={correctCount} total={c.items.length} />
+            <Summary answers={answers} correctCount={correctCount} total={c.items.length} lang={lang} />
           ) : (
             <div>
               {/* immediate feedback banner at the TOP of the question */}
@@ -262,9 +267,9 @@ export default function Classroom({ competency, score, online, lang = 'taglish',
                 </div>
               )}
               <p className="text-sm text-cream/70">
-                Tanong {idx + 1} / {c.items.length}
+                {tt('common.question')} {idx + 1} / {c.items.length}
               </p>
-              <p className="mt-1 font-display text-xl font-bold leading-snug">{item.q}</p>
+              <p className="mt-1 font-display text-xl font-bold leading-snug">{localize(item.q, lang)}</p>
               {item.type === 'mcq' && item.options && (
                 <div className="mt-3 flex flex-wrap gap-2">
                   {item.options.map((opt) => (
@@ -292,20 +297,34 @@ export default function Classroom({ competency, score, online, lang = 'taglish',
         </div>
       </div>
 
-      {/* voice controls — listen / pause-resume / stop */}
+      {/* voice controls — listen again (ear) / pause-resume (play-pause circle) /
+          raise hand (person). Stop removed: pause/play already covers it. */}
       {isSpeechSupported() && (
         <div className="mt-2 flex flex-wrap items-center gap-2">
-          <button className="gb-chip bg-white text-base" onClick={() => { setPaused(false); speak(bubble, { lang }) }}>
-            Pakinggan ulit
+          <button
+            className="flex h-12 w-12 items-center justify-center rounded-full border-[2.5px] border-outline bg-white shadow-hard-sm active:translate-y-[1px]"
+            onClick={() => { setPaused(false); speak(bubble, { lang }) }}
+            aria-label={tt('class.listenAgain')}
+            title={tt('class.listenAgain')}
+          >
+            <EarIcon size={26} />
           </button>
-          <button className="gb-chip bg-white text-base" onClick={togglePause}>
-            {paused ? 'Ituloy' : 'I-pause'}
+          <button
+            className="flex h-12 w-12 items-center justify-center rounded-full border-[2.5px] border-outline bg-white shadow-hard-sm active:translate-y-[1px]"
+            onClick={togglePause}
+            aria-label={paused ? tt('class.play') : tt('class.pause')}
+            title={paused ? tt('class.play') : tt('class.pause')}
+          >
+            {paused ? <PlayCircleIcon size={28} /> : <PauseCircleIcon size={28} />}
           </button>
-          <button className="gb-chip bg-white text-base" onClick={() => { setPaused(false); stopSpeaking() }}>
-            Itigil
-          </button>
-          <button className="gb-chip bg-lavender shadow-hard-sm text-base" onClick={() => setAskOpen((v) => !v)}>
-            Itaas ang kamay
+          <button
+            className="flex h-12 items-center gap-2 rounded-full border-[2.5px] border-outline bg-lavender px-3 shadow-hard-sm active:translate-y-[1px]"
+            onClick={() => setAskOpen((v) => !v)}
+            aria-label={tt('class.raiseHand')}
+            title={tt('class.raiseHand')}
+          >
+            <RaiseHandIcon size={28} />
+            <span className="pr-1 text-sm font-bold">{tt('class.raiseHand')}</span>
           </button>
         </div>
       )}
@@ -318,39 +337,44 @@ export default function Classroom({ competency, score, online, lang = 'taglish',
               value={question}
               onChange={(e) => setQuestion(e.target.value)}
               onKeyDown={(e) => e.key === 'Enter' && askGabay()}
-              placeholder="Itanong kay Teacher Gabay..."
+              placeholder={tt('class.askPlaceholder')}
               className="min-w-0 flex-1 rounded-full border-[2.5px] border-outline px-4 py-2 text-base font-bold outline-none focus:bg-cream"
             />
             {(isRecognitionSupported() || isMediaRecorderSupported()) && (
               <button
                 onClick={toggleMic}
                 disabled={!online}
-                title={online ? 'Magsalita' : 'Mic — kailangan ng internet'}
+                title={online ? tt('class.speak') : tt('class.micOfflineTitle')}
                 className={`gb-chip text-base ${listening ? 'bg-rose animate-pulse' : 'bg-rose'} disabled:opacity-40`}
               >
-                {listening ? 'Itigil' : transcribing ? '...' : 'Mic'}
+                {listening ? tt('class.micStop') : transcribing ? '...' : tt('class.mic')}
               </button>
             )}
             <Button color="mint" onClick={() => askGabay()} disabled={thinking}>
-              {thinking ? '...' : 'Tanong'}
+              {thinking ? '...' : tt('class.ask')}
             </Button>
           </div>
           {transcribing && (
-            <p className="mt-2 text-sm font-bold text-ink/60">Pinapakinggan kita... sandali lang.</p>
+            <p className="mt-2 text-sm font-bold text-ink/60">{tt('class.listening')}</p>
           )}
           {!online && (
-            <p className="mt-2 text-sm text-ink/60">
-              Offline: sasagot pa rin si Gabay gamit ang on-device AI o cached na paliwanag. Mic ay online lang.
-            </p>
+            <p className="mt-2 text-sm text-ink/60">{tt('class.offlineNote')}</p>
           )}
           {reply && (
             <div className="mt-3 rounded-card border-[2.5px] border-outline bg-cream p-3">
               <p className="mb-1 text-xs font-bold text-ink/60">
-                {SOURCE_LABEL[reply.source] ?? ''} {reply.fromCache ? ' - cached' : ''}
+                {(reply.source && tt(SOURCE_KEY[reply.source])) || ''} {reply.fromCache ? ' - cached' : ''}
               </p>
               <p className="text-base leading-snug">{reply.text}</p>
               {isSpeechSupported() && (
-                <button className="mt-2 gb-chip bg-white" onClick={() => speak(reply.text, { lang })}>Pakinggan</button>
+                <button
+                  className="mt-2 flex h-10 w-10 items-center justify-center rounded-full border-[2.5px] border-outline bg-white shadow-hard-sm"
+                  onClick={() => speak(reply.text, { lang })}
+                  aria-label={tt('class.listenAgain')}
+                  title={tt('class.listenAgain')}
+                >
+                  <EarIcon size={22} />
+                </button>
               )}
             </div>
           )}
@@ -359,7 +383,7 @@ export default function Classroom({ competency, score, online, lang = 'taglish',
 
       {/* mastery */}
       <div className="mt-4 flex items-center gap-2">
-        <span className="text-sm font-bold text-ink/70">Mastery</span>
+        <span className="text-sm font-bold text-ink/70">{tt('common.mastery')}</span>
         <MasteryBar score={score} />
         <span className="text-sm font-bold">{Math.round((score ?? 0.5) * 100)}%</span>
       </div>
@@ -367,11 +391,11 @@ export default function Classroom({ competency, score, online, lang = 'taglish',
       {/* DESK BAR */}
       <div className="mt-auto pt-5">
         {tab !== 'practice' ? (
-          <Button color="yellow" className="w-full text-lg" onClick={() => setTab('practice')}>Simulan ang pagsasanay &rarr;</Button>
+          <Button color="yellow" className="w-full text-lg" onClick={() => setTab('practice')}>{tt('class.startPractice')} &rarr;</Button>
         ) : done ? (
           <div className="flex gap-2">
-            <Button color="white" className="flex-1 text-lg" onClick={restart}>Ulitin</Button>
-            <Button color="mint" className="flex-1 text-lg" onClick={onExit}>Tapos</Button>
+            <Button color="white" className="flex-1 text-lg" onClick={restart}>{tt('class.repeat')}</Button>
+            <Button color="mint" className="flex-1 text-lg" onClick={onExit}>{tt('common.done')}</Button>
           </div>
         ) : (
           <div className="gb-card bg-white p-3">
@@ -382,17 +406,17 @@ export default function Classroom({ competency, score, online, lang = 'taglish',
                 onChange={(e) => setInput(e.target.value)}
                 onKeyDown={(e) => e.key === 'Enter' && (result === null ? submit() : next())}
                 disabled={result !== null}
-                placeholder="Isulat ang sagot..."
+                placeholder={tt('common.answerPlaceholder')}
                 inputMode={item.type === 'mcq' ? 'text' : 'decimal'}
                 className="min-w-0 flex-1 rounded-full border-[2.5px] border-outline px-4 py-3 text-lg font-bold outline-none focus:bg-cream disabled:opacity-80"
               />
               {result === null ? (
                 <Button color="mint" className="text-lg" onClick={submit}>
-                  Sumagot
+                  {tt('class.answer')}
                 </Button>
               ) : (
                 <Button color="sky" className="text-lg" onClick={next}>
-                  {idx + 1 >= c.items.length ? 'Tapusin' : 'Susunod'}
+                  {idx + 1 >= c.items.length ? tt('common.finish') : tt('common.next')}
                 </Button>
               )}
             </div>
@@ -404,40 +428,41 @@ export default function Classroom({ competency, score, online, lang = 'taglish',
 }
 
 // Score summary: which were correct / wrong, with correct answer + explanation.
-function Summary({ answers, correctCount, total }) {
+function Summary({ answers, correctCount, total, lang = 'taglish' }) {
+  const tt = makeT(lang)
   const wrong = answers.filter((a) => !a.correct)
   return (
     <div>
       <div className="text-center">
-        <p className="font-display text-2xl font-extrabold">Tapos na!</p>
+        <p className="font-display text-2xl font-extrabold">{tt('summary.done')}</p>
         <p className="mt-1 text-lg">
-          {correctCount} / {total} tama
+          {tt('summary.scoreLine', { correct: correctCount, total })}
         </p>
         <div className="mt-2 flex justify-center gap-2 text-sm font-bold">
-          <span className="gb-chip bg-mint text-ink">Tama: {correctCount}</span>
-          <span className="gb-chip bg-rose text-ink">Mali: {total - correctCount}</span>
+          <span className="gb-chip bg-mint text-ink">{tt('common.correct')}: {correctCount}</span>
+          <span className="gb-chip bg-rose text-ink">{tt('common.wrong')}: {total - correctCount}</span>
         </div>
       </div>
       {wrong.length > 0 && (
         <div className="mt-4">
-          <p className="mb-2 text-sm font-extrabold text-cream/80">Balikan natin ang mga namali:</p>
+          <p className="mb-2 text-sm font-extrabold text-cream/80">{tt('class.reviewMissed')}</p>
           <div className="flex flex-col gap-2">
             {wrong.map((a, i) => (
               <div key={i} className="rounded-card border-2 border-cream/40 bg-cream p-3 text-ink">
                 <p className="text-sm font-bold">
-                  <span className="text-ink/60">Tanong:</span> {a.q}
+                  <span className="text-ink/60">{tt('common.question')}:</span> {a.q}
                 </p>
                 <p className="mt-1 text-sm font-bold">
-                  <span className="text-ink/60">Sagot mo:</span>{' '}
+                  <span className="text-ink/60">{tt('common.yourAnswer')}:</span>{' '}
                   <span className="text-rose-700">{a.your || '—'}</span>
                 </p>
                 <p className="mt-1 text-sm font-bold">
-                  <span className="text-ink/60">Tamang sagot:</span>{' '}
+                  <span className="text-ink/60">{tt('common.correctAnswer')}:</span>{' '}
                   <span className="text-green-700">{a.answer}</span>
                 </p>
                 {a.solution && (
                   <p className="mt-1 text-sm">
-                    <span className="font-bold text-ink/60">Paliwanag:</span> <RichText>{a.solution}</RichText>
+                    <span className="font-bold text-ink/60">{tt('common.explanation')}:</span> <RichText>{a.solution}</RichText>
                   </p>
                 )}
               </div>

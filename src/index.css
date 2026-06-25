@@ -75,3 +75,22 @@ body {
 .gb-float {
   animation: gb-float 3s ease-in-out infinite;
 }
+
+/* Stitch-parity helpers (design basis: "Gabay Math Study Companion") */
+.gb-hover-lift {
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+.gb-hover-lift:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0 0 #1c1410;
+}
+.gb-hover-lift:active {
+  transform: translate(4px, 4px);
+  box-shadow: 0 0 0 0 #1c1410;
+}
+
+/* Perspective hallway floor at the bottom of the Home screen */
+.gb-hallway-floor {
+  background: linear-gradient(180deg, transparent 0%, #e7d7d0 100%);
+  clip-path: polygon(20% 0%, 80% 0%, 100% 100%, 0% 100%);
+}

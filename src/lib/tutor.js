@@ -1,5 +1,6 @@
 import { get, set } from 'idb-keyval'
 import content from '../content.json'
+import { LANG_NAME, DEFAULT_LANG } from './lang.js'
 
 // Teacher Gabay tutor — best-available-first fallback chain (build plan §8):
 //   1. on-device Gemini Nano (works OFFLINE on capable laptops)
@@ -18,9 +19,11 @@ function findCompetency(ref) {
   return content.find((c) => c.ref === ref)
 }
 
-// The trilingual system prompt. Inject the active competency so Gabay stays on-curriculum.
-export function gabayPrompt(competency) {
-  return `You are Teacher Gabay, a friendly Grade 6 math tutor for Filipino learners. The student may write in English, Tagalog, or a Taglish mix — reply in the same style unless they pick a language. Teach using this DepEd MATATAG competency: "${competency}". Use Filipino real-life examples (palengke, jeepney fare, sari-sari store). Never just give the final answer — guide step by step. Keep it short and warm.`
+// The system prompt. Inject the active competency (stay on-curriculum) and the
+// student's chosen reply language.
+export function gabayPrompt(competency, lang = DEFAULT_LANG) {
+  const replyIn = LANG_NAME[lang] ?? LANG_NAME[DEFAULT_LANG]
+  return `You are Teacher Gabay, a friendly Grade 6 math tutor for Filipino learners. Reply in ${replyIn}, regardless of the language the student writes in. Teach using this DepEd MATATAG competency: "${competency}". Use Filipino real-life examples (palengke, jeepney fare, sari-sari store). Never just give the final answer — guide step by step. Keep it short and warm.`
 }
 
 // Source of the answer, for UI labelling.
@@ -38,10 +41,11 @@ async function nanoAvailable() {
   }
 }
 
-export async function askTeacherGabay(question, ref) {
+export async function askTeacherGabay(question, ref, lang = DEFAULT_LANG) {
   const competency = findCompetency(ref)
-  const sysPrompt = gabayPrompt(competency?.competency ?? '')
-  const cacheKey = `tutor:${ref}:${hash(question)}`
+  const sysPrompt = gabayPrompt(competency?.competency ?? '', lang)
+  // Cache per language — same question in EN vs Taglish are different answers.
+  const cacheKey = `tutor:${ref}:${lang}:${hash(question)}`
 
   const cached = await get(cacheKey)
   if (cached) return { text: cached.text, source: cached.source, fromCache: true }
@@ -80,8 +84,9 @@ export async function askTeacherGabay(question, ref) {
     }
   }
 
-  // 3. Floor — cached pre-generated Taglish explanation
+  // 3. Floor — cached pre-generated explanation in the chosen language
   const text =
+    competency?.explanation?.[lang] ??
     competency?.explanation?.taglish ??
     'Pasensya, offline tayo at wala pang on-device AI. Basahin muna ang paliwanag sa pisara. 💛'
   return { text, source: SOURCE.CACHED, fromCache: false }

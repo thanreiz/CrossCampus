@@ -30,9 +30,8 @@ const TABS = [
   { key: 'practice', label: 'Pagsasanay' },
 ]
 
-export default function Classroom({ competency, score, online, onAnswered, onExit }) {
+export default function Classroom({ competency, score, online, lang = 'taglish', onLang, onAnswered, onExit }) {
   const c = competency
-  const [lang, setLang] = useState('taglish')
   const [tab, setTab] = useState('explain')
 
   const [idx, setIdx] = useState(0)
@@ -103,7 +102,7 @@ export default function Classroom({ competency, score, online, onAnswered, onExi
     setReply(null)
     stopSpeaking()
     try {
-      const r = await askTeacherGabay(text, c.ref)
+      const r = await askTeacherGabay(text, c.ref, lang)
       setReply(r)
       speak(r.text)
     } catch {
@@ -203,7 +202,7 @@ export default function Classroom({ competency, score, online, onAnswered, onExi
               {LANGS.map((l) => (
                 <button
                   key={l.key}
-                  onClick={() => setLang(l.key)}
+                  onClick={() => onLang?.(l.key)}
                   className={`rounded-full border-2 border-cream/60 px-2.5 py-0.5 text-xs font-bold ${
                     lang === l.key ? 'bg-mint text-ink' : 'text-cream'
                   }`}

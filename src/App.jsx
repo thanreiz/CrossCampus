@@ -2,6 +2,7 @@
 import content from './content.json'
 import { loadMastery, loadDue, recordAnswer, pickNext } from './lib/mastery.js'
 import { initVoices } from './lib/speech.js'
+import { loadLang, saveLang, DEFAULT_LANG } from './lib/lang.js'
 import Splash from './screens/Splash.jsx'
 import Home from './screens/Home.jsx'
 import StartChoice from './screens/StartChoice.jsx'
@@ -23,15 +24,23 @@ export default function App() {
   const [active, setActive] = useState(null) // selected competency
   const [current, setCurrent] = useState(null) // last-opened lesson (stable across nav)
   const [online, setOnline] = useState(navigator.onLine)
+  const [lang, setLangState] = useState(DEFAULT_LANG) // global content/tutor language
 
-  // Load persisted mastery (IndexedDB) + warm up TTS voices.
+  // Load persisted mastery (IndexedDB) + language pref + warm up TTS voices.
   useEffect(() => {
     initVoices()
     ;(async () => {
       setMastery(await loadMastery())
       setDue(await loadDue())
+      setLangState(await loadLang())
     })()
   }, [])
+
+  // Persist the language choice whenever it changes.
+  function changeLang(next) {
+    setLangState(next)
+    saveLang(next)
+  }
 
   // Gate online-only features (voice-in mic) on connectivity.
   useEffect(() => {
@@ -86,6 +95,8 @@ export default function App() {
         'lessons',
         <Home
           online={online}
+          lang={lang}
+          onLang={changeLang}
           onPick={(door) => {
             if (door === 'lessons') setScreen('start')
             else if (door === 'classroom') setScreen('start')
@@ -138,6 +149,8 @@ export default function App() {
           competency={active}
           score={mastery[active.ref] ?? 0.5}
           online={online}
+          lang={lang}
+          onLang={changeLang}
           onAnswered={handleAnswered}
           onExit={() => setScreen('progress')}
         />
@@ -156,6 +169,7 @@ export default function App() {
             competency={active}
             score={mastery[active.ref] ?? 0.5}
             online={online}
+            lang={lang}
             onAnswered={handleAnswered}
             onExit={() => setScreen('progress')}
           />

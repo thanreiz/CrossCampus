@@ -1,26 +1,35 @@
-import { useEffect } from 'react'
 import { Mascot } from '../ui/Mascot.jsx'
-import { Button, Doodles } from '../ui/Primitives.jsx'
+import { Button, Doodles, Sparkle } from '../ui/Primitives.jsx'
 
+// Splash — design basis: Stitch "Gabay - Splash".
 export default function Splash({ onStart }) {
-  // Auto-advance after a beat, but let the user tap too.
-  useEffect(() => {
-    const t = setTimeout(onStart, 2600)
-    return () => clearTimeout(t)
-  }, [onStart])
-
   return (
-    <div className="gb-shell flex min-h-screen flex-col items-center justify-center px-6 text-center">
+    <div className="gb-shell relative flex min-h-screen flex-col items-center justify-center px-6 text-center">
       <Doodles />
-      <Mascot size={150} float className="mb-2" />
-      <h1 className="font-display text-6xl font-extrabold tracking-tight">Gabay</h1>
-      <p className="mt-2 font-display text-lg font-bold text-ink/80">
-        Ang iyong study buddy sa Math 📚
-      </p>
-      <p className="mt-1 text-sm text-ink/60">Grade 6 · DepEd MATATAG · gumagana kahit walang signal</p>
-      <Button color="mint" className="mt-8 text-lg" onClick={onStart}>
-        Magsimula →
+
+      {/* top banner */}
+      <span className="absolute top-12 rounded-full border-[2.5px] border-outline bg-mint px-5 py-2 text-sm font-bold shadow-hard-sm">
+        Matuto ng Math kahit walang signal.
+      </span>
+
+      {/* logo card */}
+      <div className="relative gb-pop rounded-card border-[2.5px] border-outline bg-cream p-8 shadow-hard-lg">
+        <Sparkle size={26} className="absolute -right-3 -top-3" />
+        <div className="flex items-center gap-2">
+          <Mascot size={72} float />
+          <span className="font-display text-5xl font-extrabold text-yellow [-webkit-text-stroke:2px_#1C1410]">
+            Gabay
+          </span>
+        </div>
+      </div>
+
+      <Button color="peach" className="mt-10 px-10 text-lg" onClick={onStart}>
+        MAGSIMULA
       </Button>
+
+      <p className="absolute bottom-10 text-xs font-bold text-ink/60">
+        100% OFFLINE LEARNING
+      </p>
     </div>
   )
 }

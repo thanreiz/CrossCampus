@@ -1,6 +1,14 @@
-// Voice-OUT: Teacher Gabay reads replies aloud via on-device speechSynthesis.
-// Works fully offline. Prefers a Filipino (fil/tl) voice; handles async voice load.
+// Voice-OUT: Teacher Gabay reads replies aloud. Best-available-first chain:
+//   1. online -> POST /api/tts (ElevenLabs Filipino voice, human-sounding)
+//   2. floor  -> on-device speechSynthesis (works fully OFFLINE, robotic)
+// ElevenLabs audio is cached in IndexedDB (tts:{hash}) so repeats cost nothing
+// and replay works offline once heard.
 
+import { get, set } from 'idb-keyval'
+
+// ---------------------------------------------------------------------------
+// speechSynthesis floor (offline, on-device). Prefers a Filipino voice.
+// ---------------------------------------------------------------------------
 let cachedVoices = []
 
 function refreshVoices() {
@@ -8,7 +16,6 @@ function refreshVoices() {
   cachedVoices = window.speechSynthesis.getVoices()
 }
 
-// Voices often load async — listen for onvoiceschanged.
 export function initVoices() {
   if (typeof window === 'undefined' || !window.speechSynthesis) return
   refreshVoices()
@@ -29,17 +36,101 @@ export function isSpeechSupported() {
   return typeof window !== 'undefined' && 'speechSynthesis' in window
 }
 
-export function speak(text) {
+function speakLocal(text) {
   if (!isSpeechSupported() || !text) return
-  window.speechSynthesis.cancel() // stop any in-progress utterance
+  window.speechSynthesis.cancel()
   const u = new SpeechSynthesisUtterance(text)
   const fil = pickFilipinoVoice()
-  if (fil) u.voice = fil // else default voice still works
+  if (fil) u.voice = fil
   u.rate = 0.95
   u.pitch = 1.05
   window.speechSynthesis.speak(u)
 }
 
+// ---------------------------------------------------------------------------
+// ElevenLabs online path + playback control.
+// ---------------------------------------------------------------------------
+function hash(str) {
+  let h = 5381
+  for (let i = 0; i < str.length; i++) h = (h * 33) ^ str.charCodeAt(i)
+  return (h >>> 0).toString(36)
+}
+
+let currentAudio = null
+
+function stopAudio() {
+  if (currentAudio) {
+    try {
+      currentAudio.pause()
+      if (currentAudio.src?.startsWith('blob:')) URL.revokeObjectURL(currentAudio.src)
+    } catch {
+      /* noop */
+    }
+    currentAudio = null
+  }
+}
+
+function playBlob(blob) {
+  stopAudio()
+  const url = URL.createObjectURL(blob)
+  const audio = new Audio(url)
+  currentAudio = audio
+  audio.onended = () => {
+    if (currentAudio === audio) currentAudio = null
+    URL.revokeObjectURL(url)
+  }
+  audio.play().catch(() => {
+    // Autoplay blocked or decode error -> fall back to robotic voice.
+    URL.revokeObjectURL(url)
+    if (currentAudio === audio) currentAudio = null
+  })
+}
+
+// Try ElevenLabs (with cache). Returns true if it produced audio, else false.
+async function speakElevenLabs(text) {
+  const key = `tts:${hash(text)}`
+
+  // Cached audio — works offline once heard, zero cost on repeat.
+  try {
+    const cached = await get(key)
+    if (cached instanceof Blob && cached.size) {
+      playBlob(cached)
+      return true
+    }
+  } catch {
+    /* fall through */
+  }
+
+  if (typeof navigator !== 'undefined' && navigator.onLine === false) return false
+
+  try {
+    const res = await fetch('/api/tts', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ text }),
+    })
+    // 501 = TTS unconfigured, 5xx = failure -> use speechSynthesis floor.
+    if (!res.ok) return false
+    const blob = await res.blob()
+    if (!blob.size) return false
+    set(key, blob).catch(() => {}) // cache for offline replay; don't block
+    playBlob(blob)
+    return true
+  } catch {
+    return false
+  }
+}
+
+// Public API — same signature as before. Tries ElevenLabs, falls back to local.
+export function speak(text) {
+  if (!text) return
+  stopSpeaking()
+  speakElevenLabs(text).then((ok) => {
+    if (!ok) speakLocal(text)
+  })
+}
+
 export function stopSpeaking() {
+  stopAudio()
   if (isSpeechSupported()) window.speechSynthesis.cancel()
 }

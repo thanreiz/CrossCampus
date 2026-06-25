@@ -44,7 +44,7 @@ For learners, the intended experience is quick, guided, non-intimidating math su
 
 ## Competitive Analysis
 
-The most defensible competitive framing for judges is category-based:
+Rather than over-claim against named competitors, we frame Gabay against the broad categories of alternatives learners actually use today:
 
 | Alternative | What it does well | Where it breaks for this problem | Gabay position |
 |---|---|---|---|
@@ -57,41 +57,37 @@ The point is not that Gabay replaces all alternatives. The point is that it occu
 
 ## Business Model including System Architecture
 
-A strong pitch version of the business model is:
-
 Gabay launches with a freemium learner app and a B2B2G / institution-supported channel. Families can use a limited free version, while schools, NGOs, or sponsors can fund structured deployments, localized content packs, and progress reporting. This avoids over-reliance on small consumer payments while keeping the product usable for households.
 
-The system architecture should be described as **Android-first, local-first, cloud-optional**. The build plan already points to an app that keeps core learning functions offline where possible, with optional server-side syncing or enhancement when connectivity exists. That is the right architecture story to pitch because it mirrors the PSA connectivity evidence and the hackathon implementation constraint.
+Our architecture is **Android-first, local-first, cloud-optional**. The app keeps core learning functions running offline wherever possible, with optional server-side syncing or enhancement when connectivity exists. This mirrors the PSA connectivity evidence and keeps the build realistic within hackathon constraints.
 
 ## Guardrails
 
-Gabay should explicitly commit to the following product guardrails:
+Gabay commits to the following product guardrails:
 
-It stays inside a Grade 6 math scope until outcomes justify expansion. It gives stepwise help and checking, not just answer dumps. It defaults to safe refusal or redirection for out-of-scope prompts. It minimizes learner-data collection. It treats online features as enhancements, not as requirements. These guardrails are consistent with the build plan's bounded MVP design.
+It stays inside a Grade 6 math scope until outcomes justify expansion. It gives stepwise help and checking, not just answer dumps. It defaults to safe refusal or redirection for out-of-scope prompts. It minimizes learner-data collection. It treats online features as enhancements, not as requirements.
 
 ## How to Use and Implement
 
-A learner downloads the Android app, takes a short diagnostic, and is routed into topic-specific practice and support loops. The assistant explains, asks follow-up questions, and gives structured help around Grade 6 math tasks. When the device is online, progress can sync and content can update. When the device is offline, the learner can still continue with core study flows. This is the cleanest way to present the product in a demo because it directly reflects the build plan's MVP.
+A learner downloads the Android app, takes a short diagnostic, and is routed into topic-specific practice and support loops. The assistant explains, asks follow-up questions, and gives structured help around Grade 6 math tasks. When the device is online, progress can sync and content can update. When the device is offline, the learner can still continue with core study flows.
 
 ## Persona, Context, and Constraint
 
 A representative persona is a Grade 6 learner using a shared Android device at home, with inconsistent connectivity and limited tolerance for complex app flows. That context fits both the build plan and the official 2024 household internet picture.
 
-The main constraints to acknowledge openly in the pitch are: offline reliability, short build time, narrow content scope, and the need to avoid making unsupported learning-outcome claims before pilot evidence exists.
+We acknowledge our main constraints openly: offline reliability, short build time, narrow content scope, and the need to avoid making unsupported learning-outcome claims before pilot evidence exists.
 
 ## Future Development
 
-After the hackathon, the right roadmap is not "expand to every grade immediately." It is:
+After the hackathon, our roadmap is deliberately staged rather than "expand to every grade immediately":
 
-Prove usage and retention in one slice of Grade 6 math; improve explanation quality and assessment loops; connect teacher or parent summaries; expand content breadth only after the narrow use case works.
+We prove usage and retention in one slice of Grade 6 math; improve explanation quality and assessment loops; connect teacher or parent summaries; and expand content breadth only after the narrow use case works.
 
 DepEd's official site also shows that future alignment paths exist through Open Educational Resources and Project Bukas / Paaralang Bukas public-data infrastructure.
 
 ## Call to Action
 
-The strongest ask is:
-
-Back Gabay as a pilot for connectivity-constrained Grade 6 learners. Give it one school cluster, one NGO program, or one sponsored deployment, and judge it on whether an offline-first AI study companion improves completion, confidence, and repeat usage under real conditions. That is a sharper and more credible ask than claiming immediate national scale.
+Back Gabay as a pilot for connectivity-constrained Grade 6 learners. Give us one school cluster, one NGO program, or one sponsored deployment, and judge us on whether an offline-first AI study companion improves completion, confidence, and repeat usage under real conditions. We are not asking you to fund a national rollout today — we are asking you to let us prove the wedge where it matters most.
 
 ## Market Sizing (Assumptions Stated Inline)
 
@@ -104,11 +100,11 @@ Because an official grade-level DepEd enrollment table was not retrieved in this
 - **SOM population [ESTIMATE]:** 20,000 to 50,000 learners in an early deployment phase. Assumption: a realistic first few institutional deployments, not national penetration.
 - **SOM indicative value [ESTIMATE]:** ~₱2 million to ~₱15 million annually, depending on consumer, sponsor, or institutional pricing mix.
 
-These should be spoken as scenario ranges in the pitch, not as audited market facts.
+These are scenario ranges, not audited market facts.
 
 ## Confidence and Gaps
 
-The claims that most need human verification against a primary or offline/paywalled source before they appear on slides are:
+The claims that most need human verification against a primary or offline/paywalled source before we present them are:
 
 - The exact DepEd NAT 2024 mathematics figures, including the Grade 10 and Grade 12 breakdowns;
 - The exact OECD PISA 2022 Philippines Level 2 math share;

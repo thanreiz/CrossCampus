@@ -25,3 +25,6 @@ shots/
 test-results/
 playwright-report/
 memory/
+
+.vercel
+.env*

@@ -1,4 +1,4 @@
-import { defineConfig } from 'vite'
+﻿import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import { VitePWA } from 'vite-plugin-pwa'
 
@@ -10,10 +10,11 @@ export default defineConfig({
       registerType: 'autoUpdate',
       includeAssets: ['favicon.svg', 'mascot.svg', 'pwa-192x192.png', 'pwa-512x512.png', 'maskable-512x512.png'],
       workbox: {
+        cleanupOutdatedCaches: true,
         globPatterns: ['**/*.{js,css,html,json,png,svg}'],
       },
       manifest: {
-        name: 'Gabay — Grade 6 Math',
+        name: 'Gabay - Grade 6 Math',
         short_name: 'Gabay',
         description:
           'Offline-first study companion for Grade 6 Filipino math learners (DepEd MATATAG).',
@@ -32,3 +33,4 @@ export default defineConfig({
     }),
   ],
 })
+

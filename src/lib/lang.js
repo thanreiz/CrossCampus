@@ -24,7 +24,7 @@ export const LANG_NAME = {
 
 // Encouragement shown near the answer box — answer in the chosen language.
 export const ANSWER_HINT = {
-  en: 'Sagutin sa English.',
+  en: 'Answer in English.',
   fil: 'Sagutin sa Tagalog.',
   taglish: 'Pwede kang sumagot sa English o Tagalog.',
 }

@@ -6,6 +6,7 @@ import { checkAnswer } from '../lib/check.js'
 import { feedbackFor } from '../lib/feedback.js'
 import { recordAttempt } from '../lib/history.js'
 import { topicTitle } from '../lib/topics.js'
+import { makeT, localize } from '../lib/i18n.js'
 
 const COUNT_OPTIONS = [5, 10, 15, 20]
 
@@ -24,7 +25,7 @@ function buildQuestions(competencies, count) {
   const pool = []
   for (const c of competencies) {
     for (const it of c.items ?? []) {
-      pool.push({ ...it, ref: c.ref, title: topicTitle(c.ref, c.competency) })
+      pool.push({ ...it, ref: c.ref, domain: c.domain, title: topicTitle(c.ref, c.competency) })
     }
   }
   let out = shuffle(pool)
@@ -33,6 +34,7 @@ function buildQuestions(competencies, count) {
 }
 
 export default function Games({ online = true, competencies = [], mastery = {}, lang = 'taglish', onAnswered = async () => {} }) {
+  const tt = makeT(lang)
   const [started, setStarted] = useState(false)
   const [count, setCount] = useState(10)
   const [questions, setQuestions] = useState([])
@@ -64,15 +66,16 @@ export default function Games({ online = true, competencies = [], mastery = {}, 
 
   async function submit() {
     if (result !== null || !input.trim()) return
+    const locRound = { ...round, q: localize(round.q, lang), solution: localize(round.solution, lang) }
     const ok = checkAnswer(round, input)
-    const f = feedbackFor(round, ok, lang, idx)
+    const f = feedbackFor(locRound, ok, lang, idx)
     setResult(ok)
     setFb(f)
     setAnswered((n) => n + 1)
     setCoins((n) => n + (ok ? 10 + streak * 2 : 2))
     setStreak((n) => (ok ? n + 1 : 0))
-    setLog((l) => [...l, { q: round.q, your: input.trim(), answer: round.answer, correct: ok, solution: round.solution }])
-    recordAttempt({ ref: round.ref, q: round.q, your: input.trim(), answer: round.answer, correct: ok, feedback: ok ? f.headline : f.body })
+    setLog((l) => [...l, { q: locRound.q, your: input.trim(), answer: round.answer, correct: ok, solution: locRound.solution }])
+    recordAttempt({ ref: round.ref, q: locRound.q, your: input.trim(), answer: round.answer, correct: ok, feedback: ok ? f.headline : f.body })
     await onAnswered(round.ref, ok)
   }
 
@@ -92,16 +95,16 @@ export default function Games({ online = true, competencies = [], mastery = {}, 
         <section className="relative z-10 mt-5 overflow-hidden rounded-card border-[2.5px] border-outline bg-peach p-5 shadow-hard">
           <div className="flex min-h-[180px] flex-col justify-end rounded-card border-[2.5px] border-outline bg-[#f7d26a] p-4">
             <ShopAwning />
-            <h1 className="mt-5 font-display text-3xl font-extrabold leading-tight">Tindahan Game</h1>
+            <h1 className="mt-5 font-display text-3xl font-extrabold leading-tight">{tt('games.store')}</h1>
             <p className="mt-1 max-w-[26ch] text-base font-bold text-ink/75">
-              Mag-compute ng total, discount, ratio, at percent habang nagtitinda.
+              {tt('games.tagline')}
             </p>
           </div>
         </section>
 
         {/* number of questions (5–20) */}
         <div className="mt-5">
-          <p className="mb-2 text-base font-extrabold">Ilang tanong ang sasagutan mo?</p>
+          <p className="mb-2 text-base font-extrabold">{tt('games.howMany')}</p>
           <div className="flex flex-wrap gap-2">
             {COUNT_OPTIONS.map((n) => (
               <button
@@ -113,11 +116,11 @@ export default function Games({ online = true, competencies = [], mastery = {}, 
               </button>
             ))}
           </div>
-          <p className="mt-1 text-xs font-bold text-ink/55">Minimum 5, maximum 20 na tanong.</p>
+          <p className="mt-1 text-xs font-bold text-ink/55">{tt('games.minMax')}</p>
         </div>
 
         <Button color="mint" className="mt-5 min-h-[58px] w-full text-xl" onClick={startGame}>
-          Simulan ang Tindahan ({count} tanong)
+          {tt('games.startStore', { n: count })}
         </Button>
       </div>
     )
@@ -135,35 +138,35 @@ export default function Games({ online = true, competencies = [], mastery = {}, 
           <div className="mx-auto mb-3 flex h-20 w-20 items-center justify-center rounded-card border-[2.5px] border-outline bg-white">
             <ShopIcon />
           </div>
-          <h1 className="font-display text-3xl font-extrabold">Tindahan sarado!</h1>
-          <p className="mt-2 text-lg font-extrabold">Kita mo: {coins} coins</p>
+          <h1 className="font-display text-3xl font-extrabold">{tt('games.closed')}</h1>
+          <p className="mt-2 text-lg font-extrabold">{tt('games.earned', { coins })}</p>
           <div className="mt-3 grid grid-cols-3 gap-2">
-            <Stat label="Sinagot" value={log.length} color="bg-sky" />
-            <Stat label="Tama" value={correct} color="bg-mint" />
-            <Stat label="Mali" value={wrong.length} color="bg-rose" />
+            <Stat label={tt('games.answered')} value={log.length} color="bg-sky" />
+            <Stat label={tt('common.correct')} value={correct} color="bg-mint" />
+            <Stat label={tt('common.wrong')} value={wrong.length} color="bg-rose" />
           </div>
         </Card>
 
         {wrong.length > 0 && (
           <div className="mt-5">
-            <p className="mb-2 text-base font-extrabold">Balikan natin ang mga namali:</p>
+            <p className="mb-2 text-base font-extrabold">{tt('class.reviewMissed')}</p>
             <div className="flex flex-col gap-3">
               {wrong.map((a, i) => (
                 <Card key={i} color="cream" className="p-4">
                   <p className="text-base font-bold">
-                    <span className="text-ink/60">Tanong:</span> {a.q}
+                    <span className="text-ink/60">{tt('common.question')}:</span> {a.q}
                   </p>
                   <p className="mt-1 text-base font-bold">
-                    <span className="text-ink/60">Sagot mo:</span>{' '}
+                    <span className="text-ink/60">{tt('common.yourAnswer')}:</span>{' '}
                     <span className="text-rose-700">{a.your || '—'}</span>
                   </p>
                   <p className="mt-1 text-base font-bold">
-                    <span className="text-ink/60">Tamang sagot:</span>{' '}
+                    <span className="text-ink/60">{tt('common.correctAnswer')}:</span>{' '}
                     <span className="text-green-700">{a.answer}</span>
                   </p>
                   {a.solution && (
                     <p className="mt-1 text-base">
-                      <span className="font-bold text-ink/60">Paliwanag:</span> <RichText>{a.solution}</RichText>
+                      <span className="font-bold text-ink/60">{tt('common.explanation')}:</span> <RichText>{a.solution}</RichText>
                     </p>
                   )}
                 </Card>
@@ -173,7 +176,7 @@ export default function Games({ online = true, competencies = [], mastery = {}, 
         )}
 
         <Button color="yellow" className="mt-5 min-h-[54px] w-full text-lg" onClick={() => setStarted(false)}>
-          Laro ulit
+          {tt('games.playAgain')}
         </Button>
       </div>
     )
@@ -186,15 +189,15 @@ export default function Games({ online = true, competencies = [], mastery = {}, 
       <Header online={online} />
 
       <div className="relative z-10 mt-4 flex items-center justify-between gap-2">
-        <RefBadge refId={round.ref} domain="Number and Algebra" />
-        <span className="gb-chip bg-yellow shadow-hard-sm text-sm">Coins {coins}</span>
+        <RefBadge refId={round.ref} domain={round.domain || 'Number and Algebra'} />
+        <span className="gb-chip bg-yellow shadow-hard-sm text-sm">{tt('games.coins')} {coins}</span>
       </div>
 
       <Card color="cream" className="gb-pop mt-4 overflow-hidden p-0">
         <div className="border-b-[2.5px] border-outline bg-peach p-4">
           <div className="flex items-center justify-between gap-3">
             <div>
-              <p className="text-sm font-extrabold uppercase text-ink/55">Tanong {answered + 1} / {questions.length}</p>
+              <p className="text-sm font-extrabold uppercase text-ink/55">{tt('common.question')} {answered + 1} / {questions.length}</p>
               <h1 className="font-display text-2xl font-extrabold leading-tight">{round.title}</h1>
             </div>
             <Mascot size={52} float />
@@ -215,9 +218,9 @@ export default function Games({ online = true, competencies = [], mastery = {}, 
           )}
 
           <div className="rounded-card border-[2.5px] border-outline bg-sky p-4">
-            <p className="text-sm font-extrabold uppercase text-ink/60">Customer</p>
+            <p className="text-sm font-extrabold uppercase text-ink/60">{tt('games.customer')}</p>
             <p className="mt-2 rounded-2xl border-2 border-outline bg-white p-3 text-xl font-extrabold leading-snug">
-              {round.q}
+              {localize(round.q, lang)}
             </p>
           </div>
 
@@ -228,7 +231,7 @@ export default function Games({ online = true, competencies = [], mastery = {}, 
               onKeyDown={(e) => e.key === 'Enter' && (result === null ? submit() : nextRound())}
               disabled={result !== null}
               inputMode={round.type === 'mcq' ? 'text' : 'decimal'}
-              placeholder="I-type ang sagot..."
+              placeholder={tt('common.answerPlaceholder')}
               className="min-h-[58px] rounded-full border-[2.5px] border-outline bg-white px-5 text-xl font-extrabold outline-none focus:bg-cream disabled:opacity-80"
             />
 
@@ -248,18 +251,18 @@ export default function Games({ online = true, competencies = [], mastery = {}, 
 
             {result === null ? (
               <Button color="mint" className="min-h-[58px] text-xl" onClick={submit}>
-                Bayaran
+                {tt('games.pay')}
               </Button>
             ) : (
               <Button color={result ? 'mint' : 'rose'} className="min-h-[58px] text-xl" onClick={nextRound}>
-                {answered >= questions.length ? 'Tapusin' : 'Susunod'}
+                {answered >= questions.length ? tt('common.finish') : tt('common.next')}
               </Button>
             )}
           </div>
 
           <div>
             <div className="mb-1 flex justify-between text-sm font-extrabold text-ink/60">
-              <span>Mastery</span>
+              <span>{tt('common.mastery')}</span>
               <span>{Math.round(score * 100)}%</span>
             </div>
             <MasteryBar score={score} />

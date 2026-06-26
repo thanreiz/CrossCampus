@@ -2,9 +2,11 @@
 import { Mascot } from '../ui/Mascot.jsx'
 import OnlineBadge from '../ui/OnlineBadge.jsx'
 import { topicTitle } from '../lib/topics.js'
+import { makeT } from '../lib/i18n.js'
 
 // Start choice - design basis: Stitch "Gabay - Start Choice".
-export default function StartChoice({ next, mastery, online = true, onAuto, onBrowse, onBack }) {
+export default function StartChoice({ next, mastery, online = true, lang = 'taglish', onAuto, onBrowse, onBack }) {
+  const tt = makeT(lang)
   const score = next ? mastery[next.ref] ?? 0.5 : 0.5
   const pct = Math.round(score * 100)
   const title = next ? topicTitle(next.ref, next.competency) : ''
@@ -16,7 +18,7 @@ export default function StartChoice({ next, mastery, online = true, onAuto, onBr
       {/* header */}
       <div className="mb-4 flex items-center justify-between">
         <button className="gb-chip bg-white" onClick={onBack}>
-          Back
+          {tt('common.back')}
         </button>
         <div className="flex items-center gap-2">
           <OnlineBadge online={online} />
@@ -26,25 +28,25 @@ export default function StartChoice({ next, mastery, online = true, onAuto, onBr
       </div>
 
       <h1 className="font-display text-3xl font-extrabold leading-tight">
-        Paano ka magsisimula?
+        {tt('start.heading')}
       </h1>
       <p className="mb-5 text-sm font-bold text-ink/70">
-        Galingan mo sa math, Explorer! Piliin mo kung ano ang gusto mong gawin.
+        {tt('start.sub')}
       </p>
 
-      {/* 01 - TULOY */}
+      {/* 01 - CONTINUE */}
       {next && (
         <Card color="mint" className="gb-pop mb-4 p-5">
           <span className="gb-chip bg-white shadow-hard-sm text-[10px] uppercase tracking-wide">
-            01 - Tuloy
+            {tt('start.continueTag')}
           </span>
           <h2 className="mt-2 font-display text-2xl font-extrabold leading-tight">
-            Ituloy ang aralin
+            {tt('start.continueTitle')}
           </h2>
 
           <div className="mt-3 rounded-card border-[2.5px] border-outline bg-white p-3">
             <p className="font-bold leading-snug">{title}</p>
-            <p className="mt-2 text-xs font-bold text-ink/60">Mastery Progress</p>
+            <p className="mt-2 text-xs font-bold text-ink/60">{tt('start.masteryProgress')}</p>
             <div className="mt-1 flex items-center gap-2">
               <MasteryBar score={score} />
               <span className="text-xs font-bold">{pct}%</span>
@@ -52,24 +54,24 @@ export default function StartChoice({ next, mastery, online = true, onAuto, onBr
           </div>
 
           <Button color="yellow" className="mt-4 w-full text-lg" onClick={() => onAuto(next)}>
-            Magsimula na &rarr;
+            {tt('start.startNow')} &rarr;
           </Button>
         </Card>
       )}
 
-      {/* 02 - TINGNAN */}
+      {/* 02 - BROWSE */}
       <Card color="sky" className="gb-pop p-5">
         <span className="gb-chip bg-white shadow-hard-sm text-[10px] uppercase tracking-wide">
-          02 - Tingnan
+          {tt('start.browseTag')}
         </span>
         <h2 className="mt-2 font-display text-2xl font-extrabold leading-tight">
-          Tingnan lahat ng topics
+          {tt('start.browseTitle')}
         </h2>
         <p className="mt-1 text-sm font-bold text-ink/70">
-          Hanapin ang buong listahan ng mga aralin sa Number & Algebra.
+          {tt('start.browseSub')}
         </p>
         <Button color="white" className="mt-4 w-full text-lg" onClick={onBrowse}>
-          Tingnan ang listahan &rarr;
+          {tt('start.viewList')} &rarr;
         </Button>
       </Card>
     </div>

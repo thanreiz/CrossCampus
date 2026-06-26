@@ -9,6 +9,7 @@ import { recordAttempt } from '../lib/history.js'
 import { topicFull } from '../lib/topics.js'
 import { loadTheme, saveTheme, DEFAULT_THEME } from '../lib/theme.js'
 import { makeT, localize } from '../lib/i18n.js'
+import { sfx, primeAudio } from '../lib/sound.js'
 
 // Strip **bold** markup before reading aloud.
 function plain(s) {
@@ -88,6 +89,7 @@ export default function Classroom3D({ competency, score, online, lang = 'taglish
   }
 
   function openBoard() {
+    primeAudio() // tapping the board is a user gesture — unlock audio here too
     sceneRef.current?.setControls(false) // release pointer lock while answering
     setModal(true)
     speak(localize(itemRef.current.q, lang), { lang })
@@ -100,6 +102,7 @@ export default function Classroom3D({ competency, score, online, lang = 'taglish
     const f = feedbackFor(locItem, ok, lang, idx)
     setResult(ok)
     setFb(f)
+    sfx(ok ? 'correct' : 'wrong')
     if (ok) setCorrectCount((n) => n + 1)
     setAnswers((a) => [...a, { q: locItem.q, your: input.trim(), answer: item.answer, correct: ok, solution: locItem.solution }])
     recordAttempt({ ref: c.ref, q: locItem.q, your: input.trim(), answer: item.answer, correct: ok, feedback: ok ? f.headline : f.body })
@@ -112,6 +115,7 @@ export default function Classroom3D({ competency, score, online, lang = 'taglish
     if (idx + 1 >= c.items.length) {
       setDone(true)
       setModal(false)
+      sfx('finish')
       speak(tt('class.bubble.done', { correct: correctCount, total: c.items.length }), { lang })
       return
     }

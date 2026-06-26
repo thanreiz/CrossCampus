@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import { Card, Button, Doodles, RefBadge, MasteryBar, RichText } from '../ui/Primitives.jsx'
 import { Mascot } from '../ui/Mascot.jsx'
 import OnlineBadge from '../ui/OnlineBadge.jsx'
@@ -7,6 +7,7 @@ import { feedbackFor } from '../lib/feedback.js'
 import { recordAttempt } from '../lib/history.js'
 import { topicTitle } from '../lib/topics.js'
 import { makeT, localize } from '../lib/i18n.js'
+import { sfx } from '../lib/sound.js'
 
 const COUNT_OPTIONS = [5, 10, 15, 20]
 
@@ -51,6 +52,11 @@ export default function Games({ online = true, competencies = [], mastery = {}, 
   const done = started && answered >= questions.length
   const score = round?.ref ? mastery[round.ref] ?? 0.5 : 0.5
 
+  // Victory jingle when the store closes (summary appears).
+  useEffect(() => {
+    if (done) sfx('finish')
+  }, [done])
+
   function startGame() {
     setQuestions(buildQuestions(competencies, count))
     setStarted(true)
@@ -71,6 +77,8 @@ export default function Games({ online = true, competencies = [], mastery = {}, 
     const f = feedbackFor(locRound, ok, lang, idx)
     setResult(ok)
     setFb(f)
+    sfx(ok ? 'correct' : 'wrong')
+    if (ok && streak >= 2) sfx('coin') // reward a hot streak
     setAnswered((n) => n + 1)
     setCoins((n) => n + (ok ? 10 + streak * 2 : 2))
     setStreak((n) => (ok ? n + 1 : 0))

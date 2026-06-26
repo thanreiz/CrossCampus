@@ -1,4 +1,4 @@
-﻿import { useEffect, useState, lazy, Suspense } from 'react'
+import { useEffect, useState, lazy, Suspense } from 'react'
 import content from './content.json'
 import { loadMastery, loadDue, recordAnswer, pickNext } from './lib/mastery.js'
 import { initVoices } from './lib/speech.js'
@@ -13,6 +13,8 @@ import Classroom from './screens/Classroom.jsx'
 import Progress from './screens/Progress.jsx'
 import Games from './screens/Games.jsx'
 import BottomNav from './ui/BottomNav.jsx'
+import SoundToggle from './ui/SoundToggle.jsx'
+import { loadSoundPrefs, primeAudio, startBgm, pauseBgm, resumeBgm } from './lib/sound.js'
 
 // 3D classroom pulls in three.js - load it on demand (chunk still precached for offline).
 const Classroom3D = lazy(() => import('./screens/Classroom3D.jsx'))
@@ -43,6 +45,18 @@ export default function App() {
     saveLang(next)
   }
 
+  // Load IndexedDB sound prefs, then pause the loop while hidden and resume on return.
+  useEffect(() => {
+    loadSoundPrefs()
+  }, [])
+
+  // Pause the background-music loop while the tab is hidden, resume on return.
+  useEffect(() => {
+    const onVis = () => (document.hidden ? pauseBgm() : resumeBgm())
+    document.addEventListener('visibilitychange', onVis)
+    return () => document.removeEventListener('visibilitychange', onVis)
+  }, [])
+
   // Gate online-only features (voice-in mic) on connectivity.
   useEffect(() => {
     const on = () => setOnline(true)
@@ -70,6 +84,7 @@ export default function App() {
     return (
       <>
         {node}
+        <SoundToggle />
         <BottomNav active={activeKey} onNav={navTo} lang={lang} />
       </>
     )
@@ -89,7 +104,17 @@ export default function App() {
 
   switch (screen) {
     case 'splash':
-      return <Splash lang={lang} onStart={() => setScreen('home')} />
+      return (
+        <Splash
+          lang={lang}
+          onStart={() => {
+            // First tap = the gesture that unlocks audio. Kick off the music.
+            primeAudio()
+            startBgm()
+            setScreen('home')
+          }}
+        />
+      )
 
     case 'home':
       return withNav(

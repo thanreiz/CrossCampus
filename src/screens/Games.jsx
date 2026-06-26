@@ -22,6 +22,7 @@ const GAMES = [
     accent: '#f7d26a',
     awning: ['bg-rose', 'bg-white', 'bg-yellow', 'bg-white', 'bg-rose'],
     Icon: ShopIcon,
+    badgeKeys: ['number', 'percent', 'ratio'],
     domains: ['Number and Algebra'],
   },
   {
@@ -30,6 +31,7 @@ const GAMES = [
     accent: '#bfe8cf',
     awning: ['bg-mint', 'bg-white', 'bg-yellow', 'bg-white', 'bg-mint'],
     Icon: GardenIcon,
+    badgeKeys: ['geometry', 'area', 'perimeter'],
     refs: ['6MG-Ig-7', '6MG-IIIa-1', '6MG-IIIb-2', '6MG-IIIc-3', '6MG-IIId-4'],
   },
   {
@@ -38,6 +40,7 @@ const GAMES = [
     accent: '#bfe2f7',
     awning: ['bg-sky', 'bg-white', 'bg-peach', 'bg-white', 'bg-sky'],
     Icon: HouseIcon,
+    badgeKeys: ['geometry', 'angles', 'volume'],
     refs: ['6MG-IIe-5', '6MG-IIf-6', '6MG-IIg-7'],
   },
   {
@@ -46,6 +49,7 @@ const GAMES = [
     accent: '#ddd0f5',
     awning: ['bg-lavender', 'bg-white', 'bg-rose', 'bg-white', 'bg-lavender'],
     Icon: FiestaIcon,
+    badgeKeys: ['data', 'stats', 'probability'],
     domains: ['Data and Probability'],
   },
 ]
@@ -173,6 +177,7 @@ export default function Games({ online = true, competencies = [], mastery = {}, 
               <span className="min-w-0">
                 <span className="block font-display text-xl font-extrabold leading-tight">{tt(`games.${g.key}.name`)}</span>
                 <span className="mt-1 block text-sm font-bold text-ink/70">{tt(`games.${g.key}.tagline`)}</span>
+                <GameBadges game={g} tt={tt} className="mt-2" />
               </span>
             </button>
           ))}
@@ -204,6 +209,7 @@ export default function Games({ online = true, competencies = [], mastery = {}, 
             <Awning colors={game.awning} />
             <h1 className="mt-5 font-display text-3xl font-extrabold leading-tight">{tt(`games.${game.key}.name`)}</h1>
             <p className="mt-1 max-w-[26ch] text-base font-bold text-ink/75">{tt(`games.${game.key}.tagline`)}</p>
+            <GameBadges game={game} tt={tt} className="mt-3" />
           </div>
         </section>
 
@@ -238,6 +244,8 @@ export default function Games({ online = true, competencies = [], mastery = {}, 
   if (done) {
     const correct = log.filter((l) => l.correct).length
     const wrong = log.filter((l) => !l.correct)
+    const accuracy = log.length ? Math.round((correct / log.length) * 100) : 0
+    const summaryKey = accuracy === 100 ? 'perfect' : accuracy >= 70 ? 'great' : 'practice'
     return (
       <div className="gb-shell relative flex min-h-screen flex-col px-5 pb-28 pt-6">
         <Doodles />
@@ -247,11 +255,15 @@ export default function Games({ online = true, competencies = [], mastery = {}, 
             <game.Icon />
           </div>
           <h1 className="font-display text-3xl font-extrabold">{tt(`games.${game.key}.closed`)}</h1>
-          <p className="mt-2 text-lg font-extrabold">{tt('games.earned', { coins })}</p>
-          <div className="mt-3 grid grid-cols-3 gap-2">
+          <p className="mt-2 text-lg font-extrabold">{tt('games.summary.' + summaryKey)}</p>
+          <p className="mt-1 text-sm font-bold text-ink/70">{tt('games.summaryPracticed', { game: tt(`games.${game.key}.name`) })}</p>
+          <GameBadges game={game} tt={tt} className="mt-3 justify-center" />
+          <p className="mt-3 text-lg font-extrabold">{tt('games.earned', { coins })}</p>
+          <div className="mt-3 grid grid-cols-4 gap-2">
             <Stat label={tt('games.answered')} value={log.length} color="bg-sky" />
             <Stat label={tt('common.correct')} value={correct} color="bg-mint" />
             <Stat label={tt('common.wrong')} value={wrong.length} color="bg-rose" />
+            <Stat label={tt('games.accuracy')} value={`${accuracy}%`} color="bg-yellow" />
           </div>
         </Card>
 
@@ -397,6 +409,18 @@ function Header({ online = true }) {
       </div>
       <OnlineBadge online={online} className="shrink-0" />
     </div>
+  )
+}
+
+function GameBadges({ game, tt, className = '' }) {
+  return (
+    <span className={`flex flex-wrap gap-1.5 ${className}`}>
+      {(game.badgeKeys ?? []).map((key) => (
+        <span key={key} className="rounded-full border-2 border-outline bg-white px-2 py-1 text-[11px] font-extrabold uppercase leading-none text-ink/70 shadow-hard-sm">
+          {tt('games.badge.' + key)}
+        </span>
+      ))}
+    </span>
   )
 }
 

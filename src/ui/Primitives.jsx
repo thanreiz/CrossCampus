@@ -1,6 +1,7 @@
 ﻿// Neo-brutalist building blocks: thick outlines, hard offset shadows, pills.
 import { topicArea } from '../lib/topics.js'
 import { masteryColor } from '../lib/mastery.js'
+import { playButtonSfx } from '../lib/sound.js'
 
 // Renders text with **bold** markup so feedback can emphasize the correct
 // answer, a key formula, or an important reminder.
@@ -21,7 +22,7 @@ export function RichText({ children, className = '' }) {
   )
 }
 
-export function Button({ color = 'yellow', className = '', children, ...props }) {
+export function Button({ color = 'yellow', className = '', children, onClick, ...props }) {
   const colors = {
     yellow: 'bg-yellow',
     mint: 'bg-mint',
@@ -31,8 +32,13 @@ export function Button({ color = 'yellow', className = '', children, ...props })
     lavender: 'bg-lavender',
     white: 'bg-white',
   }
+  // Every press plays a random recorded click sound (no-op when muted).
+  const handleClick = (e) => {
+    playButtonSfx()
+    onClick?.(e)
+  }
   return (
-    <button className={`gb-btn ${colors[color] ?? colors.yellow} ${className}`} {...props}>
+    <button className={`gb-btn ${colors[color] ?? colors.yellow} ${className}`} onClick={handleClick} {...props}>
       {children}
     </button>
   )

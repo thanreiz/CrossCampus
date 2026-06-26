@@ -57,7 +57,7 @@ export const STRINGS = {
   'home.classroom.title': { en: 'Teacher Gabay', fil: 'Teacher Gabay', taglish: 'Teacher Gabay' },
   'home.classroom.status': { en: 'AI tutor', fil: 'AI tutor', taglish: 'AI tutor' },
   'home.classroom.cta': { en: 'Enter', fil: 'Pasukin', taglish: 'Pasukin' },
-  'home.games.title': { en: 'Store Game', fil: 'Tindahan Game', taglish: 'Tindahan Game' },
+  'home.games.title': { en: 'Mini Games', fil: 'Mga Laro', taglish: 'Mini Games' },
   'home.games.status': { en: 'Playable', fil: 'Nalalaro', taglish: 'Playable' },
   'home.games.cta': { en: 'Play', fil: 'Laruin', taglish: 'Laruin' },
 
@@ -203,6 +203,63 @@ export const STRINGS = {
   'games.customer': { en: 'Customer', fil: 'Suki', taglish: 'Customer' },
   'games.pay': { en: 'Pay', fil: 'Bayaran', taglish: 'Bayaran' },
   'games.playAgain': { en: 'Play again', fil: 'Laro ulit', taglish: 'Laro ulit' },
+
+  // ---- Games hub (pick a game) ----
+  'games.pick': { en: 'Pick a game', fil: 'Pumili ng laro', taglish: 'Pumili ng laro' },
+  'games.pickSub': {
+    en: 'Each game practices a different part of the curriculum.',
+    fil: 'Bawat laro ay para sa ibang bahagi ng kurikulum.',
+    taglish: 'Bawat game ay para sa ibang bahagi ng curriculum.',
+  },
+  'games.chooseAnother': { en: 'Choose another game', fil: 'Pumili ng ibang laro', taglish: 'Pumili ng ibang game' },
+
+  // Store (Number & Algebra)
+  'games.store.name': { en: 'Store Game', fil: 'Tindahan Game', taglish: 'Tindahan Game' },
+  'games.store.tagline': {
+    en: 'Compute totals, discounts, ratios, and percent while you sell.',
+    fil: 'Mag-compute ng total, diskwento, ratio, at percent habang nagtitinda.',
+    taglish: 'Mag-compute ng total, discount, ratio, at percent habang nagtitinda.',
+  },
+  'games.store.actor': { en: 'Customer', fil: 'Suki', taglish: 'Customer' },
+  'games.store.action': { en: 'Pay', fil: 'Bayaran', taglish: 'Bayaran' },
+  'games.store.start': { en: 'Open the Store ({n} questions)', fil: 'Buksan ang Tindahan ({n} tanong)', taglish: 'Buksan ang Tindahan ({n} tanong)' },
+  'games.store.closed': { en: 'Store closed!', fil: 'Tindahan sarado!', taglish: 'Tindahan sarado!' },
+
+  // Garden (Measurement & Geometry — plane figures, area, perimeter)
+  'games.garden.name': { en: 'Garden Game', fil: 'Hardin Game', taglish: 'Hardin Game' },
+  'games.garden.tagline': {
+    en: 'Measure plots, fences, and flower beds with area and perimeter.',
+    fil: 'Sukatin ang taniman, bakod, at halamanan gamit ang area at perimeter.',
+    taglish: 'Sukatin ang plots, bakod, at flower beds gamit ang area at perimeter.',
+  },
+  'games.garden.actor': { en: 'Gardener', fil: 'Hardinero', taglish: 'Hardinero' },
+  'games.garden.action': { en: 'Plant', fil: 'Itanim', taglish: 'Itanim' },
+  'games.garden.start': { en: 'Start the Garden ({n} questions)', fil: 'Simulan ang Hardin ({n} tanong)', taglish: 'Simulan ang Hardin ({n} tanong)' },
+  'games.garden.closed': { en: 'Garden grown!', fil: 'Lumago ang hardin!', taglish: 'Lumago ang hardin!' },
+
+  // House Builder (Measurement & Geometry — angles, volume, capacity)
+  'games.house.name': { en: 'House Builder', fil: 'Bahay Builder', taglish: 'Bahay Builder' },
+  'games.house.tagline': {
+    en: 'Build rooms using angles, volume, and capacity.',
+    fil: 'Magtayo ng silid gamit ang anggulo, volume, at kapasidad.',
+    taglish: 'Mag-build ng rooms gamit ang angles, volume, at capacity.',
+  },
+  'games.house.actor': { en: 'Client', fil: 'Kliyente', taglish: 'Client' },
+  'games.house.action': { en: 'Build', fil: 'Itayo', taglish: 'Itayo' },
+  'games.house.start': { en: 'Start Building ({n} questions)', fil: 'Simulan ang Pagtatayo ({n} tanong)', taglish: 'Simulan ang Build ({n} tanong)' },
+  'games.house.closed': { en: 'House finished!', fil: 'Tapos na ang bahay!', taglish: 'Tapos na ang bahay!' },
+
+  // Fiesta Booth (Data & Probability — graphs, mean/median/mode, chance)
+  'games.fiesta.name': { en: 'Fiesta Booth', fil: 'Fiesta Booth', taglish: 'Fiesta Booth' },
+  'games.fiesta.tagline': {
+    en: 'Read graphs, find mean, median, and mode, and guess the chances.',
+    fil: 'Basahin ang grap, hanapin ang mean, median, at mode, at hulaan ang tsansa.',
+    taglish: 'Basahin ang graphs, hanapin ang mean, median, mode, at hulaan ang chance.',
+  },
+  'games.fiesta.actor': { en: 'Visitor', fil: 'Bisita', taglish: 'Bisita' },
+  'games.fiesta.action': { en: 'Answer', fil: 'Sagutin', taglish: 'Sagutin' },
+  'games.fiesta.start': { en: 'Open the Fiesta ({n} questions)', fil: 'Buksan ang Fiesta ({n} tanong)', taglish: 'Buksan ang Fiesta ({n} tanong)' },
+  'games.fiesta.closed': { en: 'Fiesta done!', fil: 'Tapos ang fiesta!', taglish: 'Tapos ang fiesta!' },
 
   // ---- 3D Classroom HUD ----
   '3d.preparing': { en: 'Preparing the 3D class...', fil: 'Inihahanda ang 3D klase...', taglish: 'Inihahanda ang 3D klase...' },

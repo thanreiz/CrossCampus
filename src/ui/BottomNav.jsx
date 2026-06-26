@@ -2,6 +2,7 @@
 // 4 tabs: Lessons, Practice, Games, Profile. SVG icons (no emoji).
 
 import { makeT } from '../lib/i18n.js'
+import { playSong } from '../lib/sound.js'
 
 const ITEMS = [
   { key: 'lessons', tkey: 'nav.lessons', Icon: BookIcon },
@@ -20,7 +21,10 @@ export default function BottomNav({ active, onNav, lang = 'taglish' }) {
           return (
             <button
               key={key}
-              onClick={() => onNav(key)}
+              onClick={() => {
+                playSong()
+                onNav(key)
+              }}
               className={`flex min-h-[56px] flex-1 flex-col items-center justify-center gap-0.5 rounded-2xl px-1 py-1.5 ${
                 on ? 'border-[2.5px] border-outline bg-yellow shadow-hard-sm' : 'border-[2.5px] border-transparent'
               }`}

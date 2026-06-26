@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Card, Button, Doodles, RefBadge, MasteryBar, RichText } from '../ui/Primitives.jsx'
 import { Mascot } from '../ui/Mascot.jsx'
 import OnlineBadge from '../ui/OnlineBadge.jsx'
@@ -7,9 +7,48 @@ import { feedbackFor } from '../lib/feedback.js'
 import { recordAttempt } from '../lib/history.js'
 import { topicTitle } from '../lib/topics.js'
 import { makeT, localize } from '../lib/i18n.js'
-import { sfx } from '../lib/sound.js'
+import { sfx, playButtonSfx } from '../lib/sound.js'
 
 const COUNT_OPTIONS = [5, 10, 15, 20]
+
+// The four mini-games. Each is a themed wrapper over a slice of the Grade 6
+// MATATAG curriculum: `domains` matches a whole learning area, `refs` matches
+// specific competencies (so Garden and House can split Measurement & Geometry).
+// `accent` is the inner card color; `awning` are the stripe classes.
+const GAMES = [
+  {
+    key: 'store',
+    outer: 'bg-peach',
+    accent: '#f7d26a',
+    awning: ['bg-rose', 'bg-white', 'bg-yellow', 'bg-white', 'bg-rose'],
+    Icon: ShopIcon,
+    domains: ['Number and Algebra'],
+  },
+  {
+    key: 'garden',
+    outer: 'bg-mint',
+    accent: '#bfe8cf',
+    awning: ['bg-mint', 'bg-white', 'bg-yellow', 'bg-white', 'bg-mint'],
+    Icon: GardenIcon,
+    refs: ['6MG-Ig-7', '6MG-IIIa-1', '6MG-IIIb-2', '6MG-IIIc-3', '6MG-IIId-4'],
+  },
+  {
+    key: 'house',
+    outer: 'bg-sky',
+    accent: '#bfe2f7',
+    awning: ['bg-sky', 'bg-white', 'bg-peach', 'bg-white', 'bg-sky'],
+    Icon: HouseIcon,
+    refs: ['6MG-IIe-5', '6MG-IIf-6', '6MG-IIg-7'],
+  },
+  {
+    key: 'fiesta',
+    outer: 'bg-lavender',
+    accent: '#ddd0f5',
+    awning: ['bg-lavender', 'bg-white', 'bg-rose', 'bg-white', 'bg-lavender'],
+    Icon: FiestaIcon,
+    domains: ['Data and Probability'],
+  },
+]
 
 function shuffle(arr) {
   const a = [...arr]
@@ -20,11 +59,17 @@ function shuffle(arr) {
   return a
 }
 
-// Build a question pool from the whole Grade 6 curriculum (every competency's
-// items). Repeats the shuffled pool if the learner wants more than we have.
-function buildQuestions(competencies, count) {
+// Build a question pool from the competencies that belong to the chosen game.
+// Falls back to the whole curriculum if the slice is somehow empty. Repeats the
+// shuffled pool if the learner wants more questions than we have.
+function buildQuestions(competencies, count, game) {
+  const match = (c) =>
+    game.refs ? game.refs.includes(c.ref) : game.domains ? game.domains.includes(c.domain) : true
+  const scoped = competencies.filter(match)
+  const source = scoped.length ? scoped : competencies
+
   const pool = []
-  for (const c of competencies) {
+  for (const c of source) {
     for (const it of c.items ?? []) {
       pool.push({ ...it, ref: c.ref, domain: c.domain, title: topicTitle(c.ref, c.competency) })
     }
@@ -36,6 +81,7 @@ function buildQuestions(competencies, count) {
 
 export default function Games({ online = true, competencies = [], mastery = {}, lang = 'taglish', onAnswered = async () => {} }) {
   const tt = makeT(lang)
+  const [gameKey, setGameKey] = useState(null)
   const [started, setStarted] = useState(false)
   const [count, setCount] = useState(10)
   const [questions, setQuestions] = useState([])
@@ -48,17 +94,19 @@ export default function Games({ online = true, competencies = [], mastery = {}, 
   const [answered, setAnswered] = useState(0)
   const [log, setLog] = useState([])
 
+  const game = GAMES.find((g) => g.key === gameKey) ?? null
   const round = questions[idx]
   const done = started && answered >= questions.length
   const score = round?.ref ? mastery[round.ref] ?? 0.5 : 0.5
 
-  // Victory jingle when the store closes (summary appears).
+  // Victory jingle when a game finishes (summary appears).
   useEffect(() => {
     if (done) sfx('finish')
   }, [done])
 
   function startGame() {
-    setQuestions(buildQuestions(competencies, count))
+    if (!game) return
+    setQuestions(buildQuestions(competencies, count, game))
     setStarted(true)
     setIdx(0)
     setInput('')
@@ -68,6 +116,11 @@ export default function Games({ online = true, competencies = [], mastery = {}, 
     setStreak(0)
     setAnswered(0)
     setLog([])
+  }
+
+  function backToPicker() {
+    setGameKey(null)
+    setStarted(false)
   }
 
   async function submit() {
@@ -94,19 +147,63 @@ export default function Games({ online = true, competencies = [], mastery = {}, 
     setFb(null)
   }
 
+  // ---- Game picker ----
+  if (!game) {
+    return (
+      <div className="gb-shell relative min-h-screen px-5 pb-28 pt-6">
+        <Doodles />
+        <Header online={online} />
+        <div className="relative z-10 mt-5">
+          <h1 className="font-display text-3xl font-extrabold">{tt('games.pick')}</h1>
+          <p className="mt-1 text-base font-bold text-ink/70">{tt('games.pickSub')}</p>
+        </div>
+        <div className="relative z-10 mt-4 grid grid-cols-1 gap-3">
+          {GAMES.map((g) => (
+            <button
+              key={g.key}
+              onClick={() => {
+                playButtonSfx()
+                setGameKey(g.key)
+              }}
+              className={`flex items-center gap-4 rounded-card border-[2.5px] border-outline ${g.outer} p-4 text-left shadow-hard active:translate-y-0.5`}
+            >
+              <span className="flex h-16 w-16 shrink-0 items-center justify-center rounded-card border-[2.5px] border-outline bg-white">
+                <g.Icon />
+              </span>
+              <span className="min-w-0">
+                <span className="block font-display text-xl font-extrabold leading-tight">{tt(`games.${g.key}.name`)}</span>
+                <span className="mt-1 block text-sm font-bold text-ink/70">{tt(`games.${g.key}.tagline`)}</span>
+              </span>
+            </button>
+          ))}
+        </div>
+      </div>
+    )
+  }
+
   // ---- Start screen ----
   if (!started) {
     return (
       <div className="gb-shell relative min-h-screen px-5 pb-28 pt-6">
         <Doodles />
         <Header online={online} />
-        <section className="relative z-10 mt-5 overflow-hidden rounded-card border-[2.5px] border-outline bg-peach p-5 shadow-hard">
-          <div className="flex min-h-[180px] flex-col justify-end rounded-card border-[2.5px] border-outline bg-[#f7d26a] p-4">
-            <ShopAwning />
-            <h1 className="mt-5 font-display text-3xl font-extrabold leading-tight">{tt('games.store')}</h1>
-            <p className="mt-1 max-w-[26ch] text-base font-bold text-ink/75">
-              {tt('games.tagline')}
-            </p>
+        <button
+          onClick={() => {
+            playButtonSfx()
+            backToPicker()
+          }}
+          className="relative z-10 mt-4 text-sm font-extrabold text-ink/60 underline"
+        >
+          ← {tt('games.chooseAnother')}
+        </button>
+        <section className={`relative z-10 mt-3 overflow-hidden rounded-card border-[2.5px] border-outline ${game.outer} p-5 shadow-hard`}>
+          <div
+            className="flex min-h-[180px] flex-col justify-end rounded-card border-[2.5px] border-outline p-4"
+            style={{ backgroundColor: game.accent }}
+          >
+            <Awning colors={game.awning} />
+            <h1 className="mt-5 font-display text-3xl font-extrabold leading-tight">{tt(`games.${game.key}.name`)}</h1>
+            <p className="mt-1 max-w-[26ch] text-base font-bold text-ink/75">{tt(`games.${game.key}.tagline`)}</p>
           </div>
         </section>
 
@@ -117,7 +214,10 @@ export default function Games({ online = true, competencies = [], mastery = {}, 
             {COUNT_OPTIONS.map((n) => (
               <button
                 key={n}
-                onClick={() => setCount(n)}
+                onClick={() => {
+                  playButtonSfx()
+                  setCount(n)
+                }}
                 className={`gb-btn flex-1 text-lg ${count === n ? 'bg-mint' : 'bg-white'}`}
               >
                 {n}
@@ -128,7 +228,7 @@ export default function Games({ online = true, competencies = [], mastery = {}, 
         </div>
 
         <Button color="mint" className="mt-5 min-h-[58px] w-full text-xl" onClick={startGame}>
-          {tt('games.startStore', { n: count })}
+          {tt(`games.${game.key}.start`, { n: count })}
         </Button>
       </div>
     )
@@ -144,9 +244,9 @@ export default function Games({ online = true, competencies = [], mastery = {}, 
         <Header online={online} />
         <Card color="mint" className="gb-pop mt-6 p-6 text-center">
           <div className="mx-auto mb-3 flex h-20 w-20 items-center justify-center rounded-card border-[2.5px] border-outline bg-white">
-            <ShopIcon />
+            <game.Icon />
           </div>
-          <h1 className="font-display text-3xl font-extrabold">{tt('games.closed')}</h1>
+          <h1 className="font-display text-3xl font-extrabold">{tt(`games.${game.key}.closed`)}</h1>
           <p className="mt-2 text-lg font-extrabold">{tt('games.earned', { coins })}</p>
           <div className="mt-3 grid grid-cols-3 gap-2">
             <Stat label={tt('games.answered')} value={log.length} color="bg-sky" />
@@ -185,6 +285,9 @@ export default function Games({ online = true, competencies = [], mastery = {}, 
 
         <Button color="yellow" className="mt-5 min-h-[54px] w-full text-lg" onClick={() => setStarted(false)}>
           {tt('games.playAgain')}
+        </Button>
+        <Button color="white" className="mt-3 min-h-[54px] w-full text-lg" onClick={backToPicker}>
+          {tt('games.chooseAnother')}
         </Button>
       </div>
     )
@@ -226,7 +329,7 @@ export default function Games({ online = true, competencies = [], mastery = {}, 
           )}
 
           <div className="rounded-card border-[2.5px] border-outline bg-sky p-4">
-            <p className="text-sm font-extrabold uppercase text-ink/60">{tt('games.customer')}</p>
+            <p className="text-sm font-extrabold uppercase text-ink/60">{tt(`games.${game.key}.actor`)}</p>
             <p className="mt-2 rounded-2xl border-2 border-outline bg-white p-3 text-xl font-extrabold leading-snug">
               {localize(round.q, lang)}
             </p>
@@ -248,7 +351,10 @@ export default function Games({ online = true, competencies = [], mastery = {}, 
                 {round.options.map((opt) => (
                   <button
                     key={opt}
-                    onClick={() => setInput(opt)}
+                    onClick={() => {
+                      playButtonSfx()
+                      setInput(opt)
+                    }}
                     className={`gb-chip text-base ${input === opt ? 'bg-sky shadow-hard-sm' : 'bg-white'}`}
                   >
                     {opt}
@@ -259,7 +365,7 @@ export default function Games({ online = true, competencies = [], mastery = {}, 
 
             {result === null ? (
               <Button color="mint" className="min-h-[58px] text-xl" onClick={submit}>
-                {tt('games.pay')}
+                {tt(`games.${game.key}.action`)}
               </Button>
             ) : (
               <Button color={result ? 'mint' : 'rose'} className="min-h-[58px] text-xl" onClick={nextRound}>
@@ -303,10 +409,11 @@ function Stat({ label, value, color }) {
   )
 }
 
-function ShopAwning() {
+// Striped awning shared by every game's start card.
+function Awning({ colors }) {
   return (
     <div className="grid h-14 grid-cols-5 overflow-hidden rounded-t-card border-[2.5px] border-outline bg-white">
-      {['bg-rose', 'bg-white', 'bg-yellow', 'bg-white', 'bg-rose'].map((color, index) => (
+      {colors.map((color, index) => (
         <span key={index} className={`${color} border-r-2 border-outline last:border-r-0`} />
       ))}
     </div>
@@ -315,10 +422,41 @@ function ShopAwning() {
 
 function ShopIcon() {
   return (
-    <svg viewBox="0 0 80 80" width="62" height="62" aria-hidden="true">
+    <svg viewBox="0 0 80 80" width="50" height="50" aria-hidden="true">
       <path d="M12 30 L17 14 h46 l5 16 Z" fill="#F4A87C" stroke="#1C1410" strokeWidth="4" strokeLinejoin="round" />
       <rect x="18" y="30" width="44" height="34" rx="3" fill="#A9D8F0" stroke="#1C1410" strokeWidth="4" />
       <rect x="32" y="42" width="16" height="22" fill="#fff" stroke="#1C1410" strokeWidth="4" />
+    </svg>
+  )
+}
+
+function GardenIcon() {
+  return (
+    <svg viewBox="0 0 80 80" width="50" height="50" aria-hidden="true">
+      <path d="M40 46 V66" stroke="#1C1410" strokeWidth="4" strokeLinecap="round" />
+      <path d="M40 50 C24 46 20 30 30 22 C44 26 48 42 40 50 Z" fill="#8FD9B6" stroke="#1C1410" strokeWidth="4" strokeLinejoin="round" />
+      <path d="M40 42 C56 38 60 22 50 14 C36 18 32 34 40 42 Z" fill="#8FD9B6" stroke="#1C1410" strokeWidth="4" strokeLinejoin="round" />
+      <path d="M24 66 h32 l-4 8 H28 Z" fill="#F4A87C" stroke="#1C1410" strokeWidth="4" strokeLinejoin="round" />
+    </svg>
+  )
+}
+
+function HouseIcon() {
+  return (
+    <svg viewBox="0 0 80 80" width="50" height="50" aria-hidden="true">
+      <path d="M12 38 L40 14 L68 38 Z" fill="#F4A87C" stroke="#1C1410" strokeWidth="4" strokeLinejoin="round" />
+      <rect x="20" y="38" width="40" height="28" fill="#A9D8F0" stroke="#1C1410" strokeWidth="4" />
+      <rect x="34" y="48" width="12" height="18" fill="#fff" stroke="#1C1410" strokeWidth="4" />
+    </svg>
+  )
+}
+
+function FiestaIcon() {
+  return (
+    <svg viewBox="0 0 80 80" width="50" height="50" aria-hidden="true">
+      <circle cx="40" cy="42" r="22" fill="#fff" stroke="#1C1410" strokeWidth="4" />
+      <path d="M40 42 L40 20 A22 22 0 0 1 61 44 Z" fill="#C9B6F0" stroke="#1C1410" strokeWidth="4" strokeLinejoin="round" />
+      <path d="M40 42 L61 44 A22 22 0 0 1 28 61 Z" fill="#F7D26A" stroke="#1C1410" strokeWidth="4" strokeLinejoin="round" />
     </svg>
   )
 }

@@ -9,8 +9,7 @@
         "build": "vite build",
         "preview": "vite preview",
         "icons": "node scripts/generate-icons.mjs",
-        "gen:content": "node --env-file=.env scripts/generate-content.js",
-        "codex:usage": "node scripts/codex-usage.mjs"
+        "gen:content": "node --env-file=.env scripts/generate-content.js"
     },
     "dependencies": {
         "@google-cloud/text-to-speech": "^6.4.1",

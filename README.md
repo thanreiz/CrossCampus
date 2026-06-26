@@ -441,7 +441,6 @@ Final polish before judging:
 <p align="center">
   <img src="public/pwa-192x192.png" alt="Gabay app icon" width="96" />
   <img src="public/maskable-512x512.png" alt="Gabay maskable icon" width="96" />
-  <img src="textures/_contact-sheet.png" alt="Gabay classroom texture contact sheet" width="360" />
 </p>
 
 - **Mascot:** Teacher Gabay, a friendly star guide for math practice.

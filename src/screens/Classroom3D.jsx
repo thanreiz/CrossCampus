@@ -9,6 +9,7 @@ import { recordAttempt } from '../lib/history.js'
 import { topicFull } from '../lib/topics.js'
 import { loadTheme, saveTheme, DEFAULT_THEME } from '../lib/theme.js'
 import { makeT, localize } from '../lib/i18n.js'
+import { answerHint } from '../lib/lang.js'
 import { sfx, primeAudio } from '../lib/sound.js'
 
 // Strip **bold** markup before reading aloud.
@@ -38,6 +39,8 @@ export default function Classroom3D({ competency, score, online, lang = 'taglish
   const [done, setDone] = useState(false)
   const [theme, setTheme] = useState(DEFAULT_THEME)
   const [themeOpen, setThemeOpen] = useState(false)
+  const [nudge, setNudge] = useState(null) // 'needAnswer' | 'needNumber' | null — gentle input validation
+  const [showIntro, setShowIntro] = useState(true) // first-entry coachmark (how to answer)
 
   const item = c.items[idx]
   const itemRef = useRef(item)
@@ -97,6 +100,16 @@ export default function Classroom3D({ competency, score, online, lang = 'taglish
 
   function submit() {
     if (result !== null) return
+    // Validation: don't let an empty / meaningless answer count as an attempt.
+    if (!input.trim()) {
+      setNudge('needAnswer')
+      return
+    }
+    if (item.type !== 'mcq' && !/\d/.test(input)) {
+      setNudge('needNumber')
+      return
+    }
+    setNudge(null)
     const locItem = { ...item, q: localize(item.q, lang), solution: localize(item.solution, lang) }
     const ok = checkAnswer(item, input)
     const f = feedbackFor(locItem, ok, lang, idx)
@@ -124,6 +137,7 @@ export default function Classroom3D({ competency, score, online, lang = 'taglish
     setInput('')
     setResult(null)
     setFb(null)
+    setNudge(null)
     sceneRef.current?.setBoardText(localize(c.items[n].q, lang))
     speak(localize(c.items[n].q, lang), { lang })
   }
@@ -132,6 +146,7 @@ export default function Classroom3D({ competency, score, online, lang = 'taglish
     setModal(false)
     setResult(null)
     setFb(null)
+    setNudge(null)
     sceneRef.current?.setControls(true)
   }
 
@@ -260,6 +275,28 @@ export default function Classroom3D({ competency, score, online, lang = 'taglish
         </div>
       )}
 
+      {/* first-entry coachmark — explicit "how to answer" for first-time kids */}
+      {ready && showIntro && !done && (
+        <div className="absolute inset-0 z-20 flex items-center justify-center bg-black/50 p-4">
+          <div className="gb-card gb-pop w-full max-w-sm bg-white p-6 text-center">
+            <h2 className="font-display text-2xl font-extrabold">{tt('3d.intro.title')}</h2>
+            <ol className="mt-4 flex flex-col gap-3 text-left">
+              {['3d.intro.s1', '3d.intro.s2', '3d.intro.s3'].map((k, i) => (
+                <li key={k} className="flex items-start gap-3">
+                  <span className="gb-chip bg-yellow shadow-hard-sm h-7 w-7 justify-center p-0 text-sm font-extrabold leading-none tabular-nums">
+                    {i + 1}
+                  </span>
+                  <span className="pt-1 text-sm font-bold leading-snug">{tt(k)}</span>
+                </li>
+              ))}
+            </ol>
+            <Button color="mint" className="mt-5 w-full text-lg" onClick={() => setShowIntro(false)}>
+              {tt('3d.intro.go')}
+            </Button>
+          </div>
+        </div>
+      )}
+
       {/* lesson modal - reuses content items + auto-check + mastery + voice */}
       {modal && !done && (
         <div className="absolute inset-0 flex items-end justify-center bg-black/40 p-4 sm:items-center">
@@ -289,7 +326,10 @@ export default function Classroom3D({ competency, score, online, lang = 'taglish
                 {item.options.map((opt) => (
                   <button
                     key={opt}
-                    onClick={() => setInput(opt)}
+                    onClick={() => {
+                      setInput(opt)
+                      setNudge(null)
+                    }}
                     className={`gb-chip ${input === opt ? 'bg-sky shadow-hard-sm' : 'bg-white'}`}
                   >
                     {opt}
@@ -298,25 +338,47 @@ export default function Classroom3D({ competency, score, online, lang = 'taglish
               </div>
             )}
 
-            <div className="mt-4 grid gap-3 sm:grid-cols-[1fr_auto]">
-              <input
-                value={input}
-                onChange={(e) => setInput(e.target.value)}
-                onKeyDown={(e) => e.key === 'Enter' && (result === null ? submit() : next())}
-                placeholder={tt('common.answerPlaceholder')}
-                inputMode={item.type === 'mcq' ? 'text' : 'decimal'}
-                className="min-h-[56px] min-w-0 rounded-full border-[2.5px] border-outline px-5 py-3 text-lg font-bold outline-none focus:bg-cream"
-              />
+            {/* explicit instruction — kids need to know where to put the answer */}
+            <p className="mt-4 px-1 text-sm font-bold text-ink/70">
+              {item.type === 'mcq' ? tt('class.pickAnswer') : tt('class.typeHere')}
+            </p>
+            {item.type !== 'mcq' && (
+              <p className="px-1 text-xs font-bold text-ink/50">{answerHint(lang)}</p>
+            )}
+
+            <div className="mt-2 grid gap-3 sm:grid-cols-[1fr_auto]">
+              {item.type !== 'mcq' && (
+                <input
+                  value={input}
+                  onChange={(e) => {
+                    setInput(e.target.value)
+                    if (nudge) setNudge(null)
+                  }}
+                  onKeyDown={(e) => e.key === 'Enter' && (result === null ? submit() : next())}
+                  placeholder={tt('common.answerPlaceholder')}
+                  inputMode="decimal"
+                  className="min-h-[56px] min-w-0 rounded-full border-[2.5px] border-outline px-5 py-3 text-lg font-bold outline-none focus:bg-cream"
+                />
+              )}
               {result === null ? (
-                <Button color="mint" className="min-h-[56px] px-6 text-lg" onClick={submit}>
+                <Button
+                  color="mint"
+                  className={`min-h-[56px] px-6 text-lg disabled:opacity-50 ${item.type === 'mcq' ? 'w-full' : ''}`}
+                  onClick={submit}
+                  disabled={!input.trim()}
+                >
                   {tt('class.answer')}
                 </Button>
               ) : (
-                <Button color="sky" className="min-h-[56px] px-6 text-lg" onClick={next}>
+                <Button color="sky" className={`min-h-[56px] px-6 text-lg ${item.type === 'mcq' ? 'w-full' : ''}`} onClick={next}>
                   {idx + 1 >= c.items.length ? tt('common.finish') : tt('common.next')}
                 </Button>
               )}
             </div>
+
+            {nudge && (
+              <p className="mt-2 px-1 text-sm font-extrabold text-[#c0414b]">{tt('common.' + nudge)}</p>
+            )}
 
           </div>
         </div>

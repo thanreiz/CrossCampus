@@ -39,6 +39,8 @@ export const STRINGS = {
   'common.finish': { en: 'Finish', fil: 'Tapusin', taglish: 'Tapusin' },
   'common.done': { en: 'Done', fil: 'Tapos', taglish: 'Tapos' },
   'common.answerPlaceholder': { en: 'Type your answer...', fil: 'Isulat ang sagot...', taglish: 'Isulat ang sagot...' },
+  'common.needAnswer': { en: 'Type your answer first.', fil: 'Isulat muna ang sagot.', taglish: 'Isulat muna ang sagot.' },
+  'common.needNumber': { en: 'Type a number.', fil: 'Magbigay ng numero.', taglish: 'Mag-type ng number.' },
 
   // ---- nav tabs ----
   'nav.lessons': { en: 'Lessons', fil: 'Aralin', taglish: 'Lessons' },
@@ -135,6 +137,8 @@ export const STRINGS = {
   'class.askError': { en: 'There was a problem answering. Please try again.', fil: 'May problema sa pagsagot. Subukan ulit.', taglish: 'May problema sa pagsagot. Subukan ulit.' },
   'class.startPractice': { en: 'Start the practice', fil: 'Simulan ang pagsasanay', taglish: 'Simulan ang pagsasanay' },
   'class.answer': { en: 'Answer', fil: 'Sumagot', taglish: 'Sumagot' },
+  'class.typeHere': { en: 'Type your answer here 👇', fil: 'Isulat ang sagot dito 👇', taglish: 'I-type ang sagot mo dito 👇' },
+  'class.pickAnswer': { en: 'Tap your answer', fil: 'Pumili ng sagot', taglish: 'Pumili ng sagot' },
   'class.repeat': { en: 'Repeat', fil: 'Ulitin', taglish: 'Ulitin' },
   'class.source.nano': { en: 'On-device (offline)', fil: 'On-device (offline)', taglish: 'On-device (offline)' },
   'class.source.online': { en: 'Teacher Gabay (online)', fil: 'Teacher Gabay (online)', taglish: 'Teacher Gabay (online)' },
@@ -278,6 +282,13 @@ export const STRINGS = {
   '3d.board.correct': { en: 'Correct!', fil: 'Tama!', taglish: 'Tama!' },
   '3d.board.tryAgain': { en: 'Try again', fil: 'Subukan ulit', taglish: 'Subukan ulit' },
   '3d.board.ready': { en: 'The class is ready.', fil: 'Handa na ang klase.', taglish: 'Handa na ang klase.' },
+
+  // ---- 3D first-entry coachmark ----
+  '3d.intro.title': { en: 'How to answer', fil: 'Paano sumagot', taglish: 'Paano sumagot' },
+  '3d.intro.s1': { en: 'Move to the board.', fil: 'Lumapit sa pisara.', taglish: 'Galaw papunta sa pisara.' },
+  '3d.intro.s2': { en: 'Tap the Answer button.', fil: 'I-tap ang Sagutin.', taglish: 'I-tap ang Sagutin.' },
+  '3d.intro.s3': { en: 'Type your answer, then send.', fil: 'Isulat ang sagot, tapos ipasa.', taglish: 'I-type ang sagot mo, tapos send.' },
+  '3d.intro.go': { en: "Got it!", fil: 'Sige!', taglish: 'Sige!' },
 
   // ---- 3D renovation theme names ----
   'theme.classic': { en: 'Classic', fil: 'Klasiko', taglish: 'Klasiko' },

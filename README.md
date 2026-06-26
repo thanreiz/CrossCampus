@@ -24,7 +24,7 @@
 
 **Live app:** https://gabay-sage.vercel.app
 
-Gabay is a mobile-first Progressive Web App that helps Grade 6 students practice Mathematics with Teacher Gabay, a friendly tutor mascot. The app combines curriculum-grounded lessons, adaptive mastery tracking, multilingual UI, voice support, a 2D tutor classroom, a textured 3D classroom simulation, and a Tindahan math game.
+Gabay is a mobile-first Progressive Web App that helps Grade 6 students practice Mathematics with Teacher Gabay, a friendly tutor mascot. The app combines curriculum-grounded lessons, adaptive mastery tracking, multilingual UI, voice support, a 2D tutor classroom, a textured 3D classroom simulation, and four curriculum mini-games.
 
 ## Team
 
@@ -94,7 +94,8 @@ Gabay uses a local-first learning loop with optional online AI support.
    - If those online services fail or the learner is offline, Gabay falls back to typing, cached/local explanations, and browser speech synthesis where available.
 
 7. **Practice through games**
-   - Tindahan Game reuses the same curriculum, answer checking, feedback, mastery, sound effects, and review history.
+   - Store, Garden, House Builder, and Fiesta games reuse the same curriculum, answer checking, feedback, mastery, sound effects, and review history.
+   - Curriculum badges show the skill area for each game, and finish summaries show score, accuracy, coins, and missed-item review.
    - This keeps lessons, games, and classroom practice connected instead of becoming separate activities.
 
 ## Current Feature Set
@@ -152,16 +153,21 @@ Gabay uses a local-first learning loop with optional online AI support.
   - textured walls, floor, ceiling, rug, window, corkboard, and posters
   - blackboard question rendering with CanvasTexture
   - proximity interaction at the board
+  - always-visible first-answer hint: move near the board to answer
   - answer modal using the same local checking and mastery engine
   - proper cleanup on exit
 
-### Tindahan Game
+### Curriculum Mini-Games
 
-- Store-themed math practice screen in `src/screens/Games.jsx`.
-- Covers totals, discounts, ratios, percentages, and other Grade 6 skills.
+- Four themed practice games in `src/screens/Games.jsx`:
+  - **Store Game / Tindahan Game**: totals, discounts, ratios, percentages, and number skills.
+  - **Garden Game / Hardin Game**: area, perimeter, and geometry practice.
+  - **House Builder / Bahay Builder**: angles, volume, and capacity practice.
+  - **Fiesta Booth**: data, mean/median/mode, and probability practice.
 - Adjustable number of questions.
-- Coins and mastery updates.
-- Uses the same local answer checker and mastery system.
+- Curriculum badges show the skill focus for each game.
+- Finish summaries show answered count, correct/wrong count, accuracy, coins, and missed-item review.
+- Uses the same local answer checker, mastery system, sound effects, and review history as the classroom flows.
 
 ### Adaptive Mastery and Review
 
@@ -209,7 +215,7 @@ Gabay uses a local-first learning loop with optional online AI support.
 5. Enter 2D Class or 3D Class.
 6. Answer practice questions and watch mastery update.
 7. Tap **Itaas ang kamay / Raise your hand** and use the mic or type a question.
-8. Open the Tindahan Game and answer store-themed math questions.
+8. Open Games and try Store, Garden, House Builder, or Fiesta practice.
 9. Turn network off after first load and show that the core app still works.
 
 ## What Works Offline
@@ -220,7 +226,7 @@ Gabay uses a local-first learning loop with optional online AI support.
 - Practice questions
 - Local answer checking
 - Mastery and review history
-- Tindahan Game
+- Four curriculum mini-games: Store, Garden, House Builder, and Fiesta
 - 2D classroom practice
 - 3D classroom assets and interaction
 - Browser speech synthesis fallback when supported by the device
@@ -272,7 +278,7 @@ src/
     LessonBrief.jsx       lesson overview + 2D/3D entry
     Classroom.jsx         2D Teacher Gabay classroom
     Classroom3D.jsx       React harness for 3D classroom
-    Games.jsx             Tindahan game
+    Games.jsx             four curriculum mini-games + summaries
     Progress.jsx          mastery + review
   three/
     scene.js              3D classroom logic
@@ -379,7 +385,7 @@ Gabay is built as a Grade 6 prototype, but the architecture can grow into a wide
 ### Classroom and Game Expansion
 
 - Add more explorable 3D rooms: library, math lab, school canteen, and home study corner.
-- Turn Tindahan Game into a set of mini-games for measurement, geometry, data, and probability.
+- Add more game themes, challenge modes, and unlockable mastery rewards across the current mini-game system.
 - Add classroom NPC dialogue for guided hints and encouragement.
 - Add unlockable visual rewards tied to mastery, not ads or purchases.
 
@@ -419,7 +425,7 @@ Built and deployed:
 - 21 Grade 6 competencies
 - 2D Teacher Gabay classroom
 - Textured 3D classroom
-- Tindahan Game
+- Four curriculum mini-games
 - Progress and review tracking
 - Online/offline status indicators
 - Gemini tutor endpoint

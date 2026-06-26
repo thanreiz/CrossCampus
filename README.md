@@ -5,7 +5,7 @@
 </p>
 
 <p align="center">
-  <img alt="Team GANGG" src="https://img.shields.io/badge/Team-GANGG-F7D26A?style=for-the-badge&labelColor=1C1410" />
+  <img alt="Team CrossCampus" src="https://img.shields.io/badge/Team-CrossCampus-F7D26A?style=for-the-badge&labelColor=1C1410" />
   <img alt="Offline First" src="https://img.shields.io/badge/Offline--First-PWA-8FD9B6?style=for-the-badge&labelColor=1C1410" />
   <img alt="Grade 6 Math" src="https://img.shields.io/badge/Grade_6-Math-A9D8F0?style=for-the-badge&labelColor=1C1410" />
   <img alt="React" src="https://img.shields.io/badge/React_19-PWA-61DAFB?style=for-the-badge&labelColor=1C1410" />
@@ -20,7 +20,7 @@
   <img alt="Vercel" src="https://img.shields.io/badge/Vercel-Deployed-000000?style=flat-square&logo=vercel&logoColor=white" />
 </p>
 
-> Offline-first AI study companion for Filipino Grade 6 learners, built by **Team GANGG**.
+> Offline-first AI study companion for Filipino Grade 6 learners, built by **Team CrossCampus**.
 
 **Live app:** https://gabay-sage.vercel.app
 
@@ -28,16 +28,14 @@ Gabay is a mobile-first Progressive Web App that helps Grade 6 students practice
 
 ## Team
 
-**Group Name:** Team GANGG
+**Group Name:** CrossCampus
 
 | Member | Role |
 | --- | --- |
-| Member 1 | Product / Research |
-| Member 2 | Frontend / UI |
-| Member 3 | AI / Backend |
-| Member 4 | Demo / QA |
-
-> Replace the member rows with the final submitted names before judging.
+| Alea Grasha Masiglat | UI/UX |
+| Hannah Muñoz | Backend + Asset |
+| Paul Henry Dacalan | Full Stack |
+| Ethan Dreiz Baltazar | Full Stack + Project Manager |
 
 ## Problem
 
@@ -431,7 +429,6 @@ Built and deployed:
 
 Final polish before judging:
 
-- Replace Team GANGG member placeholders with final names.
 - Add screenshots or a demo GIF.
 - Run a full demo on the exact phone/laptop used for judging.
 - Test mic permission and Taglish transcription on the demo device.
@@ -461,6 +458,6 @@ Final polish before judging:
 
 ## Credits
 
-Built by **Team GANGG**.
+Built by **Team CrossCampus**.
 
 Gabay means guide or mentor in Filipino. The project is built as a practical study companion for Filipino learners, with math examples grounded in familiar local contexts and a classroom experience designed for mobile-first use.

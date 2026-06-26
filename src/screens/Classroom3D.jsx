@@ -1,4 +1,4 @@
-﻿import { useEffect, useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { buildClassroom, THEME_LIST } from '../three/scene.js'
 import { Button, RefBadge, RichText } from '../ui/Primitives.jsx'
 import OnlineBadge from '../ui/OnlineBadge.jsx'
@@ -41,6 +41,7 @@ export default function Classroom3D({ competency, score, online, lang = 'taglish
   const [themeOpen, setThemeOpen] = useState(false)
   const [nudge, setNudge] = useState(null) // 'needAnswer' | 'needNumber' | null — gentle input validation
   const [showIntro, setShowIntro] = useState(true) // first-entry coachmark (how to answer)
+  const [hasAnsweredOnce, setHasAnsweredOnce] = useState(false)
 
   const item = c.items[idx]
   const itemRef = useRef(item)
@@ -117,6 +118,7 @@ export default function Classroom3D({ competency, score, online, lang = 'taglish
     setFb(f)
     sfx(ok ? 'correct' : 'wrong')
     if (ok) setCorrectCount((n) => n + 1)
+    setHasAnsweredOnce(true)
     setAnswers((a) => [...a, { q: locItem.q, your: input.trim(), answer: item.answer, correct: ok, solution: locItem.solution }])
     recordAttempt({ ref: c.ref, q: locItem.q, your: input.trim(), answer: item.answer, correct: ok, feedback: ok ? f.headline : f.body })
     onAnswered(c.ref, ok)
@@ -217,7 +219,7 @@ export default function Classroom3D({ competency, score, online, lang = 'taglish
       {ready && !modal && !done && (
         <div className="pointer-events-none absolute bottom-28 left-1/2 -translate-x-1/2 text-center">
           <p className="gb-chip bg-yellow shadow-hard-sm">
-            {atBoard ? tt('3d.hintAtBoard') : tt('3d.hintMove')}
+            {hasAnsweredOnce ? (atBoard ? tt('3d.hintAtBoard') : tt('3d.hintMove')) : tt('3d.firstAnswerHint')}
           </p>
         </div>
       )}

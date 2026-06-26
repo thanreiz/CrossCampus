@@ -1,13 +1,8 @@
-// Voice-IN — student speaks their question. Best-available-first chain:
-//   1. online -> MediaRecorder mic capture -> POST /api/transcribe (Gemini,
-//      best Taglish accuracy)
-//   2. fallback -> browser SpeechRecognition (Web Speech API, online-only, shaky)
+// Voice-IN: student speaks their question. Best-available-first chain:
+//   1. online -> MediaRecorder mic capture -> POST /api/transcribe (Gemini)
+//   2. fallback -> browser SpeechRecognition (Web Speech API)
 //   3. floor -> the student just types (handled by the caller)
-// The caller gates on navigator.onLine and picks the path.
 
-// ---------------------------------------------------------------------------
-// Path 2 — Web Speech API (fallback). lang='fil-PH' placeholder.
-// ---------------------------------------------------------------------------
 export function isRecognitionSupported() {
   return (
     typeof window !== 'undefined' &&
@@ -15,13 +10,11 @@ export function isRecognitionSupported() {
   )
 }
 
-// Returns a controller { start, stop } or null if unsupported.
-// onResult(text), onError(err), onEnd() callbacks.
 export function createRecognizer({ onResult, onError, onEnd, lang = 'fil-PH' } = {}) {
   if (!isRecognitionSupported()) return null
   const Ctor = window.SpeechRecognition || window.webkitSpeechRecognition
   const rec = new Ctor()
-  rec.lang = lang // placeholder — Taglish recognition is shaky; pre-test hard
+  rec.lang = lang
   rec.interimResults = false
   rec.maxAlternatives = 1
   rec.continuous = false
@@ -51,9 +44,6 @@ export function createRecognizer({ onResult, onError, onEnd, lang = 'fil-PH' } =
   }
 }
 
-// ---------------------------------------------------------------------------
-// Path 1 — Gemini transcription via MediaRecorder (best Taglish). Online-only.
-// ---------------------------------------------------------------------------
 export function isMediaRecorderSupported() {
   return (
     typeof window !== 'undefined' &&
@@ -66,7 +56,6 @@ function blobToBase64(blob) {
   return new Promise((resolve, reject) => {
     const reader = new FileReader()
     reader.onloadend = () => {
-      // strip the "data:<mime>;base64," prefix
       const s = String(reader.result)
       resolve(s.slice(s.indexOf(',') + 1))
     }
@@ -75,37 +64,47 @@ function blobToBase64(blob) {
   })
 }
 
-// Pick a mime the recorder + Gemini both accept.
 function pickMime() {
   const prefs = ['audio/webm;codecs=opus', 'audio/webm', 'audio/mp4', 'audio/ogg']
   for (const m of prefs) {
     if (window.MediaRecorder?.isTypeSupported?.(m)) return m
   }
-  return '' // let the browser choose
+  return ''
 }
 
-// Returns a controller { start, stop } for a record -> transcribe cycle, or null
-// if unsupported. onResult(text), onError(err), onEnd(), onStart() callbacks.
-// stop() ends recording, which triggers upload + transcription.
-export function createGeminiRecorder({ onResult, onError, onEnd, onStart } = {}) {
+export function createGeminiRecorder({ onResult, onError, onEnd, onStart, maxMs = 7000 } = {}) {
   if (!isMediaRecorderSupported()) return null
 
   let recorder = null
   let stream = null
   let chunks = []
   let cancelled = false
+  let autoStopTimer = null
+
+  function clearAutoStop() {
+    if (autoStopTimer) clearTimeout(autoStopTimer)
+    autoStopTimer = null
+  }
+
+  function stopTracks() {
+    stream?.getTracks().forEach((t) => t.stop())
+    stream = null
+  }
 
   async function transcribe(blob) {
+    let timeout = null
     try {
       const mimeType = (blob.type || 'audio/webm').split(';')[0]
       const audio = await blobToBase64(blob)
+      const controller = new AbortController()
+      timeout = setTimeout(() => controller.abort(), 20000)
       const res = await fetch('/api/transcribe', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ audio, mimeType }),
+        signal: controller.signal,
       })
       if (!res.ok) {
-        // 501 = server has no STT creds; let caller fall back to Web Speech.
         onError?.(res.status === 501 ? 'stt-unconfigured' : 'stt-failed')
         return
       }
@@ -113,9 +112,10 @@ export function createGeminiRecorder({ onResult, onError, onEnd, onStart } = {})
       const text = (data.text || '').trim()
       if (text) onResult?.(text)
       else onError?.('stt-empty')
-    } catch {
-      onError?.('stt-network')
+    } catch (err) {
+      onError?.(err?.name === 'AbortError' ? 'stt-timeout' : 'stt-network')
     } finally {
+      if (timeout) clearTimeout(timeout)
       onEnd?.()
     }
   }
@@ -132,7 +132,8 @@ export function createGeminiRecorder({ onResult, onError, onEnd, onStart } = {})
           if (e.data?.size) chunks.push(e.data)
         }
         recorder.onstop = () => {
-          stream?.getTracks().forEach((t) => t.stop())
+          clearAutoStop()
+          stopTracks()
           if (cancelled) {
             onEnd?.()
             return
@@ -146,15 +147,26 @@ export function createGeminiRecorder({ onResult, onError, onEnd, onStart } = {})
           transcribe(blob)
         }
         recorder.start()
+        if (maxMs > 0) {
+          autoStopTimer = setTimeout(() => {
+            try {
+              if (recorder && recorder.state !== 'inactive') recorder.stop()
+            } catch {
+              /* noop */
+            }
+          }, maxMs)
+        }
         onStart?.()
       } catch (err) {
-        stream?.getTracks().forEach((t) => t.stop())
+        clearAutoStop()
+        stopTracks()
         onError?.(err?.name === 'NotAllowedError' ? 'mic-denied' : String(err))
         onEnd?.()
       }
     },
     stop() {
       try {
+        clearAutoStop()
         if (recorder && recorder.state !== 'inactive') recorder.stop()
       } catch {
         /* noop */

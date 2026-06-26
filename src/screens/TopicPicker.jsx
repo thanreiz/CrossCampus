@@ -4,17 +4,20 @@ import { Mascot } from '../ui/Mascot.jsx'
 import OnlineBadge from '../ui/OnlineBadge.jsx'
 import { masteryColor } from '../lib/mastery.js'
 import { topicTitle, topicIcon } from '../lib/topics.js'
+import { makeT } from '../lib/i18n.js'
 
 const ICON_BG = ['bg-mint', 'bg-sky', 'bg-rose', 'bg-peach', 'bg-yellow', 'bg-lavender']
+const ALL = '__all__'
 
 // Topic picker - design basis: Stitch "Gabay - Topic Picker".
-export default function TopicPicker({ competencies, mastery, online = true, onPick, onBack }) {
+export default function TopicPicker({ competencies, mastery, online = true, lang = 'taglish', onPick, onBack }) {
+  const tt = makeT(lang)
   const domains = useMemo(
-    () => ['Lahat', ...Array.from(new Set(competencies.map((c) => c.domain)))],
+    () => [ALL, ...Array.from(new Set(competencies.map((c) => c.domain)))],
     [competencies],
   )
-  const [filter, setFilter] = useState('Lahat')
-  const shown = competencies.filter((c) => filter === 'Lahat' || c.domain === filter)
+  const [filter, setFilter] = useState(ALL)
+  const shown = competencies.filter((c) => filter === ALL || c.domain === filter)
 
   return (
     <div className="gb-shell relative flex min-h-screen flex-col px-5 pb-28 pt-6">
@@ -23,7 +26,7 @@ export default function TopicPicker({ competencies, mastery, online = true, onPi
       {/* header */}
       <div className="mb-4 flex items-center justify-between">
         <button className="gb-chip bg-white" onClick={onBack}>
-          Back
+          {tt('common.back')}
         </button>
         <div className="flex items-center gap-2">
           <OnlineBadge online={online} />
@@ -33,15 +36,15 @@ export default function TopicPicker({ competencies, mastery, online = true, onPi
       </div>
 
       <h1 className="font-display text-3xl font-extrabold leading-tight">
-        Anong aaralin natin ngayon?
+        {tt('topics.heading')}
       </h1>
-      <p className="mb-4 text-base font-bold text-ink/70">Pumili ng topic at magsimula ng practice.</p>
+      <p className="mb-4 text-base font-bold text-ink/70">{tt('topics.sub')}</p>
 
       {/* filter chips */}
       <div className="mb-5 flex flex-wrap gap-2">
         {domains.map((d) => (
           <Chip key={d} color="lavender" active={filter === d} onClick={() => setFilter(d)}>
-            {d === 'Number and Algebra' ? 'Number & Algebra' : d}
+            {d === ALL ? tt('topics.all') : d === 'Number and Algebra' ? 'Number & Algebra' : d}
           </Chip>
         ))}
       </div>
@@ -73,7 +76,7 @@ export default function TopicPicker({ competencies, mastery, online = true, onPi
                       {topicTitle(c.ref, c.competency)}
                     </h2>
                     <span className={`gb-chip ${color.bg} shadow-hard-sm shrink-0 text-[11px]`}>
-                      {color.label}
+                      {tt('band.' + color.band)}
                     </span>
                   </div>
                   <p className="mt-1 line-clamp-2 text-sm text-ink/70">{c.competency}</p>

@@ -28,3 +28,4 @@ memory/
 
 .vercel
 .env*
+.gstack/

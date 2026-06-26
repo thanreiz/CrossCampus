@@ -51,6 +51,45 @@ Gabay teaches Grade 6 Math through an offline-capable app shell, bundled curricu
 
 Online, Teacher Gabay can use Gemini, Gemini audio transcription, and Google Cloud Text-to-Speech. Offline, students can still open lessons, answer questions, review progress, play games, and hear fallback speech through the browser.
 
+## How It Works
+
+Gabay uses a local-first learning loop with optional online AI support.
+
+1. **Load the app shell**
+   - Vite builds the React app into static assets.
+   - Workbox precaches the app shell, curriculum content, icons, textures, and bundled chunks.
+   - After the first load, the core learning flow can reopen even with no network.
+
+2. **Choose a language**
+   - The learner selects Taglish, Tagalog, or English.
+   - The preference is saved in IndexedDB.
+   - UI labels, lesson text, feedback, speech language, and Teacher Gabay replies follow that setting.
+
+3. **Pick a topic**
+   - `src/content.json` stores the bundled Grade 6 competencies.
+   - `src/lib/topics.js` maps competency refs to child-friendly titles, domains, and icons.
+   - The app recommends topics using local mastery data.
+
+4. **Learn in 2D or 3D**
+   - The 2D classroom shows explanations, examples, practice, Teacher Gabay speech, and the ask panel.
+   - The 3D classroom renders a textured classroom with Three.js, writes questions to the board, and opens the same answer modal near the board.
+
+5. **Answer and get feedback**
+   - `src/lib/check.js` checks answers locally.
+   - `src/lib/feedback.js` creates localized feedback.
+   - `src/lib/mastery.js` updates mastery in IndexedDB.
+   - `src/lib/history.js` stores recent attempts for review.
+
+6. **Use voice and AI when online**
+   - `api/transcribe.js` sends short mic recordings to Gemini Flash for transcription.
+   - `api/tutor.js` asks Gemini/Vertex for a Teacher Gabay response.
+   - `api/tts.js` uses Google Cloud TTS for higher-quality voice output.
+   - If those online services fail or the learner is offline, Gabay falls back to typing, cached/local explanations, and browser speech synthesis where available.
+
+7. **Practice through games**
+   - Tindahan Game reuses the same curriculum, answer checking, feedback, mastery, sound effects, and review history.
+   - This keeps lessons, games, and classroom practice connected instead of becoming separate activities.
+
 ## Current Feature Set
 
 ### Learning Content
@@ -296,6 +335,13 @@ STT_MODEL=gemini-2.5-flash
 TTS_VOICE=
 ```
 
+### AI APIs Used
+
+- **Teacher Gabay tutor:** Google Vertex AI / Gemini through `api/tutor.js`; default model is `gemini-2.5-pro`, configurable with `GEMINI_MODEL`.
+- **Voice input transcription:** Gemini API audio understanding through `api/transcribe.js`; default model is `gemini-2.5-flash`, configurable with `STT_MODEL`.
+- **Voice output:** Google Cloud Text-to-Speech through `api/tts.js`; default Filipino voice is `fil-PH-Wavenet-A`, configurable with `TTS_VOICE`.
+- **Offline fallback:** browser `speechSynthesis`, typed answers, bundled content, and local answer checking keep the core app usable without the cloud APIs.
+
 Do not commit real service account keys.
 
 ## Future Plan and Scaling
@@ -393,6 +439,17 @@ Final polish before judging:
 - **Classroom style:** warm low-poly classroom with real bundled textures.
 - **UI style:** soft neo-brutal cards, pastel colors, bold outlines, and large tap targets.
 - **Demo line:** Online AI when available. Offline learning when it matters.
+
+## References and Citations
+
+- [DepEd MATATAG Curriculum](https://www.deped.gov.ph/matatag-curriculum/) - curriculum grounding and learning competency alignment.
+- [React Documentation](https://react.dev/) - component-based frontend framework used by the app.
+- [Vite Guide](https://vite.dev/guide/) - frontend build tool and development server.
+- [Workbox Precaching](https://developer.chrome.com/docs/workbox/modules/workbox-precaching) - service worker precaching model used for offline-first behavior.
+- [Three.js Documentation](https://threejs.org/docs/) - WebGL 3D rendering library used for the classroom simulation.
+- [Gemini API Audio Understanding](https://ai.google.dev/gemini-api/docs/audio) - audio input support used by the transcription flow.
+- [Google Cloud Text-to-Speech Documentation](https://cloud.google.com/text-to-speech/docs) - cloud voice generation used by Teacher Gabay when online.
+- [Vercel Deployments Documentation](https://vercel.com/docs/deployments) - production hosting and serverless API deployment platform.
 
 ## Credits
 

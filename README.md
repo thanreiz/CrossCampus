@@ -7,22 +7,24 @@
 <p align="center">
   <img alt="Team GANGG" src="https://img.shields.io/badge/Team-GANGG-F7D26A?style=for-the-badge&labelColor=1C1410" />
   <img alt="Offline First" src="https://img.shields.io/badge/Offline--First-PWA-8FD9B6?style=for-the-badge&labelColor=1C1410" />
-  <img alt="Grade 6 Math" src="https://img.shields.io/badge/Grade_6-Math_Aide-A9D8F0?style=for-the-badge&labelColor=1C1410" />
-  <img alt="React" src="https://img.shields.io/badge/React_19-Study_App-61DAFB?style=for-the-badge&labelColor=1C1410" />
+  <img alt="Grade 6 Math" src="https://img.shields.io/badge/Grade_6-Math-A9D8F0?style=for-the-badge&labelColor=1C1410" />
+  <img alt="React" src="https://img.shields.io/badge/React_19-PWA-61DAFB?style=for-the-badge&labelColor=1C1410" />
   <img alt="Three.js" src="https://img.shields.io/badge/Three.js-3D_Classroom-F4C3D0?style=for-the-badge&labelColor=1C1410" />
 </p>
 
 <p align="center">
   <img alt="Vite" src="https://img.shields.io/badge/Vite-6-646CFF?style=flat-square&logo=vite&logoColor=white" />
   <img alt="Tailwind CSS" src="https://img.shields.io/badge/Tailwind-CSS-38BDF8?style=flat-square&logo=tailwindcss&logoColor=white" />
-  <img alt="IndexedDB" src="https://img.shields.io/badge/IndexedDB-Mastery_Storage-F4A87C?style=flat-square" />
-  <img alt="Gemini" src="https://img.shields.io/badge/Gemini-AI_Tutor-8E75FF?style=flat-square" />
-  <img alt="Vercel Ready" src="https://img.shields.io/badge/Vercel-Ready-000000?style=flat-square&logo=vercel&logoColor=white" />
+  <img alt="IndexedDB" src="https://img.shields.io/badge/IndexedDB-Offline_Masteries-F4A87C?style=flat-square" />
+  <img alt="Gemini" src="https://img.shields.io/badge/Gemini-Teacher_Gabay-8E75FF?style=flat-square" />
+  <img alt="Vercel" src="https://img.shields.io/badge/Vercel-Deployed-000000?style=flat-square&logo=vercel&logoColor=white" />
 </p>
 
-> An offline-first AI study companion for Grade 6 Filipino learners, built by **Team GANGG** for hackathon demo day.
+> Offline-first AI study companion for Filipino Grade 6 learners, built by **Team GANGG**.
 
-Gabay helps Grade 6 students practice Math even when internet access is weak or unavailable. It combines curriculum-grounded lessons, adaptive mastery tracking, voice support, a 2D classroom tutor, a 3D classroom simulation, and a Tindahan math game inside one mobile-first Progressive Web App.
+**Live app:** https://gabay-sage.vercel.app
+
+Gabay is a mobile-first Progressive Web App that helps Grade 6 students practice Mathematics with Teacher Gabay, a friendly tutor mascot. The app combines curriculum-grounded lessons, adaptive mastery tracking, multilingual UI, voice support, a 2D tutor classroom, a textured 3D classroom simulation, and a Tindahan math game.
 
 ## Team
 
@@ -37,98 +39,211 @@ Gabay helps Grade 6 students practice Math even when internet access is weak or 
 
 > Replace the member rows with the final submitted names before judging.
 
-## The Problem
+## Problem
 
-Many Filipino learners study in places where internet access is inconsistent. Most AI study tools assume a stable connection, accounts, cloud-only inference, and generic content. That makes them fragile for real classroom and home study use.
+Many Filipino learners study with inconsistent internet access. Typical AI learning tools depend on cloud-only chat, stable connectivity, accounts, and generic content. That makes them fragile for classroom demos and real home study.
 
-Gabay is designed around a stricter requirement: the core learning loop must still work offline.
+Gabay is built around a practical requirement: the core learning loop should still work when the network is off.
 
-## Our Solution
+## Solution
 
-Gabay is a React + Vite PWA that teaches **Grade 6 Number and Algebra** using DepEd MATATAG-aligned content. Students can open lessons, hear Teacher Gabay read explanations, answer practice questions, build mastery, enter a 3D classroom, and play a store-themed math game.
+Gabay teaches Grade 6 Math through an offline-capable app shell, bundled curriculum content, local answer checking, local mastery storage, and optional online AI upgrades.
 
-When online, Gabay can use richer AI services for tutoring, transcription, and cloud text-to-speech. When offline, it falls back to bundled lessons, cached responses, browser speech synthesis, and IndexedDB mastery data.
+Online, Teacher Gabay can use Gemini, Gemini audio transcription, and Google Cloud Text-to-Speech. Offline, students can still open lessons, answer questions, review progress, play games, and hear fallback speech through the browser.
+
+## Current Feature Set
+
+### Learning Content
+
+- 21 Grade 6 MATATAG-aligned competencies in `src/content.json`.
+- Covers three domains:
+  - Number and Algebra
+  - Measurement and Geometry
+  - Data and Probability
+- Term-based curriculum resources included as PDFs:
+  - `00_Curriculum_Dossier.pdf`
+  - `Final_Year_End_Exam.pdf`
+  - `Term1/`, `Term2/`, `Term3/` lesson plans, activity sheets, quizzes, and exams
+- Child-friendly topic metadata in `src/lib/topics.js`.
+- Filipino-context examples: sari-sari store, palengke, discounts, recipes, measurement, data, and probability.
+
+### Global Language System
+
+- Student chooses once: **Taglish**, **Tagalog**, or **English**.
+- Preference persists offline in IndexedDB.
+- Language drives:
+  - navigation labels
+  - topic screens
+  - lesson explanations
+  - answer hints
+  - feedback
+  - Teacher Gabay replies
+  - speech language selection
+- Core files:
+  - `src/lib/lang.js`
+  - `src/lib/i18n.js`
+
+### 2D Classroom
+
+- Chalkboard tabs for explanation, example, and practice.
+- Teacher Gabay mascot with speech bubble.
+- Read-aloud controls: play, pause, resume, listen again.
+- Answer input with local checking through `src/lib/check.js`.
+- Session summary and review of missed questions.
+- Raise-hand panel for asking Teacher Gabay follow-up questions.
+
+### 3D Classroom Simulation
+
+- React harness in `src/screens/Classroom3D.jsx`.
+- Three.js scene in `src/three/scene.js`.
+- Textured classroom using bundled PNG assets from `textures/`.
+- Offline-safe texture imports through `src/three/textures.js`.
+- Features:
+  - WASD keyboard movement
+  - touch/mobile movement controls
+  - mouse/touch look controls
+  - zoom controls
+  - textured walls, floor, ceiling, rug, window, corkboard, and posters
+  - blackboard question rendering with CanvasTexture
+  - proximity interaction at the board
+  - answer modal using the same local checking and mastery engine
+  - proper cleanup on exit
+
+### Tindahan Game
+
+- Store-themed math practice screen in `src/screens/Games.jsx`.
+- Covers totals, discounts, ratios, percentages, and other Grade 6 skills.
+- Adjustable number of questions.
+- Coins and mastery updates.
+- Uses the same local answer checker and mastery system.
+
+### Adaptive Mastery and Review
+
+- Mastery data is stored locally through IndexedDB.
+- Correct answers raise mastery; wrong answers lower mastery and requeue review sooner.
+- Progress screen shows mastery by topic.
+- Review history records recent attempts for practice follow-up.
+- Core files:
+  - `src/lib/mastery.js`
+  - `src/lib/history.js`
+
+### Voice and AI
+
+- `api/tutor.js`: Teacher Gabay online tutor via Vertex/Gemini.
+- `api/transcribe.js`: Gemini Flash audio transcription for voice-in.
+- `api/tts.js`: Google Cloud TTS voice-out.
+- `src/lib/speech.js`: online TTS with browser `speechSynthesis` fallback.
+- `src/lib/voicein.js`: mic recorder, Web Speech fallback, automatic recording stop, and request timeout.
+- Voice-in behavior:
+  - tap mic once
+  - speak for up to about 7 seconds
+  - recorder auto-stops
+  - Gemini Flash transcribes
+  - Teacher Gabay answers
+- Offline behavior:
+  - mic is disabled or falls back safely
+  - student can still type questions
+  - browser speech synthesis still works when available
+
+### Offline-First PWA
+
+- Vite + Workbox through `vite-plugin-pwa`.
+- App shell and bundled assets are precached.
+- Latest verified build precached 27 entries, including the textured 3D assets.
+- Service worker auto-refreshes installed app bundles.
+- No accounts required.
+- No client-side API keys.
 
 ## Demo Flow
 
-1. Open Gabay and enter the hallway.
-2. Choose a lesson from **Mga Aralin** or browse topics.
-3. Read the lesson brief and enter either **2D Klase** or **3D Klase**.
-4. Answer blackboard questions and watch mastery update.
-5. Turn the network off and reload the app.
-6. Continue studying offline: lessons, practice, mastery, voice-out fallback, and games still work.
+1. Open https://gabay-sage.vercel.app.
+2. Choose a language: Taglish, Tagalog, or English.
+3. Enter the hallway and pick a lesson.
+4. Open the lesson brief.
+5. Enter 2D Class or 3D Class.
+6. Answer practice questions and watch mastery update.
+7. Tap **Itaas ang kamay / Raise your hand** and use the mic or type a question.
+8. Open the Tindahan Game and answer store-themed math questions.
+9. Turn network off after first load and show that the core app still works.
 
-## Key Features
+## What Works Offline
 
-- **Offline-first PWA**: service worker precaches the app shell, lesson content, icons, styles, and bundled chunks.
-- **Curriculum-grounded content**: Grade 6 Number and Algebra competencies in `src/content.json`.
-- **Adaptive mastery**: per-competency mastery scores persist in IndexedDB and guide the next lesson.
-- **Teacher Gabay tutor**: short, friendly explanations in English, Filipino, and Taglish.
-- **Voice-out**: online Google Cloud TTS when configured, offline browser speech synthesis fallback.
-- **Voice-in**: online mic transcription through Gemini STT with Web Speech fallback.
-- **2D classroom**: chalkboard tabs, examples, practice, answer checking, and ask-teacher panel.
-- **3D classroom**: procedural Three.js classroom with WASD/touch controls, blackboard questions, proximity interaction, and cleanup on exit.
-- **Tindahan Game**: Filipino store scenario game for decimals, percentage, discounts, ratios, and percent conversion.
-- **Mobile-first UI**: built for 360px screens with large tap targets and persistent bottom navigation.
+- App shell and main screens
+- Bundled curriculum content
+- Lesson explanations and examples
+- Practice questions
+- Local answer checking
+- Mastery and review history
+- Tindahan Game
+- 2D classroom practice
+- 3D classroom assets and interaction
+- Browser speech synthesis fallback when supported by the device
 
-## What Makes It Hackathon-Worthy
+## What Needs Internet
 
-Gabay is not just a chatbot wrapper. It is a complete learning loop with a clear offline-first constraint:
-
-- The content is bundled, not fetched at runtime.
-- Answer checking uses local logic in `src/lib/check.js`.
-- Mastery tracking uses IndexedDB through `src/lib/mastery.js`.
-- The 3D classroom uses procedural geometry only, no CDN assets or large downloads.
-- Online AI features degrade gracefully instead of breaking the app.
-
-That means the demo can show the strongest story: **AI-enhanced when online, still useful when offline.**
+- Gemini tutor endpoint
+- Gemini Flash audio transcription
+- Google Cloud Text-to-Speech
+- Vercel API routes
+- First-time loading before the service worker has cached the app
 
 ## Tech Stack
 
 | Layer | Technology |
 | --- | --- |
-| App | React 19, Vite 6, Tailwind CSS |
+| Frontend | React 19, Vite 6, Tailwind CSS |
 | PWA | vite-plugin-pwa, Workbox |
-| Storage | IndexedDB via idb-keyval |
-| 3D Simulation | Three.js |
-| AI Tutor | Gemini / Vertex-compatible API through Vercel Functions |
-| Speech-to-Text | Gemini audio STT, Web Speech fallback |
+| Local Storage | IndexedDB through idb-keyval |
+| 3D | Three.js, procedural geometry, bundled textures |
+| AI Tutor | Gemini / Vertex through Vercel Functions |
+| Speech-to-Text | Gemini 2.5 Flash, Web Speech fallback |
 | Text-to-Speech | Google Cloud TTS, browser speechSynthesis fallback |
-| Deployment Target | Vercel-compatible static app + serverless API routes |
+| Deployment | Vercel production |
 
 ## Project Map
 
 ```text
 src/
-  App.jsx                 screen routing, online state, mastery wiring
-  content.json            bundled Grade 6 Number and Algebra content
+  App.jsx                 screen routing, language, online state, mastery wiring
+  content.json            21 bundled Grade 6 competencies
   main.jsx                app bootstrap and service worker registration
   lib/
     check.js              answer checking
+    feedback.js           localized correctness feedback
+    history.js            local review attempt history
+    i18n.js               UI string table
+    lang.js               global language persistence
     mastery.js            IndexedDB mastery + spaced repetition
     speech.js             online/offline voice-out
-    tutor.js              tutor fallback chain
-    voicein.js            mic / recorder helpers
+    topics.js             child-friendly topic metadata
+    tutor.js              Teacher Gabay fallback chain
+    voicein.js            mic recording + transcription fallback
   screens/
-    Home.jsx              hallway entry screen
-    StartChoice.jsx       continue or browse lessons
+    Splash.jsx            app entry
+    Home.jsx              hallway
+    StartChoice.jsx       continue or browse
     TopicPicker.jsx       competency picker
     LessonBrief.jsx       lesson overview + 2D/3D entry
     Classroom.jsx         2D Teacher Gabay classroom
-    Classroom3D.jsx       React harness for Three.js classroom
-    Games.jsx             Tindahan math game
-    Progress.jsx          mastery overview
+    Classroom3D.jsx       React harness for 3D classroom
+    Games.jsx             Tindahan game
+    Progress.jsx          mastery + review
   three/
-    scene.js              procedural 3D classroom
+    scene.js              3D classroom logic
+    textures.js           bundled texture imports
   ui/
     BottomNav.jsx         persistent navigation
-    OnlineBadge.jsx       online/offline status indicator
-    Primitives.jsx        cards, buttons, chips, mastery bar
-    Mascot.jsx            Teacher Gabay mascot and speech bubble
+    Icons.jsx             app icons
+    OnlineBadge.jsx       online/offline status
+    Primitives.jsx        cards, buttons, chips, rich text, mastery bar
+    Mascot.jsx            Teacher Gabay mascot
 api/
-  tutor.js                online tutor endpoint
-  transcribe.js           online speech-to-text endpoint
-  tts.js                  online text-to-speech endpoint
+  tutor.js                Gemini tutor endpoint
+  transcribe.js           Gemini Flash transcription endpoint
+  tts.js                  Google Cloud TTS endpoint
+textures/
+  *.png                   classroom wall, floor, poster, rug, window assets
+Term1/ Term2/ Term3/       curriculum packets and assessments
 ```
 
 ## Run Locally
@@ -138,7 +253,7 @@ npm install
 npm run dev
 ```
 
-Open the local URL shown by Vite, usually:
+Open the Vite URL, usually:
 
 ```text
 http://localhost:5173
@@ -151,7 +266,7 @@ npm run build
 npm run preview
 ```
 
-Use `npm run preview` when testing PWA behavior, because the service worker only behaves like production after a build.
+Use `npm run preview` for PWA testing because the service worker behaves like production only after a build.
 
 ## Offline Test
 
@@ -160,16 +275,7 @@ Use `npm run preview` when testing PWA behavior, because the service worker only
 3. Open the preview URL once while online.
 4. In DevTools, set Network to **Offline**.
 5. Hard refresh the page.
-6. Confirm the app still loads and the lesson flow still works.
-
-Expected offline behavior:
-
-- Home, lessons, topic picker, progress, games, and classrooms load.
-- Bundled questions and explanations are available.
-- Answer checking works.
-- Mastery persists locally.
-- Browser speech synthesis can still read lines aloud.
-- Online-only mic/upload/API features are disabled or fall back safely.
+6. Confirm lessons, practice, progress, games, and 3D classroom still load.
 
 ## Environment Variables
 
@@ -186,72 +292,110 @@ GCP_PROJECT=
 GCP_LOCATION=
 GCP_SA_KEY=
 GEMINI_MODEL=
+STT_MODEL=gemini-2.5-flash
 TTS_VOICE=
 ```
 
 Do not commit real service account keys.
 
-## Deploy Notes
+## Future Plan and Scaling
 
-The app is Vercel-friendly because the frontend builds to static assets and API routes live in `api/`.
+Gabay is built as a Grade 6 prototype, but the architecture can grow into a wider Filipino learning platform.
 
-Recommended Vercel CLI install:
+### Curriculum Scale-Up
 
-```bash
-npm i -g vercel
-```
+- Expand from Grade 6 Math to Grades 4-10.
+- Add more subjects: Science, English, Filipino, Araling Panlipunan, and TLE.
+- Convert the included term PDFs into structured lesson packs.
+- Add teacher-authored modules that can be downloaded once and reused offline.
 
-Useful commands after installing it:
+### Personalization
 
-```bash
-vercel env pull
-vercel deploy
-vercel logs
-```
+- Use mastery history to recommend daily practice sets.
+- Add learner profiles for siblings or shared classroom devices.
+- Generate remedial paths for topics with repeated mistakes.
+- Add parent/teacher summaries that work offline and sync when internet returns.
+
+### AI Tutor Improvements
+
+- Improve Taglish speech recognition with shorter prompts and better retry states.
+- Add safer step-by-step tutoring guardrails for math explanations.
+- Cache successful tutor explanations per competency for faster offline reuse.
+- Add teacher-controlled prompts so schools can tune tone, language, and difficulty.
+
+### Classroom and Game Expansion
+
+- Add more explorable 3D rooms: library, math lab, school canteen, and home study corner.
+- Turn Tindahan Game into a set of mini-games for measurement, geometry, data, and probability.
+- Add classroom NPC dialogue for guided hints and encouragement.
+- Add unlockable visual rewards tied to mastery, not ads or purchases.
+
+### School Rollout Path
+
+- Package lesson sets for low-connectivity schools.
+- Support local-first sync for computer labs and tablets.
+- Add teacher dashboards only after the learner app is stable.
+- Keep the core app lightweight enough for budget Android devices.
+
+## Call to Action
+
+Try Gabay with one real learner and one real weak-signal scenario.
+
+- **For judges:** test the airplane-mode flow after first load.
+- **For teachers:** review the curriculum packs and suggest missing classroom examples.
+- **For learners:** pick a language, answer a lesson, then ask Teacher Gabay a question.
+- **For contributors:** help add more DepEd-aligned lesson packs, games, and offline-first learning tools.
+
+**Gabay's goal:** make AI-assisted learning useful even when the internet is not reliable.
 
 ## Judging Highlights
 
-- **Impact**: designed for Filipino learners with unreliable connectivity.
-- **Feasibility**: the core app runs with local content and local mastery state.
-- **Innovation**: combines offline-first learning, AI fallback design, voice, 3D simulation, and game-based practice.
-- **Demo reliability**: the app has a clear airplane-mode moment that proves the offline claim.
-- **Scalability**: more competencies can be added to `src/content.json` without rewriting the learning engine.
+- **Impact:** built for Filipino learners with unreliable connectivity.
+- **Curriculum depth:** 21 Grade 6 competencies plus term resource packets.
+- **Offline reliability:** local content, local checking, local mastery, cached app shell.
+- **AI with graceful fallback:** online Gemini/TTS/STT when available, typed/offline flows otherwise.
+- **Multimodal experience:** 2D tutor, 3D classroom, voice, and game-based practice.
+- **Demo clarity:** easy airplane-mode moment after first load.
 
 ## Current Status
 
-Built:
+Built and deployed:
 
 - Offline PWA shell
-- Grade 6 Number and Algebra content
-- 2D classroom tutor
-- 3D classroom simulation
-- Tindahan game
-- Progress and mastery tracking
+- Global language picker
+- 21 Grade 6 competencies
+- 2D Teacher Gabay classroom
+- Textured 3D classroom
+- Tindahan Game
+- Progress and review tracking
 - Online/offline status indicators
-- Voice-out and voice-in fallback paths
-- Vercel API route structure for online AI features
+- Gemini tutor endpoint
+- Gemini Flash transcription endpoint
+- Google Cloud TTS endpoint
+- Vercel production deployment
 
-Needs final pre-submission pass:
+Final polish before judging:
 
 - Replace Team GANGG member placeholders with final names.
-- Add final demo screenshots or GIFs.
-- Verify deployed environment variables.
-- Run one full offline demo rehearsal.
+- Add screenshots or a demo GIF.
+- Run a full demo on the exact phone/laptop used for judging.
+- Test mic permission and Taglish transcription on the demo device.
 
 ## Visual Identity
 
 <p align="center">
   <img src="public/pwa-192x192.png" alt="Gabay app icon" width="96" />
   <img src="public/maskable-512x512.png" alt="Gabay maskable icon" width="96" />
-  <img src="public/favicon.svg" alt="Gabay favicon" width="72" />
+  <img src="textures/_contact-sheet.png" alt="Gabay classroom texture contact sheet" width="360" />
 </p>
 
 - **Mascot:** Teacher Gabay, a friendly star guide for math practice.
-- **Classroom feel:** pastel cards, bold outlines, and clear tap targets for mobile learners.
-- **Demo sticker line:** Online AI when available. Offline learning when it matters.
+- **Classroom style:** warm low-poly classroom with real bundled textures.
+- **UI style:** soft neo-brutal cards, pastel colors, bold outlines, and large tap targets.
+- **Demo line:** Online AI when available. Offline learning when it matters.
 
 ## Credits
 
 Built by **Team GANGG**.
 
-Gabay means guide or mentor in Filipino. The project is built as a practical study companion for Filipino learners, with math examples grounded in familiar contexts like palengke, sari-sari stores, jeepney fares, discounts, and recipes.
+Gabay means guide or mentor in Filipino. The project is built as a practical study companion for Filipino learners, with math examples grounded in familiar local contexts and a classroom experience designed for mobile-first use.

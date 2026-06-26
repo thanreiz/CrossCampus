@@ -11,6 +11,7 @@ import { feedbackFor } from '../lib/feedback.js'
 import { recordAttempt } from '../lib/history.js'
 import { topicFull } from '../lib/topics.js'
 import { EarIcon, PlayCircleIcon, PauseCircleIcon, RaiseHandIcon } from '../ui/Icons.jsx'
+import { sfx } from '../lib/sound.js'
 import {
   createRecognizer,
   isRecognitionSupported,
@@ -48,6 +49,7 @@ export default function Classroom({ competency, score, online, lang = 'taglish',
   const [answers, setAnswers] = useState([]) // session log for the summary
   const [fb, setFb] = useState(null) // feedbackFor() of the current item
   const [paused, setPaused] = useState(false)
+  const [nudge, setNudge] = useState(null) // 'needAnswer' | 'needNumber' | null — gentle input validation
 
   // --- Teacher Gabay live tutor ---
   const [askOpen, setAskOpen] = useState(false)
@@ -80,11 +82,22 @@ export default function Classroom({ competency, score, online, lang = 'taglish',
 
   async function submit() {
     if (result !== null) return
+    // Validation: don't let an empty / meaningless answer count as an attempt.
+    if (!input.trim()) {
+      setNudge('needAnswer')
+      return
+    }
+    if (item.type !== 'mcq' && !/\d/.test(input)) {
+      setNudge('needNumber')
+      return
+    }
+    setNudge(null)
     const locItem = { ...item, q: localize(item.q, lang), solution: localize(item.solution, lang) }
     const ok = checkAnswer(item, input)
     const f = feedbackFor(locItem, ok, lang, idx)
     setResult(ok)
     setFb(f)
+    sfx(ok ? 'correct' : 'wrong')
     if (ok) setCorrectCount((n) => n + 1)
     const entry = { q: locItem.q, your: input.trim(), answer: item.answer, correct: ok, solution: locItem.solution }
     setAnswers((a) => [...a, entry])
@@ -101,6 +114,7 @@ export default function Classroom({ competency, score, online, lang = 'taglish',
     setInput('')
     setResult(null)
     setFb(null)
+    setNudge(null)
   }
 
   function restart() {
@@ -108,6 +122,7 @@ export default function Classroom({ competency, score, online, lang = 'taglish',
     setInput('')
     setResult(null)
     setFb(null)
+    setNudge(null)
     setDone(false)
     setCorrectCount(0)
     setAnswers([])
@@ -275,7 +290,12 @@ export default function Classroom({ competency, score, online, lang = 'taglish',
                   {item.options.map((opt) => (
                     <button
                       key={opt}
-                      onClick={() => result === null && setInput(opt)}
+                      onClick={() => {
+                        if (result === null) {
+                          setInput(opt)
+                          setNudge(null)
+                        }
+                      }}
                       className={`rounded-full border-2 border-cream/60 px-4 py-1.5 text-base font-bold ${
                         input === opt ? 'bg-sky text-ink' : 'text-cream'
                       }`}
@@ -399,27 +419,42 @@ export default function Classroom({ competency, score, online, lang = 'taglish',
           </div>
         ) : (
           <div className="gb-card bg-white p-3">
-            <p className="mb-1.5 px-1 text-sm font-bold text-ink/60">{answerHint(lang)}</p>
+            <p className="mb-1.5 px-1 text-sm font-bold text-ink/60">
+              {item.type === 'mcq' ? tt('class.pickAnswer') : answerHint(lang)}
+            </p>
             <div className="flex items-center gap-2">
-              <input
-                value={input}
-                onChange={(e) => setInput(e.target.value)}
-                onKeyDown={(e) => e.key === 'Enter' && (result === null ? submit() : next())}
-                disabled={result !== null}
-                placeholder={tt('common.answerPlaceholder')}
-                inputMode={item.type === 'mcq' ? 'text' : 'decimal'}
-                className="min-w-0 flex-1 rounded-full border-[2.5px] border-outline px-4 py-3 text-lg font-bold outline-none focus:bg-cream disabled:opacity-80"
-              />
+              {item.type !== 'mcq' && (
+                <input
+                  value={input}
+                  onChange={(e) => {
+                    setInput(e.target.value)
+                    if (nudge) setNudge(null)
+                  }}
+                  onKeyDown={(e) => e.key === 'Enter' && (result === null ? submit() : next())}
+                  disabled={result !== null}
+                  placeholder={tt('common.answerPlaceholder')}
+                  inputMode="decimal"
+                  className="min-w-0 flex-1 rounded-full border-[2.5px] border-outline px-4 py-3 text-lg font-bold outline-none focus:bg-cream disabled:opacity-80"
+                />
+              )}
               {result === null ? (
-                <Button color="mint" className="text-lg" onClick={submit}>
+                <Button
+                  color="mint"
+                  className={`text-lg disabled:opacity-50 ${item.type === 'mcq' ? 'w-full' : ''}`}
+                  onClick={submit}
+                  disabled={!input.trim()}
+                >
                   {tt('class.answer')}
                 </Button>
               ) : (
-                <Button color="sky" className="text-lg" onClick={next}>
+                <Button color="sky" className={`text-lg ${item.type === 'mcq' ? 'w-full' : ''}`} onClick={next}>
                   {idx + 1 >= c.items.length ? tt('common.finish') : tt('common.next')}
                 </Button>
               )}
             </div>
+            {nudge && (
+              <p className="mt-2 px-1 text-sm font-extrabold text-[#c0414b]">{tt('common.' + nudge)}</p>
+            )}
           </div>
         )}
       </div>

@@ -53,7 +53,7 @@ export default function LessonBrief({ competency, score = 0.5, online = true, la
         <ol className="mt-3 flex flex-col gap-2">
           {tasks.map((t, i) => (
             <li key={i} className="flex items-start gap-3">
-              <span className="gb-chip bg-yellow shadow-hard-sm h-7 w-7 justify-center p-0">
+              <span className="gb-chip bg-yellow shadow-hard-sm h-7 w-7 justify-center p-0 text-sm font-extrabold leading-none tabular-nums">
                 {i + 1}
               </span>
               <span className="pt-1 text-sm font-bold leading-snug">{t}</span>

@@ -51,6 +51,15 @@ Gabay teaches Grade 6 Math through an offline-capable app shell, bundled curricu
 
 Online, Teacher Gabay can use Gemini, Gemini audio transcription, and Google Cloud Text-to-Speech. Offline, students can still open lessons, answer questions, review progress, play games, and hear fallback speech through the browser.
 
+## Offline-First Promise
+
+Gabay is designed to keep the core learning experience usable even when the internet is slow, unstable, or fully unavailable.
+
+- **Works after first load:** the PWA caches the app shell, lesson content, icons, classroom textures, and game assets.
+- **Local learning loop:** lessons, answer checking, feedback, mastery, language preference, attempt history, and game practice continue offline.
+- **No cloud lock-in for studying:** AI tutoring, Gemini transcription, and Google Cloud TTS are online upgrades, not requirements for learning.
+- **Graceful fallback:** when online APIs are unavailable, learners can type answers, use bundled explanations, and use browser speech synthesis where supported.
+
 ## How It Works
 
 Gabay uses a local-first learning loop with optional online AI support.

@@ -19,6 +19,7 @@ src/content.generated.json
 image.png
 
 # Dev tooling / scratch — not part of the app
+.vscode/
 .tmp-chrome-profile*/
 shots/
 *.log

@@ -105,6 +105,16 @@ function cleanPrompt(value) {
     .trim()
 }
 
+function hasTiedExtremum(question) {
+  const text = String(question)
+  if (!/\bwhich\b.+\bhas the\b.+\b(greatest|largest|highest|most|smallest|lowest|least|fewest)\b/i.test(text)) return false
+  const values = [...text.matchAll(/=\s*(-?\d+(?:\.\d+)?)/g)].map((match) => Number(match[1]))
+  if (values.length < 2) return false
+  const wantsMaximum = /\b(greatest|largest|highest|most)\b/i.test(text)
+  const target = wantsMaximum ? Math.max(...values) : Math.min(...values)
+  return values.filter((value) => value === target).length > 1
+}
+
 function parseShortObjective(markdown, keys, source) {
   const candidates = [
     ...numbered(section(markdown, 'B. Identification (2 points)')).map((item) => ({ ...item, originalType: 'identification' })),
@@ -236,6 +246,7 @@ for (let grade = 1; grade <= 6; grade++) {
     ].sort((a, b) => a.source.item - b.source.item)
     const seenQuestions = new Set()
     const uniqueItems = parsedItems.filter((item) => {
+      if (hasTiedExtremum(item.q.en)) return false
       const signature = normalize(item.q.en).toLowerCase()
       if (seenQuestions.has(signature)) return false
       seenQuestions.add(signature)

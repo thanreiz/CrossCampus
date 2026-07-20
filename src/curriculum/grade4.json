@@ -13846,8 +13846,8 @@
         "type": "mcq",
         "options": [
           "papaya",
-          "True",
           "Both choices",
+          "Neither choice",
           "mango"
         ],
         "solution": {
@@ -13860,60 +13860,6 @@
           "ref": "4SP-IIIf-2",
           "path": "Grade-4/Semester-3/Quizzes/Quiz-10-Problems-Using-Data-For-At-Most-Two-Variables-In-A.md",
           "item": 1,
-          "original_type": "multiple-choice"
-        }
-      },
-      {
-        "q": {
-          "en": "A class survey recorded mango=12, banana=7, papaya=12, and guava=3. Which fruit has the greatest count?",
-          "fil": "A class survey recorded mango=12, banana=7, papaya=12, and guava=3. Which fruit has the greatest count?",
-          "taglish": "A class survey recorded mango=12, banana=7, papaya=12, and guava=3. Which fruit has the greatest count?"
-        },
-        "answer": "mango",
-        "type": "mcq",
-        "options": [
-          "True",
-          "Both choices",
-          "mango",
-          "papaya"
-        ],
-        "solution": {
-          "en": "Answer: mango",
-          "fil": "Answer: mango",
-          "taglish": "Answer: mango"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "4SP-IIIf-2",
-          "path": "Grade-4/Semester-3/Quizzes/Quiz-10-Problems-Using-Data-For-At-Most-Two-Variables-In-A.md",
-          "item": 2,
-          "original_type": "multiple-choice"
-        }
-      },
-      {
-        "q": {
-          "en": "A class survey recorded mango=10, banana=7, papaya=2, and guava=10. Which fruit has the greatest count?",
-          "fil": "A class survey recorded mango=10, banana=7, papaya=2, and guava=10. Which fruit has the greatest count?",
-          "taglish": "A class survey recorded mango=10, banana=7, papaya=2, and guava=10. Which fruit has the greatest count?"
-        },
-        "answer": "mango",
-        "type": "mcq",
-        "options": [
-          "Both choices",
-          "mango",
-          "papaya",
-          "True"
-        ],
-        "solution": {
-          "en": "Answer: mango",
-          "fil": "Answer: mango",
-          "taglish": "Answer: mango"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "4SP-IIIf-2",
-          "path": "Grade-4/Semester-3/Quizzes/Quiz-10-Problems-Using-Data-For-At-Most-Two-Variables-In-A.md",
-          "item": 3,
           "original_type": "multiple-choice"
         }
       },
@@ -13965,31 +13911,6 @@
           "path": "Grade-4/Semester-3/Quizzes/Quiz-10-Problems-Using-Data-For-At-Most-Two-Variables-In-A.md",
           "item": 7,
           "original_type": "matching"
-        }
-      },
-      {
-        "q": {
-          "en": "Is this solution correct? A class survey recorded mango=11, banana=6, papaya=11, and guava=9. Which fruit has the greatest count? Proposed answer: mango",
-          "fil": "Is this solution correct? A class survey recorded mango=11, banana=6, papaya=11, and guava=9. Which fruit has the greatest count? Proposed answer: mango",
-          "taglish": "Is this solution correct? A class survey recorded mango=11, banana=6, papaya=11, and guava=9. Which fruit has the greatest count? Proposed answer: mango"
-        },
-        "answer": "True",
-        "type": "true_false",
-        "options": [
-          "True",
-          "False"
-        ],
-        "solution": {
-          "en": "Answer: True",
-          "fil": "Answer: True",
-          "taglish": "Answer: True"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "4SP-IIIf-2",
-          "path": "Grade-4/Semester-3/Quizzes/Quiz-10-Problems-Using-Data-For-At-Most-Two-Variables-In-A.md",
-          "item": 8,
-          "original_type": "true-false"
         }
       }
     ],

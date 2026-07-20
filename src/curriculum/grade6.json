@@ -12759,33 +12759,6 @@
           "item": 11,
           "original_type": "activity"
         }
-      },
-      {
-        "q": {
-          "en": "A pie graph shows walking=12, jeepney=11, bicycle=6, tricycle=12 learners. Which category has the largest sector?",
-          "fil": "A pie graph shows walking=12, jeepney=11, bicycle=6, tricycle=12 learners. Which category has the largest sector?",
-          "taglish": "A pie graph shows walking=12, jeepney=11, bicycle=6, tricycle=12 learners. Which category has the largest sector?"
-        },
-        "answer": "walking",
-        "type": "mcq",
-        "options": [
-          "walking",
-          "jeepney",
-          "bicycle",
-          "tricycle"
-        ],
-        "solution": {
-          "en": "Answer: walking",
-          "fil": "Answer: walking",
-          "taglish": "Answer: walking"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "6SP-IIIg-1",
-          "path": "Grade-6/Semester-3/Activity-Sheets/Activity-Sheet-12-Data-Presented-In-A-Pie-Graph.md",
-          "item": 12,
-          "original_type": "activity"
-        }
       }
     ],
     "source_trace": {
@@ -13518,33 +13491,6 @@
       },
       {
         "q": {
-          "en": "A pie graph shows walking=12, jeepney=12, bicycle=6, tricycle=12 learners. Which category has the largest sector?",
-          "fil": "A pie graph shows walking=12, jeepney=12, bicycle=6, tricycle=12 learners. Which category has the largest sector?",
-          "taglish": "A pie graph shows walking=12, jeepney=12, bicycle=6, tricycle=12 learners. Which category has the largest sector?"
-        },
-        "answer": "walking",
-        "type": "mcq",
-        "options": [
-          "bicycle",
-          "walking",
-          "jeepney",
-          "tricycle"
-        ],
-        "solution": {
-          "en": "Answer: walking",
-          "fil": "Answer: walking",
-          "taglish": "Answer: walking"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "6SP-IIIh-1",
-          "path": "Grade-6/Semester-3/Activity-Sheets/Activity-Sheet-14-Conclusions-Or-Make-Inferences-Based-On-Data-Presented.md",
-          "item": 11,
-          "original_type": "activity"
-        }
-      },
-      {
-        "q": {
           "en": "A pie graph shows walking=6, jeepney=6, bicycle=10, tricycle=2 learners. Which category has the largest sector?",
           "fil": "A pie graph shows walking=6, jeepney=6, bicycle=10, tricycle=2 learners. Which category has the largest sector?",
           "taglish": "A pie graph shows walking=6, jeepney=6, bicycle=10, tricycle=2 learners. Which category has the largest sector?"
@@ -13611,8 +13557,8 @@
         "type": "mcq",
         "options": [
           "bicycle",
-          "jeepney",
           "tricycle",
+          "True",
           "walking"
         ],
         "solution": {
@@ -13637,8 +13583,8 @@
         "answer": "bicycle",
         "type": "mcq",
         "options": [
-          "jeepney",
           "tricycle",
+          "True",
           "bicycle",
           "walking"
         ],
@@ -13653,87 +13599,6 @@
           "path": "Grade-6/Semester-3/Quizzes/Quiz-15-Problems-Using-Data-Presented-In-A-Pie-Graph.md",
           "item": 2,
           "original_type": "multiple-choice"
-        }
-      },
-      {
-        "q": {
-          "en": "A pie graph shows walking=5, jeepney=12, bicycle=6, tricycle=12 learners. Which category has the largest sector?",
-          "fil": "A pie graph shows walking=5, jeepney=12, bicycle=6, tricycle=12 learners. Which category has the largest sector?",
-          "taglish": "A pie graph shows walking=5, jeepney=12, bicycle=6, tricycle=12 learners. Which category has the largest sector?"
-        },
-        "answer": "jeepney",
-        "type": "mcq",
-        "options": [
-          "tricycle",
-          "jeepney",
-          "walking",
-          "bicycle"
-        ],
-        "solution": {
-          "en": "Answer: jeepney",
-          "fil": "Answer: jeepney",
-          "taglish": "Answer: jeepney"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "6SP-IIIh-2",
-          "path": "Grade-6/Semester-3/Quizzes/Quiz-15-Problems-Using-Data-Presented-In-A-Pie-Graph.md",
-          "item": 3,
-          "original_type": "multiple-choice"
-        }
-      },
-      {
-        "q": {
-          "en": "A pie graph shows walking=11, jeepney=11, bicycle=10, tricycle=10 learners. Which category has the largest sector?",
-          "fil": "A pie graph shows walking=11, jeepney=11, bicycle=10, tricycle=10 learners. Which category has the largest sector?",
-          "taglish": "A pie graph shows walking=11, jeepney=11, bicycle=10, tricycle=10 learners. Which category has the largest sector?"
-        },
-        "answer": "walking",
-        "type": "mcq",
-        "options": [
-          "walking",
-          "bicycle",
-          "jeepney",
-          "tricycle"
-        ],
-        "solution": {
-          "en": "Answer: walking",
-          "fil": "Answer: walking",
-          "taglish": "Answer: walking"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "6SP-IIIh-2",
-          "path": "Grade-6/Semester-3/Activity-Sheets/Activity-Sheet-15-Problems-Using-Data-Presented-In-A-Pie-Graph.md",
-          "item": 4,
-          "original_type": "activity"
-        }
-      },
-      {
-        "q": {
-          "en": "A pie graph shows walking=11, jeepney=4, bicycle=11, tricycle=9 learners. Which category has the largest sector?",
-          "fil": "A pie graph shows walking=11, jeepney=4, bicycle=11, tricycle=9 learners. Which category has the largest sector?",
-          "taglish": "A pie graph shows walking=11, jeepney=4, bicycle=11, tricycle=9 learners. Which category has the largest sector?"
-        },
-        "answer": "walking",
-        "type": "mcq",
-        "options": [
-          "bicycle",
-          "jeepney",
-          "tricycle",
-          "walking"
-        ],
-        "solution": {
-          "en": "Answer: walking",
-          "fil": "Answer: walking",
-          "taglish": "Answer: walking"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "6SP-IIIh-2",
-          "path": "Grade-6/Semester-3/Activity-Sheets/Activity-Sheet-15-Problems-Using-Data-Presented-In-A-Pie-Graph.md",
-          "item": 5,
-          "original_type": "activity"
         }
       },
       {
@@ -13835,33 +13700,6 @@
           "ref": "6SP-IIIh-2",
           "path": "Grade-6/Semester-3/Activity-Sheets/Activity-Sheet-15-Problems-Using-Data-Presented-In-A-Pie-Graph.md",
           "item": 8,
-          "original_type": "activity"
-        }
-      },
-      {
-        "q": {
-          "en": "A pie graph shows walking=4, jeepney=9, bicycle=4, tricycle=9 learners. Which category has the largest sector? Explain why your answer is reasonable.",
-          "fil": "A pie graph shows walking=4, jeepney=9, bicycle=4, tricycle=9 learners. Which category has the largest sector? Explain why your answer is reasonable.",
-          "taglish": "A pie graph shows walking=4, jeepney=9, bicycle=4, tricycle=9 learners. Which category has the largest sector? Explain why your answer is reasonable."
-        },
-        "answer": "jeepney",
-        "type": "mcq",
-        "options": [
-          "walking",
-          "bicycle",
-          "tricycle",
-          "jeepney"
-        ],
-        "solution": {
-          "en": "Answer: jeepney",
-          "fil": "Answer: jeepney",
-          "taglish": "Answer: jeepney"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "6SP-IIIh-2",
-          "path": "Grade-6/Semester-3/Activity-Sheets/Activity-Sheet-15-Problems-Using-Data-Presented-In-A-Pie-Graph.md",
-          "item": 9,
           "original_type": "activity"
         }
       },

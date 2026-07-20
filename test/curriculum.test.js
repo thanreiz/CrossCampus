@@ -6,6 +6,14 @@ const EXPECTED = [47, 53, 51, 54, 49, 52]
 const SUPPORTED = new Set(['numeric', 'mcq', 'matching', 'true_false'])
 const WEAK_OPTION = /alternative\s*\d|first category|second category|third category|answer choice|option\s*\d/i
 
+function hasTiedExtremum(question) {
+  if (!/\bwhich\b.+\bhas the\b.+\b(greatest|largest|highest|most|smallest|lowest|least|fewest)\b/i.test(question)) return false
+  const values = [...question.matchAll(/=\s*(-?\d+(?:\.\d+)?)/g)].map((match) => Number(match[1]))
+  if (values.length < 2) return false
+  const target = /\b(greatest|largest|highest|most)\b/i.test(question) ? Math.max(...values) : Math.min(...values)
+  return values.filter((value) => value === target).length > 1
+}
+
 test('all six MATATAG grade catalogs are complete and traceable', () => {
   const all = getAllContent()
   assert.equal(all.length, EXPECTED.reduce((sum, value) => sum + value, 0))
@@ -25,6 +33,7 @@ test('all six MATATAG grade catalogs are complete and traceable', () => {
       assert.ok(competency.items.every((item) => !/\[(?:Graph|Diagram|Image) placeholder/i.test(item.q.en)), `${competency.ref} exposes a source placeholder`)
       assert.ok(competency.items.every((item) => !/answer can be chosen without using the given mathematical information/i.test(item.q.en)), `${competency.ref} exposes a templated non-question`)
       assert.ok(competency.items.every((item) => !/\*\*/.test(item.q.en)), `${competency.ref} exposes raw markdown`)
+      assert.ok(competency.items.every((item) => !hasTiedExtremum(item.q.en)), `${competency.ref} has an ambiguous extreme-value question`)
       for (const item of competency.items.filter((question) => question.options)) {
         assert.equal(new Set(item.options).size, item.options.length, `${competency.ref} has duplicate options`)
         assert.ok(item.options.includes(item.answer), `${competency.ref} answer missing from options`)

@@ -9654,58 +9654,6 @@
       },
       {
         "q": {
-          "en": "Is this solution correct? A class survey recorded mango=12, banana=3, papaya=12, and guava=4. Which fruit has the greatest count? Proposed answer: mango",
-          "fil": "Is this solution correct? A class survey recorded mango=12, banana=3, papaya=12, and guava=4. Which fruit has the greatest count? Proposed answer: mango",
-          "taglish": "Is this solution correct? A class survey recorded mango=12, banana=3, papaya=12, and guava=4. Which fruit has the greatest count? Proposed answer: mango"
-        },
-        "answer": "True",
-        "type": "true_false",
-        "options": [
-          "True",
-          "False"
-        ],
-        "solution": {
-          "en": "Answer: True",
-          "fil": "Answer: True",
-          "taglish": "Answer: True"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "2SP-IIh-2",
-          "path": "Grade-2/Semester-2/Quizzes/Quiz-13-Data-In-Tabular-Form-And-In-A-Pictograph-With-Or.md",
-          "item": 8,
-          "original_type": "true-false"
-        }
-      },
-      {
-        "q": {
-          "en": "A class survey recorded mango=12, banana=3, papaya=12, and guava=4. Which fruit has the greatest count?",
-          "fil": "A class survey recorded mango=12, banana=3, papaya=12, and guava=4. Which fruit has the greatest count?",
-          "taglish": "A class survey recorded mango=12, banana=3, papaya=12, and guava=4. Which fruit has the greatest count?"
-        },
-        "answer": "mango",
-        "type": "mcq",
-        "options": [
-          "mango",
-          "papaya",
-          "banana",
-          "guava"
-        ],
-        "solution": {
-          "en": "Answer: mango",
-          "fil": "Answer: mango",
-          "taglish": "Answer: mango"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "2SP-IIh-2",
-          "path": "Grade-2/Semester-2/Activity-Sheets/Activity-Sheet-13-Data-In-Tabular-Form-And-In-A-Pictograph-With-Or.md",
-          "item": 8,
-          "original_type": "activity"
-        }
-      },
-      {
-        "q": {
           "en": "A class survey recorded mango=4, banana=2, papaya=3, and guava=11. Which fruit has the greatest count? Explain why your answer is reasonable.",
           "fil": "A class survey recorded mango=4, banana=2, papaya=3, and guava=11. Which fruit has the greatest count? Explain why your answer is reasonable.",
           "taglish": "A class survey recorded mango=4, banana=2, papaya=3, and guava=11. Which fruit has the greatest count? Explain why your answer is reasonable."
@@ -9783,33 +9731,6 @@
           "path": "Grade-2/Semester-2/Quizzes/Quiz-13-Data-In-Tabular-Form-And-In-A-Pictograph-With-Or.md",
           "item": 11,
           "original_type": "computation"
-        }
-      },
-      {
-        "q": {
-          "en": "A class survey recorded mango=9, banana=8, papaya=9, and guava=4. Which fruit has the greatest count?",
-          "fil": "A class survey recorded mango=9, banana=8, papaya=9, and guava=4. Which fruit has the greatest count?",
-          "taglish": "A class survey recorded mango=9, banana=8, papaya=9, and guava=4. Which fruit has the greatest count?"
-        },
-        "answer": "mango",
-        "type": "mcq",
-        "options": [
-          "guava",
-          "mango",
-          "papaya",
-          "banana"
-        ],
-        "solution": {
-          "en": "Answer: mango",
-          "fil": "Answer: mango",
-          "taglish": "Answer: mango"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "2SP-IIh-2",
-          "path": "Grade-2/Semester-2/Activity-Sheets/Activity-Sheet-13-Data-In-Tabular-Form-And-In-A-Pictograph-With-Or.md",
-          "item": 11,
-          "original_type": "activity"
         }
       },
       {

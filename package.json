@@ -11,7 +11,7 @@
         "preview": "vite preview",
         "test": "node --test",
         "icons": "node scripts/generate-icons.mjs",
-        "build:curriculum": "node scripts/build-curriculum.js",
+        "build:curriculum": "node scripts/import-matatag-package.js",
         "gen:content": "node --env-file=.env scripts/generate-content.js"
     },
     "dependencies": {

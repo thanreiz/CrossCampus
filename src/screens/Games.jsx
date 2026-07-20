@@ -3,7 +3,7 @@ import { get, set } from 'idb-keyval'
 import { Card, Button, Doodles, RefBadge, MasteryBar, RichText } from '../ui/Primitives.jsx'
 import { Mascot } from '../ui/Mascot.jsx'
 import OnlineBadge from '../ui/OnlineBadge.jsx'
-import { checkAnswer } from '../lib/check.js'
+import { checkAnswer, choiceOptions } from '../lib/check.js'
 import { feedbackFor, vibrateCorrect, vibrateWrong } from '../lib/feedback.js'
 import { recordAttempt } from '../lib/history.js'
 import { makeT, localize } from '../lib/i18n.js'
@@ -78,6 +78,7 @@ export default function Games({ online = true, grade = 6, competencies = [], mas
 
   const game = GAMES.find((g) => g.key === gameKey) ?? null
   const round = questions[idx]
+  const roundOptions = choiceOptions(round)
   const done = started && questions.length > 0 && idx >= questions.length
   const score = round?.ref ? mastery[round.ref] ?? 0 : 0
 
@@ -388,7 +389,7 @@ export default function Games({ online = true, grade = 6, competencies = [], mas
           {!stepsDone ? (
             <StepScaffold item={round} lang={lang} tt={tt} onComplete={() => setStepsDone(true)} />
           ) : <div className="grid gap-3">
-            {round.type !== 'mcq' && (
+            {!roundOptions && (
               <input
                 ref={inputRef}
                 value={input}
@@ -403,9 +404,9 @@ export default function Games({ online = true, grade = 6, competencies = [], mas
               />
             )}
 
-            {round.type === 'mcq' && round.options && result === null && (
+            {roundOptions && result === null && (
               <div className="flex flex-wrap gap-2">
-                {round.options.map((opt) => (
+                {roundOptions.map((opt) => (
                   <button
                     key={opt}
                     onClick={() => {

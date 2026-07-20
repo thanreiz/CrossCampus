@@ -4,7 +4,7 @@ import { buildClassroom, THEME_LIST } from '../three/scene.js'
 import { Button, RefBadge, RichText } from '../ui/Primitives.jsx'
 import OnlineBadge from '../ui/OnlineBadge.jsx'
 import { Mascot } from '../ui/Mascot.jsx'
-import { checkAnswer } from '../lib/check.js'
+import { checkAnswer, choiceOptions } from '../lib/check.js'
 import { speak, stopSpeaking } from '../lib/speech.js'
 import { feedbackFor } from '../lib/feedback.js'
 import { recordAttempt } from '../lib/history.js'
@@ -46,6 +46,7 @@ export default function Classroom3D({ competency, questions, questionSource = 'b
   const [hasAnsweredOnce, setHasAnsweredOnce] = useState(false)
 
   const item = c.items[idx]
+  const itemOptions = choiceOptions(item)
   const itemRef = useRef(item)
 
   useEffect(() => {
@@ -129,7 +130,7 @@ export default function Classroom3D({ competency, questions, questionSource = 'b
       setNudge('needAnswer')
       return
     }
-    if (item.type !== 'mcq' && !/\d/.test(input)) {
+    if (!itemOptions && item.type === 'numeric' && !/\d/.test(input)) {
       setNudge('needNumber')
       return
     }
@@ -342,9 +343,9 @@ export default function Classroom3D({ competency, questions, questionSource = 'b
 
             <p className="font-display text-2xl font-bold leading-snug">{localize(item.q, lang)}</p>
 
-            {item.type === 'mcq' && item.options && (
+            {itemOptions && (
               <div className="mt-3 flex flex-wrap gap-2">
-                {item.options.map((opt) => (
+                {itemOptions.map((opt) => (
                   <button
                     key={opt}
                     onClick={() => {
@@ -361,14 +362,14 @@ export default function Classroom3D({ competency, questions, questionSource = 'b
 
             {/* explicit instruction — kids need to know where to put the answer */}
             <p className="mt-4 px-1 text-sm font-bold text-ink/70">
-              {item.type === 'mcq' ? tt('class.pickAnswer') : tt('class.typeHere')}
+              {itemOptions ? tt('class.pickAnswer') : tt('class.typeHere')}
             </p>
-            {item.type !== 'mcq' && (
+            {!itemOptions && (
               <p className="px-1 text-xs font-bold text-ink/50">{answerHint(lang)}</p>
             )}
 
             <div className="mt-2 grid gap-3 sm:grid-cols-[1fr_auto]">
-              {item.type !== 'mcq' && (
+              {!itemOptions && (
                 <input
                   value={input}
                   onChange={(e) => {
@@ -384,14 +385,14 @@ export default function Classroom3D({ competency, questions, questionSource = 'b
               {result === null ? (
                 <Button
                   color="mint"
-                  className={`min-h-[56px] px-6 text-lg disabled:opacity-50 ${item.type === 'mcq' ? 'w-full' : ''}`}
+                  className={`min-h-[56px] px-6 text-lg disabled:opacity-50 ${itemOptions ? 'w-full' : ''}`}
                   onClick={submit}
                   disabled={!input.trim()}
                 >
                   {tt('class.answer')}
                 </Button>
               ) : (
-                <Button color="sky" className={`min-h-[56px] px-6 text-lg ${item.type === 'mcq' ? 'w-full' : ''}`} onClick={next}>
+                <Button color="sky" className={`min-h-[56px] px-6 text-lg ${itemOptions ? 'w-full' : ''}`} onClick={next}>
                   {idx + 1 >= c.items.length ? tt('common.finish') : tt('common.next')}
                 </Button>
               )}
@@ -464,6 +465,5 @@ function Joystick({ onMove, label }) {
     </div>
   )
 }
-
 
 

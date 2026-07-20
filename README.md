@@ -329,6 +329,23 @@ Use `npm run preview` for PWA testing because the service worker behaves like pr
 5. Hard refresh the page.
 6. Confirm lessons, practice, progress, games, and 3D classroom still load.
 
+## Grade 1–6 curriculum import
+
+The bundled curriculum is built from the teacher-developed
+`DepEd-MATATAG-Mathematics-Grades-1-6` derivative package aligned to the
+April 17, 2026 Three-Term Budget of Work. It is not an official DepEd
+publication and does not imply DepEd endorsement.
+
+Rebuild the checked-in curriculum JSON from that package with:
+
+```bash
+npm run build:curriculum -- /absolute/path/to/DepEd-MATATAG-Mathematics-Grades-1-6
+```
+
+The importer maps all 306 competencies, includes uniquely worded objective
+items from activity sheets and quizzes, excludes drawing/rubric prompts, and
+records the source Markdown path and item number on every question.
+
 ## Environment Variables
 
 Copy `.env.example` when configuring online AI services:

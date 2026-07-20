@@ -7,7 +7,7 @@
     "scripts": {
         "dev": "vite",
         "build": "vite build",
-        "build:sites": "npm run build && mkdir -p dist/server && cp scripts/sites-worker.js dist/server/index.js",
+        "build:sites": "npm run build && node scripts/prepare-sites-build.mjs",
         "preview": "vite preview",
         "icons": "node scripts/generate-icons.mjs",
         "gen:content": "node --env-file=.env scripts/generate-content.js"

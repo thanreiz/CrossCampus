@@ -1,12 +1,32 @@
-import grade1 from '../curriculum/grade1.json' with { type: 'json' }
-import grade2 from '../curriculum/grade2.json' with { type: 'json' }
-import grade3 from '../curriculum/grade3.json' with { type: 'json' }
-import grade4 from '../curriculum/grade4.json' with { type: 'json' }
-import grade5 from '../curriculum/grade5.json' with { type: 'json' }
-import grade6 from '../curriculum/grade6.json' with { type: 'json' }
+const loaders = {
+  1: () => import('../curriculum/grade1.json', { with: { type: 'json' } }),
+  2: () => import('../curriculum/grade2.json', { with: { type: 'json' } }),
+  3: () => import('../curriculum/grade3.json', { with: { type: 'json' } }),
+  4: () => import('../curriculum/grade4.json', { with: { type: 'json' } }),
+  5: () => import('../curriculum/grade5.json', { with: { type: 'json' } }),
+  6: () => import('../curriculum/grade6.json', { with: { type: 'json' } }),
+}
 
-const ALL = [...grade1, ...grade2, ...grade3, ...grade4, ...grade5, ...grade6]
+const cache = new Map()
 
-export const getAllContent = () => ALL
-export const getContentByGrade = (grade) => ALL.filter((c) => c.grade === Number(grade))
-export const getContentByRef = (ref) => ALL.find((c) => c.ref === ref)
+export async function loadContentByGrade(grade) {
+  const key = Number(grade)
+  if (!loaders[key]) return []
+  if (!cache.has(key)) {
+    cache.set(key, loaders[key]().then((module) => {
+      cache.set(key, module.default)
+      return module.default
+    }))
+  }
+  return await cache.get(key)
+}
+
+export function getContentByRef(ref) {
+  for (const content of cache.values()) {
+    if (Array.isArray(content)) {
+      const found = content.find((competency) => competency.ref === ref)
+      if (found) return found
+    }
+  }
+  return null
+}

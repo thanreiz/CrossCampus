@@ -1,6 +1,6 @@
-import { lazy, Suspense, useEffect, useMemo, useState } from 'react'
+import { lazy, Suspense, useEffect, useState } from 'react'
 import { get } from 'idb-keyval'
-import { getContentByGrade } from './lib/content.js'
+import { loadContentByGrade } from './lib/content.js'
 import {
   loadDueForGrade,
   loadMasteryForGrade,
@@ -41,8 +41,7 @@ export default function App() {
   const [online, setOnline] = useState(navigator.onLine)
   const [lang, setLangState] = useState(DEFAULT_LANG)
   const [questionSession, setQuestionSession] = useState(null)
-
-  const content = useMemo(() => getContentByGrade(grade), [grade])
+  const [content, setContent] = useState([])
   const next = pickNext(content, mastery, due)
 
   async function refreshLearning(nextGrade = grade) {
@@ -67,6 +66,7 @@ export default function App() {
       setLangState(savedLang)
       setGrade(initialGrade)
       setStudentName(savedName ?? '')
+      setContent(await loadContentByGrade(initialGrade))
       await refreshLearning(initialGrade)
     })()
     loadSoundPrefs()
@@ -146,7 +146,8 @@ export default function App() {
     setGrade(nextGrade)
     setActive(null)
     setCurrent(null)
-    await refreshLearning(nextGrade)
+    const [nextContent] = await Promise.all([loadContentByGrade(nextGrade), refreshLearning(nextGrade)])
+    setContent(nextContent)
     setScreen('home')
   }
 
@@ -171,7 +172,8 @@ export default function App() {
           onDone={async ({ name, grade: selectedGrade }) => {
             setStudentName(name)
             setGrade(selectedGrade)
-            await refreshLearning(selectedGrade)
+            const [nextContent] = await Promise.all([loadContentByGrade(selectedGrade), refreshLearning(selectedGrade)])
+            setContent(nextContent)
             setScreen('home')
           }}
         />

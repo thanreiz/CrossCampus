@@ -1,6 +1,6 @@
 import test from 'node:test'
 import assert from 'node:assert/strict'
-import { getAllContent, getContentByGrade } from '../src/lib/content.js'
+import { getAllContent, getContentByGrade } from '../src/lib/content-catalog.js'
 
 const EXPECTED = [47, 53, 51, 54, 49, 52]
 const SUPPORTED = new Set(['numeric', 'mcq', 'matching', 'true_false'])

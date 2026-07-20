@@ -1,5 +1,5 @@
 import { GoogleGenAI, Type } from '@google/genai'
-import { getAllContent } from '../src/lib/content.js'
+import { getAllContent } from '../src/lib/content-catalog.js'
 
 const MODEL = process.env.QUESTION_MODEL || 'gemini-2.5-flash'
 const LOCATION = process.env.GCP_LOCATION || 'us-central1'

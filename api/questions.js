@@ -158,7 +158,7 @@ export function allowedOrigin(origin) {
   const configured = (process.env.QUESTION_CORS_ORIGINS || 'https://gabay-sage.vercel.app').split(',').map((value) => value.trim())
   return configured.includes(origin)
     || /^https:\/\/[a-z0-9-]+\.openai\.site$/i.test(origin)
-    || /^https:\/\/gabay-sage(?:-[a-z0-9-]+)?\.vercel\.app$/i.test(origin)
+    || /^https:\/\/gabay(?:-[a-z0-9-]+)?\.vercel\.app$/i.test(origin)
 }
 
 function cors(req, res) {

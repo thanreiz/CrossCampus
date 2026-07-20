@@ -28,6 +28,7 @@ test('server deterministic validation enforces complete unique batches', () => {
 test('CORS accepts production, preview, and Sites origins but rejects arbitrary hosts', () => {
   assert.equal(allowedOrigin('https://gabay-sage.vercel.app'), true)
   assert.equal(allowedOrigin('https://gabay-sage-feature-123.vercel.app'), true)
+  assert.equal(allowedOrigin('https://gabay-7decrizpi-ethans-projects-df677a82.vercel.app'), true)
   assert.equal(allowedOrigin('https://crosscampus.openai.site'), true)
   assert.equal(allowedOrigin('https://attacker.example'), false)
 })

@@ -130,31 +130,6 @@
       },
       {
         "q": {
-          "en": "For **Classify an angle measuring 60°.**, the answer can be chosen without using the given mathematical information.",
-          "fil": "For **Classify an angle measuring 60°.**, the answer can be chosen without using the given mathematical information.",
-          "taglish": "For **Classify an angle measuring 60°.**, the answer can be chosen without using the given mathematical information."
-        },
-        "answer": "False",
-        "type": "true_false",
-        "options": [
-          "True",
-          "False"
-        ],
-        "solution": {
-          "en": "Answer: False",
-          "fil": "Answer: False",
-          "taglish": "Answer: False"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "4MG-Ia-1",
-          "path": "Grade-4/Semester-1/Quizzes/Quiz-01-Different-Angles.md",
-          "item": 9,
-          "original_type": "true-false"
-        }
-      },
-      {
-        "q": {
           "en": "Classify an angle measuring 60°. Explain why your answer is reasonable.",
           "fil": "Classify an angle measuring 60°. Explain why your answer is reasonable.",
           "taglish": "Classify an angle measuring 60°. Explain why your answer is reasonable."
@@ -315,31 +290,6 @@
           "ref": "4MG-Ia-2",
           "path": "Grade-4/Semester-1/Quizzes/Quiz-02-Measure-And-Draw-Angles-Using-A-Protractor.md",
           "item": 8,
-          "original_type": "true-false"
-        }
-      },
-      {
-        "q": {
-          "en": "For **Classify an angle measuring 60°.**, the answer can be chosen without using the given mathematical information.",
-          "fil": "For **Classify an angle measuring 60°.**, the answer can be chosen without using the given mathematical information.",
-          "taglish": "For **Classify an angle measuring 60°.**, the answer can be chosen without using the given mathematical information."
-        },
-        "answer": "False",
-        "type": "true_false",
-        "options": [
-          "True",
-          "False"
-        ],
-        "solution": {
-          "en": "Answer: False",
-          "fil": "Answer: False",
-          "taglish": "Answer: False"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "4MG-Ia-2",
-          "path": "Grade-4/Semester-1/Quizzes/Quiz-02-Measure-And-Draw-Angles-Using-A-Protractor.md",
-          "item": 9,
           "original_type": "true-false"
         }
       },
@@ -510,31 +460,6 @@
       },
       {
         "q": {
-          "en": "For **Name a quadrilateral with four equal sides and four right angles.**, the answer can be chosen without using the given mathematical information.",
-          "fil": "For **Name a quadrilateral with four equal sides and four right angles.**, the answer can be chosen without using the given mathematical information.",
-          "taglish": "For **Name a quadrilateral with four equal sides and four right angles.**, the answer can be chosen without using the given mathematical information."
-        },
-        "answer": "False",
-        "type": "true_false",
-        "options": [
-          "True",
-          "False"
-        ],
-        "solution": {
-          "en": "Answer: False",
-          "fil": "Answer: False",
-          "taglish": "Answer: False"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "4MG-Ib-1",
-          "path": "Grade-4/Semester-1/Quizzes/Quiz-03-State-The-Properties-Of-Triangles-And-Quadrilaterals.md",
-          "item": 9,
-          "original_type": "true-false"
-        }
-      },
-      {
-        "q": {
           "en": "Name a quadrilateral with four equal sides and four right angles. Explain why your answer is reasonable.",
           "fil": "Name a quadrilateral with four equal sides and four right angles. Explain why your answer is reasonable.",
           "taglish": "Name a quadrilateral with four equal sides and four right angles. Explain why your answer is reasonable."
@@ -700,31 +625,6 @@
       },
       {
         "q": {
-          "en": "For **Name a quadrilateral with four equal sides and four right angles.**, the answer can be chosen without using the given mathematical information.",
-          "fil": "For **Name a quadrilateral with four equal sides and four right angles.**, the answer can be chosen without using the given mathematical information.",
-          "taglish": "For **Name a quadrilateral with four equal sides and four right angles.**, the answer can be chosen without using the given mathematical information."
-        },
-        "answer": "False",
-        "type": "true_false",
-        "options": [
-          "True",
-          "False"
-        ],
-        "solution": {
-          "en": "Answer: False",
-          "fil": "Answer: False",
-          "taglish": "Answer: False"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "4MG-Ic-1",
-          "path": "Grade-4/Semester-1/Quizzes/Quiz-04-Classify-Triangles-And-Quadrilaterals-According-To.md",
-          "item": 9,
-          "original_type": "true-false"
-        }
-      },
-      {
-        "q": {
           "en": "Name a quadrilateral with four equal sides and four right angles. Explain why your answer is reasonable.",
           "fil": "Name a quadrilateral with four equal sides and four right angles. Explain why your answer is reasonable.",
           "taglish": "Name a quadrilateral with four equal sides and four right angles. Explain why your answer is reasonable."
@@ -885,31 +785,6 @@
           "ref": "4MG-Ic-2",
           "path": "Grade-4/Semester-1/Quizzes/Quiz-05-Differentiate-Different-Quadrilaterals.md",
           "item": 8,
-          "original_type": "true-false"
-        }
-      },
-      {
-        "q": {
-          "en": "For **Name a quadrilateral with four equal sides and four right angles.**, the answer can be chosen without using the given mathematical information.",
-          "fil": "For **Name a quadrilateral with four equal sides and four right angles.**, the answer can be chosen without using the given mathematical information.",
-          "taglish": "For **Name a quadrilateral with four equal sides and four right angles.**, the answer can be chosen without using the given mathematical information."
-        },
-        "answer": "False",
-        "type": "true_false",
-        "options": [
-          "True",
-          "False"
-        ],
-        "solution": {
-          "en": "Answer: False",
-          "fil": "Answer: False",
-          "taglish": "Answer: False"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "4MG-Ic-2",
-          "path": "Grade-4/Semester-1/Quizzes/Quiz-05-Differentiate-Different-Quadrilaterals.md",
-          "item": 9,
           "original_type": "true-false"
         }
       },
@@ -1207,31 +1082,6 @@
           "path": "Grade-4/Semester-1/Activity-Sheets/Activity-Sheet-06-The-Perimeter-Of-Quadrilaterals-That-Are-Not-Squares.md",
           "item": 8,
           "original_type": "activity"
-        }
-      },
-      {
-        "q": {
-          "en": "For **A rectangular fiesta booth is 2 m by 7 m. Find its perimeter.**, the answer can be chosen without using the given mathematical information.",
-          "fil": "For **A rectangular fiesta booth is 2 m by 7 m. Find its perimeter.**, the answer can be chosen without using the given mathematical information.",
-          "taglish": "For **A rectangular fiesta booth is 2 m by 7 m. Find its perimeter.**, the answer can be chosen without using the given mathematical information."
-        },
-        "answer": "False",
-        "type": "true_false",
-        "options": [
-          "True",
-          "False"
-        ],
-        "solution": {
-          "en": "Answer: False",
-          "fil": "Answer: False",
-          "taglish": "Answer: False"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "4MG-Id-1",
-          "path": "Grade-4/Semester-1/Quizzes/Quiz-06-The-Perimeter-Of-Quadrilaterals-That-Are-Not-Squares.md",
-          "item": 9,
-          "original_type": "true-false"
         }
       },
       {
@@ -1613,31 +1463,6 @@
       },
       {
         "q": {
-          "en": "For **A rectangular fiesta booth is 2 m by 2 m. Find its perimeter.**, the answer can be chosen without using the given mathematical information.",
-          "fil": "For **A rectangular fiesta booth is 2 m by 2 m. Find its perimeter.**, the answer can be chosen without using the given mathematical information.",
-          "taglish": "For **A rectangular fiesta booth is 2 m by 2 m. Find its perimeter.**, the answer can be chosen without using the given mathematical information."
-        },
-        "answer": "False",
-        "type": "true_false",
-        "options": [
-          "True",
-          "False"
-        ],
-        "solution": {
-          "en": "Answer: False",
-          "fil": "Answer: False",
-          "taglish": "Answer: False"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "4MG-Id-2",
-          "path": "Grade-4/Semester-1/Quizzes/Quiz-07-The-Perimeter-Of-Composite-Figures-Composed-Of.md",
-          "item": 9,
-          "original_type": "true-false"
-        }
-      },
-      {
-        "q": {
           "en": "A rectangular fiesta booth is 2 m by 2 m. Find its perimeter. Explain why your answer is reasonable.",
           "fil": "A rectangular fiesta booth is 2 m by 2 m. Find its perimeter. Explain why your answer is reasonable.",
           "taglish": "A rectangular fiesta booth is 2 m by 2 m. Find its perimeter. Explain why your answer is reasonable."
@@ -1977,31 +1802,6 @@
       },
       {
         "q": {
-          "en": "For **Write the numeral for: **fourteen**.**, the answer can be chosen without using the given mathematical information.",
-          "fil": "For **Write the numeral for: **fourteen**.**, the answer can be chosen without using the given mathematical information.",
-          "taglish": "For **Write the numeral for: **fourteen**.**, the answer can be chosen without using the given mathematical information."
-        },
-        "answer": "False",
-        "type": "true_false",
-        "options": [
-          "True",
-          "False"
-        ],
-        "solution": {
-          "en": "Answer: False",
-          "fil": "Answer: False",
-          "taglish": "Answer: False"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "4NA-Ie-1",
-          "path": "Grade-4/Semester-1/Quizzes/Quiz-08-Numbers-Up-To-1-000-000-In-Numerals-And-In-Words.md",
-          "item": 9,
-          "original_type": "true-false"
-        }
-      },
-      {
-        "q": {
           "en": "Write the numeral for: **fourteen**. Explain why your answer is reasonable.",
           "fil": "Write the numeral for: **fourteen**. Explain why your answer is reasonable.",
           "taglish": "Write the numeral for: **fourteen**. Explain why your answer is reasonable."
@@ -2269,31 +2069,6 @@
           "path": "Grade-4/Semester-1/Activity-Sheets/Activity-Sheet-09-Determine.md",
           "item": 8,
           "original_type": "activity"
-        }
-      },
-      {
-        "q": {
-          "en": "For **A barangay record shows 344,883. What is the value of its tens digit?**, the answer can be chosen without using the given mathematical information.",
-          "fil": "For **A barangay record shows 344,883. What is the value of its tens digit?**, the answer can be chosen without using the given mathematical information.",
-          "taglish": "For **A barangay record shows 344,883. What is the value of its tens digit?**, the answer can be chosen without using the given mathematical information."
-        },
-        "answer": "False",
-        "type": "true_false",
-        "options": [
-          "True",
-          "False"
-        ],
-        "solution": {
-          "en": "Answer: False",
-          "fil": "Answer: False",
-          "taglish": "Answer: False"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "4NA-Ie-2",
-          "path": "Grade-4/Semester-1/Quizzes/Quiz-09-Determine.md",
-          "item": 9,
-          "original_type": "true-false"
         }
       },
       {
@@ -2667,31 +2442,6 @@
           "path": "Grade-4/Semester-1/Activity-Sheets/Activity-Sheet-10-Numbers-Up-To-1-000-000-Using-And.md",
           "item": 8,
           "original_type": "activity"
-        }
-      },
-      {
-        "q": {
-          "en": "For **Compare the school enrollment figures 599,955 and 257,353 using <, >, or =.**, the answer can be chosen without using the given mathematical information.",
-          "fil": "For **Compare the school enrollment figures 599,955 and 257,353 using <, >, or =.**, the answer can be chosen without using the given mathematical information.",
-          "taglish": "For **Compare the school enrollment figures 599,955 and 257,353 using <, >, or =.**, the answer can be chosen without using the given mathematical information."
-        },
-        "answer": "False",
-        "type": "true_false",
-        "options": [
-          "True",
-          "False"
-        ],
-        "solution": {
-          "en": "Answer: False",
-          "fil": "Answer: False",
-          "taglish": "Answer: False"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "4NA-If-1",
-          "path": "Grade-4/Semester-1/Quizzes/Quiz-10-Numbers-Up-To-1-000-000-Using-And.md",
-          "item": 9,
-          "original_type": "true-false"
         }
       },
       {
@@ -3081,31 +2831,6 @@
       },
       {
         "q": {
-          "en": "For **Round the market count 796170 to the nearest 10.**, the answer can be chosen without using the given mathematical information.",
-          "fil": "For **Round the market count 796170 to the nearest 10.**, the answer can be chosen without using the given mathematical information.",
-          "taglish": "For **Round the market count 796170 to the nearest 10.**, the answer can be chosen without using the given mathematical information."
-        },
-        "answer": "False",
-        "type": "true_false",
-        "options": [
-          "True",
-          "False"
-        ],
-        "solution": {
-          "en": "Answer: False",
-          "fil": "Answer: False",
-          "taglish": "Answer: False"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "4NA-If-2",
-          "path": "Grade-4/Semester-1/Quizzes/Quiz-11-Round-Numbers-To-The-Nearest-Hundred-Thousand.md",
-          "item": 9,
-          "original_type": "true-false"
-        }
-      },
-      {
-        "q": {
           "en": "Round the market count 796170 to the nearest 10. Explain why your answer is reasonable.",
           "fil": "Round the market count 796170 to the nearest 10. Explain why your answer is reasonable.",
           "taglish": "Round the market count 796170 to the nearest 10. Explain why your answer is reasonable."
@@ -3457,31 +3182,6 @@
           "path": "Grade-4/Semester-1/Activity-Sheets/Activity-Sheet-12-The-Sum-And-Difference-Of-Two-5-To-6-Digit-Numbers-By.md",
           "item": 8,
           "original_type": "activity"
-        }
-      },
-      {
-        "q": {
-          "en": "For **Estimate 944 + 913 by rounding both numbers to the nearest hundred.**, the answer can be chosen without using the given mathematical information.",
-          "fil": "For **Estimate 944 + 913 by rounding both numbers to the nearest hundred.**, the answer can be chosen without using the given mathematical information.",
-          "taglish": "For **Estimate 944 + 913 by rounding both numbers to the nearest hundred.**, the answer can be chosen without using the given mathematical information."
-        },
-        "answer": "False",
-        "type": "true_false",
-        "options": [
-          "True",
-          "False"
-        ],
-        "solution": {
-          "en": "Answer: False",
-          "fil": "Answer: False",
-          "taglish": "Answer: False"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "4NA-If-3",
-          "path": "Grade-4/Semester-1/Quizzes/Quiz-12-The-Sum-And-Difference-Of-Two-5-To-6-Digit-Numbers-By.md",
-          "item": 9,
-          "original_type": "true-false"
         }
       },
       {
@@ -3841,31 +3541,6 @@
       },
       {
         "q": {
-          "en": "For **At the rice farm, one group recorded 28985 items and another recorded 23188. How many altogether?**, the answer can be chosen without using the given mathematical information.",
-          "fil": "For **At the rice farm, one group recorded 28985 items and another recorded 23188. How many altogether?**, the answer can be chosen without using the given mathematical information.",
-          "taglish": "For **At the rice farm, one group recorded 28985 items and another recorded 23188. How many altogether?**, the answer can be chosen without using the given mathematical information."
-        },
-        "answer": "False",
-        "type": "true_false",
-        "options": [
-          "True",
-          "False"
-        ],
-        "solution": {
-          "en": "Answer: False",
-          "fil": "Answer: False",
-          "taglish": "Answer: False"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "4NA-Ig-1",
-          "path": "Grade-4/Semester-1/Quizzes/Quiz-13-Numbers-With-Sums-Up-To-1-000-000-And-Subtracts.md",
-          "item": 9,
-          "original_type": "true-false"
-        }
-      },
-      {
-        "q": {
           "en": "At the rice farm, one group recorded 28985 items and another recorded 23188. How many altogether? Explain why your answer is reasonable.",
           "fil": "At the rice farm, one group recorded 28985 items and another recorded 23188. How many altogether? Explain why your answer is reasonable.",
           "taglish": "At the rice farm, one group recorded 28985 items and another recorded 23188. How many altogether? Explain why your answer is reasonable."
@@ -4217,31 +3892,6 @@
           "path": "Grade-4/Semester-1/Activity-Sheets/Activity-Sheet-14-Two-Numbers-With-And-Without-Regrouping.md",
           "item": 8,
           "original_type": "activity"
-        }
-      },
-      {
-        "q": {
-          "en": "For **There are 20 equal trays with 20 items each for the town fiesta. Find the total.**, the answer can be chosen without using the given mathematical information.",
-          "fil": "For **There are 20 equal trays with 20 items each for the town fiesta. Find the total.**, the answer can be chosen without using the given mathematical information.",
-          "taglish": "For **There are 20 equal trays with 20 items each for the town fiesta. Find the total.**, the answer can be chosen without using the given mathematical information."
-        },
-        "answer": "False",
-        "type": "true_false",
-        "options": [
-          "True",
-          "False"
-        ],
-        "solution": {
-          "en": "Answer: False",
-          "fil": "Answer: False",
-          "taglish": "Answer: False"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "4NA-Ig-2",
-          "path": "Grade-4/Semester-1/Quizzes/Quiz-14-Two-Numbers-With-And-Without-Regrouping.md",
-          "item": 9,
-          "original_type": "true-false"
         }
       },
       {
@@ -4601,31 +4251,6 @@
       },
       {
         "q": {
-          "en": "For **There are 13 equal trays with 33 items each for the school garden. Find the total.**, the answer can be chosen without using the given mathematical information.",
-          "fil": "For **There are 13 equal trays with 33 items each for the school garden. Find the total.**, the answer can be chosen without using the given mathematical information.",
-          "taglish": "For **There are 13 equal trays with 33 items each for the school garden. Find the total.**, the answer can be chosen without using the given mathematical information."
-        },
-        "answer": "False",
-        "type": "true_false",
-        "options": [
-          "True",
-          "False"
-        ],
-        "solution": {
-          "en": "Answer: False",
-          "fil": "Answer: False",
-          "taglish": "Answer: False"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "4NA-Ig-3",
-          "path": "Grade-4/Semester-1/Quizzes/Quiz-15-The-Result-Of-Multiplying-Two-Numbers-Where-The.md",
-          "item": 9,
-          "original_type": "true-false"
-        }
-      },
-      {
-        "q": {
           "en": "There are 13 equal trays with 33 items each for the school garden. Find the total. Explain why your answer is reasonable.",
           "fil": "There are 13 equal trays with 33 items each for the school garden. Find the total. Explain why your answer is reasonable.",
           "taglish": "There are 13 equal trays with 33 items each for the school garden. Find the total. Explain why your answer is reasonable."
@@ -4977,31 +4602,6 @@
           "path": "Grade-4/Semester-1/Activity-Sheets/Activity-Sheet-16-Multi-Step-Problems-Involving-One-Or-More-Of-The-Four.md",
           "item": 8,
           "original_type": "activity"
-        }
-      },
-      {
-        "q": {
-          "en": "For **A class fund has ₱678, spends ₱14, then receives ₱24. How much is in the fund now?**, the answer can be chosen without using the given mathematical information.",
-          "fil": "For **A class fund has ₱678, spends ₱14, then receives ₱24. How much is in the fund now?**, the answer can be chosen without using the given mathematical information.",
-          "taglish": "For **A class fund has ₱678, spends ₱14, then receives ₱24. How much is in the fund now?**, the answer can be chosen without using the given mathematical information."
-        },
-        "answer": "False",
-        "type": "true_false",
-        "options": [
-          "True",
-          "False"
-        ],
-        "solution": {
-          "en": "Answer: False",
-          "fil": "Answer: False",
-          "taglish": "Answer: False"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "4NA-Ii-1",
-          "path": "Grade-4/Semester-1/Quizzes/Quiz-16-Multi-Step-Problems-Involving-One-Or-More-Of-The-Four.md",
-          "item": 9,
-          "original_type": "true-false"
         }
       },
       {
@@ -5361,31 +4961,6 @@
       },
       {
         "q": {
-          "en": "For **The coastal clean-up shares 12 items equally among 2 groups. How many per group?**, the answer can be chosen without using the given mathematical information.",
-          "fil": "For **The coastal clean-up shares 12 items equally among 2 groups. How many per group?**, the answer can be chosen without using the given mathematical information.",
-          "taglish": "For **The coastal clean-up shares 12 items equally among 2 groups. How many per group?**, the answer can be chosen without using the given mathematical information."
-        },
-        "answer": "False",
-        "type": "true_false",
-        "options": [
-          "True",
-          "False"
-        ],
-        "solution": {
-          "en": "Answer: False",
-          "fil": "Answer: False",
-          "taglish": "Answer: False"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "4NA-Ii-2",
-          "path": "Grade-4/Semester-1/Quizzes/Quiz-17-Two-Numbers-With-And-Without-Regrouping.md",
-          "item": 9,
-          "original_type": "true-false"
-        }
-      },
-      {
-        "q": {
           "en": "The coastal clean-up shares 12 items equally among 2 groups. How many per group? Explain why your answer is reasonable.",
           "fil": "The coastal clean-up shares 12 items equally among 2 groups. How many per group? Explain why your answer is reasonable.",
           "taglish": "The coastal clean-up shares 12 items equally among 2 groups. How many per group? Explain why your answer is reasonable."
@@ -5737,31 +5312,6 @@
           "path": "Grade-4/Semester-1/Activity-Sheets/Activity-Sheet-18-The-Quotient-When-Dividing-3-To-4-Digit-Dividends-By-1.md",
           "item": 8,
           "original_type": "activity"
-        }
-      },
-      {
-        "q": {
-          "en": "For **The palaro ng paaralan shares 138 items equally among 6 groups. How many per group?**, the answer can be chosen without using the given mathematical information.",
-          "fil": "For **The palaro ng paaralan shares 138 items equally among 6 groups. How many per group?**, the answer can be chosen without using the given mathematical information.",
-          "taglish": "For **The palaro ng paaralan shares 138 items equally among 6 groups. How many per group?**, the answer can be chosen without using the given mathematical information."
-        },
-        "answer": "False",
-        "type": "true_false",
-        "options": [
-          "True",
-          "False"
-        ],
-        "solution": {
-          "en": "Answer: False",
-          "fil": "Answer: False",
-          "taglish": "Answer: False"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "4NA-Ii-3",
-          "path": "Grade-4/Semester-1/Quizzes/Quiz-18-The-Quotient-When-Dividing-3-To-4-Digit-Dividends-By-1.md",
-          "item": 9,
-          "original_type": "true-false"
         }
       },
       {
@@ -6121,31 +5671,6 @@
       },
       {
         "q": {
-          "en": "For **Evaluate using the correct order: 18 + 8 × 7.**, the answer can be chosen without using the given mathematical information.",
-          "fil": "For **Evaluate using the correct order: 18 + 8 × 7.**, the answer can be chosen without using the given mathematical information.",
-          "taglish": "For **Evaluate using the correct order: 18 + 8 × 7.**, the answer can be chosen without using the given mathematical information."
-        },
-        "answer": "False",
-        "type": "true_false",
-        "options": [
-          "True",
-          "False"
-        ],
-        "solution": {
-          "en": "Answer: False",
-          "fil": "Answer: False",
-          "taglish": "Answer: False"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "4NA-IIa-1",
-          "path": "Grade-4/Semester-2/Quizzes/Quiz-01-Situations-Involving-One-Or-More-Of-The-Four.md",
-          "item": 9,
-          "original_type": "true-false"
-        }
-      },
-      {
-        "q": {
           "en": "Evaluate using the correct order: 18 + 8 × 7. Explain why your answer is reasonable.",
           "fil": "Evaluate using the correct order: 18 + 8 × 7. Explain why your answer is reasonable.",
           "taglish": "Evaluate using the correct order: 18 + 8 × 7. Explain why your answer is reasonable."
@@ -6501,31 +6026,6 @@
       },
       {
         "q": {
-          "en": "For **Evaluate using the correct order: 13 + 6 × 5.**, the answer can be chosen without using the given mathematical information.",
-          "fil": "For **Evaluate using the correct order: 13 + 6 × 5.**, the answer can be chosen without using the given mathematical information.",
-          "taglish": "For **Evaluate using the correct order: 13 + 6 × 5.**, the answer can be chosen without using the given mathematical information."
-        },
-        "answer": "False",
-        "type": "true_false",
-        "options": [
-          "True",
-          "False"
-        ],
-        "solution": {
-          "en": "Answer: False",
-          "fil": "Answer: False",
-          "taglish": "Answer: False"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "4NA-IIa-2",
-          "path": "Grade-4/Semester-2/Quizzes/Quiz-02-Two-Or-More-Different-Operations-By-Applying-The-Mdas.md",
-          "item": 9,
-          "original_type": "true-false"
-        }
-      },
-      {
-        "q": {
           "en": "Evaluate using the correct order: 13 + 6 × 5. Explain why your answer is reasonable.",
           "fil": "Evaluate using the correct order: 13 + 6 × 5. Explain why your answer is reasonable.",
           "taglish": "Evaluate using the correct order: 13 + 6 × 5. Explain why your answer is reasonable."
@@ -6867,31 +6367,6 @@
           "ref": "4MG-IIc-1",
           "path": "Grade-4/Semester-2/Quizzes/Quiz-03-Common-Units-Of-Measure-From-Larger-To-Smaller-Units.md",
           "item": 8,
-          "original_type": "true-false"
-        }
-      },
-      {
-        "q": {
-          "en": "For **A family has 8 L of water and adds 2 L. What is the total capacity?**, the answer can be chosen without using the given mathematical information.",
-          "fil": "For **A family has 8 L of water and adds 2 L. What is the total capacity?**, the answer can be chosen without using the given mathematical information.",
-          "taglish": "For **A family has 8 L of water and adds 2 L. What is the total capacity?**, the answer can be chosen without using the given mathematical information."
-        },
-        "answer": "False",
-        "type": "true_false",
-        "options": [
-          "True",
-          "False"
-        ],
-        "solution": {
-          "en": "Answer: False",
-          "fil": "Answer: False",
-          "taglish": "Answer: False"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "4MG-IIc-1",
-          "path": "Grade-4/Semester-2/Quizzes/Quiz-03-Common-Units-Of-Measure-From-Larger-To-Smaller-Units.md",
-          "item": 9,
           "original_type": "true-false"
         }
       },
@@ -7242,31 +6717,6 @@
           "path": "Grade-4/Semester-2/Activity-Sheets/Activity-Sheet-04-Time-Measures-From-Smaller-To-Larger-Units-And-Vice.md",
           "item": 8,
           "original_type": "activity"
-        }
-      },
-      {
-        "q": {
-          "en": "For **A barangay program starts at 6:45 a.m. and lasts 15 minutes. What time does it end?**, the answer can be chosen without using the given mathematical information.",
-          "fil": "For **A barangay program starts at 6:45 a.m. and lasts 15 minutes. What time does it end?**, the answer can be chosen without using the given mathematical information.",
-          "taglish": "For **A barangay program starts at 6:45 a.m. and lasts 15 minutes. What time does it end?**, the answer can be chosen without using the given mathematical information."
-        },
-        "answer": "False",
-        "type": "true_false",
-        "options": [
-          "True",
-          "False"
-        ],
-        "solution": {
-          "en": "Answer: False",
-          "fil": "Answer: False",
-          "taglish": "Answer: False"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "4MG-IIc-2",
-          "path": "Grade-4/Semester-2/Quizzes/Quiz-04-Time-Measures-From-Smaller-To-Larger-Units-And-Vice.md",
-          "item": 9,
-          "original_type": "true-false"
         }
       },
       {
@@ -7674,31 +7124,6 @@
       },
       {
         "q": {
-          "en": "For **A barangay program starts at 9:00 a.m. and lasts 15 minutes. What time does it end?**, the answer can be chosen without using the given mathematical information.",
-          "fil": "For **A barangay program starts at 9:00 a.m. and lasts 15 minutes. What time does it end?**, the answer can be chosen without using the given mathematical information.",
-          "taglish": "For **A barangay program starts at 9:00 a.m. and lasts 15 minutes. What time does it end?**, the answer can be chosen without using the given mathematical information."
-        },
-        "answer": "False",
-        "type": "true_false",
-        "options": [
-          "True",
-          "False"
-        ],
-        "solution": {
-          "en": "Answer: False",
-          "fil": "Answer: False",
-          "taglish": "Answer: False"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "4MG-IId-1",
-          "path": "Grade-4/Semester-2/Quizzes/Quiz-05-Problems-Involving-Conversion-Of-Units-Of-Length-Mass.md",
-          "item": 9,
-          "original_type": "true-false"
-        }
-      },
-      {
-        "q": {
           "en": "A barangay program starts at 9:00 a.m. and lasts 15 minutes. What time does it end? Explain why your answer is reasonable.",
           "fil": "A barangay program starts at 9:00 a.m. and lasts 15 minutes. What time does it end? Explain why your answer is reasonable.",
           "taglish": "A barangay program starts at 9:00 a.m. and lasts 15 minutes. What time does it end? Explain why your answer is reasonable."
@@ -8059,31 +7484,6 @@
       },
       {
         "q": {
-          "en": "For **Rewrite 23/8 as a mixed number.**, the answer can be chosen without using the given mathematical information.",
-          "fil": "For **Rewrite 23/8 as a mixed number.**, the answer can be chosen without using the given mathematical information.",
-          "taglish": "For **Rewrite 23/8 as a mixed number.**, the answer can be chosen without using the given mathematical information."
-        },
-        "answer": "False",
-        "type": "true_false",
-        "options": [
-          "True",
-          "False"
-        ],
-        "solution": {
-          "en": "Answer: False",
-          "fil": "Answer: False",
-          "taglish": "Answer: False"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "4NA-IIe-1",
-          "path": "Grade-4/Semester-2/Quizzes/Quiz-06-Proper-Fractions-Improper-Fractions-And-Mixed-Numbers.md",
-          "item": 9,
-          "original_type": "true-false"
-        }
-      },
-      {
-        "q": {
           "en": "Rewrite 23/8 as a mixed number. Explain why your answer is reasonable.",
           "fil": "Rewrite 23/8 as a mixed number. Explain why your answer is reasonable.",
           "taglish": "Rewrite 23/8 as a mixed number. Explain why your answer is reasonable."
@@ -8418,31 +7818,6 @@
       },
       {
         "q": {
-          "en": "For **Rewrite 11/3 as a mixed number.**, the answer can be chosen without using the given mathematical information.",
-          "fil": "For **Rewrite 11/3 as a mixed number.**, the answer can be chosen without using the given mathematical information.",
-          "taglish": "For **Rewrite 11/3 as a mixed number.**, the answer can be chosen without using the given mathematical information."
-        },
-        "answer": "False",
-        "type": "true_false",
-        "options": [
-          "True",
-          "False"
-        ],
-        "solution": {
-          "en": "Answer: False",
-          "fil": "Answer: False",
-          "taglish": "Answer: False"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "4NA-IIe-2",
-          "path": "Grade-4/Semester-2/Quizzes/Quiz-07-Rewrite-Improper-Fractions-Into-Mixed-Numbers-And-Vice.md",
-          "item": 9,
-          "original_type": "true-false"
-        }
-      },
-      {
-        "q": {
           "en": "Rewrite 11/3 as a mixed number. Explain why your answer is reasonable.",
           "fil": "Rewrite 11/3 as a mixed number. Explain why your answer is reasonable.",
           "taglish": "Rewrite 11/3 as a mixed number. Explain why your answer is reasonable."
@@ -8773,31 +8148,6 @@
           "path": "Grade-4/Semester-2/Activity-Sheets/Activity-Sheet-08-Plot-Fraction.md",
           "item": 8,
           "original_type": "activity"
-        }
-      },
-      {
-        "q": {
-          "en": "For **Rewrite 27/10 as a mixed number.**, the answer can be chosen without using the given mathematical information.",
-          "fil": "For **Rewrite 27/10 as a mixed number.**, the answer can be chosen without using the given mathematical information.",
-          "taglish": "For **Rewrite 27/10 as a mixed number.**, the answer can be chosen without using the given mathematical information."
-        },
-        "answer": "False",
-        "type": "true_false",
-        "options": [
-          "True",
-          "False"
-        ],
-        "solution": {
-          "en": "Answer: False",
-          "fil": "Answer: False",
-          "taglish": "Answer: False"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "4NA-IIe-3",
-          "path": "Grade-4/Semester-2/Quizzes/Quiz-08-Plot-Fraction.md",
-          "item": 9,
-          "original_type": "true-false"
         }
       },
       {
@@ -9157,31 +8507,6 @@
       },
       {
         "q": {
-          "en": "For **Rewrite 11/4 as a mixed number.**, the answer can be chosen without using the given mathematical information.",
-          "fil": "For **Rewrite 11/4 as a mixed number.**, the answer can be chosen without using the given mathematical information.",
-          "taglish": "For **Rewrite 11/4 as a mixed number.**, the answer can be chosen without using the given mathematical information."
-        },
-        "answer": "False",
-        "type": "true_false",
-        "options": [
-          "True",
-          "False"
-        ],
-        "solution": {
-          "en": "Answer: False",
-          "fil": "Answer: False",
-          "taglish": "Answer: False"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "4NA-IIf-1",
-          "path": "Grade-4/Semester-2/Quizzes/Quiz-09-Subtract-Similar-Fractions.md",
-          "item": 9,
-          "original_type": "true-false"
-        }
-      },
-      {
-        "q": {
           "en": "Rewrite 11/4 as a mixed number. Explain why your answer is reasonable.",
           "fil": "Rewrite 11/4 as a mixed number. Explain why your answer is reasonable.",
           "taglish": "Rewrite 11/4 as a mixed number. Explain why your answer is reasonable."
@@ -9474,31 +8799,6 @@
       },
       {
         "q": {
-          "en": "For **A bibingka is cut into 5 equal parts. 3 part(s) are marked. Write the fraction. (Diagram description: circle divided into 5 equal parts with 3 shaded.)**, the answer can be chosen without using the given mathematical information.",
-          "fil": "For **A bibingka is cut into 5 equal parts. 3 part(s) are marked. Write the fraction. (Diagram description: circle divided into 5 equal parts with 3 shaded.)**, the answer can be chosen without using the given mathematical information.",
-          "taglish": "For **A bibingka is cut into 5 equal parts. 3 part(s) are marked. Write the fraction. (Diagram description: circle divided into 5 equal parts with 3 shaded.)**, the answer can be chosen without using the given mathematical information."
-        },
-        "answer": "False",
-        "type": "true_false",
-        "options": [
-          "True",
-          "False"
-        ],
-        "solution": {
-          "en": "Answer: False",
-          "fil": "Answer: False",
-          "taglish": "Answer: False"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "4NA-IIg-1",
-          "path": "Grade-4/Semester-2/Quizzes/Quiz-10-Dissimilar-Fractions-With-Denominators-Up-To-10-Using.md",
-          "item": 9,
-          "original_type": "true-false"
-        }
-      },
-      {
-        "q": {
           "en": "A bibingka is cut into 5 equal parts. 3 part(s) are marked. Write the fraction. (Diagram description: circle divided into 5 equal parts with 3 shaded.) Explain why your answer is reasonable.",
           "fil": "A bibingka is cut into 5 equal parts. 3 part(s) are marked. Write the fraction. (Diagram description: circle divided into 5 equal parts with 3 shaded.) Explain why your answer is reasonable.",
           "taglish": "A bibingka is cut into 5 equal parts. 3 part(s) are marked. Write the fraction. (Diagram description: circle divided into 5 equal parts with 3 shaded.) Explain why your answer is reasonable."
@@ -9783,31 +9083,6 @@
           "path": "Grade-4/Semester-2/Activity-Sheets/Activity-Sheet-11-Dissimilar-Fractions-Using-The-Symbols-And.md",
           "item": 8,
           "original_type": "activity"
-        }
-      },
-      {
-        "q": {
-          "en": "For **Order these equal-sized bibingka portions from smallest to largest: 1/3, 1/3, 2/3.**, the answer can be chosen without using the given mathematical information.",
-          "fil": "For **Order these equal-sized bibingka portions from smallest to largest: 1/3, 1/3, 2/3.**, the answer can be chosen without using the given mathematical information.",
-          "taglish": "For **Order these equal-sized bibingka portions from smallest to largest: 1/3, 1/3, 2/3.**, the answer can be chosen without using the given mathematical information."
-        },
-        "answer": "False",
-        "type": "true_false",
-        "options": [
-          "True",
-          "False"
-        ],
-        "solution": {
-          "en": "Answer: False",
-          "fil": "Answer: False",
-          "taglish": "Answer: False"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "4NA-IIg-2",
-          "path": "Grade-4/Semester-2/Quizzes/Quiz-11-Dissimilar-Fractions-Using-The-Symbols-And.md",
-          "item": 9,
-          "original_type": "true-false"
         }
       },
       {
@@ -10142,31 +9417,6 @@
           "path": "Grade-4/Semester-2/Activity-Sheets/Activity-Sheet-12-Dissimilar-Fractions-From-Smallest-To-Largest-And-Vice.md",
           "item": 8,
           "original_type": "activity"
-        }
-      },
-      {
-        "q": {
-          "en": "For **Order these equal-sized bibingka portions from smallest to largest: 2/10, 6/10, 7/10.**, the answer can be chosen without using the given mathematical information.",
-          "fil": "For **Order these equal-sized bibingka portions from smallest to largest: 2/10, 6/10, 7/10.**, the answer can be chosen without using the given mathematical information.",
-          "taglish": "For **Order these equal-sized bibingka portions from smallest to largest: 2/10, 6/10, 7/10.**, the answer can be chosen without using the given mathematical information."
-        },
-        "answer": "False",
-        "type": "true_false",
-        "options": [
-          "True",
-          "False"
-        ],
-        "solution": {
-          "en": "Answer: False",
-          "fil": "Answer: False",
-          "taglish": "Answer: False"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "4NA-IIh-1",
-          "path": "Grade-4/Semester-2/Quizzes/Quiz-12-Dissimilar-Fractions-From-Smallest-To-Largest-And-Vice.md",
-          "item": 9,
-          "original_type": "true-false"
         }
       },
       {
@@ -10526,31 +9776,6 @@
       },
       {
         "q": {
-          "en": "For **Reduce 9/15 to simplest form.**, the answer can be chosen without using the given mathematical information.",
-          "fil": "For **Reduce 9/15 to simplest form.**, the answer can be chosen without using the given mathematical information.",
-          "taglish": "For **Reduce 9/15 to simplest form.**, the answer can be chosen without using the given mathematical information."
-        },
-        "answer": "False",
-        "type": "true_false",
-        "options": [
-          "True",
-          "False"
-        ],
-        "solution": {
-          "en": "Answer: False",
-          "fil": "Answer: False",
-          "taglish": "Answer: False"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "4NA-IIh-2",
-          "path": "Grade-4/Semester-2/Quizzes/Quiz-13-Generate-Equivalent-Fractions-Using-Models.md",
-          "item": 9,
-          "original_type": "true-false"
-        }
-      },
-      {
-        "q": {
           "en": "Reduce 9/15 to simplest form. Explain why your answer is reasonable.",
           "fil": "Reduce 9/15 to simplest form. Explain why your answer is reasonable.",
           "taglish": "Reduce 9/15 to simplest form. Explain why your answer is reasonable."
@@ -10852,31 +10077,6 @@
           "path": "Grade-4/Semester-2/Activity-Sheets/Activity-Sheet-14-Equivalent-Fractions.md",
           "item": 8,
           "original_type": "activity"
-        }
-      },
-      {
-        "q": {
-          "en": "For **Reduce 8/16 to simplest form.**, the answer can be chosen without using the given mathematical information.",
-          "fil": "For **Reduce 8/16 to simplest form.**, the answer can be chosen without using the given mathematical information.",
-          "taglish": "For **Reduce 8/16 to simplest form.**, the answer can be chosen without using the given mathematical information."
-        },
-        "answer": "False",
-        "type": "true_false",
-        "options": [
-          "True",
-          "False"
-        ],
-        "solution": {
-          "en": "Answer: False",
-          "fil": "Answer: False",
-          "taglish": "Answer: False"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "4NA-IIi-1",
-          "path": "Grade-4/Semester-2/Quizzes/Quiz-14-Equivalent-Fractions.md",
-          "item": 9,
-          "original_type": "true-false"
         }
       },
       {
@@ -11250,31 +10450,6 @@
           "path": "Grade-4/Semester-2/Activity-Sheets/Activity-Sheet-15-The-Multiples-Of-Given-Numbers-Up-To-100.md",
           "item": 8,
           "original_type": "activity"
-        }
-      },
-      {
-        "q": {
-          "en": "For **Compare the school enrollment figures 953,852 and 398,750 using <, >, or =.**, the answer can be chosen without using the given mathematical information.",
-          "fil": "For **Compare the school enrollment figures 953,852 and 398,750 using <, >, or =.**, the answer can be chosen without using the given mathematical information.",
-          "taglish": "For **Compare the school enrollment figures 953,852 and 398,750 using <, >, or =.**, the answer can be chosen without using the given mathematical information."
-        },
-        "answer": "False",
-        "type": "true_false",
-        "options": [
-          "True",
-          "False"
-        ],
-        "solution": {
-          "en": "Answer: False",
-          "fil": "Answer: False",
-          "taglish": "Answer: False"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "4NA-IIi-2",
-          "path": "Grade-4/Semester-2/Quizzes/Quiz-15-The-Multiples-Of-Given-Numbers-Up-To-100.md",
-          "item": 9,
-          "original_type": "true-false"
         }
       },
       {
@@ -11682,31 +10857,6 @@
       },
       {
         "q": {
-          "en": "For **Compare the school enrollment figures 787,160 and 942,674 using <, >, or =.**, the answer can be chosen without using the given mathematical information.",
-          "fil": "For **Compare the school enrollment figures 787,160 and 942,674 using <, >, or =.**, the answer can be chosen without using the given mathematical information.",
-          "taglish": "For **Compare the school enrollment figures 787,160 and 942,674 using <, >, or =.**, the answer can be chosen without using the given mathematical information."
-        },
-        "answer": "False",
-        "type": "true_false",
-        "options": [
-          "True",
-          "False"
-        ],
-        "solution": {
-          "en": "Answer: False",
-          "fil": "Answer: False",
-          "taglish": "Answer: False"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "4NA-IIi-3",
-          "path": "Grade-4/Semester-2/Quizzes/Quiz-16-All-The-Factors-Of-A-Given-Number-Up-To-100.md",
-          "item": 9,
-          "original_type": "true-false"
-        }
-      },
-      {
-        "q": {
           "en": "Compare the school enrollment figures 787,160 and 942,674 using <, >, or =. Explain why your answer is reasonable.",
           "fil": "Compare the school enrollment figures 787,160 and 942,674 using <, >, or =. Explain why your answer is reasonable.",
           "taglish": "Compare the school enrollment figures 787,160 and 942,674 using <, >, or =. Explain why your answer is reasonable."
@@ -12092,31 +11242,6 @@
       },
       {
         "q": {
-          "en": "For **Reduce 8/10 to simplest form.**, the answer can be chosen without using the given mathematical information.",
-          "fil": "For **Reduce 8/10 to simplest form.**, the answer can be chosen without using the given mathematical information.",
-          "taglish": "For **Reduce 8/10 to simplest form.**, the answer can be chosen without using the given mathematical information."
-        },
-        "answer": "False",
-        "type": "true_false",
-        "options": [
-          "True",
-          "False"
-        ],
-        "solution": {
-          "en": "Answer: False",
-          "fil": "Answer: False",
-          "taglish": "Answer: False"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "4NA-IIi-4",
-          "path": "Grade-4/Semester-2/Quizzes/Quiz-17-Reduce-Fractions-To-Simplest-Form.md",
-          "item": 9,
-          "original_type": "true-false"
-        }
-      },
-      {
-        "q": {
           "en": "Reduce 8/10 to simplest form. Explain why your answer is reasonable.",
           "fil": "Reduce 8/10 to simplest form. Explain why your answer is reasonable.",
           "taglish": "Reduce 8/10 to simplest form. Explain why your answer is reasonable."
@@ -12447,31 +11572,6 @@
           "path": "Grade-4/Semester-3/Activity-Sheets/Activity-Sheet-01-Subtract-Dissimilar-Fractions-Using-Models.md",
           "item": 8,
           "original_type": "activity"
-        }
-      },
-      {
-        "q": {
-          "en": "For **Compute 1/2 + 1/2.**, the answer can be chosen without using the given mathematical information.",
-          "fil": "For **Compute 1/2 + 1/2.**, the answer can be chosen without using the given mathematical information.",
-          "taglish": "For **Compute 1/2 + 1/2.**, the answer can be chosen without using the given mathematical information."
-        },
-        "answer": "False",
-        "type": "true_false",
-        "options": [
-          "True",
-          "False"
-        ],
-        "solution": {
-          "en": "Answer: False",
-          "fil": "Answer: False",
-          "taglish": "Answer: False"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "4NA-IIIa-1",
-          "path": "Grade-4/Semester-3/Quizzes/Quiz-01-Subtract-Dissimilar-Fractions-Using-Models.md",
-          "item": 9,
-          "original_type": "true-false"
         }
       },
       {
@@ -12831,31 +11931,6 @@
       },
       {
         "q": {
-          "en": "For **Rewrite 16/5 as a mixed number.**, the answer can be chosen without using the given mathematical information.",
-          "fil": "For **Rewrite 16/5 as a mixed number.**, the answer can be chosen without using the given mathematical information.",
-          "taglish": "For **Rewrite 16/5 as a mixed number.**, the answer can be chosen without using the given mathematical information."
-        },
-        "answer": "False",
-        "type": "true_false",
-        "options": [
-          "True",
-          "False"
-        ],
-        "solution": {
-          "en": "Answer: False",
-          "fil": "Answer: False",
-          "taglish": "Answer: False"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "4NA-IIIb-1",
-          "path": "Grade-4/Semester-3/Quizzes/Quiz-02-Subtract-Dissimilar-Fractions.md",
-          "item": 9,
-          "original_type": "true-false"
-        }
-      },
-      {
-        "q": {
           "en": "Rewrite 16/5 as a mixed number. Explain why your answer is reasonable.",
           "fil": "Rewrite 16/5 as a mixed number. Explain why your answer is reasonable.",
           "taglish": "Rewrite 16/5 as a mixed number. Explain why your answer is reasonable."
@@ -13165,31 +12240,6 @@
       },
       {
         "q": {
-          "en": "For **For a school garden plot, compute 2/3 + 1/3. Give the answer in simplest form.**, the answer can be chosen without using the given mathematical information.",
-          "fil": "For **For a school garden plot, compute 2/3 + 1/3. Give the answer in simplest form.**, the answer can be chosen without using the given mathematical information.",
-          "taglish": "For **For a school garden plot, compute 2/3 + 1/3. Give the answer in simplest form.**, the answer can be chosen without using the given mathematical information."
-        },
-        "answer": "False",
-        "type": "true_false",
-        "options": [
-          "True",
-          "False"
-        ],
-        "solution": {
-          "en": "Answer: False",
-          "fil": "Answer: False",
-          "taglish": "Answer: False"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "4NA-IIIc-1",
-          "path": "Grade-4/Semester-3/Quizzes/Quiz-03-Multi-Step-Problems-Involving-Addition-And-Or.md",
-          "item": 9,
-          "original_type": "true-false"
-        }
-      },
-      {
-        "q": {
           "en": "For a school garden plot, compute 2/3 + 1/3. Give the answer in simplest form. Explain why your answer is reasonable.",
           "fil": "For a school garden plot, compute 2/3 + 1/3. Give the answer in simplest form. Explain why your answer is reasonable.",
           "taglish": "For a school garden plot, compute 2/3 + 1/3. Give the answer in simplest form. Explain why your answer is reasonable."
@@ -13459,31 +12509,6 @@
       },
       {
         "q": {
-          "en": "For **A figure is moved without turning or flipping. Name the transformation.**, the answer can be chosen without using the given mathematical information.",
-          "fil": "For **A figure is moved without turning or flipping. Name the transformation.**, the answer can be chosen without using the given mathematical information.",
-          "taglish": "For **A figure is moved without turning or flipping. Name the transformation.**, the answer can be chosen without using the given mathematical information."
-        },
-        "answer": "False",
-        "type": "true_false",
-        "options": [
-          "True",
-          "False"
-        ],
-        "solution": {
-          "en": "Answer: False",
-          "fil": "Answer: False",
-          "taglish": "Answer: False"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "4MG-IIId-1",
-          "path": "Grade-4/Semester-3/Quizzes/Quiz-04-Symmetry-With-Respect-To-A-Line.md",
-          "item": 9,
-          "original_type": "true-false"
-        }
-      },
-      {
-        "q": {
           "en": "A figure is moved without turning or flipping. Name the transformation. Explain why your answer is reasonable.",
           "fil": "A figure is moved without turning or flipping. Name the transformation. Explain why your answer is reasonable.",
           "taglish": "A figure is moved without turning or flipping. Name the transformation. Explain why your answer is reasonable."
@@ -13670,31 +12695,6 @@
           "ref": "4MG-IIId-2",
           "path": "Grade-4/Semester-3/Quizzes/Quiz-05-A-Figure-That-Is-Symmetric-With-Respect-To-A-Line.md",
           "item": 8,
-          "original_type": "true-false"
-        }
-      },
-      {
-        "q": {
-          "en": "For **A figure is moved without turning or flipping. Name the transformation.**, the answer can be chosen without using the given mathematical information.",
-          "fil": "For **A figure is moved without turning or flipping. Name the transformation.**, the answer can be chosen without using the given mathematical information.",
-          "taglish": "For **A figure is moved without turning or flipping. Name the transformation.**, the answer can be chosen without using the given mathematical information."
-        },
-        "answer": "False",
-        "type": "true_false",
-        "options": [
-          "True",
-          "False"
-        ],
-        "solution": {
-          "en": "Answer: False",
-          "fil": "Answer: False",
-          "taglish": "Answer: False"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "4MG-IIId-2",
-          "path": "Grade-4/Semester-3/Quizzes/Quiz-05-A-Figure-That-Is-Symmetric-With-Respect-To-A-Line.md",
-          "item": 9,
           "original_type": "true-false"
         }
       },
@@ -13891,31 +12891,6 @@
       },
       {
         "q": {
-          "en": "For **A figure is moved without turning or flipping. Name the transformation.**, the answer can be chosen without using the given mathematical information.",
-          "fil": "For **A figure is moved without turning or flipping. Name the transformation.**, the answer can be chosen without using the given mathematical information.",
-          "taglish": "For **A figure is moved without turning or flipping. Name the transformation.**, the answer can be chosen without using the given mathematical information."
-        },
-        "answer": "False",
-        "type": "true_false",
-        "options": [
-          "True",
-          "False"
-        ],
-        "solution": {
-          "en": "Answer: False",
-          "fil": "Answer: False",
-          "taglish": "Answer: False"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "4MG-IIId-3",
-          "path": "Grade-4/Semester-3/Quizzes/Quiz-06-Draws-The-Image-Of-An-Object-After-Applying-Reflection.md",
-          "item": 9,
-          "original_type": "true-false"
-        }
-      },
-      {
-        "q": {
           "en": "A figure is moved without turning or flipping. Name the transformation. Explain why your answer is reasonable.",
           "fil": "A figure is moved without turning or flipping. Name the transformation. Explain why your answer is reasonable.",
           "taglish": "A figure is moved without turning or flipping. Name the transformation. Explain why your answer is reasonable."
@@ -13983,7 +12958,7 @@
         "options": [
           "Tell everything about your family",
           "True",
-          "False",
+          "Both choices",
           "What is your favorite local fruit?"
         ],
         "solution": {
@@ -14021,31 +12996,6 @@
           "ref": "4SP-IIIe-1",
           "path": "Grade-4/Semester-3/Quizzes/Quiz-07-Data-With-Time-Element-Using-Appropriate-Sources.md",
           "item": 8,
-          "original_type": "true-false"
-        }
-      },
-      {
-        "q": {
-          "en": "For **Which question collects one clear variable for a class pictograph: 'What is your favorite local fruit?' or 'Tell everything about your family'?**, the answer can be chosen without using the given mathematical information.",
-          "fil": "For **Which question collects one clear variable for a class pictograph: 'What is your favorite local fruit?' or 'Tell everything about your family'?**, the answer can be chosen without using the given mathematical information.",
-          "taglish": "For **Which question collects one clear variable for a class pictograph: 'What is your favorite local fruit?' or 'Tell everything about your family'?**, the answer can be chosen without using the given mathematical information."
-        },
-        "answer": "False",
-        "type": "true_false",
-        "options": [
-          "True",
-          "False"
-        ],
-        "solution": {
-          "en": "Answer: False",
-          "fil": "Answer: False",
-          "taglish": "Answer: False"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "4SP-IIIe-1",
-          "path": "Grade-4/Semester-3/Quizzes/Quiz-07-Data-With-Time-Element-Using-Appropriate-Sources.md",
-          "item": 9,
           "original_type": "true-false"
         }
       }
@@ -14315,31 +13265,6 @@
           "path": "Grade-4/Semester-3/Activity-Sheets/Activity-Sheet-08-Data-In-A-Tabular-Form-Or-In-A-Single-Line-Graph.md",
           "item": 8,
           "original_type": "activity"
-        }
-      },
-      {
-        "q": {
-          "en": "For **Present mango=8, banana=12, papaya=2, and guava=5 in a labeled table or graph. **, the answer can be chosen without using the given mathematical information.",
-          "fil": "For **Present mango=8, banana=12, papaya=2, and guava=5 in a labeled table or graph. **, the answer can be chosen without using the given mathematical information.",
-          "taglish": "For **Present mango=8, banana=12, papaya=2, and guava=5 in a labeled table or graph. **, the answer can be chosen without using the given mathematical information."
-        },
-        "answer": "False",
-        "type": "true_false",
-        "options": [
-          "True",
-          "False"
-        ],
-        "solution": {
-          "en": "Answer: False",
-          "fil": "Answer: False",
-          "taglish": "Answer: False"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "4SP-IIIe-2",
-          "path": "Grade-4/Semester-3/Quizzes/Quiz-08-Data-In-A-Tabular-Form-Or-In-A-Single-Line-Graph.md",
-          "item": 9,
-          "original_type": "true-false"
         }
       },
       {
@@ -14747,31 +13672,6 @@
       },
       {
         "q": {
-          "en": "For **Present mango=6, banana=10, papaya=11, and guava=2 in a labeled table or graph. **, the answer can be chosen without using the given mathematical information.",
-          "fil": "For **Present mango=6, banana=10, papaya=11, and guava=2 in a labeled table or graph. **, the answer can be chosen without using the given mathematical information.",
-          "taglish": "For **Present mango=6, banana=10, papaya=11, and guava=2 in a labeled table or graph. **, the answer can be chosen without using the given mathematical information."
-        },
-        "answer": "False",
-        "type": "true_false",
-        "options": [
-          "True",
-          "False"
-        ],
-        "solution": {
-          "en": "Answer: False",
-          "fil": "Answer: False",
-          "taglish": "Answer: False"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "4SP-IIIf-1",
-          "path": "Grade-4/Semester-3/Quizzes/Quiz-09-Data-Presented-In-A-Tabular-Form-Or-In-A-Single-Line.md",
-          "item": 9,
-          "original_type": "true-false"
-        }
-      },
-      {
-        "q": {
           "en": "Which option correctly presents mango=6, banana=10, papaya=11, and guava=2 in a labeled table or graph? Explain why your answer is reasonable.",
           "fil": "Which option correctly presents mango=6, banana=10, papaya=11, and guava=2 in a labeled table or graph? Explain why your answer is reasonable.",
           "taglish": "Which option correctly presents mango=6, banana=10, papaya=11, and guava=2 in a labeled table or graph? Explain why your answer is reasonable."
@@ -14947,7 +13847,7 @@
         "options": [
           "papaya",
           "True",
-          "False",
+          "Both choices",
           "mango"
         ],
         "solution": {
@@ -14973,7 +13873,7 @@
         "type": "mcq",
         "options": [
           "True",
-          "False",
+          "Both choices",
           "mango",
           "papaya"
         ],
@@ -14999,7 +13899,7 @@
         "answer": "mango",
         "type": "mcq",
         "options": [
-          "False",
+          "Both choices",
           "mango",
           "papaya",
           "True"
@@ -15089,31 +13989,6 @@
           "ref": "4SP-IIIf-2",
           "path": "Grade-4/Semester-3/Quizzes/Quiz-10-Problems-Using-Data-For-At-Most-Two-Variables-In-A.md",
           "item": 8,
-          "original_type": "true-false"
-        }
-      },
-      {
-        "q": {
-          "en": "For **A class survey recorded mango=5, banana=9, papaya=12, and guava=4. Which fruit has the greatest count?**, the answer can be chosen without using the given mathematical information.",
-          "fil": "For **A class survey recorded mango=5, banana=9, papaya=12, and guava=4. Which fruit has the greatest count?**, the answer can be chosen without using the given mathematical information.",
-          "taglish": "For **A class survey recorded mango=5, banana=9, papaya=12, and guava=4. Which fruit has the greatest count?**, the answer can be chosen without using the given mathematical information."
-        },
-        "answer": "False",
-        "type": "true_false",
-        "options": [
-          "True",
-          "False"
-        ],
-        "solution": {
-          "en": "Answer: False",
-          "fil": "Answer: False",
-          "taglish": "Answer: False"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "4SP-IIIf-2",
-          "path": "Grade-4/Semester-3/Quizzes/Quiz-10-Problems-Using-Data-For-At-Most-Two-Variables-In-A.md",
-          "item": 9,
           "original_type": "true-false"
         }
       }
@@ -15365,31 +14240,6 @@
           "path": "Grade-4/Semester-3/Activity-Sheets/Activity-Sheet-11-The-Rule-Used-To-Generate-A-Given-Simple-Pattern.md",
           "item": 8,
           "original_type": "activity"
-        }
-      },
-      {
-        "q": {
-          "en": "For **Continue the barangay house-number pattern: 13, 20, 27, 34, __, __.**, the answer can be chosen without using the given mathematical information.",
-          "fil": "For **Continue the barangay house-number pattern: 13, 20, 27, 34, __, __.**, the answer can be chosen without using the given mathematical information.",
-          "taglish": "For **Continue the barangay house-number pattern: 13, 20, 27, 34, __, __.**, the answer can be chosen without using the given mathematical information."
-        },
-        "answer": "False",
-        "type": "true_false",
-        "options": [
-          "True",
-          "False"
-        ],
-        "solution": {
-          "en": "Answer: False",
-          "fil": "Answer: False",
-          "taglish": "Answer: False"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "4NA-IIIg-1",
-          "path": "Grade-4/Semester-3/Quizzes/Quiz-11-The-Rule-Used-To-Generate-A-Given-Simple-Pattern.md",
-          "item": 9,
-          "original_type": "true-false"
         }
       },
       {
@@ -15749,31 +14599,6 @@
       },
       {
         "q": {
-          "en": "For **Find the missing number: 19 + __ = 22.**, the answer can be chosen without using the given mathematical information.",
-          "fil": "For **Find the missing number: 19 + __ = 22.**, the answer can be chosen without using the given mathematical information.",
-          "taglish": "For **Find the missing number: 19 + __ = 22.**, the answer can be chosen without using the given mathematical information."
-        },
-        "answer": "False",
-        "type": "true_false",
-        "options": [
-          "True",
-          "False"
-        ],
-        "solution": {
-          "en": "Answer: False",
-          "fil": "Answer: False",
-          "taglish": "Answer: False"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "4NA-IIIg-2",
-          "path": "Grade-4/Semester-3/Quizzes/Quiz-12-A-Number-Sentence.md",
-          "item": 9,
-          "original_type": "true-false"
-        }
-      },
-      {
-        "q": {
           "en": "Find the missing number: 19 + __ = 22. Explain why your answer is reasonable.",
           "fil": "Find the missing number: 19 + __ = 22. Explain why your answer is reasonable.",
           "taglish": "Find the missing number: 19 + __ = 22. Explain why your answer is reasonable."
@@ -16125,31 +14950,6 @@
           "path": "Grade-4/Semester-3/Activity-Sheets/Activity-Sheet-13-Decimal-Numbers-Using-Models-And-Manipulatives-To-Show.md",
           "item": 8,
           "original_type": "activity"
-        }
-      },
-      {
-        "q": {
-          "en": "For **At a sari-sari store, compute ₱32.07 + ₱18.81.**, the answer can be chosen without using the given mathematical information.",
-          "fil": "For **At a sari-sari store, compute ₱32.07 + ₱18.81.**, the answer can be chosen without using the given mathematical information.",
-          "taglish": "For **At a sari-sari store, compute ₱32.07 + ₱18.81.**, the answer can be chosen without using the given mathematical information."
-        },
-        "answer": "False",
-        "type": "true_false",
-        "options": [
-          "True",
-          "False"
-        ],
-        "solution": {
-          "en": "Answer: False",
-          "fil": "Answer: False",
-          "taglish": "Answer: False"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "4NA-IIIg-3",
-          "path": "Grade-4/Semester-3/Quizzes/Quiz-13-Decimal-Numbers-Using-Models-And-Manipulatives-To-Show.md",
-          "item": 9,
-          "original_type": "true-false"
         }
       },
       {
@@ -16509,31 +15309,6 @@
       },
       {
         "q": {
-          "en": "For **In 82.643, what is the value of the digit in the hundredths place?**, the answer can be chosen without using the given mathematical information.",
-          "fil": "For **In 82.643, what is the value of the digit in the hundredths place?**, the answer can be chosen without using the given mathematical information.",
-          "taglish": "For **In 82.643, what is the value of the digit in the hundredths place?**, the answer can be chosen without using the given mathematical information."
-        },
-        "answer": "False",
-        "type": "true_false",
-        "options": [
-          "True",
-          "False"
-        ],
-        "solution": {
-          "en": "Answer: False",
-          "fil": "Answer: False",
-          "taglish": "Answer: False"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "4NA-IIIg-4",
-          "path": "Grade-4/Semester-3/Quizzes/Quiz-14-Decimal-Numbers-With-Decimal-Parts-To-Hundredths.md",
-          "item": 9,
-          "original_type": "true-false"
-        }
-      },
-      {
-        "q": {
           "en": "In 82.643, what is the value of the digit in the hundredths place? Explain why your answer is reasonable.",
           "fil": "In 82.643, what is the value of the digit in the hundredths place? Explain why your answer is reasonable.",
           "taglish": "In 82.643, what is the value of the digit in the hundredths place? Explain why your answer is reasonable."
@@ -16889,31 +15664,6 @@
       },
       {
         "q": {
-          "en": "For **In 82.338, what is the value of the digit in the hundredths place?**, the answer can be chosen without using the given mathematical information.",
-          "fil": "For **In 82.338, what is the value of the digit in the hundredths place?**, the answer can be chosen without using the given mathematical information.",
-          "taglish": "For **In 82.338, what is the value of the digit in the hundredths place?**, the answer can be chosen without using the given mathematical information."
-        },
-        "answer": "False",
-        "type": "true_false",
-        "options": [
-          "True",
-          "False"
-        ],
-        "solution": {
-          "en": "Answer: False",
-          "fil": "Answer: False",
-          "taglish": "Answer: False"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "4NA-IIIi-1",
-          "path": "Grade-4/Semester-3/Quizzes/Quiz-15-Determine.md",
-          "item": 9,
-          "original_type": "true-false"
-        }
-      },
-      {
-        "q": {
           "en": "In 82.338, what is the value of the digit in the hundredths place? Explain why your answer is reasonable.",
           "fil": "In 82.338, what is the value of the digit in the hundredths place? Explain why your answer is reasonable.",
           "taglish": "In 82.338, what is the value of the digit in the hundredths place? Explain why your answer is reasonable."
@@ -17198,31 +15948,6 @@
       },
       {
         "q": {
-          "en": "For **Convert 0.2 to a fraction in simplest form.**, the answer can be chosen without using the given mathematical information.",
-          "fil": "For **Convert 0.2 to a fraction in simplest form.**, the answer can be chosen without using the given mathematical information.",
-          "taglish": "For **Convert 0.2 to a fraction in simplest form.**, the answer can be chosen without using the given mathematical information."
-        },
-        "answer": "False",
-        "type": "true_false",
-        "options": [
-          "True",
-          "False"
-        ],
-        "solution": {
-          "en": "Answer: False",
-          "fil": "Answer: False",
-          "taglish": "Answer: False"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "4NA-IIIi-2",
-          "path": "Grade-4/Semester-3/Quizzes/Quiz-16-Decimal-Numbers-To-Fractions-And-Fractions-With.md",
-          "item": 9,
-          "original_type": "true-false"
-        }
-      },
-      {
-        "q": {
           "en": "Convert 0.2 to a fraction in simplest form. Explain why your answer is reasonable.",
           "fil": "Convert 0.2 to a fraction in simplest form. Explain why your answer is reasonable.",
           "taglish": "Convert 0.2 to a fraction in simplest form. Explain why your answer is reasonable."
@@ -17490,31 +16215,6 @@
           "path": "Grade-4/Semester-3/Activity-Sheets/Activity-Sheet-17-Plot-Decimal-Numbers-With-Tenth-Decimal-Part-On-The.md",
           "item": 8,
           "original_type": "activity"
-        }
-      },
-      {
-        "q": {
-          "en": "For **At a sari-sari store, compute ₱26.45 + ₱19.99.**, the answer can be chosen without using the given mathematical information.",
-          "fil": "For **At a sari-sari store, compute ₱26.45 + ₱19.99.**, the answer can be chosen without using the given mathematical information.",
-          "taglish": "For **At a sari-sari store, compute ₱26.45 + ₱19.99.**, the answer can be chosen without using the given mathematical information."
-        },
-        "answer": "False",
-        "type": "true_false",
-        "options": [
-          "True",
-          "False"
-        ],
-        "solution": {
-          "en": "Answer: False",
-          "fil": "Answer: False",
-          "taglish": "Answer: False"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "4NA-IIIi-3",
-          "path": "Grade-4/Semester-3/Quizzes/Quiz-17-Plot-Decimal-Numbers-With-Tenth-Decimal-Part-On-The.md",
-          "item": 9,
-          "original_type": "true-false"
         }
       },
       {
@@ -17874,31 +16574,6 @@
       },
       {
         "q": {
-          "en": "For **Order these market weights from smallest to largest: 2.788, 1.233, 6.630.**, the answer can be chosen without using the given mathematical information.",
-          "fil": "For **Order these market weights from smallest to largest: 2.788, 1.233, 6.630.**, the answer can be chosen without using the given mathematical information.",
-          "taglish": "For **Order these market weights from smallest to largest: 2.788, 1.233, 6.630.**, the answer can be chosen without using the given mathematical information."
-        },
-        "answer": "False",
-        "type": "true_false",
-        "options": [
-          "True",
-          "False"
-        ],
-        "solution": {
-          "en": "Answer: False",
-          "fil": "Answer: False",
-          "taglish": "Answer: False"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "4NA-IIIi-4",
-          "path": "Grade-4/Semester-3/Quizzes/Quiz-18-Order-Decimal-Numbers-With-Decimal-Parts-To-Hundredths.md",
-          "item": 9,
-          "original_type": "true-false"
-        }
-      },
-      {
-        "q": {
           "en": "Order these market weights from smallest to largest: 2.788, 1.233, 6.630. Explain why your answer is reasonable.",
           "fil": "Order these market weights from smallest to largest: 2.788, 1.233, 6.630. Explain why your answer is reasonable.",
           "taglish": "Order these market weights from smallest to largest: 2.788, 1.233, 6.630. Explain why your answer is reasonable."
@@ -18250,31 +16925,6 @@
           "path": "Grade-4/Semester-3/Activity-Sheets/Activity-Sheet-19-Round-Decimal-Numbers-To-The-Nearest-Whole-Number-And.md",
           "item": 8,
           "original_type": "activity"
-        }
-      },
-      {
-        "q": {
-          "en": "For **Round 5.5452 to the nearest thousandth.**, the answer can be chosen without using the given mathematical information.",
-          "fil": "For **Round 5.5452 to the nearest thousandth.**, the answer can be chosen without using the given mathematical information.",
-          "taglish": "For **Round 5.5452 to the nearest thousandth.**, the answer can be chosen without using the given mathematical information."
-        },
-        "answer": "False",
-        "type": "true_false",
-        "options": [
-          "True",
-          "False"
-        ],
-        "solution": {
-          "en": "Answer: False",
-          "fil": "Answer: False",
-          "taglish": "Answer: False"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "4NA-IIIi-5",
-          "path": "Grade-4/Semester-3/Quizzes/Quiz-19-Round-Decimal-Numbers-To-The-Nearest-Whole-Number-And.md",
-          "item": 9,
-          "original_type": "true-false"
         }
       },
       {

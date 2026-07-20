@@ -261,31 +261,6 @@
       },
       {
         "q": {
-          "en": "For **A rectangular seedbed is 4 m long and 3 m wide. Find its area.**, the answer can be chosen without using the given mathematical information.",
-          "fil": "For **A rectangular seedbed is 4 m long and 3 m wide. Find its area.**, the answer can be chosen without using the given mathematical information.",
-          "taglish": "For **A rectangular seedbed is 4 m long and 3 m wide. Find its area.**, the answer can be chosen without using the given mathematical information."
-        },
-        "answer": "False",
-        "type": "true_false",
-        "options": [
-          "True",
-          "False"
-        ],
-        "solution": {
-          "en": "Answer: False",
-          "fil": "Answer: False",
-          "taglish": "Answer: False"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "3MG-Ia-1",
-          "path": "Grade-3/Semester-1/Quizzes/Quiz-01-Estimate-The-Area-Of-A-Square-Or-Rectangle-Using.md",
-          "item": 9,
-          "original_type": "true-false"
-        }
-      },
-      {
-        "q": {
           "en": "A rectangular seedbed is 4 m long and 3 m wide. Find its area. Explain why your answer is reasonable.",
           "fil": "A rectangular seedbed is 4 m long and 3 m wide. Find its area. Explain why your answer is reasonable.",
           "taglish": "A rectangular seedbed is 4 m long and 3 m wide. Find its area. Explain why your answer is reasonable."
@@ -690,31 +665,6 @@
       },
       {
         "q": {
-          "en": "For **A rectangular seedbed is 5 m long and 7 m wide. Find its area.**, the answer can be chosen without using the given mathematical information.",
-          "fil": "For **A rectangular seedbed is 5 m long and 7 m wide. Find its area.**, the answer can be chosen without using the given mathematical information.",
-          "taglish": "For **A rectangular seedbed is 5 m long and 7 m wide. Find its area.**, the answer can be chosen without using the given mathematical information."
-        },
-        "answer": "False",
-        "type": "true_false",
-        "options": [
-          "True",
-          "False"
-        ],
-        "solution": {
-          "en": "Answer: False",
-          "fil": "Answer: False",
-          "taglish": "Answer: False"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "3MG-Ia-2",
-          "path": "Grade-3/Semester-1/Quizzes/Quiz-02-The-Derivation-Of-The-Formulas-For-The-Areas-Of-A.md",
-          "item": 9,
-          "original_type": "true-false"
-        }
-      },
-      {
-        "q": {
           "en": "A rectangular seedbed is 5 m long and 7 m wide. Find its area. Explain why your answer is reasonable.",
           "fil": "A rectangular seedbed is 5 m long and 7 m wide. Find its area. Explain why your answer is reasonable.",
           "taglish": "A rectangular seedbed is 5 m long and 7 m wide. Find its area. Explain why your answer is reasonable."
@@ -1063,31 +1013,6 @@
           "path": "Grade-3/Semester-1/Activity-Sheets/Activity-Sheet-03-The-Areas-Of-Squares-And-Rectangles-In-Sq-Cm-And-Sq-M.md",
           "item": 8,
           "original_type": "activity"
-        }
-      },
-      {
-        "q": {
-          "en": "For **A rectangular seedbed is 9 m long and 5 m wide. Find its area.**, the answer can be chosen without using the given mathematical information.",
-          "fil": "For **A rectangular seedbed is 9 m long and 5 m wide. Find its area.**, the answer can be chosen without using the given mathematical information.",
-          "taglish": "For **A rectangular seedbed is 9 m long and 5 m wide. Find its area.**, the answer can be chosen without using the given mathematical information."
-        },
-        "answer": "False",
-        "type": "true_false",
-        "options": [
-          "True",
-          "False"
-        ],
-        "solution": {
-          "en": "Answer: False",
-          "fil": "Answer: False",
-          "taglish": "Answer: False"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "3MG-Ib-1",
-          "path": "Grade-3/Semester-1/Quizzes/Quiz-03-The-Areas-Of-Squares-And-Rectangles-In-Sq-Cm-And-Sq-M.md",
-          "item": 9,
-          "original_type": "true-false"
         }
       },
       {
@@ -1469,31 +1394,6 @@
       },
       {
         "q": {
-          "en": "For **A rectangular seedbed is 5 m long and 5 m wide. Find its area.**, the answer can be chosen without using the given mathematical information.",
-          "fil": "For **A rectangular seedbed is 5 m long and 5 m wide. Find its area.**, the answer can be chosen without using the given mathematical information.",
-          "taglish": "For **A rectangular seedbed is 5 m long and 5 m wide. Find its area.**, the answer can be chosen without using the given mathematical information."
-        },
-        "answer": "False",
-        "type": "true_false",
-        "options": [
-          "True",
-          "False"
-        ],
-        "solution": {
-          "en": "Answer: False",
-          "fil": "Answer: False",
-          "taglish": "Answer: False"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "3MG-Ib-2",
-          "path": "Grade-3/Semester-1/Quizzes/Quiz-04-Problems-Involving-Areas-Of-Squares-And-Rectangles.md",
-          "item": 9,
-          "original_type": "true-false"
-        }
-      },
-      {
-        "q": {
           "en": "A rectangular seedbed is 5 m long and 5 m wide. Find its area. Explain why your answer is reasonable.",
           "fil": "A rectangular seedbed is 5 m long and 5 m wide. Find its area. Explain why your answer is reasonable.",
           "taglish": "A rectangular seedbed is 5 m long and 5 m wide. Find its area. Explain why your answer is reasonable."
@@ -1767,31 +1667,6 @@
       },
       {
         "q": {
-          "en": "For **What do we call two lines that meet to form a right angle?**, the answer can be chosen without using the given mathematical information.",
-          "fil": "For **What do we call two lines that meet to form a right angle?**, the answer can be chosen without using the given mathematical information.",
-          "taglish": "For **What do we call two lines that meet to form a right angle?**, the answer can be chosen without using the given mathematical information."
-        },
-        "answer": "False",
-        "type": "true_false",
-        "options": [
-          "True",
-          "False"
-        ],
-        "solution": {
-          "en": "Answer: False",
-          "fil": "Answer: False",
-          "taglish": "Answer: False"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "3MG-Ib-3",
-          "path": "Grade-3/Semester-1/Quizzes/Quiz-05-Recognize-Using-Models-And-Draw-A-Point-Line-Line.md",
-          "item": 9,
-          "original_type": "true-false"
-        }
-      },
-      {
-        "q": {
           "en": "What do we call two lines that meet to form a right angle? Explain why your answer is reasonable.",
           "fil": "What do we call two lines that meet to form a right angle? Explain why your answer is reasonable.",
           "taglish": "What do we call two lines that meet to form a right angle? Explain why your answer is reasonable."
@@ -1957,31 +1832,6 @@
       },
       {
         "q": {
-          "en": "For **What do we call two lines that meet to form a right angle?**, the answer can be chosen without using the given mathematical information.",
-          "fil": "For **What do we call two lines that meet to form a right angle?**, the answer can be chosen without using the given mathematical information.",
-          "taglish": "For **What do we call two lines that meet to form a right angle?**, the answer can be chosen without using the given mathematical information."
-        },
-        "answer": "False",
-        "type": "true_false",
-        "options": [
-          "True",
-          "False"
-        ],
-        "solution": {
-          "en": "Answer: False",
-          "fil": "Answer: False",
-          "taglish": "Answer: False"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "3MG-Ic-1",
-          "path": "Grade-3/Semester-1/Quizzes/Quiz-06-Draw-Parallel-Intersecting-And-Perpendicular-Lines.md",
-          "item": 9,
-          "original_type": "true-false"
-        }
-      },
-      {
-        "q": {
           "en": "What do we call two lines that meet to form a right angle? Explain why your answer is reasonable.",
           "fil": "What do we call two lines that meet to form a right angle? Explain why your answer is reasonable.",
           "taglish": "What do we call two lines that meet to form a right angle? Explain why your answer is reasonable."
@@ -2142,31 +1992,6 @@
           "ref": "3MG-Ic-2",
           "path": "Grade-3/Semester-1/Quizzes/Quiz-07-Draw-Line-Segments-Of-Equal-Length-Using-A-Ruler.md",
           "item": 8,
-          "original_type": "true-false"
-        }
-      },
-      {
-        "q": {
-          "en": "For **What do we call two lines that meet to form a right angle?**, the answer can be chosen without using the given mathematical information.",
-          "fil": "For **What do we call two lines that meet to form a right angle?**, the answer can be chosen without using the given mathematical information.",
-          "taglish": "For **What do we call two lines that meet to form a right angle?**, the answer can be chosen without using the given mathematical information."
-        },
-        "answer": "False",
-        "type": "true_false",
-        "options": [
-          "True",
-          "False"
-        ],
-        "solution": {
-          "en": "Answer: False",
-          "fil": "Answer: False",
-          "taglish": "Answer: False"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "3MG-Ic-2",
-          "path": "Grade-3/Semester-1/Quizzes/Quiz-07-Draw-Line-Segments-Of-Equal-Length-Using-A-Ruler.md",
-          "item": 9,
           "original_type": "true-false"
         }
       },
@@ -2403,31 +2228,6 @@
       },
       {
         "q": {
-          "en": "For **Write the numeral for: **ten thousand**.**, the answer can be chosen without using the given mathematical information.",
-          "fil": "For **Write the numeral for: **ten thousand**.**, the answer can be chosen without using the given mathematical information.",
-          "taglish": "For **Write the numeral for: **ten thousand**.**, the answer can be chosen without using the given mathematical information."
-        },
-        "answer": "False",
-        "type": "true_false",
-        "options": [
-          "True",
-          "False"
-        ],
-        "solution": {
-          "en": "Answer: False",
-          "fil": "Answer: False",
-          "taglish": "Answer: False"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "3NA-Id-1",
-          "path": "Grade-3/Semester-1/Quizzes/Quiz-08-Numbers-Up-To-10-000-Using-Pictorial-Models-And.md",
-          "item": 9,
-          "original_type": "true-false"
-        }
-      },
-      {
-        "q": {
           "en": "Write the numeral for: **ten thousand**. Explain why your answer is reasonable.",
           "fil": "Write the numeral for: **ten thousand**. Explain why your answer is reasonable.",
           "taglish": "Write the numeral for: **ten thousand**. Explain why your answer is reasonable."
@@ -2648,31 +2448,6 @@
           "ref": "3NA-Ie-1",
           "path": "Grade-3/Semester-1/Quizzes/Quiz-09-Numbers-Up-To-10-000-In-Numerals-And-In-Words.md",
           "item": 8,
-          "original_type": "true-false"
-        }
-      },
-      {
-        "q": {
-          "en": "For **Write the numeral for: **ten thousand**.**, the answer can be chosen without using the given mathematical information.",
-          "fil": "For **Write the numeral for: **ten thousand**.**, the answer can be chosen without using the given mathematical information.",
-          "taglish": "For **Write the numeral for: **ten thousand**.**, the answer can be chosen without using the given mathematical information."
-        },
-        "answer": "False",
-        "type": "true_false",
-        "options": [
-          "True",
-          "False"
-        ],
-        "solution": {
-          "en": "Answer: False",
-          "fil": "Answer: False",
-          "taglish": "Answer: False"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "3NA-Ie-1",
-          "path": "Grade-3/Semester-1/Quizzes/Quiz-09-Numbers-Up-To-10-000-In-Numerals-And-In-Words.md",
-          "item": 9,
           "original_type": "true-false"
         }
       },
@@ -2963,31 +2738,6 @@
           "path": "Grade-3/Semester-1/Activity-Sheets/Activity-Sheet-10-The-Position-Of-Objects-Using-Ordinal-Numbers-Up-To.md",
           "item": 8,
           "original_type": "activity"
-        }
-      },
-      {
-        "q": {
-          "en": "For **In a school parade, Ana is in position 99. Write her position as an ordinal number.**, the answer can be chosen without using the given mathematical information.",
-          "fil": "For **In a school parade, Ana is in position 99. Write her position as an ordinal number.**, the answer can be chosen without using the given mathematical information.",
-          "taglish": "For **In a school parade, Ana is in position 99. Write her position as an ordinal number.**, the answer can be chosen without using the given mathematical information."
-        },
-        "answer": "False",
-        "type": "true_false",
-        "options": [
-          "True",
-          "False"
-        ],
-        "solution": {
-          "en": "Answer: False",
-          "fil": "Answer: False",
-          "taglish": "Answer: False"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "3NA-If-1",
-          "path": "Grade-3/Semester-1/Quizzes/Quiz-10-The-Position-Of-Objects-Using-Ordinal-Numbers-Up-To.md",
-          "item": 9,
-          "original_type": "true-false"
         }
       },
       {
@@ -3377,31 +3127,6 @@
       },
       {
         "q": {
-          "en": "For **A barangay record shows 4,553. What is the value of its tens digit?**, the answer can be chosen without using the given mathematical information.",
-          "fil": "For **A barangay record shows 4,553. What is the value of its tens digit?**, the answer can be chosen without using the given mathematical information.",
-          "taglish": "For **A barangay record shows 4,553. What is the value of its tens digit?**, the answer can be chosen without using the given mathematical information."
-        },
-        "answer": "False",
-        "type": "true_false",
-        "options": [
-          "True",
-          "False"
-        ],
-        "solution": {
-          "en": "Answer: False",
-          "fil": "Answer: False",
-          "taglish": "Answer: False"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "3NA-Ig-1",
-          "path": "Grade-3/Semester-1/Quizzes/Quiz-11-Determine.md",
-          "item": 9,
-          "original_type": "true-false"
-        }
-      },
-      {
-        "q": {
           "en": "A barangay record shows 4,553. What is the value of its tens digit? Explain why your answer is reasonable.",
           "fil": "A barangay record shows 4,553. What is the value of its tens digit? Explain why your answer is reasonable.",
           "taglish": "A barangay record shows 4,553. What is the value of its tens digit? Explain why your answer is reasonable."
@@ -3753,31 +3478,6 @@
           "path": "Grade-3/Semester-1/Activity-Sheets/Activity-Sheet-12-Round-Numbers-To-The-Nearest-Ten-Hundred-Or-Thousand.md",
           "item": 8,
           "original_type": "activity"
-        }
-      },
-      {
-        "q": {
-          "en": "For **Round the market count 9428 to the nearest 10.**, the answer can be chosen without using the given mathematical information.",
-          "fil": "For **Round the market count 9428 to the nearest 10.**, the answer can be chosen without using the given mathematical information.",
-          "taglish": "For **Round the market count 9428 to the nearest 10.**, the answer can be chosen without using the given mathematical information."
-        },
-        "answer": "False",
-        "type": "true_false",
-        "options": [
-          "True",
-          "False"
-        ],
-        "solution": {
-          "en": "Answer: False",
-          "fil": "Answer: False",
-          "taglish": "Answer: False"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "3NA-Ii-1",
-          "path": "Grade-3/Semester-1/Quizzes/Quiz-12-Round-Numbers-To-The-Nearest-Ten-Hundred-Or-Thousand.md",
-          "item": 9,
-          "original_type": "true-false"
         }
       },
       {
@@ -4151,31 +3851,6 @@
           "path": "Grade-3/Semester-1/Activity-Sheets/Activity-Sheet-13-Numbers-Up-To-10-000-Using-The-Symbols-And.md",
           "item": 8,
           "original_type": "activity"
-        }
-      },
-      {
-        "q": {
-          "en": "For **Compare the school enrollment figures 5,747 and 5,829 using <, >, or =.**, the answer can be chosen without using the given mathematical information.",
-          "fil": "For **Compare the school enrollment figures 5,747 and 5,829 using <, >, or =.**, the answer can be chosen without using the given mathematical information.",
-          "taglish": "For **Compare the school enrollment figures 5,747 and 5,829 using <, >, or =.**, the answer can be chosen without using the given mathematical information."
-        },
-        "answer": "False",
-        "type": "true_false",
-        "options": [
-          "True",
-          "False"
-        ],
-        "solution": {
-          "en": "Answer: False",
-          "fil": "Answer: False",
-          "taglish": "Answer: False"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "3NA-Ii-2",
-          "path": "Grade-3/Semester-1/Quizzes/Quiz-13-Numbers-Up-To-10-000-Using-The-Symbols-And.md",
-          "item": 9,
-          "original_type": "true-false"
         }
       },
       {
@@ -4565,31 +4240,6 @@
       },
       {
         "q": {
-          "en": "For **Order these barangay counts from smallest to largest: 6,427, 5,689, 6,935, 5,964.**, the answer can be chosen without using the given mathematical information.",
-          "fil": "For **Order these barangay counts from smallest to largest: 6,427, 5,689, 6,935, 5,964.**, the answer can be chosen without using the given mathematical information.",
-          "taglish": "For **Order these barangay counts from smallest to largest: 6,427, 5,689, 6,935, 5,964.**, the answer can be chosen without using the given mathematical information."
-        },
-        "answer": "False",
-        "type": "true_false",
-        "options": [
-          "True",
-          "False"
-        ],
-        "solution": {
-          "en": "Answer: False",
-          "fil": "Answer: False",
-          "taglish": "Answer: False"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "3NA-Ij-1",
-          "path": "Grade-3/Semester-1/Quizzes/Quiz-14-Numbers-Up-To-10-000-From-Smallest-To-Largest-And-Vice.md",
-          "item": 9,
-          "original_type": "true-false"
-        }
-      },
-      {
-        "q": {
           "en": "Order these barangay counts from smallest to largest: 6,427, 5,689, 6,935, 5,964. Explain why your answer is reasonable.",
           "fil": "Order these barangay counts from smallest to largest: 6,427, 5,689, 6,935, 5,964. Explain why your answer is reasonable.",
           "taglish": "Order these barangay counts from smallest to largest: 6,427, 5,689, 6,935, 5,964. Explain why your answer is reasonable."
@@ -4959,31 +4609,6 @@
           "path": "Grade-3/Semester-2/Activity-Sheets/Activity-Sheet-01-Measure-Mass-In-Grams.md",
           "item": 8,
           "original_type": "activity"
-        }
-      },
-      {
-        "q": {
-          "en": "For **A market basket has 14 kg of rice and 6 kg of vegetables. What is the total mass?**, the answer can be chosen without using the given mathematical information.",
-          "fil": "For **A market basket has 14 kg of rice and 6 kg of vegetables. What is the total mass?**, the answer can be chosen without using the given mathematical information.",
-          "taglish": "For **A market basket has 14 kg of rice and 6 kg of vegetables. What is the total mass?**, the answer can be chosen without using the given mathematical information."
-        },
-        "answer": "False",
-        "type": "true_false",
-        "options": [
-          "True",
-          "False"
-        ],
-        "solution": {
-          "en": "Answer: False",
-          "fil": "Answer: False",
-          "taglish": "Answer: False"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "3MG-IIa-1",
-          "path": "Grade-3/Semester-2/Quizzes/Quiz-01-Measure-Mass-In-Grams.md",
-          "item": 9,
-          "original_type": "true-false"
         }
       },
       {
@@ -5364,31 +4989,6 @@
       },
       {
         "q": {
-          "en": "For **A market basket has 7 kg of rice and 8 kg of vegetables. What is the total mass?**, the answer can be chosen without using the given mathematical information.",
-          "fil": "For **A market basket has 7 kg of rice and 8 kg of vegetables. What is the total mass?**, the answer can be chosen without using the given mathematical information.",
-          "taglish": "For **A market basket has 7 kg of rice and 8 kg of vegetables. What is the total mass?**, the answer can be chosen without using the given mathematical information."
-        },
-        "answer": "False",
-        "type": "true_false",
-        "options": [
-          "True",
-          "False"
-        ],
-        "solution": {
-          "en": "Answer: False",
-          "fil": "Answer: False",
-          "taglish": "Answer: False"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "3MG-IIa-2",
-          "path": "Grade-3/Semester-2/Quizzes/Quiz-02-Mass-Of-An-Object-Using-Grams-Kilograms-And-Or.md",
-          "item": 9,
-          "original_type": "true-false"
-        }
-      },
-      {
-        "q": {
           "en": "A market basket has 7 kg of rice and 8 kg of vegetables. What is the total mass? Explain why your answer is reasonable.",
           "fil": "A market basket has 7 kg of rice and 8 kg of vegetables. What is the total mass? Explain why your answer is reasonable.",
           "taglish": "A market basket has 7 kg of rice and 8 kg of vegetables. What is the total mass? Explain why your answer is reasonable."
@@ -5761,31 +5361,6 @@
           "path": "Grade-3/Semester-2/Activity-Sheets/Activity-Sheet-03-Masses-Of-Objects-Including-The-Use-Of-A-Balance-Scale.md",
           "item": 8,
           "original_type": "activity"
-        }
-      },
-      {
-        "q": {
-          "en": "For **A market basket has 4 kg of rice and 9 kg of vegetables. What is the total mass?**, the answer can be chosen without using the given mathematical information.",
-          "fil": "For **A market basket has 4 kg of rice and 9 kg of vegetables. What is the total mass?**, the answer can be chosen without using the given mathematical information.",
-          "taglish": "For **A market basket has 4 kg of rice and 9 kg of vegetables. What is the total mass?**, the answer can be chosen without using the given mathematical information."
-        },
-        "answer": "False",
-        "type": "true_false",
-        "options": [
-          "True",
-          "False"
-        ],
-        "solution": {
-          "en": "Answer: False",
-          "fil": "Answer: False",
-          "taglish": "Answer: False"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "3MG-IIa-3",
-          "path": "Grade-3/Semester-2/Quizzes/Quiz-03-Masses-Of-Objects-Including-The-Use-Of-A-Balance-Scale.md",
-          "item": 9,
-          "original_type": "true-false"
         }
       },
       {
@@ -6166,31 +5741,6 @@
       },
       {
         "q": {
-          "en": "For **A family has 9 L of water and adds 2 L. What is the total capacity?**, the answer can be chosen without using the given mathematical information.",
-          "fil": "For **A family has 9 L of water and adds 2 L. What is the total capacity?**, the answer can be chosen without using the given mathematical information.",
-          "taglish": "For **A family has 9 L of water and adds 2 L. What is the total capacity?**, the answer can be chosen without using the given mathematical information."
-        },
-        "answer": "False",
-        "type": "true_false",
-        "options": [
-          "True",
-          "False"
-        ],
-        "solution": {
-          "en": "Answer: False",
-          "fil": "Answer: False",
-          "taglish": "Answer: False"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "3MG-IIb-1",
-          "path": "Grade-3/Semester-2/Quizzes/Quiz-04-Measure-Capacity-In-Liters.md",
-          "item": 9,
-          "original_type": "true-false"
-        }
-      },
-      {
-        "q": {
           "en": "A family has 9 L of water and adds 2 L. What is the total capacity? Explain why your answer is reasonable.",
           "fil": "A family has 9 L of water and adds 2 L. What is the total capacity? Explain why your answer is reasonable.",
           "taglish": "A family has 9 L of water and adds 2 L. What is the total capacity? Explain why your answer is reasonable."
@@ -6567,31 +6117,6 @@
       },
       {
         "q": {
-          "en": "For **A family has 7 L of water and adds 7 L. What is the total capacity?**, the answer can be chosen without using the given mathematical information.",
-          "fil": "For **A family has 7 L of water and adds 7 L. What is the total capacity?**, the answer can be chosen without using the given mathematical information.",
-          "taglish": "For **A family has 7 L of water and adds 7 L. What is the total capacity?**, the answer can be chosen without using the given mathematical information."
-        },
-        "answer": "False",
-        "type": "true_false",
-        "options": [
-          "True",
-          "False"
-        ],
-        "solution": {
-          "en": "Answer: False",
-          "fil": "Answer: False",
-          "taglish": "Answer: False"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "3MG-IIb-2",
-          "path": "Grade-3/Semester-2/Quizzes/Quiz-05-Capacity-Using-Liters-And-Or-Milliliters.md",
-          "item": 9,
-          "original_type": "true-false"
-        }
-      },
-      {
-        "q": {
           "en": "A family has 7 L of water and adds 7 L. What is the total capacity? Explain why your answer is reasonable.",
           "fil": "A family has 7 L of water and adds 7 L. What is the total capacity? Explain why your answer is reasonable.",
           "taglish": "A family has 7 L of water and adds 7 L. What is the total capacity? Explain why your answer is reasonable."
@@ -6964,31 +6489,6 @@
           "path": "Grade-3/Semester-2/Activity-Sheets/Activity-Sheet-06-Capacities-Of-Two-Containers.md",
           "item": 8,
           "original_type": "activity"
-        }
-      },
-      {
-        "q": {
-          "en": "For **Compare the school enrollment figures 6,346 and 8,031 using <, >, or =.**, the answer can be chosen without using the given mathematical information.",
-          "fil": "For **Compare the school enrollment figures 6,346 and 8,031 using <, >, or =.**, the answer can be chosen without using the given mathematical information.",
-          "taglish": "For **Compare the school enrollment figures 6,346 and 8,031 using <, >, or =.**, the answer can be chosen without using the given mathematical information."
-        },
-        "answer": "False",
-        "type": "true_false",
-        "options": [
-          "True",
-          "False"
-        ],
-        "solution": {
-          "en": "Answer: False",
-          "fil": "Answer: False",
-          "taglish": "Answer: False"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "3MG-IIb-3",
-          "path": "Grade-3/Semester-2/Quizzes/Quiz-06-Capacities-Of-Two-Containers.md",
-          "item": 9,
-          "original_type": "true-false"
         }
       },
       {
@@ -7378,31 +6878,6 @@
       },
       {
         "q": {
-          "en": "For **Write 35 pesos using the Philippine peso symbol.**, the answer can be chosen without using the given mathematical information.",
-          "fil": "For **Write 35 pesos using the Philippine peso symbol.**, the answer can be chosen without using the given mathematical information.",
-          "taglish": "For **Write 35 pesos using the Philippine peso symbol.**, the answer can be chosen without using the given mathematical information."
-        },
-        "answer": "False",
-        "type": "true_false",
-        "options": [
-          "True",
-          "False"
-        ],
-        "solution": {
-          "en": "Answer: False",
-          "fil": "Answer: False",
-          "taglish": "Answer: False"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "3NA-IIc-1",
-          "path": "Grade-3/Semester-2/Quizzes/Quiz-07-Money-In-Words-And-Using.md",
-          "item": 9,
-          "original_type": "true-false"
-        }
-      },
-      {
-        "q": {
           "en": "Write 35 pesos using the Philippine peso symbol. Explain why your answer is reasonable.",
           "fil": "Write 35 pesos using the Philippine peso symbol. Explain why your answer is reasonable.",
           "taglish": "Write 35 pesos using the Philippine peso symbol. Explain why your answer is reasonable."
@@ -7754,31 +7229,6 @@
           "path": "Grade-3/Semester-2/Activity-Sheets/Activity-Sheet-08-Numbers-With-Sums-Up-To-10-000-With-And-Without.md",
           "item": 8,
           "original_type": "activity"
-        }
-      },
-      {
-        "q": {
-          "en": "For **At the sari-sari store, one group recorded 1926 items and another recorded 1804. How many altogether?**, the answer can be chosen without using the given mathematical information.",
-          "fil": "For **At the sari-sari store, one group recorded 1926 items and another recorded 1804. How many altogether?**, the answer can be chosen without using the given mathematical information.",
-          "taglish": "For **At the sari-sari store, one group recorded 1926 items and another recorded 1804. How many altogether?**, the answer can be chosen without using the given mathematical information."
-        },
-        "answer": "False",
-        "type": "true_false",
-        "options": [
-          "True",
-          "False"
-        ],
-        "solution": {
-          "en": "Answer: False",
-          "fil": "Answer: False",
-          "taglish": "Answer: False"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "3NA-IIc-2",
-          "path": "Grade-3/Semester-2/Quizzes/Quiz-08-Numbers-With-Sums-Up-To-10-000-With-And-Without.md",
-          "item": 9,
-          "original_type": "true-false"
         }
       },
       {
@@ -8138,31 +7588,6 @@
       },
       {
         "q": {
-          "en": "For **At the public market, one group recorded 928 items and another recorded 691. How many altogether?**, the answer can be chosen without using the given mathematical information.",
-          "fil": "For **At the public market, one group recorded 928 items and another recorded 691. How many altogether?**, the answer can be chosen without using the given mathematical information.",
-          "taglish": "For **At the public market, one group recorded 928 items and another recorded 691. How many altogether?**, the answer can be chosen without using the given mathematical information."
-        },
-        "answer": "False",
-        "type": "true_false",
-        "options": [
-          "True",
-          "False"
-        ],
-        "solution": {
-          "en": "Answer: False",
-          "fil": "Answer: False",
-          "taglish": "Answer: False"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "3NA-IId-1",
-          "path": "Grade-3/Semester-2/Quizzes/Quiz-09-The-Sum-Of-Addends-With-Up-To-4-Digits.md",
-          "item": 9,
-          "original_type": "true-false"
-        }
-      },
-      {
-        "q": {
           "en": "At the public market, one group recorded 928 items and another recorded 691. How many altogether? Explain why your answer is reasonable.",
           "fil": "At the public market, one group recorded 928 items and another recorded 691. How many altogether? Explain why your answer is reasonable.",
           "taglish": "At the public market, one group recorded 928 items and another recorded 691. How many altogether? Explain why your answer is reasonable."
@@ -8514,31 +7939,6 @@
           "path": "Grade-3/Semester-2/Activity-Sheets/Activity-Sheet-10-Problems-Involving-Addition-Of-Numbers-With-Sums-Up-To.md",
           "item": 8,
           "original_type": "activity"
-        }
-      },
-      {
-        "q": {
-          "en": "For **At the school canteen, one group recorded 1616 items and another recorded 1312. How many altogether?**, the answer can be chosen without using the given mathematical information.",
-          "fil": "For **At the school canteen, one group recorded 1616 items and another recorded 1312. How many altogether?**, the answer can be chosen without using the given mathematical information.",
-          "taglish": "For **At the school canteen, one group recorded 1616 items and another recorded 1312. How many altogether?**, the answer can be chosen without using the given mathematical information."
-        },
-        "answer": "False",
-        "type": "true_false",
-        "options": [
-          "True",
-          "False"
-        ],
-        "solution": {
-          "en": "Answer: False",
-          "fil": "Answer: False",
-          "taglish": "Answer: False"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "3NA-IId-2",
-          "path": "Grade-3/Semester-2/Quizzes/Quiz-10-Problems-Involving-Addition-Of-Numbers-With-Sums-Up-To.md",
-          "item": 9,
-          "original_type": "true-false"
         }
       },
       {
@@ -8898,31 +8298,6 @@
       },
       {
         "q": {
-          "en": "For **A class prepared 3853 materials for the jeepney terminal and used 2129. How many remain?**, the answer can be chosen without using the given mathematical information.",
-          "fil": "For **A class prepared 3853 materials for the jeepney terminal and used 2129. How many remain?**, the answer can be chosen without using the given mathematical information.",
-          "taglish": "For **A class prepared 3853 materials for the jeepney terminal and used 2129. How many remain?**, the answer can be chosen without using the given mathematical information."
-        },
-        "answer": "False",
-        "type": "true_false",
-        "options": [
-          "True",
-          "False"
-        ],
-        "solution": {
-          "en": "Answer: False",
-          "fil": "Answer: False",
-          "taglish": "Answer: False"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "3NA-IIe-1",
-          "path": "Grade-3/Semester-2/Quizzes/Quiz-11-Numbers-Where-Both-Numbers-Are-Less-Than-10-000-With.md",
-          "item": 9,
-          "original_type": "true-false"
-        }
-      },
-      {
-        "q": {
           "en": "A class prepared 3853 materials for the jeepney terminal and used 2129. How many remain? Explain why your answer is reasonable.",
           "fil": "A class prepared 3853 materials for the jeepney terminal and used 2129. How many remain? Explain why your answer is reasonable.",
           "taglish": "A class prepared 3853 materials for the jeepney terminal and used 2129. How many remain? Explain why your answer is reasonable."
@@ -9274,31 +8649,6 @@
           "path": "Grade-3/Semester-2/Activity-Sheets/Activity-Sheet-12-The-Difference-Of-Two-Numbers-Of-Up-To-4-Digits.md",
           "item": 8,
           "original_type": "activity"
-        }
-      },
-      {
-        "q": {
-          "en": "For **A class prepared 6529 materials for the barangay health center and used 4437. How many remain?**, the answer can be chosen without using the given mathematical information.",
-          "fil": "For **A class prepared 6529 materials for the barangay health center and used 4437. How many remain?**, the answer can be chosen without using the given mathematical information.",
-          "taglish": "For **A class prepared 6529 materials for the barangay health center and used 4437. How many remain?**, the answer can be chosen without using the given mathematical information."
-        },
-        "answer": "False",
-        "type": "true_false",
-        "options": [
-          "True",
-          "False"
-        ],
-        "solution": {
-          "en": "Answer: False",
-          "fil": "Answer: False",
-          "taglish": "Answer: False"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "3NA-IIf-1",
-          "path": "Grade-3/Semester-2/Quizzes/Quiz-12-The-Difference-Of-Two-Numbers-Of-Up-To-4-Digits.md",
-          "item": 9,
-          "original_type": "true-false"
         }
       },
       {
@@ -9658,31 +9008,6 @@
       },
       {
         "q": {
-          "en": "For **Evaluate using the correct order: 4 + 2 × 6.**, the answer can be chosen without using the given mathematical information.",
-          "fil": "For **Evaluate using the correct order: 4 + 2 × 6.**, the answer can be chosen without using the given mathematical information.",
-          "taglish": "For **Evaluate using the correct order: 4 + 2 × 6.**, the answer can be chosen without using the given mathematical information."
-        },
-        "answer": "False",
-        "type": "true_false",
-        "options": [
-          "True",
-          "False"
-        ],
-        "solution": {
-          "en": "Answer: False",
-          "fil": "Answer: False",
-          "taglish": "Answer: False"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "3NA-IIf-2",
-          "path": "Grade-3/Semester-2/Quizzes/Quiz-13-Addition-And-Subtraction-Of-3-To-4-Numbers-Of-Up-To-2.md",
-          "item": 9,
-          "original_type": "true-false"
-        }
-      },
-      {
-        "q": {
           "en": "Evaluate using the correct order: 4 + 2 × 6. Explain why your answer is reasonable.",
           "fil": "Evaluate using the correct order: 4 + 2 × 6. Explain why your answer is reasonable.",
           "taglish": "Evaluate using the correct order: 4 + 2 × 6. Explain why your answer is reasonable."
@@ -10038,31 +9363,6 @@
       },
       {
         "q": {
-          "en": "For **A class fund has ₱261, spends ₱6, then receives ₱11. How much is in the fund now?**, the answer can be chosen without using the given mathematical information.",
-          "fil": "For **A class fund has ₱261, spends ₱6, then receives ₱11. How much is in the fund now?**, the answer can be chosen without using the given mathematical information.",
-          "taglish": "For **A class fund has ₱261, spends ₱6, then receives ₱11. How much is in the fund now?**, the answer can be chosen without using the given mathematical information."
-        },
-        "answer": "False",
-        "type": "true_false",
-        "options": [
-          "True",
-          "False"
-        ],
-        "solution": {
-          "en": "Answer: False",
-          "fil": "Answer: False",
-          "taglish": "Answer: False"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "3NA-IIh-1",
-          "path": "Grade-3/Semester-2/Quizzes/Quiz-14-Problems-Involving-Addition-And-Subtraction-With-3-To.md",
-          "item": 9,
-          "original_type": "true-false"
-        }
-      },
-      {
-        "q": {
           "en": "A class fund has ₱261, spends ₱6, then receives ₱11. How much is in the fund now? Explain why your answer is reasonable.",
           "fil": "A class fund has ₱261, spends ₱6, then receives ₱11. How much is in the fund now? Explain why your answer is reasonable.",
           "taglish": "A class fund has ₱261, spends ₱6, then receives ₱11. How much is in the fund now? Explain why your answer is reasonable."
@@ -10389,31 +9689,6 @@
           "path": "Grade-3/Semester-2/Activity-Sheets/Activity-Sheet-15-Data-From-Experiments-With-A-Small-Number-Of-Possible.md",
           "item": 8,
           "original_type": "activity"
-        }
-      },
-      {
-        "q": {
-          "en": "For **A bag has 2 red and 4 blue counters. What is the probability of drawing red?**, the answer can be chosen without using the given mathematical information.",
-          "fil": "For **A bag has 2 red and 4 blue counters. What is the probability of drawing red?**, the answer can be chosen without using the given mathematical information.",
-          "taglish": "For **A bag has 2 red and 4 blue counters. What is the probability of drawing red?**, the answer can be chosen without using the given mathematical information."
-        },
-        "answer": "False",
-        "type": "true_false",
-        "options": [
-          "True",
-          "False"
-        ],
-        "solution": {
-          "en": "Answer: False",
-          "fil": "Answer: False",
-          "taglish": "Answer: False"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "3SP-IIh-1",
-          "path": "Grade-3/Semester-2/Quizzes/Quiz-15-Data-From-Experiments-With-A-Small-Number-Of-Possible.md",
-          "item": 9,
-          "original_type": "true-false"
         }
       },
       {
@@ -10766,31 +10041,6 @@
           "path": "Grade-3/Semester-2/Activity-Sheets/Activity-Sheet-16-Data-In-Tables-And-Single-Bar-Graphs.md",
           "item": 8,
           "original_type": "activity"
-        }
-      },
-      {
-        "q": {
-          "en": "For **Present mango=5, banana=9, papaya=11, and guava=5 in a labeled table or graph. **, the answer can be chosen without using the given mathematical information.",
-          "fil": "For **Present mango=5, banana=9, papaya=11, and guava=5 in a labeled table or graph. **, the answer can be chosen without using the given mathematical information.",
-          "taglish": "For **Present mango=5, banana=9, papaya=11, and guava=5 in a labeled table or graph. **, the answer can be chosen without using the given mathematical information."
-        },
-        "answer": "False",
-        "type": "true_false",
-        "options": [
-          "True",
-          "False"
-        ],
-        "solution": {
-          "en": "Answer: False",
-          "fil": "Answer: False",
-          "taglish": "Answer: False"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "3SP-IIi-1",
-          "path": "Grade-3/Semester-2/Quizzes/Quiz-16-Data-In-Tables-And-Single-Bar-Graphs.md",
-          "item": 9,
-          "original_type": "true-false"
         }
       },
       {
@@ -11202,31 +10452,6 @@
       },
       {
         "q": {
-          "en": "For **A class survey recorded mango=10, banana=8, papaya=4, and guava=4. Which fruit has the greatest count?**, the answer can be chosen without using the given mathematical information.",
-          "fil": "For **A class survey recorded mango=10, banana=8, papaya=4, and guava=4. Which fruit has the greatest count?**, the answer can be chosen without using the given mathematical information.",
-          "taglish": "For **A class survey recorded mango=10, banana=8, papaya=4, and guava=4. Which fruit has the greatest count?**, the answer can be chosen without using the given mathematical information."
-        },
-        "answer": "False",
-        "type": "true_false",
-        "options": [
-          "True",
-          "False"
-        ],
-        "solution": {
-          "en": "Answer: False",
-          "fil": "Answer: False",
-          "taglish": "Answer: False"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "3SP-IIi-2",
-          "path": "Grade-3/Semester-2/Quizzes/Quiz-17-Data-In-Tables-And-Single-Bar-Graphs.md",
-          "item": 9,
-          "original_type": "true-false"
-        }
-      },
-      {
-        "q": {
           "en": "A class survey recorded mango=10, banana=8, papaya=4, and guava=4. Which fruit has the greatest count? Explain why your answer is reasonable.",
           "fil": "A class survey recorded mango=10, banana=8, papaya=4, and guava=4. Which fruit has the greatest count? Explain why your answer is reasonable.",
           "taglish": "A class survey recorded mango=10, banana=8, papaya=4, and guava=4. Which fruit has the greatest count? Explain why your answer is reasonable."
@@ -11599,31 +10824,6 @@
           "path": "Grade-3/Semester-2/Activity-Sheets/Activity-Sheet-18-Problems-Using-Data-Presented-In-A-Single-Bar-Graph.md",
           "item": 8,
           "original_type": "activity"
-        }
-      },
-      {
-        "q": {
-          "en": "For **Present mango=12, banana=6, papaya=6, and guava=10 in a labeled table or graph. **, the answer can be chosen without using the given mathematical information.",
-          "fil": "For **Present mango=12, banana=6, papaya=6, and guava=10 in a labeled table or graph. **, the answer can be chosen without using the given mathematical information.",
-          "taglish": "For **Present mango=12, banana=6, papaya=6, and guava=10 in a labeled table or graph. **, the answer can be chosen without using the given mathematical information."
-        },
-        "answer": "False",
-        "type": "true_false",
-        "options": [
-          "True",
-          "False"
-        ],
-        "solution": {
-          "en": "Answer: False",
-          "fil": "Answer: False",
-          "taglish": "Answer: False"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "3SP-IIj-1",
-          "path": "Grade-3/Semester-2/Quizzes/Quiz-18-Problems-Using-Data-Presented-In-A-Single-Bar-Graph.md",
-          "item": 9,
-          "original_type": "true-false"
         }
       },
       {
@@ -12013,31 +11213,6 @@
       },
       {
         "q": {
-          "en": "For **A bag has 3 red and 2 blue counters. What is the probability of drawing red?**, the answer can be chosen without using the given mathematical information.",
-          "fil": "For **A bag has 3 red and 2 blue counters. What is the probability of drawing red?**, the answer can be chosen without using the given mathematical information.",
-          "taglish": "For **A bag has 3 red and 2 blue counters. What is the probability of drawing red?**, the answer can be chosen without using the given mathematical information."
-        },
-        "answer": "False",
-        "type": "true_false",
-        "options": [
-          "True",
-          "False"
-        ],
-        "solution": {
-          "en": "Answer: False",
-          "fil": "Answer: False",
-          "taglish": "Answer: False"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "3SP-IIj-2",
-          "path": "Grade-3/Semester-2/Quizzes/Quiz-19-Compare-Outcomes-In-Real-Life-Situations-Using-The.md",
-          "item": 9,
-          "original_type": "true-false"
-        }
-      },
-      {
-        "q": {
           "en": "A bag has 3 red and 2 blue counters. What is the probability of drawing red? Explain why your answer is reasonable.",
           "fil": "A bag has 3 red and 2 blue counters. What is the probability of drawing red? Explain why your answer is reasonable.",
           "taglish": "A bag has 3 red and 2 blue counters. What is the probability of drawing red? Explain why your answer is reasonable."
@@ -12368,31 +11543,6 @@
           "path": "Grade-3/Semester-3/Activity-Sheets/Activity-Sheet-01-Numbers-Using-The-6-7-8-And-9-Multiplication-Tables.md",
           "item": 8,
           "original_type": "activity"
-        }
-      },
-      {
-        "q": {
-          "en": "For **There are 9 equal trays with 9 items each for the town fiesta. Find the total.**, the answer can be chosen without using the given mathematical information.",
-          "fil": "For **There are 9 equal trays with 9 items each for the town fiesta. Find the total.**, the answer can be chosen without using the given mathematical information.",
-          "taglish": "For **There are 9 equal trays with 9 items each for the town fiesta. Find the total.**, the answer can be chosen without using the given mathematical information."
-        },
-        "answer": "False",
-        "type": "true_false",
-        "options": [
-          "True",
-          "False"
-        ],
-        "solution": {
-          "en": "Answer: False",
-          "fil": "Answer: False",
-          "taglish": "Answer: False"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "3NA-IIIa-1",
-          "path": "Grade-3/Semester-3/Quizzes/Quiz-01-Numbers-Using-The-6-7-8-And-9-Multiplication-Tables.md",
-          "item": 9,
-          "original_type": "true-false"
         }
       },
       {
@@ -12752,31 +11902,6 @@
       },
       {
         "q": {
-          "en": "For **There are 5 equal trays with 2 items each for the school garden. Find the total.**, the answer can be chosen without using the given mathematical information.",
-          "fil": "For **There are 5 equal trays with 2 items each for the school garden. Find the total.**, the answer can be chosen without using the given mathematical information.",
-          "taglish": "For **There are 5 equal trays with 2 items each for the school garden. Find the total.**, the answer can be chosen without using the given mathematical information."
-        },
-        "answer": "False",
-        "type": "true_false",
-        "options": [
-          "True",
-          "False"
-        ],
-        "solution": {
-          "en": "Answer: False",
-          "fil": "Answer: False",
-          "taglish": "Answer: False"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "3NA-IIIb-1",
-          "path": "Grade-3/Semester-3/Quizzes/Quiz-02-Apply-Properties-Of-Multiplication-For-The-6-7-8-And-9.md",
-          "item": 9,
-          "original_type": "true-false"
-        }
-      },
-      {
-        "q": {
           "en": "There are 5 equal trays with 2 items each for the school garden. Find the total. Explain why your answer is reasonable.",
           "fil": "There are 5 equal trays with 2 items each for the school garden. Find the total. Explain why your answer is reasonable.",
           "taglish": "There are 5 equal trays with 2 items each for the school garden. Find the total. Explain why your answer is reasonable."
@@ -13082,31 +12207,6 @@
           "path": "Grade-3/Semester-3/Activity-Sheets/Activity-Sheet-03-Numbers-With-And-Without-Regrouping.md",
           "item": 8,
           "original_type": "activity"
-        }
-      },
-      {
-        "q": {
-          "en": "For **There are 5 equal trays with 10 items each for the family merienda. Find the total.**, the answer can be chosen without using the given mathematical information.",
-          "fil": "For **There are 5 equal trays with 10 items each for the family merienda. Find the total.**, the answer can be chosen without using the given mathematical information.",
-          "taglish": "For **There are 5 equal trays with 10 items each for the family merienda. Find the total.**, the answer can be chosen without using the given mathematical information."
-        },
-        "answer": "False",
-        "type": "true_false",
-        "options": [
-          "True",
-          "False"
-        ],
-        "solution": {
-          "en": "Answer: False",
-          "fil": "Answer: False",
-          "taglish": "Answer: False"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "3NA-IIIc-1",
-          "path": "Grade-3/Semester-3/Quizzes/Quiz-03-Numbers-With-And-Without-Regrouping.md",
-          "item": 9,
-          "original_type": "true-false"
         }
       },
       {
@@ -13466,31 +12566,6 @@
       },
       {
         "q": {
-          "en": "For **There are 6 equal trays with 4 items each for the coastal clean-up. Find the total.**, the answer can be chosen without using the given mathematical information.",
-          "fil": "For **There are 6 equal trays with 4 items each for the coastal clean-up. Find the total.**, the answer can be chosen without using the given mathematical information.",
-          "taglish": "For **There are 6 equal trays with 4 items each for the coastal clean-up. Find the total.**, the answer can be chosen without using the given mathematical information."
-        },
-        "answer": "False",
-        "type": "true_false",
-        "options": [
-          "True",
-          "False"
-        ],
-        "solution": {
-          "en": "Answer: False",
-          "fil": "Answer: False",
-          "taglish": "Answer: False"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "3NA-IIIc-2",
-          "path": "Grade-3/Semester-3/Quizzes/Quiz-04-The-Product-Of-2-To-3-Digit-Numbers-By-1-To-2-Digit.md",
-          "item": 9,
-          "original_type": "true-false"
-        }
-      },
-      {
-        "q": {
           "en": "There are 6 equal trays with 4 items each for the coastal clean-up. Find the total. Explain why your answer is reasonable.",
           "fil": "There are 6 equal trays with 4 items each for the coastal clean-up. Find the total. Explain why your answer is reasonable.",
           "taglish": "There are 6 equal trays with 4 items each for the coastal clean-up. Find the total. Explain why your answer is reasonable."
@@ -13846,31 +12921,6 @@
       },
       {
         "q": {
-          "en": "For **There are 6 equal trays with 6 items each for the palaro ng paaralan. Find the total.**, the answer can be chosen without using the given mathematical information.",
-          "fil": "For **There are 6 equal trays with 6 items each for the palaro ng paaralan. Find the total.**, the answer can be chosen without using the given mathematical information.",
-          "taglish": "For **There are 6 equal trays with 6 items each for the palaro ng paaralan. Find the total.**, the answer can be chosen without using the given mathematical information."
-        },
-        "answer": "False",
-        "type": "true_false",
-        "options": [
-          "True",
-          "False"
-        ],
-        "solution": {
-          "en": "Answer: False",
-          "fil": "Answer: False",
-          "taglish": "Answer: False"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "3NA-IIId-1",
-          "path": "Grade-3/Semester-3/Quizzes/Quiz-05-1-To-2-Step-Multiplication-Problems-Including-Problems.md",
-          "item": 9,
-          "original_type": "true-false"
-        }
-      },
-      {
-        "q": {
           "en": "There are 6 equal trays with 6 items each for the palaro ng paaralan. Find the total. Explain why your answer is reasonable.",
           "fil": "There are 6 equal trays with 6 items each for the palaro ng paaralan. Find the total. Explain why your answer is reasonable.",
           "taglish": "There are 6 equal trays with 6 items each for the palaro ng paaralan. Find the total. Explain why your answer is reasonable."
@@ -14201,31 +13251,6 @@
           "path": "Grade-3/Semester-3/Activity-Sheets/Activity-Sheet-06-The-Missing-Term-S-In-A-Pattern-With-Repeating-And.md",
           "item": 8,
           "original_type": "activity"
-        }
-      },
-      {
-        "q": {
-          "en": "For **Continue the barangay house-number pattern: 16, 24, 32, 40, __, __.**, the answer can be chosen without using the given mathematical information.",
-          "fil": "For **Continue the barangay house-number pattern: 16, 24, 32, 40, __, __.**, the answer can be chosen without using the given mathematical information.",
-          "taglish": "For **Continue the barangay house-number pattern: 16, 24, 32, 40, __, __.**, the answer can be chosen without using the given mathematical information."
-        },
-        "answer": "False",
-        "type": "true_false",
-        "options": [
-          "True",
-          "False"
-        ],
-        "solution": {
-          "en": "Answer: False",
-          "fil": "Answer: False",
-          "taglish": "Answer: False"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "3NA-IIId-2",
-          "path": "Grade-3/Semester-3/Quizzes/Quiz-06-The-Missing-Term-S-In-A-Pattern-With-Repeating-And.md",
-          "item": 9,
-          "original_type": "true-false"
         }
       },
       {
@@ -14581,31 +13606,6 @@
           "path": "Grade-3/Semester-3/Activity-Sheets/Activity-Sheet-07-Explain-How-To-Generate-A-Given-Pattern-With-Repeating.md",
           "item": 8,
           "original_type": "activity"
-        }
-      },
-      {
-        "q": {
-          "en": "For **Continue the barangay house-number pattern: 8, 11, 14, 17, __, __.**, the answer can be chosen without using the given mathematical information.",
-          "fil": "For **Continue the barangay house-number pattern: 8, 11, 14, 17, __, __.**, the answer can be chosen without using the given mathematical information.",
-          "taglish": "For **Continue the barangay house-number pattern: 8, 11, 14, 17, __, __.**, the answer can be chosen without using the given mathematical information."
-        },
-        "answer": "False",
-        "type": "true_false",
-        "options": [
-          "True",
-          "False"
-        ],
-        "solution": {
-          "en": "Answer: False",
-          "fil": "Answer: False",
-          "taglish": "Answer: False"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "3NA-IIId-3",
-          "path": "Grade-3/Semester-3/Quizzes/Quiz-07-Explain-How-To-Generate-A-Given-Pattern-With-Repeating.md",
-          "item": 9,
-          "original_type": "true-false"
         }
       },
       {
@@ -14969,31 +13969,6 @@
       },
       {
         "q": {
-          "en": "For **The public market shares 63 items equally among 9 groups. How many per group?**, the answer can be chosen without using the given mathematical information.",
-          "fil": "For **The public market shares 63 items equally among 9 groups. How many per group?**, the answer can be chosen without using the given mathematical information.",
-          "taglish": "For **The public market shares 63 items equally among 9 groups. How many per group?**, the answer can be chosen without using the given mathematical information."
-        },
-        "answer": "False",
-        "type": "true_false",
-        "options": [
-          "True",
-          "False"
-        ],
-        "solution": {
-          "en": "Answer: False",
-          "fil": "Answer: False",
-          "taglish": "Answer: False"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "3NA-IIIe-1",
-          "path": "Grade-3/Semester-3/Quizzes/Quiz-08-Division-Through-Equal-Jumps-On-The-Number-Line-And-As.md",
-          "item": 9,
-          "original_type": "true-false"
-        }
-      },
-      {
-        "q": {
           "en": "The public market shares 63 items equally among 9 groups. How many per group? Explain why your answer is reasonable.",
           "fil": "The public market shares 63 items equally among 9 groups. How many per group? Explain why your answer is reasonable.",
           "taglish": "The public market shares 63 items equally among 9 groups. How many per group? Explain why your answer is reasonable."
@@ -15345,31 +14320,6 @@
           "path": "Grade-3/Semester-3/Activity-Sheets/Activity-Sheet-09-Numbers-Using-The-6-7-8-And-9-Multiplication-Tables.md",
           "item": 8,
           "original_type": "activity"
-        }
-      },
-      {
-        "q": {
-          "en": "For **The school canteen shares 6 items equally among 3 groups. How many per group?**, the answer can be chosen without using the given mathematical information.",
-          "fil": "For **The school canteen shares 6 items equally among 3 groups. How many per group?**, the answer can be chosen without using the given mathematical information.",
-          "taglish": "For **The school canteen shares 6 items equally among 3 groups. How many per group?**, the answer can be chosen without using the given mathematical information."
-        },
-        "answer": "False",
-        "type": "true_false",
-        "options": [
-          "True",
-          "False"
-        ],
-        "solution": {
-          "en": "Answer: False",
-          "fil": "Answer: False",
-          "taglish": "Answer: False"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "3NA-IIIf-1",
-          "path": "Grade-3/Semester-3/Quizzes/Quiz-09-Numbers-Using-The-6-7-8-And-9-Multiplication-Tables.md",
-          "item": 9,
-          "original_type": "true-false"
         }
       },
       {
@@ -15729,31 +14679,6 @@
       },
       {
         "q": {
-          "en": "For **The jeepney terminal shares 10 items equally among 5 groups. How many per group?**, the answer can be chosen without using the given mathematical information.",
-          "fil": "For **The jeepney terminal shares 10 items equally among 5 groups. How many per group?**, the answer can be chosen without using the given mathematical information.",
-          "taglish": "For **The jeepney terminal shares 10 items equally among 5 groups. How many per group?**, the answer can be chosen without using the given mathematical information."
-        },
-        "answer": "False",
-        "type": "true_false",
-        "options": [
-          "True",
-          "False"
-        ],
-        "solution": {
-          "en": "Answer: False",
-          "fil": "Answer: False",
-          "taglish": "Answer: False"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "3NA-IIIf-2",
-          "path": "Grade-3/Semester-3/Quizzes/Quiz-10-The-Missing-Number-In-A-Number-Sentence-Involving.md",
-          "item": 9,
-          "original_type": "true-false"
-        }
-      },
-      {
-        "q": {
           "en": "The jeepney terminal shares 10 items equally among 5 groups. How many per group? Explain why your answer is reasonable.",
           "fil": "The jeepney terminal shares 10 items equally among 5 groups. How many per group? Explain why your answer is reasonable.",
           "taglish": "The jeepney terminal shares 10 items equally among 5 groups. How many per group? Explain why your answer is reasonable."
@@ -16109,31 +15034,6 @@
       },
       {
         "q": {
-          "en": "For **The barangay health center shares 25 items equally among 5 groups. How many per group?**, the answer can be chosen without using the given mathematical information.",
-          "fil": "For **The barangay health center shares 25 items equally among 5 groups. How many per group?**, the answer can be chosen without using the given mathematical information.",
-          "taglish": "For **The barangay health center shares 25 items equally among 5 groups. How many per group?**, the answer can be chosen without using the given mathematical information."
-        },
-        "answer": "False",
-        "type": "true_false",
-        "options": [
-          "True",
-          "False"
-        ],
-        "solution": {
-          "en": "Answer: False",
-          "fil": "Answer: False",
-          "taglish": "Answer: False"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "3NA-IIIg-1",
-          "path": "Grade-3/Semester-3/Quizzes/Quiz-11-Numbers-With-And-Without-Remainder.md",
-          "item": 9,
-          "original_type": "true-false"
-        }
-      },
-      {
-        "q": {
           "en": "The barangay health center shares 25 items equally among 5 groups. How many per group? Explain why your answer is reasonable.",
           "fil": "The barangay health center shares 25 items equally among 5 groups. How many per group? Explain why your answer is reasonable.",
           "taglish": "The barangay health center shares 25 items equally among 5 groups. How many per group? Explain why your answer is reasonable."
@@ -16468,31 +15368,6 @@
       },
       {
         "q": {
-          "en": "For **The rice farm shares 36 items equally among 9 groups. How many per group?**, the answer can be chosen without using the given mathematical information.",
-          "fil": "For **The rice farm shares 36 items equally among 9 groups. How many per group?**, the answer can be chosen without using the given mathematical information.",
-          "taglish": "For **The rice farm shares 36 items equally among 9 groups. How many per group?**, the answer can be chosen without using the given mathematical information."
-        },
-        "answer": "False",
-        "type": "true_false",
-        "options": [
-          "True",
-          "False"
-        ],
-        "solution": {
-          "en": "Answer: False",
-          "fil": "Answer: False",
-          "taglish": "Answer: False"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "3NA-IIIh-1",
-          "path": "Grade-3/Semester-3/Quizzes/Quiz-12-The-Quotient-Of-2-To-3-Digit-Numbers-Divided-By-1-To-2.md",
-          "item": 9,
-          "original_type": "true-false"
-        }
-      },
-      {
-        "q": {
           "en": "The rice farm shares 36 items equally among 9 groups. How many per group? Explain why your answer is reasonable.",
           "fil": "The rice farm shares 36 items equally among 9 groups. How many per group? Explain why your answer is reasonable.",
           "taglish": "The rice farm shares 36 items equally among 9 groups. How many per group? Explain why your answer is reasonable."
@@ -16823,31 +15698,6 @@
           "path": "Grade-3/Semester-3/Activity-Sheets/Activity-Sheet-13-Division-Problems-Involving-2-To-3-Digit-Numbers-By-A.md",
           "item": 8,
           "original_type": "activity"
-        }
-      },
-      {
-        "q": {
-          "en": "For **The town fiesta shares 50 items equally among 5 groups. How many per group?**, the answer can be chosen without using the given mathematical information.",
-          "fil": "For **The town fiesta shares 50 items equally among 5 groups. How many per group?**, the answer can be chosen without using the given mathematical information.",
-          "taglish": "For **The town fiesta shares 50 items equally among 5 groups. How many per group?**, the answer can be chosen without using the given mathematical information."
-        },
-        "answer": "False",
-        "type": "true_false",
-        "options": [
-          "True",
-          "False"
-        ],
-        "solution": {
-          "en": "Answer: False",
-          "fil": "Answer: False",
-          "taglish": "Answer: False"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "3NA-IIIh-2",
-          "path": "Grade-3/Semester-3/Quizzes/Quiz-13-Division-Problems-Involving-2-To-3-Digit-Numbers-By-A.md",
-          "item": 9,
-          "original_type": "true-false"
         }
       },
       {
@@ -17207,31 +16057,6 @@
       },
       {
         "q": {
-          "en": "For **A bibingka is cut into 3 equal parts. 1 part(s) are marked. Write the fraction. (Diagram description: circle divided into 3 equal parts with 1 shaded.)**, the answer can be chosen without using the given mathematical information.",
-          "fil": "For **A bibingka is cut into 3 equal parts. 1 part(s) are marked. Write the fraction. (Diagram description: circle divided into 3 equal parts with 1 shaded.)**, the answer can be chosen without using the given mathematical information.",
-          "taglish": "For **A bibingka is cut into 3 equal parts. 1 part(s) are marked. Write the fraction. (Diagram description: circle divided into 3 equal parts with 1 shaded.)**, the answer can be chosen without using the given mathematical information."
-        },
-        "answer": "False",
-        "type": "true_false",
-        "options": [
-          "True",
-          "False"
-        ],
-        "solution": {
-          "en": "Answer: False",
-          "fil": "Answer: False",
-          "taglish": "Answer: False"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "3NA-IIIh-3",
-          "path": "Grade-3/Semester-3/Quizzes/Quiz-14-Fractions-That-Are-Equal-To-One-And-Greater-Than-One.md",
-          "item": 9,
-          "original_type": "true-false"
-        }
-      },
-      {
-        "q": {
           "en": "A bibingka is cut into 3 equal parts. 1 part(s) are marked. Write the fraction. (Diagram description: circle divided into 3 equal parts with 1 shaded.) Explain why your answer is reasonable.",
           "fil": "A bibingka is cut into 3 equal parts. 1 part(s) are marked. Write the fraction. (Diagram description: circle divided into 3 equal parts with 1 shaded.) Explain why your answer is reasonable.",
           "taglish": "A bibingka is cut into 3 equal parts. 1 part(s) are marked. Write the fraction. (Diagram description: circle divided into 3 equal parts with 1 shaded.) Explain why your answer is reasonable."
@@ -17587,31 +16412,6 @@
       },
       {
         "q": {
-          "en": "For **For a school garden plot, compute 7/8 + 6/8. Give the answer in simplest form.**, the answer can be chosen without using the given mathematical information.",
-          "fil": "For **For a school garden plot, compute 7/8 + 6/8. Give the answer in simplest form.**, the answer can be chosen without using the given mathematical information.",
-          "taglish": "For **For a school garden plot, compute 7/8 + 6/8. Give the answer in simplest form.**, the answer can be chosen without using the given mathematical information."
-        },
-        "answer": "False",
-        "type": "true_false",
-        "options": [
-          "True",
-          "False"
-        ],
-        "solution": {
-          "en": "Answer: False",
-          "fil": "Answer: False",
-          "taglish": "Answer: False"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "3NA-IIIh-4",
-          "path": "Grade-3/Semester-3/Quizzes/Quiz-15-Subtract-Similar-Fractions-Using-Models.md",
-          "item": 9,
-          "original_type": "true-false"
-        }
-      },
-      {
-        "q": {
           "en": "For a school garden plot, compute 7/8 + 6/8. Give the answer in simplest form. Explain why your answer is reasonable.",
           "fil": "For a school garden plot, compute 7/8 + 6/8. Give the answer in simplest form. Explain why your answer is reasonable.",
           "taglish": "For a school garden plot, compute 7/8 + 6/8. Give the answer in simplest form. Explain why your answer is reasonable."
@@ -17860,31 +16660,6 @@
       },
       {
         "q": {
-          "en": "For **A figure is moved without turning or flipping. Name the transformation.**, the answer can be chosen without using the given mathematical information.",
-          "fil": "For **A figure is moved without turning or flipping. Name the transformation.**, the answer can be chosen without using the given mathematical information.",
-          "taglish": "For **A figure is moved without turning or flipping. Name the transformation.**, the answer can be chosen without using the given mathematical information."
-        },
-        "answer": "False",
-        "type": "true_false",
-        "options": [
-          "True",
-          "False"
-        ],
-        "solution": {
-          "en": "Answer: False",
-          "fil": "Answer: False",
-          "taglish": "Answer: False"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "3MG-IIIi-1",
-          "path": "Grade-3/Semester-3/Quizzes/Quiz-16-Draw-The-Effect-Of-A-Two-Direction-Multi-Step-Slide.md",
-          "item": 9,
-          "original_type": "true-false"
-        }
-      },
-      {
-        "q": {
           "en": "A figure is moved without turning or flipping. Name the transformation. Explain why your answer is reasonable.",
           "fil": "A figure is moved without turning or flipping. Name the transformation. Explain why your answer is reasonable.",
           "taglish": "A figure is moved without turning or flipping. Name the transformation. Explain why your answer is reasonable."
@@ -18076,31 +16851,6 @@
       },
       {
         "q": {
-          "en": "For **A figure is moved without turning or flipping. Name the transformation.**, the answer can be chosen without using the given mathematical information.",
-          "fil": "For **A figure is moved without turning or flipping. Name the transformation.**, the answer can be chosen without using the given mathematical information.",
-          "taglish": "For **A figure is moved without turning or flipping. Name the transformation.**, the answer can be chosen without using the given mathematical information."
-        },
-        "answer": "False",
-        "type": "true_false",
-        "options": [
-          "True",
-          "False"
-        ],
-        "solution": {
-          "en": "Answer: False",
-          "fil": "Answer: False",
-          "taglish": "Answer: False"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "3MG-IIIj-1",
-          "path": "Grade-3/Semester-3/Quizzes/Quiz-17-Shapes-Or-Figures-That-Show-Line-Symmetry-By-Drawing.md",
-          "item": 9,
-          "original_type": "true-false"
-        }
-      },
-      {
-        "q": {
           "en": "A figure is moved without turning or flipping. Name the transformation. Explain why your answer is reasonable.",
           "fil": "A figure is moved without turning or flipping. Name the transformation. Explain why your answer is reasonable.",
           "taglish": "A figure is moved without turning or flipping. Name the transformation. Explain why your answer is reasonable."
@@ -18287,31 +17037,6 @@
           "ref": "3MG-IIIj-2",
           "path": "Grade-3/Semester-3/Quizzes/Quiz-18-A-Figure-That-Is-Symmetric-With-Respect-To-A-Line.md",
           "item": 8,
-          "original_type": "true-false"
-        }
-      },
-      {
-        "q": {
-          "en": "For **A figure is moved without turning or flipping. Name the transformation.**, the answer can be chosen without using the given mathematical information.",
-          "fil": "For **A figure is moved without turning or flipping. Name the transformation.**, the answer can be chosen without using the given mathematical information.",
-          "taglish": "For **A figure is moved without turning or flipping. Name the transformation.**, the answer can be chosen without using the given mathematical information."
-        },
-        "answer": "False",
-        "type": "true_false",
-        "options": [
-          "True",
-          "False"
-        ],
-        "solution": {
-          "en": "Answer: False",
-          "fil": "Answer: False",
-          "taglish": "Answer: False"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "3MG-IIIj-2",
-          "path": "Grade-3/Semester-3/Quizzes/Quiz-18-A-Figure-That-Is-Symmetric-With-Respect-To-A-Line.md",
-          "item": 9,
           "original_type": "true-false"
         }
       },

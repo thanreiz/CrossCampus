@@ -126,31 +126,6 @@
           "item": 8,
           "original_type": "true-false"
         }
-      },
-      {
-        "q": {
-          "en": "For **Can congruent equilateral triangles cover a festival-floor design without gaps or overlaps? (Diagram description: repeated equilateral triangles.)**, the answer can be chosen without using the given mathematical information.",
-          "fil": "For **Can congruent equilateral triangles cover a festival-floor design without gaps or overlaps? (Diagram description: repeated equilateral triangles.)**, the answer can be chosen without using the given mathematical information.",
-          "taglish": "For **Can congruent equilateral triangles cover a festival-floor design without gaps or overlaps? (Diagram description: repeated equilateral triangles.)**, the answer can be chosen without using the given mathematical information."
-        },
-        "answer": "False",
-        "type": "true_false",
-        "options": [
-          "True",
-          "False"
-        ],
-        "solution": {
-          "en": "Answer: False",
-          "fil": "Answer: False",
-          "taglish": "Answer: False"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "6MG-Ia-1",
-          "path": "Grade-6/Semester-1/Quizzes/Quiz-01-Explore-Whether-Or-Not-A-Shape-Tessellates.md",
-          "item": 9,
-          "original_type": "true-false"
-        }
       }
     ],
     "source_trace": {
@@ -286,31 +261,6 @@
           "ref": "6MG-Ia-2",
           "path": "Grade-6/Semester-1/Quizzes/Quiz-02-Tessellate-A-Surface-Using-Different-Shapes-Including.md",
           "item": 8,
-          "original_type": "true-false"
-        }
-      },
-      {
-        "q": {
-          "en": "For **Can congruent equilateral triangles cover a festival-floor design without gaps or overlaps? (Diagram description: repeated equilateral triangles.)**, the answer can be chosen without using the given mathematical information.",
-          "fil": "For **Can congruent equilateral triangles cover a festival-floor design without gaps or overlaps? (Diagram description: repeated equilateral triangles.)**, the answer can be chosen without using the given mathematical information.",
-          "taglish": "For **Can congruent equilateral triangles cover a festival-floor design without gaps or overlaps? (Diagram description: repeated equilateral triangles.)**, the answer can be chosen without using the given mathematical information."
-        },
-        "answer": "False",
-        "type": "true_false",
-        "options": [
-          "True",
-          "False"
-        ],
-        "solution": {
-          "en": "Answer: False",
-          "fil": "Answer: False",
-          "taglish": "Answer: False"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "6MG-Ia-2",
-          "path": "Grade-6/Semester-1/Quizzes/Quiz-02-Tessellate-A-Surface-Using-Different-Shapes-Including.md",
-          "item": 9,
           "original_type": "true-false"
         }
       }
@@ -475,31 +425,6 @@
           "ref": "6MG-Ib-1",
           "path": "Grade-6/Semester-1/Quizzes/Quiz-03-Resulting-Images-Of-Shapes-That-Undergo-Translation.md",
           "item": 8,
-          "original_type": "true-false"
-        }
-      },
-      {
-        "q": {
-          "en": "For **A figure is moved without turning or flipping. Name the transformation.**, the answer can be chosen without using the given mathematical information.",
-          "fil": "For **A figure is moved without turning or flipping. Name the transformation.**, the answer can be chosen without using the given mathematical information.",
-          "taglish": "For **A figure is moved without turning or flipping. Name the transformation.**, the answer can be chosen without using the given mathematical information."
-        },
-        "answer": "False",
-        "type": "true_false",
-        "options": [
-          "True",
-          "False"
-        ],
-        "solution": {
-          "en": "Answer: False",
-          "fil": "Answer: False",
-          "taglish": "Answer: False"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "6MG-Ib-1",
-          "path": "Grade-6/Semester-1/Quizzes/Quiz-03-Resulting-Images-Of-Shapes-That-Undergo-Translation.md",
-          "item": 9,
           "original_type": "true-false"
         }
       },
@@ -778,31 +703,6 @@
           "path": "Grade-6/Semester-1/Activity-Sheets/Activity-Sheet-04-Subtract-Decimals-With-Decimal-Parts-Of-Up-To-4.md",
           "item": 8,
           "original_type": "activity"
-        }
-      },
-      {
-        "q": {
-          "en": "For **At a sari-sari store, compute ₱28.38 - ₱26.67.**, the answer can be chosen without using the given mathematical information.",
-          "fil": "For **At a sari-sari store, compute ₱28.38 - ₱26.67.**, the answer can be chosen without using the given mathematical information.",
-          "taglish": "For **At a sari-sari store, compute ₱28.38 - ₱26.67.**, the answer can be chosen without using the given mathematical information."
-        },
-        "answer": "False",
-        "type": "true_false",
-        "options": [
-          "True",
-          "False"
-        ],
-        "solution": {
-          "en": "Answer: False",
-          "fil": "Answer: False",
-          "taglish": "Answer: False"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "6NA-Ic-1",
-          "path": "Grade-6/Semester-1/Quizzes/Quiz-04-Subtract-Decimals-With-Decimal-Parts-Of-Up-To-4.md",
-          "item": 9,
-          "original_type": "true-false"
         }
       },
       {
@@ -1162,31 +1062,6 @@
       },
       {
         "q": {
-          "en": "For **At a sari-sari store, compute ₱79.45 - ₱8.48.**, the answer can be chosen without using the given mathematical information.",
-          "fil": "For **At a sari-sari store, compute ₱79.45 - ₱8.48.**, the answer can be chosen without using the given mathematical information.",
-          "taglish": "For **At a sari-sari store, compute ₱79.45 - ₱8.48.**, the answer can be chosen without using the given mathematical information."
-        },
-        "answer": "False",
-        "type": "true_false",
-        "options": [
-          "True",
-          "False"
-        ],
-        "solution": {
-          "en": "Answer: False",
-          "fil": "Answer: False",
-          "taglish": "Answer: False"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "6NA-Ic-2",
-          "path": "Grade-6/Semester-1/Quizzes/Quiz-05-Multi-Step-Problems-Involving-Addition-And-Or.md",
-          "item": 9,
-          "original_type": "true-false"
-        }
-      },
-      {
-        "q": {
           "en": "At a sari-sari store, compute ₱79.45 - ₱8.48. Explain why your answer is reasonable.",
           "fil": "At a sari-sari store, compute ₱79.45 - ₱8.48. Explain why your answer is reasonable.",
           "taglish": "At a sari-sari store, compute ₱79.45 - ₱8.48. Explain why your answer is reasonable."
@@ -1538,31 +1413,6 @@
           "path": "Grade-6/Semester-1/Activity-Sheets/Activity-Sheet-06-Mentally-Multiply-Decimals-Of-Up-To-2-Decimal-Places.md",
           "item": 8,
           "original_type": "activity"
-        }
-      },
-      {
-        "q": {
-          "en": "For **Compute mentally: 11.95 × 0.01.**, the answer can be chosen without using the given mathematical information.",
-          "fil": "For **Compute mentally: 11.95 × 0.01.**, the answer can be chosen without using the given mathematical information.",
-          "taglish": "For **Compute mentally: 11.95 × 0.01.**, the answer can be chosen without using the given mathematical information."
-        },
-        "answer": "False",
-        "type": "true_false",
-        "options": [
-          "True",
-          "False"
-        ],
-        "solution": {
-          "en": "Answer: False",
-          "fil": "Answer: False",
-          "taglish": "Answer: False"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "6NA-Id-1",
-          "path": "Grade-6/Semester-1/Quizzes/Quiz-06-Mentally-Multiply-Decimals-Of-Up-To-2-Decimal-Places.md",
-          "item": 9,
-          "original_type": "true-false"
         }
       },
       {
@@ -1922,31 +1772,6 @@
       },
       {
         "q": {
-          "en": "For **At a sari-sari store, compute ₱70.33 - ₱13.44.**, the answer can be chosen without using the given mathematical information.",
-          "fil": "For **At a sari-sari store, compute ₱70.33 - ₱13.44.**, the answer can be chosen without using the given mathematical information.",
-          "taglish": "For **At a sari-sari store, compute ₱70.33 - ₱13.44.**, the answer can be chosen without using the given mathematical information."
-        },
-        "answer": "False",
-        "type": "true_false",
-        "options": [
-          "True",
-          "False"
-        ],
-        "solution": {
-          "en": "Answer: False",
-          "fil": "Answer: False",
-          "taglish": "Answer: False"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "6NA-Id-2",
-          "path": "Grade-6/Semester-1/Quizzes/Quiz-07-Multi-Step-Problems-Involving-Multiplication-Of.md",
-          "item": 9,
-          "original_type": "true-false"
-        }
-      },
-      {
-        "q": {
           "en": "At a sari-sari store, compute ₱70.33 - ₱13.44. Explain why your answer is reasonable.",
           "fil": "At a sari-sari store, compute ₱70.33 - ₱13.44. Explain why your answer is reasonable.",
           "taglish": "At a sari-sari store, compute ₱70.33 - ₱13.44. Explain why your answer is reasonable."
@@ -2157,31 +1982,6 @@
           "ref": "6NA-Ie-1",
           "path": "Grade-6/Semester-1/Quizzes/Quiz-08-Divide.md",
           "item": 8,
-          "original_type": "true-false"
-        }
-      },
-      {
-        "q": {
-          "en": "For **Write 1 ÷ 6 as a repeating decimal using an ellipsis.**, the answer can be chosen without using the given mathematical information.",
-          "fil": "For **Write 1 ÷ 6 as a repeating decimal using an ellipsis.**, the answer can be chosen without using the given mathematical information.",
-          "taglish": "For **Write 1 ÷ 6 as a repeating decimal using an ellipsis.**, the answer can be chosen without using the given mathematical information."
-        },
-        "answer": "False",
-        "type": "true_false",
-        "options": [
-          "True",
-          "False"
-        ],
-        "solution": {
-          "en": "Answer: False",
-          "fil": "Answer: False",
-          "taglish": "Answer: False"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "6NA-Ie-1",
-          "path": "Grade-6/Semester-1/Quizzes/Quiz-08-Divide.md",
-          "item": 9,
           "original_type": "true-false"
         }
       }
@@ -2433,31 +2233,6 @@
           "path": "Grade-6/Semester-1/Activity-Sheets/Activity-Sheet-09-Mentally-Divide.md",
           "item": 8,
           "original_type": "activity"
-        }
-      },
-      {
-        "q": {
-          "en": "For **Compute mentally: 311.57 ÷ 1000.**, the answer can be chosen without using the given mathematical information.",
-          "fil": "For **Compute mentally: 311.57 ÷ 1000.**, the answer can be chosen without using the given mathematical information.",
-          "taglish": "For **Compute mentally: 311.57 ÷ 1000.**, the answer can be chosen without using the given mathematical information."
-        },
-        "answer": "False",
-        "type": "true_false",
-        "options": [
-          "True",
-          "False"
-        ],
-        "solution": {
-          "en": "Answer: False",
-          "fil": "Answer: False",
-          "taglish": "Answer: False"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "6NA-Ie-2",
-          "path": "Grade-6/Semester-1/Quizzes/Quiz-09-Mentally-Divide.md",
-          "item": 9,
-          "original_type": "true-false"
         }
       },
       {
@@ -2817,31 +2592,6 @@
       },
       {
         "q": {
-          "en": "For **At a sari-sari store, compute ₱2.85 + ₱20.04.**, the answer can be chosen without using the given mathematical information.",
-          "fil": "For **At a sari-sari store, compute ₱2.85 + ₱20.04.**, the answer can be chosen without using the given mathematical information.",
-          "taglish": "For **At a sari-sari store, compute ₱2.85 + ₱20.04.**, the answer can be chosen without using the given mathematical information."
-        },
-        "answer": "False",
-        "type": "true_false",
-        "options": [
-          "True",
-          "False"
-        ],
-        "solution": {
-          "en": "Answer: False",
-          "fil": "Answer: False",
-          "taglish": "Answer: False"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "6NA-If-1",
-          "path": "Grade-6/Semester-1/Quizzes/Quiz-10-Problems-Involving-Division-Of-Decimals-That-May-Or.md",
-          "item": 9,
-          "original_type": "true-false"
-        }
-      },
-      {
-        "q": {
           "en": "At a sari-sari store, compute ₱2.85 + ₱20.04. Explain why your answer is reasonable.",
           "fil": "At a sari-sari store, compute ₱2.85 + ₱20.04. Explain why your answer is reasonable.",
           "taglish": "At a sari-sari store, compute ₱2.85 + ₱20.04. Explain why your answer is reasonable."
@@ -3197,31 +2947,6 @@
       },
       {
         "q": {
-          "en": "For **Rewrite 22/10 as a mixed number.**, the answer can be chosen without using the given mathematical information.",
-          "fil": "For **Rewrite 22/10 as a mixed number.**, the answer can be chosen without using the given mathematical information.",
-          "taglish": "For **Rewrite 22/10 as a mixed number.**, the answer can be chosen without using the given mathematical information."
-        },
-        "answer": "False",
-        "type": "true_false",
-        "options": [
-          "True",
-          "False"
-        ],
-        "solution": {
-          "en": "Answer: False",
-          "fil": "Answer: False",
-          "taglish": "Answer: False"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "6NA-If-2",
-          "path": "Grade-6/Semester-1/Quizzes/Quiz-11-Obtain-Products-That-Result-From-Multiplying-Different.md",
-          "item": 9,
-          "original_type": "true-false"
-        }
-      },
-      {
-        "q": {
           "en": "Rewrite 22/10 as a mixed number. Explain why your answer is reasonable.",
           "fil": "Rewrite 22/10 as a mixed number. Explain why your answer is reasonable.",
           "taglish": "Rewrite 22/10 as a mixed number. Explain why your answer is reasonable."
@@ -3556,31 +3281,6 @@
       },
       {
         "q": {
-          "en": "For **Rewrite 21/6 as a mixed number.**, the answer can be chosen without using the given mathematical information.",
-          "fil": "For **Rewrite 21/6 as a mixed number.**, the answer can be chosen without using the given mathematical information.",
-          "taglish": "For **Rewrite 21/6 as a mixed number.**, the answer can be chosen without using the given mathematical information."
-        },
-        "answer": "False",
-        "type": "true_false",
-        "options": [
-          "True",
-          "False"
-        ],
-        "solution": {
-          "en": "Answer: False",
-          "fil": "Answer: False",
-          "taglish": "Answer: False"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "6NA-If-3",
-          "path": "Grade-6/Semester-1/Quizzes/Quiz-12-Multi-Step-Problems-Involving-Multiplication-That-May.md",
-          "item": 9,
-          "original_type": "true-false"
-        }
-      },
-      {
-        "q": {
           "en": "Rewrite 21/6 as a mixed number. Explain why your answer is reasonable.",
           "fil": "Rewrite 21/6 as a mixed number. Explain why your answer is reasonable.",
           "taglish": "Rewrite 21/6 as a mixed number. Explain why your answer is reasonable."
@@ -3885,31 +3585,6 @@
           "ref": "6NA-Ih-1",
           "path": "Grade-6/Semester-1/Quizzes/Quiz-13-Different-Combinations-Of-Fractions-Whole-Numbers-And.md",
           "item": 8,
-          "original_type": "true-false"
-        }
-      },
-      {
-        "q": {
-          "en": "For **Rewrite 5/3 as a mixed number.**, the answer can be chosen without using the given mathematical information.",
-          "fil": "For **Rewrite 5/3 as a mixed number.**, the answer can be chosen without using the given mathematical information.",
-          "taglish": "For **Rewrite 5/3 as a mixed number.**, the answer can be chosen without using the given mathematical information."
-        },
-        "answer": "False",
-        "type": "true_false",
-        "options": [
-          "True",
-          "False"
-        ],
-        "solution": {
-          "en": "Answer: False",
-          "fil": "Answer: False",
-          "taglish": "Answer: False"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "6NA-Ih-1",
-          "path": "Grade-6/Semester-1/Quizzes/Quiz-13-Different-Combinations-Of-Fractions-Whole-Numbers-And.md",
-          "item": 9,
           "original_type": "true-false"
         }
       },
@@ -4249,31 +3924,6 @@
       },
       {
         "q": {
-          "en": "For **Rewrite 8/3 as a mixed number.**, the answer can be chosen without using the given mathematical information.",
-          "fil": "For **Rewrite 8/3 as a mixed number.**, the answer can be chosen without using the given mathematical information.",
-          "taglish": "For **Rewrite 8/3 as a mixed number.**, the answer can be chosen without using the given mathematical information."
-        },
-        "answer": "False",
-        "type": "true_false",
-        "options": [
-          "True",
-          "False"
-        ],
-        "solution": {
-          "en": "Answer: False",
-          "fil": "Answer: False",
-          "taglish": "Answer: False"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "6NA-Ih-2",
-          "path": "Grade-6/Semester-1/Quizzes/Quiz-14-Multi-Step-Problems-Involving-Division-Of-Different.md",
-          "item": 9,
-          "original_type": "true-false"
-        }
-      },
-      {
-        "q": {
           "en": "Rewrite 8/3 as a mixed number. Explain why your answer is reasonable.",
           "fil": "Rewrite 8/3 as a mixed number. Explain why your answer is reasonable.",
           "taglish": "Rewrite 8/3 as a mixed number. Explain why your answer is reasonable."
@@ -4608,31 +4258,6 @@
       },
       {
         "q": {
-          "en": "For **A garden has 5 rows of pechay and 2 rows of eggplant. Write the pechay-to-eggplant ratio.**, the answer can be chosen without using the given mathematical information.",
-          "fil": "For **A garden has 5 rows of pechay and 2 rows of eggplant. Write the pechay-to-eggplant ratio.**, the answer can be chosen without using the given mathematical information.",
-          "taglish": "For **A garden has 5 rows of pechay and 2 rows of eggplant. Write the pechay-to-eggplant ratio.**, the answer can be chosen without using the given mathematical information."
-        },
-        "answer": "False",
-        "type": "true_false",
-        "options": [
-          "True",
-          "False"
-        ],
-        "solution": {
-          "en": "Answer: False",
-          "fil": "Answer: False",
-          "taglish": "Answer: False"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "6NA-Ii-1",
-          "path": "Grade-6/Semester-1/Quizzes/Quiz-15-The-Relationship-Between-Quantities-Using-Ratio-For.md",
-          "item": 9,
-          "original_type": "true-false"
-        }
-      },
-      {
-        "q": {
           "en": "A garden has 5 rows of pechay and 2 rows of eggplant. Write the pechay-to-eggplant ratio. Explain why your answer is reasonable.",
           "fil": "A garden has 5 rows of pechay and 2 rows of eggplant. Write the pechay-to-eggplant ratio. Explain why your answer is reasonable.",
           "taglish": "A garden has 5 rows of pechay and 2 rows of eggplant. Write the pechay-to-eggplant ratio. Explain why your answer is reasonable."
@@ -4959,31 +4584,6 @@
           "path": "Grade-6/Semester-1/Activity-Sheets/Activity-Sheet-16-Express-One-Number-As-A-Fraction-Of-Another-Given.md",
           "item": 8,
           "original_type": "activity"
-        }
-      },
-      {
-        "q": {
-          "en": "For **A garden has 5 rows of pechay and 3 rows of eggplant. Write the pechay-to-eggplant ratio.**, the answer can be chosen without using the given mathematical information.",
-          "fil": "For **A garden has 5 rows of pechay and 3 rows of eggplant. Write the pechay-to-eggplant ratio.**, the answer can be chosen without using the given mathematical information.",
-          "taglish": "For **A garden has 5 rows of pechay and 3 rows of eggplant. Write the pechay-to-eggplant ratio.**, the answer can be chosen without using the given mathematical information."
-        },
-        "answer": "False",
-        "type": "true_false",
-        "options": [
-          "True",
-          "False"
-        ],
-        "solution": {
-          "en": "Answer: False",
-          "fil": "Answer: False",
-          "taglish": "Answer: False"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "6NA-Ii-2",
-          "path": "Grade-6/Semester-1/Quizzes/Quiz-16-Express-One-Number-As-A-Fraction-Of-Another-Given.md",
-          "item": 9,
-          "original_type": "true-false"
         }
       },
       {
@@ -5318,31 +4918,6 @@
           "path": "Grade-6/Semester-1/Activity-Sheets/Activity-Sheet-17-Write-Equivalent-Ratios.md",
           "item": 8,
           "original_type": "activity"
-        }
-      },
-      {
-        "q": {
-          "en": "For **A garden has 2 rows of pechay and 7 rows of eggplant. Write the pechay-to-eggplant ratio.**, the answer can be chosen without using the given mathematical information.",
-          "fil": "For **A garden has 2 rows of pechay and 7 rows of eggplant. Write the pechay-to-eggplant ratio.**, the answer can be chosen without using the given mathematical information.",
-          "taglish": "For **A garden has 2 rows of pechay and 7 rows of eggplant. Write the pechay-to-eggplant ratio.**, the answer can be chosen without using the given mathematical information."
-        },
-        "answer": "False",
-        "type": "true_false",
-        "options": [
-          "True",
-          "False"
-        ],
-        "solution": {
-          "en": "Answer: False",
-          "fil": "Answer: False",
-          "taglish": "Answer: False"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "6NA-Ii-3",
-          "path": "Grade-6/Semester-1/Quizzes/Quiz-17-Write-Equivalent-Ratios.md",
-          "item": 9,
-          "original_type": "true-false"
         }
       },
       {
@@ -5702,31 +5277,6 @@
       },
       {
         "q": {
-          "en": "For **A garden has 2 rows of pechay and 6 rows of eggplant. Write the pechay-to-eggplant ratio.**, the answer can be chosen without using the given mathematical information.",
-          "fil": "For **A garden has 2 rows of pechay and 6 rows of eggplant. Write the pechay-to-eggplant ratio.**, the answer can be chosen without using the given mathematical information.",
-          "taglish": "For **A garden has 2 rows of pechay and 6 rows of eggplant. Write the pechay-to-eggplant ratio.**, the answer can be chosen without using the given mathematical information."
-        },
-        "answer": "False",
-        "type": "true_false",
-        "options": [
-          "True",
-          "False"
-        ],
-        "solution": {
-          "en": "Answer: False",
-          "fil": "Answer: False",
-          "taglish": "Answer: False"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "6NA-Ii-4",
-          "path": "Grade-6/Semester-1/Quizzes/Quiz-18-Problems-Involving-Ratio.md",
-          "item": 9,
-          "original_type": "true-false"
-        }
-      },
-      {
-        "q": {
           "en": "A garden has 2 rows of pechay and 6 rows of eggplant. Write the pechay-to-eggplant ratio. Explain why your answer is reasonable.",
           "fil": "A garden has 2 rows of pechay and 6 rows of eggplant. Write the pechay-to-eggplant ratio. Explain why your answer is reasonable.",
           "taglish": "A garden has 2 rows of pechay and 6 rows of eggplant. Write the pechay-to-eggplant ratio. Explain why your answer is reasonable."
@@ -6078,31 +5628,6 @@
           "path": "Grade-6/Semester-2/Activity-Sheets/Activity-Sheet-01-Ratio-And-Proportion-In-Given-Situations-Using-Tables.md",
           "item": 8,
           "original_type": "activity"
-        }
-      },
-      {
-        "q": {
-          "en": "For **At a school canteen, 2 trays serve 4 groups. At the same rate, how many groups can 4 trays serve?**, the answer can be chosen without using the given mathematical information.",
-          "fil": "For **At a school canteen, 2 trays serve 4 groups. At the same rate, how many groups can 4 trays serve?**, the answer can be chosen without using the given mathematical information.",
-          "taglish": "For **At a school canteen, 2 trays serve 4 groups. At the same rate, how many groups can 4 trays serve?**, the answer can be chosen without using the given mathematical information."
-        },
-        "answer": "False",
-        "type": "true_false",
-        "options": [
-          "True",
-          "False"
-        ],
-        "solution": {
-          "en": "Answer: False",
-          "fil": "Answer: False",
-          "taglish": "Answer: False"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "6NA-IIa-1",
-          "path": "Grade-6/Semester-2/Quizzes/Quiz-01-Ratio-And-Proportion-In-Given-Situations-Using-Tables.md",
-          "item": 9,
-          "original_type": "true-false"
         }
       },
       {
@@ -6462,31 +5987,6 @@
       },
       {
         "q": {
-          "en": "For **A garden has 6 rows of pechay and 2 rows of eggplant. Write the pechay-to-eggplant ratio.**, the answer can be chosen without using the given mathematical information.",
-          "fil": "For **A garden has 6 rows of pechay and 2 rows of eggplant. Write the pechay-to-eggplant ratio.**, the answer can be chosen without using the given mathematical information.",
-          "taglish": "For **A garden has 6 rows of pechay and 2 rows of eggplant. Write the pechay-to-eggplant ratio.**, the answer can be chosen without using the given mathematical information."
-        },
-        "answer": "False",
-        "type": "true_false",
-        "options": [
-          "True",
-          "False"
-        ],
-        "solution": {
-          "en": "Answer: False",
-          "fil": "Answer: False",
-          "taglish": "Answer: False"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "6NA-IIa-2",
-          "path": "Grade-6/Semester-2/Quizzes/Quiz-02-How-Many-Times-One-Value-Is-Larger-Than-Another-Given.md",
-          "item": 9,
-          "original_type": "true-false"
-        }
-      },
-      {
-        "q": {
           "en": "A garden has 6 rows of pechay and 2 rows of eggplant. Write the pechay-to-eggplant ratio. Explain why your answer is reasonable.",
           "fil": "A garden has 6 rows of pechay and 2 rows of eggplant. Write the pechay-to-eggplant ratio. Explain why your answer is reasonable.",
           "taglish": "A garden has 6 rows of pechay and 2 rows of eggplant. Write the pechay-to-eggplant ratio. Explain why your answer is reasonable."
@@ -6821,31 +6321,6 @@
       },
       {
         "q": {
-          "en": "For **At a school canteen, 1 trays serve 2 groups. At the same rate, how many groups can 2 trays serve?**, the answer can be chosen without using the given mathematical information.",
-          "fil": "For **At a school canteen, 1 trays serve 2 groups. At the same rate, how many groups can 2 trays serve?**, the answer can be chosen without using the given mathematical information.",
-          "taglish": "For **At a school canteen, 1 trays serve 2 groups. At the same rate, how many groups can 2 trays serve?**, the answer can be chosen without using the given mathematical information."
-        },
-        "answer": "False",
-        "type": "true_false",
-        "options": [
-          "True",
-          "False"
-        ],
-        "solution": {
-          "en": "Answer: False",
-          "fil": "Answer: False",
-          "taglish": "Answer: False"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "6NA-IIb-1",
-          "path": "Grade-6/Semester-2/Quizzes/Quiz-03-Problems-Involving-Ratio-And-Proportion.md",
-          "item": 9,
-          "original_type": "true-false"
-        }
-      },
-      {
-        "q": {
           "en": "At a school canteen, 1 trays serve 2 groups. At the same rate, how many groups can 2 trays serve? Explain why your answer is reasonable.",
           "fil": "At a school canteen, 1 trays serve 2 groups. At the same rate, how many groups can 2 trays serve? Explain why your answer is reasonable.",
           "taglish": "At a school canteen, 1 trays serve 2 groups. At the same rate, how many groups can 2 trays serve? Explain why your answer is reasonable."
@@ -7094,31 +6569,6 @@
       },
       {
         "q": {
-          "en": "For **Express 25% as a fraction in simplest form and as a decimal.**, the answer can be chosen without using the given mathematical information.",
-          "fil": "For **Express 25% as a fraction in simplest form and as a decimal.**, the answer can be chosen without using the given mathematical information.",
-          "taglish": "For **Express 25% as a fraction in simplest form and as a decimal.**, the answer can be chosen without using the given mathematical information."
-        },
-        "answer": "False",
-        "type": "true_false",
-        "options": [
-          "True",
-          "False"
-        ],
-        "solution": {
-          "en": "Answer: False",
-          "fil": "Answer: False",
-          "taglish": "Answer: False"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "6NA-IIc-1",
-          "path": "Grade-6/Semester-2/Quizzes/Quiz-04-Explain-The-Relationships-Between-Percentages.md",
-          "item": 9,
-          "original_type": "true-false"
-        }
-      },
-      {
-        "q": {
           "en": "Express 25% as a fraction in simplest form and as a decimal. Explain why your answer is reasonable.",
           "fil": "Express 25% as a fraction in simplest form and as a decimal. Explain why your answer is reasonable.",
           "taglish": "Express 25% as a fraction in simplest form and as a decimal. Explain why your answer is reasonable."
@@ -7305,31 +6755,6 @@
           "ref": "6NA-IIc-2",
           "path": "Grade-6/Semester-2/Quizzes/Quiz-05-Explain-The-Uses-Of-Percentages.md",
           "item": 8,
-          "original_type": "true-false"
-        }
-      },
-      {
-        "q": {
-          "en": "For **Express 25% as a fraction in simplest form and as a decimal.**, the answer can be chosen without using the given mathematical information.",
-          "fil": "For **Express 25% as a fraction in simplest form and as a decimal.**, the answer can be chosen without using the given mathematical information.",
-          "taglish": "For **Express 25% as a fraction in simplest form and as a decimal.**, the answer can be chosen without using the given mathematical information."
-        },
-        "answer": "False",
-        "type": "true_false",
-        "options": [
-          "True",
-          "False"
-        ],
-        "solution": {
-          "en": "Answer: False",
-          "fil": "Answer: False",
-          "taglish": "Answer: False"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "6NA-IIc-2",
-          "path": "Grade-6/Semester-2/Quizzes/Quiz-05-Explain-The-Uses-Of-Percentages.md",
-          "item": 9,
           "original_type": "true-false"
         }
       },
@@ -7571,31 +6996,6 @@
           "ref": "6NA-IId-1",
           "path": "Grade-6/Semester-2/Quizzes/Quiz-06-Write-Numbers-In-Exponential-Form-E-G-2-X-2-X-2-2-3.md",
           "item": 8,
-          "original_type": "true-false"
-        }
-      },
-      {
-        "q": {
-          "en": "For **Write 4 × 4 in exponential form.**, the answer can be chosen without using the given mathematical information.",
-          "fil": "For **Write 4 × 4 in exponential form.**, the answer can be chosen without using the given mathematical information.",
-          "taglish": "For **Write 4 × 4 in exponential form.**, the answer can be chosen without using the given mathematical information."
-        },
-        "answer": "False",
-        "type": "true_false",
-        "options": [
-          "True",
-          "False"
-        ],
-        "solution": {
-          "en": "Answer: False",
-          "fil": "Answer: False",
-          "taglish": "Answer: False"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "6NA-IId-1",
-          "path": "Grade-6/Semester-2/Quizzes/Quiz-06-Write-Numbers-In-Exponential-Form-E-G-2-X-2-X-2-2-3.md",
-          "item": 9,
           "original_type": "true-false"
         }
       },
@@ -7907,31 +7307,6 @@
       },
       {
         "q": {
-          "en": "For **Evaluate 6^3.**, the answer can be chosen without using the given mathematical information.",
-          "fil": "For **Evaluate 6^3.**, the answer can be chosen without using the given mathematical information.",
-          "taglish": "For **Evaluate 6^3.**, the answer can be chosen without using the given mathematical information."
-        },
-        "answer": "False",
-        "type": "true_false",
-        "options": [
-          "True",
-          "False"
-        ],
-        "solution": {
-          "en": "Answer: False",
-          "fil": "Answer: False",
-          "taglish": "Answer: False"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "6NA-IId-2",
-          "path": "Grade-6/Semester-2/Quizzes/Quiz-07-Give-The-Value-Of-Numbers-Expressed-In-Exponential-Form.md",
-          "item": 9,
-          "original_type": "true-false"
-        }
-      },
-      {
-        "q": {
           "en": "Evaluate 6^3. Explain why your answer is reasonable.",
           "fil": "Evaluate 6^3. Explain why your answer is reasonable.",
           "taglish": "Evaluate 6^3. Explain why your answer is reasonable."
@@ -8224,31 +7599,6 @@
       },
       {
         "q": {
-          "en": "For **Evaluate using GEMDAS: 2^2 + 3 × 2.**, the answer can be chosen without using the given mathematical information.",
-          "fil": "For **Evaluate using GEMDAS: 2^2 + 3 × 2.**, the answer can be chosen without using the given mathematical information.",
-          "taglish": "For **Evaluate using GEMDAS: 2^2 + 3 × 2.**, the answer can be chosen without using the given mathematical information."
-        },
-        "answer": "False",
-        "type": "true_false",
-        "options": [
-          "True",
-          "False"
-        ],
-        "solution": {
-          "en": "Answer: False",
-          "fil": "Answer: False",
-          "taglish": "Answer: False"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "6NA-IIe-1",
-          "path": "Grade-6/Semester-2/Quizzes/Quiz-08-Calculations-Involving-Numbers-In-Exponential-Form-By.md",
-          "item": 9,
-          "original_type": "true-false"
-        }
-      },
-      {
-        "q": {
           "en": "Evaluate using GEMDAS: 2^2 + 3 × 2. Explain why your answer is reasonable.",
           "fil": "Evaluate using GEMDAS: 2^2 + 3 × 2. Explain why your answer is reasonable.",
           "taglish": "Evaluate using GEMDAS: 2^2 + 3 × 2. Explain why your answer is reasonable."
@@ -8433,31 +7783,6 @@
           "ref": "6MG-IIf-1",
           "path": "Grade-6/Semester-2/Quizzes/Quiz-09-Appropriate-Units-For-Measuring-Volume-And-Capacity.md",
           "item": 8,
-          "original_type": "true-false"
-        }
-      },
-      {
-        "q": {
-          "en": "For **Choose the more appropriate unit for the capacity of a household water tank: mL or L.**, the answer can be chosen without using the given mathematical information.",
-          "fil": "For **Choose the more appropriate unit for the capacity of a household water tank: mL or L.**, the answer can be chosen without using the given mathematical information.",
-          "taglish": "For **Choose the more appropriate unit for the capacity of a household water tank: mL or L.**, the answer can be chosen without using the given mathematical information."
-        },
-        "answer": "False",
-        "type": "true_false",
-        "options": [
-          "True",
-          "False"
-        ],
-        "solution": {
-          "en": "Answer: False",
-          "fil": "Answer: False",
-          "taglish": "Answer: False"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "6MG-IIf-1",
-          "path": "Grade-6/Semester-2/Quizzes/Quiz-09-Appropriate-Units-For-Measuring-Volume-And-Capacity.md",
-          "item": 9,
           "original_type": "true-false"
         }
       }
@@ -8651,31 +7976,6 @@
           "path": "Grade-6/Semester-2/Activity-Sheets/Activity-Sheet-10-Cu-Cm-To-L-And-Vice-Versa.md",
           "item": 8,
           "original_type": "activity"
-        }
-      },
-      {
-        "q": {
-          "en": "For **Convert 8 L to cubic centimeters.**, the answer can be chosen without using the given mathematical information.",
-          "fil": "For **Convert 8 L to cubic centimeters.**, the answer can be chosen without using the given mathematical information.",
-          "taglish": "For **Convert 8 L to cubic centimeters.**, the answer can be chosen without using the given mathematical information."
-        },
-        "answer": "False",
-        "type": "true_false",
-        "options": [
-          "True",
-          "False"
-        ],
-        "solution": {
-          "en": "Answer: False",
-          "fil": "Answer: False",
-          "taglish": "Answer: False"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "6MG-IIf-2",
-          "path": "Grade-6/Semester-2/Quizzes/Quiz-10-Cu-Cm-To-L-And-Vice-Versa.md",
-          "item": 9,
-          "original_type": "true-false"
         }
       },
       {
@@ -8999,31 +8299,6 @@
           "path": "Grade-6/Semester-2/Activity-Sheets/Activity-Sheet-11-The-Volume-Of-A-Cube-And-Of-A-Rectangular-Prism-Using.md",
           "item": 8,
           "original_type": "activity"
-        }
-      },
-      {
-        "q": {
-          "en": "For **A box model is 2 unit cubes long, 6 unit cubes wide, and 2 unit cubes high. Estimate its volume in unit cubes.**, the answer can be chosen without using the given mathematical information.",
-          "fil": "For **A box model is 2 unit cubes long, 6 unit cubes wide, and 2 unit cubes high. Estimate its volume in unit cubes.**, the answer can be chosen without using the given mathematical information.",
-          "taglish": "For **A box model is 2 unit cubes long, 6 unit cubes wide, and 2 unit cubes high. Estimate its volume in unit cubes.**, the answer can be chosen without using the given mathematical information."
-        },
-        "answer": "False",
-        "type": "true_false",
-        "options": [
-          "True",
-          "False"
-        ],
-        "solution": {
-          "en": "Answer: False",
-          "fil": "Answer: False",
-          "taglish": "Answer: False"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "6MG-IIg-1",
-          "path": "Grade-6/Semester-2/Quizzes/Quiz-11-The-Volume-Of-A-Cube-And-Of-A-Rectangular-Prism-Using.md",
-          "item": 9,
-          "original_type": "true-false"
         }
       },
       {
@@ -9432,31 +8707,6 @@
       },
       {
         "q": {
-          "en": "For **A box model is 8 unit cubes long, 7 unit cubes wide, and 3 unit cubes high. Estimate its volume in unit cubes.**, the answer can be chosen without using the given mathematical information.",
-          "fil": "For **A box model is 8 unit cubes long, 7 unit cubes wide, and 3 unit cubes high. Estimate its volume in unit cubes.**, the answer can be chosen without using the given mathematical information.",
-          "taglish": "For **A box model is 8 unit cubes long, 7 unit cubes wide, and 3 unit cubes high. Estimate its volume in unit cubes.**, the answer can be chosen without using the given mathematical information."
-        },
-        "answer": "False",
-        "type": "true_false",
-        "options": [
-          "True",
-          "False"
-        ],
-        "solution": {
-          "en": "Answer: False",
-          "fil": "Answer: False",
-          "taglish": "Answer: False"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "6MG-IIg-2",
-          "path": "Grade-6/Semester-2/Quizzes/Quiz-12-Problems-Involving-Volumes-Of-Cubes-And-Rectangular.md",
-          "item": 9,
-          "original_type": "true-false"
-        }
-      },
-      {
-        "q": {
           "en": "A box model is 8 unit cubes long, 7 unit cubes wide, and 3 unit cubes high. Estimate its volume in unit cubes. Explain why your answer is reasonable.",
           "fil": "A box model is 8 unit cubes long, 7 unit cubes wide, and 3 unit cubes high. Estimate its volume in unit cubes. Explain why your answer is reasonable.",
           "taglish": "A box model is 8 unit cubes long, 7 unit cubes wide, and 3 unit cubes high. Estimate its volume in unit cubes. Explain why your answer is reasonable."
@@ -9861,31 +9111,6 @@
       },
       {
         "q": {
-          "en": "For **A family has 4 L of water and adds 8 L. What is the total capacity?**, the answer can be chosen without using the given mathematical information.",
-          "fil": "For **A family has 4 L of water and adds 8 L. What is the total capacity?**, the answer can be chosen without using the given mathematical information.",
-          "taglish": "For **A family has 4 L of water and adds 8 L. What is the total capacity?**, the answer can be chosen without using the given mathematical information."
-        },
-        "answer": "False",
-        "type": "true_false",
-        "options": [
-          "True",
-          "False"
-        ],
-        "solution": {
-          "en": "Answer: False",
-          "fil": "Answer: False",
-          "taglish": "Answer: False"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "6MG-IIg-3",
-          "path": "Grade-6/Semester-2/Quizzes/Quiz-13-Problems-Involving-Capacity.md",
-          "item": 9,
-          "original_type": "true-false"
-        }
-      },
-      {
-        "q": {
           "en": "A family has 4 L of water and adds 8 L. What is the total capacity? Explain why your answer is reasonable.",
           "fil": "A family has 4 L of water and adds 8 L. What is the total capacity? Explain why your answer is reasonable.",
           "taglish": "A family has 4 L of water and adds 8 L. What is the total capacity? Explain why your answer is reasonable."
@@ -10238,31 +9463,6 @@
       },
       {
         "q": {
-          "en": "For **Convert 6 m² to square centimeters.**, the answer can be chosen without using the given mathematical information.",
-          "fil": "For **Convert 6 m² to square centimeters.**, the answer can be chosen without using the given mathematical information.",
-          "taglish": "For **Convert 6 m² to square centimeters.**, the answer can be chosen without using the given mathematical information."
-        },
-        "answer": "False",
-        "type": "true_false",
-        "options": [
-          "True",
-          "False"
-        ],
-        "solution": {
-          "en": "Answer: False",
-          "fil": "Answer: False",
-          "taglish": "Answer: False"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "6MG-IIi-1",
-          "path": "Grade-6/Semester-2/Quizzes/Quiz-14-Sq-Cm-To-Sq-M-And-Vice-Versa.md",
-          "item": 9,
-          "original_type": "true-false"
-        }
-      },
-      {
-        "q": {
           "en": "Convert 6 m² to square centimeters. Explain why your answer is reasonable.",
           "fil": "Convert 6 m² to square centimeters. Explain why your answer is reasonable.",
           "taglish": "Convert 6 m² to square centimeters. Explain why your answer is reasonable."
@@ -10555,31 +9755,6 @@
           "path": "Grade-6/Semester-2/Activity-Sheets/Activity-Sheet-15-The-Area-In-Sq-M-Or-Sq-Cm-Of-Composite-Figures.md",
           "item": 8,
           "original_type": "activity"
-        }
-      },
-      {
-        "q": {
-          "en": "For **A composite garden is a 6 m by 10 m rectangle joined to a triangle with base 6 m and height 20 m. Find the total area.**, the answer can be chosen without using the given mathematical information.",
-          "fil": "For **A composite garden is a 6 m by 10 m rectangle joined to a triangle with base 6 m and height 20 m. Find the total area.**, the answer can be chosen without using the given mathematical information.",
-          "taglish": "For **A composite garden is a 6 m by 10 m rectangle joined to a triangle with base 6 m and height 20 m. Find the total area.**, the answer can be chosen without using the given mathematical information."
-        },
-        "answer": "False",
-        "type": "true_false",
-        "options": [
-          "True",
-          "False"
-        ],
-        "solution": {
-          "en": "Answer: False",
-          "fil": "Answer: False",
-          "taglish": "Answer: False"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "6MG-IIi-2",
-          "path": "Grade-6/Semester-2/Quizzes/Quiz-15-The-Area-In-Sq-M-Or-Sq-Cm-Of-Composite-Figures.md",
-          "item": 9,
-          "original_type": "true-false"
         }
       },
       {
@@ -10988,31 +10163,6 @@
       },
       {
         "q": {
-          "en": "For **A rectangular fiesta booth is 14 m by 9 m. Find both its perimeter and area.**, the answer can be chosen without using the given mathematical information.",
-          "fil": "For **A rectangular fiesta booth is 14 m by 9 m. Find both its perimeter and area.**, the answer can be chosen without using the given mathematical information.",
-          "taglish": "For **A rectangular fiesta booth is 14 m by 9 m. Find both its perimeter and area.**, the answer can be chosen without using the given mathematical information."
-        },
-        "answer": "False",
-        "type": "true_false",
-        "options": [
-          "True",
-          "False"
-        ],
-        "solution": {
-          "en": "Answer: False",
-          "fil": "Answer: False",
-          "taglish": "Answer: False"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "6MG-IIj-1",
-          "path": "Grade-6/Semester-2/Quizzes/Quiz-16-Problems-Involving-The-Perimeter-And-Area-Of-Triangles.md",
-          "item": 9,
-          "original_type": "true-false"
-        }
-      },
-      {
-        "q": {
           "en": "A rectangular fiesta booth is 14 m by 9 m. Find both its perimeter and area. Explain why your answer is reasonable.",
           "fil": "A rectangular fiesta booth is 14 m by 9 m. Find both its perimeter and area. Explain why your answer is reasonable.",
           "taglish": "A rectangular fiesta booth is 14 m by 9 m. Find both its perimeter and area. Explain why your answer is reasonable."
@@ -11333,31 +10483,6 @@
           "item": 8,
           "original_type": "true-false"
         }
-      },
-      {
-        "q": {
-          "en": "For **Use a compass to draw a circle with radius 5 cm. Label its center and one radius. (Diagram description: compass construction space.)**, the answer can be chosen without using the given mathematical information.",
-          "fil": "For **Use a compass to draw a circle with radius 5 cm. Label its center and one radius. (Diagram description: compass construction space.)**, the answer can be chosen without using the given mathematical information.",
-          "taglish": "For **Use a compass to draw a circle with radius 5 cm. Label its center and one radius. (Diagram description: compass construction space.)**, the answer can be chosen without using the given mathematical information."
-        },
-        "answer": "False",
-        "type": "true_false",
-        "options": [
-          "True",
-          "False"
-        ],
-        "solution": {
-          "en": "Answer: False",
-          "fil": "Answer: False",
-          "taglish": "Answer: False"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "6MG-IIIa-1",
-          "path": "Grade-6/Semester-3/Quizzes/Quiz-01-Circles-With-Different-Radii-Using-A-Pair-Of-Compasses.md",
-          "item": 9,
-          "original_type": "true-false"
-        }
       }
     ],
     "source_trace": {
@@ -11440,31 +10565,6 @@
           "ref": "6MG-IIIa-2",
           "path": "Grade-6/Semester-3/Quizzes/Quiz-02-Describes-The-Parts-Of-A-Circle.md",
           "item": 8,
-          "original_type": "true-false"
-        }
-      },
-      {
-        "q": {
-          "en": "For **Name the segment from the center of a bilao-shaped circle to a point on the circle.**, the answer can be chosen without using the given mathematical information.",
-          "fil": "For **Name the segment from the center of a bilao-shaped circle to a point on the circle.**, the answer can be chosen without using the given mathematical information.",
-          "taglish": "For **Name the segment from the center of a bilao-shaped circle to a point on the circle.**, the answer can be chosen without using the given mathematical information."
-        },
-        "answer": "False",
-        "type": "true_false",
-        "options": [
-          "True",
-          "False"
-        ],
-        "solution": {
-          "en": "Answer: False",
-          "fil": "Answer: False",
-          "taglish": "Answer: False"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "6MG-IIIa-2",
-          "path": "Grade-6/Semester-3/Quizzes/Quiz-02-Describes-The-Parts-Of-A-Circle.md",
-          "item": 9,
           "original_type": "true-false"
         }
       }
@@ -11687,31 +10787,6 @@
       },
       {
         "q": {
-          "en": "For **Using π = 3.14, find the circumference of a circular garden with radius 9 m.**, the answer can be chosen without using the given mathematical information.",
-          "fil": "For **Using π = 3.14, find the circumference of a circular garden with radius 9 m.**, the answer can be chosen without using the given mathematical information.",
-          "taglish": "For **Using π = 3.14, find the circumference of a circular garden with radius 9 m.**, the answer can be chosen without using the given mathematical information."
-        },
-        "answer": "False",
-        "type": "true_false",
-        "options": [
-          "True",
-          "False"
-        ],
-        "solution": {
-          "en": "Answer: False",
-          "fil": "Answer: False",
-          "taglish": "Answer: False"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "6MG-IIIb-1",
-          "path": "Grade-6/Semester-3/Quizzes/Quiz-03-Measure-The-Circumference-Of-Circles-Using-Appropriate.md",
-          "item": 9,
-          "original_type": "true-false"
-        }
-      },
-      {
-        "q": {
           "en": "Using π = 3.14, find the circumference of a circular garden with radius 9 m. Explain why your answer is reasonable.",
           "fil": "Using π = 3.14, find the circumference of a circular garden with radius 9 m. Explain why your answer is reasonable.",
           "taglish": "Using π = 3.14, find the circumference of a circular garden with radius 9 m. Explain why your answer is reasonable."
@@ -11850,31 +10925,6 @@
       },
       {
         "q": {
-          "en": "For **A circle has circumference 31.4 cm and diameter 10 cm. Approximate C ÷ d.**, the answer can be chosen without using the given mathematical information.",
-          "fil": "For **A circle has circumference 31.4 cm and diameter 10 cm. Approximate C ÷ d.**, the answer can be chosen without using the given mathematical information.",
-          "taglish": "For **A circle has circumference 31.4 cm and diameter 10 cm. Approximate C ÷ d.**, the answer can be chosen without using the given mathematical information."
-        },
-        "answer": "False",
-        "type": "true_false",
-        "options": [
-          "True",
-          "False"
-        ],
-        "solution": {
-          "en": "Answer: False",
-          "fil": "Answer: False",
-          "taglish": "Answer: False"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "6MG-IIIb-2",
-          "path": "Grade-6/Semester-3/Quizzes/Quiz-04-Approximate-The-Value-Of-Pi.md",
-          "item": 9,
-          "original_type": "true-false"
-        }
-      },
-      {
-        "q": {
           "en": "A circle has circumference 31.4 cm and diameter 10 cm. Approximate C ÷ d. Explain why your answer is reasonable.",
           "fil": "A circle has circumference 31.4 cm and diameter 10 cm. Approximate C ÷ d. Explain why your answer is reasonable.",
           "taglish": "A circle has circumference 31.4 cm and diameter 10 cm. Approximate C ÷ d. Explain why your answer is reasonable."
@@ -11975,31 +11025,6 @@
           "ref": "6MG-IIIc-1",
           "path": "Grade-6/Semester-3/Quizzes/Quiz-05-The-Circumference-Of-A-Circle-Using-C-D-Or-C-2-R.md",
           "item": 8,
-          "original_type": "true-false"
-        }
-      },
-      {
-        "q": {
-          "en": "For **A circle has circumference 31.4 cm and diameter 10 cm. Approximate C ÷ d.**, the answer can be chosen without using the given mathematical information.",
-          "fil": "For **A circle has circumference 31.4 cm and diameter 10 cm. Approximate C ÷ d.**, the answer can be chosen without using the given mathematical information.",
-          "taglish": "For **A circle has circumference 31.4 cm and diameter 10 cm. Approximate C ÷ d.**, the answer can be chosen without using the given mathematical information."
-        },
-        "answer": "False",
-        "type": "true_false",
-        "options": [
-          "True",
-          "False"
-        ],
-        "solution": {
-          "en": "Answer: False",
-          "fil": "Answer: False",
-          "taglish": "Answer: False"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "6MG-IIIc-1",
-          "path": "Grade-6/Semester-3/Quizzes/Quiz-05-The-Circumference-Of-A-Circle-Using-C-D-Or-C-2-R.md",
-          "item": 9,
           "original_type": "true-false"
         }
       },
@@ -12245,31 +11270,6 @@
       },
       {
         "q": {
-          "en": "For **Using π = 3.14, find the area of a circular garden with radius 6 m.**, the answer can be chosen without using the given mathematical information.",
-          "fil": "For **Using π = 3.14, find the area of a circular garden with radius 6 m.**, the answer can be chosen without using the given mathematical information.",
-          "taglish": "For **Using π = 3.14, find the area of a circular garden with radius 6 m.**, the answer can be chosen without using the given mathematical information."
-        },
-        "answer": "False",
-        "type": "true_false",
-        "options": [
-          "True",
-          "False"
-        ],
-        "solution": {
-          "en": "Answer: False",
-          "fil": "Answer: False",
-          "taglish": "Answer: False"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "6MG-IIIc-2",
-          "path": "Grade-6/Semester-3/Quizzes/Quiz-06-The-Area-Of-A-Circle-Leading-To-The-Formula-A-R-2.md",
-          "item": 9,
-          "original_type": "true-false"
-        }
-      },
-      {
-        "q": {
           "en": "Using π = 3.14, find the area of a circular garden with radius 6 m. Explain why your answer is reasonable.",
           "fil": "Using π = 3.14, find the area of a circular garden with radius 6 m. Explain why your answer is reasonable.",
           "taglish": "Using π = 3.14, find the area of a circular garden with radius 6 m. Explain why your answer is reasonable."
@@ -12484,31 +11484,6 @@
           "ref": "6MG-IIId-1",
           "path": "Grade-6/Semester-3/Quizzes/Quiz-07-The-Area-Of-A-Circle-Using-The-Formula.md",
           "item": 8,
-          "original_type": "true-false"
-        }
-      },
-      {
-        "q": {
-          "en": "For **Using π = 3.14, find the area of a circular garden with radius 9 m.**, the answer can be chosen without using the given mathematical information.",
-          "fil": "For **Using π = 3.14, find the area of a circular garden with radius 9 m.**, the answer can be chosen without using the given mathematical information.",
-          "taglish": "For **Using π = 3.14, find the area of a circular garden with radius 9 m.**, the answer can be chosen without using the given mathematical information."
-        },
-        "answer": "False",
-        "type": "true_false",
-        "options": [
-          "True",
-          "False"
-        ],
-        "solution": {
-          "en": "Answer: False",
-          "fil": "Answer: False",
-          "taglish": "Answer: False"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "6MG-IIId-1",
-          "path": "Grade-6/Semester-3/Quizzes/Quiz-07-The-Area-Of-A-Circle-Using-The-Formula.md",
-          "item": 9,
           "original_type": "true-false"
         }
       },
@@ -12785,31 +11760,6 @@
       },
       {
         "q": {
-          "en": "For **A composite garden is a 2 m by 4 m rectangle joined to a triangle with base 2 m and height 8 m. Find the total area.**, the answer can be chosen without using the given mathematical information.",
-          "fil": "For **A composite garden is a 2 m by 4 m rectangle joined to a triangle with base 2 m and height 8 m. Find the total area.**, the answer can be chosen without using the given mathematical information.",
-          "taglish": "For **A composite garden is a 2 m by 4 m rectangle joined to a triangle with base 2 m and height 8 m. Find the total area.**, the answer can be chosen without using the given mathematical information."
-        },
-        "answer": "False",
-        "type": "true_false",
-        "options": [
-          "True",
-          "False"
-        ],
-        "solution": {
-          "en": "Answer: False",
-          "fil": "Answer: False",
-          "taglish": "Answer: False"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "6MG-IIId-2",
-          "path": "Grade-6/Semester-3/Quizzes/Quiz-08-The-Area-Of-Composite-Figures-Composed-Of-Any-Two-Or.md",
-          "item": 9,
-          "original_type": "true-false"
-        }
-      },
-      {
-        "q": {
           "en": "A composite garden is a 2 m by 4 m rectangle joined to a triangle with base 2 m and height 8 m. Find the total area. Explain why your answer is reasonable.",
           "fil": "A composite garden is a 2 m by 4 m rectangle joined to a triangle with base 2 m and height 8 m. Find the total area. Explain why your answer is reasonable.",
           "taglish": "A composite garden is a 2 m by 4 m rectangle joined to a triangle with base 2 m and height 8 m. Find the total area. Explain why your answer is reasonable."
@@ -13076,31 +12026,6 @@
           "ref": "6MG-IIId-3",
           "path": "Grade-6/Semester-3/Quizzes/Quiz-09-Problems-Involving-Circumference-And-Area-Of-Circles.md",
           "item": 8,
-          "original_type": "true-false"
-        }
-      },
-      {
-        "q": {
-          "en": "For **Using π = 3.14, find the circumference of a circular garden with radius 8 m.**, the answer can be chosen without using the given mathematical information.",
-          "fil": "For **Using π = 3.14, find the circumference of a circular garden with radius 8 m.**, the answer can be chosen without using the given mathematical information.",
-          "taglish": "For **Using π = 3.14, find the circumference of a circular garden with radius 8 m.**, the answer can be chosen without using the given mathematical information."
-        },
-        "answer": "False",
-        "type": "true_false",
-        "options": [
-          "True",
-          "False"
-        ],
-        "solution": {
-          "en": "Answer: False",
-          "fil": "Answer: False",
-          "taglish": "Answer: False"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "6MG-IIId-3",
-          "path": "Grade-6/Semester-3/Quizzes/Quiz-09-Problems-Involving-Circumference-And-Area-Of-Circles.md",
-          "item": 9,
           "original_type": "true-false"
         }
       },
@@ -13378,31 +12303,6 @@
       },
       {
         "q": {
-          "en": "For **A pie graph category represents 50% of the data. Find its central angle.**, the answer can be chosen without using the given mathematical information.",
-          "fil": "For **A pie graph category represents 50% of the data. Find its central angle.**, the answer can be chosen without using the given mathematical information.",
-          "taglish": "For **A pie graph category represents 50% of the data. Find its central angle.**, the answer can be chosen without using the given mathematical information."
-        },
-        "answer": "False",
-        "type": "true_false",
-        "options": [
-          "True",
-          "False"
-        ],
-        "solution": {
-          "en": "Answer: False",
-          "fil": "Answer: False",
-          "taglish": "Answer: False"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "6SP-IIIf-1",
-          "path": "Grade-6/Semester-3/Quizzes/Quiz-10-The-Angle-Measures-And-Or-Percentages-Based-On-The.md",
-          "item": 9,
-          "original_type": "true-false"
-        }
-      },
-      {
-        "q": {
           "en": "A pie graph category represents 50% of the data. Find its central angle. Explain why your answer is reasonable.",
           "fil": "A pie graph category represents 50% of the data. Find its central angle. Explain why your answer is reasonable.",
           "taglish": "A pie graph category represents 50% of the data. Find its central angle. Explain why your answer is reasonable."
@@ -13469,8 +12369,8 @@
         "type": "mcq",
         "options": [
           "True",
-          "False",
           "178°, 90°, 90°",
+          "179°, 90°, 90°",
           "180°, 90°, 90°"
         ],
         "solution": {
@@ -13508,31 +12408,6 @@
           "ref": "6SP-IIIf-2",
           "path": "Grade-6/Semester-3/Quizzes/Quiz-11-Construct-A-Pie-Graph-Using-Appropriate-Tools.md",
           "item": 8,
-          "original_type": "true-false"
-        }
-      },
-      {
-        "q": {
-          "en": "For **Construct a pie graph for walking 50%, jeepney 25%, bicycle 25%. State the three sector angles. (Diagram description: blank circle with center.)**, the answer can be chosen without using the given mathematical information.",
-          "fil": "For **Construct a pie graph for walking 50%, jeepney 25%, bicycle 25%. State the three sector angles. (Diagram description: blank circle with center.)**, the answer can be chosen without using the given mathematical information.",
-          "taglish": "For **Construct a pie graph for walking 50%, jeepney 25%, bicycle 25%. State the three sector angles. (Diagram description: blank circle with center.)**, the answer can be chosen without using the given mathematical information."
-        },
-        "answer": "False",
-        "type": "true_false",
-        "options": [
-          "True",
-          "False"
-        ],
-        "solution": {
-          "en": "Answer: False",
-          "fil": "Answer: False",
-          "taglish": "Answer: False"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "6SP-IIIf-2",
-          "path": "Grade-6/Semester-3/Quizzes/Quiz-11-Construct-A-Pie-Graph-Using-Appropriate-Tools.md",
-          "item": 9,
           "original_type": "true-false"
         }
       }
@@ -13802,31 +12677,6 @@
           "path": "Grade-6/Semester-3/Activity-Sheets/Activity-Sheet-12-Data-Presented-In-A-Pie-Graph.md",
           "item": 8,
           "original_type": "activity"
-        }
-      },
-      {
-        "q": {
-          "en": "For **A pie graph shows walking=11, jeepney=12, bicycle=11, tricycle=7 learners. Which category has the largest sector?**, the answer can be chosen without using the given mathematical information.",
-          "fil": "For **A pie graph shows walking=11, jeepney=12, bicycle=11, tricycle=7 learners. Which category has the largest sector?**, the answer can be chosen without using the given mathematical information.",
-          "taglish": "For **A pie graph shows walking=11, jeepney=12, bicycle=11, tricycle=7 learners. Which category has the largest sector?**, the answer can be chosen without using the given mathematical information."
-        },
-        "answer": "False",
-        "type": "true_false",
-        "options": [
-          "True",
-          "False"
-        ],
-        "solution": {
-          "en": "Answer: False",
-          "fil": "Answer: False",
-          "taglish": "Answer: False"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "6SP-IIIg-1",
-          "path": "Grade-6/Semester-3/Quizzes/Quiz-12-Data-Presented-In-A-Pie-Graph.md",
-          "item": 9,
-          "original_type": "true-false"
         }
       },
       {
@@ -14203,31 +13053,6 @@
           "path": "Grade-6/Semester-3/Activity-Sheets/Activity-Sheet-13-Data-From-Digital-Media-That-Are-Presented-In-Tabular.md",
           "item": 8,
           "original_type": "activity"
-        }
-      },
-      {
-        "q": {
-          "en": "For **Present mango=6, banana=5, papaya=10, and guava=5 in a labeled table or graph. **, the answer can be chosen without using the given mathematical information.",
-          "fil": "For **Present mango=6, banana=5, papaya=10, and guava=5 in a labeled table or graph. **, the answer can be chosen without using the given mathematical information.",
-          "taglish": "For **Present mango=6, banana=5, papaya=10, and guava=5 in a labeled table or graph. **, the answer can be chosen without using the given mathematical information."
-        },
-        "answer": "False",
-        "type": "true_false",
-        "options": [
-          "True",
-          "False"
-        ],
-        "solution": {
-          "en": "Answer: False",
-          "fil": "Answer: False",
-          "taglish": "Answer: False"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "6SP-IIIg-2",
-          "path": "Grade-6/Semester-3/Quizzes/Quiz-13-Data-From-Digital-Media-That-Are-Presented-In-Tabular.md",
-          "item": 9,
-          "original_type": "true-false"
         }
       },
       {
@@ -14639,31 +13464,6 @@
       },
       {
         "q": {
-          "en": "For **A pie graph shows walking=7, jeepney=9, bicycle=8, tricycle=7 learners. Which category has the largest sector?**, the answer can be chosen without using the given mathematical information.",
-          "fil": "For **A pie graph shows walking=7, jeepney=9, bicycle=8, tricycle=7 learners. Which category has the largest sector?**, the answer can be chosen without using the given mathematical information.",
-          "taglish": "For **A pie graph shows walking=7, jeepney=9, bicycle=8, tricycle=7 learners. Which category has the largest sector?**, the answer can be chosen without using the given mathematical information."
-        },
-        "answer": "False",
-        "type": "true_false",
-        "options": [
-          "True",
-          "False"
-        ],
-        "solution": {
-          "en": "Answer: False",
-          "fil": "Answer: False",
-          "taglish": "Answer: False"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "6SP-IIIh-1",
-          "path": "Grade-6/Semester-3/Quizzes/Quiz-14-Conclusions-Or-Make-Inferences-Based-On-Data-Presented.md",
-          "item": 9,
-          "original_type": "true-false"
-        }
-      },
-      {
-        "q": {
           "en": "A pie graph shows walking=7, jeepney=9, bicycle=8, tricycle=7 learners. Which category has the largest sector? Explain why your answer is reasonable.",
           "fil": "A pie graph shows walking=7, jeepney=9, bicycle=8, tricycle=7 learners. Which category has the largest sector? Explain why your answer is reasonable.",
           "taglish": "A pie graph shows walking=7, jeepney=9, bicycle=8, tricycle=7 learners. Which category has the largest sector? Explain why your answer is reasonable."
@@ -15040,31 +13840,6 @@
       },
       {
         "q": {
-          "en": "For **A pie graph shows walking=4, jeepney=9, bicycle=4, tricycle=9 learners. Which category has the largest sector?**, the answer can be chosen without using the given mathematical information.",
-          "fil": "For **A pie graph shows walking=4, jeepney=9, bicycle=4, tricycle=9 learners. Which category has the largest sector?**, the answer can be chosen without using the given mathematical information.",
-          "taglish": "For **A pie graph shows walking=4, jeepney=9, bicycle=4, tricycle=9 learners. Which category has the largest sector?**, the answer can be chosen without using the given mathematical information."
-        },
-        "answer": "False",
-        "type": "true_false",
-        "options": [
-          "True",
-          "False"
-        ],
-        "solution": {
-          "en": "Answer: False",
-          "fil": "Answer: False",
-          "taglish": "Answer: False"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "6SP-IIIh-2",
-          "path": "Grade-6/Semester-3/Quizzes/Quiz-15-Problems-Using-Data-Presented-In-A-Pie-Graph.md",
-          "item": 9,
-          "original_type": "true-false"
-        }
-      },
-      {
-        "q": {
           "en": "A pie graph shows walking=4, jeepney=9, bicycle=4, tricycle=9 learners. Which category has the largest sector? Explain why your answer is reasonable.",
           "fil": "A pie graph shows walking=4, jeepney=9, bicycle=4, tricycle=9 learners. Which category has the largest sector? Explain why your answer is reasonable.",
           "taglish": "A pie graph shows walking=4, jeepney=9, bicycle=4, tricycle=9 learners. Which category has the largest sector? Explain why your answer is reasonable."
@@ -15278,31 +14053,6 @@
           "ref": "6NA-IIIi-1",
           "path": "Grade-6/Semester-3/Quizzes/Quiz-16-The-Common-Factors-And-The-Greatest-Common-Factor.md",
           "item": 8,
-          "original_type": "true-false"
-        }
-      },
-      {
-        "q": {
-          "en": "For **Find the GCF of 20 and 30 for making equal relief packs.**, the answer can be chosen without using the given mathematical information.",
-          "fil": "For **Find the GCF of 20 and 30 for making equal relief packs.**, the answer can be chosen without using the given mathematical information.",
-          "taglish": "For **Find the GCF of 20 and 30 for making equal relief packs.**, the answer can be chosen without using the given mathematical information."
-        },
-        "answer": "False",
-        "type": "true_false",
-        "options": [
-          "True",
-          "False"
-        ],
-        "solution": {
-          "en": "Answer: False",
-          "fil": "Answer: False",
-          "taglish": "Answer: False"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "6NA-IIIi-1",
-          "path": "Grade-6/Semester-3/Quizzes/Quiz-16-The-Common-Factors-And-The-Greatest-Common-Factor.md",
-          "item": 9,
           "original_type": "true-false"
         }
       },
@@ -15554,31 +14304,6 @@
       },
       {
         "q": {
-          "en": "For **Find the LCM of 16 and 24 for synchronizing two barangay schedules.**, the answer can be chosen without using the given mathematical information.",
-          "fil": "For **Find the LCM of 16 and 24 for synchronizing two barangay schedules.**, the answer can be chosen without using the given mathematical information.",
-          "taglish": "For **Find the LCM of 16 and 24 for synchronizing two barangay schedules.**, the answer can be chosen without using the given mathematical information."
-        },
-        "answer": "False",
-        "type": "true_false",
-        "options": [
-          "True",
-          "False"
-        ],
-        "solution": {
-          "en": "Answer: False",
-          "fil": "Answer: False",
-          "taglish": "Answer: False"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "6NA-IIIi-2",
-          "path": "Grade-6/Semester-3/Quizzes/Quiz-17-The-Common-Multiples-And-Least-Common-Multiple.md",
-          "item": 9,
-          "original_type": "true-false"
-        }
-      },
-      {
-        "q": {
           "en": "Find the LCM of 16 and 24 for synchronizing two barangay schedules. Explain why your answer is reasonable.",
           "fil": "Find the LCM of 16 and 24 for synchronizing two barangay schedules. Explain why your answer is reasonable.",
           "taglish": "Find the LCM of 16 and 24 for synchronizing two barangay schedules. Explain why your answer is reasonable."
@@ -15769,31 +14494,6 @@
           "path": "Grade-6/Semester-3/Activity-Sheets/Activity-Sheet-18-Problems-Involving-Gcf-And-Lcm.md",
           "item": 8,
           "original_type": "activity"
-        }
-      },
-      {
-        "q": {
-          "en": "For **Find the LCM of 12 and 18 for synchronizing two barangay schedules.**, the answer can be chosen without using the given mathematical information.",
-          "fil": "For **Find the LCM of 12 and 18 for synchronizing two barangay schedules.**, the answer can be chosen without using the given mathematical information.",
-          "taglish": "For **Find the LCM of 12 and 18 for synchronizing two barangay schedules.**, the answer can be chosen without using the given mathematical information."
-        },
-        "answer": "False",
-        "type": "true_false",
-        "options": [
-          "True",
-          "False"
-        ],
-        "solution": {
-          "en": "Answer: False",
-          "fil": "Answer: False",
-          "taglish": "Answer: False"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "6NA-IIIi-3",
-          "path": "Grade-6/Semester-3/Quizzes/Quiz-18-Problems-Involving-Gcf-And-Lcm.md",
-          "item": 9,
-          "original_type": "true-false"
         }
       },
       {

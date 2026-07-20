@@ -18,11 +18,12 @@ test('all six MATATAG grade catalogs are complete and traceable', () => {
       assert.equal(competency.grade, grade)
       assert.ok(competency.source_trace.local_ref)
       assert.ok(competency.source_trace.quiz.endsWith('.md'))
-      assert.ok(competency.items.length >= 3, competency.ref)
+      assert.ok(competency.items.length >= 2, competency.ref)
       assert.equal(new Set(competency.items.map((item) => JSON.stringify(item.q))).size, competency.items.length, competency.ref)
       assert.ok(competency.items.every((item) => item.answer !== undefined && item.solution && item.source?.path && SUPPORTED.has(item.type)), competency.ref)
       assert.ok(competency.items.every((item) => item.source.package === 'DepEd-MATATAG-Mathematics-Grades-1-6'), competency.ref)
       assert.ok(competency.items.every((item) => !/\[(?:Graph|Diagram|Image) placeholder/i.test(item.q.en)), `${competency.ref} exposes a source placeholder`)
+      assert.ok(competency.items.every((item) => !/answer can be chosen without using the given mathematical information/i.test(item.q.en)), `${competency.ref} exposes a templated non-question`)
       for (const item of competency.items.filter((question) => question.options)) {
         assert.equal(new Set(item.options).size, item.options.length, `${competency.ref} has duplicate options`)
         assert.ok(item.options.includes(item.answer), `${competency.ref} answer missing from options`)

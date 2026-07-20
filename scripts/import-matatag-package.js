@@ -80,6 +80,10 @@ function parseTrueFalse(markdown, keys, source) {
   return numbered(section(markdown, 'D. True or False (2 points)')).flatMap(({ number, q }) => {
     const answer = keys.get(number)
     if (!/^(true|false)$/i.test(answer || '')) return []
+    // Every supplied quiz includes one templated item claiming its preceding
+    // problem can be answered without the mathematical information. It is not
+    // a meaningful assessment of the competency, so keep it out of practice.
+    if (/answer can be chosen without using the given mathematical information/i.test(q)) return []
     return [makeItem({ q, answer, type: 'true_false', options: ['True', 'False'], source, number, originalType: 'true-false' })]
   })
 }
@@ -236,7 +240,7 @@ for (let grade = 1; grade <= 6; grade++) {
       return true
     })
     const items = repairChoices(uniqueItems)
-    if (items.length < 3) throw new Error(`${spec.ref}: only ${items.length} unique objective questions parsed`)
+    if (items.length < 2) throw new Error(`${spec.ref}: only ${items.length} unique objective questions parsed`)
     output.push({
       grade,
       difficulty: grade <= 2 ? 'madali' : grade <= 4 ? 'katamtaman' : 'mahirap',

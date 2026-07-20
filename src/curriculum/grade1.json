@@ -130,31 +130,6 @@
       },
       {
         "q": {
-          "en": "For **Name a quadrilateral with four equal sides and four right angles.**, the answer can be chosen without using the given mathematical information.",
-          "fil": "For **Name a quadrilateral with four equal sides and four right angles.**, the answer can be chosen without using the given mathematical information.",
-          "taglish": "For **Name a quadrilateral with four equal sides and four right angles.**, the answer can be chosen without using the given mathematical information."
-        },
-        "answer": "False",
-        "type": "true_false",
-        "options": [
-          "True",
-          "False"
-        ],
-        "solution": {
-          "en": "Answer: False",
-          "fil": "Answer: False",
-          "taglish": "Answer: False"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "1MG-Ia-1",
-          "path": "Grade-1/Semester-1/Quizzes/Quiz-01-Simple-2-Dimensional-Shapes.md",
-          "item": 9,
-          "original_type": "true-false"
-        }
-      },
-      {
-        "q": {
           "en": "Name a quadrilateral with four equal sides and four right angles. Explain why your answer is reasonable.",
           "fil": "Name a quadrilateral with four equal sides and four right angles. Explain why your answer is reasonable.",
           "taglish": "Name a quadrilateral with four equal sides and four right angles. Explain why your answer is reasonable."
@@ -315,31 +290,6 @@
           "ref": "1MG-Ia-2",
           "path": "Grade-1/Semester-1/Quizzes/Quiz-02-Distinguish-2-Dimensional-Shapes-According-To-Features.md",
           "item": 8,
-          "original_type": "true-false"
-        }
-      },
-      {
-        "q": {
-          "en": "For **Name a quadrilateral with four equal sides and four right angles.**, the answer can be chosen without using the given mathematical information.",
-          "fil": "For **Name a quadrilateral with four equal sides and four right angles.**, the answer can be chosen without using the given mathematical information.",
-          "taglish": "For **Name a quadrilateral with four equal sides and four right angles.**, the answer can be chosen without using the given mathematical information."
-        },
-        "answer": "False",
-        "type": "true_false",
-        "options": [
-          "True",
-          "False"
-        ],
-        "solution": {
-          "en": "Answer: False",
-          "fil": "Answer: False",
-          "taglish": "Answer: False"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "1MG-Ia-2",
-          "path": "Grade-1/Semester-1/Quizzes/Quiz-02-Distinguish-2-Dimensional-Shapes-According-To-Features.md",
-          "item": 9,
           "original_type": "true-false"
         }
       },
@@ -526,31 +476,6 @@
           "ref": "1MG-Ia-3",
           "path": "Grade-1/Semester-1/Quizzes/Quiz-03-Compose-And-Decompose-Triangles-Squares-And-Rectangles.md",
           "item": 8,
-          "original_type": "true-false"
-        }
-      },
-      {
-        "q": {
-          "en": "For **Two equal triangles are joined along matching sides. Name one shape they can form.**, the answer can be chosen without using the given mathematical information.",
-          "fil": "For **Two equal triangles are joined along matching sides. Name one shape they can form.**, the answer can be chosen without using the given mathematical information.",
-          "taglish": "For **Two equal triangles are joined along matching sides. Name one shape they can form.**, the answer can be chosen without using the given mathematical information."
-        },
-        "answer": "False",
-        "type": "true_false",
-        "options": [
-          "True",
-          "False"
-        ],
-        "solution": {
-          "en": "Answer: False",
-          "fil": "Answer: False",
-          "taglish": "Answer: False"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "1MG-Ia-3",
-          "path": "Grade-1/Semester-1/Quizzes/Quiz-03-Compose-And-Decompose-Triangles-Squares-And-Rectangles.md",
-          "item": 9,
           "original_type": "true-false"
         }
       },
@@ -833,31 +758,6 @@
       },
       {
         "q": {
-          "en": "For **Continue the count: 33, 35, 37, __, __.**, the answer can be chosen without using the given mathematical information.",
-          "fil": "For **Continue the count: 33, 35, 37, __, __.**, the answer can be chosen without using the given mathematical information.",
-          "taglish": "For **Continue the count: 33, 35, 37, __, __.**, the answer can be chosen without using the given mathematical information."
-        },
-        "answer": "False",
-        "type": "true_false",
-        "options": [
-          "True",
-          "False"
-        ],
-        "solution": {
-          "en": "Answer: False",
-          "fil": "Answer: False",
-          "taglish": "Answer: False"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "1NA-Ib-1",
-          "path": "Grade-1/Semester-1/Quizzes/Quiz-04-Count-Up-To-100.md",
-          "item": 9,
-          "original_type": "true-false"
-        }
-      },
-      {
-        "q": {
           "en": "Continue the count: 33, 35, 37, __, __. Explain why your answer is reasonable.",
           "fil": "Continue the count: 33, 35, 37, __, __. Explain why your answer is reasonable.",
           "taglish": "Continue the count: 33, 35, 37, __, __. Explain why your answer is reasonable."
@@ -1073,31 +973,6 @@
       },
       {
         "q": {
-          "en": "For **Write the numeral for: **twenty-seven**.**, the answer can be chosen without using the given mathematical information.",
-          "fil": "For **Write the numeral for: **twenty-seven**.**, the answer can be chosen without using the given mathematical information.",
-          "taglish": "For **Write the numeral for: **twenty-seven**.**, the answer can be chosen without using the given mathematical information."
-        },
-        "answer": "False",
-        "type": "true_false",
-        "options": [
-          "True",
-          "False"
-        ],
-        "solution": {
-          "en": "Answer: False",
-          "fil": "Answer: False",
-          "taglish": "Answer: False"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "1NA-Ic-1",
-          "path": "Grade-1/Semester-1/Quizzes/Quiz-05-Numerals-Up-To-100.md",
-          "item": 9,
-          "original_type": "true-false"
-        }
-      },
-      {
-        "q": {
           "en": "Write the numeral for: **twenty-seven**. Explain why your answer is reasonable.",
           "fil": "Write the numeral for: **twenty-seven**. Explain why your answer is reasonable.",
           "taglish": "Write the numeral for: **twenty-seven**. Explain why your answer is reasonable."
@@ -1224,31 +1099,6 @@
           "ref": "1NA-Id-1",
           "path": "Grade-1/Semester-1/Quizzes/Quiz-06-Represent-Numbers-Up-To-100-Using-A-Variety-Of.md",
           "item": 8,
-          "original_type": "true-false"
-        }
-      },
-      {
-        "q": {
-          "en": "For **Write the numeral for: **twenty-seven**.**, the answer can be chosen without using the given mathematical information.",
-          "fil": "For **Write the numeral for: **twenty-seven**.**, the answer can be chosen without using the given mathematical information.",
-          "taglish": "For **Write the numeral for: **twenty-seven**.**, the answer can be chosen without using the given mathematical information."
-        },
-        "answer": "False",
-        "type": "true_false",
-        "options": [
-          "True",
-          "False"
-        ],
-        "solution": {
-          "en": "Answer: False",
-          "fil": "Answer: False",
-          "taglish": "Answer: False"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "1NA-Id-1",
-          "path": "Grade-1/Semester-1/Quizzes/Quiz-06-Represent-Numbers-Up-To-100-Using-A-Variety-Of.md",
-          "item": 9,
           "original_type": "true-false"
         }
       },
@@ -1539,31 +1389,6 @@
           "path": "Grade-1/Semester-1/Activity-Sheets/Activity-Sheet-07-Two-Numbers-Up-To-20.md",
           "item": 8,
           "original_type": "activity"
-        }
-      },
-      {
-        "q": {
-          "en": "For **Compare the school enrollment figures 96 and 66 using <, >, or =.**, the answer can be chosen without using the given mathematical information.",
-          "fil": "For **Compare the school enrollment figures 96 and 66 using <, >, or =.**, the answer can be chosen without using the given mathematical information.",
-          "taglish": "For **Compare the school enrollment figures 96 and 66 using <, >, or =.**, the answer can be chosen without using the given mathematical information."
-        },
-        "answer": "False",
-        "type": "true_false",
-        "options": [
-          "True",
-          "False"
-        ],
-        "solution": {
-          "en": "Answer: False",
-          "fil": "Answer: False",
-          "taglish": "Answer: False"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "1NA-If-1",
-          "path": "Grade-1/Semester-1/Quizzes/Quiz-07-Two-Numbers-Up-To-20.md",
-          "item": 9,
-          "original_type": "true-false"
         }
       },
       {
@@ -1953,31 +1778,6 @@
       },
       {
         "q": {
-          "en": "For **Order these barangay counts from smallest to largest: 77, 84, 51, 87.**, the answer can be chosen without using the given mathematical information.",
-          "fil": "For **Order these barangay counts from smallest to largest: 77, 84, 51, 87.**, the answer can be chosen without using the given mathematical information.",
-          "taglish": "For **Order these barangay counts from smallest to largest: 77, 84, 51, 87.**, the answer can be chosen without using the given mathematical information."
-        },
-        "answer": "False",
-        "type": "true_false",
-        "options": [
-          "True",
-          "False"
-        ],
-        "solution": {
-          "en": "Answer: False",
-          "fil": "Answer: False",
-          "taglish": "Answer: False"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "1NA-If-2",
-          "path": "Grade-1/Semester-1/Quizzes/Quiz-08-Numbers-Up-To-20-From-Smallest-To-Largest-And-Vice.md",
-          "item": 9,
-          "original_type": "true-false"
-        }
-      },
-      {
-        "q": {
           "en": "Order these barangay counts from smallest to largest: 77, 84, 51, 87. Explain why your answer is reasonable.",
           "fil": "Order these barangay counts from smallest to largest: 77, 84, 51, 87. Explain why your answer is reasonable.",
           "taglish": "Order these barangay counts from smallest to largest: 77, 84, 51, 87. Explain why your answer is reasonable."
@@ -2268,31 +2068,6 @@
           "path": "Grade-1/Semester-1/Activity-Sheets/Activity-Sheet-09-The-Position-Of-Objects-Using-Ordinal-Numbers.md",
           "item": 8,
           "original_type": "activity"
-        }
-      },
-      {
-        "q": {
-          "en": "For **In a school parade, Ana is in position 6. Write her position as an ordinal number.**, the answer can be chosen without using the given mathematical information.",
-          "fil": "For **In a school parade, Ana is in position 6. Write her position as an ordinal number.**, the answer can be chosen without using the given mathematical information.",
-          "taglish": "For **In a school parade, Ana is in position 6. Write her position as an ordinal number.**, the answer can be chosen without using the given mathematical information."
-        },
-        "answer": "False",
-        "type": "true_false",
-        "options": [
-          "True",
-          "False"
-        ],
-        "solution": {
-          "en": "Answer: False",
-          "fil": "Answer: False",
-          "taglish": "Answer: False"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "1NA-If-3",
-          "path": "Grade-1/Semester-1/Quizzes/Quiz-09-The-Position-Of-Objects-Using-Ordinal-Numbers.md",
-          "item": 9,
-          "original_type": "true-false"
         }
       },
       {
@@ -2624,31 +2399,6 @@
           "path": "Grade-1/Semester-1/Activity-Sheets/Activity-Sheet-10-Compose-And-Decompose-Numbers-Up-To-10-Using-Concrete.md",
           "item": 8,
           "original_type": "activity"
-        }
-      },
-      {
-        "q": {
-          "en": "For **Write the barangay record 21 in expanded form.**, the answer can be chosen without using the given mathematical information.",
-          "fil": "For **Write the barangay record 21 in expanded form.**, the answer can be chosen without using the given mathematical information.",
-          "taglish": "For **Write the barangay record 21 in expanded form.**, the answer can be chosen without using the given mathematical information."
-        },
-        "answer": "False",
-        "type": "true_false",
-        "options": [
-          "True",
-          "False"
-        ],
-        "solution": {
-          "en": "Answer: False",
-          "fil": "Answer: False",
-          "taglish": "Answer: False"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "1NA-If-4",
-          "path": "Grade-1/Semester-1/Quizzes/Quiz-10-Compose-And-Decompose-Numbers-Up-To-10-Using-Concrete.md",
-          "item": 9,
-          "original_type": "true-false"
         }
       },
       {
@@ -2985,31 +2735,6 @@
       },
       {
         "q": {
-          "en": "For **At the sari-sari store, one group recorded 5 items and another recorded 4. How many altogether?**, the answer can be chosen without using the given mathematical information.",
-          "fil": "For **At the sari-sari store, one group recorded 5 items and another recorded 4. How many altogether?**, the answer can be chosen without using the given mathematical information.",
-          "taglish": "For **At the sari-sari store, one group recorded 5 items and another recorded 4. How many altogether?**, the answer can be chosen without using the given mathematical information."
-        },
-        "answer": "False",
-        "type": "true_false",
-        "options": [
-          "True",
-          "False"
-        ],
-        "solution": {
-          "en": "Answer: False",
-          "fil": "Answer: False",
-          "taglish": "Answer: False"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "1NA-Ih-1",
-          "path": "Grade-1/Semester-1/Quizzes/Quiz-11-Addition-Of-Numbers-With-Sums-Up-To-20-Using-A-Variety.md",
-          "item": 9,
-          "original_type": "true-false"
-        }
-      },
-      {
-        "q": {
           "en": "At the sari-sari store, one group recorded 5 items and another recorded 4. How many altogether? Explain why your answer is reasonable.",
           "fil": "At the sari-sari store, one group recorded 5 items and another recorded 4. How many altogether? Explain why your answer is reasonable.",
           "taglish": "At the sari-sari store, one group recorded 5 items and another recorded 4. How many altogether? Explain why your answer is reasonable."
@@ -3317,31 +3042,6 @@
           "path": "Grade-1/Semester-1/Activity-Sheets/Activity-Sheet-12-By-Applying-The-Following-Properties-Of-Addition-Using.md",
           "item": 8,
           "original_type": "activity"
-        }
-      },
-      {
-        "q": {
-          "en": "For **At the public market, one group recorded 2 items and another recorded 2. How many altogether?**, the answer can be chosen without using the given mathematical information.",
-          "fil": "For **At the public market, one group recorded 2 items and another recorded 2. How many altogether?**, the answer can be chosen without using the given mathematical information.",
-          "taglish": "For **At the public market, one group recorded 2 items and another recorded 2. How many altogether?**, the answer can be chosen without using the given mathematical information."
-        },
-        "answer": "False",
-        "type": "true_false",
-        "options": [
-          "True",
-          "False"
-        ],
-        "solution": {
-          "en": "Answer: False",
-          "fil": "Answer: False",
-          "taglish": "Answer: False"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "1NA-Ih-2",
-          "path": "Grade-1/Semester-1/Quizzes/Quiz-12-By-Applying-The-Following-Properties-Of-Addition-Using.md",
-          "item": 9,
-          "original_type": "true-false"
         }
       },
       {
@@ -3676,31 +3376,6 @@
           "path": "Grade-1/Semester-1/Activity-Sheets/Activity-Sheet-13-Problems.md",
           "item": 8,
           "original_type": "activity"
-        }
-      },
-      {
-        "q": {
-          "en": "For **At the school canteen, one group recorded 6 items and another recorded 2. How many altogether?**, the answer can be chosen without using the given mathematical information.",
-          "fil": "For **At the school canteen, one group recorded 6 items and another recorded 2. How many altogether?**, the answer can be chosen without using the given mathematical information.",
-          "taglish": "For **At the school canteen, one group recorded 6 items and another recorded 2. How many altogether?**, the answer can be chosen without using the given mathematical information."
-        },
-        "answer": "False",
-        "type": "true_false",
-        "options": [
-          "True",
-          "False"
-        ],
-        "solution": {
-          "en": "Answer: False",
-          "fil": "Answer: False",
-          "taglish": "Answer: False"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "1NA-Ii-1",
-          "path": "Grade-1/Semester-1/Quizzes/Quiz-13-Problems.md",
-          "item": 9,
-          "original_type": "true-false"
         }
       },
       {
@@ -4079,31 +3754,6 @@
       },
       {
         "q": {
-          "en": "For **A school garden row is 5 m long and another is 8 m long. What is their total length?**, the answer can be chosen without using the given mathematical information.",
-          "fil": "For **A school garden row is 5 m long and another is 8 m long. What is their total length?**, the answer can be chosen without using the given mathematical information.",
-          "taglish": "For **A school garden row is 5 m long and another is 8 m long. What is their total length?**, the answer can be chosen without using the given mathematical information."
-        },
-        "answer": "False",
-        "type": "true_false",
-        "options": [
-          "True",
-          "False"
-        ],
-        "solution": {
-          "en": "Answer: False",
-          "fil": "Answer: False",
-          "taglish": "Answer: False"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "1MG-Ii-1",
-          "path": "Grade-1/Semester-1/Quizzes/Quiz-14-Measure-The-Length-Of-An-Object-And-The-Distance.md",
-          "item": 9,
-          "original_type": "true-false"
-        }
-      },
-      {
-        "q": {
           "en": "A school garden row is 5 m long and another is 8 m long. What is their total length? Explain why your answer is reasonable.",
           "fil": "A school garden row is 5 m long and another is 8 m long. What is their total length? Explain why your answer is reasonable.",
           "taglish": "A school garden row is 5 m long and another is 8 m long. What is their total length? Explain why your answer is reasonable."
@@ -4450,31 +4100,6 @@
           "path": "Grade-1/Semester-1/Activity-Sheets/Activity-Sheet-15-Lengths-And-Distances-Using-Non-Standard-Units.md",
           "item": 8,
           "original_type": "activity"
-        }
-      },
-      {
-        "q": {
-          "en": "For **A school garden row is 12 m long and another is 9 m long. What is their total length?**, the answer can be chosen without using the given mathematical information.",
-          "fil": "For **A school garden row is 12 m long and another is 9 m long. What is their total length?**, the answer can be chosen without using the given mathematical information.",
-          "taglish": "For **A school garden row is 12 m long and another is 9 m long. What is their total length?**, the answer can be chosen without using the given mathematical information."
-        },
-        "answer": "False",
-        "type": "true_false",
-        "options": [
-          "True",
-          "False"
-        ],
-        "solution": {
-          "en": "Answer: False",
-          "fil": "Answer: False",
-          "taglish": "Answer: False"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "1MG-Ij-1",
-          "path": "Grade-1/Semester-1/Quizzes/Quiz-15-Lengths-And-Distances-Using-Non-Standard-Units.md",
-          "item": 9,
-          "original_type": "true-false"
         }
       },
       {
@@ -4887,31 +4512,6 @@
       },
       {
         "q": {
-          "en": "For **A school garden row is 12 m long and another is 2 m long. What is their total length?**, the answer can be chosen without using the given mathematical information.",
-          "fil": "For **A school garden row is 12 m long and another is 2 m long. What is their total length?**, the answer can be chosen without using the given mathematical information.",
-          "taglish": "For **A school garden row is 12 m long and another is 2 m long. What is their total length?**, the answer can be chosen without using the given mathematical information."
-        },
-        "answer": "False",
-        "type": "true_false",
-        "options": [
-          "True",
-          "False"
-        ],
-        "solution": {
-          "en": "Answer: False",
-          "fil": "Answer: False",
-          "taglish": "Answer: False"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "1MG-Ij-2",
-          "path": "Grade-1/Semester-1/Quizzes/Quiz-16-Problems-Involving-Lengths-And-Distances-Using-Non.md",
-          "item": 9,
-          "original_type": "true-false"
-        }
-      },
-      {
-        "q": {
           "en": "A school garden row is 12 m long and another is 2 m long. What is their total length? Explain why your answer is reasonable.",
           "fil": "A school garden row is 12 m long and another is 2 m long. What is their total length? Explain why your answer is reasonable.",
           "taglish": "A school garden row is 12 m long and another is 2 m long. What is their total length? Explain why your answer is reasonable."
@@ -5239,31 +4839,6 @@
           "path": "Grade-1/Semester-2/Activity-Sheets/Activity-Sheet-01-Numbers-Up-To-100-From-Smallest-To-Largest-And-Vice.md",
           "item": 8,
           "original_type": "activity"
-        }
-      },
-      {
-        "q": {
-          "en": "For **Order these barangay counts from smallest to largest: 34, 53, 78, 5.**, the answer can be chosen without using the given mathematical information.",
-          "fil": "For **Order these barangay counts from smallest to largest: 34, 53, 78, 5.**, the answer can be chosen without using the given mathematical information.",
-          "taglish": "For **Order these barangay counts from smallest to largest: 34, 53, 78, 5.**, the answer can be chosen without using the given mathematical information."
-        },
-        "answer": "False",
-        "type": "true_false",
-        "options": [
-          "True",
-          "False"
-        ],
-        "solution": {
-          "en": "Answer: False",
-          "fil": "Answer: False",
-          "taglish": "Answer: False"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "1NA-IIa-1",
-          "path": "Grade-1/Semester-2/Quizzes/Quiz-01-Numbers-Up-To-100-From-Smallest-To-Largest-And-Vice.md",
-          "item": 9,
-          "original_type": "true-false"
         }
       },
       {
@@ -5623,31 +5198,6 @@
       },
       {
         "q": {
-          "en": "For **Continue the count: 13, 14, 15, __, __.**, the answer can be chosen without using the given mathematical information.",
-          "fil": "For **Continue the count: 13, 14, 15, __, __.**, the answer can be chosen without using the given mathematical information.",
-          "taglish": "For **Continue the count: 13, 14, 15, __, __.**, the answer can be chosen without using the given mathematical information."
-        },
-        "answer": "False",
-        "type": "true_false",
-        "options": [
-          "True",
-          "False"
-        ],
-        "solution": {
-          "en": "Answer: False",
-          "fil": "Answer: False",
-          "taglish": "Answer: False"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "1NA-IIb-1",
-          "path": "Grade-1/Semester-2/Quizzes/Quiz-02-Counts-By-2S-5S-And-10S-Up-To-100.md",
-          "item": 9,
-          "original_type": "true-false"
-        }
-      },
-      {
-        "q": {
           "en": "Continue the count: 13, 14, 15, __, __. Explain why your answer is reasonable.",
           "fil": "Continue the count: 13, 14, 15, __, __. Explain why your answer is reasonable.",
           "taglish": "Continue the count: 13, 14, 15, __, __. Explain why your answer is reasonable."
@@ -6003,31 +5553,6 @@
       },
       {
         "q": {
-          "en": "For **A barangay record shows 33. What is the value of its tens digit?**, the answer can be chosen without using the given mathematical information.",
-          "fil": "For **A barangay record shows 33. What is the value of its tens digit?**, the answer can be chosen without using the given mathematical information.",
-          "taglish": "For **A barangay record shows 33. What is the value of its tens digit?**, the answer can be chosen without using the given mathematical information."
-        },
-        "answer": "False",
-        "type": "true_false",
-        "options": [
-          "True",
-          "False"
-        ],
-        "solution": {
-          "en": "Answer: False",
-          "fil": "Answer: False",
-          "taglish": "Answer: False"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "1NA-IIb-2",
-          "path": "Grade-1/Semester-2/Quizzes/Quiz-03-Determine.md",
-          "item": 9,
-          "original_type": "true-false"
-        }
-      },
-      {
-        "q": {
           "en": "A barangay record shows 33. What is the value of its tens digit? Explain why your answer is reasonable.",
           "fil": "A barangay record shows 33. What is the value of its tens digit? Explain why your answer is reasonable.",
           "taglish": "A barangay record shows 33. What is the value of its tens digit? Explain why your answer is reasonable."
@@ -6362,31 +5887,6 @@
       },
       {
         "q": {
-          "en": "For **Write the barangay record 79 in expanded form.**, the answer can be chosen without using the given mathematical information.",
-          "fil": "For **Write the barangay record 79 in expanded form.**, the answer can be chosen without using the given mathematical information.",
-          "taglish": "For **Write the barangay record 79 in expanded form.**, the answer can be chosen without using the given mathematical information."
-        },
-        "answer": "False",
-        "type": "true_false",
-        "options": [
-          "True",
-          "False"
-        ],
-        "solution": {
-          "en": "Answer: False",
-          "fil": "Answer: False",
-          "taglish": "Answer: False"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "1NA-IIc-1",
-          "path": "Grade-1/Semester-2/Quizzes/Quiz-04-Decompose-Any-2-Digit-Number-Into-Tens-And-Ones.md",
-          "item": 9,
-          "original_type": "true-false"
-        }
-      },
-      {
-        "q": {
           "en": "Write the barangay record 79 in expanded form. Explain why your answer is reasonable.",
           "fil": "Write the barangay record 79 in expanded form. Explain why your answer is reasonable.",
           "taglish": "Write the barangay record 79 in expanded form. Explain why your answer is reasonable."
@@ -6717,31 +6217,6 @@
           "path": "Grade-1/Semester-2/Activity-Sheets/Activity-Sheet-05-Numbers-By-Expressing-Addends-As-Tens-And-Ones.md",
           "item": 8,
           "original_type": "activity"
-        }
-      },
-      {
-        "q": {
-          "en": "For **At the school garden, one group recorded 31 items and another recorded 6. How many altogether?**, the answer can be chosen without using the given mathematical information.",
-          "fil": "For **At the school garden, one group recorded 31 items and another recorded 6. How many altogether?**, the answer can be chosen without using the given mathematical information.",
-          "taglish": "For **At the school garden, one group recorded 31 items and another recorded 6. How many altogether?**, the answer can be chosen without using the given mathematical information."
-        },
-        "answer": "False",
-        "type": "true_false",
-        "options": [
-          "True",
-          "False"
-        ],
-        "solution": {
-          "en": "Answer: False",
-          "fil": "Answer: False",
-          "taglish": "Answer: False"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "1NA-IIe-1",
-          "path": "Grade-1/Semester-2/Quizzes/Quiz-05-Numbers-By-Expressing-Addends-As-Tens-And-Ones.md",
-          "item": 9,
-          "original_type": "true-false"
         }
       },
       {
@@ -7101,31 +6576,6 @@
       },
       {
         "q": {
-          "en": "For **At the family merienda, one group recorded 23 items and another recorded 9. How many altogether?**, the answer can be chosen without using the given mathematical information.",
-          "fil": "For **At the family merienda, one group recorded 23 items and another recorded 9. How many altogether?**, the answer can be chosen without using the given mathematical information.",
-          "taglish": "For **At the family merienda, one group recorded 23 items and another recorded 9. How many altogether?**, the answer can be chosen without using the given mathematical information."
-        },
-        "answer": "False",
-        "type": "true_false",
-        "options": [
-          "True",
-          "False"
-        ],
-        "solution": {
-          "en": "Answer: False",
-          "fil": "Answer: False",
-          "taglish": "Answer: False"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "1NA-IIf-1",
-          "path": "Grade-1/Semester-2/Quizzes/Quiz-06-Numbers-With-Sums-Up-To-100-Without-Regrouping-Using-A.md",
-          "item": 9,
-          "original_type": "true-false"
-        }
-      },
-      {
-        "q": {
           "en": "At the family merienda, one group recorded 23 items and another recorded 9. How many altogether? Explain why your answer is reasonable.",
           "fil": "At the family merienda, one group recorded 23 items and another recorded 9. How many altogether? Explain why your answer is reasonable.",
           "taglish": "At the family merienda, one group recorded 23 items and another recorded 9. How many altogether? Explain why your answer is reasonable."
@@ -7481,31 +6931,6 @@
       },
       {
         "q": {
-          "en": "For **At the coastal clean-up, one group recorded 26 items and another recorded 13. How many altogether?**, the answer can be chosen without using the given mathematical information.",
-          "fil": "For **At the coastal clean-up, one group recorded 26 items and another recorded 13. How many altogether?**, the answer can be chosen without using the given mathematical information.",
-          "taglish": "For **At the coastal clean-up, one group recorded 26 items and another recorded 13. How many altogether?**, the answer can be chosen without using the given mathematical information."
-        },
-        "answer": "False",
-        "type": "true_false",
-        "options": [
-          "True",
-          "False"
-        ],
-        "solution": {
-          "en": "Answer: False",
-          "fil": "Answer: False",
-          "taglish": "Answer: False"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "1NA-IIg-1",
-          "path": "Grade-1/Semester-2/Quizzes/Quiz-07-Problems.md",
-          "item": 9,
-          "original_type": "true-false"
-        }
-      },
-      {
-        "q": {
           "en": "At the coastal clean-up, one group recorded 26 items and another recorded 13. How many altogether? Explain why your answer is reasonable.",
           "fil": "At the coastal clean-up, one group recorded 26 items and another recorded 13. How many altogether? Explain why your answer is reasonable.",
           "taglish": "At the coastal clean-up, one group recorded 26 items and another recorded 13. How many altogether? Explain why your answer is reasonable."
@@ -7651,7 +7076,7 @@
         "options": [
           "Tell everything about your family",
           "True",
-          "False",
+          "Both choices",
           "What is your favorite local fruit?"
         ],
         "solution": {
@@ -7689,31 +7114,6 @@
           "ref": "1SP-IIh-1",
           "path": "Grade-1/Semester-2/Quizzes/Quiz-08-Data-In-One-Variable-Through-A-Simple-Interview.md",
           "item": 8,
-          "original_type": "true-false"
-        }
-      },
-      {
-        "q": {
-          "en": "For **Which question collects one clear variable for a class pictograph: 'What is your favorite local fruit?' or 'Tell everything about your family'?**, the answer can be chosen without using the given mathematical information.",
-          "fil": "For **Which question collects one clear variable for a class pictograph: 'What is your favorite local fruit?' or 'Tell everything about your family'?**, the answer can be chosen without using the given mathematical information.",
-          "taglish": "For **Which question collects one clear variable for a class pictograph: 'What is your favorite local fruit?' or 'Tell everything about your family'?**, the answer can be chosen without using the given mathematical information."
-        },
-        "answer": "False",
-        "type": "true_false",
-        "options": [
-          "True",
-          "False"
-        ],
-        "solution": {
-          "en": "Answer: False",
-          "fil": "Answer: False",
-          "taglish": "Answer: False"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "1SP-IIh-1",
-          "path": "Grade-1/Semester-2/Quizzes/Quiz-08-Data-In-One-Variable-Through-A-Simple-Interview.md",
-          "item": 9,
           "original_type": "true-false"
         }
       }
@@ -7983,31 +7383,6 @@
           "path": "Grade-1/Semester-2/Activity-Sheets/Activity-Sheet-09-Data-In-A-Pictograph-Without-A-Scale.md",
           "item": 8,
           "original_type": "activity"
-        }
-      },
-      {
-        "q": {
-          "en": "For **Present mango=7, banana=4, papaya=10, and guava=8 in a labeled table or graph. **, the answer can be chosen without using the given mathematical information.",
-          "fil": "For **Present mango=7, banana=4, papaya=10, and guava=8 in a labeled table or graph. **, the answer can be chosen without using the given mathematical information.",
-          "taglish": "For **Present mango=7, banana=4, papaya=10, and guava=8 in a labeled table or graph. **, the answer can be chosen without using the given mathematical information."
-        },
-        "answer": "False",
-        "type": "true_false",
-        "options": [
-          "True",
-          "False"
-        ],
-        "solution": {
-          "en": "Answer: False",
-          "fil": "Answer: False",
-          "taglish": "Answer: False"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "1SP-IIh-2",
-          "path": "Grade-1/Semester-2/Quizzes/Quiz-09-Data-In-A-Pictograph-Without-A-Scale.md",
-          "item": 9,
-          "original_type": "true-false"
         }
       },
       {
@@ -8415,31 +7790,6 @@
       },
       {
         "q": {
-          "en": "For **A class survey recorded mango=11, banana=11, papaya=6, and guava=5. Which fruit has the greatest count?**, the answer can be chosen without using the given mathematical information.",
-          "fil": "For **A class survey recorded mango=11, banana=11, papaya=6, and guava=5. Which fruit has the greatest count?**, the answer can be chosen without using the given mathematical information.",
-          "taglish": "For **A class survey recorded mango=11, banana=11, papaya=6, and guava=5. Which fruit has the greatest count?**, the answer can be chosen without using the given mathematical information."
-        },
-        "answer": "False",
-        "type": "true_false",
-        "options": [
-          "True",
-          "False"
-        ],
-        "solution": {
-          "en": "Answer: False",
-          "fil": "Answer: False",
-          "taglish": "Answer: False"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "1SP-IIh-3",
-          "path": "Grade-1/Semester-2/Quizzes/Quiz-10-A-Pictograph-Without-A-Scale.md",
-          "item": 9,
-          "original_type": "true-false"
-        }
-      },
-      {
-        "q": {
           "en": "A class survey recorded mango=11, banana=11, papaya=6, and guava=5. Which fruit has the greatest count? Explain why your answer is reasonable.",
           "fil": "A class survey recorded mango=11, banana=11, papaya=6, and guava=5. Which fruit has the greatest count? Explain why your answer is reasonable.",
           "taglish": "A class survey recorded mango=11, banana=11, papaya=6, and guava=5. Which fruit has the greatest count? Explain why your answer is reasonable."
@@ -8812,31 +8162,6 @@
           "path": "Grade-1/Semester-2/Activity-Sheets/Activity-Sheet-11-Organize-Data-In-A-Pictograph-Without-A-Scale-Into-A.md",
           "item": 8,
           "original_type": "activity"
-        }
-      },
-      {
-        "q": {
-          "en": "For **Present mango=3, banana=3, papaya=6, and guava=12 in a labeled table or graph. **, the answer can be chosen without using the given mathematical information.",
-          "fil": "For **Present mango=3, banana=3, papaya=6, and guava=12 in a labeled table or graph. **, the answer can be chosen without using the given mathematical information.",
-          "taglish": "For **Present mango=3, banana=3, papaya=6, and guava=12 in a labeled table or graph. **, the answer can be chosen without using the given mathematical information."
-        },
-        "answer": "False",
-        "type": "true_false",
-        "options": [
-          "True",
-          "False"
-        ],
-        "solution": {
-          "en": "Answer: False",
-          "fil": "Answer: False",
-          "taglish": "Answer: False"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "1SP-IIh-4",
-          "path": "Grade-1/Semester-2/Quizzes/Quiz-11-Organize-Data-In-A-Pictograph-Without-A-Scale-Into-A.md",
-          "item": 9,
-          "original_type": "true-false"
         }
       },
       {
@@ -9226,31 +8551,6 @@
       },
       {
         "q": {
-          "en": "For **A class prepared 41 materials for the school canteen and used 24. How many remain?**, the answer can be chosen without using the given mathematical information.",
-          "fil": "For **A class prepared 41 materials for the school canteen and used 24. How many remain?**, the answer can be chosen without using the given mathematical information.",
-          "taglish": "For **A class prepared 41 materials for the school canteen and used 24. How many remain?**, the answer can be chosen without using the given mathematical information."
-        },
-        "answer": "False",
-        "type": "true_false",
-        "options": [
-          "True",
-          "False"
-        ],
-        "solution": {
-          "en": "Answer: False",
-          "fil": "Answer: False",
-          "taglish": "Answer: False"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "1NA-IIi-1",
-          "path": "Grade-1/Semester-2/Quizzes/Quiz-12-Subtraction-Involving-Numbers-Up-To-20-Using-A-Variety.md",
-          "item": 9,
-          "original_type": "true-false"
-        }
-      },
-      {
-        "q": {
           "en": "A class prepared 41 materials for the school canteen and used 24. How many remain? Explain why your answer is reasonable.",
           "fil": "A class prepared 41 materials for the school canteen and used 24. How many remain? Explain why your answer is reasonable.",
           "taglish": "A class prepared 41 materials for the school canteen and used 24. How many remain? Explain why your answer is reasonable."
@@ -9610,31 +8910,6 @@
       },
       {
         "q": {
-          "en": "For **Find the missing number: 5 + __ = 13.**, the answer can be chosen without using the given mathematical information.",
-          "fil": "For **Find the missing number: 5 + __ = 13.**, the answer can be chosen without using the given mathematical information.",
-          "taglish": "For **Find the missing number: 5 + __ = 13.**, the answer can be chosen without using the given mathematical information."
-        },
-        "answer": "False",
-        "type": "true_false",
-        "options": [
-          "True",
-          "False"
-        ],
-        "solution": {
-          "en": "Answer: False",
-          "fil": "Answer: False",
-          "taglish": "Answer: False"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "1NA-IIi-2",
-          "path": "Grade-1/Semester-2/Quizzes/Quiz-13-The-Missing-Number-In-Addition-Or-Subtraction.md",
-          "item": 9,
-          "original_type": "true-false"
-        }
-      },
-      {
-        "q": {
           "en": "Find the missing number: 5 + __ = 13. Explain why your answer is reasonable.",
           "fil": "Find the missing number: 5 + __ = 13. Explain why your answer is reasonable.",
           "taglish": "Find the missing number: 5 + __ = 13. Explain why your answer is reasonable."
@@ -9986,31 +9261,6 @@
           "path": "Grade-1/Semester-2/Activity-Sheets/Activity-Sheet-14-Write-An-Equivalent-Expression-To-A-Given-Addition-Or.md",
           "item": 8,
           "original_type": "activity"
-        }
-      },
-      {
-        "q": {
-          "en": "For **Evaluate using the correct order: 13 + 5 × 8.**, the answer can be chosen without using the given mathematical information.",
-          "fil": "For **Evaluate using the correct order: 13 + 5 × 8.**, the answer can be chosen without using the given mathematical information.",
-          "taglish": "For **Evaluate using the correct order: 13 + 5 × 8.**, the answer can be chosen without using the given mathematical information."
-        },
-        "answer": "False",
-        "type": "true_false",
-        "options": [
-          "True",
-          "False"
-        ],
-        "solution": {
-          "en": "Answer: False",
-          "fil": "Answer: False",
-          "taglish": "Answer: False"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "1NA-IIi-3",
-          "path": "Grade-1/Semester-2/Quizzes/Quiz-14-Write-An-Equivalent-Expression-To-A-Given-Addition-Or.md",
-          "item": 9,
-          "original_type": "true-false"
         }
       },
       {
@@ -10370,31 +9620,6 @@
       },
       {
         "q": {
-          "en": "For **A class prepared 47 materials for the rice farm and used 31. How many remain?**, the answer can be chosen without using the given mathematical information.",
-          "fil": "For **A class prepared 47 materials for the rice farm and used 31. How many remain?**, the answer can be chosen without using the given mathematical information.",
-          "taglish": "For **A class prepared 47 materials for the rice farm and used 31. How many remain?**, the answer can be chosen without using the given mathematical information."
-        },
-        "answer": "False",
-        "type": "true_false",
-        "options": [
-          "True",
-          "False"
-        ],
-        "solution": {
-          "en": "Answer: False",
-          "fil": "Answer: False",
-          "taglish": "Answer: False"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "1NA-IIj-1",
-          "path": "Grade-1/Semester-2/Quizzes/Quiz-15-Subtraction-Problems.md",
-          "item": 9,
-          "original_type": "true-false"
-        }
-      },
-      {
-        "q": {
           "en": "A class prepared 47 materials for the rice farm and used 31. How many remain? Explain why your answer is reasonable.",
           "fil": "A class prepared 47 materials for the rice farm and used 31. How many remain? Explain why your answer is reasonable.",
           "taglish": "A class prepared 47 materials for the rice farm and used 31. How many remain? Explain why your answer is reasonable."
@@ -10746,31 +9971,6 @@
           "path": "Grade-1/Semester-2/Activity-Sheets/Activity-Sheet-16-Numbers-Where-Both-Numbers-Are-Less-Than-100-Using.md",
           "item": 8,
           "original_type": "activity"
-        }
-      },
-      {
-        "q": {
-          "en": "For **A class prepared 33 materials for the town fiesta and used 9. How many remain?**, the answer can be chosen without using the given mathematical information.",
-          "fil": "For **A class prepared 33 materials for the town fiesta and used 9. How many remain?**, the answer can be chosen without using the given mathematical information.",
-          "taglish": "For **A class prepared 33 materials for the town fiesta and used 9. How many remain?**, the answer can be chosen without using the given mathematical information."
-        },
-        "answer": "False",
-        "type": "true_false",
-        "options": [
-          "True",
-          "False"
-        ],
-        "solution": {
-          "en": "Answer: False",
-          "fil": "Answer: False",
-          "taglish": "Answer: False"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "1NA-IIj-2",
-          "path": "Grade-1/Semester-2/Quizzes/Quiz-16-Numbers-Where-Both-Numbers-Are-Less-Than-100-Using.md",
-          "item": 9,
-          "original_type": "true-false"
         }
       },
       {
@@ -11130,31 +10330,6 @@
       },
       {
         "q": {
-          "en": "For **A class prepared 27 materials for the school garden and used 8. How many remain?**, the answer can be chosen without using the given mathematical information.",
-          "fil": "For **A class prepared 27 materials for the school garden and used 8. How many remain?**, the answer can be chosen without using the given mathematical information.",
-          "taglish": "For **A class prepared 27 materials for the school garden and used 8. How many remain?**, the answer can be chosen without using the given mathematical information."
-        },
-        "answer": "False",
-        "type": "true_false",
-        "options": [
-          "True",
-          "False"
-        ],
-        "solution": {
-          "en": "Answer: False",
-          "fil": "Answer: False",
-          "taglish": "Answer: False"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "1NA-IIj-3",
-          "path": "Grade-1/Semester-2/Quizzes/Quiz-17-Numbers-By-Expressing-Minuends-And-Subtrahends-As-Tens.md",
-          "item": 9,
-          "original_type": "true-false"
-        }
-      },
-      {
-        "q": {
           "en": "A class prepared 27 materials for the school garden and used 8. How many remain? Explain why your answer is reasonable.",
           "fil": "A class prepared 27 materials for the school garden and used 8. How many remain? Explain why your answer is reasonable.",
           "taglish": "A class prepared 27 materials for the school garden and used 8. How many remain? Explain why your answer is reasonable."
@@ -11510,31 +10685,6 @@
       },
       {
         "q": {
-          "en": "For **Continue the barangay house-number pattern: 6, 13, 20, 27, __, __.**, the answer can be chosen without using the given mathematical information.",
-          "fil": "For **Continue the barangay house-number pattern: 6, 13, 20, 27, __, __.**, the answer can be chosen without using the given mathematical information.",
-          "taglish": "For **Continue the barangay house-number pattern: 6, 13, 20, 27, __, __.**, the answer can be chosen without using the given mathematical information."
-        },
-        "answer": "False",
-        "type": "true_false",
-        "options": [
-          "True",
-          "False"
-        ],
-        "solution": {
-          "en": "Answer: False",
-          "fil": "Answer: False",
-          "taglish": "Answer: False"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "1NA-IIIa-1",
-          "path": "Grade-1/Semester-3/Quizzes/Quiz-01-The-Next-Term-S-In-A-Repeating-Pattern.md",
-          "item": 9,
-          "original_type": "true-false"
-        }
-      },
-      {
-        "q": {
           "en": "Continue the barangay house-number pattern: 6, 13, 20, 27, __, __. Explain why your answer is reasonable.",
           "fil": "Continue the barangay house-number pattern: 6, 13, 20, 27, __, __. Explain why your answer is reasonable.",
           "taglish": "Continue the barangay house-number pattern: 6, 13, 20, 27, __, __. Explain why your answer is reasonable."
@@ -11865,31 +11015,6 @@
           "path": "Grade-1/Semester-3/Activity-Sheets/Activity-Sheet-02-Repeating-Patterns-Using-Objects-Images-Or-Numbers.md",
           "item": 8,
           "original_type": "activity"
-        }
-      },
-      {
-        "q": {
-          "en": "For **Continue the barangay house-number pattern: 15, 17, 19, 21, __, __.**, the answer can be chosen without using the given mathematical information.",
-          "fil": "For **Continue the barangay house-number pattern: 15, 17, 19, 21, __, __.**, the answer can be chosen without using the given mathematical information.",
-          "taglish": "For **Continue the barangay house-number pattern: 15, 17, 19, 21, __, __.**, the answer can be chosen without using the given mathematical information."
-        },
-        "answer": "False",
-        "type": "true_false",
-        "options": [
-          "True",
-          "False"
-        ],
-        "solution": {
-          "en": "Answer: False",
-          "fil": "Answer: False",
-          "taglish": "Answer: False"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "1NA-IIIb-1",
-          "path": "Grade-1/Semester-3/Quizzes/Quiz-02-Repeating-Patterns-Using-Objects-Images-Or-Numbers.md",
-          "item": 9,
-          "original_type": "true-false"
         }
       },
       {
@@ -12249,31 +11374,6 @@
       },
       {
         "q": {
-          "en": "For **A bibingka is cut into 6 equal parts. 5 part(s) are marked. Write the fraction. (Diagram description: circle divided into 6 equal parts with 5 shaded.)**, the answer can be chosen without using the given mathematical information.",
-          "fil": "For **A bibingka is cut into 6 equal parts. 5 part(s) are marked. Write the fraction. (Diagram description: circle divided into 6 equal parts with 5 shaded.)**, the answer can be chosen without using the given mathematical information.",
-          "taglish": "For **A bibingka is cut into 6 equal parts. 5 part(s) are marked. Write the fraction. (Diagram description: circle divided into 6 equal parts with 5 shaded.)**, the answer can be chosen without using the given mathematical information."
-        },
-        "answer": "False",
-        "type": "true_false",
-        "options": [
-          "True",
-          "False"
-        ],
-        "solution": {
-          "en": "Answer: False",
-          "fil": "Answer: False",
-          "taglish": "Answer: False"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "1NA-IIIc-1",
-          "path": "Grade-1/Semester-3/Quizzes/Quiz-03-1-2-And-1-4-As-Parts-Of-A-Whole.md",
-          "item": 9,
-          "original_type": "true-false"
-        }
-      },
-      {
-        "q": {
           "en": "A bibingka is cut into 6 equal parts. 5 part(s) are marked. Write the fraction. (Diagram description: circle divided into 6 equal parts with 5 shaded.) Explain why your answer is reasonable.",
           "fil": "A bibingka is cut into 6 equal parts. 5 part(s) are marked. Write the fraction. (Diagram description: circle divided into 6 equal parts with 5 shaded.) Explain why your answer is reasonable.",
           "taglish": "A bibingka is cut into 6 equal parts. 5 part(s) are marked. Write the fraction. (Diagram description: circle divided into 6 equal parts with 5 shaded.) Explain why your answer is reasonable."
@@ -12581,31 +11681,6 @@
           "path": "Grade-1/Semester-3/Activity-Sheets/Activity-Sheet-04-1-2-And-1-4-Using-Models.md",
           "item": 8,
           "original_type": "activity"
-        }
-      },
-      {
-        "q": {
-          "en": "For **Order these equal-sized bibingka portions from smallest to largest: 4/5, 3/5, 1/5.**, the answer can be chosen without using the given mathematical information.",
-          "fil": "For **Order these equal-sized bibingka portions from smallest to largest: 4/5, 3/5, 1/5.**, the answer can be chosen without using the given mathematical information.",
-          "taglish": "For **Order these equal-sized bibingka portions from smallest to largest: 4/5, 3/5, 1/5.**, the answer can be chosen without using the given mathematical information."
-        },
-        "answer": "False",
-        "type": "true_false",
-        "options": [
-          "True",
-          "False"
-        ],
-        "solution": {
-          "en": "Answer: False",
-          "fil": "Answer: False",
-          "taglish": "Answer: False"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "1NA-IIIc-2",
-          "path": "Grade-1/Semester-3/Quizzes/Quiz-04-1-2-And-1-4-Using-Models.md",
-          "item": 9,
-          "original_type": "true-false"
         }
       },
       {
@@ -12919,31 +11994,6 @@
       },
       {
         "q": {
-          "en": "For **A bibingka is cut into 4 equal parts. 3 part(s) are marked. Write the fraction. (Diagram description: circle divided into 4 equal parts with 3 shaded.)**, the answer can be chosen without using the given mathematical information.",
-          "fil": "For **A bibingka is cut into 4 equal parts. 3 part(s) are marked. Write the fraction. (Diagram description: circle divided into 4 equal parts with 3 shaded.)**, the answer can be chosen without using the given mathematical information.",
-          "taglish": "For **A bibingka is cut into 4 equal parts. 3 part(s) are marked. Write the fraction. (Diagram description: circle divided into 4 equal parts with 3 shaded.)**, the answer can be chosen without using the given mathematical information."
-        },
-        "answer": "False",
-        "type": "true_false",
-        "options": [
-          "True",
-          "False"
-        ],
-        "solution": {
-          "en": "Answer: False",
-          "fil": "Answer: False",
-          "taglish": "Answer: False"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "1NA-IIId-1",
-          "path": "Grade-1/Semester-3/Quizzes/Quiz-05-Count-Halves-And-Quarters.md",
-          "item": 9,
-          "original_type": "true-false"
-        }
-      },
-      {
-        "q": {
           "en": "A bibingka is cut into 4 equal parts. 3 part(s) are marked. Write the fraction. (Diagram description: circle divided into 4 equal parts with 3 shaded.) Explain why your answer is reasonable.",
           "fil": "A bibingka is cut into 4 equal parts. 3 part(s) are marked. Write the fraction. (Diagram description: circle divided into 4 equal parts with 3 shaded.) Explain why your answer is reasonable.",
           "taglish": "A bibingka is cut into 4 equal parts. 3 part(s) are marked. Write the fraction. (Diagram description: circle divided into 4 equal parts with 3 shaded.) Explain why your answer is reasonable."
@@ -13158,31 +12208,6 @@
           "ref": "1NA-IIIe-1",
           "path": "Grade-1/Semester-3/Quizzes/Quiz-06-Coins.md",
           "item": 8,
-          "original_type": "true-false"
-        }
-      },
-      {
-        "q": {
-          "en": "For **Write the peso notation for a Philippine coin or bill worth 10 pesos.**, the answer can be chosen without using the given mathematical information.",
-          "fil": "For **Write the peso notation for a Philippine coin or bill worth 10 pesos.**, the answer can be chosen without using the given mathematical information.",
-          "taglish": "For **Write the peso notation for a Philippine coin or bill worth 10 pesos.**, the answer can be chosen without using the given mathematical information."
-        },
-        "answer": "False",
-        "type": "true_false",
-        "options": [
-          "True",
-          "False"
-        ],
-        "solution": {
-          "en": "Answer: False",
-          "fil": "Answer: False",
-          "taglish": "Answer: False"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "1NA-IIIe-1",
-          "path": "Grade-1/Semester-3/Quizzes/Quiz-06-Coins.md",
-          "item": 9,
           "original_type": "true-false"
         }
       },
@@ -13501,31 +12526,6 @@
       },
       {
         "q": {
-          "en": "For **A learner has 4 Philippine ₱20 coins/bills. What is the total value?**, the answer can be chosen without using the given mathematical information.",
-          "fil": "For **A learner has 4 Philippine ₱20 coins/bills. What is the total value?**, the answer can be chosen without using the given mathematical information.",
-          "taglish": "For **A learner has 4 Philippine ₱20 coins/bills. What is the total value?**, the answer can be chosen without using the given mathematical information."
-        },
-        "answer": "False",
-        "type": "true_false",
-        "options": [
-          "True",
-          "False"
-        ],
-        "solution": {
-          "en": "Answer: False",
-          "fil": "Answer: False",
-          "taglish": "Answer: False"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "1NA-IIIf-1",
-          "path": "Grade-1/Semester-3/Quizzes/Quiz-07-The-Value-Of-A-Number-Of-Bills-And-Or-A-Number-Of-Coins.md",
-          "item": 9,
-          "original_type": "true-false"
-        }
-      },
-      {
-        "q": {
           "en": "A learner has 4 Philippine ₱20 coins/bills. What is the total value? Explain why your answer is reasonable.",
           "fil": "A learner has 4 Philippine ₱20 coins/bills. What is the total value? Explain why your answer is reasonable.",
           "taglish": "A learner has 4 Philippine ₱20 coins/bills. What is the total value? Explain why your answer is reasonable."
@@ -13746,31 +12746,6 @@
           "ref": "1NA-IIIg-1",
           "path": "Grade-1/Semester-3/Quizzes/Quiz-08-Different-Denominations-Of-Peso-Coins.md",
           "item": 8,
-          "original_type": "true-false"
-        }
-      },
-      {
-        "q": {
-          "en": "For **Compare ₱5 and ₱10 using <, >, or =.**, the answer can be chosen without using the given mathematical information.",
-          "fil": "For **Compare ₱5 and ₱10 using <, >, or =.**, the answer can be chosen without using the given mathematical information.",
-          "taglish": "For **Compare ₱5 and ₱10 using <, >, or =.**, the answer can be chosen without using the given mathematical information."
-        },
-        "answer": "False",
-        "type": "true_false",
-        "options": [
-          "True",
-          "False"
-        ],
-        "solution": {
-          "en": "Answer: False",
-          "fil": "Answer: False",
-          "taglish": "Answer: False"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "1NA-IIIg-1",
-          "path": "Grade-1/Semester-3/Quizzes/Quiz-08-Different-Denominations-Of-Peso-Coins.md",
-          "item": 9,
           "original_type": "true-false"
         }
       },
@@ -14053,31 +13028,6 @@
       },
       {
         "q": {
-          "en": "For **A class fund has ₱119, spends ₱13, then receives ₱14. How much is in the fund now?**, the answer can be chosen without using the given mathematical information.",
-          "fil": "For **A class fund has ₱119, spends ₱13, then receives ₱14. How much is in the fund now?**, the answer can be chosen without using the given mathematical information.",
-          "taglish": "For **A class fund has ₱119, spends ₱13, then receives ₱14. How much is in the fund now?**, the answer can be chosen without using the given mathematical information."
-        },
-        "answer": "False",
-        "type": "true_false",
-        "options": [
-          "True",
-          "False"
-        ],
-        "solution": {
-          "en": "Answer: False",
-          "fil": "Answer: False",
-          "taglish": "Answer: False"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "1NA-IIIh-1",
-          "path": "Grade-1/Semester-3/Quizzes/Quiz-09-1-Step-Problems.md",
-          "item": 9,
-          "original_type": "true-false"
-        }
-      },
-      {
-        "q": {
           "en": "A class fund has ₱119, spends ₱13, then receives ₱14. How much is in the fund now? Explain why your answer is reasonable.",
           "fil": "A class fund has ₱119, spends ₱13, then receives ₱14. How much is in the fund now? Explain why your answer is reasonable.",
           "taglish": "A class fund has ₱119, spends ₱13, then receives ₱14. How much is in the fund now? Explain why your answer is reasonable."
@@ -14347,31 +13297,6 @@
       },
       {
         "q": {
-          "en": "For **A figure is moved without turning or flipping. Name the transformation.**, the answer can be chosen without using the given mathematical information.",
-          "fil": "For **A figure is moved without turning or flipping. Name the transformation.**, the answer can be chosen without using the given mathematical information.",
-          "taglish": "For **A figure is moved without turning or flipping. Name the transformation.**, the answer can be chosen without using the given mathematical information."
-        },
-        "answer": "False",
-        "type": "true_false",
-        "options": [
-          "True",
-          "False"
-        ],
-        "solution": {
-          "en": "Answer: False",
-          "fil": "Answer: False",
-          "taglish": "Answer: False"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "1MG-IIIh-1",
-          "path": "Grade-1/Semester-3/Quizzes/Quiz-10-The-Position-Of-Objects-Moved-In-Half-Turn-Or-In.md",
-          "item": 9,
-          "original_type": "true-false"
-        }
-      },
-      {
-        "q": {
           "en": "A figure is moved without turning or flipping. Name the transformation. Explain why your answer is reasonable.",
           "fil": "A figure is moved without turning or flipping. Name the transformation. Explain why your answer is reasonable.",
           "taglish": "A figure is moved without turning or flipping. Name the transformation. Explain why your answer is reasonable."
@@ -14635,31 +13560,6 @@
           "ref": "1MG-IIIi-1",
           "path": "Grade-1/Semester-3/Quizzes/Quiz-11-Time-By-The-Hour-Half-Hour-And-Quarter-Hour-Using-An.md",
           "item": 8,
-          "original_type": "true-false"
-        }
-      },
-      {
-        "q": {
-          "en": "For **A barangay program starts at 9:15 a.m. and lasts 30 minutes. What time does it end?**, the answer can be chosen without using the given mathematical information.",
-          "fil": "For **A barangay program starts at 9:15 a.m. and lasts 30 minutes. What time does it end?**, the answer can be chosen without using the given mathematical information.",
-          "taglish": "For **A barangay program starts at 9:15 a.m. and lasts 30 minutes. What time does it end?**, the answer can be chosen without using the given mathematical information."
-        },
-        "answer": "False",
-        "type": "true_false",
-        "options": [
-          "True",
-          "False"
-        ],
-        "solution": {
-          "en": "Answer: False",
-          "fil": "Answer: False",
-          "taglish": "Answer: False"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "1MG-IIIi-1",
-          "path": "Grade-1/Semester-3/Quizzes/Quiz-11-Time-By-The-Hour-Half-Hour-And-Quarter-Hour-Using-An.md",
-          "item": 9,
           "original_type": "true-false"
         }
       },
@@ -15041,31 +13941,6 @@
       },
       {
         "q": {
-          "en": "For **A barangay program starts at 10:30 a.m. and lasts 30 minutes. What time does it end?**, the answer can be chosen without using the given mathematical information.",
-          "fil": "For **A barangay program starts at 10:30 a.m. and lasts 30 minutes. What time does it end?**, the answer can be chosen without using the given mathematical information.",
-          "taglish": "For **A barangay program starts at 10:30 a.m. and lasts 30 minutes. What time does it end?**, the answer can be chosen without using the given mathematical information."
-        },
-        "answer": "False",
-        "type": "true_false",
-        "options": [
-          "True",
-          "False"
-        ],
-        "solution": {
-          "en": "Answer: False",
-          "fil": "Answer: False",
-          "taglish": "Answer: False"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "1MG-IIIi-2",
-          "path": "Grade-1/Semester-3/Quizzes/Quiz-12-Give-The-Days-Of-The-Week-And-Months-Of-The-Year-In.md",
-          "item": 9,
-          "original_type": "true-false"
-        }
-      },
-      {
-        "q": {
           "en": "A barangay program starts at 10:30 a.m. and lasts 30 minutes. What time does it end? Explain why your answer is reasonable.",
           "fil": "A barangay program starts at 10:30 a.m. and lasts 30 minutes. What time does it end? Explain why your answer is reasonable.",
           "taglish": "A barangay program starts at 10:30 a.m. and lasts 30 minutes. What time does it end? Explain why your answer is reasonable."
@@ -15225,31 +14100,6 @@
           "ref": "1MG-IIIj-1",
           "path": "Grade-1/Semester-3/Quizzes/Quiz-13-The-Day-And-Month-Of-The-Year-Using-A-Calendar.md",
           "item": 8,
-          "original_type": "true-false"
-        }
-      },
-      {
-        "q": {
-          "en": "For **If the barangay meeting is on Monday, what day is two days later?**, the answer can be chosen without using the given mathematical information.",
-          "fil": "For **If the barangay meeting is on Monday, what day is two days later?**, the answer can be chosen without using the given mathematical information.",
-          "taglish": "For **If the barangay meeting is on Monday, what day is two days later?**, the answer can be chosen without using the given mathematical information."
-        },
-        "answer": "False",
-        "type": "true_false",
-        "options": [
-          "True",
-          "False"
-        ],
-        "solution": {
-          "en": "Answer: False",
-          "fil": "Answer: False",
-          "taglish": "Answer: False"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "1MG-IIIj-1",
-          "path": "Grade-1/Semester-3/Quizzes/Quiz-13-The-Day-And-Month-Of-The-Year-Using-A-Calendar.md",
-          "item": 9,
           "original_type": "true-false"
         }
       }
@@ -15491,31 +14341,6 @@
           "ref": "1MG-IIIj-2",
           "path": "Grade-1/Semester-3/Quizzes/Quiz-14-Problems-Involving-Time.md",
           "item": 8,
-          "original_type": "true-false"
-        }
-      },
-      {
-        "q": {
-          "en": "For **A barangay program starts at 6:45 a.m. and lasts 30 minutes. What time does it end?**, the answer can be chosen without using the given mathematical information.",
-          "fil": "For **A barangay program starts at 6:45 a.m. and lasts 30 minutes. What time does it end?**, the answer can be chosen without using the given mathematical information.",
-          "taglish": "For **A barangay program starts at 6:45 a.m. and lasts 30 minutes. What time does it end?**, the answer can be chosen without using the given mathematical information."
-        },
-        "answer": "False",
-        "type": "true_false",
-        "options": [
-          "True",
-          "False"
-        ],
-        "solution": {
-          "en": "Answer: False",
-          "fil": "Answer: False",
-          "taglish": "Answer: False"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "1MG-IIIj-2",
-          "path": "Grade-1/Semester-3/Quizzes/Quiz-14-Problems-Involving-Time.md",
-          "item": 9,
           "original_type": "true-false"
         }
       },

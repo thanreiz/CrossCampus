@@ -20,9 +20,9 @@ export const STRINGS = {
   },
   'splash.start': { en: 'START', fil: 'MAGSIMULA', taglish: 'MAGSIMULA' },
   'splash.subtitle': {
-    en: 'Grade 6 Math · Taglish · Offline-first',
-    fil: 'Math para sa Grade 6 · Taglish · Offline',
-    taglish: 'Grade 6 Math · Taglish · Offline-first',
+    en: 'Grades 1–6 Math · Multilingual · Offline-first',
+    fil: 'Math para sa Grade 1–6 · Maraming wika · Offline',
+    taglish: 'Grades 1–6 Math · Multilingual · Offline-first',
   },
   'splash.offline': { en: '100% OFFLINE LEARNING', fil: '100% OFFLINE NA PAG-AARAL', taglish: '100% OFFLINE LEARNING' },
 

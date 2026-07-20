@@ -8919,16 +8919,16 @@
       "taglish": "Identify the appropriate graph (bar graph or line graph) to represent a given set of data."
     },
     "worked_example": {
-      "en": "Present mango=10, banana=6, papaya=10, and guava=9 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]",
-      "fil": "Present mango=10, banana=6, papaya=10, and guava=9 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]",
-      "taglish": "Present mango=10, banana=6, papaya=10, and guava=9 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]"
+      "en": "Which option correctly presents mango=10, banana=6, papaya=10, and guava=9 in a labeled table or graph?",
+      "fil": "Which option correctly presents mango=10, banana=6, papaya=10, and guava=9 in a labeled table or graph?",
+      "taglish": "Which option correctly presents mango=10, banana=6, papaya=10, and guava=9 in a labeled table or graph?"
     },
     "items": [
       {
         "q": {
-          "en": "Present mango=10, banana=6, papaya=10, and guava=9 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]",
-          "fil": "Present mango=10, banana=6, papaya=10, and guava=9 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]",
-          "taglish": "Present mango=10, banana=6, papaya=10, and guava=9 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]"
+          "en": "Which option correctly presents mango=10, banana=6, papaya=10, and guava=9 in a labeled table or graph?",
+          "fil": "Which option correctly presents mango=10, banana=6, papaya=10, and guava=9 in a labeled table or graph?",
+          "taglish": "Which option correctly presents mango=10, banana=6, papaya=10, and guava=9 in a labeled table or graph?"
         },
         "answer": "Correct display with values 10, 6, 10, 9 and complete labels",
         "type": "mcq",
@@ -8953,9 +8953,9 @@
       },
       {
         "q": {
-          "en": "Present mango=9, banana=6, papaya=9, and guava=12 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]",
-          "fil": "Present mango=9, banana=6, papaya=9, and guava=12 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]",
-          "taglish": "Present mango=9, banana=6, papaya=9, and guava=12 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]"
+          "en": "Which option correctly presents mango=9, banana=6, papaya=9, and guava=12 in a labeled table or graph?",
+          "fil": "Which option correctly presents mango=9, banana=6, papaya=9, and guava=12 in a labeled table or graph?",
+          "taglish": "Which option correctly presents mango=9, banana=6, papaya=9, and guava=12 in a labeled table or graph?"
         },
         "answer": "Correct display with values 9, 6, 9, 12 and complete labels",
         "type": "mcq",
@@ -8980,9 +8980,9 @@
       },
       {
         "q": {
-          "en": "Present mango=12, banana=10, papaya=8, and guava=9 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]",
-          "fil": "Present mango=12, banana=10, papaya=8, and guava=9 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]",
-          "taglish": "Present mango=12, banana=10, papaya=8, and guava=9 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]"
+          "en": "Which option correctly presents mango=12, banana=10, papaya=8, and guava=9 in a labeled table or graph?",
+          "fil": "Which option correctly presents mango=12, banana=10, papaya=8, and guava=9 in a labeled table or graph?",
+          "taglish": "Which option correctly presents mango=12, banana=10, papaya=8, and guava=9 in a labeled table or graph?"
         },
         "answer": "Correct display with values 12, 10, 8, 9 and complete labels",
         "type": "mcq",
@@ -9007,9 +9007,9 @@
       },
       {
         "q": {
-          "en": "Present mango=12, banana=4, papaya=8, and guava=5 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]",
-          "fil": "Present mango=12, banana=4, papaya=8, and guava=5 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]",
-          "taglish": "Present mango=12, banana=4, papaya=8, and guava=5 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]"
+          "en": "Which option correctly presents mango=12, banana=4, papaya=8, and guava=5 in a labeled table or graph?",
+          "fil": "Which option correctly presents mango=12, banana=4, papaya=8, and guava=5 in a labeled table or graph?",
+          "taglish": "Which option correctly presents mango=12, banana=4, papaya=8, and guava=5 in a labeled table or graph?"
         },
         "answer": "Correct display with values 12, 4, 8, 5 and complete labels",
         "type": "mcq",
@@ -9034,9 +9034,9 @@
       },
       {
         "q": {
-          "en": "Present mango=11, banana=12, papaya=6, and guava=12 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]",
-          "fil": "Present mango=11, banana=12, papaya=6, and guava=12 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]",
-          "taglish": "Present mango=11, banana=12, papaya=6, and guava=12 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]"
+          "en": "Which option correctly presents mango=11, banana=12, papaya=6, and guava=12 in a labeled table or graph?",
+          "fil": "Which option correctly presents mango=11, banana=12, papaya=6, and guava=12 in a labeled table or graph?",
+          "taglish": "Which option correctly presents mango=11, banana=12, papaya=6, and guava=12 in a labeled table or graph?"
         },
         "answer": "Correct display with values 11, 12, 6, 12 and complete labels",
         "type": "mcq",
@@ -9061,9 +9061,9 @@
       },
       {
         "q": {
-          "en": "Present mango=10, banana=5, papaya=4, and guava=6 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]",
-          "fil": "Present mango=10, banana=5, papaya=4, and guava=6 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]",
-          "taglish": "Present mango=10, banana=5, papaya=4, and guava=6 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]"
+          "en": "Which option correctly presents mango=10, banana=5, papaya=4, and guava=6 in a labeled table or graph?",
+          "fil": "Which option correctly presents mango=10, banana=5, papaya=4, and guava=6 in a labeled table or graph?",
+          "taglish": "Which option correctly presents mango=10, banana=5, papaya=4, and guava=6 in a labeled table or graph?"
         },
         "answer": "Correct display with values 10, 5, 4, 6 and complete labels",
         "type": "matching",
@@ -9086,9 +9086,9 @@
       },
       {
         "q": {
-          "en": "Present mango=7, banana=11, papaya=2, and guava=8 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]",
-          "fil": "Present mango=7, banana=11, papaya=2, and guava=8 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]",
-          "taglish": "Present mango=7, banana=11, papaya=2, and guava=8 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]"
+          "en": "Which option correctly presents mango=7, banana=11, papaya=2, and guava=8 in a labeled table or graph?",
+          "fil": "Which option correctly presents mango=7, banana=11, papaya=2, and guava=8 in a labeled table or graph?",
+          "taglish": "Which option correctly presents mango=7, banana=11, papaya=2, and guava=8 in a labeled table or graph?"
         },
         "answer": "Correct display with values 7, 11, 2, 8 and complete labels",
         "type": "matching",
@@ -9111,9 +9111,9 @@
       },
       {
         "q": {
-          "en": "For **Present mango=5, banana=7, papaya=7, and guava=11 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]**, the stated answer **Correct display with values 5, 7, 7, 11 and complete labels** is correct.",
-          "fil": "For **Present mango=5, banana=7, papaya=7, and guava=11 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]**, the stated answer **Correct display with values 5, 7, 7, 11 and complete labels** is correct.",
-          "taglish": "For **Present mango=5, banana=7, papaya=7, and guava=11 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]**, the stated answer **Correct display with values 5, 7, 7, 11 and complete labels** is correct."
+          "en": "For **Present mango=5, banana=7, papaya=7, and guava=11 in a labeled table or graph. **, the stated answer **Correct display with values 5, 7, 7, 11 and complete labels** is correct.",
+          "fil": "For **Present mango=5, banana=7, papaya=7, and guava=11 in a labeled table or graph. **, the stated answer **Correct display with values 5, 7, 7, 11 and complete labels** is correct.",
+          "taglish": "For **Present mango=5, banana=7, papaya=7, and guava=11 in a labeled table or graph. **, the stated answer **Correct display with values 5, 7, 7, 11 and complete labels** is correct."
         },
         "answer": "True",
         "type": "true_false",
@@ -9136,9 +9136,9 @@
       },
       {
         "q": {
-          "en": "Present mango=5, banana=7, papaya=7, and guava=11 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]",
-          "fil": "Present mango=5, banana=7, papaya=7, and guava=11 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]",
-          "taglish": "Present mango=5, banana=7, papaya=7, and guava=11 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]"
+          "en": "Which option correctly presents mango=5, banana=7, papaya=7, and guava=11 in a labeled table or graph?",
+          "fil": "Which option correctly presents mango=5, banana=7, papaya=7, and guava=11 in a labeled table or graph?",
+          "taglish": "Which option correctly presents mango=5, banana=7, papaya=7, and guava=11 in a labeled table or graph?"
         },
         "answer": "Correct display with values 5, 7, 7, 11 and complete labels",
         "type": "mcq",
@@ -9163,9 +9163,9 @@
       },
       {
         "q": {
-          "en": "For **Present mango=12, banana=6, papaya=5, and guava=10 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]**, the answer can be chosen without using the given mathematical information.",
-          "fil": "For **Present mango=12, banana=6, papaya=5, and guava=10 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]**, the answer can be chosen without using the given mathematical information.",
-          "taglish": "For **Present mango=12, banana=6, papaya=5, and guava=10 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]**, the answer can be chosen without using the given mathematical information."
+          "en": "For **Present mango=12, banana=6, papaya=5, and guava=10 in a labeled table or graph. **, the answer can be chosen without using the given mathematical information.",
+          "fil": "For **Present mango=12, banana=6, papaya=5, and guava=10 in a labeled table or graph. **, the answer can be chosen without using the given mathematical information.",
+          "taglish": "For **Present mango=12, banana=6, papaya=5, and guava=10 in a labeled table or graph. **, the answer can be chosen without using the given mathematical information."
         },
         "answer": "False",
         "type": "true_false",
@@ -9188,9 +9188,9 @@
       },
       {
         "q": {
-          "en": "Present mango=12, banana=6, papaya=5, and guava=10 in a labeled table or graph. [Graph placeholder: axes or pictograph key.] Explain why your answer is reasonable.",
-          "fil": "Present mango=12, banana=6, papaya=5, and guava=10 in a labeled table or graph. [Graph placeholder: axes or pictograph key.] Explain why your answer is reasonable.",
-          "taglish": "Present mango=12, banana=6, papaya=5, and guava=10 in a labeled table or graph. [Graph placeholder: axes or pictograph key.] Explain why your answer is reasonable."
+          "en": "Which option correctly presents mango=12, banana=6, papaya=5, and guava=10 in a labeled table or graph? Explain why your answer is reasonable.",
+          "fil": "Which option correctly presents mango=12, banana=6, papaya=5, and guava=10 in a labeled table or graph? Explain why your answer is reasonable.",
+          "taglish": "Which option correctly presents mango=12, banana=6, papaya=5, and guava=10 in a labeled table or graph? Explain why your answer is reasonable."
         },
         "answer": "Correct display with values 12, 6, 5, 10 and complete labels",
         "type": "mcq",
@@ -9215,9 +9215,9 @@
       },
       {
         "q": {
-          "en": "Present mango=5, banana=2, papaya=6, and guava=9 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]",
-          "fil": "Present mango=5, banana=2, papaya=6, and guava=9 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]",
-          "taglish": "Present mango=5, banana=2, papaya=6, and guava=9 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]"
+          "en": "Which option correctly presents mango=5, banana=2, papaya=6, and guava=9 in a labeled table or graph?",
+          "fil": "Which option correctly presents mango=5, banana=2, papaya=6, and guava=9 in a labeled table or graph?",
+          "taglish": "Which option correctly presents mango=5, banana=2, papaya=6, and guava=9 in a labeled table or graph?"
         },
         "answer": "Correct display with values 5, 2, 6, 9 and complete labels",
         "type": "mcq",
@@ -9242,9 +9242,9 @@
       },
       {
         "q": {
-          "en": "Present mango=12, banana=6, papaya=5, and guava=10 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]",
-          "fil": "Present mango=12, banana=6, papaya=5, and guava=10 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]",
-          "taglish": "Present mango=12, banana=6, papaya=5, and guava=10 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]"
+          "en": "Which option correctly presents mango=12, banana=6, papaya=5, and guava=10 in a labeled table or graph?",
+          "fil": "Which option correctly presents mango=12, banana=6, papaya=5, and guava=10 in a labeled table or graph?",
+          "taglish": "Which option correctly presents mango=12, banana=6, papaya=5, and guava=10 in a labeled table or graph?"
         },
         "answer": "Correct display with values 12, 6, 5, 10 and complete labels",
         "type": "mcq",
@@ -9269,9 +9269,9 @@
       },
       {
         "q": {
-          "en": "Present mango=12, banana=7, papaya=3, and guava=11 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]",
-          "fil": "Present mango=12, banana=7, papaya=3, and guava=11 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]",
-          "taglish": "Present mango=12, banana=7, papaya=3, and guava=11 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]"
+          "en": "Which option correctly presents mango=12, banana=7, papaya=3, and guava=11 in a labeled table or graph?",
+          "fil": "Which option correctly presents mango=12, banana=7, papaya=3, and guava=11 in a labeled table or graph?",
+          "taglish": "Which option correctly presents mango=12, banana=7, papaya=3, and guava=11 in a labeled table or graph?"
         },
         "answer": "Correct display with values 12, 7, 3, 11 and complete labels",
         "type": "mcq",
@@ -9296,9 +9296,9 @@
       },
       {
         "q": {
-          "en": "Present mango=12, banana=3, papaya=9, and guava=2 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]",
-          "fil": "Present mango=12, banana=3, papaya=9, and guava=2 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]",
-          "taglish": "Present mango=12, banana=3, papaya=9, and guava=2 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]"
+          "en": "Which option correctly presents mango=12, banana=3, papaya=9, and guava=2 in a labeled table or graph?",
+          "fil": "Which option correctly presents mango=12, banana=3, papaya=9, and guava=2 in a labeled table or graph?",
+          "taglish": "Which option correctly presents mango=12, banana=3, papaya=9, and guava=2 in a labeled table or graph?"
         },
         "answer": "Correct display with values 12, 3, 9, 2 and complete labels",
         "type": "mcq",
@@ -9347,16 +9347,16 @@
       "taglish": "Construct double bar graphs and double line graphs."
     },
     "worked_example": {
-      "en": "Present mango=12, banana=2, papaya=3, and guava=4 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]",
-      "fil": "Present mango=12, banana=2, papaya=3, and guava=4 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]",
-      "taglish": "Present mango=12, banana=2, papaya=3, and guava=4 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]"
+      "en": "Which option correctly presents mango=12, banana=2, papaya=3, and guava=4 in a labeled table or graph?",
+      "fil": "Which option correctly presents mango=12, banana=2, papaya=3, and guava=4 in a labeled table or graph?",
+      "taglish": "Which option correctly presents mango=12, banana=2, papaya=3, and guava=4 in a labeled table or graph?"
     },
     "items": [
       {
         "q": {
-          "en": "Present mango=12, banana=2, papaya=3, and guava=4 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]",
-          "fil": "Present mango=12, banana=2, papaya=3, and guava=4 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]",
-          "taglish": "Present mango=12, banana=2, papaya=3, and guava=4 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]"
+          "en": "Which option correctly presents mango=12, banana=2, papaya=3, and guava=4 in a labeled table or graph?",
+          "fil": "Which option correctly presents mango=12, banana=2, papaya=3, and guava=4 in a labeled table or graph?",
+          "taglish": "Which option correctly presents mango=12, banana=2, papaya=3, and guava=4 in a labeled table or graph?"
         },
         "answer": "Correct display with values 12, 2, 3, 4 and complete labels",
         "type": "mcq",
@@ -9381,9 +9381,9 @@
       },
       {
         "q": {
-          "en": "Present mango=11, banana=2, papaya=3, and guava=7 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]",
-          "fil": "Present mango=11, banana=2, papaya=3, and guava=7 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]",
-          "taglish": "Present mango=11, banana=2, papaya=3, and guava=7 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]"
+          "en": "Which option correctly presents mango=11, banana=2, papaya=3, and guava=7 in a labeled table or graph?",
+          "fil": "Which option correctly presents mango=11, banana=2, papaya=3, and guava=7 in a labeled table or graph?",
+          "taglish": "Which option correctly presents mango=11, banana=2, papaya=3, and guava=7 in a labeled table or graph?"
         },
         "answer": "Correct display with values 11, 2, 3, 7 and complete labels",
         "type": "mcq",
@@ -9408,9 +9408,9 @@
       },
       {
         "q": {
-          "en": "Present mango=5, banana=10, papaya=5, and guava=7 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]",
-          "fil": "Present mango=5, banana=10, papaya=5, and guava=7 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]",
-          "taglish": "Present mango=5, banana=10, papaya=5, and guava=7 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]"
+          "en": "Which option correctly presents mango=5, banana=10, papaya=5, and guava=7 in a labeled table or graph?",
+          "fil": "Which option correctly presents mango=5, banana=10, papaya=5, and guava=7 in a labeled table or graph?",
+          "taglish": "Which option correctly presents mango=5, banana=10, papaya=5, and guava=7 in a labeled table or graph?"
         },
         "answer": "Correct display with values 5, 10, 5, 7 and complete labels",
         "type": "mcq",
@@ -9435,9 +9435,9 @@
       },
       {
         "q": {
-          "en": "Present mango=11, banana=4, papaya=6, and guava=10 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]",
-          "fil": "Present mango=11, banana=4, papaya=6, and guava=10 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]",
-          "taglish": "Present mango=11, banana=4, papaya=6, and guava=10 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]"
+          "en": "Which option correctly presents mango=11, banana=4, papaya=6, and guava=10 in a labeled table or graph?",
+          "fil": "Which option correctly presents mango=11, banana=4, papaya=6, and guava=10 in a labeled table or graph?",
+          "taglish": "Which option correctly presents mango=11, banana=4, papaya=6, and guava=10 in a labeled table or graph?"
         },
         "answer": "Correct display with values 11, 4, 6, 10 and complete labels",
         "type": "mcq",
@@ -9462,9 +9462,9 @@
       },
       {
         "q": {
-          "en": "Present mango=7, banana=5, papaya=9, and guava=3 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]",
-          "fil": "Present mango=7, banana=5, papaya=9, and guava=3 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]",
-          "taglish": "Present mango=7, banana=5, papaya=9, and guava=3 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]"
+          "en": "Which option correctly presents mango=7, banana=5, papaya=9, and guava=3 in a labeled table or graph?",
+          "fil": "Which option correctly presents mango=7, banana=5, papaya=9, and guava=3 in a labeled table or graph?",
+          "taglish": "Which option correctly presents mango=7, banana=5, papaya=9, and guava=3 in a labeled table or graph?"
         },
         "answer": "Correct display with values 7, 5, 9, 3 and complete labels",
         "type": "mcq",
@@ -9489,9 +9489,9 @@
       },
       {
         "q": {
-          "en": "Present mango=6, banana=2, papaya=5, and guava=9 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]",
-          "fil": "Present mango=6, banana=2, papaya=5, and guava=9 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]",
-          "taglish": "Present mango=6, banana=2, papaya=5, and guava=9 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]"
+          "en": "Which option correctly presents mango=6, banana=2, papaya=5, and guava=9 in a labeled table or graph?",
+          "fil": "Which option correctly presents mango=6, banana=2, papaya=5, and guava=9 in a labeled table or graph?",
+          "taglish": "Which option correctly presents mango=6, banana=2, papaya=5, and guava=9 in a labeled table or graph?"
         },
         "answer": "Correct display with values 6, 2, 5, 9 and complete labels",
         "type": "matching",
@@ -9514,9 +9514,9 @@
       },
       {
         "q": {
-          "en": "Present mango=6, banana=9, papaya=10, and guava=5 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]",
-          "fil": "Present mango=6, banana=9, papaya=10, and guava=5 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]",
-          "taglish": "Present mango=6, banana=9, papaya=10, and guava=5 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]"
+          "en": "Which option correctly presents mango=6, banana=9, papaya=10, and guava=5 in a labeled table or graph?",
+          "fil": "Which option correctly presents mango=6, banana=9, papaya=10, and guava=5 in a labeled table or graph?",
+          "taglish": "Which option correctly presents mango=6, banana=9, papaya=10, and guava=5 in a labeled table or graph?"
         },
         "answer": "Correct display with values 6, 9, 10, 5 and complete labels",
         "type": "matching",
@@ -9539,9 +9539,9 @@
       },
       {
         "q": {
-          "en": "For **Present mango=9, banana=12, papaya=10, and guava=7 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]**, the stated answer **Correct display with values 9, 12, 10, 7 and complete labels** is correct.",
-          "fil": "For **Present mango=9, banana=12, papaya=10, and guava=7 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]**, the stated answer **Correct display with values 9, 12, 10, 7 and complete labels** is correct.",
-          "taglish": "For **Present mango=9, banana=12, papaya=10, and guava=7 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]**, the stated answer **Correct display with values 9, 12, 10, 7 and complete labels** is correct."
+          "en": "For **Present mango=9, banana=12, papaya=10, and guava=7 in a labeled table or graph. **, the stated answer **Correct display with values 9, 12, 10, 7 and complete labels** is correct.",
+          "fil": "For **Present mango=9, banana=12, papaya=10, and guava=7 in a labeled table or graph. **, the stated answer **Correct display with values 9, 12, 10, 7 and complete labels** is correct.",
+          "taglish": "For **Present mango=9, banana=12, papaya=10, and guava=7 in a labeled table or graph. **, the stated answer **Correct display with values 9, 12, 10, 7 and complete labels** is correct."
         },
         "answer": "True",
         "type": "true_false",
@@ -9564,9 +9564,9 @@
       },
       {
         "q": {
-          "en": "Present mango=9, banana=12, papaya=10, and guava=7 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]",
-          "fil": "Present mango=9, banana=12, papaya=10, and guava=7 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]",
-          "taglish": "Present mango=9, banana=12, papaya=10, and guava=7 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]"
+          "en": "Which option correctly presents mango=9, banana=12, papaya=10, and guava=7 in a labeled table or graph?",
+          "fil": "Which option correctly presents mango=9, banana=12, papaya=10, and guava=7 in a labeled table or graph?",
+          "taglish": "Which option correctly presents mango=9, banana=12, papaya=10, and guava=7 in a labeled table or graph?"
         },
         "answer": "Correct display with values 9, 12, 10, 7 and complete labels",
         "type": "mcq",
@@ -9591,9 +9591,9 @@
       },
       {
         "q": {
-          "en": "For **Present mango=4, banana=5, papaya=2, and guava=2 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]**, the answer can be chosen without using the given mathematical information.",
-          "fil": "For **Present mango=4, banana=5, papaya=2, and guava=2 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]**, the answer can be chosen without using the given mathematical information.",
-          "taglish": "For **Present mango=4, banana=5, papaya=2, and guava=2 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]**, the answer can be chosen without using the given mathematical information."
+          "en": "For **Present mango=4, banana=5, papaya=2, and guava=2 in a labeled table or graph. **, the answer can be chosen without using the given mathematical information.",
+          "fil": "For **Present mango=4, banana=5, papaya=2, and guava=2 in a labeled table or graph. **, the answer can be chosen without using the given mathematical information.",
+          "taglish": "For **Present mango=4, banana=5, papaya=2, and guava=2 in a labeled table or graph. **, the answer can be chosen without using the given mathematical information."
         },
         "answer": "False",
         "type": "true_false",
@@ -9616,9 +9616,9 @@
       },
       {
         "q": {
-          "en": "Present mango=4, banana=5, papaya=2, and guava=2 in a labeled table or graph. [Graph placeholder: axes or pictograph key.] Explain why your answer is reasonable.",
-          "fil": "Present mango=4, banana=5, papaya=2, and guava=2 in a labeled table or graph. [Graph placeholder: axes or pictograph key.] Explain why your answer is reasonable.",
-          "taglish": "Present mango=4, banana=5, papaya=2, and guava=2 in a labeled table or graph. [Graph placeholder: axes or pictograph key.] Explain why your answer is reasonable."
+          "en": "Which option correctly presents mango=4, banana=5, papaya=2, and guava=2 in a labeled table or graph? Explain why your answer is reasonable.",
+          "fil": "Which option correctly presents mango=4, banana=5, papaya=2, and guava=2 in a labeled table or graph? Explain why your answer is reasonable.",
+          "taglish": "Which option correctly presents mango=4, banana=5, papaya=2, and guava=2 in a labeled table or graph? Explain why your answer is reasonable."
         },
         "answer": "Correct display with values 4, 5, 2, 2 and complete labels",
         "type": "mcq",
@@ -9643,9 +9643,9 @@
       },
       {
         "q": {
-          "en": "Present mango=2, banana=9, papaya=10, and guava=10 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]",
-          "fil": "Present mango=2, banana=9, papaya=10, and guava=10 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]",
-          "taglish": "Present mango=2, banana=9, papaya=10, and guava=10 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]"
+          "en": "Which option correctly presents mango=2, banana=9, papaya=10, and guava=10 in a labeled table or graph?",
+          "fil": "Which option correctly presents mango=2, banana=9, papaya=10, and guava=10 in a labeled table or graph?",
+          "taglish": "Which option correctly presents mango=2, banana=9, papaya=10, and guava=10 in a labeled table or graph?"
         },
         "answer": "Correct display with values 2, 9, 10, 10 and complete labels",
         "type": "mcq",
@@ -9670,9 +9670,9 @@
       },
       {
         "q": {
-          "en": "Present mango=4, banana=5, papaya=2, and guava=2 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]",
-          "fil": "Present mango=4, banana=5, papaya=2, and guava=2 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]",
-          "taglish": "Present mango=4, banana=5, papaya=2, and guava=2 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]"
+          "en": "Which option correctly presents mango=4, banana=5, papaya=2, and guava=2 in a labeled table or graph?",
+          "fil": "Which option correctly presents mango=4, banana=5, papaya=2, and guava=2 in a labeled table or graph?",
+          "taglish": "Which option correctly presents mango=4, banana=5, papaya=2, and guava=2 in a labeled table or graph?"
         },
         "answer": "Correct display with values 4, 5, 2, 2 and complete labels",
         "type": "mcq",
@@ -9697,9 +9697,9 @@
       },
       {
         "q": {
-          "en": "Present mango=11, banana=6, papaya=9, and guava=8 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]",
-          "fil": "Present mango=11, banana=6, papaya=9, and guava=8 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]",
-          "taglish": "Present mango=11, banana=6, papaya=9, and guava=8 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]"
+          "en": "Which option correctly presents mango=11, banana=6, papaya=9, and guava=8 in a labeled table or graph?",
+          "fil": "Which option correctly presents mango=11, banana=6, papaya=9, and guava=8 in a labeled table or graph?",
+          "taglish": "Which option correctly presents mango=11, banana=6, papaya=9, and guava=8 in a labeled table or graph?"
         },
         "answer": "Correct display with values 11, 6, 9, 8 and complete labels",
         "type": "mcq",
@@ -9724,9 +9724,9 @@
       },
       {
         "q": {
-          "en": "Present mango=3, banana=4, papaya=8, and guava=8 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]",
-          "fil": "Present mango=3, banana=4, papaya=8, and guava=8 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]",
-          "taglish": "Present mango=3, banana=4, papaya=8, and guava=8 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]"
+          "en": "Which option correctly presents mango=3, banana=4, papaya=8, and guava=8 in a labeled table or graph?",
+          "fil": "Which option correctly presents mango=3, banana=4, papaya=8, and guava=8 in a labeled table or graph?",
+          "taglish": "Which option correctly presents mango=3, banana=4, papaya=8, and guava=8 in a labeled table or graph?"
         },
         "answer": "Correct display with values 3, 4, 8, 8 and complete labels",
         "type": "mcq",
@@ -9775,16 +9775,16 @@
       "taglish": "Interpret data presented in a double bar graph or a double line graph."
     },
     "worked_example": {
-      "en": "Present mango=8, banana=5, papaya=9, and guava=10 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]",
-      "fil": "Present mango=8, banana=5, papaya=9, and guava=10 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]",
-      "taglish": "Present mango=8, banana=5, papaya=9, and guava=10 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]"
+      "en": "Which option correctly presents mango=8, banana=5, papaya=9, and guava=10 in a labeled table or graph?",
+      "fil": "Which option correctly presents mango=8, banana=5, papaya=9, and guava=10 in a labeled table or graph?",
+      "taglish": "Which option correctly presents mango=8, banana=5, papaya=9, and guava=10 in a labeled table or graph?"
     },
     "items": [
       {
         "q": {
-          "en": "Present mango=8, banana=5, papaya=9, and guava=10 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]",
-          "fil": "Present mango=8, banana=5, papaya=9, and guava=10 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]",
-          "taglish": "Present mango=8, banana=5, papaya=9, and guava=10 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]"
+          "en": "Which option correctly presents mango=8, banana=5, papaya=9, and guava=10 in a labeled table or graph?",
+          "fil": "Which option correctly presents mango=8, banana=5, papaya=9, and guava=10 in a labeled table or graph?",
+          "taglish": "Which option correctly presents mango=8, banana=5, papaya=9, and guava=10 in a labeled table or graph?"
         },
         "answer": "Correct display with values 8, 5, 9, 10 and complete labels",
         "type": "mcq",
@@ -9809,9 +9809,9 @@
       },
       {
         "q": {
-          "en": "Present mango=2, banana=9, papaya=12, and guava=3 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]",
-          "fil": "Present mango=2, banana=9, papaya=12, and guava=3 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]",
-          "taglish": "Present mango=2, banana=9, papaya=12, and guava=3 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]"
+          "en": "Which option correctly presents mango=2, banana=9, papaya=12, and guava=3 in a labeled table or graph?",
+          "fil": "Which option correctly presents mango=2, banana=9, papaya=12, and guava=3 in a labeled table or graph?",
+          "taglish": "Which option correctly presents mango=2, banana=9, papaya=12, and guava=3 in a labeled table or graph?"
         },
         "answer": "Correct display with values 2, 9, 12, 3 and complete labels",
         "type": "mcq",
@@ -9836,9 +9836,9 @@
       },
       {
         "q": {
-          "en": "Present mango=12, banana=7, papaya=3, and guava=7 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]",
-          "fil": "Present mango=12, banana=7, papaya=3, and guava=7 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]",
-          "taglish": "Present mango=12, banana=7, papaya=3, and guava=7 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]"
+          "en": "Which option correctly presents mango=12, banana=7, papaya=3, and guava=7 in a labeled table or graph?",
+          "fil": "Which option correctly presents mango=12, banana=7, papaya=3, and guava=7 in a labeled table or graph?",
+          "taglish": "Which option correctly presents mango=12, banana=7, papaya=3, and guava=7 in a labeled table or graph?"
         },
         "answer": "Correct display with values 12, 7, 3, 7 and complete labels",
         "type": "mcq",
@@ -9863,9 +9863,9 @@
       },
       {
         "q": {
-          "en": "Present mango=8, banana=10, papaya=3, and guava=3 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]",
-          "fil": "Present mango=8, banana=10, papaya=3, and guava=3 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]",
-          "taglish": "Present mango=8, banana=10, papaya=3, and guava=3 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]"
+          "en": "Which option correctly presents mango=8, banana=10, papaya=3, and guava=3 in a labeled table or graph?",
+          "fil": "Which option correctly presents mango=8, banana=10, papaya=3, and guava=3 in a labeled table or graph?",
+          "taglish": "Which option correctly presents mango=8, banana=10, papaya=3, and guava=3 in a labeled table or graph?"
         },
         "answer": "Correct display with values 8, 10, 3, 3 and complete labels",
         "type": "mcq",
@@ -9890,9 +9890,9 @@
       },
       {
         "q": {
-          "en": "Present mango=3, banana=12, papaya=12, and guava=9 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]",
-          "fil": "Present mango=3, banana=12, papaya=12, and guava=9 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]",
-          "taglish": "Present mango=3, banana=12, papaya=12, and guava=9 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]"
+          "en": "Which option correctly presents mango=3, banana=12, papaya=12, and guava=9 in a labeled table or graph?",
+          "fil": "Which option correctly presents mango=3, banana=12, papaya=12, and guava=9 in a labeled table or graph?",
+          "taglish": "Which option correctly presents mango=3, banana=12, papaya=12, and guava=9 in a labeled table or graph?"
         },
         "answer": "Correct display with values 3, 12, 12, 9 and complete labels",
         "type": "mcq",
@@ -9917,9 +9917,9 @@
       },
       {
         "q": {
-          "en": "Present mango=11, banana=5, papaya=6, and guava=4 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]",
-          "fil": "Present mango=11, banana=5, papaya=6, and guava=4 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]",
-          "taglish": "Present mango=11, banana=5, papaya=6, and guava=4 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]"
+          "en": "Which option correctly presents mango=11, banana=5, papaya=6, and guava=4 in a labeled table or graph?",
+          "fil": "Which option correctly presents mango=11, banana=5, papaya=6, and guava=4 in a labeled table or graph?",
+          "taglish": "Which option correctly presents mango=11, banana=5, papaya=6, and guava=4 in a labeled table or graph?"
         },
         "answer": "Correct display with values 11, 5, 6, 4 and complete labels",
         "type": "matching",
@@ -9942,9 +9942,9 @@
       },
       {
         "q": {
-          "en": "Present mango=8, banana=2, papaya=10, and guava=7 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]",
-          "fil": "Present mango=8, banana=2, papaya=10, and guava=7 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]",
-          "taglish": "Present mango=8, banana=2, papaya=10, and guava=7 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]"
+          "en": "Which option correctly presents mango=8, banana=2, papaya=10, and guava=7 in a labeled table or graph?",
+          "fil": "Which option correctly presents mango=8, banana=2, papaya=10, and guava=7 in a labeled table or graph?",
+          "taglish": "Which option correctly presents mango=8, banana=2, papaya=10, and guava=7 in a labeled table or graph?"
         },
         "answer": "Correct display with values 8, 2, 10, 7 and complete labels",
         "type": "matching",
@@ -9967,9 +9967,9 @@
       },
       {
         "q": {
-          "en": "For **Present mango=6, banana=4, papaya=7, and guava=12 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]**, the stated answer **Correct display with values 6, 4, 7, 12 and complete labels** is correct.",
-          "fil": "For **Present mango=6, banana=4, papaya=7, and guava=12 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]**, the stated answer **Correct display with values 6, 4, 7, 12 and complete labels** is correct.",
-          "taglish": "For **Present mango=6, banana=4, papaya=7, and guava=12 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]**, the stated answer **Correct display with values 6, 4, 7, 12 and complete labels** is correct."
+          "en": "For **Present mango=6, banana=4, papaya=7, and guava=12 in a labeled table or graph. **, the stated answer **Correct display with values 6, 4, 7, 12 and complete labels** is correct.",
+          "fil": "For **Present mango=6, banana=4, papaya=7, and guava=12 in a labeled table or graph. **, the stated answer **Correct display with values 6, 4, 7, 12 and complete labels** is correct.",
+          "taglish": "For **Present mango=6, banana=4, papaya=7, and guava=12 in a labeled table or graph. **, the stated answer **Correct display with values 6, 4, 7, 12 and complete labels** is correct."
         },
         "answer": "True",
         "type": "true_false",
@@ -9992,9 +9992,9 @@
       },
       {
         "q": {
-          "en": "Present mango=6, banana=4, papaya=7, and guava=12 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]",
-          "fil": "Present mango=6, banana=4, papaya=7, and guava=12 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]",
-          "taglish": "Present mango=6, banana=4, papaya=7, and guava=12 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]"
+          "en": "Which option correctly presents mango=6, banana=4, papaya=7, and guava=12 in a labeled table or graph?",
+          "fil": "Which option correctly presents mango=6, banana=4, papaya=7, and guava=12 in a labeled table or graph?",
+          "taglish": "Which option correctly presents mango=6, banana=4, papaya=7, and guava=12 in a labeled table or graph?"
         },
         "answer": "Correct display with values 6, 4, 7, 12 and complete labels",
         "type": "mcq",
@@ -10019,9 +10019,9 @@
       },
       {
         "q": {
-          "en": "For **Present mango=10, banana=4, papaya=8, and guava=7 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]**, the answer can be chosen without using the given mathematical information.",
-          "fil": "For **Present mango=10, banana=4, papaya=8, and guava=7 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]**, the answer can be chosen without using the given mathematical information.",
-          "taglish": "For **Present mango=10, banana=4, papaya=8, and guava=7 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]**, the answer can be chosen without using the given mathematical information."
+          "en": "For **Present mango=10, banana=4, papaya=8, and guava=7 in a labeled table or graph. **, the answer can be chosen without using the given mathematical information.",
+          "fil": "For **Present mango=10, banana=4, papaya=8, and guava=7 in a labeled table or graph. **, the answer can be chosen without using the given mathematical information.",
+          "taglish": "For **Present mango=10, banana=4, papaya=8, and guava=7 in a labeled table or graph. **, the answer can be chosen without using the given mathematical information."
         },
         "answer": "False",
         "type": "true_false",
@@ -10044,9 +10044,9 @@
       },
       {
         "q": {
-          "en": "Present mango=10, banana=4, papaya=8, and guava=7 in a labeled table or graph. [Graph placeholder: axes or pictograph key.] Explain why your answer is reasonable.",
-          "fil": "Present mango=10, banana=4, papaya=8, and guava=7 in a labeled table or graph. [Graph placeholder: axes or pictograph key.] Explain why your answer is reasonable.",
-          "taglish": "Present mango=10, banana=4, papaya=8, and guava=7 in a labeled table or graph. [Graph placeholder: axes or pictograph key.] Explain why your answer is reasonable."
+          "en": "Which option correctly presents mango=10, banana=4, papaya=8, and guava=7 in a labeled table or graph? Explain why your answer is reasonable.",
+          "fil": "Which option correctly presents mango=10, banana=4, papaya=8, and guava=7 in a labeled table or graph? Explain why your answer is reasonable.",
+          "taglish": "Which option correctly presents mango=10, banana=4, papaya=8, and guava=7 in a labeled table or graph? Explain why your answer is reasonable."
         },
         "answer": "Correct display with values 10, 4, 8, 7 and complete labels",
         "type": "mcq",
@@ -10071,9 +10071,9 @@
       },
       {
         "q": {
-          "en": "Present mango=7, banana=8, papaya=3, and guava=6 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]",
-          "fil": "Present mango=7, banana=8, papaya=3, and guava=6 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]",
-          "taglish": "Present mango=7, banana=8, papaya=3, and guava=6 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]"
+          "en": "Which option correctly presents mango=7, banana=8, papaya=3, and guava=6 in a labeled table or graph?",
+          "fil": "Which option correctly presents mango=7, banana=8, papaya=3, and guava=6 in a labeled table or graph?",
+          "taglish": "Which option correctly presents mango=7, banana=8, papaya=3, and guava=6 in a labeled table or graph?"
         },
         "answer": "Correct display with values 7, 8, 3, 6 and complete labels",
         "type": "mcq",
@@ -10098,9 +10098,9 @@
       },
       {
         "q": {
-          "en": "Present mango=10, banana=4, papaya=8, and guava=7 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]",
-          "fil": "Present mango=10, banana=4, papaya=8, and guava=7 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]",
-          "taglish": "Present mango=10, banana=4, papaya=8, and guava=7 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]"
+          "en": "Which option correctly presents mango=10, banana=4, papaya=8, and guava=7 in a labeled table or graph?",
+          "fil": "Which option correctly presents mango=10, banana=4, papaya=8, and guava=7 in a labeled table or graph?",
+          "taglish": "Which option correctly presents mango=10, banana=4, papaya=8, and guava=7 in a labeled table or graph?"
         },
         "answer": "Correct display with values 10, 4, 8, 7 and complete labels",
         "type": "mcq",
@@ -10125,9 +10125,9 @@
       },
       {
         "q": {
-          "en": "Present mango=2, banana=6, papaya=5, and guava=10 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]",
-          "fil": "Present mango=2, banana=6, papaya=5, and guava=10 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]",
-          "taglish": "Present mango=2, banana=6, papaya=5, and guava=10 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]"
+          "en": "Which option correctly presents mango=2, banana=6, papaya=5, and guava=10 in a labeled table or graph?",
+          "fil": "Which option correctly presents mango=2, banana=6, papaya=5, and guava=10 in a labeled table or graph?",
+          "taglish": "Which option correctly presents mango=2, banana=6, papaya=5, and guava=10 in a labeled table or graph?"
         },
         "answer": "Correct display with values 2, 6, 5, 10 and complete labels",
         "type": "mcq",
@@ -10152,9 +10152,9 @@
       },
       {
         "q": {
-          "en": "Present mango=5, banana=6, papaya=6, and guava=12 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]",
-          "fil": "Present mango=5, banana=6, papaya=6, and guava=12 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]",
-          "taglish": "Present mango=5, banana=6, papaya=6, and guava=12 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]"
+          "en": "Which option correctly presents mango=5, banana=6, papaya=6, and guava=12 in a labeled table or graph?",
+          "fil": "Which option correctly presents mango=5, banana=6, papaya=6, and guava=12 in a labeled table or graph?",
+          "taglish": "Which option correctly presents mango=5, banana=6, papaya=6, and guava=12 in a labeled table or graph?"
         },
         "answer": "Correct display with values 5, 6, 6, 12 and complete labels",
         "type": "mcq",
@@ -10203,16 +10203,16 @@
       "taglish": "Draw conclusions or make inferences based on data presented in a double bar graph or a double line graph."
     },
     "worked_example": {
-      "en": "Present mango=9, banana=8, papaya=4, and guava=4 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]",
-      "fil": "Present mango=9, banana=8, papaya=4, and guava=4 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]",
-      "taglish": "Present mango=9, banana=8, papaya=4, and guava=4 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]"
+      "en": "Which option correctly presents mango=9, banana=8, papaya=4, and guava=4 in a labeled table or graph?",
+      "fil": "Which option correctly presents mango=9, banana=8, papaya=4, and guava=4 in a labeled table or graph?",
+      "taglish": "Which option correctly presents mango=9, banana=8, papaya=4, and guava=4 in a labeled table or graph?"
     },
     "items": [
       {
         "q": {
-          "en": "Present mango=9, banana=8, papaya=4, and guava=4 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]",
-          "fil": "Present mango=9, banana=8, papaya=4, and guava=4 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]",
-          "taglish": "Present mango=9, banana=8, papaya=4, and guava=4 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]"
+          "en": "Which option correctly presents mango=9, banana=8, papaya=4, and guava=4 in a labeled table or graph?",
+          "fil": "Which option correctly presents mango=9, banana=8, papaya=4, and guava=4 in a labeled table or graph?",
+          "taglish": "Which option correctly presents mango=9, banana=8, papaya=4, and guava=4 in a labeled table or graph?"
         },
         "answer": "Correct display with values 9, 8, 4, 4 and complete labels",
         "type": "mcq",
@@ -10237,9 +10237,9 @@
       },
       {
         "q": {
-          "en": "Present mango=11, banana=10, papaya=5, and guava=6 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]",
-          "fil": "Present mango=11, banana=10, papaya=5, and guava=6 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]",
-          "taglish": "Present mango=11, banana=10, papaya=5, and guava=6 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]"
+          "en": "Which option correctly presents mango=11, banana=10, papaya=5, and guava=6 in a labeled table or graph?",
+          "fil": "Which option correctly presents mango=11, banana=10, papaya=5, and guava=6 in a labeled table or graph?",
+          "taglish": "Which option correctly presents mango=11, banana=10, papaya=5, and guava=6 in a labeled table or graph?"
         },
         "answer": "Correct display with values 11, 10, 5, 6 and complete labels",
         "type": "mcq",
@@ -10264,9 +10264,9 @@
       },
       {
         "q": {
-          "en": "Present mango=10, banana=6, papaya=6, and guava=2 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]",
-          "fil": "Present mango=10, banana=6, papaya=6, and guava=2 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]",
-          "taglish": "Present mango=10, banana=6, papaya=6, and guava=2 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]"
+          "en": "Which option correctly presents mango=10, banana=6, papaya=6, and guava=2 in a labeled table or graph?",
+          "fil": "Which option correctly presents mango=10, banana=6, papaya=6, and guava=2 in a labeled table or graph?",
+          "taglish": "Which option correctly presents mango=10, banana=6, papaya=6, and guava=2 in a labeled table or graph?"
         },
         "answer": "Correct display with values 10, 6, 6, 2 and complete labels",
         "type": "mcq",
@@ -10291,9 +10291,9 @@
       },
       {
         "q": {
-          "en": "Present mango=5, banana=7, papaya=8, and guava=8 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]",
-          "fil": "Present mango=5, banana=7, papaya=8, and guava=8 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]",
-          "taglish": "Present mango=5, banana=7, papaya=8, and guava=8 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]"
+          "en": "Which option correctly presents mango=5, banana=7, papaya=8, and guava=8 in a labeled table or graph?",
+          "fil": "Which option correctly presents mango=5, banana=7, papaya=8, and guava=8 in a labeled table or graph?",
+          "taglish": "Which option correctly presents mango=5, banana=7, papaya=8, and guava=8 in a labeled table or graph?"
         },
         "answer": "Correct display with values 5, 7, 8, 8 and complete labels",
         "type": "mcq",
@@ -10318,9 +10318,9 @@
       },
       {
         "q": {
-          "en": "Present mango=10, banana=8, papaya=11, and guava=12 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]",
-          "fil": "Present mango=10, banana=8, papaya=11, and guava=12 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]",
-          "taglish": "Present mango=10, banana=8, papaya=11, and guava=12 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]"
+          "en": "Which option correctly presents mango=10, banana=8, papaya=11, and guava=12 in a labeled table or graph?",
+          "fil": "Which option correctly presents mango=10, banana=8, papaya=11, and guava=12 in a labeled table or graph?",
+          "taglish": "Which option correctly presents mango=10, banana=8, papaya=11, and guava=12 in a labeled table or graph?"
         },
         "answer": "Correct display with values 10, 8, 11, 12 and complete labels",
         "type": "mcq",
@@ -10345,9 +10345,9 @@
       },
       {
         "q": {
-          "en": "Present mango=10, banana=5, papaya=5, and guava=2 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]",
-          "fil": "Present mango=10, banana=5, papaya=5, and guava=2 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]",
-          "taglish": "Present mango=10, banana=5, papaya=5, and guava=2 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]"
+          "en": "Which option correctly presents mango=10, banana=5, papaya=5, and guava=2 in a labeled table or graph?",
+          "fil": "Which option correctly presents mango=10, banana=5, papaya=5, and guava=2 in a labeled table or graph?",
+          "taglish": "Which option correctly presents mango=10, banana=5, papaya=5, and guava=2 in a labeled table or graph?"
         },
         "answer": "Correct display with values 10, 5, 5, 2 and complete labels",
         "type": "matching",
@@ -10370,9 +10370,9 @@
       },
       {
         "q": {
-          "en": "Present mango=9, banana=7, papaya=2, and guava=12 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]",
-          "fil": "Present mango=9, banana=7, papaya=2, and guava=12 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]",
-          "taglish": "Present mango=9, banana=7, papaya=2, and guava=12 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]"
+          "en": "Which option correctly presents mango=9, banana=7, papaya=2, and guava=12 in a labeled table or graph?",
+          "fil": "Which option correctly presents mango=9, banana=7, papaya=2, and guava=12 in a labeled table or graph?",
+          "taglish": "Which option correctly presents mango=9, banana=7, papaya=2, and guava=12 in a labeled table or graph?"
         },
         "answer": "Correct display with values 9, 7, 2, 12 and complete labels",
         "type": "matching",
@@ -10395,9 +10395,9 @@
       },
       {
         "q": {
-          "en": "For **Present mango=6, banana=2, papaya=6, and guava=8 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]**, the stated answer **Correct display with values 6, 2, 6, 8 and complete labels** is correct.",
-          "fil": "For **Present mango=6, banana=2, papaya=6, and guava=8 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]**, the stated answer **Correct display with values 6, 2, 6, 8 and complete labels** is correct.",
-          "taglish": "For **Present mango=6, banana=2, papaya=6, and guava=8 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]**, the stated answer **Correct display with values 6, 2, 6, 8 and complete labels** is correct."
+          "en": "For **Present mango=6, banana=2, papaya=6, and guava=8 in a labeled table or graph. **, the stated answer **Correct display with values 6, 2, 6, 8 and complete labels** is correct.",
+          "fil": "For **Present mango=6, banana=2, papaya=6, and guava=8 in a labeled table or graph. **, the stated answer **Correct display with values 6, 2, 6, 8 and complete labels** is correct.",
+          "taglish": "For **Present mango=6, banana=2, papaya=6, and guava=8 in a labeled table or graph. **, the stated answer **Correct display with values 6, 2, 6, 8 and complete labels** is correct."
         },
         "answer": "True",
         "type": "true_false",
@@ -10420,9 +10420,9 @@
       },
       {
         "q": {
-          "en": "Present mango=6, banana=2, papaya=6, and guava=8 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]",
-          "fil": "Present mango=6, banana=2, papaya=6, and guava=8 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]",
-          "taglish": "Present mango=6, banana=2, papaya=6, and guava=8 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]"
+          "en": "Which option correctly presents mango=6, banana=2, papaya=6, and guava=8 in a labeled table or graph?",
+          "fil": "Which option correctly presents mango=6, banana=2, papaya=6, and guava=8 in a labeled table or graph?",
+          "taglish": "Which option correctly presents mango=6, banana=2, papaya=6, and guava=8 in a labeled table or graph?"
         },
         "answer": "Correct display with values 6, 2, 6, 8 and complete labels",
         "type": "mcq",
@@ -10447,9 +10447,9 @@
       },
       {
         "q": {
-          "en": "For **Present mango=7, banana=4, papaya=9, and guava=2 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]**, the answer can be chosen without using the given mathematical information.",
-          "fil": "For **Present mango=7, banana=4, papaya=9, and guava=2 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]**, the answer can be chosen without using the given mathematical information.",
-          "taglish": "For **Present mango=7, banana=4, papaya=9, and guava=2 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]**, the answer can be chosen without using the given mathematical information."
+          "en": "For **Present mango=7, banana=4, papaya=9, and guava=2 in a labeled table or graph. **, the answer can be chosen without using the given mathematical information.",
+          "fil": "For **Present mango=7, banana=4, papaya=9, and guava=2 in a labeled table or graph. **, the answer can be chosen without using the given mathematical information.",
+          "taglish": "For **Present mango=7, banana=4, papaya=9, and guava=2 in a labeled table or graph. **, the answer can be chosen without using the given mathematical information."
         },
         "answer": "False",
         "type": "true_false",
@@ -10472,9 +10472,9 @@
       },
       {
         "q": {
-          "en": "Present mango=7, banana=4, papaya=9, and guava=2 in a labeled table or graph. [Graph placeholder: axes or pictograph key.] Explain why your answer is reasonable.",
-          "fil": "Present mango=7, banana=4, papaya=9, and guava=2 in a labeled table or graph. [Graph placeholder: axes or pictograph key.] Explain why your answer is reasonable.",
-          "taglish": "Present mango=7, banana=4, papaya=9, and guava=2 in a labeled table or graph. [Graph placeholder: axes or pictograph key.] Explain why your answer is reasonable."
+          "en": "Which option correctly presents mango=7, banana=4, papaya=9, and guava=2 in a labeled table or graph? Explain why your answer is reasonable.",
+          "fil": "Which option correctly presents mango=7, banana=4, papaya=9, and guava=2 in a labeled table or graph? Explain why your answer is reasonable.",
+          "taglish": "Which option correctly presents mango=7, banana=4, papaya=9, and guava=2 in a labeled table or graph? Explain why your answer is reasonable."
         },
         "answer": "Correct display with values 7, 4, 9, 2 and complete labels",
         "type": "mcq",
@@ -10499,9 +10499,9 @@
       },
       {
         "q": {
-          "en": "Present mango=9, banana=3, papaya=9, and guava=4 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]",
-          "fil": "Present mango=9, banana=3, papaya=9, and guava=4 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]",
-          "taglish": "Present mango=9, banana=3, papaya=9, and guava=4 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]"
+          "en": "Which option correctly presents mango=9, banana=3, papaya=9, and guava=4 in a labeled table or graph?",
+          "fil": "Which option correctly presents mango=9, banana=3, papaya=9, and guava=4 in a labeled table or graph?",
+          "taglish": "Which option correctly presents mango=9, banana=3, papaya=9, and guava=4 in a labeled table or graph?"
         },
         "answer": "Correct display with values 9, 3, 9, 4 and complete labels",
         "type": "mcq",
@@ -10526,9 +10526,9 @@
       },
       {
         "q": {
-          "en": "Present mango=7, banana=4, papaya=9, and guava=2 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]",
-          "fil": "Present mango=7, banana=4, papaya=9, and guava=2 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]",
-          "taglish": "Present mango=7, banana=4, papaya=9, and guava=2 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]"
+          "en": "Which option correctly presents mango=7, banana=4, papaya=9, and guava=2 in a labeled table or graph?",
+          "fil": "Which option correctly presents mango=7, banana=4, papaya=9, and guava=2 in a labeled table or graph?",
+          "taglish": "Which option correctly presents mango=7, banana=4, papaya=9, and guava=2 in a labeled table or graph?"
         },
         "answer": "Correct display with values 7, 4, 9, 2 and complete labels",
         "type": "mcq",
@@ -10553,9 +10553,9 @@
       },
       {
         "q": {
-          "en": "Present mango=5, banana=5, papaya=2, and guava=8 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]",
-          "fil": "Present mango=5, banana=5, papaya=2, and guava=8 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]",
-          "taglish": "Present mango=5, banana=5, papaya=2, and guava=8 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]"
+          "en": "Which option correctly presents mango=5, banana=5, papaya=2, and guava=8 in a labeled table or graph?",
+          "fil": "Which option correctly presents mango=5, banana=5, papaya=2, and guava=8 in a labeled table or graph?",
+          "taglish": "Which option correctly presents mango=5, banana=5, papaya=2, and guava=8 in a labeled table or graph?"
         },
         "answer": "Correct display with values 5, 5, 2, 8 and complete labels",
         "type": "mcq",
@@ -10580,9 +10580,9 @@
       },
       {
         "q": {
-          "en": "Present mango=12, banana=12, papaya=8, and guava=4 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]",
-          "fil": "Present mango=12, banana=12, papaya=8, and guava=4 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]",
-          "taglish": "Present mango=12, banana=12, papaya=8, and guava=4 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]"
+          "en": "Which option correctly presents mango=12, banana=12, papaya=8, and guava=4 in a labeled table or graph?",
+          "fil": "Which option correctly presents mango=12, banana=12, papaya=8, and guava=4 in a labeled table or graph?",
+          "taglish": "Which option correctly presents mango=12, banana=12, papaya=8, and guava=4 in a labeled table or graph?"
         },
         "answer": "Correct display with values 12, 12, 8, 4 and complete labels",
         "type": "mcq",
@@ -10631,16 +10631,16 @@
       "taglish": "Solve problems using data presented in a double bar graph or a double line graph."
     },
     "worked_example": {
-      "en": "Present mango=6, banana=3, papaya=5, and guava=5 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]",
-      "fil": "Present mango=6, banana=3, papaya=5, and guava=5 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]",
-      "taglish": "Present mango=6, banana=3, papaya=5, and guava=5 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]"
+      "en": "Which option correctly presents mango=6, banana=3, papaya=5, and guava=5 in a labeled table or graph?",
+      "fil": "Which option correctly presents mango=6, banana=3, papaya=5, and guava=5 in a labeled table or graph?",
+      "taglish": "Which option correctly presents mango=6, banana=3, papaya=5, and guava=5 in a labeled table or graph?"
     },
     "items": [
       {
         "q": {
-          "en": "Present mango=6, banana=3, papaya=5, and guava=5 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]",
-          "fil": "Present mango=6, banana=3, papaya=5, and guava=5 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]",
-          "taglish": "Present mango=6, banana=3, papaya=5, and guava=5 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]"
+          "en": "Which option correctly presents mango=6, banana=3, papaya=5, and guava=5 in a labeled table or graph?",
+          "fil": "Which option correctly presents mango=6, banana=3, papaya=5, and guava=5 in a labeled table or graph?",
+          "taglish": "Which option correctly presents mango=6, banana=3, papaya=5, and guava=5 in a labeled table or graph?"
         },
         "answer": "Correct display with values 6, 3, 5, 5 and complete labels",
         "type": "mcq",
@@ -10665,9 +10665,9 @@
       },
       {
         "q": {
-          "en": "Present mango=9, banana=5, papaya=6, and guava=7 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]",
-          "fil": "Present mango=9, banana=5, papaya=6, and guava=7 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]",
-          "taglish": "Present mango=9, banana=5, papaya=6, and guava=7 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]"
+          "en": "Which option correctly presents mango=9, banana=5, papaya=6, and guava=7 in a labeled table or graph?",
+          "fil": "Which option correctly presents mango=9, banana=5, papaya=6, and guava=7 in a labeled table or graph?",
+          "taglish": "Which option correctly presents mango=9, banana=5, papaya=6, and guava=7 in a labeled table or graph?"
         },
         "answer": "Correct display with values 9, 5, 6, 7 and complete labels",
         "type": "mcq",
@@ -10692,9 +10692,9 @@
       },
       {
         "q": {
-          "en": "Present mango=10, banana=7, papaya=8, and guava=8 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]",
-          "fil": "Present mango=10, banana=7, papaya=8, and guava=8 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]",
-          "taglish": "Present mango=10, banana=7, papaya=8, and guava=8 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]"
+          "en": "Which option correctly presents mango=10, banana=7, papaya=8, and guava=8 in a labeled table or graph?",
+          "fil": "Which option correctly presents mango=10, banana=7, papaya=8, and guava=8 in a labeled table or graph?",
+          "taglish": "Which option correctly presents mango=10, banana=7, papaya=8, and guava=8 in a labeled table or graph?"
         },
         "answer": "Correct display with values 10, 7, 8, 8 and complete labels",
         "type": "mcq",
@@ -10719,9 +10719,9 @@
       },
       {
         "q": {
-          "en": "Present mango=7, banana=7, papaya=10, and guava=3 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]",
-          "fil": "Present mango=7, banana=7, papaya=10, and guava=3 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]",
-          "taglish": "Present mango=7, banana=7, papaya=10, and guava=3 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]"
+          "en": "Which option correctly presents mango=7, banana=7, papaya=10, and guava=3 in a labeled table or graph?",
+          "fil": "Which option correctly presents mango=7, banana=7, papaya=10, and guava=3 in a labeled table or graph?",
+          "taglish": "Which option correctly presents mango=7, banana=7, papaya=10, and guava=3 in a labeled table or graph?"
         },
         "answer": "Correct display with values 7, 7, 10, 3 and complete labels",
         "type": "mcq",
@@ -10746,9 +10746,9 @@
       },
       {
         "q": {
-          "en": "Present mango=4, banana=9, papaya=10, and guava=10 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]",
-          "fil": "Present mango=4, banana=9, papaya=10, and guava=10 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]",
-          "taglish": "Present mango=4, banana=9, papaya=10, and guava=10 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]"
+          "en": "Which option correctly presents mango=4, banana=9, papaya=10, and guava=10 in a labeled table or graph?",
+          "fil": "Which option correctly presents mango=4, banana=9, papaya=10, and guava=10 in a labeled table or graph?",
+          "taglish": "Which option correctly presents mango=4, banana=9, papaya=10, and guava=10 in a labeled table or graph?"
         },
         "answer": "Correct display with values 4, 9, 10, 10 and complete labels",
         "type": "mcq",
@@ -10773,9 +10773,9 @@
       },
       {
         "q": {
-          "en": "Present mango=3, banana=9, papaya=8, and guava=3 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]",
-          "fil": "Present mango=3, banana=9, papaya=8, and guava=3 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]",
-          "taglish": "Present mango=3, banana=9, papaya=8, and guava=3 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]"
+          "en": "Which option correctly presents mango=3, banana=9, papaya=8, and guava=3 in a labeled table or graph?",
+          "fil": "Which option correctly presents mango=3, banana=9, papaya=8, and guava=3 in a labeled table or graph?",
+          "taglish": "Which option correctly presents mango=3, banana=9, papaya=8, and guava=3 in a labeled table or graph?"
         },
         "answer": "Correct display with values 3, 9, 8, 3 and complete labels",
         "type": "matching",
@@ -10798,9 +10798,9 @@
       },
       {
         "q": {
-          "en": "Present mango=5, banana=4, papaya=2, and guava=6 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]",
-          "fil": "Present mango=5, banana=4, papaya=2, and guava=6 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]",
-          "taglish": "Present mango=5, banana=4, papaya=2, and guava=6 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]"
+          "en": "Which option correctly presents mango=5, banana=4, papaya=2, and guava=6 in a labeled table or graph?",
+          "fil": "Which option correctly presents mango=5, banana=4, papaya=2, and guava=6 in a labeled table or graph?",
+          "taglish": "Which option correctly presents mango=5, banana=4, papaya=2, and guava=6 in a labeled table or graph?"
         },
         "answer": "Correct display with values 5, 4, 2, 6 and complete labels",
         "type": "matching",
@@ -10823,9 +10823,9 @@
       },
       {
         "q": {
-          "en": "For **Present mango=8, banana=12, papaya=5, and guava=4 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]**, the stated answer **Correct display with values 8, 12, 5, 4 and complete labels** is correct.",
-          "fil": "For **Present mango=8, banana=12, papaya=5, and guava=4 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]**, the stated answer **Correct display with values 8, 12, 5, 4 and complete labels** is correct.",
-          "taglish": "For **Present mango=8, banana=12, papaya=5, and guava=4 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]**, the stated answer **Correct display with values 8, 12, 5, 4 and complete labels** is correct."
+          "en": "For **Present mango=8, banana=12, papaya=5, and guava=4 in a labeled table or graph. **, the stated answer **Correct display with values 8, 12, 5, 4 and complete labels** is correct.",
+          "fil": "For **Present mango=8, banana=12, papaya=5, and guava=4 in a labeled table or graph. **, the stated answer **Correct display with values 8, 12, 5, 4 and complete labels** is correct.",
+          "taglish": "For **Present mango=8, banana=12, papaya=5, and guava=4 in a labeled table or graph. **, the stated answer **Correct display with values 8, 12, 5, 4 and complete labels** is correct."
         },
         "answer": "True",
         "type": "true_false",
@@ -10848,9 +10848,9 @@
       },
       {
         "q": {
-          "en": "Present mango=8, banana=12, papaya=5, and guava=4 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]",
-          "fil": "Present mango=8, banana=12, papaya=5, and guava=4 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]",
-          "taglish": "Present mango=8, banana=12, papaya=5, and guava=4 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]"
+          "en": "Which option correctly presents mango=8, banana=12, papaya=5, and guava=4 in a labeled table or graph?",
+          "fil": "Which option correctly presents mango=8, banana=12, papaya=5, and guava=4 in a labeled table or graph?",
+          "taglish": "Which option correctly presents mango=8, banana=12, papaya=5, and guava=4 in a labeled table or graph?"
         },
         "answer": "Correct display with values 8, 12, 5, 4 and complete labels",
         "type": "mcq",
@@ -10875,9 +10875,9 @@
       },
       {
         "q": {
-          "en": "For **Present mango=10, banana=6, papaya=2, and guava=3 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]**, the answer can be chosen without using the given mathematical information.",
-          "fil": "For **Present mango=10, banana=6, papaya=2, and guava=3 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]**, the answer can be chosen without using the given mathematical information.",
-          "taglish": "For **Present mango=10, banana=6, papaya=2, and guava=3 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]**, the answer can be chosen without using the given mathematical information."
+          "en": "For **Present mango=10, banana=6, papaya=2, and guava=3 in a labeled table or graph. **, the answer can be chosen without using the given mathematical information.",
+          "fil": "For **Present mango=10, banana=6, papaya=2, and guava=3 in a labeled table or graph. **, the answer can be chosen without using the given mathematical information.",
+          "taglish": "For **Present mango=10, banana=6, papaya=2, and guava=3 in a labeled table or graph. **, the answer can be chosen without using the given mathematical information."
         },
         "answer": "False",
         "type": "true_false",
@@ -10900,9 +10900,9 @@
       },
       {
         "q": {
-          "en": "Present mango=10, banana=6, papaya=2, and guava=3 in a labeled table or graph. [Graph placeholder: axes or pictograph key.] Explain why your answer is reasonable.",
-          "fil": "Present mango=10, banana=6, papaya=2, and guava=3 in a labeled table or graph. [Graph placeholder: axes or pictograph key.] Explain why your answer is reasonable.",
-          "taglish": "Present mango=10, banana=6, papaya=2, and guava=3 in a labeled table or graph. [Graph placeholder: axes or pictograph key.] Explain why your answer is reasonable."
+          "en": "Which option correctly presents mango=10, banana=6, papaya=2, and guava=3 in a labeled table or graph? Explain why your answer is reasonable.",
+          "fil": "Which option correctly presents mango=10, banana=6, papaya=2, and guava=3 in a labeled table or graph? Explain why your answer is reasonable.",
+          "taglish": "Which option correctly presents mango=10, banana=6, papaya=2, and guava=3 in a labeled table or graph? Explain why your answer is reasonable."
         },
         "answer": "Correct display with values 10, 6, 2, 3 and complete labels",
         "type": "mcq",
@@ -10927,9 +10927,9 @@
       },
       {
         "q": {
-          "en": "Present mango=4, banana=5, papaya=9, and guava=6 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]",
-          "fil": "Present mango=4, banana=5, papaya=9, and guava=6 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]",
-          "taglish": "Present mango=4, banana=5, papaya=9, and guava=6 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]"
+          "en": "Which option correctly presents mango=4, banana=5, papaya=9, and guava=6 in a labeled table or graph?",
+          "fil": "Which option correctly presents mango=4, banana=5, papaya=9, and guava=6 in a labeled table or graph?",
+          "taglish": "Which option correctly presents mango=4, banana=5, papaya=9, and guava=6 in a labeled table or graph?"
         },
         "answer": "Correct display with values 4, 5, 9, 6 and complete labels",
         "type": "mcq",
@@ -10954,9 +10954,9 @@
       },
       {
         "q": {
-          "en": "Present mango=10, banana=6, papaya=2, and guava=3 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]",
-          "fil": "Present mango=10, banana=6, papaya=2, and guava=3 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]",
-          "taglish": "Present mango=10, banana=6, papaya=2, and guava=3 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]"
+          "en": "Which option correctly presents mango=10, banana=6, papaya=2, and guava=3 in a labeled table or graph?",
+          "fil": "Which option correctly presents mango=10, banana=6, papaya=2, and guava=3 in a labeled table or graph?",
+          "taglish": "Which option correctly presents mango=10, banana=6, papaya=2, and guava=3 in a labeled table or graph?"
         },
         "answer": "Correct display with values 10, 6, 2, 3 and complete labels",
         "type": "mcq",
@@ -10981,9 +10981,9 @@
       },
       {
         "q": {
-          "en": "Present mango=11, banana=2, papaya=3, and guava=8 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]",
-          "fil": "Present mango=11, banana=2, papaya=3, and guava=8 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]",
-          "taglish": "Present mango=11, banana=2, papaya=3, and guava=8 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]"
+          "en": "Which option correctly presents mango=11, banana=2, papaya=3, and guava=8 in a labeled table or graph?",
+          "fil": "Which option correctly presents mango=11, banana=2, papaya=3, and guava=8 in a labeled table or graph?",
+          "taglish": "Which option correctly presents mango=11, banana=2, papaya=3, and guava=8 in a labeled table or graph?"
         },
         "answer": "Correct display with values 11, 2, 3, 8 and complete labels",
         "type": "mcq",
@@ -11008,9 +11008,9 @@
       },
       {
         "q": {
-          "en": "Present mango=6, banana=7, papaya=7, and guava=5 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]",
-          "fil": "Present mango=6, banana=7, papaya=7, and guava=5 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]",
-          "taglish": "Present mango=6, banana=7, papaya=7, and guava=5 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]"
+          "en": "Which option correctly presents mango=6, banana=7, papaya=7, and guava=5 in a labeled table or graph?",
+          "fil": "Which option correctly presents mango=6, banana=7, papaya=7, and guava=5 in a labeled table or graph?",
+          "taglish": "Which option correctly presents mango=6, banana=7, papaya=7, and guava=5 in a labeled table or graph?"
         },
         "answer": "Correct display with values 6, 7, 7, 5 and complete labels",
         "type": "mcq",
@@ -14697,9 +14697,9 @@
       },
       {
         "q": {
-          "en": "For **Sketch a valid net of a cube. [Diagram placeholder: square grid.]**, the stated answer **Any arrangement of 6 squares that folds into a cube** is correct.",
-          "fil": "For **Sketch a valid net of a cube. [Diagram placeholder: square grid.]**, the stated answer **Any arrangement of 6 squares that folds into a cube** is correct.",
-          "taglish": "For **Sketch a valid net of a cube. [Diagram placeholder: square grid.]**, the stated answer **Any arrangement of 6 squares that folds into a cube** is correct."
+          "en": "For **Sketch a valid net of a cube. (Diagram description: square grid.)**, the stated answer **Any arrangement of 6 squares that folds into a cube** is correct.",
+          "fil": "For **Sketch a valid net of a cube. (Diagram description: square grid.)**, the stated answer **Any arrangement of 6 squares that folds into a cube** is correct.",
+          "taglish": "For **Sketch a valid net of a cube. (Diagram description: square grid.)**, the stated answer **Any arrangement of 6 squares that folds into a cube** is correct."
         },
         "answer": "True",
         "type": "true_false",
@@ -14887,9 +14887,9 @@
       },
       {
         "q": {
-          "en": "For **Sketch a valid net of a cube. [Diagram placeholder: square grid.]**, the stated answer **Any arrangement of 6 squares that folds into a cube** is correct.",
-          "fil": "For **Sketch a valid net of a cube. [Diagram placeholder: square grid.]**, the stated answer **Any arrangement of 6 squares that folds into a cube** is correct.",
-          "taglish": "For **Sketch a valid net of a cube. [Diagram placeholder: square grid.]**, the stated answer **Any arrangement of 6 squares that folds into a cube** is correct."
+          "en": "For **Sketch a valid net of a cube. (Diagram description: square grid.)**, the stated answer **Any arrangement of 6 squares that folds into a cube** is correct.",
+          "fil": "For **Sketch a valid net of a cube. (Diagram description: square grid.)**, the stated answer **Any arrangement of 6 squares that folds into a cube** is correct.",
+          "taglish": "For **Sketch a valid net of a cube. (Diagram description: square grid.)**, the stated answer **Any arrangement of 6 squares that folds into a cube** is correct."
         },
         "answer": "True",
         "type": "true_false",
@@ -15077,9 +15077,9 @@
       },
       {
         "q": {
-          "en": "For **Sketch a valid net of a cube. [Diagram placeholder: square grid.]**, the stated answer **Any arrangement of 6 squares that folds into a cube** is correct.",
-          "fil": "For **Sketch a valid net of a cube. [Diagram placeholder: square grid.]**, the stated answer **Any arrangement of 6 squares that folds into a cube** is correct.",
-          "taglish": "For **Sketch a valid net of a cube. [Diagram placeholder: square grid.]**, the stated answer **Any arrangement of 6 squares that folds into a cube** is correct."
+          "en": "For **Sketch a valid net of a cube. (Diagram description: square grid.)**, the stated answer **Any arrangement of 6 squares that folds into a cube** is correct.",
+          "fil": "For **Sketch a valid net of a cube. (Diagram description: square grid.)**, the stated answer **Any arrangement of 6 squares that folds into a cube** is correct.",
+          "taglish": "For **Sketch a valid net of a cube. (Diagram description: square grid.)**, the stated answer **Any arrangement of 6 squares that folds into a cube** is correct."
         },
         "answer": "True",
         "type": "true_false",
@@ -15267,9 +15267,9 @@
       },
       {
         "q": {
-          "en": "For **Sketch a valid net of a cube. [Diagram placeholder: square grid.]**, the stated answer **Any arrangement of 6 squares that folds into a cube** is correct.",
-          "fil": "For **Sketch a valid net of a cube. [Diagram placeholder: square grid.]**, the stated answer **Any arrangement of 6 squares that folds into a cube** is correct.",
-          "taglish": "For **Sketch a valid net of a cube. [Diagram placeholder: square grid.]**, the stated answer **Any arrangement of 6 squares that folds into a cube** is correct."
+          "en": "For **Sketch a valid net of a cube. (Diagram description: square grid.)**, the stated answer **Any arrangement of 6 squares that folds into a cube** is correct.",
+          "fil": "For **Sketch a valid net of a cube. (Diagram description: square grid.)**, the stated answer **Any arrangement of 6 squares that folds into a cube** is correct.",
+          "taglish": "For **Sketch a valid net of a cube. (Diagram description: square grid.)**, the stated answer **Any arrangement of 6 squares that folds into a cube** is correct."
         },
         "answer": "True",
         "type": "true_false",
@@ -15457,9 +15457,9 @@
       },
       {
         "q": {
-          "en": "For **Sketch a valid net of a cube. [Diagram placeholder: square grid.]**, the stated answer **Any arrangement of 6 squares that folds into a cube** is correct.",
-          "fil": "For **Sketch a valid net of a cube. [Diagram placeholder: square grid.]**, the stated answer **Any arrangement of 6 squares that folds into a cube** is correct.",
-          "taglish": "For **Sketch a valid net of a cube. [Diagram placeholder: square grid.]**, the stated answer **Any arrangement of 6 squares that folds into a cube** is correct."
+          "en": "For **Sketch a valid net of a cube. (Diagram description: square grid.)**, the stated answer **Any arrangement of 6 squares that folds into a cube** is correct.",
+          "fil": "For **Sketch a valid net of a cube. (Diagram description: square grid.)**, the stated answer **Any arrangement of 6 squares that folds into a cube** is correct.",
+          "taglish": "For **Sketch a valid net of a cube. (Diagram description: square grid.)**, the stated answer **Any arrangement of 6 squares that folds into a cube** is correct."
         },
         "answer": "True",
         "type": "true_false",
@@ -16505,9 +16505,9 @@
       },
       {
         "q": {
-          "en": "For **Sketch a valid net of a cube. [Diagram placeholder: square grid.]**, the stated answer **Any arrangement of 6 squares that folds into a cube** is correct.",
-          "fil": "For **Sketch a valid net of a cube. [Diagram placeholder: square grid.]**, the stated answer **Any arrangement of 6 squares that folds into a cube** is correct.",
-          "taglish": "For **Sketch a valid net of a cube. [Diagram placeholder: square grid.]**, the stated answer **Any arrangement of 6 squares that folds into a cube** is correct."
+          "en": "For **Sketch a valid net of a cube. (Diagram description: square grid.)**, the stated answer **Any arrangement of 6 squares that folds into a cube** is correct.",
+          "fil": "For **Sketch a valid net of a cube. (Diagram description: square grid.)**, the stated answer **Any arrangement of 6 squares that folds into a cube** is correct.",
+          "taglish": "For **Sketch a valid net of a cube. (Diagram description: square grid.)**, the stated answer **Any arrangement of 6 squares that folds into a cube** is correct."
         },
         "answer": "True",
         "type": "true_false",
@@ -17124,9 +17124,9 @@
       },
       {
         "q": {
-          "en": "Complete a symmetrical banderitas design across the marked line. [Diagram placeholder: half-design and vertical line.]",
-          "fil": "Complete a symmetrical banderitas design across the marked line. [Diagram placeholder: half-design and vertical line.]",
-          "taglish": "Complete a symmetrical banderitas design across the marked line. [Diagram placeholder: half-design and vertical line.]"
+          "en": "Complete a symmetrical banderitas design across the marked line. (Diagram description: half-design and vertical line.)",
+          "fil": "Complete a symmetrical banderitas design across the marked line. (Diagram description: half-design and vertical line.)",
+          "taglish": "Complete a symmetrical banderitas design across the marked line. (Diagram description: half-design and vertical line.)"
         },
         "answer": "The completed half must be a mirror image at equal distances from the line",
         "type": "mcq",
@@ -17151,9 +17151,9 @@
       },
       {
         "q": {
-          "en": "For **Complete a symmetrical banderitas design across the marked line. [Diagram placeholder: half-design and vertical line.]**, the stated answer **The completed half must be a mirror image at equal distances from the line** is correct.",
-          "fil": "For **Complete a symmetrical banderitas design across the marked line. [Diagram placeholder: half-design and vertical line.]**, the stated answer **The completed half must be a mirror image at equal distances from the line** is correct.",
-          "taglish": "For **Complete a symmetrical banderitas design across the marked line. [Diagram placeholder: half-design and vertical line.]**, the stated answer **The completed half must be a mirror image at equal distances from the line** is correct."
+          "en": "For **Complete a symmetrical banderitas design across the marked line. (Diagram description: half-design and vertical line.)**, the stated answer **The completed half must be a mirror image at equal distances from the line** is correct.",
+          "fil": "For **Complete a symmetrical banderitas design across the marked line. (Diagram description: half-design and vertical line.)**, the stated answer **The completed half must be a mirror image at equal distances from the line** is correct.",
+          "taglish": "For **Complete a symmetrical banderitas design across the marked line. (Diagram description: half-design and vertical line.)**, the stated answer **The completed half must be a mirror image at equal distances from the line** is correct."
         },
         "answer": "True",
         "type": "true_false",

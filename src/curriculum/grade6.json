@@ -16,16 +16,16 @@
       "taglish": "Explore whether or not a shape tessellates."
     },
     "worked_example": {
-      "en": "Can congruent equilateral triangles cover a festival-floor design without gaps or overlaps? Explain or sketch. [Diagram placeholder: repeated equilateral triangles.]",
-      "fil": "Can congruent equilateral triangles cover a festival-floor design without gaps or overlaps? Explain or sketch. [Diagram placeholder: repeated equilateral triangles.]",
-      "taglish": "Can congruent equilateral triangles cover a festival-floor design without gaps or overlaps? Explain or sketch. [Diagram placeholder: repeated equilateral triangles.]"
+      "en": "Can congruent equilateral triangles cover a festival-floor design without gaps or overlaps? (Diagram description: repeated equilateral triangles.)",
+      "fil": "Can congruent equilateral triangles cover a festival-floor design without gaps or overlaps? (Diagram description: repeated equilateral triangles.)",
+      "taglish": "Can congruent equilateral triangles cover a festival-floor design without gaps or overlaps? (Diagram description: repeated equilateral triangles.)"
     },
     "items": [
       {
         "q": {
-          "en": "Can congruent equilateral triangles cover a festival-floor design without gaps or overlaps? Explain or sketch. [Diagram placeholder: repeated equilateral triangles.]",
-          "fil": "Can congruent equilateral triangles cover a festival-floor design without gaps or overlaps? Explain or sketch. [Diagram placeholder: repeated equilateral triangles.]",
-          "taglish": "Can congruent equilateral triangles cover a festival-floor design without gaps or overlaps? Explain or sketch. [Diagram placeholder: repeated equilateral triangles.]"
+          "en": "Can congruent equilateral triangles cover a festival-floor design without gaps or overlaps? (Diagram description: repeated equilateral triangles.)",
+          "fil": "Can congruent equilateral triangles cover a festival-floor design without gaps or overlaps? (Diagram description: repeated equilateral triangles.)",
+          "taglish": "Can congruent equilateral triangles cover a festival-floor design without gaps or overlaps? (Diagram description: repeated equilateral triangles.)"
         },
         "answer": "Yes",
         "type": "mcq",
@@ -50,9 +50,9 @@
       },
       {
         "q": {
-          "en": "Can congruent squares cover a festival-floor design without gaps or overlaps? Explain or sketch. [Diagram placeholder: repeated squares.]",
-          "fil": "Can congruent squares cover a festival-floor design without gaps or overlaps? Explain or sketch. [Diagram placeholder: repeated squares.]",
-          "taglish": "Can congruent squares cover a festival-floor design without gaps or overlaps? Explain or sketch. [Diagram placeholder: repeated squares.]"
+          "en": "Can congruent squares cover a festival-floor design without gaps or overlaps? (Diagram description: repeated squares.)",
+          "fil": "Can congruent squares cover a festival-floor design without gaps or overlaps? (Diagram description: repeated squares.)",
+          "taglish": "Can congruent squares cover a festival-floor design without gaps or overlaps? (Diagram description: repeated squares.)"
         },
         "answer": "Yes",
         "type": "mcq",
@@ -77,9 +77,9 @@
       },
       {
         "q": {
-          "en": "Can congruent regular hexagons cover a festival-floor design without gaps or overlaps? Explain or sketch. [Diagram placeholder: repeated regular hexagons.]",
-          "fil": "Can congruent regular hexagons cover a festival-floor design without gaps or overlaps? Explain or sketch. [Diagram placeholder: repeated regular hexagons.]",
-          "taglish": "Can congruent regular hexagons cover a festival-floor design without gaps or overlaps? Explain or sketch. [Diagram placeholder: repeated regular hexagons.]"
+          "en": "Can congruent regular hexagons cover a festival-floor design without gaps or overlaps? (Diagram description: repeated regular hexagons.)",
+          "fil": "Can congruent regular hexagons cover a festival-floor design without gaps or overlaps? (Diagram description: repeated regular hexagons.)",
+          "taglish": "Can congruent regular hexagons cover a festival-floor design without gaps or overlaps? (Diagram description: repeated regular hexagons.)"
         },
         "answer": "Yes",
         "type": "mcq",
@@ -104,9 +104,9 @@
       },
       {
         "q": {
-          "en": "For **Can congruent circles cover a festival-floor design without gaps or overlaps? Explain or sketch. [Diagram placeholder: repeated circles.]**, the stated answer **No; gaps remain** is correct.",
-          "fil": "For **Can congruent circles cover a festival-floor design without gaps or overlaps? Explain or sketch. [Diagram placeholder: repeated circles.]**, the stated answer **No; gaps remain** is correct.",
-          "taglish": "For **Can congruent circles cover a festival-floor design without gaps or overlaps? Explain or sketch. [Diagram placeholder: repeated circles.]**, the stated answer **No; gaps remain** is correct."
+          "en": "For **Can congruent circles cover a festival-floor design without gaps or overlaps? (Diagram description: repeated circles.)**, the stated answer **No; gaps remain** is correct.",
+          "fil": "For **Can congruent circles cover a festival-floor design without gaps or overlaps? (Diagram description: repeated circles.)**, the stated answer **No; gaps remain** is correct.",
+          "taglish": "For **Can congruent circles cover a festival-floor design without gaps or overlaps? (Diagram description: repeated circles.)**, the stated answer **No; gaps remain** is correct."
         },
         "answer": "True",
         "type": "true_false",
@@ -129,9 +129,9 @@
       },
       {
         "q": {
-          "en": "For **Can congruent equilateral triangles cover a festival-floor design without gaps or overlaps? Explain or sketch. [Diagram placeholder: repeated equilateral triangles.]**, the answer can be chosen without using the given mathematical information.",
-          "fil": "For **Can congruent equilateral triangles cover a festival-floor design without gaps or overlaps? Explain or sketch. [Diagram placeholder: repeated equilateral triangles.]**, the answer can be chosen without using the given mathematical information.",
-          "taglish": "For **Can congruent equilateral triangles cover a festival-floor design without gaps or overlaps? Explain or sketch. [Diagram placeholder: repeated equilateral triangles.]**, the answer can be chosen without using the given mathematical information."
+          "en": "For **Can congruent equilateral triangles cover a festival-floor design without gaps or overlaps? (Diagram description: repeated equilateral triangles.)**, the answer can be chosen without using the given mathematical information.",
+          "fil": "For **Can congruent equilateral triangles cover a festival-floor design without gaps or overlaps? (Diagram description: repeated equilateral triangles.)**, the answer can be chosen without using the given mathematical information.",
+          "taglish": "For **Can congruent equilateral triangles cover a festival-floor design without gaps or overlaps? (Diagram description: repeated equilateral triangles.)**, the answer can be chosen without using the given mathematical information."
         },
         "answer": "False",
         "type": "true_false",
@@ -178,16 +178,16 @@
       "taglish": "Tessellate a surface using different shapes, including triangles, squares, and rectangles."
     },
     "worked_example": {
-      "en": "Can congruent equilateral triangles cover a festival-floor design without gaps or overlaps? Explain or sketch. [Diagram placeholder: repeated equilateral triangles.]",
-      "fil": "Can congruent equilateral triangles cover a festival-floor design without gaps or overlaps? Explain or sketch. [Diagram placeholder: repeated equilateral triangles.]",
-      "taglish": "Can congruent equilateral triangles cover a festival-floor design without gaps or overlaps? Explain or sketch. [Diagram placeholder: repeated equilateral triangles.]"
+      "en": "Can congruent equilateral triangles cover a festival-floor design without gaps or overlaps? (Diagram description: repeated equilateral triangles.)",
+      "fil": "Can congruent equilateral triangles cover a festival-floor design without gaps or overlaps? (Diagram description: repeated equilateral triangles.)",
+      "taglish": "Can congruent equilateral triangles cover a festival-floor design without gaps or overlaps? (Diagram description: repeated equilateral triangles.)"
     },
     "items": [
       {
         "q": {
-          "en": "Can congruent equilateral triangles cover a festival-floor design without gaps or overlaps? Explain or sketch. [Diagram placeholder: repeated equilateral triangles.]",
-          "fil": "Can congruent equilateral triangles cover a festival-floor design without gaps or overlaps? Explain or sketch. [Diagram placeholder: repeated equilateral triangles.]",
-          "taglish": "Can congruent equilateral triangles cover a festival-floor design without gaps or overlaps? Explain or sketch. [Diagram placeholder: repeated equilateral triangles.]"
+          "en": "Can congruent equilateral triangles cover a festival-floor design without gaps or overlaps? (Diagram description: repeated equilateral triangles.)",
+          "fil": "Can congruent equilateral triangles cover a festival-floor design without gaps or overlaps? (Diagram description: repeated equilateral triangles.)",
+          "taglish": "Can congruent equilateral triangles cover a festival-floor design without gaps or overlaps? (Diagram description: repeated equilateral triangles.)"
         },
         "answer": "Yes",
         "type": "mcq",
@@ -212,9 +212,9 @@
       },
       {
         "q": {
-          "en": "Can congruent squares cover a festival-floor design without gaps or overlaps? Explain or sketch. [Diagram placeholder: repeated squares.]",
-          "fil": "Can congruent squares cover a festival-floor design without gaps or overlaps? Explain or sketch. [Diagram placeholder: repeated squares.]",
-          "taglish": "Can congruent squares cover a festival-floor design without gaps or overlaps? Explain or sketch. [Diagram placeholder: repeated squares.]"
+          "en": "Can congruent squares cover a festival-floor design without gaps or overlaps? (Diagram description: repeated squares.)",
+          "fil": "Can congruent squares cover a festival-floor design without gaps or overlaps? (Diagram description: repeated squares.)",
+          "taglish": "Can congruent squares cover a festival-floor design without gaps or overlaps? (Diagram description: repeated squares.)"
         },
         "answer": "Yes",
         "type": "mcq",
@@ -239,9 +239,9 @@
       },
       {
         "q": {
-          "en": "Can congruent regular hexagons cover a festival-floor design without gaps or overlaps? Explain or sketch. [Diagram placeholder: repeated regular hexagons.]",
-          "fil": "Can congruent regular hexagons cover a festival-floor design without gaps or overlaps? Explain or sketch. [Diagram placeholder: repeated regular hexagons.]",
-          "taglish": "Can congruent regular hexagons cover a festival-floor design without gaps or overlaps? Explain or sketch. [Diagram placeholder: repeated regular hexagons.]"
+          "en": "Can congruent regular hexagons cover a festival-floor design without gaps or overlaps? (Diagram description: repeated regular hexagons.)",
+          "fil": "Can congruent regular hexagons cover a festival-floor design without gaps or overlaps? (Diagram description: repeated regular hexagons.)",
+          "taglish": "Can congruent regular hexagons cover a festival-floor design without gaps or overlaps? (Diagram description: repeated regular hexagons.)"
         },
         "answer": "Yes",
         "type": "mcq",
@@ -266,9 +266,9 @@
       },
       {
         "q": {
-          "en": "For **Can congruent circles cover a festival-floor design without gaps or overlaps? Explain or sketch. [Diagram placeholder: repeated circles.]**, the stated answer **No; gaps remain** is correct.",
-          "fil": "For **Can congruent circles cover a festival-floor design without gaps or overlaps? Explain or sketch. [Diagram placeholder: repeated circles.]**, the stated answer **No; gaps remain** is correct.",
-          "taglish": "For **Can congruent circles cover a festival-floor design without gaps or overlaps? Explain or sketch. [Diagram placeholder: repeated circles.]**, the stated answer **No; gaps remain** is correct."
+          "en": "For **Can congruent circles cover a festival-floor design without gaps or overlaps? (Diagram description: repeated circles.)**, the stated answer **No; gaps remain** is correct.",
+          "fil": "For **Can congruent circles cover a festival-floor design without gaps or overlaps? (Diagram description: repeated circles.)**, the stated answer **No; gaps remain** is correct.",
+          "taglish": "For **Can congruent circles cover a festival-floor design without gaps or overlaps? (Diagram description: repeated circles.)**, the stated answer **No; gaps remain** is correct."
         },
         "answer": "True",
         "type": "true_false",
@@ -291,9 +291,9 @@
       },
       {
         "q": {
-          "en": "For **Can congruent equilateral triangles cover a festival-floor design without gaps or overlaps? Explain or sketch. [Diagram placeholder: repeated equilateral triangles.]**, the answer can be chosen without using the given mathematical information.",
-          "fil": "For **Can congruent equilateral triangles cover a festival-floor design without gaps or overlaps? Explain or sketch. [Diagram placeholder: repeated equilateral triangles.]**, the answer can be chosen without using the given mathematical information.",
-          "taglish": "For **Can congruent equilateral triangles cover a festival-floor design without gaps or overlaps? Explain or sketch. [Diagram placeholder: repeated equilateral triangles.]**, the answer can be chosen without using the given mathematical information."
+          "en": "For **Can congruent equilateral triangles cover a festival-floor design without gaps or overlaps? (Diagram description: repeated equilateral triangles.)**, the answer can be chosen without using the given mathematical information.",
+          "fil": "For **Can congruent equilateral triangles cover a festival-floor design without gaps or overlaps? (Diagram description: repeated equilateral triangles.)**, the answer can be chosen without using the given mathematical information.",
+          "taglish": "For **Can congruent equilateral triangles cover a festival-floor design without gaps or overlaps? (Diagram description: repeated equilateral triangles.)**, the answer can be chosen without using the given mathematical information."
         },
         "answer": "False",
         "type": "true_false",
@@ -428,9 +428,9 @@
       },
       {
         "q": {
-          "en": "Complete a symmetrical banderitas design across the marked line. [Diagram placeholder: half-design and vertical line.]",
-          "fil": "Complete a symmetrical banderitas design across the marked line. [Diagram placeholder: half-design and vertical line.]",
-          "taglish": "Complete a symmetrical banderitas design across the marked line. [Diagram placeholder: half-design and vertical line.]"
+          "en": "Complete a symmetrical banderitas design across the marked line. (Diagram description: half-design and vertical line.)",
+          "fil": "Complete a symmetrical banderitas design across the marked line. (Diagram description: half-design and vertical line.)",
+          "taglish": "Complete a symmetrical banderitas design across the marked line. (Diagram description: half-design and vertical line.)"
         },
         "answer": "The completed half must be a mirror image at equal distances from the line",
         "type": "mcq",
@@ -455,9 +455,9 @@
       },
       {
         "q": {
-          "en": "For **Complete a symmetrical banderitas design across the marked line. [Diagram placeholder: half-design and vertical line.]**, the stated answer **The completed half must be a mirror image at equal distances from the line** is correct.",
-          "fil": "For **Complete a symmetrical banderitas design across the marked line. [Diagram placeholder: half-design and vertical line.]**, the stated answer **The completed half must be a mirror image at equal distances from the line** is correct.",
-          "taglish": "For **Complete a symmetrical banderitas design across the marked line. [Diagram placeholder: half-design and vertical line.]**, the stated answer **The completed half must be a mirror image at equal distances from the line** is correct."
+          "en": "For **Complete a symmetrical banderitas design across the marked line. (Diagram description: half-design and vertical line.)**, the stated answer **The completed half must be a mirror image at equal distances from the line** is correct.",
+          "fil": "For **Complete a symmetrical banderitas design across the marked line. (Diagram description: half-design and vertical line.)**, the stated answer **The completed half must be a mirror image at equal distances from the line** is correct.",
+          "taglish": "For **Complete a symmetrical banderitas design across the marked line. (Diagram description: half-design and vertical line.)**, the stated answer **The completed half must be a mirror image at equal distances from the line** is correct."
         },
         "answer": "True",
         "type": "true_false",
@@ -11173,16 +11173,16 @@
       "taglish": "Draw circles with different radii using a pair of compasses."
     },
     "worked_example": {
-      "en": "Use a compass to draw a circle with radius 10 cm. Label its center and one radius. [Diagram placeholder: compass construction space.]",
-      "fil": "Use a compass to draw a circle with radius 10 cm. Label its center and one radius. [Diagram placeholder: compass construction space.]",
-      "taglish": "Use a compass to draw a circle with radius 10 cm. Label its center and one radius. [Diagram placeholder: compass construction space.]"
+      "en": "Use a compass to draw a circle with radius 10 cm. Label its center and one radius. (Diagram description: compass construction space.)",
+      "fil": "Use a compass to draw a circle with radius 10 cm. Label its center and one radius. (Diagram description: compass construction space.)",
+      "taglish": "Use a compass to draw a circle with radius 10 cm. Label its center and one radius. (Diagram description: compass construction space.)"
     },
     "items": [
       {
         "q": {
-          "en": "Use a compass to draw a circle with radius 10 cm. Label its center and one radius. [Diagram placeholder: compass construction space.]",
-          "fil": "Use a compass to draw a circle with radius 10 cm. Label its center and one radius. [Diagram placeholder: compass construction space.]",
-          "taglish": "Use a compass to draw a circle with radius 10 cm. Label its center and one radius. [Diagram placeholder: compass construction space.]"
+          "en": "Use a compass to draw a circle with radius 10 cm. Label its center and one radius. (Diagram description: compass construction space.)",
+          "fil": "Use a compass to draw a circle with radius 10 cm. Label its center and one radius. (Diagram description: compass construction space.)",
+          "taglish": "Use a compass to draw a circle with radius 10 cm. Label its center and one radius. (Diagram description: compass construction space.)"
         },
         "answer": "A circle of radius 10 cm with labeled center and radius",
         "type": "mcq",
@@ -11207,9 +11207,9 @@
       },
       {
         "q": {
-          "en": "Use a compass to draw a circle with radius 8 cm. Label its center and one radius. [Diagram placeholder: compass construction space.]",
-          "fil": "Use a compass to draw a circle with radius 8 cm. Label its center and one radius. [Diagram placeholder: compass construction space.]",
-          "taglish": "Use a compass to draw a circle with radius 8 cm. Label its center and one radius. [Diagram placeholder: compass construction space.]"
+          "en": "Use a compass to draw a circle with radius 8 cm. Label its center and one radius. (Diagram description: compass construction space.)",
+          "fil": "Use a compass to draw a circle with radius 8 cm. Label its center and one radius. (Diagram description: compass construction space.)",
+          "taglish": "Use a compass to draw a circle with radius 8 cm. Label its center and one radius. (Diagram description: compass construction space.)"
         },
         "answer": "A circle of radius 8 cm with labeled center and radius",
         "type": "mcq",
@@ -11234,9 +11234,9 @@
       },
       {
         "q": {
-          "en": "Use a compass to draw a circle with radius 6 cm. Label its center and one radius. [Diagram placeholder: compass construction space.]",
-          "fil": "Use a compass to draw a circle with radius 6 cm. Label its center and one radius. [Diagram placeholder: compass construction space.]",
-          "taglish": "Use a compass to draw a circle with radius 6 cm. Label its center and one radius. [Diagram placeholder: compass construction space.]"
+          "en": "Use a compass to draw a circle with radius 6 cm. Label its center and one radius. (Diagram description: compass construction space.)",
+          "fil": "Use a compass to draw a circle with radius 6 cm. Label its center and one radius. (Diagram description: compass construction space.)",
+          "taglish": "Use a compass to draw a circle with radius 6 cm. Label its center and one radius. (Diagram description: compass construction space.)"
         },
         "answer": "A circle of radius 6 cm with labeled center and radius",
         "type": "mcq",
@@ -11261,9 +11261,9 @@
       },
       {
         "q": {
-          "en": "Use a compass to draw a circle with radius 4 cm. Label its center and one radius. [Diagram placeholder: compass construction space.]",
-          "fil": "Use a compass to draw a circle with radius 4 cm. Label its center and one radius. [Diagram placeholder: compass construction space.]",
-          "taglish": "Use a compass to draw a circle with radius 4 cm. Label its center and one radius. [Diagram placeholder: compass construction space.]"
+          "en": "Use a compass to draw a circle with radius 4 cm. Label its center and one radius. (Diagram description: compass construction space.)",
+          "fil": "Use a compass to draw a circle with radius 4 cm. Label its center and one radius. (Diagram description: compass construction space.)",
+          "taglish": "Use a compass to draw a circle with radius 4 cm. Label its center and one radius. (Diagram description: compass construction space.)"
         },
         "answer": "A circle of radius 4 cm with labeled center and radius",
         "type": "matching",
@@ -11286,9 +11286,9 @@
       },
       {
         "q": {
-          "en": "Use a compass to draw a circle with radius 12 cm. Label its center and one radius. [Diagram placeholder: compass construction space.]",
-          "fil": "Use a compass to draw a circle with radius 12 cm. Label its center and one radius. [Diagram placeholder: compass construction space.]",
-          "taglish": "Use a compass to draw a circle with radius 12 cm. Label its center and one radius. [Diagram placeholder: compass construction space.]"
+          "en": "Use a compass to draw a circle with radius 12 cm. Label its center and one radius. (Diagram description: compass construction space.)",
+          "fil": "Use a compass to draw a circle with radius 12 cm. Label its center and one radius. (Diagram description: compass construction space.)",
+          "taglish": "Use a compass to draw a circle with radius 12 cm. Label its center and one radius. (Diagram description: compass construction space.)"
         },
         "answer": "A circle of radius 12 cm with labeled center and radius",
         "type": "matching",
@@ -11311,9 +11311,9 @@
       },
       {
         "q": {
-          "en": "For **Use a compass to draw a circle with radius 10 cm. Label its center and one radius. [Diagram placeholder: compass construction space.]**, the stated answer **A circle of radius 10 cm with labeled center and radius** is correct.",
-          "fil": "For **Use a compass to draw a circle with radius 10 cm. Label its center and one radius. [Diagram placeholder: compass construction space.]**, the stated answer **A circle of radius 10 cm with labeled center and radius** is correct.",
-          "taglish": "For **Use a compass to draw a circle with radius 10 cm. Label its center and one radius. [Diagram placeholder: compass construction space.]**, the stated answer **A circle of radius 10 cm with labeled center and radius** is correct."
+          "en": "For **Use a compass to draw a circle with radius 10 cm. Label its center and one radius. (Diagram description: compass construction space.)**, the stated answer **A circle of radius 10 cm with labeled center and radius** is correct.",
+          "fil": "For **Use a compass to draw a circle with radius 10 cm. Label its center and one radius. (Diagram description: compass construction space.)**, the stated answer **A circle of radius 10 cm with labeled center and radius** is correct.",
+          "taglish": "For **Use a compass to draw a circle with radius 10 cm. Label its center and one radius. (Diagram description: compass construction space.)**, the stated answer **A circle of radius 10 cm with labeled center and radius** is correct."
         },
         "answer": "True",
         "type": "true_false",
@@ -11336,9 +11336,9 @@
       },
       {
         "q": {
-          "en": "For **Use a compass to draw a circle with radius 5 cm. Label its center and one radius. [Diagram placeholder: compass construction space.]**, the answer can be chosen without using the given mathematical information.",
-          "fil": "For **Use a compass to draw a circle with radius 5 cm. Label its center and one radius. [Diagram placeholder: compass construction space.]**, the answer can be chosen without using the given mathematical information.",
-          "taglish": "For **Use a compass to draw a circle with radius 5 cm. Label its center and one radius. [Diagram placeholder: compass construction space.]**, the answer can be chosen without using the given mathematical information."
+          "en": "For **Use a compass to draw a circle with radius 5 cm. Label its center and one radius. (Diagram description: compass construction space.)**, the answer can be chosen without using the given mathematical information.",
+          "fil": "For **Use a compass to draw a circle with radius 5 cm. Label its center and one radius. (Diagram description: compass construction space.)**, the answer can be chosen without using the given mathematical information.",
+          "taglish": "For **Use a compass to draw a circle with radius 5 cm. Label its center and one radius. (Diagram description: compass construction space.)**, the answer can be chosen without using the given mathematical information."
         },
         "answer": "False",
         "type": "true_false",
@@ -13454,16 +13454,16 @@
       "taglish": "Construct a pie graph using appropriate tools."
     },
     "worked_example": {
-      "en": "Construct a pie graph for walking 50%, jeepney 25%, bicycle 25%. State the three sector angles. [Diagram placeholder: blank circle with center.]",
-      "fil": "Construct a pie graph for walking 50%, jeepney 25%, bicycle 25%. State the three sector angles. [Diagram placeholder: blank circle with center.]",
-      "taglish": "Construct a pie graph for walking 50%, jeepney 25%, bicycle 25%. State the three sector angles. [Diagram placeholder: blank circle with center.]"
+      "en": "Construct a pie graph for walking 50%, jeepney 25%, bicycle 25%. State the three sector angles. (Diagram description: blank circle with center.)",
+      "fil": "Construct a pie graph for walking 50%, jeepney 25%, bicycle 25%. State the three sector angles. (Diagram description: blank circle with center.)",
+      "taglish": "Construct a pie graph for walking 50%, jeepney 25%, bicycle 25%. State the three sector angles. (Diagram description: blank circle with center.)"
     },
     "items": [
       {
         "q": {
-          "en": "Construct a pie graph for walking 50%, jeepney 25%, bicycle 25%. State the three sector angles. [Diagram placeholder: blank circle with center.]",
-          "fil": "Construct a pie graph for walking 50%, jeepney 25%, bicycle 25%. State the three sector angles. [Diagram placeholder: blank circle with center.]",
-          "taglish": "Construct a pie graph for walking 50%, jeepney 25%, bicycle 25%. State the three sector angles. [Diagram placeholder: blank circle with center.]"
+          "en": "Construct a pie graph for walking 50%, jeepney 25%, bicycle 25%. State the three sector angles. (Diagram description: blank circle with center.)",
+          "fil": "Construct a pie graph for walking 50%, jeepney 25%, bicycle 25%. State the three sector angles. (Diagram description: blank circle with center.)",
+          "taglish": "Construct a pie graph for walking 50%, jeepney 25%, bicycle 25%. State the three sector angles. (Diagram description: blank circle with center.)"
         },
         "answer": "180°, 90°, 90°",
         "type": "mcq",
@@ -13488,9 +13488,9 @@
       },
       {
         "q": {
-          "en": "For **Construct a pie graph for walking 50%, jeepney 25%, bicycle 25%. State the three sector angles. [Diagram placeholder: blank circle with center.]**, the stated answer **180°, 90°, 90°** is correct.",
-          "fil": "For **Construct a pie graph for walking 50%, jeepney 25%, bicycle 25%. State the three sector angles. [Diagram placeholder: blank circle with center.]**, the stated answer **180°, 90°, 90°** is correct.",
-          "taglish": "For **Construct a pie graph for walking 50%, jeepney 25%, bicycle 25%. State the three sector angles. [Diagram placeholder: blank circle with center.]**, the stated answer **180°, 90°, 90°** is correct."
+          "en": "For **Construct a pie graph for walking 50%, jeepney 25%, bicycle 25%. State the three sector angles. (Diagram description: blank circle with center.)**, the stated answer **180°, 90°, 90°** is correct.",
+          "fil": "For **Construct a pie graph for walking 50%, jeepney 25%, bicycle 25%. State the three sector angles. (Diagram description: blank circle with center.)**, the stated answer **180°, 90°, 90°** is correct.",
+          "taglish": "For **Construct a pie graph for walking 50%, jeepney 25%, bicycle 25%. State the three sector angles. (Diagram description: blank circle with center.)**, the stated answer **180°, 90°, 90°** is correct."
         },
         "answer": "True",
         "type": "true_false",
@@ -13513,9 +13513,9 @@
       },
       {
         "q": {
-          "en": "For **Construct a pie graph for walking 50%, jeepney 25%, bicycle 25%. State the three sector angles. [Diagram placeholder: blank circle with center.]**, the answer can be chosen without using the given mathematical information.",
-          "fil": "For **Construct a pie graph for walking 50%, jeepney 25%, bicycle 25%. State the three sector angles. [Diagram placeholder: blank circle with center.]**, the answer can be chosen without using the given mathematical information.",
-          "taglish": "For **Construct a pie graph for walking 50%, jeepney 25%, bicycle 25%. State the three sector angles. [Diagram placeholder: blank circle with center.]**, the answer can be chosen without using the given mathematical information."
+          "en": "For **Construct a pie graph for walking 50%, jeepney 25%, bicycle 25%. State the three sector angles. (Diagram description: blank circle with center.)**, the answer can be chosen without using the given mathematical information.",
+          "fil": "For **Construct a pie graph for walking 50%, jeepney 25%, bicycle 25%. State the three sector angles. (Diagram description: blank circle with center.)**, the answer can be chosen without using the given mathematical information.",
+          "taglish": "For **Construct a pie graph for walking 50%, jeepney 25%, bicycle 25%. State the three sector angles. (Diagram description: blank circle with center.)**, the answer can be chosen without using the given mathematical information."
         },
         "answer": "False",
         "type": "true_false",
@@ -13963,16 +13963,16 @@
       "taglish": "Interpret data from digital media that are presented in tabular or graphical form."
     },
     "worked_example": {
-      "en": "Present mango=5, banana=3, papaya=9, and guava=2 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]",
-      "fil": "Present mango=5, banana=3, papaya=9, and guava=2 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]",
-      "taglish": "Present mango=5, banana=3, papaya=9, and guava=2 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]"
+      "en": "Which option correctly presents mango=5, banana=3, papaya=9, and guava=2 in a labeled table or graph?",
+      "fil": "Which option correctly presents mango=5, banana=3, papaya=9, and guava=2 in a labeled table or graph?",
+      "taglish": "Which option correctly presents mango=5, banana=3, papaya=9, and guava=2 in a labeled table or graph?"
     },
     "items": [
       {
         "q": {
-          "en": "Present mango=5, banana=3, papaya=9, and guava=2 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]",
-          "fil": "Present mango=5, banana=3, papaya=9, and guava=2 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]",
-          "taglish": "Present mango=5, banana=3, papaya=9, and guava=2 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]"
+          "en": "Which option correctly presents mango=5, banana=3, papaya=9, and guava=2 in a labeled table or graph?",
+          "fil": "Which option correctly presents mango=5, banana=3, papaya=9, and guava=2 in a labeled table or graph?",
+          "taglish": "Which option correctly presents mango=5, banana=3, papaya=9, and guava=2 in a labeled table or graph?"
         },
         "answer": "Correct display with values 5, 3, 9, 2 and complete labels",
         "type": "mcq",
@@ -13997,9 +13997,9 @@
       },
       {
         "q": {
-          "en": "Present mango=3, banana=8, papaya=6, and guava=12 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]",
-          "fil": "Present mango=3, banana=8, papaya=6, and guava=12 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]",
-          "taglish": "Present mango=3, banana=8, papaya=6, and guava=12 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]"
+          "en": "Which option correctly presents mango=3, banana=8, papaya=6, and guava=12 in a labeled table or graph?",
+          "fil": "Which option correctly presents mango=3, banana=8, papaya=6, and guava=12 in a labeled table or graph?",
+          "taglish": "Which option correctly presents mango=3, banana=8, papaya=6, and guava=12 in a labeled table or graph?"
         },
         "answer": "Correct display with values 3, 8, 6, 12 and complete labels",
         "type": "mcq",
@@ -14024,9 +14024,9 @@
       },
       {
         "q": {
-          "en": "Present mango=11, banana=2, papaya=2, and guava=9 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]",
-          "fil": "Present mango=11, banana=2, papaya=2, and guava=9 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]",
-          "taglish": "Present mango=11, banana=2, papaya=2, and guava=9 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]"
+          "en": "Which option correctly presents mango=11, banana=2, papaya=2, and guava=9 in a labeled table or graph?",
+          "fil": "Which option correctly presents mango=11, banana=2, papaya=2, and guava=9 in a labeled table or graph?",
+          "taglish": "Which option correctly presents mango=11, banana=2, papaya=2, and guava=9 in a labeled table or graph?"
         },
         "answer": "Correct display with values 11, 2, 2, 9 and complete labels",
         "type": "mcq",
@@ -14051,9 +14051,9 @@
       },
       {
         "q": {
-          "en": "Present mango=2, banana=9, papaya=7, and guava=3 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]",
-          "fil": "Present mango=2, banana=9, papaya=7, and guava=3 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]",
-          "taglish": "Present mango=2, banana=9, papaya=7, and guava=3 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]"
+          "en": "Which option correctly presents mango=2, banana=9, papaya=7, and guava=3 in a labeled table or graph?",
+          "fil": "Which option correctly presents mango=2, banana=9, papaya=7, and guava=3 in a labeled table or graph?",
+          "taglish": "Which option correctly presents mango=2, banana=9, papaya=7, and guava=3 in a labeled table or graph?"
         },
         "answer": "Correct display with values 2, 9, 7, 3 and complete labels",
         "type": "mcq",
@@ -14078,9 +14078,9 @@
       },
       {
         "q": {
-          "en": "Present mango=7, banana=9, papaya=2, and guava=5 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]",
-          "fil": "Present mango=7, banana=9, papaya=2, and guava=5 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]",
-          "taglish": "Present mango=7, banana=9, papaya=2, and guava=5 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]"
+          "en": "Which option correctly presents mango=7, banana=9, papaya=2, and guava=5 in a labeled table or graph?",
+          "fil": "Which option correctly presents mango=7, banana=9, papaya=2, and guava=5 in a labeled table or graph?",
+          "taglish": "Which option correctly presents mango=7, banana=9, papaya=2, and guava=5 in a labeled table or graph?"
         },
         "answer": "Correct display with values 7, 9, 2, 5 and complete labels",
         "type": "mcq",
@@ -14105,9 +14105,9 @@
       },
       {
         "q": {
-          "en": "Present mango=9, banana=4, papaya=2, and guava=10 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]",
-          "fil": "Present mango=9, banana=4, papaya=2, and guava=10 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]",
-          "taglish": "Present mango=9, banana=4, papaya=2, and guava=10 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]"
+          "en": "Which option correctly presents mango=9, banana=4, papaya=2, and guava=10 in a labeled table or graph?",
+          "fil": "Which option correctly presents mango=9, banana=4, papaya=2, and guava=10 in a labeled table or graph?",
+          "taglish": "Which option correctly presents mango=9, banana=4, papaya=2, and guava=10 in a labeled table or graph?"
         },
         "answer": "Correct display with values 9, 4, 2, 10 and complete labels",
         "type": "matching",
@@ -14130,9 +14130,9 @@
       },
       {
         "q": {
-          "en": "Present mango=3, banana=10, papaya=6, and guava=3 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]",
-          "fil": "Present mango=3, banana=10, papaya=6, and guava=3 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]",
-          "taglish": "Present mango=3, banana=10, papaya=6, and guava=3 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]"
+          "en": "Which option correctly presents mango=3, banana=10, papaya=6, and guava=3 in a labeled table or graph?",
+          "fil": "Which option correctly presents mango=3, banana=10, papaya=6, and guava=3 in a labeled table or graph?",
+          "taglish": "Which option correctly presents mango=3, banana=10, papaya=6, and guava=3 in a labeled table or graph?"
         },
         "answer": "Correct display with values 3, 10, 6, 3 and complete labels",
         "type": "matching",
@@ -14155,9 +14155,9 @@
       },
       {
         "q": {
-          "en": "For **Present mango=4, banana=3, papaya=5, and guava=5 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]**, the stated answer **Correct display with values 4, 3, 5, 5 and complete labels** is correct.",
-          "fil": "For **Present mango=4, banana=3, papaya=5, and guava=5 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]**, the stated answer **Correct display with values 4, 3, 5, 5 and complete labels** is correct.",
-          "taglish": "For **Present mango=4, banana=3, papaya=5, and guava=5 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]**, the stated answer **Correct display with values 4, 3, 5, 5 and complete labels** is correct."
+          "en": "For **Present mango=4, banana=3, papaya=5, and guava=5 in a labeled table or graph. **, the stated answer **Correct display with values 4, 3, 5, 5 and complete labels** is correct.",
+          "fil": "For **Present mango=4, banana=3, papaya=5, and guava=5 in a labeled table or graph. **, the stated answer **Correct display with values 4, 3, 5, 5 and complete labels** is correct.",
+          "taglish": "For **Present mango=4, banana=3, papaya=5, and guava=5 in a labeled table or graph. **, the stated answer **Correct display with values 4, 3, 5, 5 and complete labels** is correct."
         },
         "answer": "True",
         "type": "true_false",
@@ -14180,9 +14180,9 @@
       },
       {
         "q": {
-          "en": "Present mango=4, banana=3, papaya=5, and guava=5 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]",
-          "fil": "Present mango=4, banana=3, papaya=5, and guava=5 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]",
-          "taglish": "Present mango=4, banana=3, papaya=5, and guava=5 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]"
+          "en": "Which option correctly presents mango=4, banana=3, papaya=5, and guava=5 in a labeled table or graph?",
+          "fil": "Which option correctly presents mango=4, banana=3, papaya=5, and guava=5 in a labeled table or graph?",
+          "taglish": "Which option correctly presents mango=4, banana=3, papaya=5, and guava=5 in a labeled table or graph?"
         },
         "answer": "Correct display with values 4, 3, 5, 5 and complete labels",
         "type": "mcq",
@@ -14207,9 +14207,9 @@
       },
       {
         "q": {
-          "en": "For **Present mango=6, banana=5, papaya=10, and guava=5 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]**, the answer can be chosen without using the given mathematical information.",
-          "fil": "For **Present mango=6, banana=5, papaya=10, and guava=5 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]**, the answer can be chosen without using the given mathematical information.",
-          "taglish": "For **Present mango=6, banana=5, papaya=10, and guava=5 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]**, the answer can be chosen without using the given mathematical information."
+          "en": "For **Present mango=6, banana=5, papaya=10, and guava=5 in a labeled table or graph. **, the answer can be chosen without using the given mathematical information.",
+          "fil": "For **Present mango=6, banana=5, papaya=10, and guava=5 in a labeled table or graph. **, the answer can be chosen without using the given mathematical information.",
+          "taglish": "For **Present mango=6, banana=5, papaya=10, and guava=5 in a labeled table or graph. **, the answer can be chosen without using the given mathematical information."
         },
         "answer": "False",
         "type": "true_false",
@@ -14232,9 +14232,9 @@
       },
       {
         "q": {
-          "en": "Present mango=6, banana=5, papaya=10, and guava=5 in a labeled table or graph. [Graph placeholder: axes or pictograph key.] Explain why your answer is reasonable.",
-          "fil": "Present mango=6, banana=5, papaya=10, and guava=5 in a labeled table or graph. [Graph placeholder: axes or pictograph key.] Explain why your answer is reasonable.",
-          "taglish": "Present mango=6, banana=5, papaya=10, and guava=5 in a labeled table or graph. [Graph placeholder: axes or pictograph key.] Explain why your answer is reasonable."
+          "en": "Which option correctly presents mango=6, banana=5, papaya=10, and guava=5 in a labeled table or graph? Explain why your answer is reasonable.",
+          "fil": "Which option correctly presents mango=6, banana=5, papaya=10, and guava=5 in a labeled table or graph? Explain why your answer is reasonable.",
+          "taglish": "Which option correctly presents mango=6, banana=5, papaya=10, and guava=5 in a labeled table or graph? Explain why your answer is reasonable."
         },
         "answer": "Correct display with values 6, 5, 10, 5 and complete labels",
         "type": "mcq",
@@ -14259,9 +14259,9 @@
       },
       {
         "q": {
-          "en": "Present mango=3, banana=3, papaya=9, and guava=11 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]",
-          "fil": "Present mango=3, banana=3, papaya=9, and guava=11 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]",
-          "taglish": "Present mango=3, banana=3, papaya=9, and guava=11 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]"
+          "en": "Which option correctly presents mango=3, banana=3, papaya=9, and guava=11 in a labeled table or graph?",
+          "fil": "Which option correctly presents mango=3, banana=3, papaya=9, and guava=11 in a labeled table or graph?",
+          "taglish": "Which option correctly presents mango=3, banana=3, papaya=9, and guava=11 in a labeled table or graph?"
         },
         "answer": "Correct display with values 3, 3, 9, 11 and complete labels",
         "type": "mcq",
@@ -14286,9 +14286,9 @@
       },
       {
         "q": {
-          "en": "Present mango=6, banana=5, papaya=10, and guava=5 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]",
-          "fil": "Present mango=6, banana=5, papaya=10, and guava=5 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]",
-          "taglish": "Present mango=6, banana=5, papaya=10, and guava=5 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]"
+          "en": "Which option correctly presents mango=6, banana=5, papaya=10, and guava=5 in a labeled table or graph?",
+          "fil": "Which option correctly presents mango=6, banana=5, papaya=10, and guava=5 in a labeled table or graph?",
+          "taglish": "Which option correctly presents mango=6, banana=5, papaya=10, and guava=5 in a labeled table or graph?"
         },
         "answer": "Correct display with values 6, 5, 10, 5 and complete labels",
         "type": "mcq",
@@ -14313,9 +14313,9 @@
       },
       {
         "q": {
-          "en": "Present mango=7, banana=11, papaya=6, and guava=11 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]",
-          "fil": "Present mango=7, banana=11, papaya=6, and guava=11 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]",
-          "taglish": "Present mango=7, banana=11, papaya=6, and guava=11 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]"
+          "en": "Which option correctly presents mango=7, banana=11, papaya=6, and guava=11 in a labeled table or graph?",
+          "fil": "Which option correctly presents mango=7, banana=11, papaya=6, and guava=11 in a labeled table or graph?",
+          "taglish": "Which option correctly presents mango=7, banana=11, papaya=6, and guava=11 in a labeled table or graph?"
         },
         "answer": "Correct display with values 7, 11, 6, 11 and complete labels",
         "type": "mcq",
@@ -14340,9 +14340,9 @@
       },
       {
         "q": {
-          "en": "Present mango=10, banana=4, papaya=5, and guava=12 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]",
-          "fil": "Present mango=10, banana=4, papaya=5, and guava=12 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]",
-          "taglish": "Present mango=10, banana=4, papaya=5, and guava=12 in a labeled table or graph. [Graph placeholder: axes or pictograph key.]"
+          "en": "Which option correctly presents mango=10, banana=4, papaya=5, and guava=12 in a labeled table or graph?",
+          "fil": "Which option correctly presents mango=10, banana=4, papaya=5, and guava=12 in a labeled table or graph?",
+          "taglish": "Which option correctly presents mango=10, banana=4, papaya=5, and guava=12 in a labeled table or graph?"
         },
         "answer": "Correct display with values 10, 4, 5, 12 and complete labels",
         "type": "mcq",

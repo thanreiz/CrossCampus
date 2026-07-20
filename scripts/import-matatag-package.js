@@ -89,6 +89,16 @@ function isObjectivePrompt(question, answer) {
   return !/\b(draw|sketch|construct|create|make a model|show or explain|explain your strategy|justify)\b/i.test(question)
 }
 
+function cleanPrompt(value) {
+  return String(value)
+    .replace(/\[Diagram placeholder:\s*(.+?)\]/gi, '(Diagram description: $1)')
+    .replace(/\[Graph placeholder:\s*(.+?)\]/gi, '')
+    .replace(/^Present (.+?) in a labeled table or graph\.\s*/i, 'Which option correctly presents $1 in a labeled table or graph? ')
+    .replace(/\s*Explain or sketch\.?/gi, '')
+    .replace(/\s+/g, ' ')
+    .trim()
+}
+
 function parseShortObjective(markdown, keys, source) {
   const candidates = [
     ...numbered(section(markdown, 'B. Identification (2 points)')).map((item) => ({ ...item, originalType: 'identification' })),
@@ -135,7 +145,7 @@ function parseActivity(markdown, source) {
 function makeItem({ q, answer, type, options, source, number, originalType }) {
   const solution = `Answer: ${answer}`
   return {
-    q: localized(q),
+    q: localized(cleanPrompt(q)),
     answer,
     type,
     ...(options ? { options } : {}),
@@ -191,7 +201,7 @@ function gameTags(spec) {
 
 function firstChallenge(lesson) {
   const activity = section(lesson, 'Activity (15 minutes)')
-  return activity.match(/\*\*(.+?)\*\*/)?.[1] || activity.split('\n')[0]
+  return cleanPrompt(activity.match(/\*\*(.+?)\*\*/)?.[1] || activity.split('\n')[0])
 }
 
 for (let grade = 1; grade <= 6; grade++) {

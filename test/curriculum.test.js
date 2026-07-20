@@ -24,6 +24,7 @@ test('all six MATATAG grade catalogs are complete and traceable', () => {
       assert.ok(competency.items.every((item) => item.source.package === 'DepEd-MATATAG-Mathematics-Grades-1-6'), competency.ref)
       assert.ok(competency.items.every((item) => !/\[(?:Graph|Diagram|Image) placeholder/i.test(item.q.en)), `${competency.ref} exposes a source placeholder`)
       assert.ok(competency.items.every((item) => !/answer can be chosen without using the given mathematical information/i.test(item.q.en)), `${competency.ref} exposes a templated non-question`)
+      assert.ok(competency.items.every((item) => !/\*\*/.test(item.q.en)), `${competency.ref} exposes raw markdown`)
       for (const item of competency.items.filter((question) => question.options)) {
         assert.equal(new Set(item.options).size, item.options.length, `${competency.ref} has duplicate options`)
         assert.ok(item.options.includes(item.answer), `${competency.ref} answer missing from options`)

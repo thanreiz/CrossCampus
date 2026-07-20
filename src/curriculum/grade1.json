@@ -105,9 +105,9 @@
       },
       {
         "q": {
-          "en": "For **Draw a square in a different orientation. Does its name change?**, the stated answer **No; it remains a square because its defining features do not change** is correct.",
-          "fil": "For **Draw a square in a different orientation. Does its name change?**, the stated answer **No; it remains a square because its defining features do not change** is correct.",
-          "taglish": "For **Draw a square in a different orientation. Does its name change?**, the stated answer **No; it remains a square because its defining features do not change** is correct."
+          "en": "Is this solution correct? Draw a square in a different orientation. Does its name change? Proposed answer: No; it remains a square because its defining features do not change",
+          "fil": "Is this solution correct? Draw a square in a different orientation. Does its name change? Proposed answer: No; it remains a square because its defining features do not change",
+          "taglish": "Is this solution correct? Draw a square in a different orientation. Does its name change? Proposed answer: No; it remains a square because its defining features do not change"
         },
         "answer": "True",
         "type": "true_false",
@@ -270,9 +270,9 @@
       },
       {
         "q": {
-          "en": "For **Draw a square in a different orientation. Does its name change?**, the stated answer **No; it remains a square because its defining features do not change** is correct.",
-          "fil": "For **Draw a square in a different orientation. Does its name change?**, the stated answer **No; it remains a square because its defining features do not change** is correct.",
-          "taglish": "For **Draw a square in a different orientation. Does its name change?**, the stated answer **No; it remains a square because its defining features do not change** is correct."
+          "en": "Is this solution correct? Draw a square in a different orientation. Does its name change? Proposed answer: No; it remains a square because its defining features do not change",
+          "fil": "Is this solution correct? Draw a square in a different orientation. Does its name change? Proposed answer: No; it remains a square because its defining features do not change",
+          "taglish": "Is this solution correct? Draw a square in a different orientation. Does its name change? Proposed answer: No; it remains a square because its defining features do not change"
         },
         "answer": "True",
         "type": "true_false",
@@ -456,9 +456,9 @@
       },
       {
         "q": {
-          "en": "For **(Diagram description: composite figure made of one square and two triangles.) How many component shapes are shown?**, the stated answer **3** is correct.",
-          "fil": "For **(Diagram description: composite figure made of one square and two triangles.) How many component shapes are shown?**, the stated answer **3** is correct.",
-          "taglish": "For **(Diagram description: composite figure made of one square and two triangles.) How many component shapes are shown?**, the stated answer **3** is correct."
+          "en": "Is this solution correct? (Diagram description: composite figure made of one square and two triangles.) How many component shapes are shown? Proposed answer: 3",
+          "fil": "Is this solution correct? (Diagram description: composite figure made of one square and two triangles.) How many component shapes are shown? Proposed answer: 3",
+          "taglish": "Is this solution correct? (Diagram description: composite figure made of one square and two triangles.) How many component shapes are shown? Proposed answer: 3"
         },
         "answer": "True",
         "type": "true_false",
@@ -712,9 +712,9 @@
       },
       {
         "q": {
-          "en": "For **Continue the count: 16, 18, 20, __, __.**, the stated answer **22, 24** is correct.",
-          "fil": "For **Continue the count: 16, 18, 20, __, __.**, the stated answer **22, 24** is correct.",
-          "taglish": "For **Continue the count: 16, 18, 20, __, __.**, the stated answer **22, 24** is correct."
+          "en": "Is this solution correct? Continue the count: 16, 18, 20, __, __. Proposed answer: 22, 24",
+          "fil": "Is this solution correct? Continue the count: 16, 18, 20, __, __. Proposed answer: 22, 24",
+          "taglish": "Is this solution correct? Continue the count: 16, 18, 20, __, __. Proposed answer: 22, 24"
         },
         "answer": "True",
         "type": "true_false",
@@ -894,9 +894,9 @@
     "items": [
       {
         "q": {
-          "en": "Write the numeral for: **twenty-seven**.",
-          "fil": "Write the numeral for: **twenty-seven**.",
-          "taglish": "Write the numeral for: **twenty-seven**."
+          "en": "Write the numeral for: twenty-seven.",
+          "fil": "Write the numeral for: twenty-seven.",
+          "taglish": "Write the numeral for: twenty-seven."
         },
         "answer": "27",
         "type": "mcq",
@@ -921,9 +921,9 @@
       },
       {
         "q": {
-          "en": "Write the numeral for: **fourteen**.",
-          "fil": "Write the numeral for: **fourteen**.",
-          "taglish": "Write the numeral for: **fourteen**."
+          "en": "Write the numeral for: fourteen.",
+          "fil": "Write the numeral for: fourteen.",
+          "taglish": "Write the numeral for: fourteen."
         },
         "answer": "14",
         "type": "mcq",
@@ -948,9 +948,9 @@
       },
       {
         "q": {
-          "en": "For **Write the numeral for: **fourteen**.**, the stated answer **14** is correct.",
-          "fil": "For **Write the numeral for: **fourteen**.**, the stated answer **14** is correct.",
-          "taglish": "For **Write the numeral for: **fourteen**.**, the stated answer **14** is correct."
+          "en": "Is this solution correct? Write the numeral for: fourteen. Proposed answer: 14",
+          "fil": "Is this solution correct? Write the numeral for: fourteen. Proposed answer: 14",
+          "taglish": "Is this solution correct? Write the numeral for: fourteen. Proposed answer: 14"
         },
         "answer": "True",
         "type": "true_false",
@@ -973,9 +973,9 @@
       },
       {
         "q": {
-          "en": "Write the numeral for: **twenty-seven**. Explain why your answer is reasonable.",
-          "fil": "Write the numeral for: **twenty-seven**. Explain why your answer is reasonable.",
-          "taglish": "Write the numeral for: **twenty-seven**. Explain why your answer is reasonable."
+          "en": "Write the numeral for: twenty-seven. Explain why your answer is reasonable.",
+          "fil": "Write the numeral for: twenty-seven. Explain why your answer is reasonable.",
+          "taglish": "Write the numeral for: twenty-seven. Explain why your answer is reasonable."
         },
         "answer": "27",
         "type": "numeric",
@@ -1025,9 +1025,9 @@
     "items": [
       {
         "q": {
-          "en": "Write the numeral for: **twenty-seven**.",
-          "fil": "Write the numeral for: **twenty-seven**.",
-          "taglish": "Write the numeral for: **twenty-seven**."
+          "en": "Write the numeral for: twenty-seven.",
+          "fil": "Write the numeral for: twenty-seven.",
+          "taglish": "Write the numeral for: twenty-seven."
         },
         "answer": "27",
         "type": "mcq",
@@ -1052,9 +1052,9 @@
       },
       {
         "q": {
-          "en": "Write the numeral for: **fourteen**.",
-          "fil": "Write the numeral for: **fourteen**.",
-          "taglish": "Write the numeral for: **fourteen**."
+          "en": "Write the numeral for: fourteen.",
+          "fil": "Write the numeral for: fourteen.",
+          "taglish": "Write the numeral for: fourteen."
         },
         "answer": "14",
         "type": "mcq",
@@ -1079,9 +1079,9 @@
       },
       {
         "q": {
-          "en": "For **Write the numeral for: **fourteen**.**, the stated answer **14** is correct.",
-          "fil": "For **Write the numeral for: **fourteen**.**, the stated answer **14** is correct.",
-          "taglish": "For **Write the numeral for: **fourteen**.**, the stated answer **14** is correct."
+          "en": "Is this solution correct? Write the numeral for: fourteen. Proposed answer: 14",
+          "fil": "Is this solution correct? Write the numeral for: fourteen. Proposed answer: 14",
+          "taglish": "Is this solution correct? Write the numeral for: fourteen. Proposed answer: 14"
         },
         "answer": "True",
         "type": "true_false",
@@ -1104,9 +1104,9 @@
       },
       {
         "q": {
-          "en": "Write the numeral for: **twenty-seven**. Explain why your answer is reasonable.",
-          "fil": "Write the numeral for: **twenty-seven**. Explain why your answer is reasonable.",
-          "taglish": "Write the numeral for: **twenty-seven**. Explain why your answer is reasonable."
+          "en": "Write the numeral for: twenty-seven. Explain why your answer is reasonable.",
+          "fil": "Write the numeral for: twenty-seven. Explain why your answer is reasonable.",
+          "taglish": "Write the numeral for: twenty-seven. Explain why your answer is reasonable."
         },
         "answer": "27",
         "type": "numeric",
@@ -1341,9 +1341,9 @@
       },
       {
         "q": {
-          "en": "For **Compare the school enrollment figures 55 and 7 using <, >, or =.**, the stated answer **55 > 7** is correct.",
-          "fil": "For **Compare the school enrollment figures 55 and 7 using <, >, or =.**, the stated answer **55 > 7** is correct.",
-          "taglish": "For **Compare the school enrollment figures 55 and 7 using <, >, or =.**, the stated answer **55 > 7** is correct."
+          "en": "Is this solution correct? Compare the school enrollment figures 55 and 7 using <, >, or =. Proposed answer: 55 > 7",
+          "fil": "Is this solution correct? Compare the school enrollment figures 55 and 7 using <, >, or =. Proposed answer: 55 > 7",
+          "taglish": "Is this solution correct? Compare the school enrollment figures 55 and 7 using <, >, or =. Proposed answer: 55 > 7"
         },
         "answer": "True",
         "type": "true_false",
@@ -1732,9 +1732,9 @@
       },
       {
         "q": {
-          "en": "For **Order these barangay counts from smallest to largest: 10, 48, 13, 15.**, the stated answer **10, 13, 15, 48** is correct.",
-          "fil": "For **Order these barangay counts from smallest to largest: 10, 48, 13, 15.**, the stated answer **10, 13, 15, 48** is correct.",
-          "taglish": "For **Order these barangay counts from smallest to largest: 10, 48, 13, 15.**, the stated answer **10, 13, 15, 48** is correct."
+          "en": "Is this solution correct? Order these barangay counts from smallest to largest: 10, 48, 13, 15. Proposed answer: 10, 13, 15, 48",
+          "fil": "Is this solution correct? Order these barangay counts from smallest to largest: 10, 48, 13, 15. Proposed answer: 10, 13, 15, 48",
+          "taglish": "Is this solution correct? Order these barangay counts from smallest to largest: 10, 48, 13, 15. Proposed answer: 10, 13, 15, 48"
         },
         "answer": "True",
         "type": "true_false",
@@ -2020,9 +2020,9 @@
       },
       {
         "q": {
-          "en": "For **In a school parade, Ana is in position 3. Write her position as an ordinal number.**, the stated answer **3rd** is correct.",
-          "fil": "For **In a school parade, Ana is in position 3. Write her position as an ordinal number.**, the stated answer **3rd** is correct.",
-          "taglish": "For **In a school parade, Ana is in position 3. Write her position as an ordinal number.**, the stated answer **3rd** is correct."
+          "en": "Is this solution correct? In a school parade, Ana is in position 3. Write her position as an ordinal number. Proposed answer: 3rd",
+          "fil": "Is this solution correct? In a school parade, Ana is in position 3. Write her position as an ordinal number. Proposed answer: 3rd",
+          "taglish": "Is this solution correct? In a school parade, Ana is in position 3. Write her position as an ordinal number. Proposed answer: 3rd"
         },
         "answer": "True",
         "type": "true_false",
@@ -2357,9 +2357,9 @@
       },
       {
         "q": {
-          "en": "For **Write the barangay record 53 in expanded form.**, the stated answer **50 + 3** is correct.",
-          "fil": "For **Write the barangay record 53 in expanded form.**, the stated answer **50 + 3** is correct.",
-          "taglish": "For **Write the barangay record 53 in expanded form.**, the stated answer **50 + 3** is correct."
+          "en": "Is this solution correct? Write the barangay record 53 in expanded form. Proposed answer: 50 + 3",
+          "fil": "Is this solution correct? Write the barangay record 53 in expanded form. Proposed answer: 50 + 3",
+          "taglish": "Is this solution correct? Write the barangay record 53 in expanded form. Proposed answer: 50 + 3"
         },
         "answer": "True",
         "type": "true_false",
@@ -2689,9 +2689,9 @@
       },
       {
         "q": {
-          "en": "For **At the sari-sari store, one group recorded 2 items and another recorded 3. How many altogether?**, the stated answer **5** is correct.",
-          "fil": "For **At the sari-sari store, one group recorded 2 items and another recorded 3. How many altogether?**, the stated answer **5** is correct.",
-          "taglish": "For **At the sari-sari store, one group recorded 2 items and another recorded 3. How many altogether?**, the stated answer **5** is correct."
+          "en": "Is this solution correct? At the sari-sari store, one group recorded 2 items and another recorded 3. How many altogether? Proposed answer: 5",
+          "fil": "Is this solution correct? At the sari-sari store, one group recorded 2 items and another recorded 3. How many altogether? Proposed answer: 5",
+          "taglish": "Is this solution correct? At the sari-sari store, one group recorded 2 items and another recorded 3. How many altogether? Proposed answer: 5"
         },
         "answer": "True",
         "type": "true_false",
@@ -3000,9 +3000,9 @@
       },
       {
         "q": {
-          "en": "For **At the public market, one group recorded 4 items and another recorded 5. How many altogether?**, the stated answer **9** is correct.",
-          "fil": "For **At the public market, one group recorded 4 items and another recorded 5. How many altogether?**, the stated answer **9** is correct.",
-          "taglish": "For **At the public market, one group recorded 4 items and another recorded 5. How many altogether?**, the stated answer **9** is correct."
+          "en": "Is this solution correct? At the public market, one group recorded 4 items and another recorded 5. How many altogether? Proposed answer: 9",
+          "fil": "Is this solution correct? At the public market, one group recorded 4 items and another recorded 5. How many altogether? Proposed answer: 9",
+          "taglish": "Is this solution correct? At the public market, one group recorded 4 items and another recorded 5. How many altogether? Proposed answer: 9"
         },
         "answer": "True",
         "type": "true_false",
@@ -3334,9 +3334,9 @@
       },
       {
         "q": {
-          "en": "For **At the school canteen, one group recorded 6 items and another recorded 4. How many altogether?**, the stated answer **10** is correct.",
-          "fil": "For **At the school canteen, one group recorded 6 items and another recorded 4. How many altogether?**, the stated answer **10** is correct.",
-          "taglish": "For **At the school canteen, one group recorded 6 items and another recorded 4. How many altogether?**, the stated answer **10** is correct."
+          "en": "Is this solution correct? At the school canteen, one group recorded 6 items and another recorded 4. How many altogether? Proposed answer: 10",
+          "fil": "Is this solution correct? At the school canteen, one group recorded 6 items and another recorded 4. How many altogether? Proposed answer: 10",
+          "taglish": "Is this solution correct? At the school canteen, one group recorded 6 items and another recorded 4. How many altogether? Proposed answer: 10"
         },
         "answer": "True",
         "type": "true_false",
@@ -3702,9 +3702,9 @@
       },
       {
         "q": {
-          "en": "For **A school garden row is 7 m long and another is 7 m long. What is their total length?**, the stated answer **14 m** is correct.",
-          "fil": "For **A school garden row is 7 m long and another is 7 m long. What is their total length?**, the stated answer **14 m** is correct.",
-          "taglish": "For **A school garden row is 7 m long and another is 7 m long. What is their total length?**, the stated answer **14 m** is correct."
+          "en": "Is this solution correct? A school garden row is 7 m long and another is 7 m long. What is their total length? Proposed answer: 14 m",
+          "fil": "Is this solution correct? A school garden row is 7 m long and another is 7 m long. What is their total length? Proposed answer: 14 m",
+          "taglish": "Is this solution correct? A school garden row is 7 m long and another is 7 m long. What is their total length? Proposed answer: 14 m"
         },
         "answer": "True",
         "type": "true_false",
@@ -4052,9 +4052,9 @@
       },
       {
         "q": {
-          "en": "For **A school garden row is 15 m long and another is 5 m long. What is their total length?**, the stated answer **20 m** is correct.",
-          "fil": "For **A school garden row is 15 m long and another is 5 m long. What is their total length?**, the stated answer **20 m** is correct.",
-          "taglish": "For **A school garden row is 15 m long and another is 5 m long. What is their total length?**, the stated answer **20 m** is correct."
+          "en": "Is this solution correct? A school garden row is 15 m long and another is 5 m long. What is their total length? Proposed answer: 20 m",
+          "fil": "Is this solution correct? A school garden row is 15 m long and another is 5 m long. What is their total length? Proposed answer: 20 m",
+          "taglish": "Is this solution correct? A school garden row is 15 m long and another is 5 m long. What is their total length? Proposed answer: 20 m"
         },
         "answer": "True",
         "type": "true_false",
@@ -4460,9 +4460,9 @@
       },
       {
         "q": {
-          "en": "For **A school garden row is 11 m long and another is 6 m long. What is their total length?**, the stated answer **17 m** is correct.",
-          "fil": "For **A school garden row is 11 m long and another is 6 m long. What is their total length?**, the stated answer **17 m** is correct.",
-          "taglish": "For **A school garden row is 11 m long and another is 6 m long. What is their total length?**, the stated answer **17 m** is correct."
+          "en": "Is this solution correct? A school garden row is 11 m long and another is 6 m long. What is their total length? Proposed answer: 17 m",
+          "fil": "Is this solution correct? A school garden row is 11 m long and another is 6 m long. What is their total length? Proposed answer: 17 m",
+          "taglish": "Is this solution correct? A school garden row is 11 m long and another is 6 m long. What is their total length? Proposed answer: 17 m"
         },
         "answer": "True",
         "type": "true_false",
@@ -4797,9 +4797,9 @@
       },
       {
         "q": {
-          "en": "For **Order these barangay counts from smallest to largest: 86, 41, 49, 72.**, the stated answer **41, 49, 72, 86** is correct.",
-          "fil": "For **Order these barangay counts from smallest to largest: 86, 41, 49, 72.**, the stated answer **41, 49, 72, 86** is correct.",
-          "taglish": "For **Order these barangay counts from smallest to largest: 86, 41, 49, 72.**, the stated answer **41, 49, 72, 86** is correct."
+          "en": "Is this solution correct? Order these barangay counts from smallest to largest: 86, 41, 49, 72. Proposed answer: 41, 49, 72, 86",
+          "fil": "Is this solution correct? Order these barangay counts from smallest to largest: 86, 41, 49, 72. Proposed answer: 41, 49, 72, 86",
+          "taglish": "Is this solution correct? Order these barangay counts from smallest to largest: 86, 41, 49, 72. Proposed answer: 41, 49, 72, 86"
         },
         "answer": "True",
         "type": "true_false",
@@ -5152,9 +5152,9 @@
       },
       {
         "q": {
-          "en": "For **Continue the count: 34, 44, 54, __, __.**, the stated answer **64, 74** is correct.",
-          "fil": "For **Continue the count: 34, 44, 54, __, __.**, the stated answer **64, 74** is correct.",
-          "taglish": "For **Continue the count: 34, 44, 54, __, __.**, the stated answer **64, 74** is correct."
+          "en": "Is this solution correct? Continue the count: 34, 44, 54, __, __. Proposed answer: 64, 74",
+          "fil": "Is this solution correct? Continue the count: 34, 44, 54, __, __. Proposed answer: 64, 74",
+          "taglish": "Is this solution correct? Continue the count: 34, 44, 54, __, __. Proposed answer: 64, 74"
         },
         "answer": "True",
         "type": "true_false",
@@ -5507,9 +5507,9 @@
       },
       {
         "q": {
-          "en": "For **A barangay record shows 35. What is the value of its tens digit?**, the stated answer **30** is correct.",
-          "fil": "For **A barangay record shows 35. What is the value of its tens digit?**, the stated answer **30** is correct.",
-          "taglish": "For **A barangay record shows 35. What is the value of its tens digit?**, the stated answer **30** is correct."
+          "en": "Is this solution correct? A barangay record shows 35. What is the value of its tens digit? Proposed answer: 30",
+          "fil": "Is this solution correct? A barangay record shows 35. What is the value of its tens digit? Proposed answer: 30",
+          "taglish": "Is this solution correct? A barangay record shows 35. What is the value of its tens digit? Proposed answer: 30"
         },
         "answer": "True",
         "type": "true_false",
@@ -5841,9 +5841,9 @@
       },
       {
         "q": {
-          "en": "For **Write the barangay record 11 in expanded form.**, the stated answer **10 + 1** is correct.",
-          "fil": "For **Write the barangay record 11 in expanded form.**, the stated answer **10 + 1** is correct.",
-          "taglish": "For **Write the barangay record 11 in expanded form.**, the stated answer **10 + 1** is correct."
+          "en": "Is this solution correct? Write the barangay record 11 in expanded form. Proposed answer: 10 + 1",
+          "fil": "Is this solution correct? Write the barangay record 11 in expanded form. Proposed answer: 10 + 1",
+          "taglish": "Is this solution correct? Write the barangay record 11 in expanded form. Proposed answer: 10 + 1"
         },
         "answer": "True",
         "type": "true_false",
@@ -6175,9 +6175,9 @@
       },
       {
         "q": {
-          "en": "For **At the school garden, one group recorded 29 items and another recorded 12. How many altogether?**, the stated answer **41** is correct.",
-          "fil": "For **At the school garden, one group recorded 29 items and another recorded 12. How many altogether?**, the stated answer **41** is correct.",
-          "taglish": "For **At the school garden, one group recorded 29 items and another recorded 12. How many altogether?**, the stated answer **41** is correct."
+          "en": "Is this solution correct? At the school garden, one group recorded 29 items and another recorded 12. How many altogether? Proposed answer: 41",
+          "fil": "Is this solution correct? At the school garden, one group recorded 29 items and another recorded 12. How many altogether? Proposed answer: 41",
+          "taglish": "Is this solution correct? At the school garden, one group recorded 29 items and another recorded 12. How many altogether? Proposed answer: 41"
         },
         "answer": "True",
         "type": "true_false",
@@ -6530,9 +6530,9 @@
       },
       {
         "q": {
-          "en": "For **At the family merienda, one group recorded 18 items and another recorded 25. How many altogether?**, the stated answer **43** is correct.",
-          "fil": "For **At the family merienda, one group recorded 18 items and another recorded 25. How many altogether?**, the stated answer **43** is correct.",
-          "taglish": "For **At the family merienda, one group recorded 18 items and another recorded 25. How many altogether?**, the stated answer **43** is correct."
+          "en": "Is this solution correct? At the family merienda, one group recorded 18 items and another recorded 25. How many altogether? Proposed answer: 43",
+          "fil": "Is this solution correct? At the family merienda, one group recorded 18 items and another recorded 25. How many altogether? Proposed answer: 43",
+          "taglish": "Is this solution correct? At the family merienda, one group recorded 18 items and another recorded 25. How many altogether? Proposed answer: 43"
         },
         "answer": "True",
         "type": "true_false",
@@ -6885,9 +6885,9 @@
       },
       {
         "q": {
-          "en": "For **At the coastal clean-up, one group recorded 25 items and another recorded 13. How many altogether?**, the stated answer **38** is correct.",
-          "fil": "For **At the coastal clean-up, one group recorded 25 items and another recorded 13. How many altogether?**, the stated answer **38** is correct.",
-          "taglish": "For **At the coastal clean-up, one group recorded 25 items and another recorded 13. How many altogether?**, the stated answer **38** is correct."
+          "en": "Is this solution correct? At the coastal clean-up, one group recorded 25 items and another recorded 13. How many altogether? Proposed answer: 38",
+          "fil": "Is this solution correct? At the coastal clean-up, one group recorded 25 items and another recorded 13. How many altogether? Proposed answer: 38",
+          "taglish": "Is this solution correct? At the coastal clean-up, one group recorded 25 items and another recorded 13. How many altogether? Proposed answer: 38"
         },
         "answer": "True",
         "type": "true_false",
@@ -7094,9 +7094,9 @@
       },
       {
         "q": {
-          "en": "For **Which question collects one clear variable for a class pictograph: 'What is your favorite local fruit?' or 'Tell everything about your family'?**, the stated answer **What is your favorite local fruit?** is correct.",
-          "fil": "For **Which question collects one clear variable for a class pictograph: 'What is your favorite local fruit?' or 'Tell everything about your family'?**, the stated answer **What is your favorite local fruit?** is correct.",
-          "taglish": "For **Which question collects one clear variable for a class pictograph: 'What is your favorite local fruit?' or 'Tell everything about your family'?**, the stated answer **What is your favorite local fruit?** is correct."
+          "en": "Is this solution correct? Which question collects one clear variable for a class pictograph: 'What is your favorite local fruit?' or 'Tell everything about your family'? Proposed answer: What is your favorite local fruit?",
+          "fil": "Is this solution correct? Which question collects one clear variable for a class pictograph: 'What is your favorite local fruit?' or 'Tell everything about your family'? Proposed answer: What is your favorite local fruit?",
+          "taglish": "Is this solution correct? Which question collects one clear variable for a class pictograph: 'What is your favorite local fruit?' or 'Tell everything about your family'? Proposed answer: What is your favorite local fruit?"
         },
         "answer": "True",
         "type": "true_false",
@@ -7335,9 +7335,9 @@
       },
       {
         "q": {
-          "en": "For **Present mango=3, banana=7, papaya=8, and guava=11 in a labeled table or graph. **, the stated answer **Correct display with values 3, 7, 8, 11 and complete labels** is correct.",
-          "fil": "For **Present mango=3, banana=7, papaya=8, and guava=11 in a labeled table or graph. **, the stated answer **Correct display with values 3, 7, 8, 11 and complete labels** is correct.",
-          "taglish": "For **Present mango=3, banana=7, papaya=8, and guava=11 in a labeled table or graph. **, the stated answer **Correct display with values 3, 7, 8, 11 and complete labels** is correct."
+          "en": "Is this solution correct? Present mango=3, banana=7, papaya=8, and guava=11 in a labeled table or graph. Proposed answer: Correct display with values 3, 7, 8, 11 and complete labels",
+          "fil": "Is this solution correct? Present mango=3, banana=7, papaya=8, and guava=11 in a labeled table or graph. Proposed answer: Correct display with values 3, 7, 8, 11 and complete labels",
+          "taglish": "Is this solution correct? Present mango=3, banana=7, papaya=8, and guava=11 in a labeled table or graph. Proposed answer: Correct display with values 3, 7, 8, 11 and complete labels"
         },
         "answer": "True",
         "type": "true_false",
@@ -7738,9 +7738,9 @@
       },
       {
         "q": {
-          "en": "For **A class survey recorded mango=11, banana=6, papaya=4, and guava=10. Which fruit has the greatest count?**, the stated answer **mango** is correct.",
-          "fil": "For **A class survey recorded mango=11, banana=6, papaya=4, and guava=10. Which fruit has the greatest count?**, the stated answer **mango** is correct.",
-          "taglish": "For **A class survey recorded mango=11, banana=6, papaya=4, and guava=10. Which fruit has the greatest count?**, the stated answer **mango** is correct."
+          "en": "Is this solution correct? A class survey recorded mango=11, banana=6, papaya=4, and guava=10. Which fruit has the greatest count? Proposed answer: mango",
+          "fil": "Is this solution correct? A class survey recorded mango=11, banana=6, papaya=4, and guava=10. Which fruit has the greatest count? Proposed answer: mango",
+          "taglish": "Is this solution correct? A class survey recorded mango=11, banana=6, papaya=4, and guava=10. Which fruit has the greatest count? Proposed answer: mango"
         },
         "answer": "True",
         "type": "true_false",
@@ -8114,9 +8114,9 @@
       },
       {
         "q": {
-          "en": "For **Present mango=4, banana=7, papaya=11, and guava=10 in a labeled table or graph. **, the stated answer **Correct display with values 4, 7, 11, 10 and complete labels** is correct.",
-          "fil": "For **Present mango=4, banana=7, papaya=11, and guava=10 in a labeled table or graph. **, the stated answer **Correct display with values 4, 7, 11, 10 and complete labels** is correct.",
-          "taglish": "For **Present mango=4, banana=7, papaya=11, and guava=10 in a labeled table or graph. **, the stated answer **Correct display with values 4, 7, 11, 10 and complete labels** is correct."
+          "en": "Is this solution correct? Present mango=4, banana=7, papaya=11, and guava=10 in a labeled table or graph. Proposed answer: Correct display with values 4, 7, 11, 10 and complete labels",
+          "fil": "Is this solution correct? Present mango=4, banana=7, papaya=11, and guava=10 in a labeled table or graph. Proposed answer: Correct display with values 4, 7, 11, 10 and complete labels",
+          "taglish": "Is this solution correct? Present mango=4, banana=7, papaya=11, and guava=10 in a labeled table or graph. Proposed answer: Correct display with values 4, 7, 11, 10 and complete labels"
         },
         "answer": "True",
         "type": "true_false",
@@ -8505,9 +8505,9 @@
       },
       {
         "q": {
-          "en": "For **A class prepared 42 materials for the school canteen and used 11. How many remain?**, the stated answer **31** is correct.",
-          "fil": "For **A class prepared 42 materials for the school canteen and used 11. How many remain?**, the stated answer **31** is correct.",
-          "taglish": "For **A class prepared 42 materials for the school canteen and used 11. How many remain?**, the stated answer **31** is correct."
+          "en": "Is this solution correct? A class prepared 42 materials for the school canteen and used 11. How many remain? Proposed answer: 31",
+          "fil": "Is this solution correct? A class prepared 42 materials for the school canteen and used 11. How many remain? Proposed answer: 31",
+          "taglish": "Is this solution correct? A class prepared 42 materials for the school canteen and used 11. How many remain? Proposed answer: 31"
         },
         "answer": "True",
         "type": "true_false",
@@ -8864,9 +8864,9 @@
       },
       {
         "q": {
-          "en": "For **Find the missing number: 11 + __ = 14.**, the stated answer **3** is correct.",
-          "fil": "For **Find the missing number: 11 + __ = 14.**, the stated answer **3** is correct.",
-          "taglish": "For **Find the missing number: 11 + __ = 14.**, the stated answer **3** is correct."
+          "en": "Is this solution correct? Find the missing number: 11 + __ = 14. Proposed answer: 3",
+          "fil": "Is this solution correct? Find the missing number: 11 + __ = 14. Proposed answer: 3",
+          "taglish": "Is this solution correct? Find the missing number: 11 + __ = 14. Proposed answer: 3"
         },
         "answer": "True",
         "type": "true_false",
@@ -9219,9 +9219,9 @@
       },
       {
         "q": {
-          "en": "For **Evaluate using the correct order: 20 + 7 × 6.**, the stated answer **62** is correct.",
-          "fil": "For **Evaluate using the correct order: 20 + 7 × 6.**, the stated answer **62** is correct.",
-          "taglish": "For **Evaluate using the correct order: 20 + 7 × 6.**, the stated answer **62** is correct."
+          "en": "Is this solution correct? Evaluate using the correct order: 20 + 7 × 6. Proposed answer: 62",
+          "fil": "Is this solution correct? Evaluate using the correct order: 20 + 7 × 6. Proposed answer: 62",
+          "taglish": "Is this solution correct? Evaluate using the correct order: 20 + 7 × 6. Proposed answer: 62"
         },
         "answer": "True",
         "type": "true_false",
@@ -9574,9 +9574,9 @@
       },
       {
         "q": {
-          "en": "For **A class prepared 70 materials for the rice farm and used 47. How many remain?**, the stated answer **23** is correct.",
-          "fil": "For **A class prepared 70 materials for the rice farm and used 47. How many remain?**, the stated answer **23** is correct.",
-          "taglish": "For **A class prepared 70 materials for the rice farm and used 47. How many remain?**, the stated answer **23** is correct."
+          "en": "Is this solution correct? A class prepared 70 materials for the rice farm and used 47. How many remain? Proposed answer: 23",
+          "fil": "Is this solution correct? A class prepared 70 materials for the rice farm and used 47. How many remain? Proposed answer: 23",
+          "taglish": "Is this solution correct? A class prepared 70 materials for the rice farm and used 47. How many remain? Proposed answer: 23"
         },
         "answer": "True",
         "type": "true_false",
@@ -9929,9 +9929,9 @@
       },
       {
         "q": {
-          "en": "For **A class prepared 23 materials for the town fiesta and used 5. How many remain?**, the stated answer **18** is correct.",
-          "fil": "For **A class prepared 23 materials for the town fiesta and used 5. How many remain?**, the stated answer **18** is correct.",
-          "taglish": "For **A class prepared 23 materials for the town fiesta and used 5. How many remain?**, the stated answer **18** is correct."
+          "en": "Is this solution correct? A class prepared 23 materials for the town fiesta and used 5. How many remain? Proposed answer: 18",
+          "fil": "Is this solution correct? A class prepared 23 materials for the town fiesta and used 5. How many remain? Proposed answer: 18",
+          "taglish": "Is this solution correct? A class prepared 23 materials for the town fiesta and used 5. How many remain? Proposed answer: 18"
         },
         "answer": "True",
         "type": "true_false",
@@ -10284,9 +10284,9 @@
       },
       {
         "q": {
-          "en": "For **A class prepared 26 materials for the school garden and used 18. How many remain?**, the stated answer **8** is correct.",
-          "fil": "For **A class prepared 26 materials for the school garden and used 18. How many remain?**, the stated answer **8** is correct.",
-          "taglish": "For **A class prepared 26 materials for the school garden and used 18. How many remain?**, the stated answer **8** is correct."
+          "en": "Is this solution correct? A class prepared 26 materials for the school garden and used 18. How many remain? Proposed answer: 8",
+          "fil": "Is this solution correct? A class prepared 26 materials for the school garden and used 18. How many remain? Proposed answer: 8",
+          "taglish": "Is this solution correct? A class prepared 26 materials for the school garden and used 18. How many remain? Proposed answer: 8"
         },
         "answer": "True",
         "type": "true_false",
@@ -10639,9 +10639,9 @@
       },
       {
         "q": {
-          "en": "For **Continue the barangay house-number pattern: 6, 8, 10, 12, __, __.**, the stated answer **14, 16** is correct.",
-          "fil": "For **Continue the barangay house-number pattern: 6, 8, 10, 12, __, __.**, the stated answer **14, 16** is correct.",
-          "taglish": "For **Continue the barangay house-number pattern: 6, 8, 10, 12, __, __.**, the stated answer **14, 16** is correct."
+          "en": "Is this solution correct? Continue the barangay house-number pattern: 6, 8, 10, 12, __, __. Proposed answer: 14, 16",
+          "fil": "Is this solution correct? Continue the barangay house-number pattern: 6, 8, 10, 12, __, __. Proposed answer: 14, 16",
+          "taglish": "Is this solution correct? Continue the barangay house-number pattern: 6, 8, 10, 12, __, __. Proposed answer: 14, 16"
         },
         "answer": "True",
         "type": "true_false",
@@ -10973,9 +10973,9 @@
       },
       {
         "q": {
-          "en": "For **Continue the barangay house-number pattern: 14, 24, 34, 44, __, __.**, the stated answer **54, 64** is correct.",
-          "fil": "For **Continue the barangay house-number pattern: 14, 24, 34, 44, __, __.**, the stated answer **54, 64** is correct.",
-          "taglish": "For **Continue the barangay house-number pattern: 14, 24, 34, 44, __, __.**, the stated answer **54, 64** is correct."
+          "en": "Is this solution correct? Continue the barangay house-number pattern: 14, 24, 34, 44, __, __. Proposed answer: 54, 64",
+          "fil": "Is this solution correct? Continue the barangay house-number pattern: 14, 24, 34, 44, __, __. Proposed answer: 54, 64",
+          "taglish": "Is this solution correct? Continue the barangay house-number pattern: 14, 24, 34, 44, __, __. Proposed answer: 54, 64"
         },
         "answer": "True",
         "type": "true_false",
@@ -11328,9 +11328,9 @@
       },
       {
         "q": {
-          "en": "For **A bibingka is cut into 10 equal parts. 9 part(s) are marked. Write the fraction. (Diagram description: circle divided into 10 equal parts with 9 shaded.)**, the stated answer **9/10** is correct.",
-          "fil": "For **A bibingka is cut into 10 equal parts. 9 part(s) are marked. Write the fraction. (Diagram description: circle divided into 10 equal parts with 9 shaded.)**, the stated answer **9/10** is correct.",
-          "taglish": "For **A bibingka is cut into 10 equal parts. 9 part(s) are marked. Write the fraction. (Diagram description: circle divided into 10 equal parts with 9 shaded.)**, the stated answer **9/10** is correct."
+          "en": "Is this solution correct? A bibingka is cut into 10 equal parts. 9 part(s) are marked. Write the fraction. (Diagram description: circle divided into 10 equal parts with 9 shaded.) Proposed answer: 9/10",
+          "fil": "Is this solution correct? A bibingka is cut into 10 equal parts. 9 part(s) are marked. Write the fraction. (Diagram description: circle divided into 10 equal parts with 9 shaded.) Proposed answer: 9/10",
+          "taglish": "Is this solution correct? A bibingka is cut into 10 equal parts. 9 part(s) are marked. Write the fraction. (Diagram description: circle divided into 10 equal parts with 9 shaded.) Proposed answer: 9/10"
         },
         "answer": "True",
         "type": "true_false",
@@ -11639,9 +11639,9 @@
       },
       {
         "q": {
-          "en": "For **Order these equal-sized bibingka portions from smallest to largest: 3/6, 5/6, 4/6.**, the stated answer **3/6, 4/6, 5/6** is correct.",
-          "fil": "For **Order these equal-sized bibingka portions from smallest to largest: 3/6, 5/6, 4/6.**, the stated answer **3/6, 4/6, 5/6** is correct.",
-          "taglish": "For **Order these equal-sized bibingka portions from smallest to largest: 3/6, 5/6, 4/6.**, the stated answer **3/6, 4/6, 5/6** is correct."
+          "en": "Is this solution correct? Order these equal-sized bibingka portions from smallest to largest: 3/6, 5/6, 4/6. Proposed answer: 3/6, 4/6, 5/6",
+          "fil": "Is this solution correct? Order these equal-sized bibingka portions from smallest to largest: 3/6, 5/6, 4/6. Proposed answer: 3/6, 4/6, 5/6",
+          "taglish": "Is this solution correct? Order these equal-sized bibingka portions from smallest to largest: 3/6, 5/6, 4/6. Proposed answer: 3/6, 4/6, 5/6"
         },
         "answer": "True",
         "type": "true_false",
@@ -11969,9 +11969,9 @@
       },
       {
         "q": {
-          "en": "For **A bibingka is cut into 2 equal parts. 1 part(s) are marked. Write the fraction. (Diagram description: circle divided into 2 equal parts with 1 shaded.)**, the stated answer **1/2** is correct.",
-          "fil": "For **A bibingka is cut into 2 equal parts. 1 part(s) are marked. Write the fraction. (Diagram description: circle divided into 2 equal parts with 1 shaded.)**, the stated answer **1/2** is correct.",
-          "taglish": "For **A bibingka is cut into 2 equal parts. 1 part(s) are marked. Write the fraction. (Diagram description: circle divided into 2 equal parts with 1 shaded.)**, the stated answer **1/2** is correct."
+          "en": "Is this solution correct? A bibingka is cut into 2 equal parts. 1 part(s) are marked. Write the fraction. (Diagram description: circle divided into 2 equal parts with 1 shaded.) Proposed answer: 1/2",
+          "fil": "Is this solution correct? A bibingka is cut into 2 equal parts. 1 part(s) are marked. Write the fraction. (Diagram description: circle divided into 2 equal parts with 1 shaded.) Proposed answer: 1/2",
+          "taglish": "Is this solution correct? A bibingka is cut into 2 equal parts. 1 part(s) are marked. Write the fraction. (Diagram description: circle divided into 2 equal parts with 1 shaded.) Proposed answer: 1/2"
         },
         "answer": "True",
         "type": "true_false",
@@ -12188,9 +12188,9 @@
       },
       {
         "q": {
-          "en": "For **Write the peso notation for a Philippine coin or bill worth 1 pesos.**, the stated answer **₱1** is correct.",
-          "fil": "For **Write the peso notation for a Philippine coin or bill worth 1 pesos.**, the stated answer **₱1** is correct.",
-          "taglish": "For **Write the peso notation for a Philippine coin or bill worth 1 pesos.**, the stated answer **₱1** is correct."
+          "en": "Is this solution correct? Write the peso notation for a Philippine coin or bill worth 1 pesos. Proposed answer: ₱1",
+          "fil": "Is this solution correct? Write the peso notation for a Philippine coin or bill worth 1 pesos. Proposed answer: ₱1",
+          "taglish": "Is this solution correct? Write the peso notation for a Philippine coin or bill worth 1 pesos. Proposed answer: ₱1"
         },
         "answer": "True",
         "type": "true_false",
@@ -12480,9 +12480,9 @@
       },
       {
         "q": {
-          "en": "For **A learner has 4 Philippine ₱5 coins/bills. What is the total value?**, the stated answer **₱20** is correct.",
-          "fil": "For **A learner has 4 Philippine ₱5 coins/bills. What is the total value?**, the stated answer **₱20** is correct.",
-          "taglish": "For **A learner has 4 Philippine ₱5 coins/bills. What is the total value?**, the stated answer **₱20** is correct."
+          "en": "Is this solution correct? A learner has 4 Philippine ₱5 coins/bills. What is the total value? Proposed answer: ₱20",
+          "fil": "Is this solution correct? A learner has 4 Philippine ₱5 coins/bills. What is the total value? Proposed answer: ₱20",
+          "taglish": "Is this solution correct? A learner has 4 Philippine ₱5 coins/bills. What is the total value? Proposed answer: ₱20"
         },
         "answer": "True",
         "type": "true_false",
@@ -12726,9 +12726,9 @@
       },
       {
         "q": {
-          "en": "For **Compare ₱20 and ₱50 using <, >, or =.**, the stated answer **₱20 < ₱50** is correct.",
-          "fil": "For **Compare ₱20 and ₱50 using <, >, or =.**, the stated answer **₱20 < ₱50** is correct.",
-          "taglish": "For **Compare ₱20 and ₱50 using <, >, or =.**, the stated answer **₱20 < ₱50** is correct."
+          "en": "Is this solution correct? Compare ₱20 and ₱50 using <, >, or =. Proposed answer: ₱20 < ₱50",
+          "fil": "Is this solution correct? Compare ₱20 and ₱50 using <, >, or =. Proposed answer: ₱20 < ₱50",
+          "taglish": "Is this solution correct? Compare ₱20 and ₱50 using <, >, or =. Proposed answer: ₱20 < ₱50"
         },
         "answer": "True",
         "type": "true_false",
@@ -12982,9 +12982,9 @@
       },
       {
         "q": {
-          "en": "For **A class fund has ₱45, spends ₱6, then receives ₱25. How much is in the fund now?**, the stated answer **₱64** is correct.",
-          "fil": "For **A class fund has ₱45, spends ₱6, then receives ₱25. How much is in the fund now?**, the stated answer **₱64** is correct.",
-          "taglish": "For **A class fund has ₱45, spends ₱6, then receives ₱25. How much is in the fund now?**, the stated answer **₱64** is correct."
+          "en": "Is this solution correct? A class fund has ₱45, spends ₱6, then receives ₱25. How much is in the fund now? Proposed answer: ₱64",
+          "fil": "Is this solution correct? A class fund has ₱45, spends ₱6, then receives ₱25. How much is in the fund now? Proposed answer: ₱64",
+          "taglish": "Is this solution correct? A class fund has ₱45, spends ₱6, then receives ₱25. How much is in the fund now? Proposed answer: ₱64"
         },
         "answer": "True",
         "type": "true_false",
@@ -13272,9 +13272,9 @@
       },
       {
         "q": {
-          "en": "For **Complete a symmetrical banderitas design across the marked line. (Diagram description: half-design and vertical line.)**, the stated answer **The completed half must be a mirror image at equal distances from the line** is correct.",
-          "fil": "For **Complete a symmetrical banderitas design across the marked line. (Diagram description: half-design and vertical line.)**, the stated answer **The completed half must be a mirror image at equal distances from the line** is correct.",
-          "taglish": "For **Complete a symmetrical banderitas design across the marked line. (Diagram description: half-design and vertical line.)**, the stated answer **The completed half must be a mirror image at equal distances from the line** is correct."
+          "en": "Is this solution correct? Complete a symmetrical banderitas design across the marked line. (Diagram description: half-design and vertical line.) Proposed answer: The completed half must be a mirror image at equal distances from the line",
+          "fil": "Is this solution correct? Complete a symmetrical banderitas design across the marked line. (Diagram description: half-design and vertical line.) Proposed answer: The completed half must be a mirror image at equal distances from the line",
+          "taglish": "Is this solution correct? Complete a symmetrical banderitas design across the marked line. (Diagram description: half-design and vertical line.) Proposed answer: The completed half must be a mirror image at equal distances from the line"
         },
         "answer": "True",
         "type": "true_false",
@@ -13540,9 +13540,9 @@
       },
       {
         "q": {
-          "en": "For **A barangay program starts at 6:45 a.m. and lasts 60 minutes. What time does it end?**, the stated answer **7:45 a.m.** is correct.",
-          "fil": "For **A barangay program starts at 6:45 a.m. and lasts 60 minutes. What time does it end?**, the stated answer **7:45 a.m.** is correct.",
-          "taglish": "For **A barangay program starts at 6:45 a.m. and lasts 60 minutes. What time does it end?**, the stated answer **7:45 a.m.** is correct."
+          "en": "Is this solution correct? A barangay program starts at 6:45 a.m. and lasts 60 minutes. What time does it end? Proposed answer: 7:45 a.m.",
+          "fil": "Is this solution correct? A barangay program starts at 6:45 a.m. and lasts 60 minutes. What time does it end? Proposed answer: 7:45 a.m.",
+          "taglish": "Is this solution correct? A barangay program starts at 6:45 a.m. and lasts 60 minutes. What time does it end? Proposed answer: 7:45 a.m."
         },
         "answer": "True",
         "type": "true_false",
@@ -13889,9 +13889,9 @@
       },
       {
         "q": {
-          "en": "For **A barangay program starts at 6:15 a.m. and lasts 60 minutes. What time does it end?**, the stated answer **7:15 a.m.** is correct.",
-          "fil": "For **A barangay program starts at 6:15 a.m. and lasts 60 minutes. What time does it end?**, the stated answer **7:15 a.m.** is correct.",
-          "taglish": "For **A barangay program starts at 6:15 a.m. and lasts 60 minutes. What time does it end?**, the stated answer **7:15 a.m.** is correct."
+          "en": "Is this solution correct? A barangay program starts at 6:15 a.m. and lasts 60 minutes. What time does it end? Proposed answer: 7:15 a.m.",
+          "fil": "Is this solution correct? A barangay program starts at 6:15 a.m. and lasts 60 minutes. What time does it end? Proposed answer: 7:15 a.m.",
+          "taglish": "Is this solution correct? A barangay program starts at 6:15 a.m. and lasts 60 minutes. What time does it end? Proposed answer: 7:15 a.m."
         },
         "answer": "True",
         "type": "true_false",
@@ -14080,9 +14080,9 @@
       },
       {
         "q": {
-          "en": "For **If the barangay meeting is on Monday, what day is two days later?**, the stated answer **Wednesday** is correct.",
-          "fil": "For **If the barangay meeting is on Monday, what day is two days later?**, the stated answer **Wednesday** is correct.",
-          "taglish": "For **If the barangay meeting is on Monday, what day is two days later?**, the stated answer **Wednesday** is correct."
+          "en": "Is this solution correct? If the barangay meeting is on Monday, what day is two days later? Proposed answer: Wednesday",
+          "fil": "Is this solution correct? If the barangay meeting is on Monday, what day is two days later? Proposed answer: Wednesday",
+          "taglish": "Is this solution correct? If the barangay meeting is on Monday, what day is two days later? Proposed answer: Wednesday"
         },
         "answer": "True",
         "type": "true_false",
@@ -14321,9 +14321,9 @@
       },
       {
         "q": {
-          "en": "For **A barangay program starts at 6:45 a.m. and lasts 60 minutes. What time does it end?**, the stated answer **7:45 a.m.** is correct.",
-          "fil": "For **A barangay program starts at 6:45 a.m. and lasts 60 minutes. What time does it end?**, the stated answer **7:45 a.m.** is correct.",
-          "taglish": "For **A barangay program starts at 6:45 a.m. and lasts 60 minutes. What time does it end?**, the stated answer **7:45 a.m.** is correct."
+          "en": "Is this solution correct? A barangay program starts at 6:45 a.m. and lasts 60 minutes. What time does it end? Proposed answer: 7:45 a.m.",
+          "fil": "Is this solution correct? A barangay program starts at 6:45 a.m. and lasts 60 minutes. What time does it end? Proposed answer: 7:45 a.m.",
+          "taglish": "Is this solution correct? A barangay program starts at 6:45 a.m. and lasts 60 minutes. What time does it end? Proposed answer: 7:45 a.m."
         },
         "answer": "True",
         "type": "true_false",

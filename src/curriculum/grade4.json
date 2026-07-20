@@ -105,9 +105,9 @@
       },
       {
         "q": {
-          "en": "For **Draw and label an obtuse angle for a roof design.**, the stated answer **Any correctly labeled angle greater than 90° and less than 180°** is correct.",
-          "fil": "For **Draw and label an obtuse angle for a roof design.**, the stated answer **Any correctly labeled angle greater than 90° and less than 180°** is correct.",
-          "taglish": "For **Draw and label an obtuse angle for a roof design.**, the stated answer **Any correctly labeled angle greater than 90° and less than 180°** is correct."
+          "en": "Is this solution correct? Draw and label an obtuse angle for a roof design. Proposed answer: Any correctly labeled angle greater than 90° and less than 180°",
+          "fil": "Is this solution correct? Draw and label an obtuse angle for a roof design. Proposed answer: Any correctly labeled angle greater than 90° and less than 180°",
+          "taglish": "Is this solution correct? Draw and label an obtuse angle for a roof design. Proposed answer: Any correctly labeled angle greater than 90° and less than 180°"
         },
         "answer": "True",
         "type": "true_false",
@@ -270,9 +270,9 @@
       },
       {
         "q": {
-          "en": "For **Draw and label an obtuse angle for a roof design.**, the stated answer **Any correctly labeled angle greater than 90° and less than 180°** is correct.",
-          "fil": "For **Draw and label an obtuse angle for a roof design.**, the stated answer **Any correctly labeled angle greater than 90° and less than 180°** is correct.",
-          "taglish": "For **Draw and label an obtuse angle for a roof design.**, the stated answer **Any correctly labeled angle greater than 90° and less than 180°** is correct."
+          "en": "Is this solution correct? Draw and label an obtuse angle for a roof design. Proposed answer: Any correctly labeled angle greater than 90° and less than 180°",
+          "fil": "Is this solution correct? Draw and label an obtuse angle for a roof design. Proposed answer: Any correctly labeled angle greater than 90° and less than 180°",
+          "taglish": "Is this solution correct? Draw and label an obtuse angle for a roof design. Proposed answer: Any correctly labeled angle greater than 90° and less than 180°"
         },
         "answer": "True",
         "type": "true_false",
@@ -435,9 +435,9 @@
       },
       {
         "q": {
-          "en": "For **Draw a square in a different orientation. Does its name change?**, the stated answer **No; it remains a square because its defining features do not change** is correct.",
-          "fil": "For **Draw a square in a different orientation. Does its name change?**, the stated answer **No; it remains a square because its defining features do not change** is correct.",
-          "taglish": "For **Draw a square in a different orientation. Does its name change?**, the stated answer **No; it remains a square because its defining features do not change** is correct."
+          "en": "Is this solution correct? Draw a square in a different orientation. Does its name change? Proposed answer: No; it remains a square because its defining features do not change",
+          "fil": "Is this solution correct? Draw a square in a different orientation. Does its name change? Proposed answer: No; it remains a square because its defining features do not change",
+          "taglish": "Is this solution correct? Draw a square in a different orientation. Does its name change? Proposed answer: No; it remains a square because its defining features do not change"
         },
         "answer": "True",
         "type": "true_false",
@@ -600,9 +600,9 @@
       },
       {
         "q": {
-          "en": "For **Draw a square in a different orientation. Does its name change?**, the stated answer **No; it remains a square because its defining features do not change** is correct.",
-          "fil": "For **Draw a square in a different orientation. Does its name change?**, the stated answer **No; it remains a square because its defining features do not change** is correct.",
-          "taglish": "For **Draw a square in a different orientation. Does its name change?**, the stated answer **No; it remains a square because its defining features do not change** is correct."
+          "en": "Is this solution correct? Draw a square in a different orientation. Does its name change? Proposed answer: No; it remains a square because its defining features do not change",
+          "fil": "Is this solution correct? Draw a square in a different orientation. Does its name change? Proposed answer: No; it remains a square because its defining features do not change",
+          "taglish": "Is this solution correct? Draw a square in a different orientation. Does its name change? Proposed answer: No; it remains a square because its defining features do not change"
         },
         "answer": "True",
         "type": "true_false",
@@ -765,9 +765,9 @@
       },
       {
         "q": {
-          "en": "For **Draw a square in a different orientation. Does its name change?**, the stated answer **No; it remains a square because its defining features do not change** is correct.",
-          "fil": "For **Draw a square in a different orientation. Does its name change?**, the stated answer **No; it remains a square because its defining features do not change** is correct.",
-          "taglish": "For **Draw a square in a different orientation. Does its name change?**, the stated answer **No; it remains a square because its defining features do not change** is correct."
+          "en": "Is this solution correct? Draw a square in a different orientation. Does its name change? Proposed answer: No; it remains a square because its defining features do not change",
+          "fil": "Is this solution correct? Draw a square in a different orientation. Does its name change? Proposed answer: No; it remains a square because its defining features do not change",
+          "taglish": "Is this solution correct? Draw a square in a different orientation. Does its name change? Proposed answer: No; it remains a square because its defining features do not change"
         },
         "answer": "True",
         "type": "true_false",
@@ -1034,9 +1034,9 @@
       },
       {
         "q": {
-          "en": "For **A rectangular fiesta booth is 6 m by 7 m. Find its perimeter.**, the stated answer **26 m** is correct.",
-          "fil": "For **A rectangular fiesta booth is 6 m by 7 m. Find its perimeter.**, the stated answer **26 m** is correct.",
-          "taglish": "For **A rectangular fiesta booth is 6 m by 7 m. Find its perimeter.**, the stated answer **26 m** is correct."
+          "en": "Is this solution correct? A rectangular fiesta booth is 6 m by 7 m. Find its perimeter. Proposed answer: 26 m",
+          "fil": "Is this solution correct? A rectangular fiesta booth is 6 m by 7 m. Find its perimeter. Proposed answer: 26 m",
+          "taglish": "Is this solution correct? A rectangular fiesta booth is 6 m by 7 m. Find its perimeter. Proposed answer: 26 m"
         },
         "answer": "True",
         "type": "true_false",
@@ -1411,9 +1411,9 @@
       },
       {
         "q": {
-          "en": "For **A rectangular fiesta booth is 4 m by 5 m. Find its perimeter.**, the stated answer **18 m** is correct.",
-          "fil": "For **A rectangular fiesta booth is 4 m by 5 m. Find its perimeter.**, the stated answer **18 m** is correct.",
-          "taglish": "For **A rectangular fiesta booth is 4 m by 5 m. Find its perimeter.**, the stated answer **18 m** is correct."
+          "en": "Is this solution correct? A rectangular fiesta booth is 4 m by 5 m. Find its perimeter. Proposed answer: 18 m",
+          "fil": "Is this solution correct? A rectangular fiesta booth is 4 m by 5 m. Find its perimeter. Proposed answer: 18 m",
+          "taglish": "Is this solution correct? A rectangular fiesta booth is 4 m by 5 m. Find its perimeter. Proposed answer: 18 m"
         },
         "answer": "True",
         "type": "true_false",
@@ -1629,9 +1629,9 @@
     "items": [
       {
         "q": {
-          "en": "Write the numeral for: **one thousand two hundred five**.",
-          "fil": "Write the numeral for: **one thousand two hundred five**.",
-          "taglish": "Write the numeral for: **one thousand two hundred five**."
+          "en": "Write the numeral for: one thousand two hundred five.",
+          "fil": "Write the numeral for: one thousand two hundred five.",
+          "taglish": "Write the numeral for: one thousand two hundred five."
         },
         "answer": "1,205",
         "type": "mcq",
@@ -1656,9 +1656,9 @@
       },
       {
         "q": {
-          "en": "Write the numeral for: **ten thousand**.",
-          "fil": "Write the numeral for: **ten thousand**.",
-          "taglish": "Write the numeral for: **ten thousand**."
+          "en": "Write the numeral for: ten thousand.",
+          "fil": "Write the numeral for: ten thousand.",
+          "taglish": "Write the numeral for: ten thousand."
         },
         "answer": "10,000",
         "type": "mcq",
@@ -1683,9 +1683,9 @@
       },
       {
         "q": {
-          "en": "Write the numeral for: **fourteen**.",
-          "fil": "Write the numeral for: **fourteen**.",
-          "taglish": "Write the numeral for: **fourteen**."
+          "en": "Write the numeral for: fourteen.",
+          "fil": "Write the numeral for: fourteen.",
+          "taglish": "Write the numeral for: fourteen."
         },
         "answer": "14",
         "type": "mcq",
@@ -1710,9 +1710,9 @@
       },
       {
         "q": {
-          "en": "Write the numeral for: **twenty-seven**.",
-          "fil": "Write the numeral for: **twenty-seven**.",
-          "taglish": "Write the numeral for: **twenty-seven**."
+          "en": "Write the numeral for: twenty-seven.",
+          "fil": "Write the numeral for: twenty-seven.",
+          "taglish": "Write the numeral for: twenty-seven."
         },
         "answer": "27",
         "type": "numeric",
@@ -1731,9 +1731,9 @@
       },
       {
         "q": {
-          "en": "Write the numeral for: **one hundred five**.",
-          "fil": "Write the numeral for: **one hundred five**.",
-          "taglish": "Write the numeral for: **one hundred five**."
+          "en": "Write the numeral for: one hundred five.",
+          "fil": "Write the numeral for: one hundred five.",
+          "taglish": "Write the numeral for: one hundred five."
         },
         "answer": "105",
         "type": "numeric",
@@ -1752,9 +1752,9 @@
       },
       {
         "q": {
-          "en": "Write the numeral for: **three hundred forty-two**.",
-          "fil": "Write the numeral for: **three hundred forty-two**.",
-          "taglish": "Write the numeral for: **three hundred forty-two**."
+          "en": "Write the numeral for: three hundred forty-two.",
+          "fil": "Write the numeral for: three hundred forty-two.",
+          "taglish": "Write the numeral for: three hundred forty-two."
         },
         "answer": "342",
         "type": "matching",
@@ -1777,9 +1777,9 @@
       },
       {
         "q": {
-          "en": "For **Write the numeral for: **ten thousand**.**, the stated answer **10,000** is correct.",
-          "fil": "For **Write the numeral for: **ten thousand**.**, the stated answer **10,000** is correct.",
-          "taglish": "For **Write the numeral for: **ten thousand**.**, the stated answer **10,000** is correct."
+          "en": "Is this solution correct? Write the numeral for: ten thousand. Proposed answer: 10,000",
+          "fil": "Is this solution correct? Write the numeral for: ten thousand. Proposed answer: 10,000",
+          "taglish": "Is this solution correct? Write the numeral for: ten thousand. Proposed answer: 10,000"
         },
         "answer": "True",
         "type": "true_false",
@@ -1802,9 +1802,9 @@
       },
       {
         "q": {
-          "en": "Write the numeral for: **fourteen**. Explain why your answer is reasonable.",
-          "fil": "Write the numeral for: **fourteen**. Explain why your answer is reasonable.",
-          "taglish": "Write the numeral for: **fourteen**. Explain why your answer is reasonable."
+          "en": "Write the numeral for: fourteen. Explain why your answer is reasonable.",
+          "fil": "Write the numeral for: fourteen. Explain why your answer is reasonable.",
+          "taglish": "Write the numeral for: fourteen. Explain why your answer is reasonable."
         },
         "answer": "14",
         "type": "numeric",
@@ -2027,9 +2027,9 @@
       },
       {
         "q": {
-          "en": "For **A barangay record shows 673,890. What is the value of its tens digit?**, the stated answer **90** is correct.",
-          "fil": "For **A barangay record shows 673,890. What is the value of its tens digit?**, the stated answer **90** is correct.",
-          "taglish": "For **A barangay record shows 673,890. What is the value of its tens digit?**, the stated answer **90** is correct."
+          "en": "Is this solution correct? A barangay record shows 673,890. What is the value of its tens digit? Proposed answer: 90",
+          "fil": "Is this solution correct? A barangay record shows 673,890. What is the value of its tens digit? Proposed answer: 90",
+          "taglish": "Is this solution correct? A barangay record shows 673,890. What is the value of its tens digit? Proposed answer: 90"
         },
         "answer": "True",
         "type": "true_false",
@@ -2394,9 +2394,9 @@
       },
       {
         "q": {
-          "en": "For **Compare the school enrollment figures 178,434 and 23,868 using <, >, or =.**, the stated answer **178,434 > 23,868** is correct.",
-          "fil": "For **Compare the school enrollment figures 178,434 and 23,868 using <, >, or =.**, the stated answer **178,434 > 23,868** is correct.",
-          "taglish": "For **Compare the school enrollment figures 178,434 and 23,868 using <, >, or =.**, the stated answer **178,434 > 23,868** is correct."
+          "en": "Is this solution correct? Compare the school enrollment figures 178,434 and 23,868 using <, >, or =. Proposed answer: 178,434 > 23,868",
+          "fil": "Is this solution correct? Compare the school enrollment figures 178,434 and 23,868 using <, >, or =. Proposed answer: 178,434 > 23,868",
+          "taglish": "Is this solution correct? Compare the school enrollment figures 178,434 and 23,868 using <, >, or =. Proposed answer: 178,434 > 23,868"
         },
         "answer": "True",
         "type": "true_false",
@@ -2785,9 +2785,9 @@
       },
       {
         "q": {
-          "en": "For **Round the market count 921665 to the nearest 10.**, the stated answer **921670** is correct.",
-          "fil": "For **Round the market count 921665 to the nearest 10.**, the stated answer **921670** is correct.",
-          "taglish": "For **Round the market count 921665 to the nearest 10.**, the stated answer **921670** is correct."
+          "en": "Is this solution correct? Round the market count 921665 to the nearest 10. Proposed answer: 921670",
+          "fil": "Is this solution correct? Round the market count 921665 to the nearest 10. Proposed answer: 921670",
+          "taglish": "Is this solution correct? Round the market count 921665 to the nearest 10. Proposed answer: 921670"
         },
         "answer": "True",
         "type": "true_false",
@@ -3140,9 +3140,9 @@
       },
       {
         "q": {
-          "en": "For **Estimate 109 + 570 by rounding both numbers to the nearest hundred.**, the stated answer **700** is correct.",
-          "fil": "For **Estimate 109 + 570 by rounding both numbers to the nearest hundred.**, the stated answer **700** is correct.",
-          "taglish": "For **Estimate 109 + 570 by rounding both numbers to the nearest hundred.**, the stated answer **700** is correct."
+          "en": "Is this solution correct? Estimate 109 + 570 by rounding both numbers to the nearest hundred. Proposed answer: 700",
+          "fil": "Is this solution correct? Estimate 109 + 570 by rounding both numbers to the nearest hundred. Proposed answer: 700",
+          "taglish": "Is this solution correct? Estimate 109 + 570 by rounding both numbers to the nearest hundred. Proposed answer: 700"
         },
         "answer": "True",
         "type": "true_false",
@@ -3495,9 +3495,9 @@
       },
       {
         "q": {
-          "en": "For **At the rice farm, one group recorded 5144 items and another recorded 13250. How many altogether?**, the stated answer **18394** is correct.",
-          "fil": "For **At the rice farm, one group recorded 5144 items and another recorded 13250. How many altogether?**, the stated answer **18394** is correct.",
-          "taglish": "For **At the rice farm, one group recorded 5144 items and another recorded 13250. How many altogether?**, the stated answer **18394** is correct."
+          "en": "Is this solution correct? At the rice farm, one group recorded 5144 items and another recorded 13250. How many altogether? Proposed answer: 18394",
+          "fil": "Is this solution correct? At the rice farm, one group recorded 5144 items and another recorded 13250. How many altogether? Proposed answer: 18394",
+          "taglish": "Is this solution correct? At the rice farm, one group recorded 5144 items and another recorded 13250. How many altogether? Proposed answer: 18394"
         },
         "answer": "True",
         "type": "true_false",
@@ -3850,9 +3850,9 @@
       },
       {
         "q": {
-          "en": "For **There are 12 equal trays with 7 items each for the town fiesta. Find the total.**, the stated answer **84** is correct.",
-          "fil": "For **There are 12 equal trays with 7 items each for the town fiesta. Find the total.**, the stated answer **84** is correct.",
-          "taglish": "For **There are 12 equal trays with 7 items each for the town fiesta. Find the total.**, the stated answer **84** is correct."
+          "en": "Is this solution correct? There are 12 equal trays with 7 items each for the town fiesta. Find the total. Proposed answer: 84",
+          "fil": "Is this solution correct? There are 12 equal trays with 7 items each for the town fiesta. Find the total. Proposed answer: 84",
+          "taglish": "Is this solution correct? There are 12 equal trays with 7 items each for the town fiesta. Find the total. Proposed answer: 84"
         },
         "answer": "True",
         "type": "true_false",
@@ -4205,9 +4205,9 @@
       },
       {
         "q": {
-          "en": "For **There are 3 equal trays with 28 items each for the school garden. Find the total.**, the stated answer **84** is correct.",
-          "fil": "For **There are 3 equal trays with 28 items each for the school garden. Find the total.**, the stated answer **84** is correct.",
-          "taglish": "For **There are 3 equal trays with 28 items each for the school garden. Find the total.**, the stated answer **84** is correct."
+          "en": "Is this solution correct? There are 3 equal trays with 28 items each for the school garden. Find the total. Proposed answer: 84",
+          "fil": "Is this solution correct? There are 3 equal trays with 28 items each for the school garden. Find the total. Proposed answer: 84",
+          "taglish": "Is this solution correct? There are 3 equal trays with 28 items each for the school garden. Find the total. Proposed answer: 84"
         },
         "answer": "True",
         "type": "true_false",
@@ -4560,9 +4560,9 @@
       },
       {
         "q": {
-          "en": "For **A class fund has ₱62, spends ₱24, then receives ₱22. How much is in the fund now?**, the stated answer **₱60** is correct.",
-          "fil": "For **A class fund has ₱62, spends ₱24, then receives ₱22. How much is in the fund now?**, the stated answer **₱60** is correct.",
-          "taglish": "For **A class fund has ₱62, spends ₱24, then receives ₱22. How much is in the fund now?**, the stated answer **₱60** is correct."
+          "en": "Is this solution correct? A class fund has ₱62, spends ₱24, then receives ₱22. How much is in the fund now? Proposed answer: ₱60",
+          "fil": "Is this solution correct? A class fund has ₱62, spends ₱24, then receives ₱22. How much is in the fund now? Proposed answer: ₱60",
+          "taglish": "Is this solution correct? A class fund has ₱62, spends ₱24, then receives ₱22. How much is in the fund now? Proposed answer: ₱60"
         },
         "answer": "True",
         "type": "true_false",
@@ -4915,9 +4915,9 @@
       },
       {
         "q": {
-          "en": "For **The coastal clean-up shares 36 items equally among 3 groups. How many per group?**, the stated answer **12** is correct.",
-          "fil": "For **The coastal clean-up shares 36 items equally among 3 groups. How many per group?**, the stated answer **12** is correct.",
-          "taglish": "For **The coastal clean-up shares 36 items equally among 3 groups. How many per group?**, the stated answer **12** is correct."
+          "en": "Is this solution correct? The coastal clean-up shares 36 items equally among 3 groups. How many per group? Proposed answer: 12",
+          "fil": "Is this solution correct? The coastal clean-up shares 36 items equally among 3 groups. How many per group? Proposed answer: 12",
+          "taglish": "Is this solution correct? The coastal clean-up shares 36 items equally among 3 groups. How many per group? Proposed answer: 12"
         },
         "answer": "True",
         "type": "true_false",
@@ -5270,9 +5270,9 @@
       },
       {
         "q": {
-          "en": "For **The palaro ng paaralan shares 42 items equally among 6 groups. How many per group?**, the stated answer **7** is correct.",
-          "fil": "For **The palaro ng paaralan shares 42 items equally among 6 groups. How many per group?**, the stated answer **7** is correct.",
-          "taglish": "For **The palaro ng paaralan shares 42 items equally among 6 groups. How many per group?**, the stated answer **7** is correct."
+          "en": "Is this solution correct? The palaro ng paaralan shares 42 items equally among 6 groups. How many per group? Proposed answer: 7",
+          "fil": "Is this solution correct? The palaro ng paaralan shares 42 items equally among 6 groups. How many per group? Proposed answer: 7",
+          "taglish": "Is this solution correct? The palaro ng paaralan shares 42 items equally among 6 groups. How many per group? Proposed answer: 7"
         },
         "answer": "True",
         "type": "true_false",
@@ -5625,9 +5625,9 @@
       },
       {
         "q": {
-          "en": "For **Evaluate using the correct order: 20 + 3 × 7.**, the stated answer **41** is correct.",
-          "fil": "For **Evaluate using the correct order: 20 + 3 × 7.**, the stated answer **41** is correct.",
-          "taglish": "For **Evaluate using the correct order: 20 + 3 × 7.**, the stated answer **41** is correct."
+          "en": "Is this solution correct? Evaluate using the correct order: 20 + 3 × 7. Proposed answer: 41",
+          "fil": "Is this solution correct? Evaluate using the correct order: 20 + 3 × 7. Proposed answer: 41",
+          "taglish": "Is this solution correct? Evaluate using the correct order: 20 + 3 × 7. Proposed answer: 41"
         },
         "answer": "True",
         "type": "true_false",
@@ -5980,9 +5980,9 @@
       },
       {
         "q": {
-          "en": "For **Evaluate using the correct order: 9 + 3 × 4.**, the stated answer **21** is correct.",
-          "fil": "For **Evaluate using the correct order: 9 + 3 × 4.**, the stated answer **21** is correct.",
-          "taglish": "For **Evaluate using the correct order: 9 + 3 × 4.**, the stated answer **21** is correct."
+          "en": "Is this solution correct? Evaluate using the correct order: 9 + 3 × 4. Proposed answer: 21",
+          "fil": "Is this solution correct? Evaluate using the correct order: 9 + 3 × 4. Proposed answer: 21",
+          "taglish": "Is this solution correct? Evaluate using the correct order: 9 + 3 × 4. Proposed answer: 21"
         },
         "answer": "True",
         "type": "true_false",
@@ -6347,9 +6347,9 @@
       },
       {
         "q": {
-          "en": "For **A family has 13 L of water and adds 6 L. What is the total capacity?**, the stated answer **19 L** is correct.",
-          "fil": "For **A family has 13 L of water and adds 6 L. What is the total capacity?**, the stated answer **19 L** is correct.",
-          "taglish": "For **A family has 13 L of water and adds 6 L. What is the total capacity?**, the stated answer **19 L** is correct."
+          "en": "Is this solution correct? A family has 13 L of water and adds 6 L. What is the total capacity? Proposed answer: 19 L",
+          "fil": "Is this solution correct? A family has 13 L of water and adds 6 L. What is the total capacity? Proposed answer: 19 L",
+          "taglish": "Is this solution correct? A family has 13 L of water and adds 6 L. What is the total capacity? Proposed answer: 19 L"
         },
         "answer": "True",
         "type": "true_false",
@@ -6669,9 +6669,9 @@
       },
       {
         "q": {
-          "en": "For **A barangay program starts at 7:45 a.m. and lasts 60 minutes. What time does it end?**, the stated answer **8:45 a.m.** is correct.",
-          "fil": "For **A barangay program starts at 7:45 a.m. and lasts 60 minutes. What time does it end?**, the stated answer **8:45 a.m.** is correct.",
-          "taglish": "For **A barangay program starts at 7:45 a.m. and lasts 60 minutes. What time does it end?**, the stated answer **8:45 a.m.** is correct."
+          "en": "Is this solution correct? A barangay program starts at 7:45 a.m. and lasts 60 minutes. What time does it end? Proposed answer: 8:45 a.m.",
+          "fil": "Is this solution correct? A barangay program starts at 7:45 a.m. and lasts 60 minutes. What time does it end? Proposed answer: 8:45 a.m.",
+          "taglish": "Is this solution correct? A barangay program starts at 7:45 a.m. and lasts 60 minutes. What time does it end? Proposed answer: 8:45 a.m."
         },
         "answer": "True",
         "type": "true_false",
@@ -7072,9 +7072,9 @@
       },
       {
         "q": {
-          "en": "For **A barangay program starts at 6:45 a.m. and lasts 30 minutes. What time does it end?**, the stated answer **7:15 a.m.** is correct.",
-          "fil": "For **A barangay program starts at 6:45 a.m. and lasts 30 minutes. What time does it end?**, the stated answer **7:15 a.m.** is correct.",
-          "taglish": "For **A barangay program starts at 6:45 a.m. and lasts 30 minutes. What time does it end?**, the stated answer **7:15 a.m.** is correct."
+          "en": "Is this solution correct? A barangay program starts at 6:45 a.m. and lasts 30 minutes. What time does it end? Proposed answer: 7:15 a.m.",
+          "fil": "Is this solution correct? A barangay program starts at 6:45 a.m. and lasts 30 minutes. What time does it end? Proposed answer: 7:15 a.m.",
+          "taglish": "Is this solution correct? A barangay program starts at 6:45 a.m. and lasts 30 minutes. What time does it end? Proposed answer: 7:15 a.m."
         },
         "answer": "True",
         "type": "true_false",
@@ -7438,9 +7438,9 @@
       },
       {
         "q": {
-          "en": "For **Rewrite 5/2 as a mixed number.**, the stated answer **2 1/2** is correct.",
-          "fil": "For **Rewrite 5/2 as a mixed number.**, the stated answer **2 1/2** is correct.",
-          "taglish": "For **Rewrite 5/2 as a mixed number.**, the stated answer **2 1/2** is correct."
+          "en": "Is this solution correct? Rewrite 5/2 as a mixed number. Proposed answer: 2 1/2",
+          "fil": "Is this solution correct? Rewrite 5/2 as a mixed number. Proposed answer: 2 1/2",
+          "taglish": "Is this solution correct? Rewrite 5/2 as a mixed number. Proposed answer: 2 1/2"
         },
         "answer": "True",
         "type": "true_false",
@@ -7772,9 +7772,9 @@
       },
       {
         "q": {
-          "en": "For **Rewrite 3/2 as a mixed number.**, the stated answer **1 1/2** is correct.",
-          "fil": "For **Rewrite 3/2 as a mixed number.**, the stated answer **1 1/2** is correct.",
-          "taglish": "For **Rewrite 3/2 as a mixed number.**, the stated answer **1 1/2** is correct."
+          "en": "Is this solution correct? Rewrite 3/2 as a mixed number. Proposed answer: 1 1/2",
+          "fil": "Is this solution correct? Rewrite 3/2 as a mixed number. Proposed answer: 1 1/2",
+          "taglish": "Is this solution correct? Rewrite 3/2 as a mixed number. Proposed answer: 1 1/2"
         },
         "answer": "True",
         "type": "true_false",
@@ -8106,9 +8106,9 @@
       },
       {
         "q": {
-          "en": "For **Rewrite 3/2 as a mixed number.**, the stated answer **1 1/2** is correct.",
-          "fil": "For **Rewrite 3/2 as a mixed number.**, the stated answer **1 1/2** is correct.",
-          "taglish": "For **Rewrite 3/2 as a mixed number.**, the stated answer **1 1/2** is correct."
+          "en": "Is this solution correct? Rewrite 3/2 as a mixed number. Proposed answer: 1 1/2",
+          "fil": "Is this solution correct? Rewrite 3/2 as a mixed number. Proposed answer: 1 1/2",
+          "taglish": "Is this solution correct? Rewrite 3/2 as a mixed number. Proposed answer: 1 1/2"
         },
         "answer": "True",
         "type": "true_false",
@@ -8461,9 +8461,9 @@
       },
       {
         "q": {
-          "en": "For **Rewrite 14/5 as a mixed number.**, the stated answer **2 4/5** is correct.",
-          "fil": "For **Rewrite 14/5 as a mixed number.**, the stated answer **2 4/5** is correct.",
-          "taglish": "For **Rewrite 14/5 as a mixed number.**, the stated answer **2 4/5** is correct."
+          "en": "Is this solution correct? Rewrite 14/5 as a mixed number. Proposed answer: 2 4/5",
+          "fil": "Is this solution correct? Rewrite 14/5 as a mixed number. Proposed answer: 2 4/5",
+          "taglish": "Is this solution correct? Rewrite 14/5 as a mixed number. Proposed answer: 2 4/5"
         },
         "answer": "True",
         "type": "true_false",
@@ -8774,9 +8774,9 @@
       },
       {
         "q": {
-          "en": "For **A bibingka is cut into 8 equal parts. 7 part(s) are marked. Write the fraction. (Diagram description: circle divided into 8 equal parts with 7 shaded.)**, the stated answer **7/8** is correct.",
-          "fil": "For **A bibingka is cut into 8 equal parts. 7 part(s) are marked. Write the fraction. (Diagram description: circle divided into 8 equal parts with 7 shaded.)**, the stated answer **7/8** is correct.",
-          "taglish": "For **A bibingka is cut into 8 equal parts. 7 part(s) are marked. Write the fraction. (Diagram description: circle divided into 8 equal parts with 7 shaded.)**, the stated answer **7/8** is correct."
+          "en": "Is this solution correct? A bibingka is cut into 8 equal parts. 7 part(s) are marked. Write the fraction. (Diagram description: circle divided into 8 equal parts with 7 shaded.) Proposed answer: 7/8",
+          "fil": "Is this solution correct? A bibingka is cut into 8 equal parts. 7 part(s) are marked. Write the fraction. (Diagram description: circle divided into 8 equal parts with 7 shaded.) Proposed answer: 7/8",
+          "taglish": "Is this solution correct? A bibingka is cut into 8 equal parts. 7 part(s) are marked. Write the fraction. (Diagram description: circle divided into 8 equal parts with 7 shaded.) Proposed answer: 7/8"
         },
         "answer": "True",
         "type": "true_false",
@@ -9041,9 +9041,9 @@
       },
       {
         "q": {
-          "en": "For **Order these equal-sized bibingka portions from smallest to largest: 2/8, 1/8, 7/8.**, the stated answer **1/8, 2/8, 7/8** is correct.",
-          "fil": "For **Order these equal-sized bibingka portions from smallest to largest: 2/8, 1/8, 7/8.**, the stated answer **1/8, 2/8, 7/8** is correct.",
-          "taglish": "For **Order these equal-sized bibingka portions from smallest to largest: 2/8, 1/8, 7/8.**, the stated answer **1/8, 2/8, 7/8** is correct."
+          "en": "Is this solution correct? Order these equal-sized bibingka portions from smallest to largest: 2/8, 1/8, 7/8. Proposed answer: 1/8, 2/8, 7/8",
+          "fil": "Is this solution correct? Order these equal-sized bibingka portions from smallest to largest: 2/8, 1/8, 7/8. Proposed answer: 1/8, 2/8, 7/8",
+          "taglish": "Is this solution correct? Order these equal-sized bibingka portions from smallest to largest: 2/8, 1/8, 7/8. Proposed answer: 1/8, 2/8, 7/8"
         },
         "answer": "True",
         "type": "true_false",
@@ -9375,9 +9375,9 @@
       },
       {
         "q": {
-          "en": "For **Order these equal-sized bibingka portions from smallest to largest: 1/3, 1/3, 2/3.**, the stated answer **1/3, 1/3, 2/3** is correct.",
-          "fil": "For **Order these equal-sized bibingka portions from smallest to largest: 1/3, 1/3, 2/3.**, the stated answer **1/3, 1/3, 2/3** is correct.",
-          "taglish": "For **Order these equal-sized bibingka portions from smallest to largest: 1/3, 1/3, 2/3.**, the stated answer **1/3, 1/3, 2/3** is correct."
+          "en": "Is this solution correct? Order these equal-sized bibingka portions from smallest to largest: 1/3, 1/3, 2/3. Proposed answer: 1/3, 1/3, 2/3",
+          "fil": "Is this solution correct? Order these equal-sized bibingka portions from smallest to largest: 1/3, 1/3, 2/3. Proposed answer: 1/3, 1/3, 2/3",
+          "taglish": "Is this solution correct? Order these equal-sized bibingka portions from smallest to largest: 1/3, 1/3, 2/3. Proposed answer: 1/3, 1/3, 2/3"
         },
         "answer": "True",
         "type": "true_false",
@@ -9730,9 +9730,9 @@
       },
       {
         "q": {
-          "en": "For **Reduce 3/18 to simplest form.**, the stated answer **1/6** is correct.",
-          "fil": "For **Reduce 3/18 to simplest form.**, the stated answer **1/6** is correct.",
-          "taglish": "For **Reduce 3/18 to simplest form.**, the stated answer **1/6** is correct."
+          "en": "Is this solution correct? Reduce 3/18 to simplest form. Proposed answer: 1/6",
+          "fil": "Is this solution correct? Reduce 3/18 to simplest form. Proposed answer: 1/6",
+          "taglish": "Is this solution correct? Reduce 3/18 to simplest form. Proposed answer: 1/6"
         },
         "answer": "True",
         "type": "true_false",
@@ -10035,9 +10035,9 @@
       },
       {
         "q": {
-          "en": "For **Reduce 8/24 to simplest form.**, the stated answer **1/3** is correct.",
-          "fil": "For **Reduce 8/24 to simplest form.**, the stated answer **1/3** is correct.",
-          "taglish": "For **Reduce 8/24 to simplest form.**, the stated answer **1/3** is correct."
+          "en": "Is this solution correct? Reduce 8/24 to simplest form. Proposed answer: 1/3",
+          "fil": "Is this solution correct? Reduce 8/24 to simplest form. Proposed answer: 1/3",
+          "taglish": "Is this solution correct? Reduce 8/24 to simplest form. Proposed answer: 1/3"
         },
         "answer": "True",
         "type": "true_false",
@@ -10402,9 +10402,9 @@
       },
       {
         "q": {
-          "en": "For **Compare the school enrollment figures 900,666 and 658,176 using <, >, or =.**, the stated answer **900,666 > 658,176** is correct.",
-          "fil": "For **Compare the school enrollment figures 900,666 and 658,176 using <, >, or =.**, the stated answer **900,666 > 658,176** is correct.",
-          "taglish": "For **Compare the school enrollment figures 900,666 and 658,176 using <, >, or =.**, the stated answer **900,666 > 658,176** is correct."
+          "en": "Is this solution correct? Compare the school enrollment figures 900,666 and 658,176 using <, >, or =. Proposed answer: 900,666 > 658,176",
+          "fil": "Is this solution correct? Compare the school enrollment figures 900,666 and 658,176 using <, >, or =. Proposed answer: 900,666 > 658,176",
+          "taglish": "Is this solution correct? Compare the school enrollment figures 900,666 and 658,176 using <, >, or =. Proposed answer: 900,666 > 658,176"
         },
         "answer": "True",
         "type": "true_false",
@@ -10805,9 +10805,9 @@
       },
       {
         "q": {
-          "en": "For **Compare the school enrollment figures 39,377 and 451,970 using <, >, or =.**, the stated answer **39,377 < 451,970** is correct.",
-          "fil": "For **Compare the school enrollment figures 39,377 and 451,970 using <, >, or =.**, the stated answer **39,377 < 451,970** is correct.",
-          "taglish": "For **Compare the school enrollment figures 39,377 and 451,970 using <, >, or =.**, the stated answer **39,377 < 451,970** is correct."
+          "en": "Is this solution correct? Compare the school enrollment figures 39,377 and 451,970 using <, >, or =. Proposed answer: 39,377 < 451,970",
+          "fil": "Is this solution correct? Compare the school enrollment figures 39,377 and 451,970 using <, >, or =. Proposed answer: 39,377 < 451,970",
+          "taglish": "Is this solution correct? Compare the school enrollment figures 39,377 and 451,970 using <, >, or =. Proposed answer: 39,377 < 451,970"
         },
         "answer": "True",
         "type": "true_false",
@@ -11196,9 +11196,9 @@
       },
       {
         "q": {
-          "en": "For **Reduce 2/4 to simplest form.**, the stated answer **1/2** is correct.",
-          "fil": "For **Reduce 2/4 to simplest form.**, the stated answer **1/2** is correct.",
-          "taglish": "For **Reduce 2/4 to simplest form.**, the stated answer **1/2** is correct."
+          "en": "Is this solution correct? Reduce 2/4 to simplest form. Proposed answer: 1/2",
+          "fil": "Is this solution correct? Reduce 2/4 to simplest form. Proposed answer: 1/2",
+          "taglish": "Is this solution correct? Reduce 2/4 to simplest form. Proposed answer: 1/2"
         },
         "answer": "True",
         "type": "true_false",
@@ -11530,9 +11530,9 @@
       },
       {
         "q": {
-          "en": "For **Compute 1/2 - 1/2.**, the stated answer **0** is correct.",
-          "fil": "For **Compute 1/2 - 1/2.**, the stated answer **0** is correct.",
-          "taglish": "For **Compute 1/2 - 1/2.**, the stated answer **0** is correct."
+          "en": "Is this solution correct? Compute 1/2 - 1/2. Proposed answer: 0",
+          "fil": "Is this solution correct? Compute 1/2 - 1/2. Proposed answer: 0",
+          "taglish": "Is this solution correct? Compute 1/2 - 1/2. Proposed answer: 0"
         },
         "answer": "True",
         "type": "true_false",
@@ -11885,9 +11885,9 @@
       },
       {
         "q": {
-          "en": "For **Rewrite 16/6 as a mixed number.**, the stated answer **2 4/6** is correct.",
-          "fil": "For **Rewrite 16/6 as a mixed number.**, the stated answer **2 4/6** is correct.",
-          "taglish": "For **Rewrite 16/6 as a mixed number.**, the stated answer **2 4/6** is correct."
+          "en": "Is this solution correct? Rewrite 16/6 as a mixed number. Proposed answer: 2 4/6",
+          "fil": "Is this solution correct? Rewrite 16/6 as a mixed number. Proposed answer: 2 4/6",
+          "taglish": "Is this solution correct? Rewrite 16/6 as a mixed number. Proposed answer: 2 4/6"
         },
         "answer": "True",
         "type": "true_false",
@@ -12194,9 +12194,9 @@
       },
       {
         "q": {
-          "en": "For **For a school garden plot, compute 3/5 - 2/5. Give the answer in simplest form.**, the stated answer **1/5** is correct.",
-          "fil": "For **For a school garden plot, compute 3/5 - 2/5. Give the answer in simplest form.**, the stated answer **1/5** is correct.",
-          "taglish": "For **For a school garden plot, compute 3/5 - 2/5. Give the answer in simplest form.**, the stated answer **1/5** is correct."
+          "en": "Is this solution correct? For a school garden plot, compute 3/5 - 2/5. Give the answer in simplest form. Proposed answer: 1/5",
+          "fil": "Is this solution correct? For a school garden plot, compute 3/5 - 2/5. Give the answer in simplest form. Proposed answer: 1/5",
+          "taglish": "Is this solution correct? For a school garden plot, compute 3/5 - 2/5. Give the answer in simplest form. Proposed answer: 1/5"
         },
         "answer": "True",
         "type": "true_false",
@@ -12484,9 +12484,9 @@
       },
       {
         "q": {
-          "en": "For **Complete a symmetrical banderitas design across the marked line. (Diagram description: half-design and vertical line.)**, the stated answer **The completed half must be a mirror image at equal distances from the line** is correct.",
-          "fil": "For **Complete a symmetrical banderitas design across the marked line. (Diagram description: half-design and vertical line.)**, the stated answer **The completed half must be a mirror image at equal distances from the line** is correct.",
-          "taglish": "For **Complete a symmetrical banderitas design across the marked line. (Diagram description: half-design and vertical line.)**, the stated answer **The completed half must be a mirror image at equal distances from the line** is correct."
+          "en": "Is this solution correct? Complete a symmetrical banderitas design across the marked line. (Diagram description: half-design and vertical line.) Proposed answer: The completed half must be a mirror image at equal distances from the line",
+          "fil": "Is this solution correct? Complete a symmetrical banderitas design across the marked line. (Diagram description: half-design and vertical line.) Proposed answer: The completed half must be a mirror image at equal distances from the line",
+          "taglish": "Is this solution correct? Complete a symmetrical banderitas design across the marked line. (Diagram description: half-design and vertical line.) Proposed answer: The completed half must be a mirror image at equal distances from the line"
         },
         "answer": "True",
         "type": "true_false",
@@ -12675,9 +12675,9 @@
       },
       {
         "q": {
-          "en": "For **Complete a symmetrical banderitas design across the marked line. (Diagram description: half-design and vertical line.)**, the stated answer **The completed half must be a mirror image at equal distances from the line** is correct.",
-          "fil": "For **Complete a symmetrical banderitas design across the marked line. (Diagram description: half-design and vertical line.)**, the stated answer **The completed half must be a mirror image at equal distances from the line** is correct.",
-          "taglish": "For **Complete a symmetrical banderitas design across the marked line. (Diagram description: half-design and vertical line.)**, the stated answer **The completed half must be a mirror image at equal distances from the line** is correct."
+          "en": "Is this solution correct? Complete a symmetrical banderitas design across the marked line. (Diagram description: half-design and vertical line.) Proposed answer: The completed half must be a mirror image at equal distances from the line",
+          "fil": "Is this solution correct? Complete a symmetrical banderitas design across the marked line. (Diagram description: half-design and vertical line.) Proposed answer: The completed half must be a mirror image at equal distances from the line",
+          "taglish": "Is this solution correct? Complete a symmetrical banderitas design across the marked line. (Diagram description: half-design and vertical line.) Proposed answer: The completed half must be a mirror image at equal distances from the line"
         },
         "answer": "True",
         "type": "true_false",
@@ -12866,9 +12866,9 @@
       },
       {
         "q": {
-          "en": "For **Complete a symmetrical banderitas design across the marked line. (Diagram description: half-design and vertical line.)**, the stated answer **The completed half must be a mirror image at equal distances from the line** is correct.",
-          "fil": "For **Complete a symmetrical banderitas design across the marked line. (Diagram description: half-design and vertical line.)**, the stated answer **The completed half must be a mirror image at equal distances from the line** is correct.",
-          "taglish": "For **Complete a symmetrical banderitas design across the marked line. (Diagram description: half-design and vertical line.)**, the stated answer **The completed half must be a mirror image at equal distances from the line** is correct."
+          "en": "Is this solution correct? Complete a symmetrical banderitas design across the marked line. (Diagram description: half-design and vertical line.) Proposed answer: The completed half must be a mirror image at equal distances from the line",
+          "fil": "Is this solution correct? Complete a symmetrical banderitas design across the marked line. (Diagram description: half-design and vertical line.) Proposed answer: The completed half must be a mirror image at equal distances from the line",
+          "taglish": "Is this solution correct? Complete a symmetrical banderitas design across the marked line. (Diagram description: half-design and vertical line.) Proposed answer: The completed half must be a mirror image at equal distances from the line"
         },
         "answer": "True",
         "type": "true_false",
@@ -12976,9 +12976,9 @@
       },
       {
         "q": {
-          "en": "For **Which question collects one clear variable for a class pictograph: 'What is your favorite local fruit?' or 'Tell everything about your family'?**, the stated answer **What is your favorite local fruit?** is correct.",
-          "fil": "For **Which question collects one clear variable for a class pictograph: 'What is your favorite local fruit?' or 'Tell everything about your family'?**, the stated answer **What is your favorite local fruit?** is correct.",
-          "taglish": "For **Which question collects one clear variable for a class pictograph: 'What is your favorite local fruit?' or 'Tell everything about your family'?**, the stated answer **What is your favorite local fruit?** is correct."
+          "en": "Is this solution correct? Which question collects one clear variable for a class pictograph: 'What is your favorite local fruit?' or 'Tell everything about your family'? Proposed answer: What is your favorite local fruit?",
+          "fil": "Is this solution correct? Which question collects one clear variable for a class pictograph: 'What is your favorite local fruit?' or 'Tell everything about your family'? Proposed answer: What is your favorite local fruit?",
+          "taglish": "Is this solution correct? Which question collects one clear variable for a class pictograph: 'What is your favorite local fruit?' or 'Tell everything about your family'? Proposed answer: What is your favorite local fruit?"
         },
         "answer": "True",
         "type": "true_false",
@@ -13217,9 +13217,9 @@
       },
       {
         "q": {
-          "en": "For **Present mango=5, banana=11, papaya=6, and guava=12 in a labeled table or graph. **, the stated answer **Correct display with values 5, 11, 6, 12 and complete labels** is correct.",
-          "fil": "For **Present mango=5, banana=11, papaya=6, and guava=12 in a labeled table or graph. **, the stated answer **Correct display with values 5, 11, 6, 12 and complete labels** is correct.",
-          "taglish": "For **Present mango=5, banana=11, papaya=6, and guava=12 in a labeled table or graph. **, the stated answer **Correct display with values 5, 11, 6, 12 and complete labels** is correct."
+          "en": "Is this solution correct? Present mango=5, banana=11, papaya=6, and guava=12 in a labeled table or graph. Proposed answer: Correct display with values 5, 11, 6, 12 and complete labels",
+          "fil": "Is this solution correct? Present mango=5, banana=11, papaya=6, and guava=12 in a labeled table or graph. Proposed answer: Correct display with values 5, 11, 6, 12 and complete labels",
+          "taglish": "Is this solution correct? Present mango=5, banana=11, papaya=6, and guava=12 in a labeled table or graph. Proposed answer: Correct display with values 5, 11, 6, 12 and complete labels"
         },
         "answer": "True",
         "type": "true_false",
@@ -13620,9 +13620,9 @@
       },
       {
         "q": {
-          "en": "For **Present mango=7, banana=3, papaya=10, and guava=5 in a labeled table or graph. **, the stated answer **Correct display with values 7, 3, 10, 5 and complete labels** is correct.",
-          "fil": "For **Present mango=7, banana=3, papaya=10, and guava=5 in a labeled table or graph. **, the stated answer **Correct display with values 7, 3, 10, 5 and complete labels** is correct.",
-          "taglish": "For **Present mango=7, banana=3, papaya=10, and guava=5 in a labeled table or graph. **, the stated answer **Correct display with values 7, 3, 10, 5 and complete labels** is correct."
+          "en": "Is this solution correct? Present mango=7, banana=3, papaya=10, and guava=5 in a labeled table or graph. Proposed answer: Correct display with values 7, 3, 10, 5 and complete labels",
+          "fil": "Is this solution correct? Present mango=7, banana=3, papaya=10, and guava=5 in a labeled table or graph. Proposed answer: Correct display with values 7, 3, 10, 5 and complete labels",
+          "taglish": "Is this solution correct? Present mango=7, banana=3, papaya=10, and guava=5 in a labeled table or graph. Proposed answer: Correct display with values 7, 3, 10, 5 and complete labels"
         },
         "answer": "True",
         "type": "true_false",
@@ -13969,9 +13969,9 @@
       },
       {
         "q": {
-          "en": "For **A class survey recorded mango=11, banana=6, papaya=11, and guava=9. Which fruit has the greatest count?**, the stated answer **mango** is correct.",
-          "fil": "For **A class survey recorded mango=11, banana=6, papaya=11, and guava=9. Which fruit has the greatest count?**, the stated answer **mango** is correct.",
-          "taglish": "For **A class survey recorded mango=11, banana=6, papaya=11, and guava=9. Which fruit has the greatest count?**, the stated answer **mango** is correct."
+          "en": "Is this solution correct? A class survey recorded mango=11, banana=6, papaya=11, and guava=9. Which fruit has the greatest count? Proposed answer: mango",
+          "fil": "Is this solution correct? A class survey recorded mango=11, banana=6, papaya=11, and guava=9. Which fruit has the greatest count? Proposed answer: mango",
+          "taglish": "Is this solution correct? A class survey recorded mango=11, banana=6, papaya=11, and guava=9. Which fruit has the greatest count? Proposed answer: mango"
         },
         "answer": "True",
         "type": "true_false",
@@ -14198,9 +14198,9 @@
       },
       {
         "q": {
-          "en": "For **Continue the barangay house-number pattern: 3, 12, 21, 30, __, __.**, the stated answer **39, 48** is correct.",
-          "fil": "For **Continue the barangay house-number pattern: 3, 12, 21, 30, __, __.**, the stated answer **39, 48** is correct.",
-          "taglish": "For **Continue the barangay house-number pattern: 3, 12, 21, 30, __, __.**, the stated answer **39, 48** is correct."
+          "en": "Is this solution correct? Continue the barangay house-number pattern: 3, 12, 21, 30, __, __. Proposed answer: 39, 48",
+          "fil": "Is this solution correct? Continue the barangay house-number pattern: 3, 12, 21, 30, __, __. Proposed answer: 39, 48",
+          "taglish": "Is this solution correct? Continue the barangay house-number pattern: 3, 12, 21, 30, __, __. Proposed answer: 39, 48"
         },
         "answer": "True",
         "type": "true_false",
@@ -14553,9 +14553,9 @@
       },
       {
         "q": {
-          "en": "For **Find the missing number: 8 + __ = 15.**, the stated answer **7** is correct.",
-          "fil": "For **Find the missing number: 8 + __ = 15.**, the stated answer **7** is correct.",
-          "taglish": "For **Find the missing number: 8 + __ = 15.**, the stated answer **7** is correct."
+          "en": "Is this solution correct? Find the missing number: 8 + __ = 15. Proposed answer: 7",
+          "fil": "Is this solution correct? Find the missing number: 8 + __ = 15. Proposed answer: 7",
+          "taglish": "Is this solution correct? Find the missing number: 8 + __ = 15. Proposed answer: 7"
         },
         "answer": "True",
         "type": "true_false",
@@ -14908,9 +14908,9 @@
       },
       {
         "q": {
-          "en": "For **At a sari-sari store, compute ₱37.73 + ₱21.52.**, the stated answer **₱59.25** is correct.",
-          "fil": "For **At a sari-sari store, compute ₱37.73 + ₱21.52.**, the stated answer **₱59.25** is correct.",
-          "taglish": "For **At a sari-sari store, compute ₱37.73 + ₱21.52.**, the stated answer **₱59.25** is correct."
+          "en": "Is this solution correct? At a sari-sari store, compute ₱37.73 + ₱21.52. Proposed answer: ₱59.25",
+          "fil": "Is this solution correct? At a sari-sari store, compute ₱37.73 + ₱21.52. Proposed answer: ₱59.25",
+          "taglish": "Is this solution correct? At a sari-sari store, compute ₱37.73 + ₱21.52. Proposed answer: ₱59.25"
         },
         "answer": "True",
         "type": "true_false",
@@ -15263,9 +15263,9 @@
       },
       {
         "q": {
-          "en": "For **In 55.624, what is the value of the digit in the hundredths place?**, the stated answer **0.02** is correct.",
-          "fil": "For **In 55.624, what is the value of the digit in the hundredths place?**, the stated answer **0.02** is correct.",
-          "taglish": "For **In 55.624, what is the value of the digit in the hundredths place?**, the stated answer **0.02** is correct."
+          "en": "Is this solution correct? In 55.624, what is the value of the digit in the hundredths place? Proposed answer: 0.02",
+          "fil": "Is this solution correct? In 55.624, what is the value of the digit in the hundredths place? Proposed answer: 0.02",
+          "taglish": "Is this solution correct? In 55.624, what is the value of the digit in the hundredths place? Proposed answer: 0.02"
         },
         "answer": "True",
         "type": "true_false",
@@ -15618,9 +15618,9 @@
       },
       {
         "q": {
-          "en": "For **In 6.949, what is the value of the digit in the hundredths place?**, the stated answer **0.04** is correct.",
-          "fil": "For **In 6.949, what is the value of the digit in the hundredths place?**, the stated answer **0.04** is correct.",
-          "taglish": "For **In 6.949, what is the value of the digit in the hundredths place?**, the stated answer **0.04** is correct."
+          "en": "Is this solution correct? In 6.949, what is the value of the digit in the hundredths place? Proposed answer: 0.04",
+          "fil": "Is this solution correct? In 6.949, what is the value of the digit in the hundredths place? Proposed answer: 0.04",
+          "taglish": "Is this solution correct? In 6.949, what is the value of the digit in the hundredths place? Proposed answer: 0.04"
         },
         "answer": "True",
         "type": "true_false",
@@ -15923,9 +15923,9 @@
       },
       {
         "q": {
-          "en": "For **Convert 0.75 to a fraction in simplest form.**, the stated answer **3/4** is correct.",
-          "fil": "For **Convert 0.75 to a fraction in simplest form.**, the stated answer **3/4** is correct.",
-          "taglish": "For **Convert 0.75 to a fraction in simplest form.**, the stated answer **3/4** is correct."
+          "en": "Is this solution correct? Convert 0.75 to a fraction in simplest form. Proposed answer: 3/4",
+          "fil": "Is this solution correct? Convert 0.75 to a fraction in simplest form. Proposed answer: 3/4",
+          "taglish": "Is this solution correct? Convert 0.75 to a fraction in simplest form. Proposed answer: 3/4"
         },
         "answer": "True",
         "type": "true_false",
@@ -16173,9 +16173,9 @@
       },
       {
         "q": {
-          "en": "For **At a sari-sari store, compute ₱58.76 + ₱12.32.**, the stated answer **₱71.08** is correct.",
-          "fil": "For **At a sari-sari store, compute ₱58.76 + ₱12.32.**, the stated answer **₱71.08** is correct.",
-          "taglish": "For **At a sari-sari store, compute ₱58.76 + ₱12.32.**, the stated answer **₱71.08** is correct."
+          "en": "Is this solution correct? At a sari-sari store, compute ₱58.76 + ₱12.32. Proposed answer: ₱71.08",
+          "fil": "Is this solution correct? At a sari-sari store, compute ₱58.76 + ₱12.32. Proposed answer: ₱71.08",
+          "taglish": "Is this solution correct? At a sari-sari store, compute ₱58.76 + ₱12.32. Proposed answer: ₱71.08"
         },
         "answer": "True",
         "type": "true_false",
@@ -16528,9 +16528,9 @@
       },
       {
         "q": {
-          "en": "For **Order these market weights from smallest to largest: 4.752, 9.153, 15.559.**, the stated answer **4.752, 9.153, 15.559** is correct.",
-          "fil": "For **Order these market weights from smallest to largest: 4.752, 9.153, 15.559.**, the stated answer **4.752, 9.153, 15.559** is correct.",
-          "taglish": "For **Order these market weights from smallest to largest: 4.752, 9.153, 15.559.**, the stated answer **4.752, 9.153, 15.559** is correct."
+          "en": "Is this solution correct? Order these market weights from smallest to largest: 4.752, 9.153, 15.559. Proposed answer: 4.752, 9.153, 15.559",
+          "fil": "Is this solution correct? Order these market weights from smallest to largest: 4.752, 9.153, 15.559. Proposed answer: 4.752, 9.153, 15.559",
+          "taglish": "Is this solution correct? Order these market weights from smallest to largest: 4.752, 9.153, 15.559. Proposed answer: 4.752, 9.153, 15.559"
         },
         "answer": "True",
         "type": "true_false",
@@ -16883,9 +16883,9 @@
       },
       {
         "q": {
-          "en": "For **Round 72.8482 to the nearest thousandth.**, the stated answer **72.848** is correct.",
-          "fil": "For **Round 72.8482 to the nearest thousandth.**, the stated answer **72.848** is correct.",
-          "taglish": "For **Round 72.8482 to the nearest thousandth.**, the stated answer **72.848** is correct."
+          "en": "Is this solution correct? Round 72.8482 to the nearest thousandth. Proposed answer: 72.848",
+          "fil": "Is this solution correct? Round 72.8482 to the nearest thousandth. Proposed answer: 72.848",
+          "taglish": "Is this solution correct? Round 72.8482 to the nearest thousandth. Proposed answer: 72.848"
         },
         "answer": "True",
         "type": "true_false",

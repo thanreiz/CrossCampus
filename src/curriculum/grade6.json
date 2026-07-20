@@ -104,9 +104,9 @@
       },
       {
         "q": {
-          "en": "For **Can congruent circles cover a festival-floor design without gaps or overlaps? (Diagram description: repeated circles.)**, the stated answer **No; gaps remain** is correct.",
-          "fil": "For **Can congruent circles cover a festival-floor design without gaps or overlaps? (Diagram description: repeated circles.)**, the stated answer **No; gaps remain** is correct.",
-          "taglish": "For **Can congruent circles cover a festival-floor design without gaps or overlaps? (Diagram description: repeated circles.)**, the stated answer **No; gaps remain** is correct."
+          "en": "Is this solution correct? Can congruent circles cover a festival-floor design without gaps or overlaps? (Diagram description: repeated circles.) Proposed answer: No; gaps remain",
+          "fil": "Is this solution correct? Can congruent circles cover a festival-floor design without gaps or overlaps? (Diagram description: repeated circles.) Proposed answer: No; gaps remain",
+          "taglish": "Is this solution correct? Can congruent circles cover a festival-floor design without gaps or overlaps? (Diagram description: repeated circles.) Proposed answer: No; gaps remain"
         },
         "answer": "True",
         "type": "true_false",
@@ -241,9 +241,9 @@
       },
       {
         "q": {
-          "en": "For **Can congruent circles cover a festival-floor design without gaps or overlaps? (Diagram description: repeated circles.)**, the stated answer **No; gaps remain** is correct.",
-          "fil": "For **Can congruent circles cover a festival-floor design without gaps or overlaps? (Diagram description: repeated circles.)**, the stated answer **No; gaps remain** is correct.",
-          "taglish": "For **Can congruent circles cover a festival-floor design without gaps or overlaps? (Diagram description: repeated circles.)**, the stated answer **No; gaps remain** is correct."
+          "en": "Is this solution correct? Can congruent circles cover a festival-floor design without gaps or overlaps? (Diagram description: repeated circles.) Proposed answer: No; gaps remain",
+          "fil": "Is this solution correct? Can congruent circles cover a festival-floor design without gaps or overlaps? (Diagram description: repeated circles.) Proposed answer: No; gaps remain",
+          "taglish": "Is this solution correct? Can congruent circles cover a festival-floor design without gaps or overlaps? (Diagram description: repeated circles.) Proposed answer: No; gaps remain"
         },
         "answer": "True",
         "type": "true_false",
@@ -405,9 +405,9 @@
       },
       {
         "q": {
-          "en": "For **Complete a symmetrical banderitas design across the marked line. (Diagram description: half-design and vertical line.)**, the stated answer **The completed half must be a mirror image at equal distances from the line** is correct.",
-          "fil": "For **Complete a symmetrical banderitas design across the marked line. (Diagram description: half-design and vertical line.)**, the stated answer **The completed half must be a mirror image at equal distances from the line** is correct.",
-          "taglish": "For **Complete a symmetrical banderitas design across the marked line. (Diagram description: half-design and vertical line.)**, the stated answer **The completed half must be a mirror image at equal distances from the line** is correct."
+          "en": "Is this solution correct? Complete a symmetrical banderitas design across the marked line. (Diagram description: half-design and vertical line.) Proposed answer: The completed half must be a mirror image at equal distances from the line",
+          "fil": "Is this solution correct? Complete a symmetrical banderitas design across the marked line. (Diagram description: half-design and vertical line.) Proposed answer: The completed half must be a mirror image at equal distances from the line",
+          "taglish": "Is this solution correct? Complete a symmetrical banderitas design across the marked line. (Diagram description: half-design and vertical line.) Proposed answer: The completed half must be a mirror image at equal distances from the line"
         },
         "answer": "True",
         "type": "true_false",
@@ -661,9 +661,9 @@
       },
       {
         "q": {
-          "en": "For **At a sari-sari store, compute ₱72.46 - ₱17.37.**, the stated answer **₱55.09** is correct.",
-          "fil": "For **At a sari-sari store, compute ₱72.46 - ₱17.37.**, the stated answer **₱55.09** is correct.",
-          "taglish": "For **At a sari-sari store, compute ₱72.46 - ₱17.37.**, the stated answer **₱55.09** is correct."
+          "en": "Is this solution correct? At a sari-sari store, compute ₱72.46 - ₱17.37. Proposed answer: ₱55.09",
+          "fil": "Is this solution correct? At a sari-sari store, compute ₱72.46 - ₱17.37. Proposed answer: ₱55.09",
+          "taglish": "Is this solution correct? At a sari-sari store, compute ₱72.46 - ₱17.37. Proposed answer: ₱55.09"
         },
         "answer": "True",
         "type": "true_false",
@@ -1016,9 +1016,9 @@
       },
       {
         "q": {
-          "en": "For **At a sari-sari store, compute ₱40.17 - ₱29.48.**, the stated answer **₱10.69** is correct.",
-          "fil": "For **At a sari-sari store, compute ₱40.17 - ₱29.48.**, the stated answer **₱10.69** is correct.",
-          "taglish": "For **At a sari-sari store, compute ₱40.17 - ₱29.48.**, the stated answer **₱10.69** is correct."
+          "en": "Is this solution correct? At a sari-sari store, compute ₱40.17 - ₱29.48. Proposed answer: ₱10.69",
+          "fil": "Is this solution correct? At a sari-sari store, compute ₱40.17 - ₱29.48. Proposed answer: ₱10.69",
+          "taglish": "Is this solution correct? At a sari-sari store, compute ₱40.17 - ₱29.48. Proposed answer: ₱10.69"
         },
         "answer": "True",
         "type": "true_false",
@@ -1371,9 +1371,9 @@
       },
       {
         "q": {
-          "en": "For **Compute mentally: 26.17 × 10.**, the stated answer **261.7** is correct.",
-          "fil": "For **Compute mentally: 26.17 × 10.**, the stated answer **261.7** is correct.",
-          "taglish": "For **Compute mentally: 26.17 × 10.**, the stated answer **261.7** is correct."
+          "en": "Is this solution correct? Compute mentally: 26.17 × 10. Proposed answer: 261.7",
+          "fil": "Is this solution correct? Compute mentally: 26.17 × 10. Proposed answer: 261.7",
+          "taglish": "Is this solution correct? Compute mentally: 26.17 × 10. Proposed answer: 261.7"
         },
         "answer": "True",
         "type": "true_false",
@@ -1726,9 +1726,9 @@
       },
       {
         "q": {
-          "en": "For **At a sari-sari store, compute ₱43.10 - ₱15.62.**, the stated answer **₱27.48** is correct.",
-          "fil": "For **At a sari-sari store, compute ₱43.10 - ₱15.62.**, the stated answer **₱27.48** is correct.",
-          "taglish": "For **At a sari-sari store, compute ₱43.10 - ₱15.62.**, the stated answer **₱27.48** is correct."
+          "en": "Is this solution correct? At a sari-sari store, compute ₱43.10 - ₱15.62. Proposed answer: ₱27.48",
+          "fil": "Is this solution correct? At a sari-sari store, compute ₱43.10 - ₱15.62. Proposed answer: ₱27.48",
+          "taglish": "Is this solution correct? At a sari-sari store, compute ₱43.10 - ₱15.62. Proposed answer: ₱27.48"
         },
         "answer": "True",
         "type": "true_false",
@@ -1962,9 +1962,9 @@
       },
       {
         "q": {
-          "en": "For **Write 1 ÷ 3 as a repeating decimal using an ellipsis.**, the stated answer **0.3333…** is correct.",
-          "fil": "For **Write 1 ÷ 3 as a repeating decimal using an ellipsis.**, the stated answer **0.3333…** is correct.",
-          "taglish": "For **Write 1 ÷ 3 as a repeating decimal using an ellipsis.**, the stated answer **0.3333…** is correct."
+          "en": "Is this solution correct? Write 1 ÷ 3 as a repeating decimal using an ellipsis. Proposed answer: 0.3333…",
+          "fil": "Is this solution correct? Write 1 ÷ 3 as a repeating decimal using an ellipsis. Proposed answer: 0.3333…",
+          "taglish": "Is this solution correct? Write 1 ÷ 3 as a repeating decimal using an ellipsis. Proposed answer: 0.3333…"
         },
         "answer": "True",
         "type": "true_false",
@@ -2191,9 +2191,9 @@
       },
       {
         "q": {
-          "en": "For **Compute mentally: 899.18 ÷ 100.**, the stated answer **8.9918** is correct.",
-          "fil": "For **Compute mentally: 899.18 ÷ 100.**, the stated answer **8.9918** is correct.",
-          "taglish": "For **Compute mentally: 899.18 ÷ 100.**, the stated answer **8.9918** is correct."
+          "en": "Is this solution correct? Compute mentally: 899.18 ÷ 100. Proposed answer: 8.9918",
+          "fil": "Is this solution correct? Compute mentally: 899.18 ÷ 100. Proposed answer: 8.9918",
+          "taglish": "Is this solution correct? Compute mentally: 899.18 ÷ 100. Proposed answer: 8.9918"
         },
         "answer": "True",
         "type": "true_false",
@@ -2546,9 +2546,9 @@
       },
       {
         "q": {
-          "en": "For **At a sari-sari store, compute ₱34.05 + ₱15.32.**, the stated answer **₱49.37** is correct.",
-          "fil": "For **At a sari-sari store, compute ₱34.05 + ₱15.32.**, the stated answer **₱49.37** is correct.",
-          "taglish": "For **At a sari-sari store, compute ₱34.05 + ₱15.32.**, the stated answer **₱49.37** is correct."
+          "en": "Is this solution correct? At a sari-sari store, compute ₱34.05 + ₱15.32. Proposed answer: ₱49.37",
+          "fil": "Is this solution correct? At a sari-sari store, compute ₱34.05 + ₱15.32. Proposed answer: ₱49.37",
+          "taglish": "Is this solution correct? At a sari-sari store, compute ₱34.05 + ₱15.32. Proposed answer: ₱49.37"
         },
         "answer": "True",
         "type": "true_false",
@@ -2901,9 +2901,9 @@
       },
       {
         "q": {
-          "en": "For **Rewrite 3/2 as a mixed number.**, the stated answer **1 1/2** is correct.",
-          "fil": "For **Rewrite 3/2 as a mixed number.**, the stated answer **1 1/2** is correct.",
-          "taglish": "For **Rewrite 3/2 as a mixed number.**, the stated answer **1 1/2** is correct."
+          "en": "Is this solution correct? Rewrite 3/2 as a mixed number. Proposed answer: 1 1/2",
+          "fil": "Is this solution correct? Rewrite 3/2 as a mixed number. Proposed answer: 1 1/2",
+          "taglish": "Is this solution correct? Rewrite 3/2 as a mixed number. Proposed answer: 1 1/2"
         },
         "answer": "True",
         "type": "true_false",
@@ -3235,9 +3235,9 @@
       },
       {
         "q": {
-          "en": "For **Rewrite 19/6 as a mixed number.**, the stated answer **3 1/6** is correct.",
-          "fil": "For **Rewrite 19/6 as a mixed number.**, the stated answer **3 1/6** is correct.",
-          "taglish": "For **Rewrite 19/6 as a mixed number.**, the stated answer **3 1/6** is correct."
+          "en": "Is this solution correct? Rewrite 19/6 as a mixed number. Proposed answer: 3 1/6",
+          "fil": "Is this solution correct? Rewrite 19/6 as a mixed number. Proposed answer: 3 1/6",
+          "taglish": "Is this solution correct? Rewrite 19/6 as a mixed number. Proposed answer: 3 1/6"
         },
         "answer": "True",
         "type": "true_false",
@@ -3565,9 +3565,9 @@
       },
       {
         "q": {
-          "en": "For **Rewrite 9/5 as a mixed number.**, the stated answer **1 4/5** is correct.",
-          "fil": "For **Rewrite 9/5 as a mixed number.**, the stated answer **1 4/5** is correct.",
-          "taglish": "For **Rewrite 9/5 as a mixed number.**, the stated answer **1 4/5** is correct."
+          "en": "Is this solution correct? Rewrite 9/5 as a mixed number. Proposed answer: 1 4/5",
+          "fil": "Is this solution correct? Rewrite 9/5 as a mixed number. Proposed answer: 1 4/5",
+          "taglish": "Is this solution correct? Rewrite 9/5 as a mixed number. Proposed answer: 1 4/5"
         },
         "answer": "True",
         "type": "true_false",
@@ -3899,9 +3899,9 @@
       },
       {
         "q": {
-          "en": "For **Rewrite 8/3 as a mixed number.**, the stated answer **2 2/3** is correct.",
-          "fil": "For **Rewrite 8/3 as a mixed number.**, the stated answer **2 2/3** is correct.",
-          "taglish": "For **Rewrite 8/3 as a mixed number.**, the stated answer **2 2/3** is correct."
+          "en": "Is this solution correct? Rewrite 8/3 as a mixed number. Proposed answer: 2 2/3",
+          "fil": "Is this solution correct? Rewrite 8/3 as a mixed number. Proposed answer: 2 2/3",
+          "taglish": "Is this solution correct? Rewrite 8/3 as a mixed number. Proposed answer: 2 2/3"
         },
         "answer": "True",
         "type": "true_false",
@@ -4212,9 +4212,9 @@
       },
       {
         "q": {
-          "en": "For **A garden has 6 rows of pechay and 3 rows of eggplant. Write the pechay-to-eggplant ratio.**, the stated answer **6:3** is correct.",
-          "fil": "For **A garden has 6 rows of pechay and 3 rows of eggplant. Write the pechay-to-eggplant ratio.**, the stated answer **6:3** is correct.",
-          "taglish": "For **A garden has 6 rows of pechay and 3 rows of eggplant. Write the pechay-to-eggplant ratio.**, the stated answer **6:3** is correct."
+          "en": "Is this solution correct? A garden has 6 rows of pechay and 3 rows of eggplant. Write the pechay-to-eggplant ratio. Proposed answer: 6:3",
+          "fil": "Is this solution correct? A garden has 6 rows of pechay and 3 rows of eggplant. Write the pechay-to-eggplant ratio. Proposed answer: 6:3",
+          "taglish": "Is this solution correct? A garden has 6 rows of pechay and 3 rows of eggplant. Write the pechay-to-eggplant ratio. Proposed answer: 6:3"
         },
         "answer": "True",
         "type": "true_false",
@@ -4542,9 +4542,9 @@
       },
       {
         "q": {
-          "en": "For **A garden has 4 rows of pechay and 3 rows of eggplant. Write the pechay-to-eggplant ratio.**, the stated answer **4:3** is correct.",
-          "fil": "For **A garden has 4 rows of pechay and 3 rows of eggplant. Write the pechay-to-eggplant ratio.**, the stated answer **4:3** is correct.",
-          "taglish": "For **A garden has 4 rows of pechay and 3 rows of eggplant. Write the pechay-to-eggplant ratio.**, the stated answer **4:3** is correct."
+          "en": "Is this solution correct? A garden has 4 rows of pechay and 3 rows of eggplant. Write the pechay-to-eggplant ratio. Proposed answer: 4:3",
+          "fil": "Is this solution correct? A garden has 4 rows of pechay and 3 rows of eggplant. Write the pechay-to-eggplant ratio. Proposed answer: 4:3",
+          "taglish": "Is this solution correct? A garden has 4 rows of pechay and 3 rows of eggplant. Write the pechay-to-eggplant ratio. Proposed answer: 4:3"
         },
         "answer": "True",
         "type": "true_false",
@@ -4876,9 +4876,9 @@
       },
       {
         "q": {
-          "en": "For **A garden has 6 rows of pechay and 5 rows of eggplant. Write the pechay-to-eggplant ratio.**, the stated answer **6:5** is correct.",
-          "fil": "For **A garden has 6 rows of pechay and 5 rows of eggplant. Write the pechay-to-eggplant ratio.**, the stated answer **6:5** is correct.",
-          "taglish": "For **A garden has 6 rows of pechay and 5 rows of eggplant. Write the pechay-to-eggplant ratio.**, the stated answer **6:5** is correct."
+          "en": "Is this solution correct? A garden has 6 rows of pechay and 5 rows of eggplant. Write the pechay-to-eggplant ratio. Proposed answer: 6:5",
+          "fil": "Is this solution correct? A garden has 6 rows of pechay and 5 rows of eggplant. Write the pechay-to-eggplant ratio. Proposed answer: 6:5",
+          "taglish": "Is this solution correct? A garden has 6 rows of pechay and 5 rows of eggplant. Write the pechay-to-eggplant ratio. Proposed answer: 6:5"
         },
         "answer": "True",
         "type": "true_false",
@@ -5231,9 +5231,9 @@
       },
       {
         "q": {
-          "en": "For **A garden has 4 rows of pechay and 3 rows of eggplant. Write the pechay-to-eggplant ratio.**, the stated answer **4:3** is correct.",
-          "fil": "For **A garden has 4 rows of pechay and 3 rows of eggplant. Write the pechay-to-eggplant ratio.**, the stated answer **4:3** is correct.",
-          "taglish": "For **A garden has 4 rows of pechay and 3 rows of eggplant. Write the pechay-to-eggplant ratio.**, the stated answer **4:3** is correct."
+          "en": "Is this solution correct? A garden has 4 rows of pechay and 3 rows of eggplant. Write the pechay-to-eggplant ratio. Proposed answer: 4:3",
+          "fil": "Is this solution correct? A garden has 4 rows of pechay and 3 rows of eggplant. Write the pechay-to-eggplant ratio. Proposed answer: 4:3",
+          "taglish": "Is this solution correct? A garden has 4 rows of pechay and 3 rows of eggplant. Write the pechay-to-eggplant ratio. Proposed answer: 4:3"
         },
         "answer": "True",
         "type": "true_false",
@@ -5586,9 +5586,9 @@
       },
       {
         "q": {
-          "en": "For **At a school canteen, 6 trays serve 2 groups. At the same rate, how many groups can 18 trays serve?**, the stated answer **6** is correct.",
-          "fil": "For **At a school canteen, 6 trays serve 2 groups. At the same rate, how many groups can 18 trays serve?**, the stated answer **6** is correct.",
-          "taglish": "For **At a school canteen, 6 trays serve 2 groups. At the same rate, how many groups can 18 trays serve?**, the stated answer **6** is correct."
+          "en": "Is this solution correct? At a school canteen, 6 trays serve 2 groups. At the same rate, how many groups can 18 trays serve? Proposed answer: 6",
+          "fil": "Is this solution correct? At a school canteen, 6 trays serve 2 groups. At the same rate, how many groups can 18 trays serve? Proposed answer: 6",
+          "taglish": "Is this solution correct? At a school canteen, 6 trays serve 2 groups. At the same rate, how many groups can 18 trays serve? Proposed answer: 6"
         },
         "answer": "True",
         "type": "true_false",
@@ -5941,9 +5941,9 @@
       },
       {
         "q": {
-          "en": "For **A garden has 4 rows of pechay and 3 rows of eggplant. Write the pechay-to-eggplant ratio.**, the stated answer **4:3** is correct.",
-          "fil": "For **A garden has 4 rows of pechay and 3 rows of eggplant. Write the pechay-to-eggplant ratio.**, the stated answer **4:3** is correct.",
-          "taglish": "For **A garden has 4 rows of pechay and 3 rows of eggplant. Write the pechay-to-eggplant ratio.**, the stated answer **4:3** is correct."
+          "en": "Is this solution correct? A garden has 4 rows of pechay and 3 rows of eggplant. Write the pechay-to-eggplant ratio. Proposed answer: 4:3",
+          "fil": "Is this solution correct? A garden has 4 rows of pechay and 3 rows of eggplant. Write the pechay-to-eggplant ratio. Proposed answer: 4:3",
+          "taglish": "Is this solution correct? A garden has 4 rows of pechay and 3 rows of eggplant. Write the pechay-to-eggplant ratio. Proposed answer: 4:3"
         },
         "answer": "True",
         "type": "true_false",
@@ -6275,9 +6275,9 @@
       },
       {
         "q": {
-          "en": "For **At a school canteen, 1 trays serve 2 groups. At the same rate, how many groups can 6 trays serve?**, the stated answer **12** is correct.",
-          "fil": "For **At a school canteen, 1 trays serve 2 groups. At the same rate, how many groups can 6 trays serve?**, the stated answer **12** is correct.",
-          "taglish": "For **At a school canteen, 1 trays serve 2 groups. At the same rate, how many groups can 6 trays serve?**, the stated answer **12** is correct."
+          "en": "Is this solution correct? At a school canteen, 1 trays serve 2 groups. At the same rate, how many groups can 6 trays serve? Proposed answer: 12",
+          "fil": "Is this solution correct? At a school canteen, 1 trays serve 2 groups. At the same rate, how many groups can 6 trays serve? Proposed answer: 12",
+          "taglish": "Is this solution correct? At a school canteen, 1 trays serve 2 groups. At the same rate, how many groups can 6 trays serve? Proposed answer: 12"
         },
         "answer": "True",
         "type": "true_false",
@@ -6544,9 +6544,9 @@
       },
       {
         "q": {
-          "en": "For **Express 20% as a fraction in simplest form and as a decimal.**, the stated answer **1/5 and 0.20** is correct.",
-          "fil": "For **Express 20% as a fraction in simplest form and as a decimal.**, the stated answer **1/5 and 0.20** is correct.",
-          "taglish": "For **Express 20% as a fraction in simplest form and as a decimal.**, the stated answer **1/5 and 0.20** is correct."
+          "en": "Is this solution correct? Express 20% as a fraction in simplest form and as a decimal. Proposed answer: 1/5 and 0.20",
+          "fil": "Is this solution correct? Express 20% as a fraction in simplest form and as a decimal. Proposed answer: 1/5 and 0.20",
+          "taglish": "Is this solution correct? Express 20% as a fraction in simplest form and as a decimal. Proposed answer: 1/5 and 0.20"
         },
         "answer": "True",
         "type": "true_false",
@@ -6735,9 +6735,9 @@
       },
       {
         "q": {
-          "en": "For **Express 20% as a fraction in simplest form and as a decimal.**, the stated answer **1/5 and 0.20** is correct.",
-          "fil": "For **Express 20% as a fraction in simplest form and as a decimal.**, the stated answer **1/5 and 0.20** is correct.",
-          "taglish": "For **Express 20% as a fraction in simplest form and as a decimal.**, the stated answer **1/5 and 0.20** is correct."
+          "en": "Is this solution correct? Express 20% as a fraction in simplest form and as a decimal. Proposed answer: 1/5 and 0.20",
+          "fil": "Is this solution correct? Express 20% as a fraction in simplest form and as a decimal. Proposed answer: 1/5 and 0.20",
+          "taglish": "Is this solution correct? Express 20% as a fraction in simplest form and as a decimal. Proposed answer: 1/5 and 0.20"
         },
         "answer": "True",
         "type": "true_false",
@@ -6976,9 +6976,9 @@
       },
       {
         "q": {
-          "en": "For **Write 2 × 2 in exponential form.**, the stated answer **2^2** is correct.",
-          "fil": "For **Write 2 × 2 in exponential form.**, the stated answer **2^2** is correct.",
-          "taglish": "For **Write 2 × 2 in exponential form.**, the stated answer **2^2** is correct."
+          "en": "Is this solution correct? Write 2 × 2 in exponential form. Proposed answer: 2^2",
+          "fil": "Is this solution correct? Write 2 × 2 in exponential form. Proposed answer: 2^2",
+          "taglish": "Is this solution correct? Write 2 × 2 in exponential form. Proposed answer: 2^2"
         },
         "answer": "True",
         "type": "true_false",
@@ -7261,9 +7261,9 @@
       },
       {
         "q": {
-          "en": "For **Evaluate 2^4.**, the stated answer **16** is correct.",
-          "fil": "For **Evaluate 2^4.**, the stated answer **16** is correct.",
-          "taglish": "For **Evaluate 2^4.**, the stated answer **16** is correct."
+          "en": "Is this solution correct? Evaluate 2^4. Proposed answer: 16",
+          "fil": "Is this solution correct? Evaluate 2^4. Proposed answer: 16",
+          "taglish": "Is this solution correct? Evaluate 2^4. Proposed answer: 16"
         },
         "answer": "True",
         "type": "true_false",
@@ -7553,9 +7553,9 @@
       },
       {
         "q": {
-          "en": "For **Evaluate using GEMDAS: 4^2 + 5 × 2.**, the stated answer **26** is correct.",
-          "fil": "For **Evaluate using GEMDAS: 4^2 + 5 × 2.**, the stated answer **26** is correct.",
-          "taglish": "For **Evaluate using GEMDAS: 4^2 + 5 × 2.**, the stated answer **26** is correct."
+          "en": "Is this solution correct? Evaluate using GEMDAS: 4^2 + 5 × 2. Proposed answer: 26",
+          "fil": "Is this solution correct? Evaluate using GEMDAS: 4^2 + 5 × 2. Proposed answer: 26",
+          "taglish": "Is this solution correct? Evaluate using GEMDAS: 4^2 + 5 × 2. Proposed answer: 26"
         },
         "answer": "True",
         "type": "true_false",
@@ -7763,9 +7763,9 @@
       },
       {
         "q": {
-          "en": "For **Choose the more appropriate unit for the capacity of a household water tank: mL or L.**, the stated answer **L** is correct.",
-          "fil": "For **Choose the more appropriate unit for the capacity of a household water tank: mL or L.**, the stated answer **L** is correct.",
-          "taglish": "For **Choose the more appropriate unit for the capacity of a household water tank: mL or L.**, the stated answer **L** is correct."
+          "en": "Is this solution correct? Choose the more appropriate unit for the capacity of a household water tank: mL or L. Proposed answer: L",
+          "fil": "Is this solution correct? Choose the more appropriate unit for the capacity of a household water tank: mL or L. Proposed answer: L",
+          "taglish": "Is this solution correct? Choose the more appropriate unit for the capacity of a household water tank: mL or L. Proposed answer: L"
         },
         "answer": "True",
         "type": "true_false",
@@ -7928,9 +7928,9 @@
       },
       {
         "q": {
-          "en": "For **Convert 2 L to cubic centimeters.**, the stated answer **2,000 cm³** is correct.",
-          "fil": "For **Convert 2 L to cubic centimeters.**, the stated answer **2,000 cm³** is correct.",
-          "taglish": "For **Convert 2 L to cubic centimeters.**, the stated answer **2,000 cm³** is correct."
+          "en": "Is this solution correct? Convert 2 L to cubic centimeters. Proposed answer: 2,000 cm³",
+          "fil": "Is this solution correct? Convert 2 L to cubic centimeters. Proposed answer: 2,000 cm³",
+          "taglish": "Is this solution correct? Convert 2 L to cubic centimeters. Proposed answer: 2,000 cm³"
         },
         "answer": "True",
         "type": "true_false",
@@ -8251,9 +8251,9 @@
       },
       {
         "q": {
-          "en": "For **A box model is 3 unit cubes long, 5 unit cubes wide, and 6 unit cubes high. Estimate its volume in unit cubes.**, the stated answer **90 unit cubes** is correct.",
-          "fil": "For **A box model is 3 unit cubes long, 5 unit cubes wide, and 6 unit cubes high. Estimate its volume in unit cubes.**, the stated answer **90 unit cubes** is correct.",
-          "taglish": "For **A box model is 3 unit cubes long, 5 unit cubes wide, and 6 unit cubes high. Estimate its volume in unit cubes.**, the stated answer **90 unit cubes** is correct."
+          "en": "Is this solution correct? A box model is 3 unit cubes long, 5 unit cubes wide, and 6 unit cubes high. Estimate its volume in unit cubes. Proposed answer: 90 unit cubes",
+          "fil": "Is this solution correct? A box model is 3 unit cubes long, 5 unit cubes wide, and 6 unit cubes high. Estimate its volume in unit cubes. Proposed answer: 90 unit cubes",
+          "taglish": "Is this solution correct? A box model is 3 unit cubes long, 5 unit cubes wide, and 6 unit cubes high. Estimate its volume in unit cubes. Proposed answer: 90 unit cubes"
         },
         "answer": "True",
         "type": "true_false",
@@ -8655,9 +8655,9 @@
       },
       {
         "q": {
-          "en": "For **A box model is 7 unit cubes long, 7 unit cubes wide, and 4 unit cubes high. Estimate its volume in unit cubes.**, the stated answer **196 unit cubes** is correct.",
-          "fil": "For **A box model is 7 unit cubes long, 7 unit cubes wide, and 4 unit cubes high. Estimate its volume in unit cubes.**, the stated answer **196 unit cubes** is correct.",
-          "taglish": "For **A box model is 7 unit cubes long, 7 unit cubes wide, and 4 unit cubes high. Estimate its volume in unit cubes.**, the stated answer **196 unit cubes** is correct."
+          "en": "Is this solution correct? A box model is 7 unit cubes long, 7 unit cubes wide, and 4 unit cubes high. Estimate its volume in unit cubes. Proposed answer: 196 unit cubes",
+          "fil": "Is this solution correct? A box model is 7 unit cubes long, 7 unit cubes wide, and 4 unit cubes high. Estimate its volume in unit cubes. Proposed answer: 196 unit cubes",
+          "taglish": "Is this solution correct? A box model is 7 unit cubes long, 7 unit cubes wide, and 4 unit cubes high. Estimate its volume in unit cubes. Proposed answer: 196 unit cubes"
         },
         "answer": "True",
         "type": "true_false",
@@ -9059,9 +9059,9 @@
       },
       {
         "q": {
-          "en": "For **A family has 15 L of water and adds 7 L. What is the total capacity?**, the stated answer **22 L** is correct.",
-          "fil": "For **A family has 15 L of water and adds 7 L. What is the total capacity?**, the stated answer **22 L** is correct.",
-          "taglish": "For **A family has 15 L of water and adds 7 L. What is the total capacity?**, the stated answer **22 L** is correct."
+          "en": "Is this solution correct? A family has 15 L of water and adds 7 L. What is the total capacity? Proposed answer: 22 L",
+          "fil": "Is this solution correct? A family has 15 L of water and adds 7 L. What is the total capacity? Proposed answer: 22 L",
+          "taglish": "Is this solution correct? A family has 15 L of water and adds 7 L. What is the total capacity? Proposed answer: 22 L"
         },
         "answer": "True",
         "type": "true_false",
@@ -9438,9 +9438,9 @@
       },
       {
         "q": {
-          "en": "For **Convert 12 m² to square centimeters.**, the stated answer **120,000 cm²** is correct.",
-          "fil": "For **Convert 12 m² to square centimeters.**, the stated answer **120,000 cm²** is correct.",
-          "taglish": "For **Convert 12 m² to square centimeters.**, the stated answer **120,000 cm²** is correct."
+          "en": "Is this solution correct? Convert 12 m² to square centimeters. Proposed answer: 120,000 cm²",
+          "fil": "Is this solution correct? Convert 12 m² to square centimeters. Proposed answer: 120,000 cm²",
+          "taglish": "Is this solution correct? Convert 12 m² to square centimeters. Proposed answer: 120,000 cm²"
         },
         "answer": "True",
         "type": "true_false",
@@ -9707,9 +9707,9 @@
       },
       {
         "q": {
-          "en": "For **A composite garden is a 8 m by 9 m rectangle joined to a triangle with base 8 m and height 18 m. Find the total area.**, the stated answer **144 m²** is correct.",
-          "fil": "For **A composite garden is a 8 m by 9 m rectangle joined to a triangle with base 8 m and height 18 m. Find the total area.**, the stated answer **144 m²** is correct.",
-          "taglish": "For **A composite garden is a 8 m by 9 m rectangle joined to a triangle with base 8 m and height 18 m. Find the total area.**, the stated answer **144 m²** is correct."
+          "en": "Is this solution correct? A composite garden is a 8 m by 9 m rectangle joined to a triangle with base 8 m and height 18 m. Find the total area. Proposed answer: 144 m²",
+          "fil": "Is this solution correct? A composite garden is a 8 m by 9 m rectangle joined to a triangle with base 8 m and height 18 m. Find the total area. Proposed answer: 144 m²",
+          "taglish": "Is this solution correct? A composite garden is a 8 m by 9 m rectangle joined to a triangle with base 8 m and height 18 m. Find the total area. Proposed answer: 144 m²"
         },
         "answer": "True",
         "type": "true_false",
@@ -10111,9 +10111,9 @@
       },
       {
         "q": {
-          "en": "For **A rectangular fiesta booth is 13 m by 4 m. Find both its perimeter and area.**, the stated answer **perimeter = 34 m; area = 52 m²** is correct.",
-          "fil": "For **A rectangular fiesta booth is 13 m by 4 m. Find both its perimeter and area.**, the stated answer **perimeter = 34 m; area = 52 m²** is correct.",
-          "taglish": "For **A rectangular fiesta booth is 13 m by 4 m. Find both its perimeter and area.**, the stated answer **perimeter = 34 m; area = 52 m²** is correct."
+          "en": "Is this solution correct? A rectangular fiesta booth is 13 m by 4 m. Find both its perimeter and area. Proposed answer: perimeter = 34 m; area = 52 m²",
+          "fil": "Is this solution correct? A rectangular fiesta booth is 13 m by 4 m. Find both its perimeter and area. Proposed answer: perimeter = 34 m; area = 52 m²",
+          "taglish": "Is this solution correct? A rectangular fiesta booth is 13 m by 4 m. Find both its perimeter and area. Proposed answer: perimeter = 34 m; area = 52 m²"
         },
         "answer": "True",
         "type": "true_false",
@@ -10461,9 +10461,9 @@
       },
       {
         "q": {
-          "en": "For **Use a compass to draw a circle with radius 10 cm. Label its center and one radius. (Diagram description: compass construction space.)**, the stated answer **A circle of radius 10 cm with labeled center and radius** is correct.",
-          "fil": "For **Use a compass to draw a circle with radius 10 cm. Label its center and one radius. (Diagram description: compass construction space.)**, the stated answer **A circle of radius 10 cm with labeled center and radius** is correct.",
-          "taglish": "For **Use a compass to draw a circle with radius 10 cm. Label its center and one radius. (Diagram description: compass construction space.)**, the stated answer **A circle of radius 10 cm with labeled center and radius** is correct."
+          "en": "Is this solution correct? Use a compass to draw a circle with radius 10 cm. Label its center and one radius. (Diagram description: compass construction space.) Proposed answer: A circle of radius 10 cm with labeled center and radius",
+          "fil": "Is this solution correct? Use a compass to draw a circle with radius 10 cm. Label its center and one radius. (Diagram description: compass construction space.) Proposed answer: A circle of radius 10 cm with labeled center and radius",
+          "taglish": "Is this solution correct? Use a compass to draw a circle with radius 10 cm. Label its center and one radius. (Diagram description: compass construction space.) Proposed answer: A circle of radius 10 cm with labeled center and radius"
         },
         "answer": "True",
         "type": "true_false",
@@ -10545,9 +10545,9 @@
       },
       {
         "q": {
-          "en": "For **Name the segment from the center of a bilao-shaped circle to a point on the circle.**, the stated answer **radius** is correct.",
-          "fil": "For **Name the segment from the center of a bilao-shaped circle to a point on the circle.**, the stated answer **radius** is correct.",
-          "taglish": "For **Name the segment from the center of a bilao-shaped circle to a point on the circle.**, the stated answer **radius** is correct."
+          "en": "Is this solution correct? Name the segment from the center of a bilao-shaped circle to a point on the circle. Proposed answer: radius",
+          "fil": "Is this solution correct? Name the segment from the center of a bilao-shaped circle to a point on the circle. Proposed answer: radius",
+          "taglish": "Is this solution correct? Name the segment from the center of a bilao-shaped circle to a point on the circle. Proposed answer: radius"
         },
         "answer": "True",
         "type": "true_false",
@@ -10762,9 +10762,9 @@
       },
       {
         "q": {
-          "en": "For **Using π = 3.14, find the circumference of a circular garden with radius 9 m.**, the stated answer **56.52 m** is correct.",
-          "fil": "For **Using π = 3.14, find the circumference of a circular garden with radius 9 m.**, the stated answer **56.52 m** is correct.",
-          "taglish": "For **Using π = 3.14, find the circumference of a circular garden with radius 9 m.**, the stated answer **56.52 m** is correct."
+          "en": "Is this solution correct? Using π = 3.14, find the circumference of a circular garden with radius 9 m. Proposed answer: 56.52 m",
+          "fil": "Is this solution correct? Using π = 3.14, find the circumference of a circular garden with radius 9 m. Proposed answer: 56.52 m",
+          "taglish": "Is this solution correct? Using π = 3.14, find the circumference of a circular garden with radius 9 m. Proposed answer: 56.52 m"
         },
         "answer": "True",
         "type": "true_false",
@@ -10900,9 +10900,9 @@
       },
       {
         "q": {
-          "en": "For **A circle has circumference 31.4 cm and diameter 10 cm. Approximate C ÷ d.**, the stated answer **3.14** is correct.",
-          "fil": "For **A circle has circumference 31.4 cm and diameter 10 cm. Approximate C ÷ d.**, the stated answer **3.14** is correct.",
-          "taglish": "For **A circle has circumference 31.4 cm and diameter 10 cm. Approximate C ÷ d.**, the stated answer **3.14** is correct."
+          "en": "Is this solution correct? A circle has circumference 31.4 cm and diameter 10 cm. Approximate C ÷ d. Proposed answer: 3.14",
+          "fil": "Is this solution correct? A circle has circumference 31.4 cm and diameter 10 cm. Approximate C ÷ d. Proposed answer: 3.14",
+          "taglish": "Is this solution correct? A circle has circumference 31.4 cm and diameter 10 cm. Approximate C ÷ d. Proposed answer: 3.14"
         },
         "answer": "True",
         "type": "true_false",
@@ -11005,9 +11005,9 @@
       },
       {
         "q": {
-          "en": "For **A circle has circumference 31.4 cm and diameter 10 cm. Approximate C ÷ d.**, the stated answer **3.14** is correct.",
-          "fil": "For **A circle has circumference 31.4 cm and diameter 10 cm. Approximate C ÷ d.**, the stated answer **3.14** is correct.",
-          "taglish": "For **A circle has circumference 31.4 cm and diameter 10 cm. Approximate C ÷ d.**, the stated answer **3.14** is correct."
+          "en": "Is this solution correct? A circle has circumference 31.4 cm and diameter 10 cm. Approximate C ÷ d. Proposed answer: 3.14",
+          "fil": "Is this solution correct? A circle has circumference 31.4 cm and diameter 10 cm. Approximate C ÷ d. Proposed answer: 3.14",
+          "taglish": "Is this solution correct? A circle has circumference 31.4 cm and diameter 10 cm. Approximate C ÷ d. Proposed answer: 3.14"
         },
         "answer": "True",
         "type": "true_false",
@@ -11218,9 +11218,9 @@
       },
       {
         "q": {
-          "en": "For **Using π = 3.14, find the area of a circular garden with radius 2 m.**, the stated answer **12.56 m²** is correct.",
-          "fil": "For **Using π = 3.14, find the area of a circular garden with radius 2 m.**, the stated answer **12.56 m²** is correct.",
-          "taglish": "For **Using π = 3.14, find the area of a circular garden with radius 2 m.**, the stated answer **12.56 m²** is correct."
+          "en": "Is this solution correct? Using π = 3.14, find the area of a circular garden with radius 2 m. Proposed answer: 12.56 m²",
+          "fil": "Is this solution correct? Using π = 3.14, find the area of a circular garden with radius 2 m. Proposed answer: 12.56 m²",
+          "taglish": "Is this solution correct? Using π = 3.14, find the area of a circular garden with radius 2 m. Proposed answer: 12.56 m²"
         },
         "answer": "True",
         "type": "true_false",
@@ -11464,9 +11464,9 @@
       },
       {
         "q": {
-          "en": "For **Using π = 3.14, find the area of a circular garden with radius 9 m.**, the stated answer **254.34 m²** is correct.",
-          "fil": "For **Using π = 3.14, find the area of a circular garden with radius 9 m.**, the stated answer **254.34 m²** is correct.",
-          "taglish": "For **Using π = 3.14, find the area of a circular garden with radius 9 m.**, the stated answer **254.34 m²** is correct."
+          "en": "Is this solution correct? Using π = 3.14, find the area of a circular garden with radius 9 m. Proposed answer: 254.34 m²",
+          "fil": "Is this solution correct? Using π = 3.14, find the area of a circular garden with radius 9 m. Proposed answer: 254.34 m²",
+          "taglish": "Is this solution correct? Using π = 3.14, find the area of a circular garden with radius 9 m. Proposed answer: 254.34 m²"
         },
         "answer": "True",
         "type": "true_false",
@@ -11708,9 +11708,9 @@
       },
       {
         "q": {
-          "en": "For **A composite garden is a 2 m by 3 m rectangle joined to a triangle with base 2 m and height 6 m. Find the total area.**, the stated answer **12 m²** is correct.",
-          "fil": "For **A composite garden is a 2 m by 3 m rectangle joined to a triangle with base 2 m and height 6 m. Find the total area.**, the stated answer **12 m²** is correct.",
-          "taglish": "For **A composite garden is a 2 m by 3 m rectangle joined to a triangle with base 2 m and height 6 m. Find the total area.**, the stated answer **12 m²** is correct."
+          "en": "Is this solution correct? A composite garden is a 2 m by 3 m rectangle joined to a triangle with base 2 m and height 6 m. Find the total area. Proposed answer: 12 m²",
+          "fil": "Is this solution correct? A composite garden is a 2 m by 3 m rectangle joined to a triangle with base 2 m and height 6 m. Find the total area. Proposed answer: 12 m²",
+          "taglish": "Is this solution correct? A composite garden is a 2 m by 3 m rectangle joined to a triangle with base 2 m and height 6 m. Find the total area. Proposed answer: 12 m²"
         },
         "answer": "True",
         "type": "true_false",
@@ -12006,9 +12006,9 @@
       },
       {
         "q": {
-          "en": "For **Using π = 3.14, find the circumference of a circular garden with radius 8 m.**, the stated answer **50.24 m** is correct.",
-          "fil": "For **Using π = 3.14, find the circumference of a circular garden with radius 8 m.**, the stated answer **50.24 m** is correct.",
-          "taglish": "For **Using π = 3.14, find the circumference of a circular garden with radius 8 m.**, the stated answer **50.24 m** is correct."
+          "en": "Is this solution correct? Using π = 3.14, find the circumference of a circular garden with radius 8 m. Proposed answer: 50.24 m",
+          "fil": "Is this solution correct? Using π = 3.14, find the circumference of a circular garden with radius 8 m. Proposed answer: 50.24 m",
+          "taglish": "Is this solution correct? Using π = 3.14, find the circumference of a circular garden with radius 8 m. Proposed answer: 50.24 m"
         },
         "answer": "True",
         "type": "true_false",
@@ -12251,9 +12251,9 @@
       },
       {
         "q": {
-          "en": "For **A pie graph category represents 40% of the data. Find its central angle.**, the stated answer **144°** is correct.",
-          "fil": "For **A pie graph category represents 40% of the data. Find its central angle.**, the stated answer **144°** is correct.",
-          "taglish": "For **A pie graph category represents 40% of the data. Find its central angle.**, the stated answer **144°** is correct."
+          "en": "Is this solution correct? A pie graph category represents 40% of the data. Find its central angle. Proposed answer: 144°",
+          "fil": "Is this solution correct? A pie graph category represents 40% of the data. Find its central angle. Proposed answer: 144°",
+          "taglish": "Is this solution correct? A pie graph category represents 40% of the data. Find its central angle. Proposed answer: 144°"
         },
         "answer": "True",
         "type": "true_false",
@@ -12388,9 +12388,9 @@
       },
       {
         "q": {
-          "en": "For **Construct a pie graph for walking 50%, jeepney 25%, bicycle 25%. State the three sector angles. (Diagram description: blank circle with center.)**, the stated answer **180°, 90°, 90°** is correct.",
-          "fil": "For **Construct a pie graph for walking 50%, jeepney 25%, bicycle 25%. State the three sector angles. (Diagram description: blank circle with center.)**, the stated answer **180°, 90°, 90°** is correct.",
-          "taglish": "For **Construct a pie graph for walking 50%, jeepney 25%, bicycle 25%. State the three sector angles. (Diagram description: blank circle with center.)**, the stated answer **180°, 90°, 90°** is correct."
+          "en": "Is this solution correct? Construct a pie graph for walking 50%, jeepney 25%, bicycle 25%. State the three sector angles. (Diagram description: blank circle with center.) Proposed answer: 180°, 90°, 90°",
+          "fil": "Is this solution correct? Construct a pie graph for walking 50%, jeepney 25%, bicycle 25%. State the three sector angles. (Diagram description: blank circle with center.) Proposed answer: 180°, 90°, 90°",
+          "taglish": "Is this solution correct? Construct a pie graph for walking 50%, jeepney 25%, bicycle 25%. State the three sector angles. (Diagram description: blank circle with center.) Proposed answer: 180°, 90°, 90°"
         },
         "answer": "True",
         "type": "true_false",
@@ -12629,9 +12629,9 @@
       },
       {
         "q": {
-          "en": "For **A pie graph shows walking=7, jeepney=4, bicycle=3, tricycle=12 learners. Which category has the largest sector?**, the stated answer **tricycle** is correct.",
-          "fil": "For **A pie graph shows walking=7, jeepney=4, bicycle=3, tricycle=12 learners. Which category has the largest sector?**, the stated answer **tricycle** is correct.",
-          "taglish": "For **A pie graph shows walking=7, jeepney=4, bicycle=3, tricycle=12 learners. Which category has the largest sector?**, the stated answer **tricycle** is correct."
+          "en": "Is this solution correct? A pie graph shows walking=7, jeepney=4, bicycle=3, tricycle=12 learners. Which category has the largest sector? Proposed answer: tricycle",
+          "fil": "Is this solution correct? A pie graph shows walking=7, jeepney=4, bicycle=3, tricycle=12 learners. Which category has the largest sector? Proposed answer: tricycle",
+          "taglish": "Is this solution correct? A pie graph shows walking=7, jeepney=4, bicycle=3, tricycle=12 learners. Which category has the largest sector? Proposed answer: tricycle"
         },
         "answer": "True",
         "type": "true_false",
@@ -13005,9 +13005,9 @@
       },
       {
         "q": {
-          "en": "For **Present mango=4, banana=3, papaya=5, and guava=5 in a labeled table or graph. **, the stated answer **Correct display with values 4, 3, 5, 5 and complete labels** is correct.",
-          "fil": "For **Present mango=4, banana=3, papaya=5, and guava=5 in a labeled table or graph. **, the stated answer **Correct display with values 4, 3, 5, 5 and complete labels** is correct.",
-          "taglish": "For **Present mango=4, banana=3, papaya=5, and guava=5 in a labeled table or graph. **, the stated answer **Correct display with values 4, 3, 5, 5 and complete labels** is correct."
+          "en": "Is this solution correct? Present mango=4, banana=3, papaya=5, and guava=5 in a labeled table or graph. Proposed answer: Correct display with values 4, 3, 5, 5 and complete labels",
+          "fil": "Is this solution correct? Present mango=4, banana=3, papaya=5, and guava=5 in a labeled table or graph. Proposed answer: Correct display with values 4, 3, 5, 5 and complete labels",
+          "taglish": "Is this solution correct? Present mango=4, banana=3, papaya=5, and guava=5 in a labeled table or graph. Proposed answer: Correct display with values 4, 3, 5, 5 and complete labels"
         },
         "answer": "True",
         "type": "true_false",
@@ -13412,9 +13412,9 @@
       },
       {
         "q": {
-          "en": "For **A pie graph shows walking=3, jeepney=3, bicycle=12, tricycle=3 learners. Which category has the largest sector?**, the stated answer **bicycle** is correct.",
-          "fil": "For **A pie graph shows walking=3, jeepney=3, bicycle=12, tricycle=3 learners. Which category has the largest sector?**, the stated answer **bicycle** is correct.",
-          "taglish": "For **A pie graph shows walking=3, jeepney=3, bicycle=12, tricycle=3 learners. Which category has the largest sector?**, the stated answer **bicycle** is correct."
+          "en": "Is this solution correct? A pie graph shows walking=3, jeepney=3, bicycle=12, tricycle=3 learners. Which category has the largest sector? Proposed answer: bicycle",
+          "fil": "Is this solution correct? A pie graph shows walking=3, jeepney=3, bicycle=12, tricycle=3 learners. Which category has the largest sector? Proposed answer: bicycle",
+          "taglish": "Is this solution correct? A pie graph shows walking=3, jeepney=3, bicycle=12, tricycle=3 learners. Which category has the largest sector? Proposed answer: bicycle"
         },
         "answer": "True",
         "type": "true_false",
@@ -13788,9 +13788,9 @@
       },
       {
         "q": {
-          "en": "For **A pie graph shows walking=4, jeepney=10, bicycle=5, tricycle=3 learners. Which category has the largest sector?**, the stated answer **jeepney** is correct.",
-          "fil": "For **A pie graph shows walking=4, jeepney=10, bicycle=5, tricycle=3 learners. Which category has the largest sector?**, the stated answer **jeepney** is correct.",
-          "taglish": "For **A pie graph shows walking=4, jeepney=10, bicycle=5, tricycle=3 learners. Which category has the largest sector?**, the stated answer **jeepney** is correct."
+          "en": "Is this solution correct? A pie graph shows walking=4, jeepney=10, bicycle=5, tricycle=3 learners. Which category has the largest sector? Proposed answer: jeepney",
+          "fil": "Is this solution correct? A pie graph shows walking=4, jeepney=10, bicycle=5, tricycle=3 learners. Which category has the largest sector? Proposed answer: jeepney",
+          "taglish": "Is this solution correct? A pie graph shows walking=4, jeepney=10, bicycle=5, tricycle=3 learners. Which category has the largest sector? Proposed answer: jeepney"
         },
         "answer": "True",
         "type": "true_false",
@@ -14033,9 +14033,9 @@
       },
       {
         "q": {
-          "en": "For **Find the GCF of 18 and 27 for making equal relief packs.**, the stated answer **9** is correct.",
-          "fil": "For **Find the GCF of 18 and 27 for making equal relief packs.**, the stated answer **9** is correct.",
-          "taglish": "For **Find the GCF of 18 and 27 for making equal relief packs.**, the stated answer **9** is correct."
+          "en": "Is this solution correct? Find the GCF of 18 and 27 for making equal relief packs. Proposed answer: 9",
+          "fil": "Is this solution correct? Find the GCF of 18 and 27 for making equal relief packs. Proposed answer: 9",
+          "taglish": "Is this solution correct? Find the GCF of 18 and 27 for making equal relief packs. Proposed answer: 9"
         },
         "answer": "True",
         "type": "true_false",
@@ -14279,9 +14279,9 @@
       },
       {
         "q": {
-          "en": "For **Find the LCM of 18 and 27 for synchronizing two barangay schedules.**, the stated answer **54** is correct.",
-          "fil": "For **Find the LCM of 18 and 27 for synchronizing two barangay schedules.**, the stated answer **54** is correct.",
-          "taglish": "For **Find the LCM of 18 and 27 for synchronizing two barangay schedules.**, the stated answer **54** is correct."
+          "en": "Is this solution correct? Find the LCM of 18 and 27 for synchronizing two barangay schedules. Proposed answer: 54",
+          "fil": "Is this solution correct? Find the LCM of 18 and 27 for synchronizing two barangay schedules. Proposed answer: 54",
+          "taglish": "Is this solution correct? Find the LCM of 18 and 27 for synchronizing two barangay schedules. Proposed answer: 54"
         },
         "answer": "True",
         "type": "true_false",
@@ -14452,9 +14452,9 @@
       },
       {
         "q": {
-          "en": "For **Find the LCM of 12 and 18 for synchronizing two barangay schedules.**, the stated answer **36** is correct.",
-          "fil": "For **Find the LCM of 12 and 18 for synchronizing two barangay schedules.**, the stated answer **36** is correct.",
-          "taglish": "For **Find the LCM of 12 and 18 for synchronizing two barangay schedules.**, the stated answer **36** is correct."
+          "en": "Is this solution correct? Find the LCM of 12 and 18 for synchronizing two barangay schedules. Proposed answer: 36",
+          "fil": "Is this solution correct? Find the LCM of 12 and 18 for synchronizing two barangay schedules. Proposed answer: 36",
+          "taglish": "Is this solution correct? Find the LCM of 12 and 18 for synchronizing two barangay schedules. Proposed answer: 36"
         },
         "answer": "True",
         "type": "true_false",

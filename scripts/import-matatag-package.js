@@ -95,10 +95,12 @@ function isObjectivePrompt(question, answer) {
 
 function cleanPrompt(value) {
   return String(value)
+    .replace(/^For \*\*(.*)\*\*, the stated answer \*\*(.*)\*\* is correct\.?$/i, 'Is this solution correct? $1 Proposed answer: $2')
     .replace(/\[Diagram placeholder:\s*(.+?)\]/gi, '(Diagram description: $1)')
     .replace(/\[Graph placeholder:\s*(.+?)\]/gi, '')
     .replace(/^Present (.+?) in a labeled table or graph\.\s*/i, 'Which option correctly presents $1 in a labeled table or graph? ')
     .replace(/\s*Explain or sketch\.?/gi, '')
+    .replace(/\*\*/g, '')
     .replace(/\s+/g, ' ')
     .trim()
 }

@@ -209,9 +209,9 @@
       },
       {
         "q": {
-          "en": "For **Convert 17:00 to 12-hour time.**, the stated answer **5:00 p.m.** is correct.",
-          "fil": "For **Convert 17:00 to 12-hour time.**, the stated answer **5:00 p.m.** is correct.",
-          "taglish": "For **Convert 17:00 to 12-hour time.**, the stated answer **5:00 p.m.** is correct."
+          "en": "Is this solution correct? Convert 17:00 to 12-hour time. Proposed answer: 5:00 p.m.",
+          "fil": "Is this solution correct? Convert 17:00 to 12-hour time. Proposed answer: 5:00 p.m.",
+          "taglish": "Is this solution correct? Convert 17:00 to 12-hour time. Proposed answer: 5:00 p.m."
         },
         "answer": "True",
         "type": "true_false",
@@ -561,9 +561,9 @@
       },
       {
         "q": {
-          "en": "For **Convert 13:00 to 12-hour time.**, the stated answer **1:00 p.m.** is correct.",
-          "fil": "For **Convert 13:00 to 12-hour time.**, the stated answer **1:00 p.m.** is correct.",
-          "taglish": "For **Convert 13:00 to 12-hour time.**, the stated answer **1:00 p.m.** is correct."
+          "en": "Is this solution correct? Convert 13:00 to 12-hour time. Proposed answer: 1:00 p.m.",
+          "fil": "Is this solution correct? Convert 13:00 to 12-hour time. Proposed answer: 1:00 p.m.",
+          "taglish": "Is this solution correct? Convert 13:00 to 12-hour time. Proposed answer: 1:00 p.m."
         },
         "answer": "True",
         "type": "true_false",
@@ -911,9 +911,9 @@
       },
       {
         "q": {
-          "en": "For **Convert 17:45 to 12-hour time.**, the stated answer **5:45 p.m.** is correct.",
-          "fil": "For **Convert 17:45 to 12-hour time.**, the stated answer **5:45 p.m.** is correct.",
-          "taglish": "For **Convert 17:45 to 12-hour time.**, the stated answer **5:45 p.m.** is correct."
+          "en": "Is this solution correct? Convert 17:45 to 12-hour time. Proposed answer: 5:45 p.m.",
+          "fil": "Is this solution correct? Convert 17:45 to 12-hour time. Proposed answer: 5:45 p.m.",
+          "taglish": "Is this solution correct? Convert 17:45 to 12-hour time. Proposed answer: 5:45 p.m."
         },
         "answer": "True",
         "type": "true_false",
@@ -1249,9 +1249,9 @@
       },
       {
         "q": {
-          "en": "For **Manila time is 07:00. A city is 2 hour(s) behind Manila. What time is it there?**, the stated answer **05:00** is correct.",
-          "fil": "For **Manila time is 07:00. A city is 2 hour(s) behind Manila. What time is it there?**, the stated answer **05:00** is correct.",
-          "taglish": "For **Manila time is 07:00. A city is 2 hour(s) behind Manila. What time is it there?**, the stated answer **05:00** is correct."
+          "en": "Is this solution correct? Manila time is 07:00. A city is 2 hour(s) behind Manila. What time is it there? Proposed answer: 05:00",
+          "fil": "Is this solution correct? Manila time is 07:00. A city is 2 hour(s) behind Manila. What time is it there? Proposed answer: 05:00",
+          "taglish": "Is this solution correct? Manila time is 07:00. A city is 2 hour(s) behind Manila. What time is it there? Proposed answer: 05:00"
         },
         "answer": "True",
         "type": "true_false",
@@ -1584,9 +1584,9 @@
       },
       {
         "q": {
-          "en": "For **Manila time is 08:00. A city is 2 hour(s) behind Manila. What time is it there?**, the stated answer **06:00** is correct.",
-          "fil": "For **Manila time is 08:00. A city is 2 hour(s) behind Manila. What time is it there?**, the stated answer **06:00** is correct.",
-          "taglish": "For **Manila time is 08:00. A city is 2 hour(s) behind Manila. What time is it there?**, the stated answer **06:00** is correct."
+          "en": "Is this solution correct? Manila time is 08:00. A city is 2 hour(s) behind Manila. What time is it there? Proposed answer: 06:00",
+          "fil": "Is this solution correct? Manila time is 08:00. A city is 2 hour(s) behind Manila. What time is it there? Proposed answer: 06:00",
+          "taglish": "Is this solution correct? Manila time is 08:00. A city is 2 hour(s) behind Manila. What time is it there? Proposed answer: 06:00"
         },
         "answer": "True",
         "type": "true_false",
@@ -1880,9 +1880,9 @@
       },
       {
         "q": {
-          "en": "For **Evaluate using the correct order: 13 + 8 × 8.**, the stated answer **77** is correct.",
-          "fil": "For **Evaluate using the correct order: 13 + 8 × 8.**, the stated answer **77** is correct.",
-          "taglish": "For **Evaluate using the correct order: 13 + 8 × 8.**, the stated answer **77** is correct."
+          "en": "Is this solution correct? Evaluate using the correct order: 13 + 8 × 8. Proposed answer: 77",
+          "fil": "Is this solution correct? Evaluate using the correct order: 13 + 8 × 8. Proposed answer: 77",
+          "taglish": "Is this solution correct? Evaluate using the correct order: 13 + 8 × 8. Proposed answer: 77"
         },
         "answer": "True",
         "type": "true_false",
@@ -2235,9 +2235,9 @@
       },
       {
         "q": {
-          "en": "For **Compute 1/8 × 1/3 for a market recipe.**, the stated answer **1/24** is correct.",
-          "fil": "For **Compute 1/8 × 1/3 for a market recipe.**, the stated answer **1/24** is correct.",
-          "taglish": "For **Compute 1/8 × 1/3 for a market recipe.**, the stated answer **1/24** is correct."
+          "en": "Is this solution correct? Compute 1/8 × 1/3 for a market recipe. Proposed answer: 1/24",
+          "fil": "Is this solution correct? Compute 1/8 × 1/3 for a market recipe. Proposed answer: 1/24",
+          "taglish": "Is this solution correct? Compute 1/8 × 1/3 for a market recipe. Proposed answer: 1/24"
         },
         "answer": "True",
         "type": "true_false",
@@ -2569,9 +2569,9 @@
       },
       {
         "q": {
-          "en": "For **Compute 1/2 × 2/5 for a market recipe.**, the stated answer **1/5** is correct.",
-          "fil": "For **Compute 1/2 × 2/5 for a market recipe.**, the stated answer **1/5** is correct.",
-          "taglish": "For **Compute 1/2 × 2/5 for a market recipe.**, the stated answer **1/5** is correct."
+          "en": "Is this solution correct? Compute 1/2 × 2/5 for a market recipe. Proposed answer: 1/5",
+          "fil": "Is this solution correct? Compute 1/2 × 2/5 for a market recipe. Proposed answer: 1/5",
+          "taglish": "Is this solution correct? Compute 1/2 × 2/5 for a market recipe. Proposed answer: 1/5"
         },
         "answer": "True",
         "type": "true_false",
@@ -2924,9 +2924,9 @@
       },
       {
         "q": {
-          "en": "For **Divide 3/4 by 1/3 in a food-sharing plan.**, the stated answer **9/4** is correct.",
-          "fil": "For **Divide 3/4 by 1/3 in a food-sharing plan.**, the stated answer **9/4** is correct.",
-          "taglish": "For **Divide 3/4 by 1/3 in a food-sharing plan.**, the stated answer **9/4** is correct."
+          "en": "Is this solution correct? Divide 3/4 by 1/3 in a food-sharing plan. Proposed answer: 9/4",
+          "fil": "Is this solution correct? Divide 3/4 by 1/3 in a food-sharing plan. Proposed answer: 9/4",
+          "taglish": "Is this solution correct? Divide 3/4 by 1/3 in a food-sharing plan. Proposed answer: 9/4"
         },
         "answer": "True",
         "type": "true_false",
@@ -3267,9 +3267,9 @@
       },
       {
         "q": {
-          "en": "For **A triangular seedbed has base 6 m and height 2 m. Find its area.**, the stated answer **6 m²** is correct.",
-          "fil": "For **A triangular seedbed has base 6 m and height 2 m. Find its area.**, the stated answer **6 m²** is correct.",
-          "taglish": "For **A triangular seedbed has base 6 m and height 2 m. Find its area.**, the stated answer **6 m²** is correct."
+          "en": "Is this solution correct? A triangular seedbed has base 6 m and height 2 m. Find its area. Proposed answer: 6 m²",
+          "fil": "Is this solution correct? A triangular seedbed has base 6 m and height 2 m. Find its area. Proposed answer: 6 m²",
+          "taglish": "Is this solution correct? A triangular seedbed has base 6 m and height 2 m. Find its area. Proposed answer: 6 m²"
         },
         "answer": "True",
         "type": "true_false",
@@ -3671,9 +3671,9 @@
       },
       {
         "q": {
-          "en": "For **A triangular seedbed has base 8 m and height 8 m. Find its area.**, the stated answer **32 m²** is correct.",
-          "fil": "For **A triangular seedbed has base 8 m and height 8 m. Find its area.**, the stated answer **32 m²** is correct.",
-          "taglish": "For **A triangular seedbed has base 8 m and height 8 m. Find its area.**, the stated answer **32 m²** is correct."
+          "en": "Is this solution correct? A triangular seedbed has base 8 m and height 8 m. Find its area. Proposed answer: 32 m²",
+          "fil": "Is this solution correct? A triangular seedbed has base 8 m and height 8 m. Find its area. Proposed answer: 32 m²",
+          "taglish": "Is this solution correct? A triangular seedbed has base 8 m and height 8 m. Find its area. Proposed answer: 32 m²"
         },
         "answer": "True",
         "type": "true_false",
@@ -4075,9 +4075,9 @@
       },
       {
         "q": {
-          "en": "For **A triangular seedbed has base 6 m and height 4 m. Find its area.**, the stated answer **12 m²** is correct.",
-          "fil": "For **A triangular seedbed has base 6 m and height 4 m. Find its area.**, the stated answer **12 m²** is correct.",
-          "taglish": "For **A triangular seedbed has base 6 m and height 4 m. Find its area.**, the stated answer **12 m²** is correct."
+          "en": "Is this solution correct? A triangular seedbed has base 6 m and height 4 m. Find its area. Proposed answer: 12 m²",
+          "fil": "Is this solution correct? A triangular seedbed has base 6 m and height 4 m. Find its area. Proposed answer: 12 m²",
+          "taglish": "Is this solution correct? A triangular seedbed has base 6 m and height 4 m. Find its area. Proposed answer: 12 m²"
         },
         "answer": "True",
         "type": "true_false",
@@ -4466,9 +4466,9 @@
       },
       {
         "q": {
-          "en": "For **Compute 2/3 ÷ 2/3 for equal recipe portions.**, the stated answer **1** is correct.",
-          "fil": "For **Compute 2/3 ÷ 2/3 for equal recipe portions.**, the stated answer **1** is correct.",
-          "taglish": "For **Compute 2/3 ÷ 2/3 for equal recipe portions.**, the stated answer **1** is correct."
+          "en": "Is this solution correct? Compute 2/3 ÷ 2/3 for equal recipe portions. Proposed answer: 1",
+          "fil": "Is this solution correct? Compute 2/3 ÷ 2/3 for equal recipe portions. Proposed answer: 1",
+          "taglish": "Is this solution correct? Compute 2/3 ÷ 2/3 for equal recipe portions. Proposed answer: 1"
         },
         "answer": "True",
         "type": "true_false",
@@ -4779,9 +4779,9 @@
       },
       {
         "q": {
-          "en": "For **Compute 1/3 ÷ 1/4 for equal recipe portions.**, the stated answer **4/3** is correct.",
-          "fil": "For **Compute 1/3 ÷ 1/4 for equal recipe portions.**, the stated answer **4/3** is correct.",
-          "taglish": "For **Compute 1/3 ÷ 1/4 for equal recipe portions.**, the stated answer **4/3** is correct."
+          "en": "Is this solution correct? Compute 1/3 ÷ 1/4 for equal recipe portions. Proposed answer: 4/3",
+          "fil": "Is this solution correct? Compute 1/3 ÷ 1/4 for equal recipe portions. Proposed answer: 4/3",
+          "taglish": "Is this solution correct? Compute 1/3 ÷ 1/4 for equal recipe portions. Proposed answer: 4/3"
         },
         "answer": "True",
         "type": "true_false",
@@ -5109,9 +5109,9 @@
       },
       {
         "q": {
-          "en": "For **Divide 1/4 by 1/2 in a food-sharing plan.**, the stated answer **1/2** is correct.",
-          "fil": "For **Divide 1/4 by 1/2 in a food-sharing plan.**, the stated answer **1/2** is correct.",
-          "taglish": "For **Divide 1/4 by 1/2 in a food-sharing plan.**, the stated answer **1/2** is correct."
+          "en": "Is this solution correct? Divide 1/4 by 1/2 in a food-sharing plan. Proposed answer: 1/2",
+          "fil": "Is this solution correct? Divide 1/4 by 1/2 in a food-sharing plan. Proposed answer: 1/2",
+          "taglish": "Is this solution correct? Divide 1/4 by 1/2 in a food-sharing plan. Proposed answer: 1/2"
         },
         "answer": "True",
         "type": "true_false",
@@ -5464,9 +5464,9 @@
       },
       {
         "q": {
-          "en": "For **In 4.707, what is the value of the digit in the hundredths place?**, the stated answer **0** is correct.",
-          "fil": "For **In 4.707, what is the value of the digit in the hundredths place?**, the stated answer **0** is correct.",
-          "taglish": "For **In 4.707, what is the value of the digit in the hundredths place?**, the stated answer **0** is correct."
+          "en": "Is this solution correct? In 4.707, what is the value of the digit in the hundredths place? Proposed answer: 0",
+          "fil": "Is this solution correct? In 4.707, what is the value of the digit in the hundredths place? Proposed answer: 0",
+          "taglish": "Is this solution correct? In 4.707, what is the value of the digit in the hundredths place? Proposed answer: 0"
         },
         "answer": "True",
         "type": "true_false",
@@ -5819,9 +5819,9 @@
       },
       {
         "q": {
-          "en": "For **In 88.498, what is the value of the digit in the hundredths place?**, the stated answer **0.09** is correct.",
-          "fil": "For **In 88.498, what is the value of the digit in the hundredths place?**, the stated answer **0.09** is correct.",
-          "taglish": "For **In 88.498, what is the value of the digit in the hundredths place?**, the stated answer **0.09** is correct."
+          "en": "Is this solution correct? In 88.498, what is the value of the digit in the hundredths place? Proposed answer: 0.09",
+          "fil": "Is this solution correct? In 88.498, what is the value of the digit in the hundredths place? Proposed answer: 0.09",
+          "taglish": "Is this solution correct? In 88.498, what is the value of the digit in the hundredths place? Proposed answer: 0.09"
         },
         "answer": "True",
         "type": "true_false",
@@ -6124,9 +6124,9 @@
       },
       {
         "q": {
-          "en": "For **Convert 0.75 to a fraction in simplest form.**, the stated answer **3/4** is correct.",
-          "fil": "For **Convert 0.75 to a fraction in simplest form.**, the stated answer **3/4** is correct.",
-          "taglish": "For **Convert 0.75 to a fraction in simplest form.**, the stated answer **3/4** is correct."
+          "en": "Is this solution correct? Convert 0.75 to a fraction in simplest form. Proposed answer: 3/4",
+          "fil": "Is this solution correct? Convert 0.75 to a fraction in simplest form. Proposed answer: 3/4",
+          "taglish": "Is this solution correct? Convert 0.75 to a fraction in simplest form. Proposed answer: 3/4"
         },
         "answer": "True",
         "type": "true_false",
@@ -6374,9 +6374,9 @@
       },
       {
         "q": {
-          "en": "For **Order these market weights from smallest to largest: 18.217, 3.642, 19.988.**, the stated answer **3.642, 18.217, 19.988** is correct.",
-          "fil": "For **Order these market weights from smallest to largest: 18.217, 3.642, 19.988.**, the stated answer **3.642, 18.217, 19.988** is correct.",
-          "taglish": "For **Order these market weights from smallest to largest: 18.217, 3.642, 19.988.**, the stated answer **3.642, 18.217, 19.988** is correct."
+          "en": "Is this solution correct? Order these market weights from smallest to largest: 18.217, 3.642, 19.988. Proposed answer: 3.642, 18.217, 19.988",
+          "fil": "Is this solution correct? Order these market weights from smallest to largest: 18.217, 3.642, 19.988. Proposed answer: 3.642, 18.217, 19.988",
+          "taglish": "Is this solution correct? Order these market weights from smallest to largest: 18.217, 3.642, 19.988. Proposed answer: 3.642, 18.217, 19.988"
         },
         "answer": "True",
         "type": "true_false",
@@ -6729,9 +6729,9 @@
       },
       {
         "q": {
-          "en": "For **Round 43.5057 to the nearest thousandth.**, the stated answer **43.506** is correct.",
-          "fil": "For **Round 43.5057 to the nearest thousandth.**, the stated answer **43.506** is correct.",
-          "taglish": "For **Round 43.5057 to the nearest thousandth.**, the stated answer **43.506** is correct."
+          "en": "Is this solution correct? Round 43.5057 to the nearest thousandth. Proposed answer: 43.506",
+          "fil": "Is this solution correct? Round 43.5057 to the nearest thousandth. Proposed answer: 43.506",
+          "taglish": "Is this solution correct? Round 43.5057 to the nearest thousandth. Proposed answer: 43.506"
         },
         "answer": "True",
         "type": "true_false",
@@ -7084,9 +7084,9 @@
       },
       {
         "q": {
-          "en": "For **At a sari-sari store, compute ₱32.36 - ₱14.93.**, the stated answer **₱17.43** is correct.",
-          "fil": "For **At a sari-sari store, compute ₱32.36 - ₱14.93.**, the stated answer **₱17.43** is correct.",
-          "taglish": "For **At a sari-sari store, compute ₱32.36 - ₱14.93.**, the stated answer **₱17.43** is correct."
+          "en": "Is this solution correct? At a sari-sari store, compute ₱32.36 - ₱14.93. Proposed answer: ₱17.43",
+          "fil": "Is this solution correct? At a sari-sari store, compute ₱32.36 - ₱14.93. Proposed answer: ₱17.43",
+          "taglish": "Is this solution correct? At a sari-sari store, compute ₱32.36 - ₱14.93. Proposed answer: ₱17.43"
         },
         "answer": "True",
         "type": "true_false",
@@ -7439,9 +7439,9 @@
       },
       {
         "q": {
-          "en": "For **At a sari-sari store, compute ₱45.84 - ₱26.82.**, the stated answer **₱19.02** is correct.",
-          "fil": "For **At a sari-sari store, compute ₱45.84 - ₱26.82.**, the stated answer **₱19.02** is correct.",
-          "taglish": "For **At a sari-sari store, compute ₱45.84 - ₱26.82.**, the stated answer **₱19.02** is correct."
+          "en": "Is this solution correct? At a sari-sari store, compute ₱45.84 - ₱26.82. Proposed answer: ₱19.02",
+          "fil": "Is this solution correct? At a sari-sari store, compute ₱45.84 - ₱26.82. Proposed answer: ₱19.02",
+          "taglish": "Is this solution correct? At a sari-sari store, compute ₱45.84 - ₱26.82. Proposed answer: ₱19.02"
         },
         "answer": "True",
         "type": "true_false",
@@ -7717,9 +7717,9 @@
       },
       {
         "q": {
-          "en": "For **Find the GCF of 18 and 27 for making equal relief packs.**, the stated answer **9** is correct.",
-          "fil": "For **Find the GCF of 18 and 27 for making equal relief packs.**, the stated answer **9** is correct.",
-          "taglish": "For **Find the GCF of 18 and 27 for making equal relief packs.**, the stated answer **9** is correct."
+          "en": "Is this solution correct? Find the GCF of 18 and 27 for making equal relief packs. Proposed answer: 9",
+          "fil": "Is this solution correct? Find the GCF of 18 and 27 for making equal relief packs. Proposed answer: 9",
+          "taglish": "Is this solution correct? Find the GCF of 18 and 27 for making equal relief packs. Proposed answer: 9"
         },
         "answer": "True",
         "type": "true_false",
@@ -8000,9 +8000,9 @@
       },
       {
         "q": {
-          "en": "For **Compare the school enrollment figures 36,387 and 61,010 using <, >, or =.**, the stated answer **36,387 < 61,010** is correct.",
-          "fil": "For **Compare the school enrollment figures 36,387 and 61,010 using <, >, or =.**, the stated answer **36,387 < 61,010** is correct.",
-          "taglish": "For **Compare the school enrollment figures 36,387 and 61,010 using <, >, or =.**, the stated answer **36,387 < 61,010** is correct."
+          "en": "Is this solution correct? Compare the school enrollment figures 36,387 and 61,010 using <, >, or =. Proposed answer: 36,387 < 61,010",
+          "fil": "Is this solution correct? Compare the school enrollment figures 36,387 and 61,010 using <, >, or =. Proposed answer: 36,387 < 61,010",
+          "taglish": "Is this solution correct? Compare the school enrollment figures 36,387 and 61,010 using <, >, or =. Proposed answer: 36,387 < 61,010"
         },
         "answer": "True",
         "type": "true_false",
@@ -8245,9 +8245,9 @@
       },
       {
         "q": {
-          "en": "For **Which question collects one clear variable for a class pictograph: 'What is your favorite local fruit?' or 'Tell everything about your family'?**, the stated answer **What is your favorite local fruit?** is correct.",
-          "fil": "For **Which question collects one clear variable for a class pictograph: 'What is your favorite local fruit?' or 'Tell everything about your family'?**, the stated answer **What is your favorite local fruit?** is correct.",
-          "taglish": "For **Which question collects one clear variable for a class pictograph: 'What is your favorite local fruit?' or 'Tell everything about your family'?**, the stated answer **What is your favorite local fruit?** is correct."
+          "en": "Is this solution correct? Which question collects one clear variable for a class pictograph: 'What is your favorite local fruit?' or 'Tell everything about your family'? Proposed answer: What is your favorite local fruit?",
+          "fil": "Is this solution correct? Which question collects one clear variable for a class pictograph: 'What is your favorite local fruit?' or 'Tell everything about your family'? Proposed answer: What is your favorite local fruit?",
+          "taglish": "Is this solution correct? Which question collects one clear variable for a class pictograph: 'What is your favorite local fruit?' or 'Tell everything about your family'? Proposed answer: What is your favorite local fruit?"
         },
         "answer": "True",
         "type": "true_false",
@@ -8486,9 +8486,9 @@
       },
       {
         "q": {
-          "en": "For **Present mango=5, banana=7, papaya=7, and guava=11 in a labeled table or graph. **, the stated answer **Correct display with values 5, 7, 7, 11 and complete labels** is correct.",
-          "fil": "For **Present mango=5, banana=7, papaya=7, and guava=11 in a labeled table or graph. **, the stated answer **Correct display with values 5, 7, 7, 11 and complete labels** is correct.",
-          "taglish": "For **Present mango=5, banana=7, papaya=7, and guava=11 in a labeled table or graph. **, the stated answer **Correct display with values 5, 7, 7, 11 and complete labels** is correct."
+          "en": "Is this solution correct? Present mango=5, banana=7, papaya=7, and guava=11 in a labeled table or graph. Proposed answer: Correct display with values 5, 7, 7, 11 and complete labels",
+          "fil": "Is this solution correct? Present mango=5, banana=7, papaya=7, and guava=11 in a labeled table or graph. Proposed answer: Correct display with values 5, 7, 7, 11 and complete labels",
+          "taglish": "Is this solution correct? Present mango=5, banana=7, papaya=7, and guava=11 in a labeled table or graph. Proposed answer: Correct display with values 5, 7, 7, 11 and complete labels"
         },
         "answer": "True",
         "type": "true_false",
@@ -8889,9 +8889,9 @@
       },
       {
         "q": {
-          "en": "For **Present mango=9, banana=12, papaya=10, and guava=7 in a labeled table or graph. **, the stated answer **Correct display with values 9, 12, 10, 7 and complete labels** is correct.",
-          "fil": "For **Present mango=9, banana=12, papaya=10, and guava=7 in a labeled table or graph. **, the stated answer **Correct display with values 9, 12, 10, 7 and complete labels** is correct.",
-          "taglish": "For **Present mango=9, banana=12, papaya=10, and guava=7 in a labeled table or graph. **, the stated answer **Correct display with values 9, 12, 10, 7 and complete labels** is correct."
+          "en": "Is this solution correct? Present mango=9, banana=12, papaya=10, and guava=7 in a labeled table or graph. Proposed answer: Correct display with values 9, 12, 10, 7 and complete labels",
+          "fil": "Is this solution correct? Present mango=9, banana=12, papaya=10, and guava=7 in a labeled table or graph. Proposed answer: Correct display with values 9, 12, 10, 7 and complete labels",
+          "taglish": "Is this solution correct? Present mango=9, banana=12, papaya=10, and guava=7 in a labeled table or graph. Proposed answer: Correct display with values 9, 12, 10, 7 and complete labels"
         },
         "answer": "True",
         "type": "true_false",
@@ -9292,9 +9292,9 @@
       },
       {
         "q": {
-          "en": "For **Present mango=6, banana=4, papaya=7, and guava=12 in a labeled table or graph. **, the stated answer **Correct display with values 6, 4, 7, 12 and complete labels** is correct.",
-          "fil": "For **Present mango=6, banana=4, papaya=7, and guava=12 in a labeled table or graph. **, the stated answer **Correct display with values 6, 4, 7, 12 and complete labels** is correct.",
-          "taglish": "For **Present mango=6, banana=4, papaya=7, and guava=12 in a labeled table or graph. **, the stated answer **Correct display with values 6, 4, 7, 12 and complete labels** is correct."
+          "en": "Is this solution correct? Present mango=6, banana=4, papaya=7, and guava=12 in a labeled table or graph. Proposed answer: Correct display with values 6, 4, 7, 12 and complete labels",
+          "fil": "Is this solution correct? Present mango=6, banana=4, papaya=7, and guava=12 in a labeled table or graph. Proposed answer: Correct display with values 6, 4, 7, 12 and complete labels",
+          "taglish": "Is this solution correct? Present mango=6, banana=4, papaya=7, and guava=12 in a labeled table or graph. Proposed answer: Correct display with values 6, 4, 7, 12 and complete labels"
         },
         "answer": "True",
         "type": "true_false",
@@ -9695,9 +9695,9 @@
       },
       {
         "q": {
-          "en": "For **Present mango=6, banana=2, papaya=6, and guava=8 in a labeled table or graph. **, the stated answer **Correct display with values 6, 2, 6, 8 and complete labels** is correct.",
-          "fil": "For **Present mango=6, banana=2, papaya=6, and guava=8 in a labeled table or graph. **, the stated answer **Correct display with values 6, 2, 6, 8 and complete labels** is correct.",
-          "taglish": "For **Present mango=6, banana=2, papaya=6, and guava=8 in a labeled table or graph. **, the stated answer **Correct display with values 6, 2, 6, 8 and complete labels** is correct."
+          "en": "Is this solution correct? Present mango=6, banana=2, papaya=6, and guava=8 in a labeled table or graph. Proposed answer: Correct display with values 6, 2, 6, 8 and complete labels",
+          "fil": "Is this solution correct? Present mango=6, banana=2, papaya=6, and guava=8 in a labeled table or graph. Proposed answer: Correct display with values 6, 2, 6, 8 and complete labels",
+          "taglish": "Is this solution correct? Present mango=6, banana=2, papaya=6, and guava=8 in a labeled table or graph. Proposed answer: Correct display with values 6, 2, 6, 8 and complete labels"
         },
         "answer": "True",
         "type": "true_false",
@@ -10098,9 +10098,9 @@
       },
       {
         "q": {
-          "en": "For **Present mango=8, banana=12, papaya=5, and guava=4 in a labeled table or graph. **, the stated answer **Correct display with values 8, 12, 5, 4 and complete labels** is correct.",
-          "fil": "For **Present mango=8, banana=12, papaya=5, and guava=4 in a labeled table or graph. **, the stated answer **Correct display with values 8, 12, 5, 4 and complete labels** is correct.",
-          "taglish": "For **Present mango=8, banana=12, papaya=5, and guava=4 in a labeled table or graph. **, the stated answer **Correct display with values 8, 12, 5, 4 and complete labels** is correct."
+          "en": "Is this solution correct? Present mango=8, banana=12, papaya=5, and guava=4 in a labeled table or graph. Proposed answer: Correct display with values 8, 12, 5, 4 and complete labels",
+          "fil": "Is this solution correct? Present mango=8, banana=12, papaya=5, and guava=4 in a labeled table or graph. Proposed answer: Correct display with values 8, 12, 5, 4 and complete labels",
+          "taglish": "Is this solution correct? Present mango=8, banana=12, papaya=5, and guava=4 in a labeled table or graph. Proposed answer: Correct display with values 8, 12, 5, 4 and complete labels"
         },
         "answer": "True",
         "type": "true_false",
@@ -10468,9 +10468,9 @@
       },
       {
         "q": {
-          "en": "For **A bag has 4 red and 2 blue counters. What is the probability of drawing red?**, the stated answer **2/3** is correct.",
-          "fil": "For **A bag has 4 red and 2 blue counters. What is the probability of drawing red?**, the stated answer **2/3** is correct.",
-          "taglish": "For **A bag has 4 red and 2 blue counters. What is the probability of drawing red?**, the stated answer **2/3** is correct."
+          "en": "Is this solution correct? A bag has 4 red and 2 blue counters. What is the probability of drawing red? Proposed answer: 2/3",
+          "fil": "Is this solution correct? A bag has 4 red and 2 blue counters. What is the probability of drawing red? Proposed answer: 2/3",
+          "taglish": "Is this solution correct? A bag has 4 red and 2 blue counters. What is the probability of drawing red? Proposed answer: 2/3"
         },
         "answer": "True",
         "type": "true_false",
@@ -10802,9 +10802,9 @@
       },
       {
         "q": {
-          "en": "For **A bag has 4 red and 4 blue counters. What is the probability of drawing red?**, the stated answer **1/2** is correct.",
-          "fil": "For **A bag has 4 red and 4 blue counters. What is the probability of drawing red?**, the stated answer **1/2** is correct.",
-          "taglish": "For **A bag has 4 red and 4 blue counters. What is the probability of drawing red?**, the stated answer **1/2** is correct."
+          "en": "Is this solution correct? A bag has 4 red and 4 blue counters. What is the probability of drawing red? Proposed answer: 1/2",
+          "fil": "Is this solution correct? A bag has 4 red and 4 blue counters. What is the probability of drawing red? Proposed answer: 1/2",
+          "taglish": "Is this solution correct? A bag has 4 red and 4 blue counters. What is the probability of drawing red? Proposed answer: 1/2"
         },
         "answer": "True",
         "type": "true_false",
@@ -11148,9 +11148,9 @@
       },
       {
         "q": {
-          "en": "For **A market item weighs 42.42 kg. Find the weight of 5 equal packs. Show a reasonable estimate first.**, the stated answer **212.10 kg** is correct.",
-          "fil": "For **A market item weighs 42.42 kg. Find the weight of 5 equal packs. Show a reasonable estimate first.**, the stated answer **212.10 kg** is correct.",
-          "taglish": "For **A market item weighs 42.42 kg. Find the weight of 5 equal packs. Show a reasonable estimate first.**, the stated answer **212.10 kg** is correct."
+          "en": "Is this solution correct? A market item weighs 42.42 kg. Find the weight of 5 equal packs. Show a reasonable estimate first. Proposed answer: 212.10 kg",
+          "fil": "Is this solution correct? A market item weighs 42.42 kg. Find the weight of 5 equal packs. Show a reasonable estimate first. Proposed answer: 212.10 kg",
+          "taglish": "Is this solution correct? A market item weighs 42.42 kg. Find the weight of 5 equal packs. Show a reasonable estimate first. Proposed answer: 212.10 kg"
         },
         "answer": "True",
         "type": "true_false",
@@ -11551,9 +11551,9 @@
       },
       {
         "q": {
-          "en": "For **A market item weighs 5.67 kg. Find the weight of 3 equal packs. Show a reasonable estimate first.**, the stated answer **17.01 kg** is correct.",
-          "fil": "For **A market item weighs 5.67 kg. Find the weight of 3 equal packs. Show a reasonable estimate first.**, the stated answer **17.01 kg** is correct.",
-          "taglish": "For **A market item weighs 5.67 kg. Find the weight of 3 equal packs. Show a reasonable estimate first.**, the stated answer **17.01 kg** is correct."
+          "en": "Is this solution correct? A market item weighs 5.67 kg. Find the weight of 3 equal packs. Show a reasonable estimate first. Proposed answer: 17.01 kg",
+          "fil": "Is this solution correct? A market item weighs 5.67 kg. Find the weight of 3 equal packs. Show a reasonable estimate first. Proposed answer: 17.01 kg",
+          "taglish": "Is this solution correct? A market item weighs 5.67 kg. Find the weight of 3 equal packs. Show a reasonable estimate first. Proposed answer: 17.01 kg"
         },
         "answer": "True",
         "type": "true_false",
@@ -11942,9 +11942,9 @@
       },
       {
         "q": {
-          "en": "For **At a sari-sari store, compute ₱24.21 - ₱9.38.**, the stated answer **₱14.83** is correct.",
-          "fil": "For **At a sari-sari store, compute ₱24.21 - ₱9.38.**, the stated answer **₱14.83** is correct.",
-          "taglish": "For **At a sari-sari store, compute ₱24.21 - ₱9.38.**, the stated answer **₱14.83** is correct."
+          "en": "Is this solution correct? At a sari-sari store, compute ₱24.21 - ₱9.38. Proposed answer: ₱14.83",
+          "fil": "Is this solution correct? At a sari-sari store, compute ₱24.21 - ₱9.38. Proposed answer: ₱14.83",
+          "taglish": "Is this solution correct? At a sari-sari store, compute ₱24.21 - ₱9.38. Proposed answer: ₱14.83"
         },
         "answer": "True",
         "type": "true_false",
@@ -12309,9 +12309,9 @@
       },
       {
         "q": {
-          "en": "For **Share 29.72 L equally among 4 containers. How many liters per container?**, the stated answer **7.43 L** is correct.",
-          "fil": "For **Share 29.72 L equally among 4 containers. How many liters per container?**, the stated answer **7.43 L** is correct.",
-          "taglish": "For **Share 29.72 L equally among 4 containers. How many liters per container?**, the stated answer **7.43 L** is correct."
+          "en": "Is this solution correct? Share 29.72 L equally among 4 containers. How many liters per container? Proposed answer: 7.43 L",
+          "fil": "Is this solution correct? Share 29.72 L equally among 4 containers. How many liters per container? Proposed answer: 7.43 L",
+          "taglish": "Is this solution correct? Share 29.72 L equally among 4 containers. How many liters per container? Proposed answer: 7.43 L"
         },
         "answer": "True",
         "type": "true_false",
@@ -12712,9 +12712,9 @@
       },
       {
         "q": {
-          "en": "For **Share 100.20 L equally among 5 containers. How many liters per container?**, the stated answer **20.04 L** is correct.",
-          "fil": "For **Share 100.20 L equally among 5 containers. How many liters per container?**, the stated answer **20.04 L** is correct.",
-          "taglish": "For **Share 100.20 L equally among 5 containers. How many liters per container?**, the stated answer **20.04 L** is correct."
+          "en": "Is this solution correct? Share 100.20 L equally among 5 containers. How many liters per container? Proposed answer: 20.04 L",
+          "fil": "Is this solution correct? Share 100.20 L equally among 5 containers. How many liters per container? Proposed answer: 20.04 L",
+          "taglish": "Is this solution correct? Share 100.20 L equally among 5 containers. How many liters per container? Proposed answer: 20.04 L"
         },
         "answer": "True",
         "type": "true_false",
@@ -13103,9 +13103,9 @@
       },
       {
         "q": {
-          "en": "For **At a sari-sari store, compute ₱16.13 + ₱20.37.**, the stated answer **₱36.50** is correct.",
-          "fil": "For **At a sari-sari store, compute ₱16.13 + ₱20.37.**, the stated answer **₱36.50** is correct.",
-          "taglish": "For **At a sari-sari store, compute ₱16.13 + ₱20.37.**, the stated answer **₱36.50** is correct."
+          "en": "Is this solution correct? At a sari-sari store, compute ₱16.13 + ₱20.37. Proposed answer: ₱36.50",
+          "fil": "Is this solution correct? At a sari-sari store, compute ₱16.13 + ₱20.37. Proposed answer: ₱36.50",
+          "taglish": "Is this solution correct? At a sari-sari store, compute ₱16.13 + ₱20.37. Proposed answer: ₱36.50"
         },
         "answer": "True",
         "type": "true_false",
@@ -13458,9 +13458,9 @@
       },
       {
         "q": {
-          "en": "For **Evaluate using GMDAS: 1.0 + 0.4 × 8.**, the stated answer **4.2** is correct.",
-          "fil": "For **Evaluate using GMDAS: 1.0 + 0.4 × 8.**, the stated answer **4.2** is correct.",
-          "taglish": "For **Evaluate using GMDAS: 1.0 + 0.4 × 8.**, the stated answer **4.2** is correct."
+          "en": "Is this solution correct? Evaluate using GMDAS: 1.0 + 0.4 × 8. Proposed answer: 4.2",
+          "fil": "Is this solution correct? Evaluate using GMDAS: 1.0 + 0.4 × 8. Proposed answer: 4.2",
+          "taglish": "Is this solution correct? Evaluate using GMDAS: 1.0 + 0.4 × 8. Proposed answer: 4.2"
         },
         "answer": "True",
         "type": "true_false",
@@ -13722,9 +13722,9 @@
       },
       {
         "q": {
-          "en": "For **Sketch a valid net of a cube. (Diagram description: square grid.)**, the stated answer **Any arrangement of 6 squares that folds into a cube** is correct.",
-          "fil": "For **Sketch a valid net of a cube. (Diagram description: square grid.)**, the stated answer **Any arrangement of 6 squares that folds into a cube** is correct.",
-          "taglish": "For **Sketch a valid net of a cube. (Diagram description: square grid.)**, the stated answer **Any arrangement of 6 squares that folds into a cube** is correct."
+          "en": "Is this solution correct? Sketch a valid net of a cube. (Diagram description: square grid.) Proposed answer: Any arrangement of 6 squares that folds into a cube",
+          "fil": "Is this solution correct? Sketch a valid net of a cube. (Diagram description: square grid.) Proposed answer: Any arrangement of 6 squares that folds into a cube",
+          "taglish": "Is this solution correct? Sketch a valid net of a cube. (Diagram description: square grid.) Proposed answer: Any arrangement of 6 squares that folds into a cube"
         },
         "answer": "True",
         "type": "true_false",
@@ -13887,9 +13887,9 @@
       },
       {
         "q": {
-          "en": "For **Sketch a valid net of a cube. (Diagram description: square grid.)**, the stated answer **Any arrangement of 6 squares that folds into a cube** is correct.",
-          "fil": "For **Sketch a valid net of a cube. (Diagram description: square grid.)**, the stated answer **Any arrangement of 6 squares that folds into a cube** is correct.",
-          "taglish": "For **Sketch a valid net of a cube. (Diagram description: square grid.)**, the stated answer **Any arrangement of 6 squares that folds into a cube** is correct."
+          "en": "Is this solution correct? Sketch a valid net of a cube. (Diagram description: square grid.) Proposed answer: Any arrangement of 6 squares that folds into a cube",
+          "fil": "Is this solution correct? Sketch a valid net of a cube. (Diagram description: square grid.) Proposed answer: Any arrangement of 6 squares that folds into a cube",
+          "taglish": "Is this solution correct? Sketch a valid net of a cube. (Diagram description: square grid.) Proposed answer: Any arrangement of 6 squares that folds into a cube"
         },
         "answer": "True",
         "type": "true_false",
@@ -14052,9 +14052,9 @@
       },
       {
         "q": {
-          "en": "For **Sketch a valid net of a cube. (Diagram description: square grid.)**, the stated answer **Any arrangement of 6 squares that folds into a cube** is correct.",
-          "fil": "For **Sketch a valid net of a cube. (Diagram description: square grid.)**, the stated answer **Any arrangement of 6 squares that folds into a cube** is correct.",
-          "taglish": "For **Sketch a valid net of a cube. (Diagram description: square grid.)**, the stated answer **Any arrangement of 6 squares that folds into a cube** is correct."
+          "en": "Is this solution correct? Sketch a valid net of a cube. (Diagram description: square grid.) Proposed answer: Any arrangement of 6 squares that folds into a cube",
+          "fil": "Is this solution correct? Sketch a valid net of a cube. (Diagram description: square grid.) Proposed answer: Any arrangement of 6 squares that folds into a cube",
+          "taglish": "Is this solution correct? Sketch a valid net of a cube. (Diagram description: square grid.) Proposed answer: Any arrangement of 6 squares that folds into a cube"
         },
         "answer": "True",
         "type": "true_false",
@@ -14217,9 +14217,9 @@
       },
       {
         "q": {
-          "en": "For **Sketch a valid net of a cube. (Diagram description: square grid.)**, the stated answer **Any arrangement of 6 squares that folds into a cube** is correct.",
-          "fil": "For **Sketch a valid net of a cube. (Diagram description: square grid.)**, the stated answer **Any arrangement of 6 squares that folds into a cube** is correct.",
-          "taglish": "For **Sketch a valid net of a cube. (Diagram description: square grid.)**, the stated answer **Any arrangement of 6 squares that folds into a cube** is correct."
+          "en": "Is this solution correct? Sketch a valid net of a cube. (Diagram description: square grid.) Proposed answer: Any arrangement of 6 squares that folds into a cube",
+          "fil": "Is this solution correct? Sketch a valid net of a cube. (Diagram description: square grid.) Proposed answer: Any arrangement of 6 squares that folds into a cube",
+          "taglish": "Is this solution correct? Sketch a valid net of a cube. (Diagram description: square grid.) Proposed answer: Any arrangement of 6 squares that folds into a cube"
         },
         "answer": "True",
         "type": "true_false",
@@ -14382,9 +14382,9 @@
       },
       {
         "q": {
-          "en": "For **Sketch a valid net of a cube. (Diagram description: square grid.)**, the stated answer **Any arrangement of 6 squares that folds into a cube** is correct.",
-          "fil": "For **Sketch a valid net of a cube. (Diagram description: square grid.)**, the stated answer **Any arrangement of 6 squares that folds into a cube** is correct.",
-          "taglish": "For **Sketch a valid net of a cube. (Diagram description: square grid.)**, the stated answer **Any arrangement of 6 squares that folds into a cube** is correct."
+          "en": "Is this solution correct? Sketch a valid net of a cube. (Diagram description: square grid.) Proposed answer: Any arrangement of 6 squares that folds into a cube",
+          "fil": "Is this solution correct? Sketch a valid net of a cube. (Diagram description: square grid.) Proposed answer: Any arrangement of 6 squares that folds into a cube",
+          "taglish": "Is this solution correct? Sketch a valid net of a cube. (Diagram description: square grid.) Proposed answer: Any arrangement of 6 squares that folds into a cube"
         },
         "answer": "True",
         "type": "true_false",
@@ -14651,9 +14651,9 @@
       },
       {
         "q": {
-          "en": "For **A rectangular donation box is 4 cm by 7 cm by 2 cm. Find its surface area.**, the stated answer **100 cm²** is correct.",
-          "fil": "For **A rectangular donation box is 4 cm by 7 cm by 2 cm. Find its surface area.**, the stated answer **100 cm²** is correct.",
-          "taglish": "For **A rectangular donation box is 4 cm by 7 cm by 2 cm. Find its surface area.**, the stated answer **100 cm²** is correct."
+          "en": "Is this solution correct? A rectangular donation box is 4 cm by 7 cm by 2 cm. Find its surface area. Proposed answer: 100 cm²",
+          "fil": "Is this solution correct? A rectangular donation box is 4 cm by 7 cm by 2 cm. Find its surface area. Proposed answer: 100 cm²",
+          "taglish": "Is this solution correct? A rectangular donation box is 4 cm by 7 cm by 2 cm. Find its surface area. Proposed answer: 100 cm²"
         },
         "answer": "True",
         "type": "true_false",
@@ -15055,9 +15055,9 @@
       },
       {
         "q": {
-          "en": "For **A rectangular donation box is 4 cm by 5 cm by 2 cm. Find its surface area.**, the stated answer **76 cm²** is correct.",
-          "fil": "For **A rectangular donation box is 4 cm by 5 cm by 2 cm. Find its surface area.**, the stated answer **76 cm²** is correct.",
-          "taglish": "For **A rectangular donation box is 4 cm by 5 cm by 2 cm. Find its surface area.**, the stated answer **76 cm²** is correct."
+          "en": "Is this solution correct? A rectangular donation box is 4 cm by 5 cm by 2 cm. Find its surface area. Proposed answer: 76 cm²",
+          "fil": "Is this solution correct? A rectangular donation box is 4 cm by 5 cm by 2 cm. Find its surface area. Proposed answer: 76 cm²",
+          "taglish": "Is this solution correct? A rectangular donation box is 4 cm by 5 cm by 2 cm. Find its surface area. Proposed answer: 76 cm²"
         },
         "answer": "True",
         "type": "true_false",
@@ -15355,9 +15355,9 @@
       },
       {
         "q": {
-          "en": "For **Sketch a valid net of a cube. (Diagram description: square grid.)**, the stated answer **Any arrangement of 6 squares that folds into a cube** is correct.",
-          "fil": "For **Sketch a valid net of a cube. (Diagram description: square grid.)**, the stated answer **Any arrangement of 6 squares that folds into a cube** is correct.",
-          "taglish": "For **Sketch a valid net of a cube. (Diagram description: square grid.)**, the stated answer **Any arrangement of 6 squares that folds into a cube** is correct."
+          "en": "Is this solution correct? Sketch a valid net of a cube. (Diagram description: square grid.) Proposed answer: Any arrangement of 6 squares that folds into a cube",
+          "fil": "Is this solution correct? Sketch a valid net of a cube. (Diagram description: square grid.) Proposed answer: Any arrangement of 6 squares that folds into a cube",
+          "taglish": "Is this solution correct? Sketch a valid net of a cube. (Diagram description: square grid.) Proposed answer: Any arrangement of 6 squares that folds into a cube"
         },
         "answer": "True",
         "type": "true_false",
@@ -15624,9 +15624,9 @@
       },
       {
         "q": {
-          "en": "For **A box model is 6 unit cubes long, 4 unit cubes wide, and 5 unit cubes high. Estimate its volume in unit cubes.**, the stated answer **120 unit cubes** is correct.",
-          "fil": "For **A box model is 6 unit cubes long, 4 unit cubes wide, and 5 unit cubes high. Estimate its volume in unit cubes.**, the stated answer **120 unit cubes** is correct.",
-          "taglish": "For **A box model is 6 unit cubes long, 4 unit cubes wide, and 5 unit cubes high. Estimate its volume in unit cubes.**, the stated answer **120 unit cubes** is correct."
+          "en": "Is this solution correct? A box model is 6 unit cubes long, 4 unit cubes wide, and 5 unit cubes high. Estimate its volume in unit cubes. Proposed answer: 120 unit cubes",
+          "fil": "Is this solution correct? A box model is 6 unit cubes long, 4 unit cubes wide, and 5 unit cubes high. Estimate its volume in unit cubes. Proposed answer: 120 unit cubes",
+          "taglish": "Is this solution correct? A box model is 6 unit cubes long, 4 unit cubes wide, and 5 unit cubes high. Estimate its volume in unit cubes. Proposed answer: 120 unit cubes"
         },
         "answer": "True",
         "type": "true_false",
@@ -15951,9 +15951,9 @@
       },
       {
         "q": {
-          "en": "For **Complete a symmetrical banderitas design across the marked line. (Diagram description: half-design and vertical line.)**, the stated answer **The completed half must be a mirror image at equal distances from the line** is correct.",
-          "fil": "For **Complete a symmetrical banderitas design across the marked line. (Diagram description: half-design and vertical line.)**, the stated answer **The completed half must be a mirror image at equal distances from the line** is correct.",
-          "taglish": "For **Complete a symmetrical banderitas design across the marked line. (Diagram description: half-design and vertical line.)**, the stated answer **The completed half must be a mirror image at equal distances from the line** is correct."
+          "en": "Is this solution correct? Complete a symmetrical banderitas design across the marked line. (Diagram description: half-design and vertical line.) Proposed answer: The completed half must be a mirror image at equal distances from the line",
+          "fil": "Is this solution correct? Complete a symmetrical banderitas design across the marked line. (Diagram description: half-design and vertical line.) Proposed answer: The completed half must be a mirror image at equal distances from the line",
+          "taglish": "Is this solution correct? Complete a symmetrical banderitas design across the marked line. (Diagram description: half-design and vertical line.) Proposed answer: The completed half must be a mirror image at equal distances from the line"
         },
         "answer": "True",
         "type": "true_false",

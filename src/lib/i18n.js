@@ -360,6 +360,9 @@ export const STRINGS = {
 
   // ---- 3D Classroom HUD ----
   '3d.preparing': { en: 'Preparing the 3D class...', fil: 'Inihahanda ang 3D klase...', taglish: 'Inihahanda ang 3D klase...' },
+  '3d.unavailable.title': { en: '3D class is not available on this device.', fil: 'Hindi available ang 3D klase sa device na ito.', taglish: 'Hindi available ang 3D class sa device na ito.' },
+  '3d.unavailable.body': { en: 'You can continue with the same questions in the 2D classroom.', fil: 'Maaari mong ipagpatuloy ang parehong mga tanong sa 2D na klase.', taglish: 'Pwede mong ituloy ang parehong questions sa 2D classroom.' },
+  '3d.unavailable.action': { en: 'Continue in 2D →', fil: 'Ituloy sa 2D →', taglish: 'Ituloy sa 2D →' },
   '3d.theme': { en: 'Theme', fil: 'Tema', taglish: 'Tema' },
   '3d.changeRoom': { en: 'Change the room', fil: 'Palitan ang klase', taglish: 'Palitan ang klase' },
   '3d.answerBoard': { en: 'Answer', fil: 'Sagutin', taglish: 'Sagutin' },

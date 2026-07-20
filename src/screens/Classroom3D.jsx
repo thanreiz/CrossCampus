@@ -23,13 +23,14 @@ function plain(s) {
 // React owns the DOM shell + lesson modal + content/mastery/voice bridge.
 // Three.js owns the canvas. The whole scene lives in three/scene.js -> buildClassroom(),
 // so codex's richer geometry can replace that one function without touching this file.
-export default function Classroom3D({ competency, questions, questionSource = 'bundled', fallback = false, score, online, lang = 'taglish', onAnswered, onExit }) {
+export default function Classroom3D({ competency, questions, questionSource = 'bundled', fallback = false, score, online, lang = 'taglish', onAnswered, onExit, onFallback2D }) {
   const c = { ...competency, items: questions?.length ? questions : competency.items }
   const tt = makeT(lang)
   const mountRef = useRef(null)
   const sceneRef = useRef(null)
 
   const [ready, setReady] = useState(false)
+  const [sceneError, setSceneError] = useState(false)
   const [atBoard, setAtBoard] = useState(false)
   const [modal, setModal] = useState(false)
   const [idx, setIdx] = useState(0)
@@ -77,15 +78,23 @@ export default function Classroom3D({ competency, questions, questionSource = 'b
   // Boot the Three.js scene once.
   useEffect(() => {
     if (!mountRef.current) return
-    const api = buildClassroom({
-      mount: mountRef.current,
-      competency: c,
-      boardText: localize(c.items?.[0]?.q, lang),
-      labels: { correct: tt('3d.board.correct'), tryAgain: tt('3d.board.tryAgain'), ready: tt('3d.board.ready') },
-      // fired when the player walks into the blackboard zone
-      onNearBoard: (near) => setAtBoard(near),
-      onInteract: () => openBoard(),
-    })
+    let api
+    try {
+      api = buildClassroom({
+        mount: mountRef.current,
+        competency: c,
+        boardText: localize(c.items?.[0]?.q, lang),
+        labels: { correct: tt('3d.board.correct'), tryAgain: tt('3d.board.tryAgain'), ready: tt('3d.board.ready') },
+        // fired when the player walks into the blackboard zone
+        onNearBoard: (near) => setAtBoard(near),
+        onInteract: () => openBoard(),
+      })
+    } catch (error) {
+      console.warn('3D classroom unavailable; offering 2D fallback.', error)
+      mountRef.current.replaceChildren()
+      setSceneError(true)
+      return undefined
+    }
     sceneRef.current = api
     setReady(true)
     return () => {
@@ -174,6 +183,22 @@ export default function Classroom3D({ competency, questions, questionSource = 'b
     setFb(null)
     setNudge(null)
     sceneRef.current?.setControls(true)
+  }
+
+  if (sceneError) {
+    return (
+      <main className="flex min-h-[100dvh] items-center justify-center bg-[#27433b] p-5">
+        <section className="gb-card max-w-md bg-cream p-6 text-center">
+          <Mascot className="mx-auto h-28 w-28" />
+          <h1 className="mt-3 font-display text-2xl">{tt('3d.unavailable.title')}</h1>
+          <p className="mt-2 font-semibold text-ink/70">{tt('3d.unavailable.body')}</p>
+          <div className="mt-5 grid gap-3">
+            <Button className="w-full" onClick={onFallback2D}>{tt('3d.unavailable.action')}</Button>
+            <button className="font-extrabold underline" onClick={onExit}>{tt('common.exit')}</button>
+          </div>
+        </section>
+      </main>
+    )
   }
 
   return (
@@ -465,5 +490,4 @@ function Joystick({ onMove, label }) {
     </div>
   )
 }
-
 

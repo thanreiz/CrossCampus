@@ -268,6 +268,7 @@ export default function App() {
             lang={lang}
             onAnswered={handleAnswered}
             onExit={() => setScreen('progress')}
+            onFallback2D={() => setScreen('classroom')}
           />
         </Suspense>
       )

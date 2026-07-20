@@ -75,6 +75,7 @@ export default function Games({ online = true, grade = 6, competencies = [], mas
   const [questionSource, setQuestionSource] = useState('bundled')
   const completionSaved = useRef(false)
   const inputRef = useRef(null)
+  const startingRef = useRef(false)
 
   const game = GAMES.find((g) => g.key === gameKey) ?? null
   const round = questions[idx]
@@ -91,37 +92,42 @@ export default function Games({ online = true, grade = 6, competencies = [], mas
   }, [done])
 
   async function startGame() {
-    if (!game || generating) return
+    if (!game || startingRef.current) return
+    startingRef.current = true
     setGenerating(true)
-    const session = await prepareQuestionSession({
-      grade,
-      mode: 'game',
-      scope: { key: `game:${game.key}`, game: game.gameTag },
-      count,
-      language: lang,
-      mastery,
-      connectivity: online,
-      competencies,
-    })
-    const nextQuestions = session.questions
-    setQuestions(nextQuestions)
-    setFallback(session.fallback)
-    setQuestionSource(session.source)
-    setStarted(true)
-    setGenerating(false)
-    setIdx(0)
-    setInput('')
-    setResult(null)
-    setFb(null)
-    setCoins(0)
-    setStreak(0)
-    setAnswered(0)
-    setLog([])
-    setFeedbackReady(false)
-    setShowCorrectOverlay(false)
-    setAttemptRecorded(false)
-    setStepsDone(!(nextQuestions[0]?.steps?.length > 0))
-    completionSaved.current = false
+    try {
+      const session = await prepareQuestionSession({
+        grade,
+        mode: 'game',
+        scope: { key: `game:${game.key}`, game: game.gameTag },
+        count,
+        language: lang,
+        mastery,
+        connectivity: online,
+        competencies,
+      })
+      const nextQuestions = session.questions
+      setQuestions(nextQuestions)
+      setFallback(session.fallback)
+      setQuestionSource(session.source)
+      setStarted(true)
+      setIdx(0)
+      setInput('')
+      setResult(null)
+      setFb(null)
+      setCoins(0)
+      setStreak(0)
+      setAnswered(0)
+      setLog([])
+      setFeedbackReady(false)
+      setShowCorrectOverlay(false)
+      setAttemptRecorded(false)
+      setStepsDone(!(nextQuestions[0]?.steps?.length > 0))
+      completionSaved.current = false
+    } finally {
+      startingRef.current = false
+      setGenerating(false)
+    }
   }
 
   function backToPicker() {

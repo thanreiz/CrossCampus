@@ -1,4 +1,4 @@
-import { lazy, Suspense, useEffect, useState } from 'react'
+import { lazy, Suspense, useEffect, useRef, useState } from 'react'
 import { get } from 'idb-keyval'
 import { loadContentByGrade } from './lib/content.js'
 import {
@@ -42,6 +42,7 @@ export default function App() {
   const [lang, setLangState] = useState(DEFAULT_LANG)
   const [questionSession, setQuestionSession] = useState(null)
   const [content, setContent] = useState([])
+  const classroomStartRef = useRef(false)
   const next = pickNext(content, mastery, due)
 
   async function refreshLearning(nextGrade = grade) {
@@ -121,20 +122,27 @@ export default function App() {
   }
 
   async function enterClassroom(kind) {
-    if (!active) return
+    if (!active || classroomStartRef.current) return
+    classroomStartRef.current = true
     setScreen('generating')
-    const session = await prepareQuestionSession({
-      grade,
-      mode: 'quiz',
-      scope: { key: `lesson:${active.ref}`, refs: [active.ref] },
-      count: 5,
-      language: lang,
-      mastery,
-      connectivity: online,
-      competencies: content,
-    })
-    setQuestionSession(session)
-    setScreen(kind === '3d' ? 'classroom3d' : 'classroom')
+    try {
+      const session = await prepareQuestionSession({
+        grade,
+        mode: 'quiz',
+        scope: { key: `lesson:${active.ref}`, refs: [active.ref] },
+        count: 5,
+        language: lang,
+        mastery,
+        connectivity: online,
+        competencies: content,
+      })
+      setQuestionSession(session)
+      setScreen(kind === '3d' ? 'classroom3d' : 'classroom')
+    } catch {
+      setScreen('brief')
+    } finally {
+      classroomStartRef.current = false
+    }
   }
 
   async function handleAnswered(ref, correct) {

@@ -381,10 +381,10 @@
         "answer": "rotation",
         "type": "mcq",
         "options": [
-          "reflection",
           "translation",
-          "Alternative 3",
-          "rotation"
+          "translation or slide",
+          "rotation",
+          "reflection"
         ],
         "solution": {
           "en": "Answer: rotation",
@@ -2985,10 +2985,10 @@
         "answer": "1 1/3",
         "type": "mcq",
         "options": [
-          "Alternative 3",
-          "1 1/3",
           "2",
-          "0"
+          "0",
+          "2 2/5",
+          "1 1/3"
         ],
         "solution": {
           "en": "Answer: 1 1/3",
@@ -3398,9 +3398,9 @@
         "answer": "1 4/5",
         "type": "mcq",
         "options": [
-          "0",
-          "Alternative 3",
+          "3 2/3",
           "1 4/5",
+          "0",
           "2"
         ],
         "solution": {
@@ -3778,10 +3778,10 @@
         "answer": "1 3/6",
         "type": "mcq",
         "options": [
+          "3 2/3",
           "1 3/6",
           "2",
-          "0",
-          "Alternative 3"
+          "0"
         ],
         "solution": {
           "en": "Answer: 1 3/6",
@@ -13468,10 +13468,10 @@
         "answer": "180°, 90°, 90°",
         "type": "mcq",
         "options": [
-          "second category",
-          "third category",
-          "180°, 90°, 90°",
-          "first category"
+          "True",
+          "False",
+          "178°, 90°, 90°",
+          "180°, 90°, 90°"
         ],
         "solution": {
           "en": "Answer: 180°, 90°, 90°",
@@ -13576,10 +13576,10 @@
         "answer": "jeepney",
         "type": "mcq",
         "options": [
-          "third category",
-          "jeepney",
-          "first category",
-          "second category"
+          "walking",
+          "bicycle",
+          "tricycle",
+          "jeepney"
         ],
         "solution": {
           "en": "Answer: jeepney",
@@ -13603,10 +13603,10 @@
         "answer": "jeepney",
         "type": "mcq",
         "options": [
-          "third category",
+          "bicycle",
+          "tricycle",
           "jeepney",
-          "first category",
-          "second category"
+          "walking"
         ],
         "solution": {
           "en": "Answer: jeepney",
@@ -13630,10 +13630,10 @@
         "answer": "walking",
         "type": "mcq",
         "options": [
-          "third category",
+          "tricycle",
           "walking",
-          "first category",
-          "second category"
+          "jeepney",
+          "bicycle"
         ],
         "solution": {
           "en": "Answer: walking",
@@ -13977,10 +13977,10 @@
         "answer": "Correct display with values 5, 3, 9, 2 and complete labels",
         "type": "mcq",
         "options": [
-          "Correct display with values 5, 3, 9, 2 and complete labels",
-          "first category",
-          "second category",
-          "third category"
+          "Correct display with values 3, 8, 6, 12 and complete labels",
+          "Correct display with values 11, 2, 2, 9 and complete labels",
+          "Correct display with values 2, 9, 7, 3 and complete labels",
+          "Correct display with values 5, 3, 9, 2 and complete labels"
         ],
         "solution": {
           "en": "Answer: Correct display with values 5, 3, 9, 2 and complete labels",
@@ -14004,10 +14004,10 @@
         "answer": "Correct display with values 3, 8, 6, 12 and complete labels",
         "type": "mcq",
         "options": [
-          "first category",
-          "second category",
-          "third category",
-          "Correct display with values 3, 8, 6, 12 and complete labels"
+          "Correct display with values 11, 2, 2, 9 and complete labels",
+          "Correct display with values 2, 9, 7, 3 and complete labels",
+          "Correct display with values 3, 8, 6, 12 and complete labels",
+          "Correct display with values 5, 3, 9, 2 and complete labels"
         ],
         "solution": {
           "en": "Answer: Correct display with values 3, 8, 6, 12 and complete labels",
@@ -14031,10 +14031,10 @@
         "answer": "Correct display with values 11, 2, 2, 9 and complete labels",
         "type": "mcq",
         "options": [
-          "first category",
-          "second category",
-          "third category",
-          "Correct display with values 11, 2, 2, 9 and complete labels"
+          "Correct display with values 2, 9, 7, 3 and complete labels",
+          "Correct display with values 11, 2, 2, 9 and complete labels",
+          "Correct display with values 5, 3, 9, 2 and complete labels",
+          "Correct display with values 3, 8, 6, 12 and complete labels"
         ],
         "solution": {
           "en": "Answer: Correct display with values 11, 2, 2, 9 and complete labels",
@@ -14405,10 +14405,10 @@
         "answer": "jeepney",
         "type": "mcq",
         "options": [
-          "third category",
-          "jeepney",
-          "first category",
-          "second category"
+          "tricycle",
+          "walking",
+          "bicycle",
+          "jeepney"
         ],
         "solution": {
           "en": "Answer: jeepney",
@@ -14432,10 +14432,10 @@
         "answer": "tricycle",
         "type": "mcq",
         "options": [
+          "walking",
+          "bicycle",
           "tricycle",
-          "first category",
-          "second category",
-          "third category"
+          "jeepney"
         ],
         "solution": {
           "en": "Answer: tricycle",
@@ -14459,10 +14459,10 @@
         "answer": "walking",
         "type": "mcq",
         "options": [
-          "third category",
+          "bicycle",
           "walking",
-          "first category",
-          "second category"
+          "jeepney",
+          "tricycle"
         ],
         "solution": {
           "en": "Answer: walking",
@@ -14540,8 +14540,10 @@
         "answer": "jeepney",
         "type": "matching",
         "options": [
+          "walking",
+          "bicycle",
           "jeepney",
-          "jeepney"
+          "tricycle"
         ],
         "solution": {
           "en": "Answer: jeepney",
@@ -14565,8 +14567,10 @@
         "answer": "jeepney",
         "type": "matching",
         "options": [
+          "bicycle",
           "jeepney",
-          "jeepney"
+          "tricycle",
+          "walking"
         ],
         "solution": {
           "en": "Answer: jeepney",
@@ -14806,10 +14810,10 @@
         "answer": "walking",
         "type": "mcq",
         "options": [
-          "third category",
-          "walking",
-          "first category",
-          "second category"
+          "bicycle",
+          "jeepney",
+          "tricycle",
+          "walking"
         ],
         "solution": {
           "en": "Answer: walking",
@@ -14833,10 +14837,10 @@
         "answer": "bicycle",
         "type": "mcq",
         "options": [
-          "second category",
-          "third category",
+          "jeepney",
+          "tricycle",
           "bicycle",
-          "first category"
+          "walking"
         ],
         "solution": {
           "en": "Answer: bicycle",
@@ -14860,10 +14864,10 @@
         "answer": "jeepney",
         "type": "mcq",
         "options": [
-          "third category",
+          "tricycle",
           "jeepney",
-          "first category",
-          "second category"
+          "walking",
+          "bicycle"
         ],
         "solution": {
           "en": "Answer: jeepney",
@@ -15703,8 +15707,10 @@
         "answer": "48",
         "type": "matching",
         "options": [
+          "60",
+          "True",
           "48",
-          "48"
+          "54"
         ],
         "solution": {
           "en": "Answer: 48",

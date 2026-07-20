@@ -1958,8 +1958,10 @@
         "answer": "31",
         "type": "matching",
         "options": [
+          "18",
+          "29",
           "31",
-          "31"
+          "55"
         ],
         "solution": {
           "en": "Answer: 31",
@@ -1983,8 +1985,10 @@
         "answer": "31",
         "type": "matching",
         "options": [
+          "29",
           "31",
-          "31"
+          "55",
+          "18"
         ],
         "solution": {
           "en": "Answer: 31",
@@ -4650,7 +4654,7 @@
         "answer": "1",
         "type": "mcq",
         "options": [
-          "Alternative 3",
+          "1/2",
           "1",
           "2",
           "0"
@@ -4934,10 +4938,10 @@
         "answer": "1",
         "type": "mcq",
         "options": [
-          "Alternative 3",
-          "1",
           "2",
-          "0"
+          "0",
+          "9/8",
+          "1"
         ],
         "solution": {
           "en": "Answer: 1",
@@ -8821,9 +8825,9 @@
         "answer": "What is your favorite local fruit?",
         "type": "mcq",
         "options": [
-          "first category",
-          "second category",
-          "third category",
+          "Tell everything about your family",
+          "True",
+          "False",
           "What is your favorite local fruit?"
         ],
         "solution": {
@@ -8929,10 +8933,10 @@
         "answer": "Correct display with values 10, 6, 10, 9 and complete labels",
         "type": "mcq",
         "options": [
-          "Correct display with values 10, 6, 10, 9 and complete labels",
-          "first category",
-          "second category",
-          "third category"
+          "Correct display with values 9, 6, 9, 12 and complete labels",
+          "Correct display with values 12, 10, 8, 9 and complete labels",
+          "Correct display with values 12, 4, 8, 5 and complete labels",
+          "Correct display with values 10, 6, 10, 9 and complete labels"
         ],
         "solution": {
           "en": "Answer: Correct display with values 10, 6, 10, 9 and complete labels",
@@ -8956,10 +8960,10 @@
         "answer": "Correct display with values 9, 6, 9, 12 and complete labels",
         "type": "mcq",
         "options": [
+          "Correct display with values 12, 10, 8, 9 and complete labels",
+          "Correct display with values 12, 4, 8, 5 and complete labels",
           "Correct display with values 9, 6, 9, 12 and complete labels",
-          "first category",
-          "second category",
-          "third category"
+          "Correct display with values 10, 6, 10, 9 and complete labels"
         ],
         "solution": {
           "en": "Answer: Correct display with values 9, 6, 9, 12 and complete labels",
@@ -8983,10 +8987,10 @@
         "answer": "Correct display with values 12, 10, 8, 9 and complete labels",
         "type": "mcq",
         "options": [
-          "first category",
-          "second category",
-          "third category",
-          "Correct display with values 12, 10, 8, 9 and complete labels"
+          "Correct display with values 12, 4, 8, 5 and complete labels",
+          "Correct display with values 12, 10, 8, 9 and complete labels",
+          "Correct display with values 10, 6, 10, 9 and complete labels",
+          "Correct display with values 9, 6, 9, 12 and complete labels"
         ],
         "solution": {
           "en": "Answer: Correct display with values 12, 10, 8, 9 and complete labels",
@@ -9357,10 +9361,10 @@
         "answer": "Correct display with values 12, 2, 3, 4 and complete labels",
         "type": "mcq",
         "options": [
-          "third category",
-          "Correct display with values 12, 2, 3, 4 and complete labels",
-          "first category",
-          "second category"
+          "Correct display with values 11, 2, 3, 7 and complete labels",
+          "Correct display with values 5, 10, 5, 7 and complete labels",
+          "Correct display with values 11, 4, 6, 10 and complete labels",
+          "Correct display with values 12, 2, 3, 4 and complete labels"
         ],
         "solution": {
           "en": "Answer: Correct display with values 12, 2, 3, 4 and complete labels",
@@ -9384,10 +9388,10 @@
         "answer": "Correct display with values 11, 2, 3, 7 and complete labels",
         "type": "mcq",
         "options": [
-          "first category",
-          "second category",
-          "third category",
-          "Correct display with values 11, 2, 3, 7 and complete labels"
+          "Correct display with values 5, 10, 5, 7 and complete labels",
+          "Correct display with values 11, 4, 6, 10 and complete labels",
+          "Correct display with values 11, 2, 3, 7 and complete labels",
+          "Correct display with values 12, 2, 3, 4 and complete labels"
         ],
         "solution": {
           "en": "Answer: Correct display with values 11, 2, 3, 7 and complete labels",
@@ -9411,10 +9415,10 @@
         "answer": "Correct display with values 5, 10, 5, 7 and complete labels",
         "type": "mcq",
         "options": [
-          "first category",
-          "second category",
-          "third category",
-          "Correct display with values 5, 10, 5, 7 and complete labels"
+          "Correct display with values 11, 4, 6, 10 and complete labels",
+          "Correct display with values 5, 10, 5, 7 and complete labels",
+          "Correct display with values 12, 2, 3, 4 and complete labels",
+          "Correct display with values 11, 2, 3, 7 and complete labels"
         ],
         "solution": {
           "en": "Answer: Correct display with values 5, 10, 5, 7 and complete labels",
@@ -9785,10 +9789,10 @@
         "answer": "Correct display with values 8, 5, 9, 10 and complete labels",
         "type": "mcq",
         "options": [
-          "Correct display with values 8, 5, 9, 10 and complete labels",
-          "first category",
-          "second category",
-          "third category"
+          "Correct display with values 2, 9, 12, 3 and complete labels",
+          "Correct display with values 12, 7, 3, 7 and complete labels",
+          "Correct display with values 8, 10, 3, 3 and complete labels",
+          "Correct display with values 8, 5, 9, 10 and complete labels"
         ],
         "solution": {
           "en": "Answer: Correct display with values 8, 5, 9, 10 and complete labels",
@@ -9812,10 +9816,10 @@
         "answer": "Correct display with values 2, 9, 12, 3 and complete labels",
         "type": "mcq",
         "options": [
+          "Correct display with values 12, 7, 3, 7 and complete labels",
+          "Correct display with values 8, 10, 3, 3 and complete labels",
           "Correct display with values 2, 9, 12, 3 and complete labels",
-          "first category",
-          "second category",
-          "third category"
+          "Correct display with values 8, 5, 9, 10 and complete labels"
         ],
         "solution": {
           "en": "Answer: Correct display with values 2, 9, 12, 3 and complete labels",
@@ -9839,10 +9843,10 @@
         "answer": "Correct display with values 12, 7, 3, 7 and complete labels",
         "type": "mcq",
         "options": [
-          "second category",
-          "third category",
+          "Correct display with values 8, 10, 3, 3 and complete labels",
           "Correct display with values 12, 7, 3, 7 and complete labels",
-          "first category"
+          "Correct display with values 8, 5, 9, 10 and complete labels",
+          "Correct display with values 2, 9, 12, 3 and complete labels"
         ],
         "solution": {
           "en": "Answer: Correct display with values 12, 7, 3, 7 and complete labels",
@@ -10213,10 +10217,10 @@
         "answer": "Correct display with values 9, 8, 4, 4 and complete labels",
         "type": "mcq",
         "options": [
-          "third category",
-          "Correct display with values 9, 8, 4, 4 and complete labels",
-          "first category",
-          "second category"
+          "Correct display with values 11, 10, 5, 6 and complete labels",
+          "Correct display with values 10, 6, 6, 2 and complete labels",
+          "Correct display with values 5, 7, 8, 8 and complete labels",
+          "Correct display with values 9, 8, 4, 4 and complete labels"
         ],
         "solution": {
           "en": "Answer: Correct display with values 9, 8, 4, 4 and complete labels",
@@ -10240,10 +10244,10 @@
         "answer": "Correct display with values 11, 10, 5, 6 and complete labels",
         "type": "mcq",
         "options": [
+          "Correct display with values 10, 6, 6, 2 and complete labels",
+          "Correct display with values 5, 7, 8, 8 and complete labels",
           "Correct display with values 11, 10, 5, 6 and complete labels",
-          "first category",
-          "second category",
-          "third category"
+          "Correct display with values 9, 8, 4, 4 and complete labels"
         ],
         "solution": {
           "en": "Answer: Correct display with values 11, 10, 5, 6 and complete labels",
@@ -10267,10 +10271,10 @@
         "answer": "Correct display with values 10, 6, 6, 2 and complete labels",
         "type": "mcq",
         "options": [
-          "third category",
+          "Correct display with values 5, 7, 8, 8 and complete labels",
           "Correct display with values 10, 6, 6, 2 and complete labels",
-          "first category",
-          "second category"
+          "Correct display with values 9, 8, 4, 4 and complete labels",
+          "Correct display with values 11, 10, 5, 6 and complete labels"
         ],
         "solution": {
           "en": "Answer: Correct display with values 10, 6, 6, 2 and complete labels",
@@ -10641,10 +10645,10 @@
         "answer": "Correct display with values 6, 3, 5, 5 and complete labels",
         "type": "mcq",
         "options": [
-          "Correct display with values 6, 3, 5, 5 and complete labels",
-          "first category",
-          "second category",
-          "third category"
+          "Correct display with values 9, 5, 6, 7 and complete labels",
+          "Correct display with values 10, 7, 8, 8 and complete labels",
+          "Correct display with values 7, 7, 10, 3 and complete labels",
+          "Correct display with values 6, 3, 5, 5 and complete labels"
         ],
         "solution": {
           "en": "Answer: Correct display with values 6, 3, 5, 5 and complete labels",
@@ -10668,10 +10672,10 @@
         "answer": "Correct display with values 9, 5, 6, 7 and complete labels",
         "type": "mcq",
         "options": [
-          "third category",
+          "Correct display with values 10, 7, 8, 8 and complete labels",
+          "Correct display with values 7, 7, 10, 3 and complete labels",
           "Correct display with values 9, 5, 6, 7 and complete labels",
-          "first category",
-          "second category"
+          "Correct display with values 6, 3, 5, 5 and complete labels"
         ],
         "solution": {
           "en": "Answer: Correct display with values 9, 5, 6, 7 and complete labels",
@@ -10695,10 +10699,10 @@
         "answer": "Correct display with values 10, 7, 8, 8 and complete labels",
         "type": "mcq",
         "options": [
-          "third category",
+          "Correct display with values 7, 7, 10, 3 and complete labels",
           "Correct display with values 10, 7, 8, 8 and complete labels",
-          "first category",
-          "second category"
+          "Correct display with values 6, 3, 5, 5 and complete labels",
+          "Correct display with values 9, 5, 6, 7 and complete labels"
         ],
         "solution": {
           "en": "Answer: Correct display with values 10, 7, 8, 8 and complete labels",
@@ -17073,10 +17077,10 @@
         "answer": "rotation",
         "type": "mcq",
         "options": [
-          "reflection",
           "translation",
-          "Alternative 3",
-          "rotation"
+          "translation or slide",
+          "rotation",
+          "reflection"
         ],
         "solution": {
           "en": "Answer: rotation",

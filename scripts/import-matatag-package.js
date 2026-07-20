@@ -14,6 +14,7 @@ const normalize = (value) => String(value ?? '')
   .replace(/\.$/, '')
 
 const localized = (value) => ({ en: value, fil: value, taglish: value })
+const WEAK_OPTION = /^(?:alternative\s*\d+|first category|second category|third category|answer choice\s*\d+|option\s*\d+)$/i
 
 function section(markdown, heading) {
   const start = markdown.indexOf(`## ${heading}`)
@@ -143,6 +144,41 @@ function makeItem({ q, answer, type, options, source, number, originalType }) {
   }
 }
 
+function repairedOptions(item, answerPool) {
+  const answer = String(item.answer)
+  const candidates = [answer]
+  for (const option of item.options ?? []) {
+    if (!WEAK_OPTION.test(String(option).trim())) candidates.push(String(option))
+  }
+  for (const match of String(item.q.en).matchAll(/['“](.+?)['”]/g)) candidates.push(match[1])
+  for (const other of answerPool) candidates.push(String(other))
+  const number = answer.match(/-?\d+(?:\.\d+)?/)
+  if (number) {
+    for (const delta of [-2, -1, 1, 2, 10]) {
+      candidates.push(answer.replace(number[0], String(Number(number[0]) + delta)))
+    }
+  }
+  candidates.push('Both choices', 'Neither choice', 'Not enough information')
+  const unique = [...new Set(candidates.map((value) => value.trim()).filter(Boolean))]
+  const options = unique.slice(0, 4)
+  const shift = item.source.item % options.length
+  return [...options.slice(shift), ...options.slice(0, shift)]
+}
+
+function repairChoices(items) {
+  const answerPool = [...new Set(items.map((item) => item.answer))]
+  return items.map((item) => {
+    if (!['mcq', 'matching'].includes(item.type)) return item
+    const unique = new Set(item.options ?? [])
+    const weak = [...unique].some((option) => WEAK_OPTION.test(String(option).trim()))
+    const minimum = item.type === 'mcq' ? 4 : 2
+    if (!weak && unique.size >= minimum && unique.has(item.answer)) return item
+    const options = repairedOptions(item, answerPool)
+    if (item.type === 'matching' && options.length >= 2) return { ...item, options: options.slice(0, Math.max(2, Math.min(4, options.length))) }
+    return { ...item, type: 'mcq', options }
+  })
+}
+
 function gameTags(spec) {
   if (spec.domain === 'Number and Algebra') return ['store']
   if (/Statistics|Data and Probability/.test(spec.domain)) return ['fiesta']
@@ -183,12 +219,13 @@ for (let grade = 1; grade <= 6; grade++) {
       ...parseActivity(activity, source),
     ].sort((a, b) => a.source.item - b.source.item)
     const seenQuestions = new Set()
-    const items = parsedItems.filter((item) => {
+    const uniqueItems = parsedItems.filter((item) => {
       const signature = normalize(item.q.en).toLowerCase()
       if (seenQuestions.has(signature)) return false
       seenQuestions.add(signature)
       return true
     })
+    const items = repairChoices(uniqueItems)
     if (items.length < 3) throw new Error(`${spec.ref}: only ${items.length} unique objective questions parsed`)
     output.push({
       grade,

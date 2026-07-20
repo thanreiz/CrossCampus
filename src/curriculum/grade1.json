@@ -85,7 +85,7 @@
         "answer": "rectangle",
         "type": "mcq",
         "options": [
-          "Alternative 3",
+          "square",
           "rectangle",
           "triangle",
           "circle"
@@ -275,7 +275,7 @@
         "answer": "rectangle",
         "type": "mcq",
         "options": [
-          "Alternative 3",
+          "square",
           "rectangle",
           "triangle",
           "circle"
@@ -2919,8 +2919,10 @@
         "answer": "10",
         "type": "matching",
         "options": [
+          "6",
+          "8",
           "10",
-          "10"
+          "7"
         ],
         "solution": {
           "en": "Answer: 10",
@@ -3226,8 +3228,10 @@
         "answer": "6",
         "type": "matching",
         "options": [
+          "7",
+          "9",
           "6",
-          "6"
+          "10"
         ],
         "solution": {
           "en": "Answer: 6",
@@ -3251,8 +3255,10 @@
         "answer": "6",
         "type": "matching",
         "options": [
+          "9",
           "6",
-          "6"
+          "10",
+          "7"
         ],
         "solution": {
           "en": "Answer: 6",
@@ -4782,8 +4788,10 @@
         "answer": "9 m",
         "type": "matching",
         "options": [
+          "21 m",
+          "18 m",
           "9 m",
-          "9 m"
+          "17 m"
         ],
         "solution": {
           "en": "Answer: 9 m",
@@ -4807,8 +4815,10 @@
         "answer": "9 m",
         "type": "matching",
         "options": [
+          "18 m",
           "9 m",
-          "9 m"
+          "17 m",
+          "21 m"
         ],
         "solution": {
           "en": "Answer: 9 m",
@@ -5075,10 +5085,10 @@
         "answer": "1, 10, 12, 70",
         "type": "mcq",
         "options": [
+          "36, 39, 71, 100",
           "1, 10, 12, 70",
           "2",
-          "0",
-          "Alternative 3"
+          "0"
         ],
         "solution": {
           "en": "Answer: 1, 10, 12, 70",
@@ -7639,9 +7649,9 @@
         "answer": "What is your favorite local fruit?",
         "type": "mcq",
         "options": [
-          "first category",
-          "second category",
-          "third category",
+          "Tell everything about your family",
+          "True",
+          "False",
           "What is your favorite local fruit?"
         ],
         "solution": {
@@ -7747,9 +7757,9 @@
         "answer": "Correct display with values 6, 4, 5, 7 and complete labels",
         "type": "mcq",
         "options": [
-          "first category",
-          "second category",
-          "third category",
+          "Correct display with values 11, 3, 7, 7 and complete labels",
+          "Correct display with values 8, 2, 12, 12 and complete labels",
+          "Correct display with values 6, 5, 2, 11 and complete labels",
           "Correct display with values 6, 4, 5, 7 and complete labels"
         ],
         "solution": {
@@ -7774,10 +7784,10 @@
         "answer": "Correct display with values 11, 3, 7, 7 and complete labels",
         "type": "mcq",
         "options": [
-          "first category",
-          "second category",
-          "third category",
-          "Correct display with values 11, 3, 7, 7 and complete labels"
+          "Correct display with values 8, 2, 12, 12 and complete labels",
+          "Correct display with values 6, 5, 2, 11 and complete labels",
+          "Correct display with values 11, 3, 7, 7 and complete labels",
+          "Correct display with values 6, 4, 5, 7 and complete labels"
         ],
         "solution": {
           "en": "Answer: Correct display with values 11, 3, 7, 7 and complete labels",
@@ -7801,10 +7811,10 @@
         "answer": "Correct display with values 8, 2, 12, 12 and complete labels",
         "type": "mcq",
         "options": [
+          "Correct display with values 6, 5, 2, 11 and complete labels",
           "Correct display with values 8, 2, 12, 12 and complete labels",
-          "first category",
-          "second category",
-          "third category"
+          "Correct display with values 6, 4, 5, 7 and complete labels",
+          "Correct display with values 11, 3, 7, 7 and complete labels"
         ],
         "solution": {
           "en": "Answer: Correct display with values 8, 2, 12, 12 and complete labels",
@@ -8175,10 +8185,10 @@
         "answer": "banana",
         "type": "mcq",
         "options": [
-          "third category",
-          "banana",
-          "first category",
-          "second category"
+          "mango",
+          "papaya",
+          "True",
+          "banana"
         ],
         "solution": {
           "en": "Answer: banana",
@@ -8202,10 +8212,10 @@
         "answer": "mango",
         "type": "mcq",
         "options": [
-          "second category",
-          "third category",
+          "papaya",
+          "True",
           "mango",
-          "first category"
+          "banana"
         ],
         "solution": {
           "en": "Answer: mango",
@@ -8229,10 +8239,10 @@
         "answer": "papaya",
         "type": "mcq",
         "options": [
-          "third category",
+          "True",
           "papaya",
-          "first category",
-          "second category"
+          "banana",
+          "mango"
         ],
         "solution": {
           "en": "Answer: papaya",
@@ -8576,10 +8586,10 @@
         "answer": "Correct display with values 12, 8, 8, 2 and complete labels",
         "type": "mcq",
         "options": [
-          "second category",
-          "third category",
-          "Correct display with values 12, 8, 8, 2 and complete labels",
-          "first category"
+          "Correct display with values 4, 4, 10, 6 and complete labels",
+          "Correct display with values 4, 8, 5, 3 and complete labels",
+          "Correct display with values 4, 10, 11, 5 and complete labels",
+          "Correct display with values 12, 8, 8, 2 and complete labels"
         ],
         "solution": {
           "en": "Answer: Correct display with values 12, 8, 8, 2 and complete labels",
@@ -8603,10 +8613,10 @@
         "answer": "Correct display with values 4, 4, 10, 6 and complete labels",
         "type": "mcq",
         "options": [
-          "first category",
-          "second category",
-          "third category",
-          "Correct display with values 4, 4, 10, 6 and complete labels"
+          "Correct display with values 4, 8, 5, 3 and complete labels",
+          "Correct display with values 4, 10, 11, 5 and complete labels",
+          "Correct display with values 4, 4, 10, 6 and complete labels",
+          "Correct display with values 12, 8, 8, 2 and complete labels"
         ],
         "solution": {
           "en": "Answer: Correct display with values 4, 4, 10, 6 and complete labels",
@@ -8630,10 +8640,10 @@
         "answer": "Correct display with values 4, 8, 5, 3 and complete labels",
         "type": "mcq",
         "options": [
-          "first category",
-          "second category",
-          "third category",
-          "Correct display with values 4, 8, 5, 3 and complete labels"
+          "Correct display with values 4, 10, 11, 5 and complete labels",
+          "Correct display with values 4, 8, 5, 3 and complete labels",
+          "Correct display with values 12, 8, 8, 2 and complete labels",
+          "Correct display with values 4, 4, 10, 6 and complete labels"
         ],
         "solution": {
           "en": "Answer: Correct display with values 4, 8, 5, 3 and complete labels",
@@ -9507,8 +9517,10 @@
         "answer": "9",
         "type": "matching",
         "options": [
+          "3",
+          "True",
           "9",
-          "9"
+          "7"
         ],
         "solution": {
           "en": "Answer: 9",
@@ -9532,8 +9544,10 @@
         "answer": "9",
         "type": "matching",
         "options": [
+          "True",
           "9",
-          "9"
+          "7",
+          "3"
         ],
         "solution": {
           "en": "Answer: 9",
@@ -12505,8 +12519,10 @@
         "answer": "1/2, 1/2, 1/2",
         "type": "matching",
         "options": [
+          "1/5, 2/5, 4/5",
+          "1/8, 1/8, 3/8",
           "1/2, 1/2, 1/2",
-          "1/2, 1/2, 1/2"
+          "2/5, 2/5, 4/5"
         ],
         "solution": {
           "en": "Answer: 1/2, 1/2, 1/2",
@@ -13050,10 +13066,10 @@
         "answer": "₱1",
         "type": "mcq",
         "options": [
-          "Alternative 3",
-          "₱1",
           "2",
-          "0"
+          "0",
+          "₱5",
+          "₱1"
         ],
         "solution": {
           "en": "Answer: ₱1",
@@ -14232,10 +14248,10 @@
         "answer": "rotation",
         "type": "mcq",
         "options": [
-          "reflection",
           "translation",
-          "Alternative 3",
-          "rotation"
+          "translation or slide",
+          "rotation",
+          "reflection"
         ],
         "solution": {
           "en": "Answer: rotation",

@@ -4,6 +4,7 @@ import { getAllContent, getContentByGrade } from '../src/lib/content.js'
 
 const EXPECTED = [47, 53, 51, 54, 49, 52]
 const SUPPORTED = new Set(['numeric', 'mcq', 'matching', 'true_false'])
+const WEAK_OPTION = /alternative\s*\d|first category|second category|third category|answer choice|option\s*\d/i
 
 test('all six MATATAG grade catalogs are complete and traceable', () => {
   const all = getAllContent()
@@ -21,6 +22,12 @@ test('all six MATATAG grade catalogs are complete and traceable', () => {
       assert.equal(new Set(competency.items.map((item) => JSON.stringify(item.q))).size, competency.items.length, competency.ref)
       assert.ok(competency.items.every((item) => item.answer !== undefined && item.solution && item.source?.path && SUPPORTED.has(item.type)), competency.ref)
       assert.ok(competency.items.every((item) => item.source.package === 'DepEd-MATATAG-Mathematics-Grades-1-6'), competency.ref)
+      for (const item of competency.items.filter((question) => question.options)) {
+        assert.equal(new Set(item.options).size, item.options.length, `${competency.ref} has duplicate options`)
+        assert.ok(item.options.includes(item.answer), `${competency.ref} answer missing from options`)
+        assert.ok(item.options.every((option) => !WEAK_OPTION.test(option)), `${competency.ref} has placeholder options`)
+        if (item.type === 'mcq') assert.equal(item.options.length, 4, `${competency.ref} MCQ does not have four options`)
+      }
       assert.ok(competency.game_tags.length >= 1, competency.ref)
     }
   })

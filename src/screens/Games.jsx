@@ -6,17 +6,13 @@ import OnlineBadge from '../ui/OnlineBadge.jsx'
 import { checkAnswer } from '../lib/check.js'
 import { feedbackFor, vibrateCorrect, vibrateWrong } from '../lib/feedback.js'
 import { recordAttempt } from '../lib/history.js'
-import { topicTitle } from '../lib/topics.js'
 import { makeT, localize } from '../lib/i18n.js'
 import { sfx, playButtonSfx } from '../lib/sound.js'
 import StepScaffold from '../ui/StepScaffold.jsx'
+import { prepareQuestionSession } from '../lib/question-session.js'
 
 const COUNT_OPTIONS = [5, 10, 15, 20]
 
-// The four mini-games. Each is a themed wrapper over a slice of the Grade 6
-// MATATAG curriculum: `domains` matches a whole learning area, `refs` matches
-// specific competencies (so Garden and House can split Measurement & Geometry).
-// `accent` is the inner card color; `awning` are the stripe classes.
 const GAMES = [
   {
     key: 'store',
@@ -25,7 +21,7 @@ const GAMES = [
     awning: ['bg-rose', 'bg-white', 'bg-yellow', 'bg-white', 'bg-rose'],
     Icon: ShopIcon,
     badgeKeys: ['number', 'percent', 'ratio'],
-    domains: ['Number and Algebra'],
+    gameTag: 'store',
   },
   {
     key: 'garden',
@@ -34,7 +30,7 @@ const GAMES = [
     awning: ['bg-mint', 'bg-white', 'bg-yellow', 'bg-white', 'bg-mint'],
     Icon: GardenIcon,
     badgeKeys: ['geometry', 'area', 'perimeter'],
-    refs: ['6MG-Ig-7', '6MG-IIIa-1', '6MG-IIIb-2', '6MG-IIIc-3', '6MG-IIId-4'],
+    gameTag: 'garden',
   },
   {
     key: 'house',
@@ -43,7 +39,7 @@ const GAMES = [
     awning: ['bg-sky', 'bg-white', 'bg-peach', 'bg-white', 'bg-sky'],
     Icon: HouseIcon,
     badgeKeys: ['geometry', 'angles', 'volume'],
-    refs: ['6MG-IIe-5', '6MG-IIf-6', '6MG-IIg-7'],
+    gameTag: 'house',
   },
   {
     key: 'fiesta',
@@ -52,40 +48,11 @@ const GAMES = [
     awning: ['bg-lavender', 'bg-white', 'bg-rose', 'bg-white', 'bg-lavender'],
     Icon: FiestaIcon,
     badgeKeys: ['data', 'stats', 'probability'],
-    domains: ['Data and Probability'],
+    gameTag: 'fiesta',
   },
 ]
 
-function shuffle(arr) {
-  const a = [...arr]
-  for (let i = a.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1))
-    ;[a[i], a[j]] = [a[j], a[i]]
-  }
-  return a
-}
-
-// Build a question pool from the competencies that belong to the chosen game.
-// Falls back to the whole curriculum if the slice is somehow empty. Repeats the
-// shuffled pool if the learner wants more questions than we have.
-function buildQuestions(competencies, count, game) {
-  const match = (c) =>
-    game.refs ? game.refs.includes(c.ref) : game.domains ? game.domains.includes(c.domain) : true
-  const scoped = competencies.filter(match)
-  const source = scoped.length ? scoped : competencies
-
-  const pool = []
-  for (const c of source) {
-    for (const it of c.items ?? []) {
-      pool.push({ ...it, ref: c.ref, domain: c.domain, title: topicTitle(c.ref, c.competency) })
-    }
-  }
-  let out = shuffle(pool)
-  while (out.length < count) out = out.concat(shuffle(pool))
-  return out.slice(0, count)
-}
-
-export default function Games({ online = true, competencies = [], mastery = {}, lang = 'taglish', onAnswered = async () => {} }) {
+export default function Games({ online = true, grade = 6, competencies = [], mastery = {}, lang = 'taglish', onAnswered = async () => {} }) {
   const tt = makeT(lang)
   const [gameKey, setGameKey] = useState(null)
   const [started, setStarted] = useState(false)
@@ -103,6 +70,9 @@ export default function Games({ online = true, competencies = [], mastery = {}, 
   const [attemptRecorded, setAttemptRecorded] = useState(false)
   const [stepsDone, setStepsDone] = useState(true)
   const [showCorrectOverlay, setShowCorrectOverlay] = useState(false)
+  const [generating, setGenerating] = useState(false)
+  const [fallback, setFallback] = useState(false)
+  const [questionSource, setQuestionSource] = useState('bundled')
   const completionSaved = useRef(false)
   const inputRef = useRef(null)
 
@@ -119,11 +89,25 @@ export default function Games({ online = true, competencies = [], mastery = {}, 
     ;(async () => set('gabay:gamesPlayed', ((await get('gabay:gamesPlayed')) ?? 0) + 1))()
   }, [done])
 
-  function startGame() {
-    if (!game) return
-    const nextQuestions = buildQuestions(competencies, count, game)
+  async function startGame() {
+    if (!game || generating) return
+    setGenerating(true)
+    const session = await prepareQuestionSession({
+      grade,
+      mode: 'game',
+      scope: { key: `game:${game.key}`, game: game.gameTag },
+      count,
+      language: lang,
+      mastery,
+      connectivity: online,
+      competencies,
+    })
+    const nextQuestions = session.questions
     setQuestions(nextQuestions)
+    setFallback(session.fallback)
+    setQuestionSource(session.source)
     setStarted(true)
+    setGenerating(false)
     setIdx(0)
     setInput('')
     setResult(null)
@@ -133,8 +117,7 @@ export default function Games({ online = true, competencies = [], mastery = {}, 
     setAnswered(0)
     setLog([])
     setFeedbackReady(false)
-    setShowCorrectOverlay(ok)
-    window.setTimeout(() => setShowCorrectOverlay(false), 1500)
+    setShowCorrectOverlay(false)
     setAttemptRecorded(false)
     setStepsDone(!(nextQuestions[0]?.steps?.length > 0))
     completionSaved.current = false
@@ -156,6 +139,10 @@ export default function Games({ online = true, competencies = [], mastery = {}, 
     if (ok) vibrateCorrect()
     else vibrateWrong()
     if (ok) sfx('coin')
+    if (ok) {
+      setShowCorrectOverlay(true)
+      window.setTimeout(() => setShowCorrectOverlay(false), 1500)
+    }
     setCoins((n) => n + (ok ? 1 : 0))
     setStreak((n) => (ok ? n + 1 : 0))
     setFeedbackReady(false)
@@ -164,7 +151,7 @@ export default function Games({ online = true, competencies = [], mastery = {}, 
       setAttemptRecorded(true)
       setAnswered((n) => n + 1)
       setLog((l) => [...l, { q: locRound.q, your: input.trim(), answer: round.answer, correct: ok, solution: locRound.solution }])
-      recordAttempt({ ref: round.ref, q: locRound.q, your: input.trim(), answer: round.answer, correct: ok, feedback: ok ? f.headline : f.body })
+      recordAttempt({ ref: round.ref, q: locRound.q, your: input.trim(), answer: round.answer, correct: ok, feedback: ok ? f.headline : f.body, source: round.source ?? questionSource })
       await onAnswered(round.ref, ok)
     }
   }
@@ -225,6 +212,17 @@ export default function Games({ online = true, competencies = [], mastery = {}, 
     )
   }
 
+  if (generating) {
+    return (
+      <div className="gb-shell relative flex min-h-screen flex-col items-center justify-center px-6 pb-28 text-center">
+        <Doodles />
+        <div className="relative z-10 nova-idle"><Mascot size={132} /></div>
+        <h1 className="relative z-10 mt-4 font-display text-3xl font-extrabold">{tt('questions.generating')}</h1>
+        <p className="relative z-10 mt-2 font-bold text-ink/65">{tt('questions.generatingSub')}</p>
+      </div>
+    )
+  }
+
   // ---- Start screen ----
   if (!started) {
     return (
@@ -272,7 +270,7 @@ export default function Games({ online = true, competencies = [], mastery = {}, 
           <p className="mt-1 text-xs font-bold text-ink/55">{tt('games.minMax')}</p>
         </div>
 
-        <Button color="mint" className="mt-5 min-h-[58px] w-full text-xl" onClick={startGame}>
+        <Button color="mint" className="mt-5 min-h-[58px] w-full text-xl disabled:opacity-50" onClick={startGame} disabled={generating}>
           {tt(`games.${game.key}.start`, { n: count })}
         </Button>
       </div>
@@ -354,6 +352,7 @@ export default function Games({ online = true, competencies = [], mastery = {}, 
         <RefBadge refId={round.ref} domain={round.domain || 'Number and Algebra'} />
         <span className="gb-chip bg-yellow shadow-hard-sm text-sm">{tt('games.coins')} {coins}</span>
       </div>
+      {fallback && <div className="relative z-10 mt-3 rounded-card border-2 border-outline bg-yellow p-3 text-sm font-extrabold">{tt('questions.savedNotice')}</div>}
 
       <Card color="cream" className={`gb-pop mt-4 overflow-hidden p-0 ${result === false ? 'answer-shake' : ''}`}>
         <div className="border-b-[2.5px] border-outline bg-peach p-4">

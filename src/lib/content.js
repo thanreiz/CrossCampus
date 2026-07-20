@@ -1,9 +1,11 @@
-import grade6 from '../content.json'
+import grade1 from '../curriculum/grade1.json' with { type: 'json' }
+import grade2 from '../curriculum/grade2.json' with { type: 'json' }
+import grade3 from '../curriculum/grade3.json' with { type: 'json' }
+import grade4 from '../curriculum/grade4.json' with { type: 'json' }
+import grade5 from '../curriculum/grade5.json' with { type: 'json' }
+import grade6 from '../curriculum/grade6.json' with { type: 'json' }
 
-// Add reviewed Grade 1-5 files here as they become available. Keeping this
-// module as the only curriculum entry point prevents screens from accidentally
-// mixing grades.
-const ALL = [...grade6]
+const ALL = [...grade1, ...grade2, ...grade3, ...grade4, ...grade5, ...grade6]
 
 export const getAllContent = () => ALL
 export const getContentByGrade = (grade) => ALL.filter((c) => c.grade === Number(grade))

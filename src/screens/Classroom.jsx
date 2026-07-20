@@ -37,8 +37,8 @@ function plain(s) {
   return String(s ?? '').replace(/\*\*/g, '')
 }
 
-export default function Classroom({ competency, score, answered = false, online, lang = 'taglish', onLang, onAnswered, onExit }) {
-  const c = competency
+export default function Classroom({ competency, questions, questionSource = 'bundled', fallback = false, score, answered = false, online, lang = 'taglish', onLang, onAnswered, onExit }) {
+  const c = useMemo(() => ({ ...competency, items: questions?.length ? questions : competency.items }), [competency, questions])
   const tt = makeT(lang)
   const [tab, setTab] = useState('explain')
 
@@ -123,7 +123,7 @@ export default function Classroom({ competency, score, answered = false, online,
     if (ok) setCorrectCount((n) => n + 1)
     const entry = { q: locItem.q, your: input.trim(), answer: item.answer, correct: ok, solution: locItem.solution }
     setAnswers((a) => [...a, entry])
-    recordAttempt({ ref: c.ref, q: locItem.q, your: input.trim(), answer: item.answer, correct: ok, feedback: ok ? f.headline : f.body })
+    recordAttempt({ ref: item.ref ?? c.ref, q: locItem.q, your: input.trim(), answer: item.answer, correct: ok, feedback: ok ? f.headline : f.body, source: item.source ?? questionSource })
     onAnswered(c.ref, ok)
   }
 
@@ -256,7 +256,8 @@ export default function Classroom({ competency, score, answered = false, online,
       </div>
 
       {/* full child-friendly topic title */}
-      <h1 className="mb-2 font-display text-xl font-extrabold leading-tight">{topicFull(c.ref, c.competency)}</h1>
+      <h1 className="mb-2 font-display text-xl font-extrabold leading-tight">{topicFull(c.ref, c.competency, c.domain)}</h1>
+      {fallback && <div className="mb-3 rounded-card border-2 border-outline bg-yellow p-3 text-sm font-extrabold">{tt('questions.savedNotice')}</div>}
 
       {/* CHALKBOARD */}
       <div className={`rounded-card border-[2.5px] border-outline bg-[#27433b] p-4 text-cream shadow-hard ${result === false ? 'answer-shake' : ''}`}>

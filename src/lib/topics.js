@@ -36,14 +36,14 @@ export function topicTitle(ref, fallback = '') {
   return TOPICS[ref]?.title ?? fallback
 }
 
-export function topicArea(ref) {
-  return TOPICS[ref]?.area ?? 'Number and Algebra'
+export function topicArea(ref, fallback = 'Number and Algebra') {
+  return TOPICS[ref]?.area ?? fallback
 }
 
 // "Number and Algebra – Ratio and Proportion" — full child-friendly label.
-export function topicFull(ref, fallback = '') {
+export function topicFull(ref, fallback = '', domain = '') {
   const t = TOPICS[ref]
-  return t ? `${t.area} – ${t.title}` : fallback
+  return t ? `${t.area} – ${t.title}` : domain ? `${domain} – ${fallback}` : fallback
 }
 
 export function topicIcon(ref) {

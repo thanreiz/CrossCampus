@@ -23,8 +23,8 @@ function plain(s) {
 // React owns the DOM shell + lesson modal + content/mastery/voice bridge.
 // Three.js owns the canvas. The whole scene lives in three/scene.js -> buildClassroom(),
 // so codex's richer geometry can replace that one function without touching this file.
-export default function Classroom3D({ competency, score, online, lang = 'taglish', onAnswered, onExit }) {
-  const c = competency
+export default function Classroom3D({ competency, questions, questionSource = 'bundled', fallback = false, score, online, lang = 'taglish', onAnswered, onExit }) {
+  const c = { ...competency, items: questions?.length ? questions : competency.items }
   const tt = makeT(lang)
   const mountRef = useRef(null)
   const sceneRef = useRef(null)
@@ -143,7 +143,7 @@ export default function Classroom3D({ competency, score, online, lang = 'taglish
     if (ok) setCorrectCount((n) => n + 1)
     setHasAnsweredOnce(true)
     setAnswers((a) => [...a, { q: locItem.q, your: input.trim(), answer: item.answer, correct: ok, solution: locItem.solution }])
-    recordAttempt({ ref: c.ref, q: locItem.q, your: input.trim(), answer: item.answer, correct: ok, feedback: ok ? f.headline : f.body })
+    recordAttempt({ ref: item.ref ?? c.ref, q: locItem.q, your: input.trim(), answer: item.answer, correct: ok, feedback: ok ? f.headline : f.body, source: item.source ?? questionSource })
     onAnswered(c.ref, ok)
     speak(ok ? f.headline : `${f.headline} ${plain(f.body)}`, { lang })
     sceneRef.current?.markBoard(ok)
@@ -179,6 +179,7 @@ export default function Classroom3D({ competency, score, online, lang = 'taglish
     <div className="relative h-[100dvh] w-full overflow-hidden bg-[#27433b]">
       {/* Three.js canvas mounts here */}
       <div ref={mountRef} className="absolute inset-0" />
+      {fallback && <div className="pointer-events-none absolute left-1/2 top-16 z-20 w-[min(90%,420px)] -translate-x-1/2 rounded-card border-2 border-outline bg-yellow p-2 text-center text-sm font-extrabold">{tt('questions.savedNotice')}</div>}
 
       {/* top HUD */}
       <div className="pointer-events-none absolute left-0 right-0 top-0 flex items-center justify-between p-3">
@@ -192,7 +193,7 @@ export default function Classroom3D({ competency, score, online, lang = 'taglish
 
       {/* full child-friendly topic title */}
       <div className="pointer-events-none absolute left-1/2 top-3 -translate-x-1/2 px-2 text-center">
-        <span className="gb-chip bg-white/90 text-xs">{topicFull(c.ref, c.competency)}</span>
+        <span className="gb-chip bg-white/90 text-xs">{topicFull(c.ref, c.competency, c.domain)}</span>
       </div>
 
       <div className="absolute right-3 top-20 grid gap-2">
@@ -463,8 +464,6 @@ function Joystick({ onMove, label }) {
     </div>
   )
 }
-
-
 
 
 

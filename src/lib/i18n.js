@@ -48,6 +48,9 @@ export const STRINGS = {
   'common.needNumber': { en: 'Type a number.', fil: 'Magbigay ng numero.', taglish: 'Mag-type ng number.' },
   'common.yes': { en: 'Yes', fil: 'Oo', taglish: 'Oo' },
   'common.no': { en: 'No', fil: 'Hindi', taglish: 'Hindi' },
+  'questions.generating': { en: 'Preparing your questions…', fil: 'Inihahanda ang mga tanong…', taglish: 'Preparing your questions…' },
+  'questions.generatingSub': { en: 'Teacher Gabay is building this practice session.', fil: 'Inihahanda ni Teacher Gabay ang pagsasanay mo.', taglish: 'Binubuo ni Teacher Gabay ang practice session mo.' },
+  'questions.savedNotice': { en: 'Using saved questions so you can keep learning.', fil: 'Gagamit tayo ng naka-save na mga tanong para magpatuloy ka.', taglish: 'Using saved questions para tuloy ang pag-aaral.' },
 
   // ---- Onboarding / grade ----
   'onboarding.step': { en: 'Step {step} of 4', fil: 'Hakbang {step} sa 4', taglish: 'Step {step} of 4' },
@@ -143,6 +146,7 @@ export const STRINGS = {
   'domain.Number and Algebra': { en: 'Number & Algebra', fil: 'Number at Algebra', taglish: 'Number & Algebra' },
   'domain.Measurement and Geometry': { en: 'Measurement & Geometry', fil: 'Sukat at Geometry', taglish: 'Measurement & Geometry' },
   'domain.Data and Probability': { en: 'Data & Probability', fil: 'Data at Probability', taglish: 'Data & Probability' },
+  'domain.Statistics and Probability': { en: 'Statistics & Probability', fil: 'Statistics at Probability', taglish: 'Statistics & Probability' },
 
   // ---- Lesson Brief ----
   'brief.contentStandard': { en: 'Content Standard', fil: 'Pamantayang Nilalaman', taglish: 'Content Standard' },

@@ -344,6 +344,10 @@ GCP_PROJECT=
 GCP_LOCATION=
 GCP_SA_KEY=
 GEMINI_MODEL=
+GEMINI_API_KEY=
+QUESTION_MODEL=gemini-2.5-flash
+QUESTION_RATE_LIMIT=8
+QUESTION_CORS_ORIGINS=https://gabay-sage.vercel.app
 STT_MODEL=gemini-2.5-flash
 TTS_VOICE=
 ```
@@ -351,6 +355,7 @@ TTS_VOICE=
 ### AI APIs Used
 
 - **Teacher Gabay tutor:** Google Vertex AI / Gemini through `api/tutor.js`; default model is `gemini-2.5-pro`, configurable with `GEMINI_MODEL`.
+- **Adaptive question sessions:** Gemini through `api/questions.js`; complete batches are generated and independently verified before use, with automatic bundled fallback.
 - **Voice input transcription:** Gemini API audio understanding through `api/transcribe.js`; default model is `gemini-2.5-flash`, configurable with `STT_MODEL`.
 - **Voice output:** Google Cloud Text-to-Speech through `api/tts.js`; default Filipino voice is `fil-PH-Wavenet-A`, configurable with `TTS_VOICE`.
 - **Offline fallback:** browser `speechSynthesis`, typed answers, bundled content, and local answer checking keep the core app usable without the cloud APIs.
@@ -359,11 +364,11 @@ Do not commit real service account keys.
 
 ## Future Plan and Scaling
 
-Gabay is built as a Grade 6 prototype, but the architecture can grow into a wider Filipino learning platform.
+Gabay includes the Grade 1–6 MATATAG math catalog and can grow into a wider Filipino learning platform.
 
 ### Curriculum Scale-Up
 
-- Expand from Grade 6 Math to Grades 4-10.
+- Expand beyond Grade 1–6 Math.
 - Add more subjects: Science, English, Filipino, Araling Panlipunan, and TLE.
 - Convert the included term PDFs into structured lesson packs.
 - Add teacher-authored modules that can be downloaded once and reused offline.

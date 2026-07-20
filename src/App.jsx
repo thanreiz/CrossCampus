@@ -21,9 +21,11 @@ import Classroom from './screens/Classroom.jsx'
 import Progress from './screens/Progress.jsx'
 import GradePicker from './screens/GradePicker.jsx'
 import Games from './screens/Games.jsx'
+import Generating from './screens/Generating.jsx'
 import BottomNav from './ui/BottomNav.jsx'
 import SoundToggle from './ui/SoundToggle.jsx'
 import { loadSoundPrefs, pauseBgm, primeAudio, resumeBgm, startBgm } from './lib/sound.js'
+import { prepareQuestionSession } from './lib/question-session.js'
 
 const Classroom3D = lazy(() => import('./screens/Classroom3D.jsx'))
 
@@ -38,6 +40,7 @@ export default function App() {
   const [topicMode, setTopicMode] = useState('browse')
   const [online, setOnline] = useState(navigator.onLine)
   const [lang, setLangState] = useState(DEFAULT_LANG)
+  const [questionSession, setQuestionSession] = useState(null)
 
   const content = useMemo(() => getContentByGrade(grade), [grade])
   const next = pickNext(content, mastery, due)
@@ -115,6 +118,23 @@ export default function App() {
     setActive(competency)
     setCurrent(competency)
     setScreen('brief')
+  }
+
+  async function enterClassroom(kind) {
+    if (!active) return
+    setScreen('generating')
+    const session = await prepareQuestionSession({
+      grade,
+      mode: 'quiz',
+      scope: { key: `lesson:${active.ref}`, refs: [active.ref] },
+      count: 5,
+      language: lang,
+      mastery,
+      connectivity: online,
+      competencies: content,
+    })
+    setQuestionSession(session)
+    setScreen(kind === '3d' ? 'classroom3d' : 'classroom')
   }
 
   async function handleAnswered(ref, correct) {
@@ -210,8 +230,8 @@ export default function App() {
           competency={active}
           score={mastery[active.ref] ?? 0}
           answered={Object.prototype.hasOwnProperty.call(mastery, active.ref)}
-          onEnter={() => setScreen('classroom')}
-          onEnter3D={() => setScreen('classroom3d')}
+          onEnter={() => enterClassroom('2d')}
+          onEnter3D={() => enterClassroom('3d')}
           onBack={() => setScreen('topics')}
         />
       ))
@@ -220,6 +240,9 @@ export default function App() {
       return (
         <Classroom
           competency={active}
+          questions={questionSession?.questions}
+          questionSource={questionSession?.source}
+          fallback={questionSession?.fallback}
           score={mastery[active.ref] ?? 0}
           answered={Object.prototype.hasOwnProperty.call(mastery, active.ref)}
           online={online}
@@ -235,6 +258,9 @@ export default function App() {
         <Suspense fallback={<div className="flex min-h-screen items-center justify-center bg-[#27433b] font-display text-xl text-cream">{t('3d.preparing', lang)}</div>}>
           <Classroom3D
             competency={active}
+            questions={questionSession?.questions}
+            questionSource={questionSession?.source}
+            fallback={questionSession?.fallback}
             score={mastery[active.ref] ?? 0}
             online={online}
             lang={lang}
@@ -243,6 +269,9 @@ export default function App() {
           />
         </Suspense>
       )
+
+    case 'generating':
+      return <Generating lang={lang} />
 
     case 'progress':
       return withNav('profile', (
@@ -264,7 +293,7 @@ export default function App() {
 
     case 'games':
       return withNav('games', (
-        <Games online={online} competencies={content} mastery={mastery} lang={lang} onAnswered={handleAnswered} />
+        <Games online={online} grade={grade} competencies={content} mastery={mastery} lang={lang} onAnswered={handleAnswered} />
       ))
 
     default:

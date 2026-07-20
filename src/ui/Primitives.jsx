@@ -94,8 +94,8 @@ export function RefBadge({ refId, domain }) {
 }
 
 // Progress bar colored by the shared 3-band system (red/orange/green).
-export function MasteryBar({ score = 0.5 }) {
-  const pct = Math.round((score ?? 0.5) * 100)
+export function MasteryBar({ score = 0 }) {
+  const pct = Math.round((score ?? 0) * 100)
   const { fill } = masteryColor(score)
   return (
     <div className="w-full">
@@ -159,4 +159,3 @@ export function Doodles() {
     </div>
   )
 }
-

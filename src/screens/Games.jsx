@@ -1,13 +1,15 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
+import { get, set } from 'idb-keyval'
 import { Card, Button, Doodles, RefBadge, MasteryBar, RichText } from '../ui/Primitives.jsx'
 import { Mascot } from '../ui/Mascot.jsx'
 import OnlineBadge from '../ui/OnlineBadge.jsx'
 import { checkAnswer } from '../lib/check.js'
-import { feedbackFor } from '../lib/feedback.js'
+import { feedbackFor, vibrateCorrect, vibrateWrong } from '../lib/feedback.js'
 import { recordAttempt } from '../lib/history.js'
 import { topicTitle } from '../lib/topics.js'
 import { makeT, localize } from '../lib/i18n.js'
 import { sfx, playButtonSfx } from '../lib/sound.js'
+import StepScaffold from '../ui/StepScaffold.jsx'
 
 const COUNT_OPTIONS = [5, 10, 15, 20]
 
@@ -97,20 +99,30 @@ export default function Games({ online = true, competencies = [], mastery = {}, 
   const [streak, setStreak] = useState(0)
   const [answered, setAnswered] = useState(0)
   const [log, setLog] = useState([])
+  const [feedbackReady, setFeedbackReady] = useState(false)
+  const [attemptRecorded, setAttemptRecorded] = useState(false)
+  const [stepsDone, setStepsDone] = useState(true)
+  const [showCorrectOverlay, setShowCorrectOverlay] = useState(false)
+  const completionSaved = useRef(false)
+  const inputRef = useRef(null)
 
   const game = GAMES.find((g) => g.key === gameKey) ?? null
   const round = questions[idx]
-  const done = started && answered >= questions.length
-  const score = round?.ref ? mastery[round.ref] ?? 0.5 : 0.5
+  const done = started && questions.length > 0 && idx >= questions.length
+  const score = round?.ref ? mastery[round.ref] ?? 0 : 0
 
   // Victory jingle when a game finishes (summary appears).
   useEffect(() => {
-    if (done) sfx('finish')
+    if (!done || completionSaved.current) return
+    completionSaved.current = true
+    sfx('finish')
+    ;(async () => set('gabay:gamesPlayed', ((await get('gabay:gamesPlayed')) ?? 0) + 1))()
   }, [done])
 
   function startGame() {
     if (!game) return
-    setQuestions(buildQuestions(competencies, count, game))
+    const nextQuestions = buildQuestions(competencies, count, game)
+    setQuestions(nextQuestions)
     setStarted(true)
     setIdx(0)
     setInput('')
@@ -120,6 +132,12 @@ export default function Games({ online = true, competencies = [], mastery = {}, 
     setStreak(0)
     setAnswered(0)
     setLog([])
+    setFeedbackReady(false)
+    setShowCorrectOverlay(ok)
+    window.setTimeout(() => setShowCorrectOverlay(false), 1500)
+    setAttemptRecorded(false)
+    setStepsDone(!(nextQuestions[0]?.steps?.length > 0))
+    completionSaved.current = false
   }
 
   function backToPicker() {
@@ -135,20 +153,41 @@ export default function Games({ online = true, competencies = [], mastery = {}, 
     setResult(ok)
     setFb(f)
     sfx(ok ? 'correct' : 'wrong')
-    if (ok && streak >= 2) sfx('coin') // reward a hot streak
-    setAnswered((n) => n + 1)
-    setCoins((n) => n + (ok ? 10 + streak * 2 : 2))
+    if (ok) vibrateCorrect()
+    else vibrateWrong()
+    if (ok) sfx('coin')
+    setCoins((n) => n + (ok ? 1 : 0))
     setStreak((n) => (ok ? n + 1 : 0))
-    setLog((l) => [...l, { q: locRound.q, your: input.trim(), answer: round.answer, correct: ok, solution: locRound.solution }])
-    recordAttempt({ ref: round.ref, q: locRound.q, your: input.trim(), answer: round.answer, correct: ok, feedback: ok ? f.headline : f.body })
-    await onAnswered(round.ref, ok)
+    setFeedbackReady(false)
+    window.setTimeout(() => setFeedbackReady(true), 2000)
+    if (!attemptRecorded) {
+      setAttemptRecorded(true)
+      setAnswered((n) => n + 1)
+      setLog((l) => [...l, { q: locRound.q, your: input.trim(), answer: round.answer, correct: ok, solution: locRound.solution }])
+      recordAttempt({ ref: round.ref, q: locRound.q, your: input.trim(), answer: round.answer, correct: ok, feedback: ok ? f.headline : f.body })
+      await onAnswered(round.ref, ok)
+    }
   }
 
   function nextRound() {
-    setIdx((i) => i + 1)
+    setIdx((i) => {
+      const next = i + 1
+      setStepsDone(!(questions[next]?.steps?.length > 0))
+      return next
+    })
     setInput('')
     setResult(null)
     setFb(null)
+    setFeedbackReady(false)
+    setAttemptRecorded(false)
+  }
+
+  function tryAgain() {
+    setInput('')
+    setResult(null)
+    setFb(null)
+    setFeedbackReady(false)
+    window.setTimeout(() => inputRef.current?.focus(), 0)
   }
 
   // ---- Game picker ----
@@ -156,7 +195,7 @@ export default function Games({ online = true, competencies = [], mastery = {}, 
     return (
       <div className="gb-shell relative min-h-screen px-5 pb-28 pt-6">
         <Doodles />
-        <Header online={online} />
+        <Header online={online} tt={tt} />
         <div className="relative z-10 mt-5">
           <h1 className="font-display text-3xl font-extrabold">{tt('games.pick')}</h1>
           <p className="mt-1 text-base font-bold text-ink/70">{tt('games.pickSub')}</p>
@@ -191,7 +230,7 @@ export default function Games({ online = true, competencies = [], mastery = {}, 
     return (
       <div className="gb-shell relative min-h-screen px-5 pb-28 pt-6">
         <Doodles />
-        <Header online={online} />
+        <Header online={online} tt={tt} />
         <button
           onClick={() => {
             playButtonSfx()
@@ -249,7 +288,7 @@ export default function Games({ online = true, competencies = [], mastery = {}, 
     return (
       <div className="gb-shell relative flex min-h-screen flex-col px-5 pb-28 pt-6">
         <Doodles />
-        <Header online={online} />
+        <Header online={online} tt={tt} />
         <Card color="mint" className="gb-pop mt-6 p-6 text-center">
           <div className="mx-auto mb-3 flex h-20 w-20 items-center justify-center rounded-card border-[2.5px] border-outline bg-white">
             <game.Icon />
@@ -309,21 +348,21 @@ export default function Games({ online = true, competencies = [], mastery = {}, 
   return (
     <div className="gb-shell relative min-h-screen overflow-hidden px-5 pb-28 pt-6">
       <Doodles />
-      <Header online={online} />
+      <Header online={online} tt={tt} />
 
       <div className="relative z-10 mt-4 flex items-center justify-between gap-2">
         <RefBadge refId={round.ref} domain={round.domain || 'Number and Algebra'} />
         <span className="gb-chip bg-yellow shadow-hard-sm text-sm">{tt('games.coins')} {coins}</span>
       </div>
 
-      <Card color="cream" className="gb-pop mt-4 overflow-hidden p-0">
+      <Card color="cream" className={`gb-pop mt-4 overflow-hidden p-0 ${result === false ? 'answer-shake' : ''}`}>
         <div className="border-b-[2.5px] border-outline bg-peach p-4">
           <div className="flex items-center justify-between gap-3">
             <div>
               <p className="text-sm font-extrabold uppercase text-ink/55">{tt('common.question')} {answered + 1} / {questions.length}</p>
               <h1 className="font-display text-2xl font-extrabold leading-tight">{round.title}</h1>
             </div>
-            <Mascot size={52} float />
+            <div className={result === null ? 'nova-idle' : result ? 'nova-correct' : 'nova-wrong'}><Mascot size={64} /></div>
           </div>
         </div>
 
@@ -332,9 +371,9 @@ export default function Games({ online = true, competencies = [], mastery = {}, 
           {result !== null && fb && (
             <div className={`rounded-card border-[2.5px] border-outline p-3 ${result ? 'bg-mint' : 'bg-yellow'}`}>
               <p className="font-display text-lg font-extrabold">{fb.headline}</p>
-              {!fb.ok && (
+              {round.solution && (
                 <p className="mt-1 text-sm font-bold">
-                  <RichText>{fb.body}</RichText>
+                  <RichText>{localize(round.solution, lang)}</RichText>
                 </p>
               )}
             </div>
@@ -347,16 +386,23 @@ export default function Games({ online = true, competencies = [], mastery = {}, 
             </p>
           </div>
 
-          <div className="grid gap-3">
-            <input
-              value={input}
-              onChange={(e) => setInput(e.target.value)}
-              onKeyDown={(e) => e.key === 'Enter' && (result === null ? submit() : nextRound())}
-              disabled={result !== null}
-              inputMode={round.type === 'mcq' ? 'text' : 'decimal'}
-              placeholder={tt('common.answerPlaceholder')}
-              className="min-h-[58px] rounded-full border-[2.5px] border-outline bg-white px-5 text-xl font-extrabold outline-none focus:bg-cream disabled:opacity-80"
-            />
+          {!stepsDone ? (
+            <StepScaffold item={round} lang={lang} tt={tt} onComplete={() => setStepsDone(true)} />
+          ) : <div className="grid gap-3">
+            {round.type !== 'mcq' && (
+              <input
+                ref={inputRef}
+                value={input}
+                onChange={(e) => setInput(e.target.value)}
+                onKeyDown={(e) => e.key === 'Enter' && result === null && submit()}
+                disabled={result !== null}
+                inputMode="decimal"
+                pattern="[0-9.]*"
+                type="text"
+                placeholder={tt('common.answerPlaceholder')}
+                className="min-h-[58px] rounded-full border-[2.5px] border-outline bg-white px-5 text-xl font-extrabold outline-none focus:bg-cream disabled:opacity-80"
+              />
+            )}
 
             {round.type === 'mcq' && round.options && result === null && (
               <div className="flex flex-wrap gap-2">
@@ -379,33 +425,40 @@ export default function Games({ online = true, competencies = [], mastery = {}, 
               <Button color="mint" className="min-h-[58px] text-xl" onClick={submit}>
                 {tt(`games.${game.key}.action`)}
               </Button>
-            ) : (
-              <Button color={result ? 'mint' : 'rose'} className="min-h-[58px] text-xl" onClick={nextRound}>
-                {answered >= questions.length ? tt('common.finish') : tt('common.next')}
+            ) : feedbackReady ? result ? (
+              <Button color="mint" className="min-h-[58px] text-xl" onClick={nextRound}>
+                {idx + 1 >= questions.length ? tt('common.finish') : tt('common.next')} →
               </Button>
-            )}
-          </div>
+            ) : (
+              <Button color="rose" className="min-h-[58px] text-xl" onClick={tryAgain}>{tt('classroom.retry')}</Button>
+            ) : <span className="gb-chip justify-center bg-yellow">{tt('classroom.readSolution')}</span>}
+          </div>}
 
-          <div>
+          {round?.ref && Object.prototype.hasOwnProperty.call(mastery, round.ref) && <div>
             <div className="mb-1 flex justify-between text-sm font-extrabold text-ink/60">
               <span>{tt('common.mastery')}</span>
               <span>{Math.round(score * 100)}%</span>
             </div>
             <MasteryBar score={score} />
-          </div>
+          </div>}
         </div>
       </Card>
+      {showCorrectOverlay && (
+        <div className="pointer-events-none fixed inset-0 z-[80] flex items-center justify-center bg-mint/90 px-6 text-center">
+          <p className="nova-correct font-display text-5xl font-extrabold text-ink">{tt('classroom.correctOverlay')}</p>
+        </div>
+      )}
     </div>
   )
 }
 
 // Single Online label only — no duplicate at the bottom.
-function Header({ online = true }) {
+function Header({ online = true, tt }) {
   return (
     <div className="relative z-10 flex items-center justify-between gap-2">
       <div className="flex min-w-0 items-center gap-2">
-        <Mascot size={36} />
-        <span className="font-display text-xl font-extrabold">Gabay Games</span>
+        <Mascot size={32} />
+        <span className="font-display text-xl font-extrabold">{tt('games.title')}</span>
       </div>
       <OnlineBadge online={online} className="shrink-0" />
     </div>

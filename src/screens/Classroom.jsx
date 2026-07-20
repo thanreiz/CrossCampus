@@ -7,10 +7,11 @@ import { speak, stopSpeaking, pauseSpeaking, resumeSpeaking, isSpeechSupported }
 import { askTeacherGabay, SOURCE } from '../lib/tutor.js'
 import { LANGS, answerHint, speechLang } from '../lib/lang.js'
 import { makeT, localize } from '../lib/i18n.js'
-import { feedbackFor } from '../lib/feedback.js'
+import { feedbackFor, vibrateCorrect, vibrateWrong } from '../lib/feedback.js'
 import { recordAttempt } from '../lib/history.js'
 import { topicFull } from '../lib/topics.js'
 import { EarIcon, PlayCircleIcon, PauseCircleIcon, RaiseHandIcon } from '../ui/Icons.jsx'
+import StepScaffold from '../ui/StepScaffold.jsx'
 import { sfx } from '../lib/sound.js'
 import {
   createRecognizer,
@@ -36,7 +37,7 @@ function plain(s) {
   return String(s ?? '').replace(/\*\*/g, '')
 }
 
-export default function Classroom({ competency, score, online, lang = 'taglish', onLang, onAnswered, onExit }) {
+export default function Classroom({ competency, score, answered = false, online, lang = 'taglish', onLang, onAnswered, onExit }) {
   const c = competency
   const tt = makeT(lang)
   const [tab, setTab] = useState('explain')
@@ -50,6 +51,12 @@ export default function Classroom({ competency, score, online, lang = 'taglish',
   const [fb, setFb] = useState(null) // feedbackFor() of the current item
   const [paused, setPaused] = useState(false)
   const [nudge, setNudge] = useState(null) // 'needAnswer' | 'needNumber' | null — gentle input validation
+  const [feedbackReady, setFeedbackReady] = useState(false)
+  const [avatarState, setAvatarState] = useState('nova-idle')
+  const [showCorrectOverlay, setShowCorrectOverlay] = useState(false)
+  const [stepsDone, setStepsDone] = useState(!(c.items[0]?.steps?.length > 0))
+  const inputRef = useRef(null)
+  const actionRef = useRef(null)
 
   // --- Teacher Gabay live tutor ---
   const [askOpen, setAskOpen] = useState(false)
@@ -61,6 +68,10 @@ export default function Classroom({ competency, score, online, lang = 'taglish',
   const recRef = useRef(null)
 
   const item = c.items[idx]
+
+  useEffect(() => {
+    setStepsDone(!(item?.steps?.length > 0))
+  }, [item])
 
   // What Teacher Gabay "says" — drives both the bubble and voice-out.
   const bubble = useMemo(() => {
@@ -98,6 +109,17 @@ export default function Classroom({ competency, score, online, lang = 'taglish',
     setResult(ok)
     setFb(f)
     sfx(ok ? 'correct' : 'wrong')
+    if (ok) vibrateCorrect()
+    else vibrateWrong()
+    setAvatarState(ok ? 'nova-correct' : 'nova-wrong')
+    setShowCorrectOverlay(ok)
+    setFeedbackReady(false)
+    window.setTimeout(() => setAvatarState('nova-idle'), ok ? 1500 : 500)
+    window.setTimeout(() => setShowCorrectOverlay(false), 1500)
+    window.setTimeout(() => {
+      setFeedbackReady(true)
+      window.setTimeout(() => actionRef.current?.focus(), 0)
+    }, Math.max(2000, ok ? 1500 : 500))
     if (ok) setCorrectCount((n) => n + 1)
     const entry = { q: locItem.q, your: input.trim(), answer: item.answer, correct: ok, solution: locItem.solution }
     setAnswers((a) => [...a, entry])
@@ -115,6 +137,16 @@ export default function Classroom({ competency, score, online, lang = 'taglish',
     setResult(null)
     setFb(null)
     setNudge(null)
+    setFeedbackReady(false)
+  }
+
+  function tryAgain() {
+    setInput('')
+    setResult(null)
+    setFb(null)
+    setNudge(null)
+    setFeedbackReady(false)
+    window.setTimeout(() => inputRef.current?.focus(), 0)
   }
 
   function restart() {
@@ -227,7 +259,7 @@ export default function Classroom({ competency, score, online, lang = 'taglish',
       <h1 className="mb-2 font-display text-xl font-extrabold leading-tight">{topicFull(c.ref, c.competency)}</h1>
 
       {/* CHALKBOARD */}
-      <div className="rounded-card border-[2.5px] border-outline bg-[#27433b] p-4 text-cream shadow-hard">
+      <div className={`rounded-card border-[2.5px] border-outline bg-[#27433b] p-4 text-cream shadow-hard ${result === false ? 'answer-shake' : ''}`}>
         <div className="mb-3 flex flex-wrap gap-2">
           {TABS.map((t) => (
             <button
@@ -262,7 +294,10 @@ export default function Classroom({ competency, score, online, lang = 'taglish',
         )}
 
         {tab === 'example' && (
-          <p className="font-display text-lg leading-relaxed">{localize(c.worked_example, lang)}</p>
+          <>
+            {c.visual && <div className="lesson-visual mb-4 overflow-hidden rounded-card bg-white p-3 text-ink" dangerouslySetInnerHTML={{ __html: c.visual }} />}
+            <p className="font-display text-lg leading-relaxed">{localize(c.worked_example, lang)}</p>
+          </>
         )}
 
         {tab === 'practice' &&
@@ -285,6 +320,11 @@ export default function Classroom({ competency, score, online, lang = 'taglish',
                 {tt('common.question')} {idx + 1} / {c.items.length}
               </p>
               <p className="mt-1 font-display text-xl font-bold leading-snug">{localize(item.q, lang)}</p>
+              {item.steps?.length > 0 && !stepsDone && (
+                <div className="mt-3 rounded-card border-2 border-cream/50 bg-white/10 p-3">
+                  <p className="text-sm font-extrabold text-cream">{tt('class.steps')}</p>
+                </div>
+              )}
               {item.type === 'mcq' && item.options && (
                 <div className="mt-3 flex flex-wrap gap-2">
                   {item.options.map((opt) => (
@@ -311,11 +351,21 @@ export default function Classroom({ competency, score, online, lang = 'taglish',
 
       {/* TEACHER + speech bubble */}
       <div className="mt-5 flex items-end gap-3">
-        <Mascot size={72} float />
+        <div className={`${avatarState} flex w-[35%] min-w-[112px] items-end justify-center`}>
+          <Mascot size={142} />
+        </div>
         <div className="flex-1">
-          <SpeechBubble speaking>{bubble}</SpeechBubble>
+          <SpeechBubble speaking>
+            {result !== null && item.solution ? localize(item.solution, lang) : result === false ? tt('classroom.tryAgain') : bubble}
+          </SpeechBubble>
         </div>
       </div>
+
+      {showCorrectOverlay && (
+        <div className="pointer-events-none fixed inset-0 z-[80] flex items-center justify-center bg-mint/90 px-6 text-center">
+          <p className="nova-correct font-display text-5xl font-extrabold text-ink">{tt('classroom.correctOverlay')}</p>
+        </div>
+      )}
 
       {/* voice controls — listen again (ear) / pause-resume (play-pause circle) /
           raise hand (person). Stop removed: pause/play already covers it. */}
@@ -402,11 +452,11 @@ export default function Classroom({ competency, score, online, lang = 'taglish',
       )}
 
       {/* mastery */}
-      <div className="mt-4 flex items-center gap-2">
+      {answered && <div className="mt-4 flex items-center gap-2">
         <span className="text-sm font-bold text-ink/70">{tt('common.mastery')}</span>
         <MasteryBar score={score} />
-        <span className="text-sm font-bold">{Math.round((score ?? 0.5) * 100)}%</span>
-      </div>
+        <span className="text-sm font-bold">{Math.round((score ?? 0) * 100)}%</span>
+      </div>}
 
       {/* DESK BAR */}
       <div className="mt-auto pt-5">
@@ -417,6 +467,8 @@ export default function Classroom({ competency, score, online, lang = 'taglish',
             <Button color="white" className="flex-1 text-lg" onClick={restart}>{tt('class.repeat')}</Button>
             <Button color="mint" className="flex-1 text-lg" onClick={onExit}>{tt('common.done')}</Button>
           </div>
+        ) : !stepsDone ? (
+          <StepScaffold item={item} lang={lang} tt={tt} onComplete={() => setStepsDone(true)} />
         ) : (
           <div className="gb-card bg-white p-3">
             <p className="mb-1.5 px-1 text-sm font-bold text-ink/60">
@@ -425,6 +477,7 @@ export default function Classroom({ competency, score, online, lang = 'taglish',
             <div className="flex items-center gap-2">
               {item.type !== 'mcq' && (
                 <input
+                  ref={inputRef}
                   value={input}
                   onChange={(e) => {
                     setInput(e.target.value)
@@ -434,6 +487,8 @@ export default function Classroom({ competency, score, online, lang = 'taglish',
                   disabled={result !== null}
                   placeholder={tt('common.answerPlaceholder')}
                   inputMode="decimal"
+                  pattern="[0-9.]*"
+                  type="text"
                   className="min-w-0 flex-1 rounded-full border-[2.5px] border-outline px-4 py-3 text-lg font-bold outline-none focus:bg-cream disabled:opacity-80"
                 />
               )}
@@ -446,10 +501,18 @@ export default function Classroom({ competency, score, online, lang = 'taglish',
                 >
                   {tt('class.answer')}
                 </Button>
+              ) : feedbackReady ? (
+                result ? (
+                  <Button ref={actionRef} color="sky" className={`text-lg ${item.type === 'mcq' ? 'w-full' : ''}`} onClick={next}>
+                    {idx + 1 >= c.items.length ? tt('common.finish') : tt('common.next')} →
+                  </Button>
+                ) : (
+                  <Button ref={actionRef} color="rose" className={`text-lg ${item.type === 'mcq' ? 'w-full' : ''}`} onClick={tryAgain}>
+                    {tt('classroom.retry')}
+                  </Button>
+                )
               ) : (
-                <Button color="sky" className={`text-lg ${item.type === 'mcq' ? 'w-full' : ''}`} onClick={next}>
-                  {idx + 1 >= c.items.length ? tt('common.finish') : tt('common.next')}
-                </Button>
+                <span className="gb-chip bg-yellow">{tt('classroom.readSolution')}</span>
               )}
             </div>
             {nudge && (

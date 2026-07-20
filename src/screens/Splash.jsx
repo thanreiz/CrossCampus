@@ -13,11 +13,12 @@ export default function Splash({ onStart, lang = 'taglish' }) {
       <div className="relative gb-pop rounded-card border-[2.5px] border-outline bg-cream p-8 shadow-hard-lg">
         <Sparkle size={26} className="absolute -right-3 -top-3" />
         <div className="flex items-center gap-2">
-          <Mascot size={72} float />
+          <Mascot size={56} float />
           <span className="font-display text-5xl font-extrabold text-yellow [-webkit-text-stroke:2px_#1C1410]">
             Gabay
           </span>
         </div>
+        <p className="mt-2 text-xs font-extrabold text-ink/60">{tt('splash.subtitle')}</p>
       </div>
 
       <Button color="peach" className="mt-10 px-10 text-lg" onClick={onStart}>

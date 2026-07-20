@@ -19,6 +19,11 @@ export const STRINGS = {
     taglish: 'Matuto ng Math kahit walang signal.',
   },
   'splash.start': { en: 'START', fil: 'MAGSIMULA', taglish: 'MAGSIMULA' },
+  'splash.subtitle': {
+    en: 'Grade 6 Math · Taglish · Offline-first',
+    fil: 'Math para sa Grade 6 · Taglish · Offline',
+    taglish: 'Grade 6 Math · Taglish · Offline-first',
+  },
   'splash.offline': { en: '100% OFFLINE LEARNING', fil: '100% OFFLINE NA PAG-AARAL', taglish: '100% OFFLINE LEARNING' },
 
   // ---- shared / nav ----
@@ -41,6 +46,34 @@ export const STRINGS = {
   'common.answerPlaceholder': { en: 'Type your answer...', fil: 'Isulat ang sagot...', taglish: 'Isulat ang sagot...' },
   'common.needAnswer': { en: 'Type your answer first.', fil: 'Isulat muna ang sagot.', taglish: 'Isulat muna ang sagot.' },
   'common.needNumber': { en: 'Type a number.', fil: 'Magbigay ng numero.', taglish: 'Mag-type ng number.' },
+  'common.yes': { en: 'Yes', fil: 'Oo', taglish: 'Oo' },
+  'common.no': { en: 'No', fil: 'Hindi', taglish: 'Hindi' },
+
+  // ---- Onboarding / grade ----
+  'onboarding.step': { en: 'Step {step} of 4', fil: 'Hakbang {step} sa 4', taglish: 'Step {step} of 4' },
+  'onboarding.grade': { en: 'What grade are you in?', fil: 'Anong grade ka?', taglish: 'Anong grade ka?' },
+  'onboarding.gradeLabel': { en: 'Grade {grade}', fil: 'Grade {grade}', taglish: 'Grade {grade}' },
+  'onboarding.name': { en: 'What is your name?', fil: 'Anong pangalan mo?', taglish: 'Anong pangalan mo?' },
+  'onboarding.namePlaceholder': { en: 'Your name', fil: 'Pangalan mo', taglish: 'Name mo' },
+  'onboarding.next': { en: 'Next', fil: 'Sunod', taglish: 'Sunod' },
+  'onboarding.greeting': {
+    en: 'Hello, {name}! I am Teacher Gabay, your math guide.',
+    fil: 'Kumusta, {name}! Ako si Teacher Gabay, ang iyong gabay sa Math.',
+    taglish: 'Kumusta, {name}! Ako si Teacher Gabay, ang iyong math guide.',
+  },
+  'onboarding.masteryTitle': { en: 'Grow your Mastery', fil: 'Palakihin ang Mastery', taglish: 'Grow your Mastery' },
+  'onboarding.mastery': {
+    en: 'As you answer correctly, your Mastery will grow. Let us try!',
+    fil: 'Habang sumasagot ka nang tama, lalaki ang iyong Mastery. Subukan natin!',
+    taglish: 'Habang sumasagot ka nang tama, lalaki ang iyong Mastery. Subukan natin!',
+  },
+  'onboarding.start': { en: 'Let’s start!', fil: 'Magsimula!', taglish: 'Magsimula!' },
+  'gradePicker.title': { en: 'Change grade', fil: 'Baguhin ang Grade', taglish: 'Baguhin ang Grade' },
+  'gradePicker.confirm': {
+    en: 'Your progress for this grade will be cleared. Continue?',
+    fil: 'Mabubura ang iyong progress. Sige ba?',
+    taglish: 'Mabubura ang iyong progress. Sige ba?',
+  },
 
   // ---- nav tabs ----
   'nav.lessons': { en: 'Lessons', fil: 'Aralin', taglish: 'Lessons' },
@@ -51,6 +84,8 @@ export const STRINGS = {
   // ---- Home ----
   'home.hallwayTag': { en: 'Classroom Hallway', fil: 'Hallway ng Silid-Aralan', taglish: 'Hallway ng Silid-Aralan' },
   'home.greeting': { en: 'Hello, Ka-Gabay!', fil: 'Kumusta, Ka-Gabay!', taglish: 'Kumusta, Ka-Gabay!' },
+  'home.greetingName': { en: 'Hello, {name}!', fil: 'Kumusta, {name}!', taglish: 'Kumusta, {name}!' },
+  'home.grade': { en: 'Grade {grade}', fil: 'Grade {grade}', taglish: 'Grade {grade}' },
   'home.subtitle': { en: 'Where shall we go today?', fil: 'Saan tayo pupunta ngayon?', taglish: 'Saan tayo pupunta ngayon?' },
   'home.open': { en: 'OPEN', fil: 'BUKAS', taglish: 'OPEN' },
   'home.lessons.title': { en: 'Lessons', fil: 'Mga Aralin', taglish: 'Mga Aralin' },
@@ -81,12 +116,33 @@ export const STRINGS = {
     fil: 'Hanapin ang buong listahan ng mga aralin sa Grade 6.',
     taglish: 'Hanapin ang buong listahan ng mga aralin sa Grade 6.',
   },
+  'start.browseSubGrade': {
+    en: 'Find all available Grade {grade} lessons.',
+    fil: 'Hanapin ang lahat ng aralin para sa Grade {grade}.',
+    taglish: 'Hanapin ang lahat ng Grade {grade} lessons.',
+  },
   'start.viewList': { en: 'View the list', fil: 'Tingnan ang listahan', taglish: 'Tingnan ang listahan' },
 
   // ---- Topic Picker ----
   'topics.heading': { en: 'What shall we study today?', fil: 'Anong aaralin natin ngayon?', taglish: 'Anong aaralin natin ngayon?' },
   'topics.sub': { en: 'Pick a topic and start practising.', fil: 'Pumili ng topic at magsimula ng practice.', taglish: 'Pumili ng topic at magsimula ng practice.' },
   'topics.all': { en: 'All', fil: 'Lahat', taglish: 'Lahat' },
+  'topics.search': { en: 'Search topics', fil: 'Maghanap ng aralin', taglish: 'Search ng topic' },
+  'topics.noResults': { en: 'No results found.', fil: 'Walang nahanap.', taglish: 'Walang nahanap.' },
+  'topics.practiceHeading': { en: 'Due for review', fil: 'Dapat balikan', taglish: 'Due for review' },
+  'topics.practiceSub': { en: 'Strengthen topics that need another look.', fil: 'Balikan ang mga araling kailangan pa ng practice.', taglish: 'Balikan ang topics na kailangan pa ng practice.' },
+  'topics.nothingDue': {
+    en: 'Great! Nothing is due for review. Try a new lesson!',
+    fil: 'Magaling! Wala pang dapat pag-aralan. Subukan ang bagong aralin!',
+    taglish: 'Magaling! Wala pang dapat pag-aralan. Subukan ang bagong aralin!',
+  },
+  'topics.browseNew': { en: 'Browse new lessons', fil: 'Tingnan ang bagong aralin', taglish: 'Browse new lessons' },
+  'difficulty.madali': { en: 'Easy', fil: 'Madali', taglish: 'Madali' },
+  'difficulty.katamtaman': { en: 'Medium', fil: 'Katamtaman', taglish: 'Katamtaman' },
+  'difficulty.mahirap': { en: 'Hard', fil: 'Mahirap', taglish: 'Mahirap' },
+  'domain.Number and Algebra': { en: 'Number & Algebra', fil: 'Number at Algebra', taglish: 'Number & Algebra' },
+  'domain.Measurement and Geometry': { en: 'Measurement & Geometry', fil: 'Sukat at Geometry', taglish: 'Measurement & Geometry' },
+  'domain.Data and Probability': { en: 'Data & Probability', fil: 'Data at Probability', taglish: 'Data & Probability' },
 
   // ---- Lesson Brief ----
   'brief.contentStandard': { en: 'Content Standard', fil: 'Pamantayang Nilalaman', taglish: 'Content Standard' },
@@ -111,7 +167,7 @@ export const STRINGS = {
   'brief.level': { en: 'Level', fil: 'Antas', taglish: 'Antas' },
   'brief.ready': { en: "I'm ready inside the class. Let's go!", fil: 'Handa na ako sa loob ng klase. Tara!', taglish: 'Handa na ako sa loob ng klase. Tara!' },
   'brief.enter2d': { en: 'Enter 2D Class', fil: 'Pumasok sa 2D Klase', taglish: 'Pumasok sa 2D Klase' },
-  'brief.enter3d': { en: '3D Class (beta)', fil: '3D Klase (beta)', taglish: '3D Klase (beta)' },
+  'brief.enter3d': { en: '3D Class', fil: '3D Klase', taglish: '3D Klase' },
 
   // ---- Classroom (2D) ----
   'class.tab.explain': { en: 'Explanation', fil: 'Paliwanag', taglish: 'Paliwanag' },
@@ -120,7 +176,7 @@ export const STRINGS = {
   'class.listenAgain': { en: 'Listen again', fil: 'Pakinggan ulit', taglish: 'Pakinggan ulit' },
   'class.play': { en: 'Resume', fil: 'Ituloy', taglish: 'Ituloy' },
   'class.pause': { en: 'Pause', fil: 'I-pause', taglish: 'I-pause' },
-  'class.raiseHand': { en: 'Raise your hand', fil: 'Itaas ang kamay', taglish: 'Itaas ang kamay' },
+  'class.raiseHand': { en: 'Ask Teacher', fil: 'Itaas ang kamay', taglish: 'Itaas ang kamay' },
   'class.askPlaceholder': { en: 'Ask Teacher Gabay...', fil: 'Itanong kay Teacher Gabay...', taglish: 'Itanong kay Teacher Gabay...' },
   'class.speak': { en: 'Speak', fil: 'Magsalita', taglish: 'Magsalita' },
   'class.mic': { en: 'Mic', fil: 'Mic', taglish: 'Mic' },
@@ -144,6 +200,16 @@ export const STRINGS = {
   'class.source.online': { en: 'Teacher Gabay (online)', fil: 'Teacher Gabay (online)', taglish: 'Teacher Gabay (online)' },
   'class.source.cached': { en: 'Cached explanation', fil: 'Naka-cache na paliwanag', taglish: 'Naka-cache na paliwanag' },
   'class.reviewMissed': { en: "Let's review what we missed:", fil: 'Balikan natin ang mga namali:', taglish: 'Balikan natin ang mga namali:' },
+  'class.steps': { en: 'Solve step by step', fil: 'Sagutan nang hakbang-hakbang', taglish: 'Solve step by step' },
+  'class.stepCounter': { en: 'Step {step} / {total}', fil: 'Hakbang {step} / {total}', taglish: 'Hakbang {step} / {total}' },
+  'classroom.tryAgain': {
+    en: 'Not quite — give it another shot!',
+    fil: 'Hindi pa — subukan ulit!',
+    taglish: 'Hindi pa tama — try mo ulit!',
+  },
+  'classroom.correctOverlay': { en: 'Correct! 🌟', fil: 'Tama! 🌟', taglish: 'Tama! 🌟' },
+  'classroom.retry': { en: 'Try again', fil: 'Subukan ulit', taglish: 'Subukan ulit' },
+  'classroom.readSolution': { en: 'Read Nova’s explanation…', fil: 'Basahin ang paliwanag ni Nova…', taglish: 'Basahin ang explanation ni Nova…' },
   // dynamic teacher lines ({n}=number, {total}=total)
   'class.bubble.intro': {
     en: 'Question {n} of {total}: Write your answer below. You can do it!',
@@ -183,6 +249,13 @@ export const STRINGS = {
   },
   'progress.yourAnswers': { en: 'What you answered', fil: 'Mga sinagot mo', taglish: 'Mga sinagot mo' },
   'progress.clear': { en: 'Clear', fil: 'Burahin', taglish: 'Burahin' },
+  'profile.learner': { en: 'Learner', fil: 'Mag-aaral', taglish: 'Learner' },
+  'profile.overall': { en: 'Overall mastery', fil: 'Kabuuang mastery', taglish: 'Overall mastery' },
+  'profile.streak': { en: '{count} days in a row', fil: '{count} araw na sunod-sunod', taglish: '{count} araw na sunod-sunod' },
+  'profile.changeGrade': { en: 'Change Grade', fil: 'Baguhin ang Grade', taglish: 'Baguhin ang Grade' },
+  'achievement.first': { en: 'First Step', fil: 'Unang Hakbang', taglish: 'Unang Hakbang' },
+  'achievement.games': { en: 'Game On', fil: 'Laban Mode', taglish: 'Laban Mode' },
+  'achievement.streak': { en: 'On a Roll', fil: 'Tuloy-Tuloy', taglish: 'Tuloy-Tuloy' },
 
   // ---- mastery band labels (the "In Progress" change lives here) ----
   'band.red': { en: 'Just starting', fil: 'Simulan na natin', taglish: 'Simulan na natin' },
@@ -207,7 +280,7 @@ export const STRINGS = {
   'games.coins': { en: 'Coins', fil: 'Coins', taglish: 'Coins' },
   'games.customer': { en: 'Customer', fil: 'Suki', taglish: 'Customer' },
   'games.pay': { en: 'Pay', fil: 'Bayaran', taglish: 'Bayaran' },
-  'games.playAgain': { en: 'Play again', fil: 'Laro ulit', taglish: 'Laro ulit' },
+  'games.playAgain': { en: 'Play again', fil: 'Laruin ulit', taglish: 'Laruin ulit' },
 
   // ---- Games hub (pick a game) ----
   'games.pick': { en: 'Pick a game', fil: 'Pumili ng laro', taglish: 'Pumili ng laro' },
@@ -306,6 +379,17 @@ export const STRINGS = {
   '3d.intro.s2': { en: 'Tap the Answer button.', fil: 'I-tap ang Sagutin.', taglish: 'I-tap ang Sagutin.' },
   '3d.intro.s3': { en: 'Type your answer, then send.', fil: 'Isulat ang sagot, tapos ipasa.', taglish: 'I-type ang sagot mo, tapos send.' },
   '3d.intro.go': { en: "Got it!", fil: 'Sige!', taglish: 'Sige!' },
+  '3d.coach.move': {
+    en: 'Use WASD or the arrow keys to move.',
+    fil: 'Gamitin ang WASD o arrow keys para gumalaw.',
+    taglish: 'Gamitin ang WASD o arrow keys para gumalaw.',
+  },
+  '3d.coach.board': {
+    en: 'Walk closer to the board to see the lesson.',
+    fil: 'Lumapit sa pisara para makita ang aralin.',
+    taglish: 'Lumapit sa pisara para makita ang aralin.',
+  },
+  '3d.joystick': { en: 'Movement joystick', fil: 'Joystick para gumalaw', taglish: 'Joystick para gumalaw' },
 
   // ---- 3D renovation theme names ----
   'theme.classic': { en: 'Classic', fil: 'Klasiko', taglish: 'Klasiko' },

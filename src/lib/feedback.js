@@ -43,3 +43,11 @@ export function reviewFeedback(item, isCorrect, lang = 'taglish') {
   const fb = feedbackFor(item, isCorrect, lang)
   return isCorrect ? fb.headline : fb.body
 }
+
+export function vibrateCorrect() {
+  navigator.vibrate?.(80)
+}
+
+export function vibrateWrong() {
+  navigator.vibrate?.([80, 40, 80])
+}

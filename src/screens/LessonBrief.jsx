@@ -7,11 +7,11 @@ import { makeT } from '../lib/i18n.js'
 
 // Lesson brief - design basis: Stitch "Gabay - Lesson View".
 // header -> title card -> "What you will do" -> progress -> stat tiles -> sticky 2D/3D entry.
-export default function LessonBrief({ competency, score = 0.5, online = true, lang = 'taglish', onEnter, onEnter3D, onBack }) {
+export default function LessonBrief({ competency, score = 0, answered = false, online = true, lang = 'taglish', onEnter, onEnter3D, onBack }) {
   const c = competency
   const tt = makeT(lang)
   const title = topicTitle(c.ref, c.competency)
-  const pct = Math.round((score ?? 0.5) * 100)
+  const pct = Math.round((score ?? 0) * 100)
 
   const tasks = [
     tt('brief.task.understand', { topic: c.competency.replace(/\.$/, '') }),
@@ -63,17 +63,17 @@ export default function LessonBrief({ competency, score = 0.5, online = true, la
       </Card>
 
       {/* lesson progress */}
-      <div className="mt-5">
+      {answered && <div className="mt-5">
         <div className="mb-1 flex items-center justify-between text-sm font-bold">
           <span>{tt('brief.lessonProgress')}</span>
           <span className="text-ink/70">{pct}%</span>
         </div>
         <MasteryBar score={score} />
-      </div>
+      </div>}
 
       {/* stat tiles */}
       <div className="mt-4 grid grid-cols-2 gap-3">
-        <StatTile color="mint" big={`${pct}%`} label={tt('common.mastery')} />
+        <StatTile color="mint" big={answered ? `${pct}%` : '—'} label={tt('common.mastery')} />
         <StatTile color="yellow" big={String(c.items.length)} label={tt('brief.questions')} />
         <StatTile color="sky" big={topicArea(c.ref).split(' ').filter((w) => !/^(and|&)$/i.test(w)).map((w) => w[0].toUpperCase()).join('')} label={topicArea(c.ref)} />
         <StatTile
@@ -110,7 +110,6 @@ function StatTile({ color, big, label }) {
     </Card>
   )
 }
-
 
 
 

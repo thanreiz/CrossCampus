@@ -19,6 +19,19 @@ import { GoogleGenAI } from '@google/genai'
 
 const LOCATION = process.env.GCP_LOCATION || 'us-central1'
 const MODEL = process.env.GEMINI_MODEL || 'gemini-2.5-pro'
+const rateLimitMap = new Map()
+
+function checkRateLimit(ip) {
+  const now = Date.now()
+  const entry = rateLimitMap.get(ip) ?? { count: 0, resetAt: now + 60_000 }
+  if (now > entry.resetAt) {
+    entry.count = 0
+    entry.resetAt = now + 60_000
+  }
+  entry.count++
+  rateLimitMap.set(ip, entry)
+  return entry.count <= 10
+}
 
 function getCredentials() {
   // Service-account JSON passed as a single env var string.
@@ -45,13 +58,8 @@ function genaiClient() {
   return _client
 }
 
-function placeholder(question, ref, system) {
-  return (
-    `[PLACEHOLDER proxy reply — set GCP_PROJECT + GCP_SA_KEY to enable Vertex]\n\n` +
-    `Tanong mo: "${question}". Para sa competency na ${ref}, tara i-step natin: ` +
-    `intindihin muna ang tanong, hanapin ang base/rate, tapos kalkulahin. ` +
-    `(System prompt na nakuha: ${system ? 'oo' : 'wala'}.)`
-  )
+function placeholder() {
+  return 'Teacher Gabay is resting. Please try again soon.'
 }
 
 export default async function handler(req, res) {
@@ -59,6 +67,9 @@ export default async function handler(req, res) {
     res.setHeader('Allow', 'POST')
     return res.status(405).json({ error: 'Method Not Allowed' })
   }
+
+  const ip = String(req.headers['x-forwarded-for'] ?? req.socket?.remoteAddress ?? 'unknown').split(',')[0].trim()
+  if (!checkRateLimit(ip)) return res.status(429).json({ error: 'Too many requests' })
 
   let body = req.body
   if (typeof body === 'string') {

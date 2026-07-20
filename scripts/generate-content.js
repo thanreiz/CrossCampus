@@ -21,32 +21,22 @@ import { dirname, resolve } from 'node:path'
 import { GoogleGenAI, Type } from '@google/genai'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
-const OUT = resolve(__dirname, '../src/content.generated.json')
+const gradeFlag = process.argv.indexOf('--grade')
+const GRADE = gradeFlag >= 0 ? Number(process.argv[gradeFlag + 1]) : 6
+if (!Number.isInteger(GRADE) || GRADE < 1 || GRADE > 6) {
+  throw new Error('--grade must be a number from 1 to 6')
+}
+const OUT = resolve(__dirname, `../src/content-grade${GRADE}.generated.json`)
 
 const LOCATION = process.env.GCP_LOCATION || 'us-central1'
 const MODEL = process.env.GEN_MODEL || 'gemini-2.5-flash'
 
 // Competencies to generate. Provide the curriculum skeleton; the model fills the
 // explanation/worked_example/items. Keep refs unique and MATATAG-aligned.
-const SPECS = [
-  {
-    ref: 'G6-NA-PERCENT-04',
-    domain: 'Number and Algebra',
-    content_standard: 'Percentages, and their relationships with fractions and decimals.',
-    competency: 'Solve problems involving finding the base when the percentage and rate are given.',
-    performance_standard: 'Work backward from a percentage and rate to recover the whole (base) in real-life contexts.',
-  },
-  {
-    ref: 'G6-NA-RATIO-02',
-    domain: 'Number and Algebra',
-    content_standard: 'Ratio and proportion.',
-    competency: 'Solve problems involving direct proportion using the unit-rate method.',
-    performance_standard: 'Apply unit rates to scale quantities up or down in everyday situations.',
-  },
-]
+const { default: SPECS } = await import(`./specs/grade${GRADE}.js`)
 
-const SYSTEM = `You are a DepEd MATATAG curriculum writer for Grade 6 Filipino learners.
-The student audience is 11-12 years old. Use Filipino real-life contexts (palengke,
+const SYSTEM = `You are a DepEd MATATAG curriculum writer for Grade ${GRADE} Filipino learners.
+The student audience is ${GRADE + 5} years old. Use Filipino real-life contexts (palengke,
 sari-sari store, jeepney fare, recipe, school). Math MUST be correct. Keep explanations
 short and warm.
 
@@ -166,6 +156,7 @@ async function generateOne(ai, spec) {
   const obj = JSON.parse(result.text)
   // Re-attach the curriculum skeleton the model wasn't asked to echo.
   return {
+    grade: GRADE,
     ref: spec.ref,
     domain: spec.domain,
     content_standard: spec.content_standard,

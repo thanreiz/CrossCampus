@@ -5,9 +5,10 @@ import { topicTitle } from '../lib/topics.js'
 import { makeT } from '../lib/i18n.js'
 
 // Start choice - design basis: Stitch "Gabay - Start Choice".
-export default function StartChoice({ next, mastery, online = true, lang = 'taglish', onAuto, onBrowse, onBack }) {
+export default function StartChoice({ next, mastery, online = true, lang = 'taglish', grade = 6, onAuto, onBrowse, onBack }) {
   const tt = makeT(lang)
-  const score = next ? mastery[next.ref] ?? 0.5 : 0.5
+  const answered = next ? Object.prototype.hasOwnProperty.call(mastery, next.ref) : false
+  const score = next ? mastery[next.ref] ?? 0 : 0
   const pct = Math.round(score * 100)
   const title = next ? topicTitle(next.ref, next.competency) : ''
 
@@ -46,11 +47,15 @@ export default function StartChoice({ next, mastery, online = true, lang = 'tagl
 
           <div className="mt-3 rounded-card border-[2.5px] border-outline bg-white p-3">
             <p className="font-bold leading-snug">{title}</p>
-            <p className="mt-2 text-xs font-bold text-ink/60">{tt('start.masteryProgress')}</p>
-            <div className="mt-1 flex items-center gap-2">
-              <MasteryBar score={score} />
-              <span className="text-xs font-bold">{pct}%</span>
-            </div>
+            {answered && (
+              <>
+                <p className="mt-2 text-xs font-bold text-ink/60">{tt('start.masteryProgress')}</p>
+                <div className="mt-1 flex items-center gap-2">
+                  <MasteryBar score={score} />
+                  <span className="text-xs font-bold">{pct}%</span>
+                </div>
+              </>
+            )}
           </div>
 
           <Button color="yellow" className="mt-4 w-full text-lg" onClick={() => onAuto(next)}>
@@ -68,7 +73,7 @@ export default function StartChoice({ next, mastery, online = true, lang = 'tagl
           {tt('start.browseTitle')}
         </h2>
         <p className="mt-1 text-sm font-bold text-ink/70">
-          {tt('start.browseSub')}
+          {tt('start.browseSubGrade', { grade })}
         </p>
         <Button color="white" className="mt-4 w-full text-lg" onClick={onBrowse}>
           {tt('start.viewList')} &rarr;
@@ -77,7 +82,6 @@ export default function StartChoice({ next, mastery, online = true, lang = 'tagl
     </div>
   )
 }
-
 
 
 

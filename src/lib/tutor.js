@@ -1,5 +1,5 @@
 import { get, set } from 'idb-keyval'
-import content from '../content.json'
+import { getContentByRef } from './content.js'
 import { LANG_NAME, DEFAULT_LANG } from './lang.js'
 
 // Teacher Gabay tutor — best-available-first fallback chain (build plan §8):
@@ -16,14 +16,14 @@ function hash(str) {
 }
 
 function findCompetency(ref) {
-  return content.find((c) => c.ref === ref)
+  return getContentByRef(ref)
 }
 
 // The system prompt. Inject the active competency (stay on-curriculum) and the
 // student's chosen reply language.
 export function gabayPrompt(competency, lang = DEFAULT_LANG) {
   const replyIn = LANG_NAME[lang] ?? LANG_NAME[DEFAULT_LANG]
-  return `You are Teacher Gabay, a friendly Grade 6 math tutor for Filipino learners. Reply in ${replyIn}, regardless of the language the student writes in. Teach using this DepEd MATATAG competency: "${competency}". Use Filipino real-life examples (palengke, jeepney fare, sari-sari store). Never just give the final answer — guide step by step. Keep it short and warm.`
+  return `You are Teacher Gabay, a friendly math tutor for Filipino learners. Reply in ${replyIn}, regardless of the language the student writes in. Teach using this DepEd MATATAG competency: "${competency}". Use Filipino real-life examples (palengke, jeepney fare, sari-sari store). Never just give the final answer — guide step by step. Keep it short and warm.`
 }
 
 // Source of the answer, for UI labelling.

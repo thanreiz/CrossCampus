@@ -11,7 +11,7 @@ const DOORS = [
   { key: 'games', titleKey: 'home.games.title', statusKey: 'home.games.status', ctaKey: 'home.games.cta', color: '#F4C3D0', Icon: ShopIcon, locked: false },
 ]
 
-export default function Home({ onPick, online = true, lang = 'taglish', onLang }) {
+export default function Home({ onPick, online = true, lang = 'taglish', onLang, studentName = '', grade = 6 }) {
   const tt = makeT(lang)
   return (
     <div className="gb-shell relative min-h-screen overflow-hidden pb-28">
@@ -19,7 +19,7 @@ export default function Home({ onPick, online = true, lang = 'taglish', onLang }
       <header className="sticky top-0 z-50 flex items-center justify-between border-b-[2.5px] border-outline bg-white px-5 py-3">
         <div className="flex items-center gap-2">
           <span className="flex h-10 w-10 items-center justify-center rounded-full border-[2.5px] border-outline bg-yellow shadow-hard-sm">
-            <Mascot size={28} />
+            <Mascot size={32} />
           </span>
           <span className="font-display text-2xl font-extrabold">Gabay</span>
         </div>
@@ -33,7 +33,12 @@ export default function Home({ onPick, online = true, lang = 'taglish', onLang }
         <span className="gb-chip bg-white shadow-hard-sm mb-2 text-[10px] uppercase tracking-wide">
           {tt('home.hallwayTag')}
         </span>
-        <h1 className="font-display text-3xl font-extrabold leading-tight">{tt('home.greeting')}</h1>
+        <div className="flex flex-wrap items-center gap-2">
+          <h1 className="font-display text-3xl font-extrabold leading-tight">
+            {studentName ? tt('home.greetingName', { name: studentName }) : tt('home.greeting')}
+          </h1>
+          <span className="gb-chip bg-mint shadow-hard-sm text-xs">{tt('home.grade', { grade })}</span>
+        </div>
         <p className="mt-1 text-sm font-bold text-ink/70">{tt('home.subtitle')}</p>
 
         {/* Language picker — sets lesson + tutor language app-wide (persisted). */}
@@ -131,5 +136,4 @@ function ShopIcon() {
     </svg>
   )
 }
-
 

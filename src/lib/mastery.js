@@ -1,51 +1,91 @@
-﻿import { get, set } from 'idb-keyval'
+import { del, get, set } from 'idb-keyval'
 
-// Adaptive mastery engine. Per-competency score 0..1 persisted in IndexedDB.
-// No localStorage/sessionStorage (constraint). idb-keyval handles offline persistence.
+const DEFAULT_GRADE = 6
+const DEFAULT = 0
 
-const MASTERY_KEY = 'gabay:mastery'
-const QUEUE_KEY = 'gabay:dueAt' // ref -> "due weight"; lower = surfaces sooner
-const DEFAULT = 0.5
+const masteryKey = (grade = DEFAULT_GRADE) => `gabay:mastery:g${grade}`
+const dueKey = (grade = DEFAULT_GRADE) => `gabay:dueAt:g${grade}`
 
-export async function loadMastery() {
-  return (await get(MASTERY_KEY)) ?? {}
+export async function migrateMastery() {
+  const old = await get('gabay:mastery')
+  if (old) {
+    await set(masteryKey(6), old)
+    await del('gabay:mastery')
+  }
+  const oldDue = await get('gabay:dueAt')
+  if (oldDue) {
+    await set(dueKey(6), oldDue)
+    await del('gabay:dueAt')
+  }
 }
 
-export async function loadDue() {
-  return (await get(QUEUE_KEY)) ?? {}
+export async function loadMasteryForGrade(grade = DEFAULT_GRADE) {
+  return (await get(masteryKey(grade))) ?? {}
+}
+
+export async function loadDueForGrade(grade = DEFAULT_GRADE) {
+  return (await get(dueKey(grade))) ?? {}
+}
+
+// Backward-compatible aliases default to Grade 6.
+export const loadMastery = () => loadMasteryForGrade(DEFAULT_GRADE)
+export const loadDue = () => loadDueForGrade(DEFAULT_GRADE)
+
+export async function hasAnswered(ref, grade = DEFAULT_GRADE) {
+  const mastery = await loadMasteryForGrade(grade)
+  return Object.prototype.hasOwnProperty.call(mastery, ref)
+}
+
+export async function clearMasteryForGrade(grade = DEFAULT_GRADE) {
+  await Promise.all([del(masteryKey(grade)), del(dueKey(grade))])
+}
+
+function localDateKey(date = new Date()) {
+  return `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, '0')}-${String(date.getDate()).padStart(2, '0')}`
+}
+
+export async function updateStreak() {
+  const today = new Date()
+  const todayKey = localDateKey(today)
+  const last = await get('gabay:lastAnswerDate')
+  if (last === todayKey) return (await get('gabay:streak')) ?? 1
+
+  const yesterday = new Date(today)
+  yesterday.setDate(yesterday.getDate() - 1)
+  const previous = (await get('gabay:streak')) ?? 0
+  const streak = last === localDateKey(yesterday) ? previous + 1 : 1
+  await Promise.all([set('gabay:streak', streak), set('gabay:lastAnswerDate', todayKey)])
+  return streak
+}
+
+export async function loadStreak() {
+  return (await get('gabay:streak')) ?? 0
 }
 
 function clamp(n) {
   return Math.max(0, Math.min(1, n))
 }
 
-// correct: +0.1. wrong: -0.1 and re-queue sooner (smaller due weight).
-export async function recordAnswer(ref, correct) {
-  const mastery = await loadMastery()
-  const due = await loadDue()
-
+export async function recordAnswer(ref, correct, grade = DEFAULT_GRADE) {
+  const mastery = await loadMasteryForGrade(grade)
+  const due = await loadDueForGrade(grade)
   const prev = mastery[ref] ?? DEFAULT
   mastery[ref] = clamp(prev + (correct ? 0.1 : -0.1))
 
-  // Spaced repetition: a correct answer pushes the item further out,
-  // a wrong answer pulls it sooner (re-queue). Tick counter drives ordering.
   const tick = (due._tick ?? 0) + 1
   due._tick = tick
   due[ref] = correct ? tick + 6 : tick + 1
 
-  await set(MASTERY_KEY, mastery)
-  await set(QUEUE_KEY, due)
+  await Promise.all([set(masteryKey(grade), mastery), set(dueKey(grade), due), updateStreak()])
   return mastery[ref]
 }
 
-// "What's next?" - lowest mastery, with due-soon as tie-breaker.
 export function pickNext(competencies, mastery, due) {
   let best = null
   let bestKey = Infinity
   for (const c of competencies) {
     const m = mastery[c.ref] ?? DEFAULT
     const d = due[c.ref] ?? 0
-    // weight mastery heavily; due weight nudges ties
     const key = m * 100 + d * 0.01
     if (key < bestKey) {
       bestKey = key
@@ -55,10 +95,6 @@ export function pickNext(competencies, mastery, due) {
   return best
 }
 
-// Consistent 3-band progress system used everywhere (Profile, bars, cards):
-//   red    "Simulan na natin"  — just starting
-//   orange "Kaya pa"           — getting there
-//   green  "Mabuti"            — strong
 export function masteryBand(score) {
   const m = score ?? DEFAULT
   if (m >= 0.7) return 'green'
@@ -67,7 +103,6 @@ export function masteryBand(score) {
 }
 
 const BAND_LABEL = { red: 'Simulan na natin', orange: 'Kaya pa', green: 'Mabuti' }
-// Tailwind bg classes (the only place these colors are decided).
 const BAND_BG = { red: 'bg-rose', orange: 'bg-peach', green: 'bg-mint' }
 const BAND_FILL = { red: 'bg-rose', orange: 'bg-[#f7b955]', green: 'bg-mint' }
 
@@ -79,4 +114,3 @@ export function masteryColor(score) {
   const band = masteryBand(score)
   return { band, label: BAND_LABEL[band], bg: BAND_BG[band], fill: BAND_FILL[band] }
 }
-

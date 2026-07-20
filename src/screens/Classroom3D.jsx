@@ -1,7 +1,9 @@
 import { useEffect, useRef, useState } from 'react'
+import { get, set } from 'idb-keyval'
 import { buildClassroom, THEME_LIST } from '../three/scene.js'
 import { Button, RefBadge, RichText } from '../ui/Primitives.jsx'
 import OnlineBadge from '../ui/OnlineBadge.jsx'
+import { Mascot } from '../ui/Mascot.jsx'
 import { checkAnswer } from '../lib/check.js'
 import { speak, stopSpeaking } from '../lib/speech.js'
 import { feedbackFor } from '../lib/feedback.js'
@@ -40,7 +42,7 @@ export default function Classroom3D({ competency, score, online, lang = 'taglish
   const [theme, setTheme] = useState(DEFAULT_THEME)
   const [themeOpen, setThemeOpen] = useState(false)
   const [nudge, setNudge] = useState(null) // 'needAnswer' | 'needNumber' | null — gentle input validation
-  const [showIntro, setShowIntro] = useState(true) // first-entry coachmark (how to answer)
+  const [coachStep, setCoachStep] = useState(null)
   const [hasAnsweredOnce, setHasAnsweredOnce] = useState(false)
 
   const item = c.items[idx]
@@ -49,6 +51,27 @@ export default function Classroom3D({ competency, score, online, lang = 'taglish
   useEffect(() => {
     itemRef.current = item
   }, [item])
+
+  useEffect(() => {
+    get('gabay:3d-coached').then((coached) => setCoachStep(coached ? null : 1))
+  }, [])
+
+  useEffect(() => {
+    if (coachStep !== 1) return
+    const onMoveKey = (event) => {
+      if (['w', 'a', 's', 'd', 'arrowup', 'arrowdown', 'arrowleft', 'arrowright'].includes(event.key.toLowerCase())) {
+        setCoachStep(2)
+      }
+    }
+    window.addEventListener('keydown', onMoveKey)
+    return () => window.removeEventListener('keydown', onMoveKey)
+  }, [coachStep])
+
+  useEffect(() => {
+    if (!atBoard || coachStep !== 2) return
+    setCoachStep(null)
+    set('gabay:3d-coached', true)
+  }, [atBoard, coachStep])
 
   // Boot the Three.js scene once.
   useEffect(() => {
@@ -226,7 +249,16 @@ export default function Classroom3D({ competency, score, online, lang = 'taglish
 
       {/* on-screen joystick — easy movement on touch (and mouse) */}
       {ready && !modal && !done && (
-        <Joystick onMove={(x, y) => sceneRef.current?.setMove(x, y)} />
+        <Joystick label={tt('3d.joystick')} onMove={(x, y) => {
+          sceneRef.current?.setMove(x, y)
+          if (coachStep === 1 && (x !== 0 || y !== 0)) setCoachStep(2)
+        }} />
+      )}
+
+      {ready && !modal && !done && (
+        <div className="pointer-events-none absolute bottom-44 right-3 flex w-28 justify-center">
+          <Mascot size={104} className="drop-shadow-xl" />
+        </div>
       )}
 
       {/* answer trigger when near board */}
@@ -277,24 +309,10 @@ export default function Classroom3D({ competency, score, online, lang = 'taglish
         </div>
       )}
 
-      {/* first-entry coachmark — explicit "how to answer" for first-time kids */}
-      {ready && showIntro && !done && (
-        <div className="absolute inset-0 z-20 flex items-center justify-center bg-black/50 p-4">
-          <div className="gb-card gb-pop w-full max-w-sm bg-white p-6 text-center">
-            <h2 className="font-display text-2xl font-extrabold">{tt('3d.intro.title')}</h2>
-            <ol className="mt-4 flex flex-col gap-3 text-left">
-              {['3d.intro.s1', '3d.intro.s2', '3d.intro.s3'].map((k, i) => (
-                <li key={k} className="flex items-start gap-3">
-                  <span className="gb-chip bg-yellow shadow-hard-sm h-7 w-7 justify-center p-0 text-sm font-extrabold leading-none tabular-nums">
-                    {i + 1}
-                  </span>
-                  <span className="pt-1 text-sm font-bold leading-snug">{tt(k)}</span>
-                </li>
-              ))}
-            </ol>
-            <Button color="mint" className="mt-5 w-full text-lg" onClick={() => setShowIntro(false)}>
-              {tt('3d.intro.go')}
-            </Button>
+      {ready && coachStep && !done && (
+        <div className="pointer-events-none absolute left-1/2 top-24 z-20 w-[min(90%,360px)] -translate-x-1/2">
+          <div className="gb-card gb-pop bg-white p-4 text-center font-extrabold">
+            {tt(coachStep === 1 ? '3d.coach.move' : '3d.coach.board')}
           </div>
         </div>
       )}
@@ -391,7 +409,7 @@ export default function Classroom3D({ competency, score, online, lang = 'taglish
 
 // On-screen thumbstick. Pointer (touch or mouse) drags the knob; the normalized
 // offset (-1..1 on each axis) is fed to the Three.js scene via setMove().
-function Joystick({ onMove }) {
+function Joystick({ onMove, label }) {
   const baseRef = useRef(null)
   const activeRef = useRef(false)
   const [thumb, setThumb] = useState({ x: 0, y: 0 })
@@ -435,7 +453,7 @@ function Joystick({ onMove }) {
       onPointerMove={move}
       onPointerUp={end}
       onPointerCancel={end}
-      aria-label="Joystick — galaw"
+      aria-label={label}
       className="pointer-events-auto absolute bottom-8 left-6 h-32 w-32 touch-none select-none rounded-full border-[2.5px] border-outline bg-white/30 backdrop-blur-sm"
     >
       <span
@@ -445,9 +463,6 @@ function Joystick({ onMove }) {
     </div>
   )
 }
-
-
-
 
 
 

@@ -1,6 +1,6 @@
 import test from 'node:test'
 import assert from 'node:assert/strict'
-import { validateGeneratedQuestions, validateRequest } from '../api/questions.js'
+import { allowedOrigin, validateGeneratedQuestions, validateRequest } from '../api/questions.js'
 
 const request = {
   mode: 'quiz', grade: 1, count: 5, language: 'taglish', refs: ['1MG-Ia-1'], mastery: { '1MG-Ia-1': 0.25 },
@@ -23,4 +23,11 @@ test('server deterministic validation enforces complete unique batches', () => {
   assert.equal(validateGeneratedQuestions(questions, request), true)
   questions[0].options = ['square', 'square', 'circle', 'triangle']
   assert.equal(validateGeneratedQuestions(questions, request), false)
+})
+
+test('CORS accepts production, preview, and Sites origins but rejects arbitrary hosts', () => {
+  assert.equal(allowedOrigin('https://gabay-sage.vercel.app'), true)
+  assert.equal(allowedOrigin('https://gabay-sage-feature-123.vercel.app'), true)
+  assert.equal(allowedOrigin('https://crosscampus.openai.site'), true)
+  assert.equal(allowedOrigin('https://attacker.example'), false)
 })

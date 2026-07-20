@@ -153,10 +153,12 @@ async function verify(ai, request, questions) {
   return verdict.accepted === true && verdict.results?.length === request.count && verdict.results.every((item) => Object.values(item).every(Boolean))
 }
 
-function allowedOrigin(origin) {
+export function allowedOrigin(origin) {
   if (!origin) return true
   const configured = (process.env.QUESTION_CORS_ORIGINS || 'https://gabay-sage.vercel.app').split(',').map((value) => value.trim())
-  return configured.includes(origin) || /^https:\/\/[a-z0-9-]+\.openai\.site$/i.test(origin)
+  return configured.includes(origin)
+    || /^https:\/\/[a-z0-9-]+\.openai\.site$/i.test(origin)
+    || /^https:\/\/gabay-sage(?:-[a-z0-9-]+)?\.vercel\.app$/i.test(origin)
 }
 
 function cors(req, res) {
@@ -167,7 +169,24 @@ function cors(req, res) {
   res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS')
 }
 
-function withinRateLimit(ip) {
+async function durableRateLimit(ip) {
+  const url = process.env.UPSTASH_REDIS_REST_URL || process.env.KV_REST_API_URL
+  const token = process.env.UPSTASH_REDIS_REST_TOKEN || process.env.KV_REST_API_TOKEN
+  if (!url || !token) return null
+  const key = `gabay:questions:rate:${Math.floor(Date.now() / 60_000)}:${ip}`
+  const response = await fetch(`${url.replace(/\/$/, '')}/pipeline`, {
+    method: 'POST',
+    headers: { Authorization: `Bearer ${token}`, 'Content-Type': 'application/json' },
+    body: JSON.stringify([['INCR', key], ['EXPIRE', key, 65, 'NX']]),
+  })
+  if (!response.ok) throw new Error('rate_limit_store_unavailable')
+  const result = await response.json()
+  return Number(result?.[0]?.result) <= Number(process.env.QUESTION_RATE_LIMIT || 8)
+}
+
+async function withinRateLimit(ip) {
+  const durable = await durableRateLimit(ip)
+  if (durable !== null) return durable
   const now = Date.now()
   const previous = rateLimits.get(ip)
   const entry = !previous || now >= previous.resetAt ? { count: 0, resetAt: now + 60_000 } : previous
@@ -184,7 +203,11 @@ export default async function handler(req, res) {
   const length = Number(req.headers['content-length'] || 0)
   if (length > MAX_BODY_BYTES) return res.status(413).json({ error: 'payload_too_large' })
   const ip = String(req.headers['x-forwarded-for'] || req.socket?.remoteAddress || 'unknown').split(',')[0].trim()
-  if (!withinRateLimit(ip)) return res.status(429).json({ error: 'rate_limited' })
+  try {
+    if (!(await withinRateLimit(ip))) return res.status(429).json({ error: 'rate_limited' })
+  } catch {
+    return res.status(503).json({ error: 'rate_limit_unavailable' })
+  }
 
   let body = req.body
   try { if (typeof body === 'string') body = JSON.parse(body) } catch { return res.status(400).json({ error: 'invalid_json' }) }
@@ -199,7 +222,7 @@ export default async function handler(req, res) {
     if (!validateGeneratedQuestions(questions, body)) throw new Error('deterministic_validation_failed')
     if (!(await verify(ai, body, questions))) throw new Error('verification_failed')
     return res.status(200).json({ source: 'ai', questions })
-  } catch (error_) {
-    return res.status(502).json({ error: 'generation_failed', detail: String(error_?.message || error_) })
+  } catch {
+    return res.status(502).json({ error: 'generation_failed' })
   }
 }

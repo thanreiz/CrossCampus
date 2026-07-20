@@ -27,7 +27,7 @@ export function bundledPool(competencies, scope = {}) {
     return true
   })
   const source = selected.length ? selected : competencies
-  return source.flatMap((competency) =>
+  const questions = source.flatMap((competency) =>
     (competency.items ?? []).map((item, index) => ({
       ...item,
       ref: competency.ref,
@@ -37,6 +37,13 @@ export function bundledPool(competencies, scope = {}) {
       _poolIndex: index,
     })),
   )
+  const seen = new Set()
+  return questions.filter((question) => {
+    const signature = JSON.stringify(question.q).toLowerCase().replace(/\s+/g, ' ')
+    if (seen.has(signature)) return false
+    seen.add(signature)
+    return true
+  })
 }
 
 export async function nextBundledBatch({

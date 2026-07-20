@@ -51,6 +51,15 @@ test('rotation survives reload, isolates scopes, and supports counts larger than
   assert.equal(resumed.length, 1)
 })
 
+test('bundled game pools collapse identical stems across competencies', () => {
+  const duplicate = structuredClone(competencies[0])
+  duplicate.ref = '2NA-Ia-2'
+  duplicate.items = [structuredClone(competencies[0].items[0])]
+  const pool = bundledPool([...competencies, duplicate], { game: 'store' })
+  assert.equal(pool.length, 3)
+  assert.equal(new Set(pool.map((question) => JSON.stringify(question.q))).size, pool.length)
+})
+
 function aiQuestion(index = 0) {
   return {
     ref: '2NA-Ia-1',

@@ -6,7 +6,7 @@ import grade3 from '../src/curriculum/grade3.json' with { type: 'json' }
 import grade4 from '../src/curriculum/grade4.json' with { type: 'json' }
 import grade5 from '../src/curriculum/grade5.json' with { type: 'json' }
 import grade6 from '../src/curriculum/grade6.json' with { type: 'json' }
-import { GAME_CATALOG, getGamesForGrade, validateGameCatalog } from '../src/lib/game-catalog.js'
+import { GAME_CATALOG, getGamesForGrade, lessonTitlesForGame, validateGameCatalog } from '../src/lib/game-catalog.js'
 import { STRINGS } from '../src/lib/i18n.js'
 
 const curriculumByGrade = { 1: grade1, 2: grade2, 3: grade3, 4: grade4, 5: grade5, 6: grade6 }
@@ -51,6 +51,17 @@ test('every game and badge has complete learner-facing translations', () => {
         assert.ok(value, `games.badge.${badge}`)
         for (const language of LANGUAGES) assert.ok(value[language]?.trim(), `games.badge.${badge}.${language}`)
       }
+    }
+  }
+})
+
+test('each game exposes deduplicated learner-facing lesson titles', () => {
+  for (let grade = 1; grade <= 6; grade += 1) {
+    for (const game of getGamesForGrade(grade)) {
+      const titles = lessonTitlesForGame(game, curriculumByGrade[grade])
+      assert.ok(titles.length > 0, game.id)
+      assert.equal(titles.length, new Set(titles).size, game.id)
+      assert.ok(titles.every((title) => title.split(/\s+/).length <= 3), game.id)
     }
   }
 })

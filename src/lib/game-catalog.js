@@ -1,4 +1,5 @@
 import { isLearnerFacingQuestion } from './question-quality.js'
+import { topicTitle } from './topics.js'
 
 const THEMES = [
   { outer: 'bg-peach', accent: '#f7d26a', awning: ['bg-rose', 'bg-white', 'bg-yellow', 'bg-white', 'bg-rose'] },
@@ -137,6 +138,14 @@ export const GAME_CATALOG = {
 
 export function getGamesForGrade(grade) {
   return GAME_CATALOG[Number(grade)] ?? GAME_CATALOG[6]
+}
+
+export function lessonTitlesForGame(entry, competencies = []) {
+  const byRef = new Map(competencies.map((competency) => [competency.ref, competency]))
+  return [...new Set((entry?.refs ?? []).flatMap((ref) => {
+    const competency = byRef.get(ref)
+    return competency ? [topicTitle(ref, competency.competency)] : []
+  }))]
 }
 
 export function validateGameCatalog(catalog, curriculumByGrade, { minimumQuestions = 20 } = {}) {

@@ -10,7 +10,7 @@ import { makeT, localize } from '../lib/i18n.js'
 import { sfx, playButtonSfx } from '../lib/sound.js'
 import StepScaffold from '../ui/StepScaffold.jsx'
 import { prepareQuestionSession } from '../lib/question-session.js'
-import { GAME_CATALOG_VERSION, getGamesForGrade } from '../lib/game-catalog.js'
+import { GAME_CATALOG_VERSION, getGamesForGrade, lessonTitlesForGame } from '../lib/game-catalog.js'
 import GameIcon from '../ui/GameIcon.jsx'
 
 const COUNT_OPTIONS = [5, 10, 15, 20]
@@ -42,6 +42,7 @@ export default function Games({ online = true, grade = 6, competencies = [], mas
   const startingRef = useRef(false)
 
   const game = games.find((entry) => entry.key === gameKey) ?? null
+  const lessonTitles = game ? lessonTitlesForGame(game, competencies) : []
   const round = questions[idx]
   const roundOptions = choiceOptions(round)
   const done = started && questions.length > 0 && idx >= questions.length
@@ -163,7 +164,9 @@ export default function Games({ online = true, grade = 6, competencies = [], mas
           <p className="mt-1 text-base font-bold text-ink/70">{tt('games.pickSub')}</p>
         </div>
         <div className="relative z-10 mt-4 grid grid-cols-1 gap-3">
-          {games.map((g) => (
+          {games.map((g) => {
+            const lessonCount = lessonTitlesForGame(g, competencies).length
+            return (
             <button
               key={g.key}
               onClick={() => {
@@ -179,9 +182,11 @@ export default function Games({ online = true, grade = 6, competencies = [], mas
                 <span className="block font-display text-xl font-extrabold leading-tight">{tt(`games.${g.key}.name`)}</span>
                 <span className="mt-1 block text-sm font-bold text-ink/70">{tt(`games.${g.key}.tagline`)}</span>
                 <GameBadges game={g} tt={tt} className="mt-2" />
+                <span className="mt-2 block text-xs font-extrabold text-ink/60">{tt('games.lessonCount', { count: lessonCount })}</span>
               </span>
             </button>
-          ))}
+            )
+          })}
         </div>
       </div>
     )
@@ -224,6 +229,18 @@ export default function Games({ online = true, grade = 6, competencies = [], mas
             <GameBadges game={game} tt={tt} className="mt-3" />
           </div>
         </section>
+
+        <Card color="cream" className="mt-5 p-4">
+          <p className="font-display text-xl font-extrabold">{tt('games.lessonsTitle')}</p>
+          <p className="mt-1 text-sm font-bold text-ink/60">{tt('games.lessonsSub', { count: lessonTitles.length })}</p>
+          <div className="mt-3 flex flex-wrap gap-2">
+            {lessonTitles.map((title) => (
+              <span key={title} className="rounded-full border-2 border-outline bg-white px-3 py-1 text-xs font-extrabold text-ink/75 shadow-hard-sm">
+                {title}
+              </span>
+            ))}
+          </div>
+        </Card>
 
         {startError && (
           <Card color="yellow" className="mt-5 p-4" role="alert">

@@ -1,5 +1,6 @@
 import { readFile, writeFile } from 'node:fs/promises'
 import { resolve } from 'node:path'
+import { difficultyFor } from '../src/lib/difficulty.js'
 
 const root = resolve(import.meta.dirname, '..')
 const packageRoot = resolve(process.argv[2] || process.env.MATATAG_PACKAGE || '/private/tmp/matatag_parse/DepEd-MATATAG-Mathematics-Grades-1-6')
@@ -256,7 +257,7 @@ for (let grade = 1; grade <= 6; grade++) {
     if (items.length < 2) throw new Error(`${spec.ref}: only ${items.length} unique objective questions parsed`)
     output.push({
       grade,
-      difficulty: grade <= 2 ? 'madali' : grade <= 4 ? 'katamtaman' : 'mahirap',
+      difficulty: difficultyFor(spec.competency),
       ...spec,
       game_tags: gameTags(spec),
       explanation: localized(spec.competency),

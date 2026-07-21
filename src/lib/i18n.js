@@ -131,6 +131,10 @@ export const STRINGS = {
   'topics.all': { en: 'All', fil: 'Lahat', taglish: 'Lahat' },
   'topics.search': { en: 'Search topics', fil: 'Maghanap ng aralin', taglish: 'Search ng topic' },
   'topics.noResults': { en: 'No results found.', fil: 'Walang nahanap.', taglish: 'Walang nahanap.' },
+  'topics.lessonCount': { en: '{count} lessons', fil: '{count} aralin', taglish: '{count} lessons' },
+  'topics.completedCount': { en: '{count} completed', fil: '{count} natapos', taglish: '{count} completed' },
+  'topics.showLessons': { en: 'Show', fil: 'Ipakita', taglish: 'Show' },
+  'topics.hideLessons': { en: 'Hide', fil: 'Itago', taglish: 'Hide' },
   'topics.practiceHeading': { en: 'Due for review', fil: 'Dapat balikan', taglish: 'Due for review' },
   'topics.practiceSub': { en: 'Strengthen topics that need another look.', fil: 'Balikan ang mga araling kailangan pa ng practice.', taglish: 'Balikan ang topics na kailangan pa ng practice.' },
   'topics.nothingDue': {

@@ -1,4 +1,5 @@
 import { get, set } from 'idb-keyval'
+import { isLearnerFacingQuestion } from './question-quality.js'
 
 export const ROTATION_VERSION = 'v1'
 export const QUESTION_TIMEOUT_MS = 25_000
@@ -39,6 +40,7 @@ export function bundledPool(competencies, scope = {}) {
   )
   const seen = new Set()
   return questions.filter((question) => {
+    if (!isLearnerFacingQuestion(question)) return false
     const signature = JSON.stringify(question.q).toLowerCase().replace(/\s+/g, ' ')
     if (seen.has(signature)) return false
     seen.add(signature)
@@ -85,6 +87,7 @@ export function validateQuestionBatch(value, count, allowedRefs) {
   for (const question of value.questions) {
     if (!question || !allowedRefs.has(question.ref) || !['numeric', 'mcq', 'matching', 'true_false'].includes(question.type)) return false
     if (!question.q || !question.solution || String(question.answer ?? '').trim() === '') return false
+    if (!isLearnerFacingQuestion(question)) return false
     const signature = JSON.stringify(question.q).toLowerCase().replace(/\s+/g, ' ')
     if (seen.has(signature)) return false
     seen.add(signature)

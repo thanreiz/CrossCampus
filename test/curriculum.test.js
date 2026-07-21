@@ -1,6 +1,7 @@
 import test from 'node:test'
 import assert from 'node:assert/strict'
 import { getAllContent, getContentByGrade } from '../src/lib/content-catalog.js'
+import { DIFFICULTIES, difficultyFor } from '../src/lib/difficulty.js'
 
 const EXPECTED = [47, 53, 51, 54, 49, 52]
 const SUPPORTED = new Set(['numeric', 'mcq', 'matching', 'true_false'])
@@ -41,6 +42,21 @@ test('all six MATATAG grade catalogs are complete and traceable', () => {
         if (item.type === 'mcq') assert.equal(item.options.length, 4, `${competency.ref} MCQ does not have four options`)
       }
       assert.ok(competency.game_tags.length >= 1, competency.ref)
+      assert.equal(competency.difficulty, difficultyFor(competency.competency), `${competency.ref} has a stale difficulty`)
+    }
+    for (const difficulty of DIFFICULTIES) {
+      const share = entries.filter((entry) => entry.difficulty === difficulty).length / entries.length
+      assert.ok(share >= 0.1, `Grade ${grade} has too few ${difficulty} lessons`)
+      assert.ok(share <= 0.6, `Grade ${grade} has too many ${difficulty} lessons`)
     }
   })
+})
+
+test('difficulty is based on grade-relative thinking demand', () => {
+  assert.equal(difficultyFor('Count up to 100.'), 'madali')
+  assert.equal(difficultyFor('Compare two numbers up to 20.'), 'katamtaman')
+  assert.equal(difficultyFor('Solve problems involving addition with sums up to 20.'), 'mahirap')
+  assert.equal(difficultyFor('Identify and explain the uses of percentages.'), 'madali')
+  assert.equal(difficultyFor('Divide decimals by whole numbers.'), 'katamtaman')
+  assert.equal(difficultyFor('Solve problems involving ratio and proportion.'), 'mahirap')
 })

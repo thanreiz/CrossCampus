@@ -1,6 +1,52 @@
 // Compact, learner-facing labels shared by every Grade 1–6 screen. The full
 // competency remains visible beneath these labels and is still used in search.
 
+// Some competencies mention a supporting operation after the main skill
+// (for example, division as repeated subtraction). Reference-specific titles
+// keep those descriptions from matching a broader rule below.
+const REF_TITLES = {
+  '1NA-IIc-1': 'Tens and Ones',
+  '1NA-IIIh-1': 'Money Problems',
+  '2NA-IIc-1': 'Subtraction',
+  '2NA-IIi-1': 'Equal Groups',
+  '2NA-IIj-1': 'Multiplication',
+  '2NA-IIIc-1': 'Division',
+  '2NA-IIId-1': 'Missing Factors',
+  '2NA-IIId-2': 'Even and Odd',
+  '3MG-IIb-3': 'Comparing Capacity',
+  '3NA-IIIh-4': 'Fraction Operations',
+  '4NA-Ie-3': 'Fractions on Lines',
+  '4MG-Id-2': 'Perimeter',
+  '4NA-If-3': 'Estimating Operations',
+  '4NA-Ig-1': 'Mixed Operations',
+  '4NA-Ig-2': 'Multiplication',
+  '4NA-Ii-2': 'Division',
+  '4NA-IIg-1': 'Dissimilar Fractions',
+  '4NA-IIg-2': 'Dissimilar Fractions',
+  '4NA-IIh-1': 'Dissimilar Fractions',
+  '4NA-IIIa-1': 'Dissimilar Fractions',
+  '4NA-IIIb-1': 'Dissimilar Fractions',
+  '4NA-IIIc-1': 'Fraction Operations',
+  '5NA-Ie-1': 'Fraction Multiplication',
+  '5MG-If-3': 'Area',
+  '5NA-IIc-1': 'Decimal Operations',
+  '5SP-IIf-2': 'Choosing Graphs',
+  '5NA-IIIa-3': 'Decimal Multiplication',
+  '5MG-IIIh-2': 'Surface Area',
+  '5MG-IIIi-1': 'Surface Area',
+  '6NA-Ic-2': 'Decimal Operations',
+  '6NA-Id-2': 'Decimal Multiplication',
+  '6NA-If-2': 'Fraction Multiplication',
+  '6NA-If-3': 'Fraction Multiplication',
+  '6NA-Ih-1': 'Fraction Division',
+  '6NA-Ih-2': 'Fraction Division',
+  '6MG-IIg-2': 'Volume',
+  '6MG-IIIb-2': 'Understanding Pi',
+  '6SP-IIIf-1': 'Pie Graphs',
+  '6SP-IIIg-2': 'Digital Data',
+  '6NA-IIIi-3': 'GCF and LCM',
+}
+
 const TITLE_RULES = [
   [/12- and 24-hour|12-hour time|24-hour time/, 'Time Systems'],
   [/world time zone/, 'Time Zones'],
@@ -128,7 +174,8 @@ function fallbackTitle(competency = '') {
   return words.slice(0, 3).map((word) => word.charAt(0).toUpperCase() + word.slice(1)).join(' ') || 'Math Topic'
 }
 
-export function topicTitle(_ref, competency = '') {
+export function topicTitle(ref, competency = '') {
+  if (REF_TITLES[ref]) return REF_TITLES[ref]
   const text = String(competency).toLowerCase()
   return TITLE_RULES.find(([pattern]) => pattern.test(text))?.[1] ?? fallbackTitle(competency)
 }

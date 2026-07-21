@@ -110,3 +110,13 @@ test('client schema validation rejects duplicate and invalid MCQ batches', () =>
   valid.questions[1] = structuredClone(valid.questions[0])
   assert.equal(validateQuestionBatch(valid, 5, new Set(['2NA-Ia-1'])), false)
 })
+
+test('client validation rejects curriculum-metadata prompts', () => {
+  const batch = { source: 'ai', questions: Array.from({ length: 5 }, (_, index) => aiQuestion(index)) }
+  batch.questions[0].q = {
+    en: 'Which learning task belongs to 2NA-Ia-1?',
+    fil: 'Which learning task belongs to 2NA-Ia-1?',
+    taglish: 'Which learning task belongs to 2NA-Ia-1?',
+  }
+  assert.equal(validateQuestionBatch(batch, 5, new Set(['2NA-Ia-1'])), false)
+})

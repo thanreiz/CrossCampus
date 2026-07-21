@@ -25,6 +25,20 @@ test('server deterministic validation enforces complete unique batches', () => {
   assert.equal(validateGeneratedQuestions(questions, request), false)
 })
 
+test('server rejects questions that quiz learners about curriculum metadata', () => {
+  const questions = Array.from({ length: 5 }, (_, index) => ({
+    ref: '1MG-Ia-1', type: 'mcq', answer: 'square', options: ['circle', 'square', 'triangle', 'rectangle'],
+    q: { en: `Shape question ${index}`, fil: `Tanong sa hugis ${index}`, taglish: `Shape question ${index}` },
+    solution: { en: 'It is a square.', fil: 'Ito ay parisukat.', taglish: 'Square ito.' },
+  }))
+  questions[0].q = {
+    en: 'Which goal is aligned with this Grade 1 lesson?',
+    fil: 'Which goal is aligned with this Grade 1 lesson?',
+    taglish: 'Which goal is aligned with this Grade 1 lesson?',
+  }
+  assert.equal(validateGeneratedQuestions(questions, request), false)
+})
+
 test('CORS accepts production, preview, and Sites origins but rejects arbitrary hosts', () => {
   assert.equal(allowedOrigin('https://gabay-sage.vercel.app'), true)
   assert.equal(allowedOrigin('https://gabay-sage-feature-123.vercel.app'), true)

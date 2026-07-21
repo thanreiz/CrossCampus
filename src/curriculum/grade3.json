@@ -405,7 +405,7 @@
   },
   {
     "grade": 3,
-    "difficulty": "katamtaman",
+    "difficulty": "mahirap",
     "ref": "3MG-Ia-2",
     "domain": "Measurement and Geometry",
     "content_standard": "Area of squares and rectangles, and points, lines, line segments, rays, and line relationships.",
@@ -1134,7 +1134,7 @@
   },
   {
     "grade": 3,
-    "difficulty": "katamtaman",
+    "difficulty": "mahirap",
     "ref": "3MG-Ib-2",
     "domain": "Measurement and Geometry",
     "content_standard": "Area of squares and rectangles, and points, lines, line segments, rays, and line relationships.",
@@ -1538,7 +1538,7 @@
   },
   {
     "grade": 3,
-    "difficulty": "katamtaman",
+    "difficulty": "madali",
     "ref": "3MG-Ib-3",
     "domain": "Measurement and Geometry",
     "content_standard": "Area of squares and rectangles, and points, lines, line segments, rays, and line relationships.",
@@ -1703,7 +1703,7 @@
   },
   {
     "grade": 3,
-    "difficulty": "katamtaman",
+    "difficulty": "madali",
     "ref": "3MG-Ic-1",
     "domain": "Measurement and Geometry",
     "content_standard": "Area of squares and rectangles, and points, lines, line segments, rays, and line relationships.",
@@ -1868,7 +1868,7 @@
   },
   {
     "grade": 3,
-    "difficulty": "katamtaman",
+    "difficulty": "madali",
     "ref": "3MG-Ic-2",
     "domain": "Measurement and Geometry",
     "content_standard": "Area of squares and rectangles, and points, lines, line segments, rays, and line relationships.",
@@ -2033,7 +2033,7 @@
   },
   {
     "grade": 3,
-    "difficulty": "katamtaman",
+    "difficulty": "madali",
     "ref": "3NA-Id-1",
     "domain": "Number and Algebra",
     "content_standard": "Whole numbers up to 10 000, ordinal numbers up to 100th, place value, comparison, ordering, and rounding.",
@@ -2258,7 +2258,7 @@
   },
   {
     "grade": 3,
-    "difficulty": "katamtaman",
+    "difficulty": "madali",
     "ref": "3NA-Ie-1",
     "domain": "Number and Algebra",
     "content_standard": "Whole numbers up to 10 000, ordinal numbers up to 100th, place value, comparison, ordering, and rounding.",
@@ -2483,7 +2483,7 @@
   },
   {
     "grade": 3,
-    "difficulty": "katamtaman",
+    "difficulty": "madali",
     "ref": "3NA-If-1",
     "domain": "Number and Algebra",
     "content_standard": "Whole numbers up to 10 000, ordinal numbers up to 100th, place value, comparison, ordering, and rounding.",
@@ -4354,7 +4354,7 @@
   },
   {
     "grade": 3,
-    "difficulty": "katamtaman",
+    "difficulty": "madali",
     "ref": "3MG-IIa-1",
     "domain": "Measurement and Geometry",
     "content_standard": "Measurement, estimation, and comparison of mass and capacity using metric units.",
@@ -5482,7 +5482,7 @@
   },
   {
     "grade": 3,
-    "difficulty": "katamtaman",
+    "difficulty": "madali",
     "ref": "3MG-IIb-1",
     "domain": "Measurement and Geometry",
     "content_standard": "Measurement, estimation, and comparison of mass and capacity using metric units.",
@@ -6637,7 +6637,7 @@
   },
   {
     "grade": 3,
-    "difficulty": "katamtaman",
+    "difficulty": "madali",
     "ref": "3NA-IIc-1",
     "domain": "Number and Algebra",
     "content_standard": "Philippine money and addition and subtraction involving numbers up to 10 000.",
@@ -7702,7 +7702,7 @@
   },
   {
     "grade": 3,
-    "difficulty": "katamtaman",
+    "difficulty": "mahirap",
     "ref": "3NA-IId-2",
     "domain": "Number and Algebra",
     "content_standard": "Philippine money and addition and subtraction involving numbers up to 10 000.",
@@ -8767,7 +8767,7 @@
   },
   {
     "grade": 3,
-    "difficulty": "katamtaman",
+    "difficulty": "mahirap",
     "ref": "3NA-IIf-2",
     "domain": "Number and Algebra",
     "content_standard": "Philippine money and addition and subtraction involving numbers up to 10 000.",
@@ -9122,7 +9122,7 @@
   },
   {
     "grade": 3,
-    "difficulty": "katamtaman",
+    "difficulty": "mahirap",
     "ref": "3NA-IIh-1",
     "domain": "Number and Algebra",
     "content_standard": "Philippine money and addition and subtraction involving numbers up to 10 000.",
@@ -9477,7 +9477,7 @@
   },
   {
     "grade": 3,
-    "difficulty": "katamtaman",
+    "difficulty": "madali",
     "ref": "3SP-IIh-1",
     "domain": "Statistics and Probability",
     "content_standard": "Experimental data, tables, bar graphs, and likelihood of outcomes.",
@@ -9786,7 +9786,7 @@
   },
   {
     "grade": 3,
-    "difficulty": "katamtaman",
+    "difficulty": "madali",
     "ref": "3SP-IIi-1",
     "domain": "Statistics and Probability",
     "content_standard": "Experimental data, tables, bar graphs, and likelihood of outcomes.",
@@ -10461,7 +10461,7 @@
   },
   {
     "grade": 3,
-    "difficulty": "katamtaman",
+    "difficulty": "mahirap",
     "ref": "3SP-IIj-1",
     "domain": "Statistics and Probability",
     "content_standard": "Experimental data, tables, bar graphs, and likelihood of outcomes.",
@@ -12572,7 +12572,7 @@
   },
   {
     "grade": 3,
-    "difficulty": "katamtaman",
+    "difficulty": "mahirap",
     "ref": "3NA-IIId-1",
     "domain": "Number and Algebra",
     "content_standard": "Multiplication and division, numerical patterns, and fractions equal to or greater than one.",
@@ -13616,7 +13616,7 @@
   },
   {
     "grade": 3,
-    "difficulty": "katamtaman",
+    "difficulty": "madali",
     "ref": "3NA-IIIe-1",
     "domain": "Number and Algebra",
     "content_standard": "Multiplication and division, numerical patterns, and fractions equal to or greater than one.",
@@ -15374,7 +15374,7 @@
   },
   {
     "grade": 3,
-    "difficulty": "katamtaman",
+    "difficulty": "mahirap",
     "ref": "3NA-IIIh-2",
     "domain": "Number and Algebra",
     "content_standard": "Multiplication and division, numerical patterns, and fractions equal to or greater than one.",
@@ -15708,7 +15708,7 @@
   },
   {
     "grade": 3,
-    "difficulty": "katamtaman",
+    "difficulty": "madali",
     "ref": "3NA-IIIh-3",
     "domain": "Number and Algebra",
     "content_standard": "Multiplication and division, numerical patterns, and fractions equal to or greater than one.",
@@ -16397,7 +16397,7 @@
   },
   {
     "grade": 3,
-    "difficulty": "katamtaman",
+    "difficulty": "madali",
     "ref": "3MG-IIIi-1",
     "domain": "Measurement and Geometry",
     "content_standard": "Two-direction translations and line symmetry.",
@@ -16588,7 +16588,7 @@
   },
   {
     "grade": 3,
-    "difficulty": "katamtaman",
+    "difficulty": "madali",
     "ref": "3MG-IIIj-1",
     "domain": "Measurement and Geometry",
     "content_standard": "Two-direction translations and line symmetry.",

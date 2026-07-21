@@ -1,10 +1,35 @@
-import grade6 from '../content.json'
+// Vite serves JSON imports as JavaScript modules in both development and builds.
+// Adding a native JSON MIME assertion breaks the development server because the
+// transformed response is JavaScript, not application/json.
+const loaders = {
+  1: () => import('../curriculum/grade1.json'),
+  2: () => import('../curriculum/grade2.json'),
+  3: () => import('../curriculum/grade3.json'),
+  4: () => import('../curriculum/grade4.json'),
+  5: () => import('../curriculum/grade5.json'),
+  6: () => import('../curriculum/grade6.json'),
+}
 
-// Add reviewed Grade 1-5 files here as they become available. Keeping this
-// module as the only curriculum entry point prevents screens from accidentally
-// mixing grades.
-const ALL = [...grade6]
+const cache = new Map()
 
-export const getAllContent = () => ALL
-export const getContentByGrade = (grade) => ALL.filter((c) => c.grade === Number(grade))
-export const getContentByRef = (ref) => ALL.find((c) => c.ref === ref)
+export async function loadContentByGrade(grade) {
+  const key = Number(grade)
+  if (!loaders[key]) return []
+  if (!cache.has(key)) {
+    cache.set(key, loaders[key]().then((module) => {
+      cache.set(key, module.default)
+      return module.default
+    }))
+  }
+  return await cache.get(key)
+}
+
+export function getContentByRef(ref) {
+  for (const content of cache.values()) {
+    if (Array.isArray(content)) {
+      const found = content.find((competency) => competency.ref === ref)
+      if (found) return found
+    }
+  }
+  return null
+}

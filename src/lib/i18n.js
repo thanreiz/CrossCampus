@@ -20,9 +20,9 @@ export const STRINGS = {
   },
   'splash.start': { en: 'START', fil: 'MAGSIMULA', taglish: 'MAGSIMULA' },
   'splash.subtitle': {
-    en: 'Grade 6 Math · Taglish · Offline-first',
-    fil: 'Math para sa Grade 6 · Taglish · Offline',
-    taglish: 'Grade 6 Math · Taglish · Offline-first',
+    en: 'Grades 1–6 Math · Multilingual · Offline-first',
+    fil: 'Math para sa Grade 1–6 · Maraming wika · Offline',
+    taglish: 'Grades 1–6 Math · Multilingual · Offline-first',
   },
   'splash.offline': { en: '100% OFFLINE LEARNING', fil: '100% OFFLINE NA PAG-AARAL', taglish: '100% OFFLINE LEARNING' },
 
@@ -48,6 +48,8 @@ export const STRINGS = {
   'common.needNumber': { en: 'Type a number.', fil: 'Magbigay ng numero.', taglish: 'Mag-type ng number.' },
   'common.yes': { en: 'Yes', fil: 'Oo', taglish: 'Oo' },
   'common.no': { en: 'No', fil: 'Hindi', taglish: 'Hindi' },
+  'questions.generating': { en: 'Preparing your questions…', fil: 'Inihahanda ang mga tanong…', taglish: 'Preparing your questions…' },
+  'questions.generatingSub': { en: 'Teacher Gabay is building this practice session.', fil: 'Inihahanda ni Teacher Gabay ang pagsasanay mo.', taglish: 'Binubuo ni Teacher Gabay ang practice session mo.' },
 
   // ---- Onboarding / grade ----
   'onboarding.step': { en: 'Step {step} of 4', fil: 'Hakbang {step} sa 4', taglish: 'Step {step} of 4' },
@@ -129,6 +131,10 @@ export const STRINGS = {
   'topics.all': { en: 'All', fil: 'Lahat', taglish: 'Lahat' },
   'topics.search': { en: 'Search topics', fil: 'Maghanap ng aralin', taglish: 'Search ng topic' },
   'topics.noResults': { en: 'No results found.', fil: 'Walang nahanap.', taglish: 'Walang nahanap.' },
+  'topics.lessonCount': { en: '{count} lessons', fil: '{count} aralin', taglish: '{count} lessons' },
+  'topics.completedCount': { en: '{count} completed', fil: '{count} natapos', taglish: '{count} completed' },
+  'topics.showLessons': { en: 'Show', fil: 'Ipakita', taglish: 'Show' },
+  'topics.hideLessons': { en: 'Hide', fil: 'Itago', taglish: 'Hide' },
   'topics.practiceHeading': { en: 'Due for review', fil: 'Dapat balikan', taglish: 'Due for review' },
   'topics.practiceSub': { en: 'Strengthen topics that need another look.', fil: 'Balikan ang mga araling kailangan pa ng practice.', taglish: 'Balikan ang topics na kailangan pa ng practice.' },
   'topics.nothingDue': {
@@ -143,6 +149,7 @@ export const STRINGS = {
   'domain.Number and Algebra': { en: 'Number & Algebra', fil: 'Number at Algebra', taglish: 'Number & Algebra' },
   'domain.Measurement and Geometry': { en: 'Measurement & Geometry', fil: 'Sukat at Geometry', taglish: 'Measurement & Geometry' },
   'domain.Data and Probability': { en: 'Data & Probability', fil: 'Data at Probability', taglish: 'Data & Probability' },
+  'domain.Statistics and Probability': { en: 'Statistics & Probability', fil: 'Statistics at Probability', taglish: 'Statistics & Probability' },
 
   // ---- Lesson Brief ----
   'brief.contentStandard': { en: 'Content Standard', fil: 'Pamantayang Nilalaman', taglish: 'Content Standard' },
@@ -356,6 +363,9 @@ export const STRINGS = {
 
   // ---- 3D Classroom HUD ----
   '3d.preparing': { en: 'Preparing the 3D class...', fil: 'Inihahanda ang 3D klase...', taglish: 'Inihahanda ang 3D klase...' },
+  '3d.unavailable.title': { en: '3D class is not available on this device.', fil: 'Hindi available ang 3D klase sa device na ito.', taglish: 'Hindi available ang 3D class sa device na ito.' },
+  '3d.unavailable.body': { en: 'You can continue with the same questions in the 2D classroom.', fil: 'Maaari mong ipagpatuloy ang parehong mga tanong sa 2D na klase.', taglish: 'Pwede mong ituloy ang parehong questions sa 2D classroom.' },
+  '3d.unavailable.action': { en: 'Continue in 2D →', fil: 'Ituloy sa 2D →', taglish: 'Ituloy sa 2D →' },
   '3d.theme': { en: 'Theme', fil: 'Tema', taglish: 'Tema' },
   '3d.changeRoom': { en: 'Change the room', fil: 'Palitan ang klase', taglish: 'Palitan ang klase' },
   '3d.answerBoard': { en: 'Answer', fil: 'Sagutin', taglish: 'Sagutin' },

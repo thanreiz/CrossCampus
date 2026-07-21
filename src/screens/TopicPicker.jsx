@@ -5,6 +5,7 @@ import OnlineBadge from '../ui/OnlineBadge.jsx'
 import { hasAnswered, masteryColor } from '../lib/mastery.js'
 import { topicIcon, topicTitle } from '../lib/topics.js'
 import { makeT } from '../lib/i18n.js'
+import { difficultyFor } from '../lib/difficulty.js'
 
 const ICON_BG = ['bg-mint', 'bg-sky', 'bg-rose', 'bg-peach', 'bg-yellow', 'bg-lavender']
 const ALL = '__all__'
@@ -24,10 +25,10 @@ export default function TopicPicker({
   onBrowse,
 }) {
   const tt = makeT(lang)
-  const [domain, setDomain] = useState(ALL)
   const [difficulty, setDifficulty] = useState(ALL)
   const [search, setSearch] = useState('')
   const [answered, setAnswered] = useState(new Set())
+  const [openDomains, setOpenDomains] = useState(new Set())
 
   useEffect(() => {
     let live = true
@@ -37,20 +38,38 @@ export default function TopicPicker({
     return () => { live = false }
   }, [competencies, grade, mastery])
 
-  const domains = useMemo(() => [ALL, ...new Set(competencies.map((c) => c.domain))], [competencies])
   const shown = useMemo(() => {
     const query = search.trim().toLowerCase()
     const list = competencies.filter((c) => {
       const title = topicTitle(c.ref, c.competency).toLowerCase()
       const practiceMatch = mode !== 'practice' || (answered.has(c.ref) && (mastery[c.ref] ?? 0) < 0.8)
       return practiceMatch &&
-        (domain === ALL || c.domain === domain) &&
-        (difficulty === ALL || c.difficulty === difficulty) &&
+        (difficulty === ALL || difficultyFor(c.competency) === difficulty) &&
         (!query || title.includes(query) || c.competency.toLowerCase().includes(query))
     })
     if (mode === 'practice') list.sort((a, b) => (due[a.ref] ?? Infinity) - (due[b.ref] ?? Infinity))
     return list
-  }, [answered, competencies, difficulty, domain, due, mastery, mode, search])
+  }, [answered, competencies, difficulty, due, mastery, mode, search])
+
+  const groups = useMemo(() => {
+    const byDomain = new Map()
+    for (const competency of shown) {
+      if (!byDomain.has(competency.domain)) byDomain.set(competency.domain, [])
+      byDomain.get(competency.domain).push(competency)
+    }
+    return [...byDomain.entries()].map(([name, lessons]) => ({ name, lessons }))
+  }, [shown])
+
+  const searching = Boolean(search.trim())
+
+  function toggleDomain(name) {
+    setOpenDomains((current) => {
+      const next = new Set(current)
+      if (next.has(name)) next.delete(name)
+      else next.add(name)
+      return next
+    })
+  }
 
   const noPracticeDue = mode === 'practice' && !search.trim() && shown.length === 0
 
@@ -83,13 +102,6 @@ export default function TopicPicker({
         className="relative z-10 mb-4 min-h-[50px] rounded-full border-[2.5px] border-outline bg-white px-5 text-base font-bold outline-none focus:bg-yellow/20"
       />
 
-      <div className="mb-3 flex flex-wrap gap-2">
-        {domains.map((value) => (
-          <Chip key={value} color="lavender" active={domain === value} onClick={() => setDomain(value)}>
-            {value === ALL ? tt('topics.all') : tt(`domain.${value}`)}
-          </Chip>
-        ))}
-      </div>
       <div className="mb-5 flex flex-wrap gap-2">
         {DIFFICULTIES.map((value) => (
           <Chip key={value} color={value === 'madali' ? 'mint' : value === 'katamtaman' ? 'yellow' : 'peach'} active={difficulty === value} onClick={() => setDifficulty(value)}>
@@ -108,39 +120,68 @@ export default function TopicPicker({
         <Card color="cream" className="p-6 text-center font-extrabold">{tt('topics.noResults')}</Card>
       ) : (
         <div className="flex flex-col gap-4">
-          {shown.map((c, i) => {
-            const isAnswered = answered.has(c.ref)
-            const score = mastery[c.ref] ?? 0
-            const color = masteryColor(score)
+          {groups.map((group, groupIndex) => {
+            const isOpen = searching || openDomains.has(group.name)
+            const completed = group.lessons.filter((lesson) => answered.has(lesson.ref)).length
+            const average = completed
+              ? group.lessons.reduce((sum, lesson) => sum + (answered.has(lesson.ref) ? mastery[lesson.ref] ?? 0 : 0), 0) / completed
+              : 0
             return (
-              <Card
-                key={c.ref}
-                className="gb-pop cursor-pointer p-4 active:translate-x-[2px] active:translate-y-[2px] active:shadow-hard-sm"
-                role="button"
-                tabIndex={0}
-                onClick={() => onPick(c)}
-                onKeyDown={(e) => (e.key === 'Enter' || e.key === ' ') && onPick(c)}
-              >
-                <div className="flex items-start gap-3">
-                  <span className={`flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl border-[2.5px] border-outline ${ICON_BG[i % ICON_BG.length]} text-2xl font-extrabold`}>
-                    {topicIcon(c.ref)}
-                  </span>
-                  <div className="min-w-0 flex-1">
-                    <div className="flex flex-wrap items-start justify-between gap-2">
-                      <h2 className="min-w-[150px] flex-1 font-display text-lg font-bold leading-tight">{topicTitle(c.ref, c.competency)}</h2>
-                      <span className={`gb-chip ${DIFFICULTY_COLOR[c.difficulty] ?? 'bg-white'} shadow-hard-sm text-[11px]`}>
-                        {tt(`difficulty.${c.difficulty}`)}
+              <Card key={group.name} className="gb-pop overflow-hidden p-0">
+                <button
+                  type="button"
+                  className={`w-full p-4 text-left ${isOpen ? 'bg-yellow/35' : 'bg-white'} focus:outline-none focus-visible:ring-4 focus-visible:ring-sky`}
+                  aria-expanded={isOpen}
+                  aria-controls={`topic-group-${groupIndex}`}
+                  onClick={() => toggleDomain(group.name)}
+                >
+                  <span className="flex items-center justify-between gap-3">
+                    <span className="min-w-0">
+                      <span className="block font-display text-xl font-extrabold leading-tight">{tt(`domain.${group.name}`)}</span>
+                      <span className="mt-1 block text-sm font-bold text-ink/65">
+                        {tt('topics.lessonCount', { count: group.lessons.length })} · {tt('topics.completedCount', { count: completed })}
                       </span>
+                    </span>
+                    <span className={`gb-chip shrink-0 ${isOpen ? 'bg-white' : 'bg-yellow'} shadow-hard-sm text-xs`}>
+                      {tt(isOpen ? 'topics.hideLessons' : 'topics.showLessons')}
+                    </span>
+                  </span>
+                  {completed > 0 && <span className="mt-3 block"><MasteryBar score={average} /></span>}
+                </button>
+
+                {isOpen && (
+                  <div id={`topic-group-${groupIndex}`} className="border-t-[2.5px] border-outline bg-cream/50 p-3">
+                    <div className="overflow-hidden rounded-2xl border-[2.5px] border-outline bg-white">
+                      {group.lessons.map((c, lessonIndex) => {
+                        const isAnswered = answered.has(c.ref)
+                        const score = mastery[c.ref] ?? 0
+                        const color = masteryColor(score)
+                        const lessonDifficulty = difficultyFor(c.competency)
+                        return (
+                          <button
+                            key={c.ref}
+                            type="button"
+                            className={`flex w-full items-center gap-3 p-3 text-left transition-colors hover:bg-yellow/20 focus:bg-yellow/20 focus:outline-none ${lessonIndex ? 'border-t-2 border-outline/20' : ''}`}
+                            onClick={() => onPick(c)}
+                          >
+                            <span className={`flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border-2 border-outline ${ICON_BG[(groupIndex + lessonIndex) % ICON_BG.length]} text-lg font-extrabold`}>
+                              {topicIcon(c.ref)}
+                            </span>
+                            <span className="min-w-0 flex-1">
+                              <span className="block font-display text-base font-bold leading-tight">{topicTitle(c.ref, c.competency)}</span>
+                              <span className="mt-1 flex flex-wrap items-center gap-1.5">
+                                <span className={`rounded-full px-2 py-0.5 text-[11px] font-extrabold ${DIFFICULTY_COLOR[lessonDifficulty] ?? 'bg-white'}`}>
+                                  {tt(`difficulty.${lessonDifficulty}`)}
+                                </span>
+                                {isAnswered && <span className={`rounded-full px-2 py-0.5 text-[11px] font-extrabold ${color.bg}`}>{Math.round(score * 100)}%</span>}
+                              </span>
+                            </span>
+                          </button>
+                        )
+                      })}
                     </div>
-                    <p className="mt-1 line-clamp-2 text-sm text-ink/70">{c.competency}</p>
-                    {isAnswered && (
-                      <div className="mt-2 flex items-center gap-2">
-                        <MasteryBar score={score} />
-                        <span className={`gb-chip ${color.bg} shrink-0 text-[11px]`}>{Math.round(score * 100)}%</span>
-                      </div>
-                    )}
                   </div>
-                </div>
+                )}
               </Card>
             )
           })}

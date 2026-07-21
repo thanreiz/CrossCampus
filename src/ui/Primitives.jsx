@@ -87,7 +87,7 @@ export function Chip({ color = 'mint', active = false, className = '', children,
 // MATATAG learning-area badge. Shows the child-friendly area name (e.g.
 // "Number and Algebra") — no "Grade 6" / shortened code in the title.
 export function RefBadge({ refId, domain }) {
-  const area = topicArea(refId) || domain || 'Number and Algebra'
+  const area = topicArea(refId, domain || 'Number and Algebra')
   return (
     <span className="gb-chip bg-yellow shadow-hard-sm text-xs">{area}</span>
   )

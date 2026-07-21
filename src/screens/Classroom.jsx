@@ -2,7 +2,7 @@ import { useEffect, useMemo, useRef, useState } from 'react'
 import { Button, RefBadge, MasteryBar, RichText } from '../ui/Primitives.jsx'
 import { Mascot, SpeechBubble } from '../ui/Mascot.jsx'
 import OnlineBadge from '../ui/OnlineBadge.jsx'
-import { checkAnswer } from '../lib/check.js'
+import { checkAnswer, choiceOptions } from '../lib/check.js'
 import { speak, stopSpeaking, pauseSpeaking, resumeSpeaking, isSpeechSupported } from '../lib/speech.js'
 import { askTeacherGabay, SOURCE } from '../lib/tutor.js'
 import { LANGS, answerHint, speechLang } from '../lib/lang.js'
@@ -37,8 +37,8 @@ function plain(s) {
   return String(s ?? '').replace(/\*\*/g, '')
 }
 
-export default function Classroom({ competency, score, answered = false, online, lang = 'taglish', onLang, onAnswered, onExit }) {
-  const c = competency
+export default function Classroom({ competency, questions, questionSource = 'bundled', score, answered = false, online, lang = 'taglish', onLang, onAnswered, onExit }) {
+  const c = useMemo(() => ({ ...competency, items: questions?.length ? questions : competency.items }), [competency, questions])
   const tt = makeT(lang)
   const [tab, setTab] = useState('explain')
 
@@ -68,6 +68,7 @@ export default function Classroom({ competency, score, answered = false, online,
   const recRef = useRef(null)
 
   const item = c.items[idx]
+  const itemOptions = choiceOptions(item)
 
   useEffect(() => {
     setStepsDone(!(item?.steps?.length > 0))
@@ -98,7 +99,7 @@ export default function Classroom({ competency, score, answered = false, online,
       setNudge('needAnswer')
       return
     }
-    if (item.type !== 'mcq' && !/\d/.test(input)) {
+    if (!itemOptions && item.type === 'numeric' && !/\d/.test(input)) {
       setNudge('needNumber')
       return
     }
@@ -123,7 +124,7 @@ export default function Classroom({ competency, score, answered = false, online,
     if (ok) setCorrectCount((n) => n + 1)
     const entry = { q: locItem.q, your: input.trim(), answer: item.answer, correct: ok, solution: locItem.solution }
     setAnswers((a) => [...a, entry])
-    recordAttempt({ ref: c.ref, q: locItem.q, your: input.trim(), answer: item.answer, correct: ok, feedback: ok ? f.headline : f.body })
+    recordAttempt({ ref: item.ref ?? c.ref, q: locItem.q, your: input.trim(), answer: item.answer, correct: ok, feedback: ok ? f.headline : f.body, source: item.source ?? questionSource })
     onAnswered(c.ref, ok)
   }
 
@@ -256,8 +257,7 @@ export default function Classroom({ competency, score, answered = false, online,
       </div>
 
       {/* full child-friendly topic title */}
-      <h1 className="mb-2 font-display text-xl font-extrabold leading-tight">{topicFull(c.ref, c.competency)}</h1>
-
+      <h1 className="mb-2 font-display text-xl font-extrabold leading-tight">{topicFull(c.ref, c.competency, c.domain)}</h1>
       {/* CHALKBOARD */}
       <div className={`rounded-card border-[2.5px] border-outline bg-[#27433b] p-4 text-cream shadow-hard ${result === false ? 'answer-shake' : ''}`}>
         <div className="mb-3 flex flex-wrap gap-2">
@@ -325,9 +325,9 @@ export default function Classroom({ competency, score, answered = false, online,
                   <p className="text-sm font-extrabold text-cream">{tt('class.steps')}</p>
                 </div>
               )}
-              {item.type === 'mcq' && item.options && (
+              {itemOptions && (
                 <div className="mt-3 flex flex-wrap gap-2">
-                  {item.options.map((opt) => (
+                  {itemOptions.map((opt) => (
                     <button
                       key={opt}
                       onClick={() => {
@@ -472,10 +472,10 @@ export default function Classroom({ competency, score, answered = false, online,
         ) : (
           <div className="gb-card bg-white p-3">
             <p className="mb-1.5 px-1 text-sm font-bold text-ink/60">
-              {item.type === 'mcq' ? tt('class.pickAnswer') : answerHint(lang)}
+              {itemOptions ? tt('class.pickAnswer') : answerHint(lang)}
             </p>
             <div className="flex items-center gap-2">
-              {item.type !== 'mcq' && (
+              {!itemOptions && (
                 <input
                   ref={inputRef}
                   value={input}
@@ -495,7 +495,7 @@ export default function Classroom({ competency, score, answered = false, online,
               {result === null ? (
                 <Button
                   color="mint"
-                  className={`text-lg disabled:opacity-50 ${item.type === 'mcq' ? 'w-full' : ''}`}
+                  className={`text-lg disabled:opacity-50 ${itemOptions ? 'w-full' : ''}`}
                   onClick={submit}
                   disabled={!input.trim()}
                 >
@@ -503,11 +503,11 @@ export default function Classroom({ competency, score, answered = false, online,
                 </Button>
               ) : feedbackReady ? (
                 result ? (
-                  <Button ref={actionRef} color="sky" className={`text-lg ${item.type === 'mcq' ? 'w-full' : ''}`} onClick={next}>
+                  <Button ref={actionRef} color="sky" className={`text-lg ${itemOptions ? 'w-full' : ''}`} onClick={next}>
                     {idx + 1 >= c.items.length ? tt('common.finish') : tt('common.next')} →
                   </Button>
                 ) : (
-                  <Button ref={actionRef} color="rose" className={`text-lg ${item.type === 'mcq' ? 'w-full' : ''}`} onClick={tryAgain}>
+                  <Button ref={actionRef} color="rose" className={`text-lg ${itemOptions ? 'w-full' : ''}`} onClick={tryAgain}>
                     {tt('classroom.retry')}
                   </Button>
                 )

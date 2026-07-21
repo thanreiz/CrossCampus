@@ -329,6 +329,23 @@ Use `npm run preview` for PWA testing because the service worker behaves like pr
 5. Hard refresh the page.
 6. Confirm lessons, practice, progress, games, and 3D classroom still load.
 
+## Grade 1–6 curriculum import
+
+The bundled curriculum is built from the teacher-developed
+`DepEd-MATATAG-Mathematics-Grades-1-6` derivative package aligned to the
+April 17, 2026 Three-Term Budget of Work. It is not an official DepEd
+publication and does not imply DepEd endorsement.
+
+Rebuild the checked-in curriculum JSON from that package with:
+
+```bash
+npm run build:curriculum -- /absolute/path/to/DepEd-MATATAG-Mathematics-Grades-1-6
+```
+
+The importer maps all 306 competencies, includes uniquely worded objective
+items from activity sheets and quizzes, excludes drawing/rubric prompts, and
+records the source Markdown path and item number on every question.
+
 ## Environment Variables
 
 Copy `.env.example` when configuring online AI services:
@@ -344,6 +361,10 @@ GCP_PROJECT=
 GCP_LOCATION=
 GCP_SA_KEY=
 GEMINI_MODEL=
+GEMINI_API_KEY=
+QUESTION_MODEL=gemini-2.5-flash
+QUESTION_RATE_LIMIT=8
+QUESTION_CORS_ORIGINS=https://gabay-sage.vercel.app
 STT_MODEL=gemini-2.5-flash
 TTS_VOICE=
 ```
@@ -351,6 +372,7 @@ TTS_VOICE=
 ### AI APIs Used
 
 - **Teacher Gabay tutor:** Google Vertex AI / Gemini through `api/tutor.js`; default model is `gemini-2.5-pro`, configurable with `GEMINI_MODEL`.
+- **Adaptive question sessions:** Gemini through `api/questions.js`; complete batches are generated and independently verified before use, with automatic bundled fallback.
 - **Voice input transcription:** Gemini API audio understanding through `api/transcribe.js`; default model is `gemini-2.5-flash`, configurable with `STT_MODEL`.
 - **Voice output:** Google Cloud Text-to-Speech through `api/tts.js`; default Filipino voice is `fil-PH-Wavenet-A`, configurable with `TTS_VOICE`.
 - **Offline fallback:** browser `speechSynthesis`, typed answers, bundled content, and local answer checking keep the core app usable without the cloud APIs.
@@ -359,11 +381,11 @@ Do not commit real service account keys.
 
 ## Future Plan and Scaling
 
-Gabay is built as a Grade 6 prototype, but the architecture can grow into a wider Filipino learning platform.
+Gabay includes the Grade 1–6 MATATAG math catalog and can grow into a wider Filipino learning platform.
 
 ### Curriculum Scale-Up
 
-- Expand from Grade 6 Math to Grades 4-10.
+- Expand beyond Grade 1–6 Math.
 - Add more subjects: Science, English, Filipino, Araling Panlipunan, and TLE.
 - Convert the included term PDFs into structured lesson packs.
 - Add teacher-authored modules that can be downloaded once and reused offline.

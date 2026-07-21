@@ -52,6 +52,7 @@ CRITICAL formatting rules:
 const RESPONSE_SCHEMA = {
   type: Type.OBJECT,
   properties: {
+    difficulty: { type: Type.STRING, enum: ['madali', 'katamtaman', 'mahirap'] },
     explanation: {
       type: Type.OBJECT,
       properties: {
@@ -71,12 +72,23 @@ const RESPONSE_SCHEMA = {
           answer: { type: Type.STRING },
           type: { type: Type.STRING, enum: ['numeric', 'mcq'] },
           options: { type: Type.ARRAY, items: { type: Type.STRING } },
+          solution: {
+            type: Type.OBJECT,
+            properties: {
+              en: { type: Type.STRING },
+              fil: { type: Type.STRING },
+              taglish: { type: Type.STRING },
+            },
+            required: ['en', 'fil', 'taglish'],
+          },
+          steps: { type: Type.ARRAY, items: { type: Type.STRING } },
+          step_answers: { type: Type.ARRAY, items: { type: Type.STRING } },
         },
-        required: ['q', 'answer', 'type'],
+        required: ['q', 'answer', 'type', 'solution'],
       },
     },
   },
-  required: ['explanation', 'worked_example', 'items'],
+  required: ['difficulty', 'explanation', 'worked_example', 'items'],
 }
 
 function userPrompt(spec) {
@@ -85,9 +97,12 @@ function userPrompt(spec) {
 - content standard: "${spec.content_standard}"
 - performance standard: "${spec.performance_standard}"
 
-Produce a trilingual explanation (en, fil, taglish), one short Filipino-context
-worked_example, and EXACTLY 5 practice items. Each item is numeric or mcq; for mcq
-include 4 options that contain the exact answer. Questions in Taglish.`
+Produce a difficulty label (madali, katamtaman, or mahirap), a trilingual explanation
+(en, fil, taglish), one short Filipino-context worked_example, and EXACTLY 5 practice
+items. Each item is numeric or mcq and has a trilingual solution (en, fil, taglish).
+For mcq include exactly 4 options containing the exact answer. Questions are in
+natural Taglish. For multi-step word problems, include short steps and matching bare
+step_answers; omit both fields for single-step questions.`
 }
 
 // Belt-and-suspenders: strip currency/commas off bare numeric answers so they
@@ -120,13 +135,20 @@ function validate(obj, spec) {
     errs.push('taglish identical to en (not code-switched)')
   }
   if (!obj.worked_example?.trim()) errs.push('empty worked_example')
-  if (!Array.isArray(obj.items) || obj.items.length < 1) errs.push('no items')
+  if (!['madali', 'katamtaman', 'mahirap'].includes(obj.difficulty)) errs.push('bad difficulty')
+  if (!Array.isArray(obj.items) || obj.items.length !== 5) errs.push('items must contain exactly 5 questions')
   obj.items?.forEach((it, i) => {
     if (!it.q?.trim()) errs.push(`item ${i}: empty q`)
     if (it.answer === undefined || String(it.answer).trim() === '') errs.push(`item ${i}: empty answer`)
     if (!['numeric', 'mcq'].includes(it.type)) errs.push(`item ${i}: bad type "${it.type}"`)
+    for (const l of ['en', 'fil', 'taglish']) {
+      if (!it.solution?.[l]?.trim()) errs.push(`item ${i}: empty solution.${l}`)
+    }
+    if (it.steps && it.steps.length !== (it.step_answers?.length ?? 0)) {
+      errs.push(`item ${i}: steps and step_answers length mismatch`)
+    }
     if (it.type === 'mcq') {
-      if (!Array.isArray(it.options) || it.options.length < 2) errs.push(`item ${i}: mcq needs options`)
+      if (!Array.isArray(it.options) || it.options.length !== 4) errs.push(`item ${i}: mcq needs exactly 4 options`)
       else if (!it.options.map(String).includes(String(it.answer))) errs.push(`item ${i}: answer not in options`)
     }
   })
@@ -157,6 +179,7 @@ async function generateOne(ai, spec) {
   // Re-attach the curriculum skeleton the model wasn't asked to echo.
   return {
     grade: GRADE,
+    difficulty: obj.difficulty,
     ref: spec.ref,
     domain: spec.domain,
     content_standard: spec.content_standard,
@@ -170,16 +193,20 @@ async function generateOne(ai, spec) {
 
 async function main() {
   const credentials = getCredentials()
-  if (!process.env.GCP_PROJECT || !credentials) {
-    console.error('Set GCP_PROJECT + GCP_SA_KEY (node --env-file=.env scripts/generate-content.js)')
+  const apiKey = process.env.GEMINI_API_KEY || process.env.GOOGLE_API_KEY
+  const hasVertex = Boolean(process.env.GCP_PROJECT && credentials)
+  if (!hasVertex && !apiKey) {
+    console.error('Set GEMINI_API_KEY, or set GCP_PROJECT + GCP_SA_KEY (node --env-file=.env scripts/generate-content.js)')
     process.exit(1)
   }
-  const ai = new GoogleGenAI({
-    vertexai: true,
-    project: process.env.GCP_PROJECT,
-    location: LOCATION,
-    googleAuthOptions: { credentials },
-  })
+  const ai = hasVertex
+    ? new GoogleGenAI({
+        vertexai: true,
+        project: process.env.GCP_PROJECT,
+        location: LOCATION,
+        googleAuthOptions: { credentials },
+      })
+    : new GoogleGenAI({ apiKey })
 
   console.log(`Model: ${MODEL}\nGenerating ${SPECS.length} competenc(y/ies)...\n`)
 

@@ -75,7 +75,7 @@ export default function LessonBrief({ competency, score = 0, answered = false, o
       <div className="mt-4 grid grid-cols-2 gap-3">
         <StatTile color="mint" big={answered ? `${pct}%` : '—'} label={tt('common.mastery')} />
         <StatTile color="yellow" big={String(c.items.length)} label={tt('brief.questions')} />
-        <StatTile color="sky" big={topicArea(c.ref).split(' ').filter((w) => !/^(and|&)$/i.test(w)).map((w) => w[0].toUpperCase()).join('')} label={topicArea(c.ref)} />
+        <StatTile color="sky" big={topicArea(c.ref, c.domain).split(' ').filter((w) => !/^(and|&)$/i.test(w)).map((w) => w[0].toUpperCase()).join('')} label={topicArea(c.ref, c.domain)} />
         <StatTile
           color={masteryColor(score).bg.replace('bg-', '')}
           big={tt('band.' + masteryColor(score).band)}
@@ -110,6 +110,5 @@ function StatTile({ color, big, label }) {
     </Card>
   )
 }
-
 
 

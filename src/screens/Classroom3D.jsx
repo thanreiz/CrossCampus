@@ -4,7 +4,7 @@ import { buildClassroom, THEME_LIST } from '../three/scene.js'
 import { Button, RefBadge, RichText } from '../ui/Primitives.jsx'
 import OnlineBadge from '../ui/OnlineBadge.jsx'
 import { Mascot } from '../ui/Mascot.jsx'
-import { checkAnswer } from '../lib/check.js'
+import { checkAnswer, choiceOptions } from '../lib/check.js'
 import { speak, stopSpeaking } from '../lib/speech.js'
 import { feedbackFor } from '../lib/feedback.js'
 import { recordAttempt } from '../lib/history.js'
@@ -23,13 +23,14 @@ function plain(s) {
 // React owns the DOM shell + lesson modal + content/mastery/voice bridge.
 // Three.js owns the canvas. The whole scene lives in three/scene.js -> buildClassroom(),
 // so codex's richer geometry can replace that one function without touching this file.
-export default function Classroom3D({ competency, score, online, lang = 'taglish', onAnswered, onExit }) {
-  const c = competency
+export default function Classroom3D({ competency, questions, questionSource = 'bundled', score, online, lang = 'taglish', onAnswered, onExit, onFallback2D }) {
+  const c = { ...competency, items: questions?.length ? questions : competency.items }
   const tt = makeT(lang)
   const mountRef = useRef(null)
   const sceneRef = useRef(null)
 
   const [ready, setReady] = useState(false)
+  const [sceneError, setSceneError] = useState(false)
   const [atBoard, setAtBoard] = useState(false)
   const [modal, setModal] = useState(false)
   const [idx, setIdx] = useState(0)
@@ -46,6 +47,7 @@ export default function Classroom3D({ competency, score, online, lang = 'taglish
   const [hasAnsweredOnce, setHasAnsweredOnce] = useState(false)
 
   const item = c.items[idx]
+  const itemOptions = choiceOptions(item)
   const itemRef = useRef(item)
 
   useEffect(() => {
@@ -76,15 +78,23 @@ export default function Classroom3D({ competency, score, online, lang = 'taglish
   // Boot the Three.js scene once.
   useEffect(() => {
     if (!mountRef.current) return
-    const api = buildClassroom({
-      mount: mountRef.current,
-      competency: c,
-      boardText: localize(c.items?.[0]?.q, lang),
-      labels: { correct: tt('3d.board.correct'), tryAgain: tt('3d.board.tryAgain'), ready: tt('3d.board.ready') },
-      // fired when the player walks into the blackboard zone
-      onNearBoard: (near) => setAtBoard(near),
-      onInteract: () => openBoard(),
-    })
+    let api
+    try {
+      api = buildClassroom({
+        mount: mountRef.current,
+        competency: c,
+        boardText: localize(c.items?.[0]?.q, lang),
+        labels: { correct: tt('3d.board.correct'), tryAgain: tt('3d.board.tryAgain'), ready: tt('3d.board.ready') },
+        // fired when the player walks into the blackboard zone
+        onNearBoard: (near) => setAtBoard(near),
+        onInteract: () => openBoard(),
+      })
+    } catch (error) {
+      console.warn('3D classroom unavailable; offering 2D fallback.', error)
+      mountRef.current.replaceChildren()
+      setSceneError(true)
+      return undefined
+    }
     sceneRef.current = api
     setReady(true)
     return () => {
@@ -129,7 +139,7 @@ export default function Classroom3D({ competency, score, online, lang = 'taglish
       setNudge('needAnswer')
       return
     }
-    if (item.type !== 'mcq' && !/\d/.test(input)) {
+    if (!itemOptions && item.type === 'numeric' && !/\d/.test(input)) {
       setNudge('needNumber')
       return
     }
@@ -143,7 +153,7 @@ export default function Classroom3D({ competency, score, online, lang = 'taglish
     if (ok) setCorrectCount((n) => n + 1)
     setHasAnsweredOnce(true)
     setAnswers((a) => [...a, { q: locItem.q, your: input.trim(), answer: item.answer, correct: ok, solution: locItem.solution }])
-    recordAttempt({ ref: c.ref, q: locItem.q, your: input.trim(), answer: item.answer, correct: ok, feedback: ok ? f.headline : f.body })
+    recordAttempt({ ref: item.ref ?? c.ref, q: locItem.q, your: input.trim(), answer: item.answer, correct: ok, feedback: ok ? f.headline : f.body, source: item.source ?? questionSource })
     onAnswered(c.ref, ok)
     speak(ok ? f.headline : `${f.headline} ${plain(f.body)}`, { lang })
     sceneRef.current?.markBoard(ok)
@@ -175,11 +185,26 @@ export default function Classroom3D({ competency, score, online, lang = 'taglish
     sceneRef.current?.setControls(true)
   }
 
+  if (sceneError) {
+    return (
+      <main className="flex min-h-[100dvh] items-center justify-center bg-[#27433b] p-5">
+        <section className="gb-card max-w-md bg-cream p-6 text-center">
+          <Mascot className="mx-auto h-28 w-28" />
+          <h1 className="mt-3 font-display text-2xl">{tt('3d.unavailable.title')}</h1>
+          <p className="mt-2 font-semibold text-ink/70">{tt('3d.unavailable.body')}</p>
+          <div className="mt-5 grid gap-3">
+            <Button className="w-full" onClick={onFallback2D}>{tt('3d.unavailable.action')}</Button>
+            <button className="font-extrabold underline" onClick={onExit}>{tt('common.exit')}</button>
+          </div>
+        </section>
+      </main>
+    )
+  }
+
   return (
     <div className="relative h-[100dvh] w-full overflow-hidden bg-[#27433b]">
       {/* Three.js canvas mounts here */}
       <div ref={mountRef} className="absolute inset-0" />
-
       {/* top HUD */}
       <div className="pointer-events-none absolute left-0 right-0 top-0 flex items-center justify-between p-3">
         <button className="pointer-events-auto gb-chip bg-white" onClick={onExit}>{tt('common.exit')}</button>
@@ -192,7 +217,7 @@ export default function Classroom3D({ competency, score, online, lang = 'taglish
 
       {/* full child-friendly topic title */}
       <div className="pointer-events-none absolute left-1/2 top-3 -translate-x-1/2 px-2 text-center">
-        <span className="gb-chip bg-white/90 text-xs">{topicFull(c.ref, c.competency)}</span>
+        <span className="gb-chip bg-white/90 text-xs">{topicFull(c.ref, c.competency, c.domain)}</span>
       </div>
 
       <div className="absolute right-3 top-20 grid gap-2">
@@ -341,9 +366,9 @@ export default function Classroom3D({ competency, score, online, lang = 'taglish
 
             <p className="font-display text-2xl font-bold leading-snug">{localize(item.q, lang)}</p>
 
-            {item.type === 'mcq' && item.options && (
+            {itemOptions && (
               <div className="mt-3 flex flex-wrap gap-2">
-                {item.options.map((opt) => (
+                {itemOptions.map((opt) => (
                   <button
                     key={opt}
                     onClick={() => {
@@ -360,14 +385,14 @@ export default function Classroom3D({ competency, score, online, lang = 'taglish
 
             {/* explicit instruction — kids need to know where to put the answer */}
             <p className="mt-4 px-1 text-sm font-bold text-ink/70">
-              {item.type === 'mcq' ? tt('class.pickAnswer') : tt('class.typeHere')}
+              {itemOptions ? tt('class.pickAnswer') : tt('class.typeHere')}
             </p>
-            {item.type !== 'mcq' && (
+            {!itemOptions && (
               <p className="px-1 text-xs font-bold text-ink/50">{answerHint(lang)}</p>
             )}
 
             <div className="mt-2 grid gap-3 sm:grid-cols-[1fr_auto]">
-              {item.type !== 'mcq' && (
+              {!itemOptions && (
                 <input
                   value={input}
                   onChange={(e) => {
@@ -383,14 +408,14 @@ export default function Classroom3D({ competency, score, online, lang = 'taglish
               {result === null ? (
                 <Button
                   color="mint"
-                  className={`min-h-[56px] px-6 text-lg disabled:opacity-50 ${item.type === 'mcq' ? 'w-full' : ''}`}
+                  className={`min-h-[56px] px-6 text-lg disabled:opacity-50 ${itemOptions ? 'w-full' : ''}`}
                   onClick={submit}
                   disabled={!input.trim()}
                 >
                   {tt('class.answer')}
                 </Button>
               ) : (
-                <Button color="sky" className={`min-h-[56px] px-6 text-lg ${item.type === 'mcq' ? 'w-full' : ''}`} onClick={next}>
+                <Button color="sky" className={`min-h-[56px] px-6 text-lg ${itemOptions ? 'w-full' : ''}`} onClick={next}>
                   {idx + 1 >= c.items.length ? tt('common.finish') : tt('common.next')}
                 </Button>
               )}
@@ -463,8 +488,3 @@ function Joystick({ onMove, label }) {
     </div>
   )
 }
-
-
-
-
-

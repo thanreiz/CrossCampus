@@ -22,3 +22,8 @@ export function checkAnswer(item, raw) {
   }
   return false
 }
+
+export function choiceOptions(item) {
+  if (['mcq', 'matching', 'true_false'].includes(item?.type) && Array.isArray(item.options)) return item.options
+  return null
+}

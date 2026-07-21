@@ -1,7 +1,7 @@
 ﻿import { Card, Button, Doodles, MasteryBar } from '../ui/Primitives.jsx'
 import { Mascot } from '../ui/Mascot.jsx'
 import OnlineBadge from '../ui/OnlineBadge.jsx'
-import { topicTitle } from '../lib/topics.js'
+import { topicTitleLocalized } from '../lib/topics.js'
 import { makeT } from '../lib/i18n.js'
 
 // Start choice - design basis: Stitch "Gabay - Start Choice".
@@ -10,7 +10,7 @@ export default function StartChoice({ next, mastery, online = true, lang = 'tagl
   const answered = next ? Object.prototype.hasOwnProperty.call(mastery, next.ref) : false
   const score = next ? mastery[next.ref] ?? 0 : 0
   const pct = Math.round(score * 100)
-  const title = next ? topicTitle(next.ref, next.competency) : ''
+  const title = next ? topicTitleLocalized(next.ref, next.competency, lang) : ''
 
   return (
     <div className="gb-shell relative flex min-h-screen flex-col px-5 pb-28 pt-6">

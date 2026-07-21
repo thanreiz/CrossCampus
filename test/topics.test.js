@@ -1,7 +1,7 @@
 import test from 'node:test'
 import assert from 'node:assert/strict'
 import { getAllContent } from '../src/lib/content-catalog.js'
-import { topicTitle } from '../src/lib/topics.js'
+import { topicFull, topicTitle, topicTitleLocalized } from '../src/lib/topics.js'
 
 test('every curriculum topic has a concise one-to-three-word title', () => {
   for (const competency of getAllContent()) {
@@ -26,4 +26,13 @@ test('ambiguous competency wording is labeled by its primary skill', () => {
   assert.equal(topicTitle('5NA-IIc-1', 'Solve problems involving addition and subtraction of decimals.'), 'Decimal Operations')
   assert.equal(topicTitle('6MG-IIIb-2', 'Approximate pi as the ratio of circumference to diameter.'), 'Understanding Pi')
   assert.equal(topicTitle('5MG-IIIi-1', 'Solve problems involving the surface area of solid figures.'), 'Surface Area')
+})
+
+test('Filipino mode localizes learner-facing Grade 1 topic labels', () => {
+  assert.equal(topicTitleLocalized('1NA-Ia-1', 'Count up to 100.', 'fil'), 'Pagbilang ng mga Numero')
+  assert.equal(topicTitleLocalized('1MG-Ia-3', 'Compose and decompose triangles, squares, and rectangles.', 'fil'), 'Pagbuo ng mga Hugis')
+  assert.equal(
+    topicFull('1MG-Ia-3', 'Compose and decompose triangles, squares, and rectangles.', 'Measurement and Geometry', 'fil'),
+    'Pagsukat at Heometriya – Pagbuo ng mga Hugis',
+  )
 })

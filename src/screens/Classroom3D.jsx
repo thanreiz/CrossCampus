@@ -10,9 +10,10 @@ import { feedbackFor } from '../lib/feedback.js'
 import { recordAttempt } from '../lib/history.js'
 import { topicFull } from '../lib/topics.js'
 import { loadTheme, saveTheme, DEFAULT_THEME } from '../lib/theme.js'
-import { makeT, localize } from '../lib/i18n.js'
+import { makeT, localize, localizeChoice } from '../lib/i18n.js'
 import { answerHint } from '../lib/lang.js'
 import { sfx, primeAudio } from '../lib/sound.js'
+import { ChoiceVisual, QuestionVisual } from '../ui/LearningVisual.jsx'
 
 // Strip **bold** markup before reading aloud.
 function plain(s) {
@@ -210,14 +211,14 @@ export default function Classroom3D({ competency, questions, questionSource = 'b
         <button className="pointer-events-auto gb-chip bg-white" onClick={onExit}>{tt('common.exit')}</button>
         <div className="pointer-events-auto flex items-center gap-2">
           <OnlineBadge online={online} />
-          <RefBadge refId={c.ref} domain={c.domain} />
+          <RefBadge refId={c.ref} domain={tt(`domain.${c.domain}`)} />
         </div>
       </div>
 
 
       {/* full child-friendly topic title */}
       <div className="pointer-events-none absolute left-1/2 top-3 -translate-x-1/2 px-2 text-center">
-        <span className="gb-chip bg-white/90 text-xs">{topicFull(c.ref, c.competency, c.domain)}</span>
+        <span className="gb-chip bg-white/90 text-xs">{topicFull(c.ref, c.competency, c.domain, lang)}</span>
       </div>
 
       <div className="absolute right-3 top-20 grid gap-2">
@@ -321,8 +322,8 @@ export default function Classroom3D({ competency, questions, questionSource = 'b
                   {answers.filter((a) => !a.correct).map((a, i) => (
                     <div key={i} className="rounded-card border-2 border-outline bg-cream p-3 text-sm">
                       <p className="font-bold"><span className="text-ink/60">{tt('common.question')}:</span> {a.q}</p>
-                      <p className="mt-1 font-bold"><span className="text-ink/60">{tt('common.yourAnswer')}:</span> <span className="text-rose-700">{a.your || '—'}</span></p>
-                      <p className="mt-1 font-bold"><span className="text-ink/60">{tt('common.correctAnswer')}:</span> <span className="text-green-700">{a.answer}</span></p>
+                      <p className="mt-1 font-bold"><span className="text-ink/60">{tt('common.yourAnswer')}:</span> <span className="text-rose-700">{a.your ? localizeChoice(a.your, lang) : '—'}</span></p>
+                      <p className="mt-1 font-bold"><span className="text-ink/60">{tt('common.correctAnswer')}:</span> <span className="text-green-700">{localizeChoice(a.answer, lang)}</span></p>
                       {a.solution && <p className="mt-1"><span className="font-bold text-ink/60">{tt('common.explanation')}:</span> <RichText>{a.solution}</RichText></p>}
                     </div>
                   ))}
@@ -365,6 +366,7 @@ export default function Classroom3D({ competency, questions, questionSource = 'b
             )}
 
             <p className="font-display text-2xl font-bold leading-snug">{localize(item.q, lang)}</p>
+            <QuestionVisual question={localize(item.q, lang)} />
 
             {itemOptions && (
               <div className="mt-3 flex flex-wrap gap-2">
@@ -377,7 +379,8 @@ export default function Classroom3D({ competency, questions, questionSource = 'b
                     }}
                     className={`gb-chip ${input === opt ? 'bg-sky shadow-hard-sm' : 'bg-white'}`}
                   >
-                    {opt}
+                    <ChoiceVisual value={opt} />
+                    {localizeChoice(opt, lang)}
                   </button>
                 ))}
               </div>

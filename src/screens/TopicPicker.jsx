@@ -3,7 +3,7 @@ import { Card, Chip, Doodles, MasteryBar, Button } from '../ui/Primitives.jsx'
 import { Mascot } from '../ui/Mascot.jsx'
 import OnlineBadge from '../ui/OnlineBadge.jsx'
 import { hasAnswered, masteryColor } from '../lib/mastery.js'
-import { topicIcon, topicTitle } from '../lib/topics.js'
+import { topicIcon, topicTitle, topicTitleLocalized } from '../lib/topics.js'
 import { makeT } from '../lib/i18n.js'
 import { difficultyFor } from '../lib/difficulty.js'
 
@@ -41,7 +41,7 @@ export default function TopicPicker({
   const shown = useMemo(() => {
     const query = search.trim().toLowerCase()
     const list = competencies.filter((c) => {
-      const title = topicTitle(c.ref, c.competency).toLowerCase()
+      const title = `${topicTitle(c.ref, c.competency)} ${topicTitleLocalized(c.ref, c.competency, lang)}`.toLowerCase()
       const practiceMatch = mode !== 'practice' || (answered.has(c.ref) && (mastery[c.ref] ?? 0) < 0.8)
       return practiceMatch &&
         (difficulty === ALL || difficultyFor(c.competency) === difficulty) &&
@@ -49,7 +49,7 @@ export default function TopicPicker({
     })
     if (mode === 'practice') list.sort((a, b) => (due[a.ref] ?? Infinity) - (due[b.ref] ?? Infinity))
     return list
-  }, [answered, competencies, difficulty, due, mastery, mode, search])
+  }, [answered, competencies, difficulty, due, lang, mastery, mode, search])
 
   const groups = useMemo(() => {
     const byDomain = new Map()
@@ -168,7 +168,7 @@ export default function TopicPicker({
                               {topicIcon(c.ref)}
                             </span>
                             <span className="min-w-0 flex-1">
-                              <span className="block font-display text-base font-bold leading-tight">{topicTitle(c.ref, c.competency)}</span>
+                              <span className="block font-display text-base font-bold leading-tight">{topicTitleLocalized(c.ref, c.competency, lang)}</span>
                               <span className="mt-1 flex flex-wrap items-center gap-1.5">
                                 <span className={`rounded-full px-2 py-0.5 text-[11px] font-extrabold ${DIFFICULTY_COLOR[lessonDifficulty] ?? 'bg-white'}`}>
                                   {tt(`difficulty.${lessonDifficulty}`)}

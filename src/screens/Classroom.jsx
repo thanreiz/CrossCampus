@@ -6,12 +6,15 @@ import { checkAnswer, choiceOptions } from '../lib/check.js'
 import { speak, stopSpeaking, pauseSpeaking, resumeSpeaking, isSpeechSupported } from '../lib/speech.js'
 import { askTeacherGabay, SOURCE } from '../lib/tutor.js'
 import { LANGS, answerHint, speechLang } from '../lib/lang.js'
-import { makeT, localize } from '../lib/i18n.js'
+import { makeT, localize, localizeChoice } from '../lib/i18n.js'
 import { feedbackFor, vibrateCorrect, vibrateWrong } from '../lib/feedback.js'
 import { recordAttempt } from '../lib/history.js'
 import { topicFull } from '../lib/topics.js'
 import { EarIcon, PlayCircleIcon, PauseCircleIcon, RaiseHandIcon } from '../ui/Icons.jsx'
 import StepScaffold from '../ui/StepScaffold.jsx'
+import { ChoiceVisual, QuestionVisual } from '../ui/LearningVisual.jsx'
+import { visualKeyForCompetency } from '../lib/visual-assets.js'
+import { lessonTeaching } from '../lib/lesson-teaching.js'
 import { sfx } from '../lib/sound.js'
 import {
   createRecognizer,
@@ -39,6 +42,7 @@ function plain(s) {
 
 export default function Classroom({ competency, questions, questionSource = 'bundled', score, answered = false, online, lang = 'taglish', onLang, onAnswered, onExit }) {
   const c = useMemo(() => ({ ...competency, items: questions?.length ? questions : competency.items }), [competency, questions])
+  const teaching = useMemo(() => lessonTeaching(c), [c])
   const tt = makeT(lang)
   const [tab, setTab] = useState('explain')
 
@@ -76,13 +80,13 @@ export default function Classroom({ competency, questions, questionSource = 'bun
 
   // What Teacher Gabay "says" — drives both the bubble and voice-out.
   const bubble = useMemo(() => {
-    if (tab === 'explain') return localize(c.explanation, lang)
-    if (tab === 'example') return localize(c.worked_example, lang)
+    if (tab === 'explain') return tt('class.bubble.explain')
+    if (tab === 'example') return localize(teaching.example.teacherLine, lang)
     if (done) return tt('class.bubble.done', { correct: correctCount, total: c.items.length })
     if (result !== null && fb) return fb.ok ? fb.headline : `${fb.headline} ${plain(fb.body)}`
     return tt('class.bubble.intro', { n: idx + 1, total: c.items.length })
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [tab, lang, c, done, result, fb, idx, correctCount])
+  }, [tab, lang, c, teaching, done, result, fb, idx, correctCount])
 
   // Auto read aloud whenever Gabay's line changes (voice-out, works offline).
   useEffect(() => {
@@ -252,20 +256,20 @@ export default function Classroom({ competency, questions, questionSource = 'bun
         <button className="gb-chip bg-white text-base" onClick={onExit}>{tt('common.exit')}</button>
         <div className="flex items-center gap-2">
           {tab !== 'practice' && <OnlineBadge online={online} />}
-          <RefBadge refId={c.ref} domain={c.domain} />
+          <RefBadge refId={c.ref} domain={tt(`domain.${c.domain}`)} />
         </div>
       </div>
 
       {/* full child-friendly topic title */}
-      <h1 className="mb-2 font-display text-xl font-extrabold leading-tight">{topicFull(c.ref, c.competency, c.domain)}</h1>
+      <h1 className="mb-2 font-display text-xl font-extrabold leading-tight">{topicFull(c.ref, c.competency, c.domain, lang)}</h1>
       {/* CHALKBOARD */}
       <div className={`rounded-card border-[2.5px] border-outline bg-[#27433b] p-4 text-cream shadow-hard ${result === false ? 'answer-shake' : ''}`}>
-        <div className="mb-3 flex flex-wrap gap-2">
+        <div className="mb-3 grid grid-cols-3 gap-2">
           {TABS.map((t) => (
             <button
               key={t.key}
               onClick={() => setTab(t.key)}
-              className={`rounded-full border-2 border-cream/70 px-3.5 py-1.5 text-sm font-bold ${
+              className={`min-w-0 rounded-full border-2 border-cream/70 px-2 py-2 text-sm font-bold ${
                 tab === t.key ? 'bg-yellow text-ink' : 'text-cream'
               }`}
             >
@@ -276,12 +280,12 @@ export default function Classroom({ competency, questions, questionSource = 'bun
 
         {tab === 'explain' && (
           <>
-            <div className="mb-3 flex gap-2">
+            <div className="mb-3 grid grid-cols-3 gap-2 border-t border-cream/25 pt-3">
               {LANGS.map((l) => (
                 <button
                   key={l.key}
                   onClick={() => onLang?.(l.key)}
-                  className={`rounded-full border-2 border-cream/60 px-3 py-1 text-sm font-bold ${
+                  className={`min-w-0 rounded-full border-2 border-cream/60 px-2 py-1.5 text-sm font-bold ${
                     lang === l.key ? 'bg-mint text-ink' : 'text-cream'
                   }`}
                 >
@@ -289,14 +293,30 @@ export default function Classroom({ competency, questions, questionSource = 'bun
                 </button>
               ))}
             </div>
-            <p className="font-display text-lg leading-relaxed">{localize(c.explanation, lang)}</p>
+            <p className="font-display text-lg leading-relaxed">{localize(teaching.explanation, lang)}</p>
           </>
         )}
 
         {tab === 'example' && (
           <>
             {c.visual && <div className="lesson-visual mb-4 overflow-hidden rounded-card bg-white p-3 text-ink" dangerouslySetInnerHTML={{ __html: c.visual }} />}
-            <p className="font-display text-lg leading-relaxed">{localize(c.worked_example, lang)}</p>
+            <QuestionVisual question={localize(teaching.example.prompt, lang)} assetKey={visualKeyForCompetency(c)} dark className="mb-4" />
+            <div className="rounded-card border-2 border-cream/60 bg-white/10 p-3">
+              <p className="font-display text-lg font-bold leading-relaxed">{localize(teaching.example.prompt, lang)}</p>
+              <ol className="mt-3 grid gap-2">
+                {teaching.example.steps.map((step, stepIndex) => (
+                  <li key={stepIndex} className="flex items-start gap-2 text-base leading-relaxed">
+                    <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-yellow font-extrabold text-ink">
+                      {stepIndex + 1}
+                    </span>
+                    <span>{localize(step, lang)}</span>
+                  </li>
+                ))}
+              </ol>
+              <p className="mt-3 rounded-card bg-mint p-3 font-display text-lg font-extrabold text-ink">
+                {localize(teaching.example.answer, lang)}
+              </p>
+            </div>
           </>
         )}
 
@@ -320,6 +340,7 @@ export default function Classroom({ competency, questions, questionSource = 'bun
                 {tt('common.question')} {idx + 1} / {c.items.length}
               </p>
               <p className="mt-1 font-display text-xl font-bold leading-snug">{localize(item.q, lang)}</p>
+              <QuestionVisual question={localize(item.q, lang)} dark />
               {item.steps?.length > 0 && !stepsDone && (
                 <div className="mt-3 rounded-card border-2 border-cream/50 bg-white/10 p-3">
                   <p className="text-sm font-extrabold text-cream">{tt('class.steps')}</p>
@@ -336,11 +357,12 @@ export default function Classroom({ competency, questions, questionSource = 'bun
                           setNudge(null)
                         }
                       }}
-                      className={`rounded-full border-2 border-cream/60 px-4 py-1.5 text-base font-bold ${
+                      className={`inline-flex items-center gap-2 rounded-full border-2 border-cream/60 px-4 py-1.5 text-base font-bold ${
                         input === opt ? 'bg-sky text-ink' : 'text-cream'
                       }`}
                     >
-                      {opt}
+                      <ChoiceVisual value={opt} />
+                      {localizeChoice(opt, lang)}
                     </button>
                   ))}
                 </div>
@@ -350,9 +372,9 @@ export default function Classroom({ competency, questions, questionSource = 'bun
       </div>
 
       {/* TEACHER + speech bubble */}
-      <div className="mt-5 flex items-end gap-3">
-        <div className={`${avatarState} flex w-[35%] min-w-[112px] items-end justify-center`}>
-          <Mascot size={142} />
+      <div className="mt-4 flex items-center gap-3 rounded-card border-[2.5px] border-outline bg-white/55 p-3 shadow-hard-sm">
+        <div className={`${avatarState} flex w-24 shrink-0 items-end justify-center`}>
+          <Mascot size={104} />
         </div>
         <div className="flex-1">
           <SpeechBubble speaking>
@@ -370,7 +392,7 @@ export default function Classroom({ competency, questions, questionSource = 'bun
       {/* voice controls — listen again (ear) / pause-resume (play-pause circle) /
           raise hand (person). Stop removed: pause/play already covers it. */}
       {isSpeechSupported() && (
-        <div className="mt-2 flex flex-wrap items-center gap-2">
+        <div className="mt-3 flex flex-wrap items-center justify-center gap-2">
           <button
             className="flex h-12 w-12 items-center justify-center rounded-full border-[2.5px] border-outline bg-white shadow-hard-sm active:translate-y-[1px]"
             onClick={() => { setPaused(false); speak(bubble, { lang }) }}
@@ -459,7 +481,7 @@ export default function Classroom({ competency, questions, questionSource = 'bun
       </div>}
 
       {/* DESK BAR */}
-      <div className="mt-auto pt-5">
+      <div className="mt-5">
         {tab !== 'practice' ? (
           <Button color="yellow" className="w-full text-lg" onClick={() => setTab('practice')}>{tt('class.startPractice')} &rarr;</Button>
         ) : done ? (
@@ -552,11 +574,11 @@ function Summary({ answers, correctCount, total, lang = 'taglish' }) {
                 </p>
                 <p className="mt-1 text-sm font-bold">
                   <span className="text-ink/60">{tt('common.yourAnswer')}:</span>{' '}
-                  <span className="text-rose-700">{a.your || '—'}</span>
+                  <span className="text-rose-700">{a.your ? localizeChoice(a.your, lang) : '—'}</span>
                 </p>
                 <p className="mt-1 text-sm font-bold">
                   <span className="text-ink/60">{tt('common.correctAnswer')}:</span>{' '}
-                  <span className="text-green-700">{a.answer}</span>
+                  <span className="text-green-700">{localizeChoice(a.answer, lang)}</span>
                 </p>
                 {a.solution && (
                   <p className="mt-1 text-sm">

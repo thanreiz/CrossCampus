@@ -11,6 +11,40 @@
 
 import { DEFAULT_LANG } from './lang.js'
 
+const l = (en, fil = en, taglish = fil) => ({ en, fil, taglish })
+
+const GRADE_GAME_COPY = {
+  'g1-number-train': [l('Number Train', 'Tren ng Numero'), l('Count, order, and build numbers as the train moves.', 'Magbilang, mag-ayos, at bumuo ng numero habang umaandar ang tren.', 'Count, order, at bumuo ng numbers habang umaandar ang train.'), l('Conductor', 'Konduktor'), l('All aboard', 'Sakay na')],
+  'g1-sari-sari-shop': [l('Sari-Sari Shop'), l('Add, subtract, and count money for every customer.', 'Magdagdag, magbawas, at magbilang ng pera para sa bawat mamimili.', 'Add, subtract, at magbilang ng money para sa bawat customer.'), l('Customer', 'Mamimili'), l('Sell', 'Magbenta')],
+  'g1-shape-time-playground': [l('Shape & Time Playground', 'Palaruan ng Hugis at Oras'), l('Explore shapes, lengths, turns, clocks, and calendars.', 'Tuklasin ang mga hugis, haba, pagliko, orasan, at kalendaryo.', 'Explore shapes, lengths, turns, clocks, at calendars.'), l('Playmate', 'Kalaro'), l('Play', 'Maglaro')],
+  'g1-pattern-picnic': [l('Pattern Picnic', 'Piknik ng Pattern'), l('Spot patterns, share fractions, and read picture graphs.', 'Hanapin ang pattern, magbahagi ng fraction, at bumasa ng pictograph.', 'Spot patterns, share fractions, at read pictographs.'), l('Picnic friend', 'Ka-piknik'), l('Share', 'Magbahagi')],
+  'g2-number-city': [l('Number City', 'Lungsod ng Numero'), l('Navigate numbers to 1,000 using place value and patterns.', 'Maglakbay sa mga numero hanggang 1,000 gamit ang place value at pattern.', 'Navigate numbers to 1,000 gamit ang place value at patterns.'), l('City guide', 'Gabay sa lungsod'), l('Explore', 'Tuklasin')],
+  'g2-market-math': [l('Market Math', 'Math sa Palengke'), l('Add, subtract, regroup, and solve money problems.', 'Magdagdag, magbawas, mag-regroup, at lumutas ng problemang may pera.', 'Add, subtract, regroup, at solve money problems.'), l('Shopper', 'Mamimili'), l('Pay', 'Magbayad')],
+  'g2-sharing-camp': [l('Sharing Camp', 'Kampo ng Pagbabahagi'), l('Make equal groups, multiply, divide, and share fractions.', 'Bumuo ng pantay na grupo, mag-multiply, mag-divide, at magbahagi ng fraction.', 'Make equal groups, multiply, divide, at share fractions.'), l('Camper', 'Kamping'), l('Share', 'Magbahagi')],
+  'g2-measure-picture-lab': [l('Measure & Picture Lab', 'Lab ng Sukat at Larawan'), l('Measure shapes and time, then read pictographs and perimeter.', 'Sukatin ang hugis at oras, saka bumasa ng pictograph at perimeter.', 'Measure shapes and time, then read pictographs and perimeter.'), l('Lab partner', 'Ka-lab'), l('Measure', 'Sukatin')],
+  'g3-number-expedition': [l('Number Expedition', 'Ekspedisyon ng Numero'), l('Explore numbers to 10,000 by rounding, comparing, and ordering.', 'Tuklasin ang mga numero hanggang 10,000 sa pag-round, compare, at order.', 'Explore numbers to 10,000 by rounding, comparing, at ordering.'), l('Explorer', 'Manlalakbay'), l('Navigate', 'Maglakbay')],
+  'g3-market-masters': [l('Market Masters', 'Mga Mahusay sa Palengke'), l('Use money, operations, patterns, and fractions at the market.', 'Gamitin ang pera, operations, pattern, at fraction sa palengke.', 'Use money, operations, patterns, at fractions sa market.'), l('Vendor', 'Tindero'), l('Trade', 'Makipagpalitan')],
+  'g3-measure-shape-lab': [l('Measure & Shape Lab', 'Lab ng Sukat at Hugis'), l('Investigate area, lines, mass, capacity, and symmetry.', 'Siyasatin ang area, linya, mass, capacity, at symmetry.', 'Investigate area, lines, mass, capacity, at symmetry.'), l('Scientist', 'Siyentista'), l('Test', 'Subukan')],
+  'g3-data-carnival': [l('Data Carnival', 'Karnabal ng Data'), l('Run experiments, read bar graphs, and predict chances.', 'Magsagawa ng experiment, bumasa ng bar graph, at hulaan ang tsansa.', 'Run experiments, read bar graphs, at predict chances.'), l('Game host', 'Tagapangasiwa'), l('Play', 'Maglaro')],
+  'g4-big-number-mission': [l('Big Number Mission', 'Misyon ng Malalaking Numero'), l('Complete missions with large numbers, operations, and patterns.', 'Tapusin ang mga misyon gamit ang malalaking numero, operations, at pattern.', 'Complete missions with big numbers, operations, at patterns.'), l('Mission control', 'Kontrol ng misyon'), l('Launch', 'Ilunsad')],
+  'g4-fraction-decimal-kitchen': [l('Fraction & Decimal Kitchen', 'Kusina ng Fraction at Decimal'), l('Mix fractions, factors, multiples, and decimals.', 'Paghaluin ang fraction, factor, multiple, at decimal.', 'Mix fractions, factors, multiples, at decimals.'), l('Chef', 'Kusinero'), l('Cook', 'Magluto')],
+  'g4-geometry-workshop': [l('Geometry Workshop', 'Pagawaan ng Geometry'), l('Build with angles, polygons, perimeter, conversions, and symmetry.', 'Bumuo gamit ang angle, polygon, perimeter, conversion, at symmetry.', 'Build with angles, polygons, perimeter, conversions, at symmetry.'), l('Builder', 'Tagabuo'), l('Build', 'Bumuo')],
+  'g4-data-studio': [l('Data Studio', 'Studio ng Data'), l('Create, read, and solve problems with tables and line graphs.', 'Gumawa, bumasa, at lumutas gamit ang table at line graph.', 'Create, read, at solve with tables and line graphs.'), l('Analyst', 'Tagasuri'), l('Analyze', 'Suriin')],
+  'g5-time-zone-mission': [l('Time Zone Mission', 'Misyon sa Time Zone'), l('Convert clock systems and compare time around the world.', 'Mag-convert ng oras at maghambing ng time sa iba’t ibang panig ng mundo.', 'Convert clock systems at compare time around the world.'), l('Navigator', 'Tagapaglayag'), l('Travel', 'Maglakbay')],
+  'g5-fraction-decimal-cafe': [l('Fraction & Decimal Café', 'Kapihan ng Fraction at Decimal'), l('Serve up fraction and decimal operations with every order.', 'Gamitin ang fraction at decimal operations sa bawat order.', 'Serve fraction and decimal operations sa bawat order.'), l('Guest', 'Bisita'), l('Serve', 'Ihain')],
+  'g5-data-detective': [l('Data Detective', 'Detektib ng Data'), l('Investigate factors, graphs, inferences, and probability.', 'Imbestigahan ang factor, graph, inference, at probability.', 'Investigate factors, graphs, inferences, at probability.'), l('Detective', 'Detektib'), l('Investigate', 'Imbestigahan')],
+  'g5-solid-builder': [l('Solid Builder', 'Tagabuo ng Solid Figures'), l('Design solids, nets, surface area, volume, and rotations.', 'Magdisenyo ng solid, net, surface area, volume, at rotation.', 'Design solids, nets, surface area, volume, at rotations.'), l('Architect', 'Arkitekto'), l('Build', 'Bumuo')],
+}
+
+const GRADE_GAME_STRINGS = Object.fromEntries(Object.entries(GRADE_GAME_COPY).flatMap(([key, [name, tagline, actor, action]]) => [
+  [`games.${key}.name`, name],
+  [`games.${key}.tagline`, tagline],
+  [`games.${key}.actor`, actor],
+  [`games.${key}.action`, action],
+  [`games.${key}.start`, l(`Start ${name.en} ({n} questions)`, `Simulan ang ${name.fil} ({n} tanong)`, `Start ${name.taglish} ({n} questions)`) ],
+  [`games.${key}.closed`, l(`${name.en} complete!`, `Tapos na ang ${name.fil}!`, `Complete na ang ${name.taglish}!`) ],
+]))
+
 export const STRINGS = {
   // ---- Splash ----
   'splash.banner': {
@@ -297,6 +331,8 @@ export const STRINGS = {
     taglish: 'Bawat game ay para sa ibang bahagi ng curriculum.',
   },
   'games.chooseAnother': { en: 'Choose another game', fil: 'Pumili ng ibang laro', taglish: 'Pumili ng ibang game' },
+  'games.unavailable.title': { en: 'This game is not ready yet.', fil: 'Hindi pa handa ang larong ito.', taglish: 'Hindi pa ready ang game na ito.' },
+  'games.unavailable.body': { en: 'Try again, or choose another game. Unrelated lessons will never be substituted.', fil: 'Subukan ulit o pumili ng ibang laro. Hindi ito papalitan ng ibang aralin.', taglish: 'Try again or choose another game. Hindi ito papalitan ng unrelated lessons.' },
   'games.summary.perfect': { en: 'Perfect run. You cleared every question.', fil: 'Perfect run. Nasagot mo lahat nang tama.', taglish: 'Perfect run. Nasagot mo lahat nang tama.' },
   'games.summary.great': { en: 'Strong run. You are getting faster.', fil: 'Magaling. Mas mabilis ka na.', taglish: 'Strong run. Mas mabilis ka na.' },
   'games.summary.practice': { en: 'Good try. Review the missed items below.', fil: 'Good try. Balikan ang mga namali sa baba.', taglish: 'Good try. Balikan ang mga namali sa baba.' },
@@ -312,6 +348,29 @@ export const STRINGS = {
   'games.badge.volume': { en: 'Volume', fil: 'Volume', taglish: 'Volume' },
   'games.badge.stats': { en: 'Mean/Median/Mode', fil: 'Mean/Median/Mode', taglish: 'Mean/Median/Mode' },
   'games.badge.probability': { en: 'Probability', fil: 'Probability', taglish: 'Probability' },
+  'games.badge.counting': { en: 'Counting', fil: 'Pagbilang', taglish: 'Counting' },
+  'games.badge.ordering': { en: 'Ordering', fil: 'Pag-aayos', taglish: 'Ordering' },
+  'games.badge.placeValue': { en: 'Place Value', fil: 'Place Value', taglish: 'Place Value' },
+  'games.badge.addition': { en: 'Addition', fil: 'Addition', taglish: 'Addition' },
+  'games.badge.subtraction': { en: 'Subtraction', fil: 'Subtraction', taglish: 'Subtraction' },
+  'games.badge.money': { en: 'Money', fil: 'Pera', taglish: 'Money' },
+  'games.badge.shapes': { en: 'Shapes', fil: 'Mga Hugis', taglish: 'Shapes' },
+  'games.badge.measurement': { en: 'Measurement', fil: 'Pagsukat', taglish: 'Measurement' },
+  'games.badge.time': { en: 'Time', fil: 'Oras', taglish: 'Time' },
+  'games.badge.patterns': { en: 'Patterns', fil: 'Mga Pattern', taglish: 'Patterns' },
+  'games.badge.fractions': { en: 'Fractions', fil: 'Fractions', taglish: 'Fractions' },
+  'games.badge.multiplication': { en: 'Multiplication', fil: 'Multiplication', taglish: 'Multiplication' },
+  'games.badge.division': { en: 'Division', fil: 'Division', taglish: 'Division' },
+  'games.badge.rounding': { en: 'Rounding', fil: 'Rounding', taglish: 'Rounding' },
+  'games.badge.operations': { en: 'Operations', fil: 'Operations', taglish: 'Operations' },
+  'games.badge.graphs': { en: 'Graphs', fil: 'Mga Graph', taglish: 'Graphs' },
+  'games.badge.decimals': { en: 'Decimals', fil: 'Decimals', taglish: 'Decimals' },
+  'games.badge.factors': { en: 'Factors', fil: 'Factors', taglish: 'Factors' },
+  'games.badge.conversion': { en: 'Conversion', fil: 'Conversion', taglish: 'Conversion' },
+  'games.badge.world': { en: 'World Time', fil: 'Oras sa Mundo', taglish: 'World Time' },
+  'games.badge.transformation': { en: 'Transformations', fil: 'Transformations', taglish: 'Transformations' },
+
+  ...GRADE_GAME_STRINGS,
 
   // Store (Number & Algebra)
   'games.store.name': { en: 'Store Game', fil: 'Tindahan Game', taglish: 'Tindahan Game' },

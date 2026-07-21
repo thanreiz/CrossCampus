@@ -2,6 +2,7 @@ import test from 'node:test'
 import assert from 'node:assert/strict'
 import {
   bundledPool,
+  NoQuestionsForScopeError,
   nextBundledBatch,
   prepareQuestionSession,
   questionIdentity,
@@ -58,6 +59,26 @@ test('bundled game pools collapse identical stems across competencies', () => {
   const pool = bundledPool([...competencies, duplicate], { game: 'store' })
   assert.equal(pool.length, 3)
   assert.equal(new Set(pool.map((question) => JSON.stringify(question.q))).size, pool.length)
+})
+
+test('scoped pools fail closed instead of substituting unrelated competencies', async () => {
+  assert.deepEqual(bundledPool(competencies, { refs: ['2NA-missing'] }), [])
+  assert.deepEqual(bundledPool(competencies, { game: 'missing-game' }), [])
+  assert.equal(bundledPool(competencies, {}).length, 3)
+  await assert.rejects(
+    prepareQuestionSession({
+      grade: 2,
+      mode: 'game',
+      scope: { key: 'game:2:missing:v2', refs: ['2NA-missing'] },
+      count: 5,
+      language: 'en',
+      connectivity: true,
+      competencies,
+      fetchImpl: async () => { throw new Error('must not request AI for an empty pool') },
+      store: memoryStore(),
+    }),
+    NoQuestionsForScopeError,
+  )
 })
 
 function aiQuestion(index = 0) {

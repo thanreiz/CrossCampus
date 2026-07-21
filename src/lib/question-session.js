@@ -7,6 +7,13 @@ export const QUESTION_API_BASE = (import.meta.env?.VITE_QUESTION_API_BASE ?? '')
 
 const defaultStore = { get, set }
 
+export class NoQuestionsForScopeError extends Error {
+  constructor(scopeKey = 'unknown') {
+    super(`No learner-facing questions are available for ${scopeKey}`)
+    this.name = 'NoQuestionsForScopeError'
+  }
+}
+
 export function questionIdentity(question) {
   return `${question.ref}:${question._poolIndex ?? JSON.stringify(question.q)}`
 }
@@ -22,12 +29,13 @@ export function shuffleQuestions(items, random = Math.random) {
 
 export function bundledPool(competencies, scope = {}) {
   const refs = new Set(scope.refs ?? [])
+  const isScoped = refs.size > 0 || Boolean(scope.game)
   const selected = competencies.filter((competency) => {
     if (refs.size) return refs.has(competency.ref)
     if (scope.game) return competency.game_tags?.includes(scope.game)
     return true
   })
-  const source = selected.length ? selected : competencies
+  const source = isScoped ? selected : competencies
   const questions = source.flatMap((competency) =>
     (competency.items ?? []).map((item, index) => ({
       ...item,
@@ -57,7 +65,7 @@ export async function nextBundledBatch({
   store = defaultStore,
   random = Math.random,
 }) {
-  if (!pool.length) throw new Error('No bundled questions are available for this scope')
+  if (!pool.length) throw new NoQuestionsForScopeError(scopeKey)
   const key = `gabay:question-rotation:${ROTATION_VERSION}:${grade}:${mode}:${scopeKey}`
   const byId = new Map(pool.map((question) => [questionIdentity(question), question]))
   const saved = (await store.get(key)) ?? {}
@@ -135,7 +143,10 @@ export async function prepareQuestionSession({
   timeoutMs = QUESTION_TIMEOUT_MS,
 }) {
   const pool = bundledPool(competencies, scope)
-  const refs = [...new Set(pool.map((question) => question.ref))]
+  if (!pool.length) throw new NoQuestionsForScopeError(scope.key)
+  const knownRefs = new Set(competencies.map((competency) => competency.ref))
+  const requestedRefs = scope.refs?.length ? scope.refs.filter((ref) => knownRefs.has(ref)) : pool.map((question) => question.ref)
+  const refs = [...new Set(requestedRefs)]
   const relevantMastery = Object.fromEntries(refs.map((ref) => [ref, Number(mastery[ref] ?? 0)]))
 
   if (connectivity && typeof fetchImpl === 'function') {

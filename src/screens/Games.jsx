@@ -10,50 +10,14 @@ import { makeT, localize } from '../lib/i18n.js'
 import { sfx, playButtonSfx } from '../lib/sound.js'
 import StepScaffold from '../ui/StepScaffold.jsx'
 import { prepareQuestionSession } from '../lib/question-session.js'
+import { GAME_CATALOG_VERSION, getGamesForGrade } from '../lib/game-catalog.js'
+import GameIcon from '../ui/GameIcon.jsx'
 
 const COUNT_OPTIONS = [5, 10, 15, 20]
 
-const GAMES = [
-  {
-    key: 'store',
-    outer: 'bg-peach',
-    accent: '#f7d26a',
-    awning: ['bg-rose', 'bg-white', 'bg-yellow', 'bg-white', 'bg-rose'],
-    Icon: ShopIcon,
-    badgeKeys: ['number', 'percent', 'ratio'],
-    gameTag: 'store',
-  },
-  {
-    key: 'garden',
-    outer: 'bg-mint',
-    accent: '#bfe8cf',
-    awning: ['bg-mint', 'bg-white', 'bg-yellow', 'bg-white', 'bg-mint'],
-    Icon: GardenIcon,
-    badgeKeys: ['geometry', 'area', 'perimeter'],
-    gameTag: 'garden',
-  },
-  {
-    key: 'house',
-    outer: 'bg-sky',
-    accent: '#bfe2f7',
-    awning: ['bg-sky', 'bg-white', 'bg-peach', 'bg-white', 'bg-sky'],
-    Icon: HouseIcon,
-    badgeKeys: ['geometry', 'angles', 'volume'],
-    gameTag: 'house',
-  },
-  {
-    key: 'fiesta',
-    outer: 'bg-lavender',
-    accent: '#ddd0f5',
-    awning: ['bg-lavender', 'bg-white', 'bg-rose', 'bg-white', 'bg-lavender'],
-    Icon: FiestaIcon,
-    badgeKeys: ['data', 'stats', 'probability'],
-    gameTag: 'fiesta',
-  },
-]
-
 export default function Games({ online = true, grade = 6, competencies = [], mastery = {}, lang = 'taglish', onAnswered = async () => {} }) {
   const tt = makeT(lang)
+  const games = getGamesForGrade(grade)
   const [gameKey, setGameKey] = useState(null)
   const [started, setStarted] = useState(false)
   const [count, setCount] = useState(10)
@@ -72,11 +36,12 @@ export default function Games({ online = true, grade = 6, competencies = [], mas
   const [showCorrectOverlay, setShowCorrectOverlay] = useState(false)
   const [generating, setGenerating] = useState(false)
   const [questionSource, setQuestionSource] = useState('bundled')
+  const [startError, setStartError] = useState(false)
   const completionSaved = useRef(false)
   const inputRef = useRef(null)
   const startingRef = useRef(false)
 
-  const game = GAMES.find((g) => g.key === gameKey) ?? null
+  const game = games.find((entry) => entry.key === gameKey) ?? null
   const round = questions[idx]
   const roundOptions = choiceOptions(round)
   const done = started && questions.length > 0 && idx >= questions.length
@@ -94,11 +59,12 @@ export default function Games({ online = true, grade = 6, competencies = [], mas
     if (!game || startingRef.current) return
     startingRef.current = true
     setGenerating(true)
+    setStartError(false)
     try {
       const session = await prepareQuestionSession({
         grade,
         mode: 'game',
-        scope: { key: `game:${game.key}`, game: game.gameTag },
+        scope: { key: `game:${grade}:${game.key}:${GAME_CATALOG_VERSION}`, refs: game.refs },
         count,
         language: lang,
         mastery,
@@ -122,6 +88,9 @@ export default function Games({ online = true, grade = 6, competencies = [], mas
       setAttemptRecorded(false)
       setStepsDone(!(nextQuestions[0]?.steps?.length > 0))
       completionSaved.current = false
+    } catch {
+      setStarted(false)
+      setStartError(true)
     } finally {
       startingRef.current = false
       setGenerating(false)
@@ -131,6 +100,7 @@ export default function Games({ online = true, grade = 6, competencies = [], mas
   function backToPicker() {
     setGameKey(null)
     setStarted(false)
+    setStartError(false)
   }
 
   async function submit() {
@@ -193,7 +163,7 @@ export default function Games({ online = true, grade = 6, competencies = [], mas
           <p className="mt-1 text-base font-bold text-ink/70">{tt('games.pickSub')}</p>
         </div>
         <div className="relative z-10 mt-4 grid grid-cols-1 gap-3">
-          {GAMES.map((g) => (
+          {games.map((g) => (
             <button
               key={g.key}
               onClick={() => {
@@ -203,7 +173,7 @@ export default function Games({ online = true, grade = 6, competencies = [], mas
               className={`flex items-center gap-4 rounded-card border-[2.5px] border-outline ${g.outer} p-4 text-left shadow-hard active:translate-y-0.5`}
             >
               <span className="flex h-16 w-16 shrink-0 items-center justify-center rounded-card border-[2.5px] border-outline bg-white">
-                <g.Icon />
+                <GameIcon type={g.iconKey} />
               </span>
               <span className="min-w-0">
                 <span className="block font-display text-xl font-extrabold leading-tight">{tt(`games.${g.key}.name`)}</span>
@@ -255,6 +225,13 @@ export default function Games({ online = true, grade = 6, competencies = [], mas
           </div>
         </section>
 
+        {startError && (
+          <Card color="yellow" className="mt-5 p-4" role="alert">
+            <p className="font-display text-xl font-extrabold">{tt('games.unavailable.title')}</p>
+            <p className="mt-1 text-sm font-bold text-ink/70">{tt('games.unavailable.body')}</p>
+          </Card>
+        )}
+
         {/* number of questions (5–20) */}
         <div className="mt-5">
           <p className="mb-2 text-base font-extrabold">{tt('games.howMany')}</p>
@@ -294,7 +271,7 @@ export default function Games({ online = true, grade = 6, competencies = [], mas
         <Header online={online} tt={tt} />
         <Card color="mint" className="gb-pop mt-6 p-6 text-center">
           <div className="mx-auto mb-3 flex h-20 w-20 items-center justify-center rounded-card border-[2.5px] border-outline bg-white">
-            <game.Icon />
+            <GameIcon type={game.iconKey} />
           </div>
           <h1 className="font-display text-3xl font-extrabold">{tt(`games.${game.key}.closed`)}</h1>
           <p className="mt-2 text-lg font-extrabold">{tt('games.summary.' + summaryKey)}</p>
@@ -496,46 +473,5 @@ function Awning({ colors }) {
         <span key={index} className={`${color} border-r-2 border-outline last:border-r-0`} />
       ))}
     </div>
-  )
-}
-
-function ShopIcon() {
-  return (
-    <svg viewBox="0 0 80 80" width="50" height="50" aria-hidden="true">
-      <path d="M12 30 L17 14 h46 l5 16 Z" fill="#F4A87C" stroke="#1C1410" strokeWidth="4" strokeLinejoin="round" />
-      <rect x="18" y="30" width="44" height="34" rx="3" fill="#A9D8F0" stroke="#1C1410" strokeWidth="4" />
-      <rect x="32" y="42" width="16" height="22" fill="#fff" stroke="#1C1410" strokeWidth="4" />
-    </svg>
-  )
-}
-
-function GardenIcon() {
-  return (
-    <svg viewBox="0 0 80 80" width="50" height="50" aria-hidden="true">
-      <path d="M40 46 V66" stroke="#1C1410" strokeWidth="4" strokeLinecap="round" />
-      <path d="M40 50 C24 46 20 30 30 22 C44 26 48 42 40 50 Z" fill="#8FD9B6" stroke="#1C1410" strokeWidth="4" strokeLinejoin="round" />
-      <path d="M40 42 C56 38 60 22 50 14 C36 18 32 34 40 42 Z" fill="#8FD9B6" stroke="#1C1410" strokeWidth="4" strokeLinejoin="round" />
-      <path d="M24 66 h32 l-4 8 H28 Z" fill="#F4A87C" stroke="#1C1410" strokeWidth="4" strokeLinejoin="round" />
-    </svg>
-  )
-}
-
-function HouseIcon() {
-  return (
-    <svg viewBox="0 0 80 80" width="50" height="50" aria-hidden="true">
-      <path d="M12 38 L40 14 L68 38 Z" fill="#F4A87C" stroke="#1C1410" strokeWidth="4" strokeLinejoin="round" />
-      <rect x="20" y="38" width="40" height="28" fill="#A9D8F0" stroke="#1C1410" strokeWidth="4" />
-      <rect x="34" y="48" width="12" height="18" fill="#fff" stroke="#1C1410" strokeWidth="4" />
-    </svg>
-  )
-}
-
-function FiestaIcon() {
-  return (
-    <svg viewBox="0 0 80 80" width="50" height="50" aria-hidden="true">
-      <circle cx="40" cy="42" r="22" fill="#fff" stroke="#1C1410" strokeWidth="4" />
-      <path d="M40 42 L40 20 A22 22 0 0 1 61 44 Z" fill="#C9B6F0" stroke="#1C1410" strokeWidth="4" strokeLinejoin="round" />
-      <path d="M40 42 L61 44 A22 22 0 0 1 28 61 Z" fill="#F7D26A" stroke="#1C1410" strokeWidth="4" strokeLinejoin="round" />
-    </svg>
   )
 }

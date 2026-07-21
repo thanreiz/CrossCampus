@@ -10,6 +10,7 @@
         "build:sites": "VITE_QUESTION_API_BASE=https://gabay-sage.vercel.app npm run build && node scripts/prepare-sites-build.mjs",
         "preview": "vite preview",
         "test": "node --test",
+        "test:e2e": "playwright test",
         "icons": "node scripts/generate-icons.mjs",
         "build:curriculum": "node scripts/import-matatag-package.js",
         "classify:difficulty": "node scripts/reclassify-difficulty.js",

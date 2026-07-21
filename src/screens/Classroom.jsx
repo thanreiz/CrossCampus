@@ -37,7 +37,7 @@ function plain(s) {
   return String(s ?? '').replace(/\*\*/g, '')
 }
 
-export default function Classroom({ competency, questions, questionSource = 'bundled', fallback = false, score, answered = false, online, lang = 'taglish', onLang, onAnswered, onExit }) {
+export default function Classroom({ competency, questions, questionSource = 'bundled', score, answered = false, online, lang = 'taglish', onLang, onAnswered, onExit }) {
   const c = useMemo(() => ({ ...competency, items: questions?.length ? questions : competency.items }), [competency, questions])
   const tt = makeT(lang)
   const [tab, setTab] = useState('explain')
@@ -258,8 +258,6 @@ export default function Classroom({ competency, questions, questionSource = 'bun
 
       {/* full child-friendly topic title */}
       <h1 className="mb-2 font-display text-xl font-extrabold leading-tight">{topicFull(c.ref, c.competency, c.domain)}</h1>
-      {fallback && <div className="mb-3 rounded-card border-2 border-outline bg-yellow p-3 text-sm font-extrabold">{tt('questions.savedNotice')}</div>}
-
       {/* CHALKBOARD */}
       <div className={`rounded-card border-[2.5px] border-outline bg-[#27433b] p-4 text-cream shadow-hard ${result === false ? 'answer-shake' : ''}`}>
         <div className="mb-3 flex flex-wrap gap-2">

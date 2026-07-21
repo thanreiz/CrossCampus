@@ -71,7 +71,6 @@ export default function Games({ online = true, grade = 6, competencies = [], mas
   const [stepsDone, setStepsDone] = useState(true)
   const [showCorrectOverlay, setShowCorrectOverlay] = useState(false)
   const [generating, setGenerating] = useState(false)
-  const [fallback, setFallback] = useState(false)
   const [questionSource, setQuestionSource] = useState('bundled')
   const completionSaved = useRef(false)
   const inputRef = useRef(null)
@@ -108,7 +107,6 @@ export default function Games({ online = true, grade = 6, competencies = [], mas
       })
       const nextQuestions = session.questions
       setQuestions(nextQuestions)
-      setFallback(session.fallback)
       setQuestionSource(session.source)
       setStarted(true)
       setIdx(0)
@@ -359,8 +357,6 @@ export default function Games({ online = true, grade = 6, competencies = [], mas
         <RefBadge refId={round.ref} domain={round.domain || 'Number and Algebra'} />
         <span className="gb-chip bg-yellow shadow-hard-sm text-sm">{tt('games.coins')} {coins}</span>
       </div>
-      {fallback && <div className="relative z-10 mt-3 rounded-card border-2 border-outline bg-yellow p-3 text-sm font-extrabold">{tt('questions.savedNotice')}</div>}
-
       <Card color="cream" className={`gb-pop mt-4 overflow-hidden p-0 ${result === false ? 'answer-shake' : ''}`}>
         <div className="border-b-[2.5px] border-outline bg-peach p-4">
           <div className="flex items-center justify-between gap-3">

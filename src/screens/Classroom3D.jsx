@@ -23,7 +23,7 @@ function plain(s) {
 // React owns the DOM shell + lesson modal + content/mastery/voice bridge.
 // Three.js owns the canvas. The whole scene lives in three/scene.js -> buildClassroom(),
 // so codex's richer geometry can replace that one function without touching this file.
-export default function Classroom3D({ competency, questions, questionSource = 'bundled', fallback = false, score, online, lang = 'taglish', onAnswered, onExit, onFallback2D }) {
+export default function Classroom3D({ competency, questions, questionSource = 'bundled', score, online, lang = 'taglish', onAnswered, onExit, onFallback2D }) {
   const c = { ...competency, items: questions?.length ? questions : competency.items }
   const tt = makeT(lang)
   const mountRef = useRef(null)
@@ -205,8 +205,6 @@ export default function Classroom3D({ competency, questions, questionSource = 'b
     <div className="relative h-[100dvh] w-full overflow-hidden bg-[#27433b]">
       {/* Three.js canvas mounts here */}
       <div ref={mountRef} className="absolute inset-0" />
-      {fallback && <div className="pointer-events-none absolute left-1/2 top-16 z-20 w-[min(90%,420px)] -translate-x-1/2 rounded-card border-2 border-outline bg-yellow p-2 text-center text-sm font-extrabold">{tt('questions.savedNotice')}</div>}
-
       {/* top HUD */}
       <div className="pointer-events-none absolute left-0 right-0 top-0 flex items-center justify-between p-3">
         <button className="pointer-events-auto gb-chip bg-white" onClick={onExit}>{tt('common.exit')}</button>
@@ -490,4 +488,3 @@ function Joystick({ onMove, label }) {
     </div>
   )
 }
-

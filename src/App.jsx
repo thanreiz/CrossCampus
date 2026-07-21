@@ -252,7 +252,6 @@ export default function App() {
           competency={active}
           questions={questionSession?.questions}
           questionSource={questionSession?.source}
-          fallback={questionSession?.fallback}
           score={mastery[active.ref] ?? 0}
           answered={Object.prototype.hasOwnProperty.call(mastery, active.ref)}
           online={online}
@@ -270,7 +269,6 @@ export default function App() {
             competency={active}
             questions={questionSession?.questions}
             questionSource={questionSession?.source}
-            fallback={questionSession?.fallback}
             score={mastery[active.ref] ?? 0}
             online={online}
             lang={lang}

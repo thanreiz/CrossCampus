@@ -50,7 +50,6 @@ export const STRINGS = {
   'common.no': { en: 'No', fil: 'Hindi', taglish: 'Hindi' },
   'questions.generating': { en: 'Preparing your questions…', fil: 'Inihahanda ang mga tanong…', taglish: 'Preparing your questions…' },
   'questions.generatingSub': { en: 'Teacher Gabay is building this practice session.', fil: 'Inihahanda ni Teacher Gabay ang pagsasanay mo.', taglish: 'Binubuo ni Teacher Gabay ang practice session mo.' },
-  'questions.savedNotice': { en: 'Using saved questions so you can keep learning.', fil: 'Gagamit tayo ng naka-save na mga tanong para magpatuloy ka.', taglish: 'Using saved questions para tuloy ang pag-aaral.' },
 
   // ---- Onboarding / grade ----
   'onboarding.step': { en: 'Step {step} of 4', fil: 'Hakbang {step} sa 4', taglish: 'Step {step} of 4' },

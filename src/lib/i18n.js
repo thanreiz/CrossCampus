@@ -217,7 +217,7 @@ export const STRINGS = {
   },
   'classroom.correctOverlay': { en: 'Correct! 🌟', fil: 'Tama! 🌟', taglish: 'Tama! 🌟' },
   'classroom.retry': { en: 'Try again', fil: 'Subukan ulit', taglish: 'Subukan ulit' },
-  'classroom.readSolution': { en: 'Read Nova’s explanation…', fil: 'Basahin ang paliwanag ni Nova…', taglish: 'Basahin ang explanation ni Nova…' },
+  'classroom.readSolution': { en: 'Read Gabay’s explanation…', fil: 'Basahin ang paliwanag ni Gabay…', taglish: 'Basahin ang explanation ni Gabay…' },
   // dynamic teacher lines ({n}=number, {total}=total)
   'class.bubble.explain': {
     en: 'Look at the key idea first. Then open the example to see it in action.',

@@ -76,15 +76,15 @@ body {
   animation: gb-float 3s ease-in-out infinite;
 }
 
-@keyframes nova-idle {
+@keyframes gabay-idle {
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(-6px); }
 }
-@keyframes nova-correct {
+@keyframes gabay-correct {
   0%, 100% { transform: scale(1); }
   50% { transform: scale(1.35); }
 }
-@keyframes nova-wrong {
+@keyframes gabay-wrong {
   0%, 100% { transform: rotate(0); }
   20%, 60% { transform: rotate(-8deg); }
   40%, 80% { transform: rotate(8deg); }
@@ -99,15 +99,15 @@ body {
   to { width: 100%; }
 }
 
-.nova-idle { animation: nova-idle 2s ease-in-out infinite; }
-.nova-correct { animation: nova-correct 1.5s ease-in-out; }
-.nova-wrong { animation: nova-wrong .5s ease-in-out; }
+.gabay-idle { animation: gabay-idle 2s ease-in-out infinite; }
+.gabay-correct { animation: gabay-correct 1.5s ease-in-out; }
+.gabay-wrong { animation: gabay-wrong .5s ease-in-out; }
 .answer-shake { animation: answer-shake .4s ease-in-out 3; }
 .onboarding-mastery { animation: onboarding-mastery 1.8s ease-out both; }
 .lesson-visual svg { width: 100%; height: auto; max-height: 180px; }
 
 @media (prefers-reduced-motion: reduce) {
-  .nova-idle, .nova-correct, .nova-wrong, .answer-shake, .onboarding-mastery, .gb-float, .gb-pop {
+  .gabay-idle, .gabay-correct, .gabay-wrong, .answer-shake, .onboarding-mastery, .gb-float, .gb-pop {
     animation: none;
   }
 }

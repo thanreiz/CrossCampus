@@ -56,7 +56,7 @@ export default function Classroom({ competency, questions, questionSource = 'bun
   const [paused, setPaused] = useState(false)
   const [nudge, setNudge] = useState(null) // 'needAnswer' | 'needNumber' | null — gentle input validation
   const [feedbackReady, setFeedbackReady] = useState(false)
-  const [avatarState, setAvatarState] = useState('nova-idle')
+  const [avatarState, setAvatarState] = useState('gabay-idle')
   const [showCorrectOverlay, setShowCorrectOverlay] = useState(false)
   const [stepsDone, setStepsDone] = useState(!(c.items[0]?.steps?.length > 0))
   const inputRef = useRef(null)
@@ -116,10 +116,10 @@ export default function Classroom({ competency, questions, questionSource = 'bun
     sfx(ok ? 'correct' : 'wrong')
     if (ok) vibrateCorrect()
     else vibrateWrong()
-    setAvatarState(ok ? 'nova-correct' : 'nova-wrong')
+    setAvatarState(ok ? 'gabay-correct' : 'gabay-wrong')
     setShowCorrectOverlay(ok)
     setFeedbackReady(false)
-    window.setTimeout(() => setAvatarState('nova-idle'), ok ? 1500 : 500)
+    window.setTimeout(() => setAvatarState('gabay-idle'), ok ? 1500 : 500)
     window.setTimeout(() => setShowCorrectOverlay(false), 1500)
     window.setTimeout(() => {
       setFeedbackReady(true)
@@ -385,7 +385,7 @@ export default function Classroom({ competency, questions, questionSource = 'bun
 
       {showCorrectOverlay && (
         <div className="pointer-events-none fixed inset-0 z-[80] flex items-center justify-center bg-mint/90 px-6 text-center">
-          <p className="nova-correct font-display text-5xl font-extrabold text-ink">{tt('classroom.correctOverlay')}</p>
+          <p className="gabay-correct font-display text-5xl font-extrabold text-ink">{tt('classroom.correctOverlay')}</p>
         </div>
       )}
 

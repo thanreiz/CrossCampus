@@ -23,7 +23,7 @@ A separate crop was not needed because the complete subject headers, counts, Sho
 - Typography retains the existing display/body hierarchy and remains legible.
 - Spacing and layout rhythm are substantially calmer without changing the app shell.
 - Colors, outlines, corner radii, and hard shadows use the existing product tokens.
-- No new image assets were required; existing Nova and decorative assets are preserved.
+- No new image assets were required; existing Gabay and decorative assets are preserved.
 - Copy clearly communicates lesson counts, completed counts, and the open/closed action.
 
 **Interaction checks**

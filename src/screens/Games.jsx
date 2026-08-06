@@ -222,7 +222,7 @@ export default function Games({ online = true, grade = 6, competencies = [], mas
     return (
       <div className="gb-shell relative flex min-h-screen flex-col items-center justify-center px-6 pb-28 text-center">
         <Doodles />
-        <div className="relative z-10 nova-idle"><Mascot size={132} /></div>
+        <div className="relative z-10 gabay-idle"><Mascot size={132} /></div>
         <h1 className="relative z-10 mt-4 font-display text-3xl font-extrabold">{tt('questions.generating')}</h1>
         <p className="relative z-10 mt-2 font-bold text-ink/65">{tt('questions.generatingSub')}</p>
       </div>
@@ -365,7 +365,7 @@ export default function Games({ online = true, grade = 6, competencies = [], mas
               <p className="text-sm font-extrabold uppercase text-ink/55">{tt('common.question')} {answered + 1} / {questions.length}</p>
               <h1 className="font-display text-2xl font-extrabold leading-tight">{round.title}</h1>
             </div>
-            <div className={result === null ? 'nova-idle' : result ? 'nova-correct' : 'nova-wrong'}><Mascot size={64} /></div>
+            <div className={result === null ? 'gabay-idle' : result ? 'gabay-correct' : 'gabay-wrong'}><Mascot size={64} /></div>
           </div>
         </div>
 
@@ -450,7 +450,7 @@ export default function Games({ online = true, grade = 6, competencies = [], mas
       </Card>
       {showCorrectOverlay && (
         <div className="pointer-events-none fixed inset-0 z-[80] flex items-center justify-center bg-mint/90 px-6 text-center">
-          <p className="nova-correct font-display text-5xl font-extrabold text-ink">{tt('classroom.correctOverlay')}</p>
+          <p className="gabay-correct font-display text-5xl font-extrabold text-ink">{tt('classroom.correctOverlay')}</p>
         </div>
       )}
     </div>

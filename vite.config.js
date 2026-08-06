@@ -8,7 +8,7 @@ export default defineConfig({
     react(),
     VitePWA({
       registerType: 'autoUpdate',
-      includeAssets: ['nova.png', 'favicon.svg', 'mascot.svg', 'pwa-192x192.png', 'pwa-512x512.png', 'maskable-512x512.png'],
+      includeAssets: ['gabay.png', 'favicon.svg', 'mascot.svg', 'pwa-192x192.png', 'pwa-512x512.png', 'maskable-512x512.png'],
       workbox: {
         cleanupOutdatedCaches: true,
         globPatterns: ['**/*.{js,css,html,json,png,svg}'],
@@ -25,9 +25,9 @@ export default defineConfig({
         orientation: 'portrait',
         start_url: '/',
         icons: [
-          { src: 'nova.png', sizes: '192x192', type: 'image/png', purpose: 'any' },
-          { src: 'nova.png', sizes: '512x512', type: 'image/png', purpose: 'any' },
-          { src: 'nova.png', sizes: '512x512', type: 'image/png', purpose: 'maskable' },
+          { src: 'gabay.png', sizes: '192x192', type: 'image/png', purpose: 'any' },
+          { src: 'gabay.png', sizes: '512x512', type: 'image/png', purpose: 'any' },
+          { src: 'gabay.png', sizes: '512x512', type: 'image/png', purpose: 'maskable' },
           { src: 'pwa-192x192.png', sizes: '192x192', type: 'image/png', purpose: 'any' },
           { src: 'pwa-512x512.png', sizes: '512x512', type: 'image/png', purpose: 'any' },
           { src: 'maskable-512x512.png', sizes: '512x512', type: 'image/png', purpose: 'maskable' },

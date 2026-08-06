@@ -1,9 +1,9 @@
-import novaPng from '../assets/nova.png'
+import gabayPng from '../assets/gabay.png'
 
-export function Mascot({ size = 96, className = '', float = false, alt = 'Nova' }) {
+export function Mascot({ size = 96, className = '', float = false, alt = 'Gabay' }) {
   return (
     <img
-      src={novaPng}
+      src={gabayPng}
       alt={alt}
       width={size}
       height={size}

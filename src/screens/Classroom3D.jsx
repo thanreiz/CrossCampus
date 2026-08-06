@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react'
 import { get, set } from 'idb-keyval'
 import { buildClassroom, THEME_LIST } from '../three/scene.js'
 import { Button, RefBadge, RichText } from '../ui/Primitives.jsx'
-import { QuestionVisual } from '../ui/Visuals.jsx'
+import { TopicVisual } from '../ui/Visuals.jsx'
 import OnlineBadge from '../ui/OnlineBadge.jsx'
 import { Mascot } from '../ui/Mascot.jsx'
 import { checkAnswer, choiceOptions } from '../lib/check.js'
@@ -366,7 +366,7 @@ export default function Classroom3D({ competency, questions, questionSource = 'b
             )}
 
             <p className="font-display text-2xl font-bold leading-snug">{localize(item.q, lang)}</p>
-            <QuestionVisual refId={c.ref} q={localize(item.q, lang)} />
+            <TopicVisual refId={c.ref} q={localize(item.q, lang)} />
 
             {itemOptions && (
               <div className="mt-3 flex flex-wrap gap-2">

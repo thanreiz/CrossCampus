@@ -81,7 +81,7 @@ const FRACTION_RE = /(?:(\d+)\s+)?(\d+)\/(\d+)\s*([+\-−])\s*(?:(\d+)\s+)?(\d+)
 
 // refId → q string in, diagram or null out. Add a case here for each topic
 // that gets a visual; everything else stays text-only.
-export function QuestionVisual({ refId, q }) {
+export function TopicVisual({ refId, q }) {
   if (refId === '6MG-IIe-5') {
     const m = ANGLE_RE.exec(q ?? '')
     if (!m) return null

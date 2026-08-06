@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react'
 import { get, set } from 'idb-keyval'
 import { Card, Button, Doodles, RefBadge, MasteryBar, RichText } from '../ui/Primitives.jsx'
 import { Mascot } from '../ui/Mascot.jsx'
+import { QuestionVisual } from '../ui/Visuals.jsx'
 import OnlineBadge from '../ui/OnlineBadge.jsx'
 import { checkAnswer, choiceOptions } from '../lib/check.js'
 import { feedbackFor, vibrateCorrect, vibrateWrong } from '../lib/feedback.js'
@@ -386,6 +387,7 @@ export default function Games({ online = true, grade = 6, competencies = [], mas
             <p className="mt-2 rounded-2xl border-2 border-outline bg-white p-3 text-xl font-extrabold leading-snug">
               {localize(round.q, lang)}
             </p>
+            <QuestionVisual refId={round.ref} q={localize(round.q, lang)} />
           </div>
 
           {!stepsDone ? (

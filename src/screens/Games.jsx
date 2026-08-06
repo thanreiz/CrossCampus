@@ -6,10 +6,11 @@ import OnlineBadge from '../ui/OnlineBadge.jsx'
 import { checkAnswer, choiceOptions } from '../lib/check.js'
 import { feedbackFor, vibrateCorrect, vibrateWrong } from '../lib/feedback.js'
 import { recordAttempt } from '../lib/history.js'
-import { makeT, localize } from '../lib/i18n.js'
+import { makeT, localize, localizeChoice } from '../lib/i18n.js'
 import { sfx, playButtonSfx } from '../lib/sound.js'
 import StepScaffold from '../ui/StepScaffold.jsx'
 import { prepareQuestionSession } from '../lib/question-session.js'
+import { ChoiceVisual, QuestionVisual } from '../ui/LearningVisual.jsx'
 
 const COUNT_OPTIONS = [5, 10, 15, 20]
 
@@ -320,11 +321,11 @@ export default function Games({ online = true, grade = 6, competencies = [], mas
                   </p>
                   <p className="mt-1 text-base font-bold">
                     <span className="text-ink/60">{tt('common.yourAnswer')}:</span>{' '}
-                    <span className="text-rose-700">{a.your || '—'}</span>
+                    <span className="text-rose-700">{a.your ? localizeChoice(a.your, lang) : '—'}</span>
                   </p>
                   <p className="mt-1 text-base font-bold">
                     <span className="text-ink/60">{tt('common.correctAnswer')}:</span>{' '}
-                    <span className="text-green-700">{a.answer}</span>
+                    <span className="text-green-700">{localizeChoice(a.answer, lang)}</span>
                   </p>
                   {a.solution && (
                     <p className="mt-1 text-base">
@@ -354,7 +355,7 @@ export default function Games({ online = true, grade = 6, competencies = [], mas
       <Header online={online} tt={tt} />
 
       <div className="relative z-10 mt-4 flex items-center justify-between gap-2">
-        <RefBadge refId={round.ref} domain={round.domain || 'Number and Algebra'} />
+        <RefBadge refId={round.ref} domain={tt(`domain.${round.domain || 'Number and Algebra'}`)} />
         <span className="gb-chip bg-yellow shadow-hard-sm text-sm">{tt('games.coins')} {coins}</span>
       </div>
       <Card color="cream" className={`gb-pop mt-4 overflow-hidden p-0 ${result === false ? 'answer-shake' : ''}`}>
@@ -386,6 +387,7 @@ export default function Games({ online = true, grade = 6, competencies = [], mas
             <p className="mt-2 rounded-2xl border-2 border-outline bg-white p-3 text-xl font-extrabold leading-snug">
               {localize(round.q, lang)}
             </p>
+            <QuestionVisual question={localize(round.q, lang)} />
           </div>
 
           {!stepsDone ? (
@@ -415,9 +417,10 @@ export default function Games({ online = true, grade = 6, competencies = [], mas
                       playButtonSfx()
                       setInput(opt)
                     }}
-                    className={`gb-chip text-base ${input === opt ? 'bg-sky shadow-hard-sm' : 'bg-white'}`}
-                  >
-                    {opt}
+                  className={`gb-chip text-base ${input === opt ? 'bg-sky shadow-hard-sm' : 'bg-white'}`}
+                >
+                    <ChoiceVisual value={opt} />
+                      {localizeChoice(opt, lang)}
                   </button>
                 ))}
               </div>

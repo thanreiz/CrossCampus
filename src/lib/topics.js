@@ -180,13 +180,51 @@ export function topicTitle(ref, competency = '') {
   return TITLE_RULES.find(([pattern]) => pattern.test(text))?.[1] ?? fallbackTitle(competency)
 }
 
+const FILIPINO_TITLES = Object.freeze({
+  'Counting Numbers': 'Pagbilang ng mga Numero',
+  'Reading Numbers': 'Pagbasa ng mga Numero',
+  'Number Models': 'Mga Modelo ng Numero',
+  'Comparing Numbers': 'Paghahambing ng mga Numero',
+  'Ordering Numbers': 'Pagsasaayos ng mga Numero',
+  'Ordinal Numbers': 'Mga Ordinal na Numero',
+  'Number Bonds': 'Ugnayan ng mga Numero',
+  '2D Shapes': 'Mga Hugis na 2D',
+  'Building Shapes': 'Pagbuo ng mga Hugis',
+  'Composite Shapes': 'Pinagsamang mga Hugis',
+  '3D Shapes': 'Mga Hugis na 3D',
+  'Length and Distance': 'Haba at Layo',
+  Addition: 'Pagdaragdag',
+  Subtraction: 'Pagbabawas',
+  Multiplication: 'Pagpaparami',
+  Division: 'Paghahati',
+  Patterns: 'Mga Pattern',
+  Money: 'Pera',
+  'Time and Calendar': 'Oras at Kalendaryo',
+  'Turns and Direction': 'Pagliko at Direksiyon',
+  Pictographs: 'Mga Larawang Grap',
+  'Collecting Data': 'Pangangalap ng Datos',
+})
+
+const FILIPINO_DOMAINS = Object.freeze({
+  'Number and Algebra': 'Bilang at Algebra',
+  'Measurement and Geometry': 'Pagsukat at Heometriya',
+  'Data and Probability': 'Datos at Probabilidad',
+  'Statistics and Probability': 'Estadistika at Probabilidad',
+})
+
+export function topicTitleLocalized(ref, competency = '', lang = 'en') {
+  const title = topicTitle(ref, competency)
+  return lang === 'fil' ? FILIPINO_TITLES[title] ?? title : title
+}
+
 export function topicArea(_ref, fallback = 'Number and Algebra') {
   return fallback
 }
 
-export function topicFull(ref, competency = '', domain = '') {
-  const title = topicTitle(ref, competency)
-  return domain ? `${domain} – ${title}` : title
+export function topicFull(ref, competency = '', domain = '', lang = 'en') {
+  const title = topicTitleLocalized(ref, competency, lang)
+  const localizedDomain = lang === 'fil' ? FILIPINO_DOMAINS[domain] ?? domain : domain
+  return localizedDomain ? `${localizedDomain} – ${title}` : title
 }
 
 export function topicIcon(ref) {

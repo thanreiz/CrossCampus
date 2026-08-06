@@ -4,8 +4,9 @@ import grade3 from '../curriculum/grade3.json' with { type: 'json' }
 import grade4 from '../curriculum/grade4.json' with { type: 'json' }
 import grade5 from '../curriculum/grade5.json' with { type: 'json' }
 import grade6 from '../curriculum/grade6.json' with { type: 'json' }
+import { applyCurriculumOverrides } from './curriculum-overrides.js'
 
-const ALL = [...grade1, ...grade2, ...grade3, ...grade4, ...grade5, ...grade6]
+const ALL = applyCurriculumOverrides([...grade1, ...grade2, ...grade3, ...grade4, ...grade5, ...grade6])
 
 export const getAllContent = () => ALL
 export const getContentByGrade = (grade) => ALL.filter((competency) => competency.grade === Number(grade))

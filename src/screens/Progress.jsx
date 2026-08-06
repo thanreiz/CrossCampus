@@ -4,7 +4,7 @@ import { Button, Card, Doodles, MasteryBar, RefBadge, RichText } from '../ui/Pri
 import { Mascot } from '../ui/Mascot.jsx'
 import OnlineBadge from '../ui/OnlineBadge.jsx'
 import { hasAnswered, loadStreak, masteryColor } from '../lib/mastery.js'
-import { topicTitle } from '../lib/topics.js'
+import { topicTitleLocalized } from '../lib/topics.js'
 import { clearHistory, loadHistory } from '../lib/history.js'
 import { makeT } from '../lib/i18n.js'
 
@@ -107,7 +107,7 @@ export default function Progress({
           {next && (
             <Card color="yellow" className="gb-pop mb-5 p-4">
               <p className="font-extrabold">{tt('progress.nextUp')}</p>
-              <p className="mt-1 text-base font-bold">{topicTitle(next.ref, next.competency)}</p>
+              <p className="mt-1 text-base font-bold">{topicTitleLocalized(next.ref, next.competency, lang)}</p>
               <Button color="white" className="mt-3 w-full text-lg" onClick={() => onPick(next)}>{tt('progress.start')} →</Button>
             </Card>
           )}
@@ -124,10 +124,10 @@ export default function Progress({
               return (
                 <Card key={c.ref} className="cursor-pointer p-4" role="button" tabIndex={0} onClick={() => onPick(c)} onKeyDown={(e) => (e.key === 'Enter' || e.key === ' ') && onPick(c)}>
                   <div className="flex items-center justify-between gap-2">
-                    <RefBadge refId={c.ref} domain={c.domain} />
+                    <RefBadge refId={c.ref} domain={tt(`domain.${c.domain}`)} />
                     {isAnswered && <span className={`gb-chip ${color.bg} shadow-hard-sm text-xs`}>{tt('band.' + color.band)}</span>}
                   </div>
-                  <p className="mt-2 font-display text-base font-bold leading-snug">{topicTitle(c.ref, c.competency)}</p>
+                  <p className="mt-2 font-display text-base font-bold leading-snug">{topicTitleLocalized(c.ref, c.competency, lang)}</p>
                   {isAnswered && (
                     <div className="mt-2 flex items-center gap-2">
                       <MasteryBar score={s} />

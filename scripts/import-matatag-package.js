@@ -1,10 +1,12 @@
 import { readFile, writeFile } from 'node:fs/promises'
 import { resolve } from 'node:path'
 import { difficultyFor } from '../src/lib/difficulty.js'
+import { applyCurriculumOverrides } from '../src/lib/curriculum-overrides.js'
 
 const root = resolve(import.meta.dirname, '..')
 const packageRoot = resolve(process.argv[2] || process.env.MATATAG_PACKAGE || '/private/tmp/matatag_parse/DepEd-MATATAG-Mathematics-Grades-1-6')
 const manifest = JSON.parse(await readFile(resolve(packageRoot, 'manifest.json'), 'utf8'))
+const teachingOverrides = JSON.parse(await readFile(resolve(root, 'src/curriculum/teaching-overrides.json'), 'utf8'))
 const EXPECTED = [47, 53, 51, 54, 49, 52]
 
 const normalize = (value) => String(value ?? '')
@@ -255,6 +257,8 @@ for (let grade = 1; grade <= 6; grade++) {
     })
     const items = repairChoices(uniqueItems)
     if (items.length < 2) throw new Error(`${spec.ref}: only ${items.length} unique objective questions parsed`)
+    const { item_overrides: itemOverrides = {}, ...lessonOverride } = teachingOverrides[spec.ref] ?? {}
+    const curatedItems = items.map((item, index) => itemOverrides[index] ? { ...item, ...itemOverrides[index] } : item)
     output.push({
       grade,
       difficulty: difficultyFor(spec.competency),
@@ -262,7 +266,8 @@ for (let grade = 1; grade <= 6; grade++) {
       game_tags: gameTags(spec),
       explanation: localized(spec.competency),
       worked_example: localized(firstChallenge(lesson)),
-      items,
+      ...lessonOverride,
+      items: curatedItems,
       source_trace: {
         package: 'DepEd-MATATAG-Mathematics-Grades-1-6',
         local_ref: row.reference,
@@ -273,6 +278,7 @@ for (let grade = 1; grade <= 6; grade++) {
     })
   }
 
-  await writeFile(resolve(root, `src/curriculum/grade${grade}.json`), `${JSON.stringify(output, null, 2)}\n`)
-  console.log(`Grade ${grade}: ${output.length} competencies, ${output.reduce((sum, entry) => sum + entry.items.length, 0)} objective questions`)
+  const repairedOutput = applyCurriculumOverrides(output)
+  await writeFile(resolve(root, `src/curriculum/grade${grade}.json`), `${JSON.stringify(repairedOutput, null, 2)}\n`)
+  console.log(`Grade ${grade}: ${repairedOutput.length} competencies, ${repairedOutput.reduce((sum, entry) => sum + entry.items.length, 0)} objective questions`)
 }

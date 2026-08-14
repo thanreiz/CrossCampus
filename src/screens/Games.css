@@ -1,0 +1,186 @@
+.games-picker-page {
+  padding-top: 1rem;
+  padding-bottom: 9.75rem;
+}
+
+.games-picker-page .games-header {
+  min-height: 2.75rem;
+}
+
+.games-picker-page .games-header-brand {
+  gap: 0.5rem;
+}
+
+.games-picker-page .games-header-brand > span:last-child {
+  font-size: 1.15rem;
+}
+
+.games-picker-page .games-header > span {
+  padding: 0.3rem 0.75rem;
+  border-width: 2px;
+}
+
+.games-picker-page .games-picker-intro {
+  margin-top: 1.15rem;
+}
+
+.games-picker-page .games-picker-title {
+  font-size: clamp(2rem, 9vw, 2.65rem);
+  line-height: 1;
+  letter-spacing: -0.035em;
+}
+
+.games-picker-page .games-picker-description {
+  margin-top: 0.55rem;
+  font-size: 0.92rem;
+  line-height: 1.4;
+}
+
+.games-picker-page .games-picker-note {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  min-height: 3.5rem;
+  margin-top: 1rem;
+  padding: 0.7rem 0.9rem;
+  border: 2px solid #f7d26a;
+  border-radius: 1rem;
+  background: #fbf1da;
+}
+
+.games-picker-page .games-picker-note-icon {
+  display: grid;
+  flex: 0 0 auto;
+  width: 2.25rem;
+  height: 2.25rem;
+  place-items: center;
+}
+
+.games-picker-page .games-picker-note-icon svg {
+  width: 2.25rem;
+  height: 2.25rem;
+}
+
+.games-picker-page .games-picker-note p {
+  font-size: 0.88rem;
+  font-weight: 800;
+  line-height: 1.3;
+}
+
+.games-picker-page .games-picker-grid {
+  display: grid;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.games-picker-page .game-picker-card {
+  display: grid;
+  grid-template-columns: 5rem minmax(0, 1fr) 2.8rem;
+  grid-template-areas: "icon copy arrow";
+  align-items: center;
+  gap: 0.8rem;
+  width: 100%;
+  min-height: 8.65rem;
+  padding: 0.9rem;
+  border-width: 2.5px;
+  border-radius: 1.45rem;
+  box-shadow: 6px 7px 0 #1c1410;
+  transition: transform 120ms ease, box-shadow 120ms ease;
+}
+
+.games-picker-page .game-picker-card:active {
+  transform: translate(3px, 4px);
+  box-shadow: 3px 3px 0 #1c1410;
+}
+
+.games-picker-page .game-picker-card:focus-visible {
+  outline: 3px solid #f7d26a;
+  outline-offset: 3px;
+}
+
+.games-picker-page .game-picker-icon {
+  grid-area: icon;
+  display: grid;
+  width: 5rem;
+  height: 5rem;
+  place-items: center;
+  overflow: hidden;
+  border: 2.5px solid #1c1410;
+  border-radius: 1.2rem;
+}
+
+.games-picker-page .game-picker-icon img {
+  width: 88%;
+  height: 88%;
+  object-fit: contain;
+}
+
+.games-picker-page .game-picker-copy {
+  grid-area: copy;
+  align-self: center;
+}
+
+.games-picker-page .game-picker-name {
+  font-size: 1.25rem;
+}
+
+.games-picker-page .game-picker-tagline {
+  margin-top: 0.3rem;
+  font-size: 0.8rem;
+  line-height: 1.35;
+}
+
+.games-picker-page .game-picker-badges {
+  margin-top: 0.55rem;
+  gap: 0.3rem;
+}
+
+.games-picker-page .game-picker-badges > span {
+  padding: 0.2rem 0.45rem;
+  border-width: 1.5px;
+  font-size: 0.625rem;
+  box-shadow: none;
+}
+
+.games-picker-page .game-picker-arrow {
+  grid-area: arrow;
+  display: grid;
+  width: 2.8rem;
+  height: 2.8rem;
+  place-items: center;
+  border: 2.5px solid #1c1410;
+  border-radius: 50%;
+  font-family: "Baloo 2", system-ui, sans-serif;
+  font-size: 1.75rem;
+  font-weight: 800;
+  line-height: 1;
+  box-shadow: 0 3px 0 #1c1410;
+}
+
+@media (max-width: 360px) {
+  .games-picker-page {
+    padding-right: 0.85rem;
+    padding-left: 0.85rem;
+  }
+
+  .games-picker-page .game-picker-card {
+    grid-template-columns: 4.35rem minmax(0, 1fr) 2.35rem;
+    gap: 0.6rem;
+    padding: 0.75rem;
+  }
+
+  .games-picker-page .game-picker-icon {
+    width: 4.35rem;
+    height: 4.35rem;
+  }
+
+  .games-picker-page .game-picker-arrow {
+    width: 2.35rem;
+    height: 2.35rem;
+    font-size: 1.45rem;
+  }
+
+  .games-picker-page .game-picker-name {
+    font-size: 1.08rem;
+  }
+}

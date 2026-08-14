@@ -1,10 +1,11 @@
-﻿import { Card, Button, Doodles, RefBadge, MasteryBar } from '../ui/Primitives.jsx'
-import { Mascot } from '../ui/Mascot.jsx'
+import { Card, Button, Doodles, RefBadge, MasteryBar } from '../ui/Primitives.jsx'
+import { Mascot, SpeechBubble } from '../ui/Mascot.jsx'
 import OnlineBadge from '../ui/OnlineBadge.jsx'
 import { masteryColor } from '../lib/mastery.js'
 import { topicTitleLocalized, topicArea } from '../lib/topics.js'
 import { makeT, localize } from '../lib/i18n.js'
 import { lessonTeaching } from '../lib/lesson-teaching.js'
+import './LessonBrief.css'
 
 // Lesson brief - design basis: Stitch "Gabay - Lesson View".
 // header -> title card -> "What you will do" -> progress -> stat tiles -> sticky 2D/3D entry.
@@ -24,8 +25,8 @@ export default function LessonBrief({ competency, score = 0, answered = false, o
   ]
 
   return (
-    <div className="gb-shell relative flex min-h-screen flex-col px-5 pb-28 pt-6">
-      <Doodles />
+    <div className="lesson-brief-page gb-shell relative flex min-h-screen flex-col px-5 pb-28 pt-6">
+      <div className="lesson-brief-doodles"><Doodles /></div>
 
       {/* header */}
       <div className="mb-4 flex items-center justify-between">
@@ -87,12 +88,15 @@ export default function LessonBrief({ competency, score = 0, answered = false, o
         />
       </div>
 
-      {/* mascot line */}
-      <div className="mt-5 flex items-center gap-3 px-1">
-        <Mascot size={48} float />
-        <p className="text-sm text-ink/70">{tt('brief.ready')}</p>
-      </div>
-
+      {/* Teacher Gabay tutor card */}
+      <section className="lesson-brief-tutor" aria-label={tt('brief.ready')}>
+        <div className="lesson-brief-tutor-mascot">
+          <Mascot size={72} float />
+        </div>
+        <div className="lesson-brief-tutor-message">
+          <SpeechBubble>{tt('brief.ready')}</SpeechBubble>
+        </div>
+      </section>
       {/* entry buttons (inline so nothing is hidden) */}
       <div className="mt-6 grid gap-3">
         <Button color="mint" className="text-lg" onClick={onEnter}>

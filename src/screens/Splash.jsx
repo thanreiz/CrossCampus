@@ -1,29 +1,36 @@
 import { Mascot } from '../ui/Mascot.jsx'
-import { Button, Doodles, Sparkle } from '../ui/Primitives.jsx'
+import { Button } from '../ui/Primitives.jsx'
 import { makeT } from '../lib/i18n.js'
 
-// Splash — design basis: Stitch "Gabay - Splash".
+// Splash — design basis: supplied Gabay landing-page reference.
 export default function Splash({ onStart, lang = 'taglish' }) {
   const tt = makeT(lang)
+  const tagline = lang === 'en' ? 'Your friendly Math tutor!' : 'Ang iyong kaibigang tutor sa Math!'
+
   return (
-    <div className="gb-shell relative flex min-h-screen flex-col items-center justify-center px-6 text-center">
-      <Doodles />
-
-      {/* logo card */}
-      <div className="relative gb-pop rounded-card border-[2.5px] border-outline bg-cream p-8 shadow-hard-lg">
-        <Sparkle size={26} className="absolute -right-3 -top-3" />
-        <div className="flex items-center gap-2">
-          <Mascot size={56} float />
-          <span className="font-display text-5xl font-extrabold text-yellow [-webkit-text-stroke:2px_#1C1410]">
-            Gabay
-          </span>
+    <main className="splash-page">
+      <div className="splash-content">
+        <div className="splash-mascot-stage" aria-hidden="true">
+          <Mascot size={236} className="splash-mascot" float alt="" />
         </div>
-        <p className="mt-2 text-xs font-extrabold text-ink/60">{tt('splash.subtitle')}</p>
-      </div>
 
-      <Button color="peach" className="mt-10 px-10 text-lg" onClick={onStart}>
-        {tt('splash.start')}
-      </Button>
-    </div>
+        <section className="splash-info-card gb-pop" aria-labelledby="splash-title">
+          <span className="splash-card-sparkle" aria-hidden="true">&#10022;</span>
+          <h1 id="splash-title" className="splash-title">Gabay</h1>
+          <p className="splash-tagline">{tagline}</p>
+          <div className="splash-divider" aria-hidden="true">
+            <span />
+            <b>&#9734;</b>
+            <span />
+          </div>
+          <p className="splash-features">{tt('splash.subtitle')}</p>
+        </section>
+
+        <Button color="peach" className="splash-start-button" onClick={onStart}>
+          <span>{tt('splash.start')}</span>
+          <span className="splash-start-arrow" aria-hidden="true">&rarr;</span>
+        </Button>
+      </div>
+    </main>
   )
 }

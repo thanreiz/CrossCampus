@@ -6,6 +6,7 @@ import { hasAnswered, masteryColor } from '../lib/mastery.js'
 import { topicIcon, topicTitle, topicTitleLocalized } from '../lib/topics.js'
 import { makeT } from '../lib/i18n.js'
 import { difficultyFor } from '../lib/difficulty.js'
+import './TopicPicker.css'
 
 const ICON_BG = ['bg-mint', 'bg-sky', 'bg-rose', 'bg-peach', 'bg-yellow', 'bg-lavender']
 const ALL = '__all__'
@@ -74,23 +75,30 @@ export default function TopicPicker({
   const noPracticeDue = mode === 'practice' && !search.trim() && shown.length === 0
 
   return (
-    <div className="gb-shell relative flex min-h-screen flex-col px-5 pb-28 pt-6">
+    <div className={'gb-shell topic-picker-page relative flex min-h-screen flex-col px-5 pb-28 pt-6 ' + (mode === 'practice' ? 'topic-picker-practice' : '')}>
       <Doodles />
-      <div className="mb-4 flex items-center justify-between">
-        <button className="gb-chip bg-white" onClick={onBack}>{tt('common.back')}</button>
-        <div className="flex items-center gap-2">
+      <div className="topic-picker-header mb-4 flex items-center justify-between">
+        <button className="gb-chip topic-picker-back bg-white" onClick={onBack}>{tt('common.back')}</button>
+        <div className="topic-picker-brand flex items-center gap-2">
           <OnlineBadge online={online} />
           <Mascot size={36} />
           <span className="font-display text-xl font-extrabold">Gabay</span>
         </div>
       </div>
 
-      <h1 className="font-display text-3xl font-extrabold leading-tight">
+      <h1 className="topic-picker-title font-display text-3xl font-extrabold leading-tight">
         {tt(mode === 'practice' ? 'topics.practiceHeading' : 'topics.heading')}
       </h1>
-      <p className="mb-4 text-base font-bold text-ink/70">
+      <p className="topic-picker-subtitle mb-4 text-base font-bold text-ink/70">
         {tt(mode === 'practice' ? 'topics.practiceSub' : 'topics.sub')}
       </p>
+
+      {mode === 'practice' && (
+        <aside className="topic-picker-tip" aria-label="Practice tip">
+          <LightbulbIcon />
+          <span>Keep practicing to master each topic.</span>
+        </aside>
+      )}
 
       <input
         value={search}
@@ -99,22 +107,22 @@ export default function TopicPicker({
         type="search"
         placeholder={tt('topics.search')}
         aria-label={tt('topics.search')}
-        className="relative z-10 mb-4 min-h-[50px] rounded-full border-[2.5px] border-outline bg-white px-5 text-base font-bold outline-none focus:bg-yellow/20"
+        className="topic-picker-search relative z-10 mb-4 min-h-[50px] rounded-full border-[2.5px] border-outline bg-white px-5 text-base font-bold outline-none focus:bg-yellow/20"
       />
 
-      <div className="mb-5 flex flex-wrap gap-2">
+      <div className="topic-picker-filters mb-5 flex flex-wrap gap-2">
         {DIFFICULTIES.map((value) => (
-          <Chip key={value} color={value === 'madali' ? 'mint' : value === 'katamtaman' ? 'yellow' : 'peach'} active={difficulty === value} onClick={() => setDifficulty(value)}>
+          <Chip className="topic-picker-filter" key={value} color={value === 'madali' ? 'mint' : value === 'katamtaman' ? 'yellow' : 'peach'} active={difficulty === value} onClick={() => setDifficulty(value)}>
             {value === ALL ? tt('topics.all') : tt(`difficulty.${value}`)}
           </Chip>
         ))}
       </div>
 
       {noPracticeDue ? (
-        <Card color="cream" className="gb-pop p-6 text-center">
-          <Mascot size={120} float className="mx-auto" />
-          <p className="mt-3 font-display text-xl font-extrabold">{tt('topics.nothingDue')}</p>
-          <Button color="mint" className="mt-4 w-full" onClick={onBrowse}>{tt('topics.browseNew')}</Button>
+        <Card color="cream" className="topic-picker-empty gb-pop p-6 text-center">
+          <div className="topic-picker-empty-art"><Mascot size={120} float className="topic-picker-empty-mascot mx-auto" /></div>
+          <p className="topic-picker-empty-message mt-3 font-display text-xl font-extrabold">{tt('topics.nothingDue')}</p>
+          <Button color="mint" className="topic-picker-empty-cta mt-4 w-full" onClick={onBrowse}>{tt('topics.browseNew')}</Button>
         </Card>
       ) : shown.length === 0 ? (
         <Card color="cream" className="p-6 text-center font-extrabold">{tt('topics.noResults')}</Card>
@@ -188,5 +196,14 @@ export default function TopicPicker({
         </div>
       )}
     </div>
+  )
+}
+
+function LightbulbIcon() {
+  return (
+    <svg className="topic-picker-tip-icon" viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M9 18h6M10 21h4" />
+      <path d="M8.2 14.5A6 6 0 1 1 15.8 14.5C14.6 15.4 14 16.3 14 18h-4c0-1.7-.6-2.6-1.8-3.5Z" />
+    </svg>
   )
 }

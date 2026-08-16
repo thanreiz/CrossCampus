@@ -1,0 +1,77 @@
+.lesson-brief-page .lesson-brief-doodles > div > svg:first-child {
+  display: none;
+}
+
+.lesson-brief-page .lesson-brief-tutor {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 4.75rem minmax(0, 1fr);
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: 1.25rem;
+  padding: 0.8rem;
+  border: 2.5px solid #1c1410;
+  border-radius: 1.4rem;
+  background: rgb(255 250 240 / 78%);
+  box-shadow: 6px 7px 0 #1c1410;
+}
+
+.lesson-brief-page .lesson-brief-tutor-mascot {
+  display: grid;
+  width: 4.75rem;
+  min-width: 0;
+  place-items: center;
+}
+
+.lesson-brief-page .lesson-brief-tutor-mascot img {
+  width: min(100%, 4.5rem) !important;
+  height: auto !important;
+  aspect-ratio: 1;
+  object-fit: contain;
+}
+
+.lesson-brief-page .lesson-brief-tutor-message {
+  min-width: 0;
+}
+
+.lesson-brief-page .lesson-brief-tutor-message .gb-card {
+  min-height: 4rem;
+  padding: 0.9rem 1rem;
+  border-width: 2.5px;
+  border-radius: 1.15rem;
+  box-shadow: none;
+}
+
+.lesson-brief-page .lesson-brief-tutor-message .gb-card > div:first-child {
+  overflow-wrap: anywhere;
+  color: #3a2e2a;
+  font-size: 0.95rem;
+  font-weight: 700;
+  line-height: 1.45;
+}
+
+.lesson-brief-page .lesson-brief-tutor-message .gb-card > div:last-child {
+  top: 50%;
+  bottom: auto;
+  left: -0.65rem;
+  border-right: 0;
+  border-left: 2.5px solid #1c1410;
+  transform: translateY(-50%) rotate(45deg);
+}
+
+@media (max-width: 350px) {
+  .lesson-brief-page .lesson-brief-tutor {
+    grid-template-columns: 3.9rem minmax(0, 1fr);
+    gap: 0.55rem;
+    padding: 0.7rem;
+  }
+
+  .lesson-brief-page .lesson-brief-tutor-mascot {
+    width: 3.9rem;
+  }
+
+  .lesson-brief-page .lesson-brief-tutor-message .gb-card {
+    padding: 0.75rem 0.8rem;
+  }
+}

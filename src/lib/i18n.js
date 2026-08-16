@@ -25,6 +25,11 @@ export const STRINGS = {
     taglish: 'Grades 1–6 Math · Multilingual · Offline-first',
   },
   'splash.offline': { en: '100% OFFLINE LEARNING', fil: '100% OFFLINE NA PAG-AARAL', taglish: '100% OFFLINE LEARNING' },
+  'splash.tagline': {
+    en: 'Your friendly Math tutor!',
+    fil: 'Ang iyong kaibigang tutor sa Math!',
+    taglish: 'Ang iyong kaibigang tutor sa Math!',
+  },
 
   // ---- shared / nav ----
   'common.back': { en: 'Back', fil: 'Bumalik', taglish: 'Bumalik' },
@@ -32,6 +37,7 @@ export const STRINGS = {
   'common.online': { en: 'Online', fil: 'Online', taglish: 'Online' },
   'common.offline': { en: 'Offline', fil: 'Offline', taglish: 'Offline' },
   'common.language': { en: 'Language', fil: 'Wika', taglish: 'Wika' },
+  'home.destinations': { en: 'Destinations', fil: 'Mga pupuntahan', taglish: 'Mga pupuntahan' },
   'common.mastery': { en: 'Mastery', fil: 'Kahusayan', taglish: 'Mastery' },
   'common.question': { en: 'Question', fil: 'Tanong', taglish: 'Tanong' },
   'common.yourAnswer': { en: 'Your answer', fil: 'Sagot mo', taglish: 'Sagot mo' },
@@ -143,6 +149,11 @@ export const STRINGS = {
     taglish: 'Magaling! Wala pang dapat pag-aralan. Subukan ang bagong aralin!',
   },
   'topics.browseNew': { en: 'Browse new lessons', fil: 'Tingnan ang bagong aralin', taglish: 'Browse new lessons' },
+  'topics.practiceTip': {
+    en: 'Keep practicing to master each topic.',
+    fil: 'Magpatuloy sa pag-practice para ma-master ang bawat topic.',
+    taglish: 'Magpatuloy sa pag-practice para ma-master ang bawat topic.',
+  },
   'difficulty.madali': { en: 'Easy', fil: 'Madali', taglish: 'Madali' },
   'difficulty.katamtaman': { en: 'Medium', fil: 'Katamtaman', taglish: 'Katamtaman' },
   'difficulty.mahirap': { en: 'Hard', fil: 'Mahirap', taglish: 'Mahirap' },
@@ -208,6 +219,7 @@ export const STRINGS = {
   'class.source.online': { en: 'Teacher Gabay (online)', fil: 'Teacher Gabay (online)', taglish: 'Teacher Gabay (online)' },
   'class.source.cached': { en: 'Cached explanation', fil: 'Naka-cache na paliwanag', taglish: 'Naka-cache na paliwanag' },
   'class.reviewMissed': { en: "Let's review what we missed:", fil: 'Balikan natin ang mga namali:', taglish: 'Balikan natin ang mga namali:' },
+  'class.keyIdea': { en: 'Key idea', fil: 'Pangunahing Ideya', taglish: 'Key Idea' },
   'class.steps': { en: 'Solve step by step', fil: 'Sagutan nang hakbang-hakbang', taglish: 'Solve step by step' },
   'class.stepCounter': { en: 'Step {step} / {total}', fil: 'Hakbang {step} / {total}', taglish: 'Hakbang {step} / {total}' },
   'classroom.tryAgain': {
@@ -301,6 +313,11 @@ export const STRINGS = {
     en: 'Each game practices a different part of the curriculum.',
     fil: 'Bawat laro ay para sa ibang bahagi ng kurikulum.',
     taglish: 'Bawat game ay para sa ibang bahagi ng curriculum.',
+  },
+  'games.pickNote': {
+    en: 'Choose a game and practice through play.',
+    fil: 'Pumili ng laro at magsanay sa paglalaro.',
+    taglish: 'Pumili ng game at magsanay sa paglalaro.',
   },
   'games.chooseAnother': { en: 'Choose another game', fil: 'Pumili ng ibang laro', taglish: 'Pumili ng ibang game' },
   'games.summary.perfect': { en: 'Perfect run. You cleared every question.', fil: 'Perfect run. Nasagot mo lahat nang tama.', taglish: 'Perfect run. Nasagot mo lahat nang tama.' },

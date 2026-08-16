@@ -305,7 +305,7 @@ export default function Classroom({ competency, questions, questionSource = 'bun
           <section className="classroom-explanation">
             <div className="classroom-key-heading">
               <LightbulbIcon size={28} />
-              <h2 className="font-display font-extrabold">Key idea</h2>
+              <h2 className="font-display font-extrabold">{tt('class.keyIdea')}</h2>
             </div>
             <div className="classroom-lang-switch" role="group" aria-label="Language">
               {LANGS.map((l) => (
@@ -359,7 +359,7 @@ export default function Classroom({ competency, questions, questionSource = 'bun
 
         {tab === 'practice' &&
           (done ? (
-            <Summary answers={answers} correctCount={completionCorrectCount} total={c.items.length} lang={lang} />
+            <Summary incorrectAnswers={completionIncorrectAnswers} correctCount={completionCorrectCount} total={c.items.length} lang={lang} />
           ) : (
             <section className="classroom-practice">
               {result !== null && fb && (
@@ -603,9 +603,8 @@ export default function Classroom({ competency, questions, questionSource = 'bun
 
 // Shared lesson-completion summary. Uses the existing session answer log so every
 // lesson and question count renders the same responsive results layout.
-function Summary({ answers, correctCount, total, lang = 'taglish' }) {
+function Summary({ incorrectAnswers, correctCount, total, lang = 'taglish' }) {
   const tt = makeT(lang)
-  const incorrectAnswers = uniqueIncorrectAnswers(answers)
   const incorrectCount = Math.max(0, total - correctCount)
   return (
     <div className="classroom-results">

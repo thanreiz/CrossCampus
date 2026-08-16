@@ -6,6 +6,7 @@ import { hasAnswered, masteryColor } from '../lib/mastery.js'
 import { topicIcon, topicTitle, topicTitleLocalized } from '../lib/topics.js'
 import { makeT } from '../lib/i18n.js'
 import { difficultyFor } from '../lib/difficulty.js'
+import { LightbulbIcon } from '../ui/Icons.jsx'
 import './TopicPicker.css'
 
 const ICON_BG = ['bg-mint', 'bg-sky', 'bg-rose', 'bg-peach', 'bg-yellow', 'bg-lavender']
@@ -94,9 +95,9 @@ export default function TopicPicker({
       </p>
 
       {mode === 'practice' && (
-        <aside className="topic-picker-tip" aria-label="Practice tip">
-          <LightbulbIcon />
-          <span>Keep practicing to master each topic.</span>
+        <aside className="topic-picker-tip">
+          <LightbulbIcon className="topic-picker-tip-icon" />
+          <span>{tt('topics.practiceTip')}</span>
         </aside>
       )}
 
@@ -196,14 +197,5 @@ export default function TopicPicker({
         </div>
       )}
     </div>
-  )
-}
-
-function LightbulbIcon() {
-  return (
-    <svg className="topic-picker-tip-icon" viewBox="0 0 24 24" aria-hidden="true">
-      <path d="M9 18h6M10 21h4" />
-      <path d="M8.2 14.5A6 6 0 1 1 15.8 14.5C14.6 15.4 14 16.3 14 18h-4c0-1.7-.6-2.6-1.8-3.5Z" />
-    </svg>
   )
 }

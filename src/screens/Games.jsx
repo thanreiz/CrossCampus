@@ -203,7 +203,7 @@ export default function Games({ online = true, grade = 6, competencies = [], mas
 
         <aside className="games-picker-note relative z-10" role="note">
           <span className="games-picker-note-icon" aria-hidden="true"><GameIcon /></span>
-          <p>Choose a game and practice through play.</p>
+          <p>{tt('games.pickNote')}</p>
         </aside>
 
         <div className="games-picker-grid relative z-10">

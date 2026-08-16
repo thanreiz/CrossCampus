@@ -57,7 +57,7 @@ export default function Home({ onPick, online = true, lang = 'taglish', onLang, 
         </div>
       </section>
 
-      <section className="home-destinations" aria-label={lang === 'en' ? 'Destinations' : 'Mga pupuntahan'}>
+      <section className="home-destinations" aria-label={tt('home.destinations')}>
         {DESTINATIONS.map((destination) => (
           <article key={destination.key} className={'home-destination-card home-card-' + destination.tone}>
             <span className={'home-card-doodle home-doodle-' + destination.doodle} aria-hidden="true" />

@@ -139,7 +139,7 @@ body {
   width: 100%;
   overflow: hidden;
   background-color: #f8edcf;
-  background-image: url('/gabay-background.png');
+  background-image: url('/gabay-background.webp');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -363,7 +363,7 @@ body {
 
 @media (min-aspect-ratio: 4 / 3) {
   .splash-page {
-    background-image: url('/gabay-background.png'), url('/gabay-background.png');
+    background-image: url('/gabay-background.webp'), url('/gabay-background.webp');
     background-position: center, center;
     background-size: auto 100%, cover;
   }

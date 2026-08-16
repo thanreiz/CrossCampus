@@ -1,27 +1,32 @@
-﻿import { Card, Button, Doodles, RefBadge, MasteryBar } from '../ui/Primitives.jsx'
-import { Mascot } from '../ui/Mascot.jsx'
+import { Card, Button, Doodles, RefBadge, MasteryBar } from '../ui/Primitives.jsx'
+import { Mascot, SpeechBubble } from '../ui/Mascot.jsx'
 import OnlineBadge from '../ui/OnlineBadge.jsx'
 import { masteryColor } from '../lib/mastery.js'
-import { topicTitle, topicArea } from '../lib/topics.js'
-import { makeT } from '../lib/i18n.js'
+import { topicTitleLocalized, topicArea } from '../lib/topics.js'
+import { makeT, localize } from '../lib/i18n.js'
+import { lessonTeaching } from '../lib/lesson-teaching.js'
+import './LessonBrief.css'
 
 // Lesson brief - design basis: Stitch "Gabay - Lesson View".
 // header -> title card -> "What you will do" -> progress -> stat tiles -> sticky 2D/3D entry.
 export default function LessonBrief({ competency, score = 0, answered = false, online = true, lang = 'taglish', onEnter, onEnter3D, onBack }) {
   const c = competency
   const tt = makeT(lang)
-  const title = topicTitle(c.ref, c.competency)
+  const title = topicTitleLocalized(c.ref, c.competency, lang)
+  const teaching = lessonTeaching(c)
   const pct = Math.round((score ?? 0) * 100)
+  const area = topicArea(c.ref, c.domain)
+  const areaLabel = tt(`domain.${area}`)
 
   const tasks = [
-    tt('brief.task.understand', { topic: c.competency.replace(/\.$/, '') }),
+    tt('brief.task.understand', { topic: title }),
     tt('brief.task.answer'),
     tt('brief.task.ask'),
   ]
 
   return (
-    <div className="gb-shell relative flex min-h-screen flex-col px-5 pb-28 pt-6">
-      <Doodles />
+    <div className="lesson-brief-page gb-shell relative flex min-h-screen flex-col px-5 pb-28 pt-6">
+      <div className="lesson-brief-doodles"><Doodles /></div>
 
       {/* header */}
       <div className="mb-4 flex items-center justify-between">
@@ -37,23 +42,23 @@ export default function LessonBrief({ competency, score = 0, answered = false, o
 
       {/* title card */}
       <Card color="cream" className="gb-pop p-5">
-        <RefBadge refId={c.ref} domain={c.domain} />
+        <RefBadge refId={c.ref} domain={tt(`domain.${c.domain}`)} />
         <h1 className="mt-3 font-display text-3xl font-extrabold leading-tight">{title}</h1>
-        <p className="mt-2 text-sm font-bold text-ink/70">{c.competency}</p>
+        <p className="mt-2 text-sm font-bold leading-relaxed text-ink/70">{localize(teaching.explanation, lang)}</p>
 
         <div className="mt-3 rounded-card border-[2.5px] border-outline bg-white p-3 text-sm">
-          <p className="font-bold text-ink/70">{tt('brief.contentStandard')}</p>
-          <p className="text-ink/80">{c.content_standard}</p>
+          <p className="font-bold text-ink/70">{lang === 'en' ? tt('brief.contentStandard') : tt('brief.lessonGoal')}</p>
+          <p className="text-ink/80">{lang === 'en' ? c.content_standard : localize(teaching.example.prompt, lang)}</p>
         </div>
       </Card>
 
       {/* "What you will do" */}
       <Card color="peach" className="gb-pop mt-4 p-5">
         <span className="gb-chip bg-white shadow-hard-sm text-xs">{tt('brief.whatYouDo')}</span>
-        <ol className="mt-3 flex flex-col gap-2">
+        <ol className="mt-3 grid gap-2">
           {tasks.map((t, i) => (
-            <li key={i} className="flex items-start gap-3">
-              <span className="gb-chip bg-yellow shadow-hard-sm h-7 w-7 justify-center p-0 text-sm font-extrabold leading-none tabular-nums">
+            <li key={i} className="grid grid-cols-[2rem_1fr] items-start gap-3 rounded-card bg-white/35 p-2.5">
+              <span className="flex h-8 w-8 items-center justify-center rounded-full border-[2.5px] border-outline bg-yellow text-sm font-extrabold leading-none shadow-hard-sm tabular-nums">
                 {i + 1}
               </span>
               <span className="pt-1 text-sm font-bold leading-snug">{t}</span>
@@ -75,7 +80,7 @@ export default function LessonBrief({ competency, score = 0, answered = false, o
       <div className="mt-4 grid grid-cols-2 gap-3">
         <StatTile color="mint" big={answered ? `${pct}%` : '—'} label={tt('common.mastery')} />
         <StatTile color="yellow" big={String(c.items.length)} label={tt('brief.questions')} />
-        <StatTile color="sky" big={topicArea(c.ref, c.domain).split(' ').filter((w) => !/^(and|&)$/i.test(w)).map((w) => w[0].toUpperCase()).join('')} label={topicArea(c.ref, c.domain)} />
+        <StatTile color="sky" big={area.split(' ').filter((w) => !/^(and|&)$/i.test(w)).map((w) => w[0].toUpperCase()).join('')} label={areaLabel} />
         <StatTile
           color={masteryColor(score).bg.replace('bg-', '')}
           big={tt('band.' + masteryColor(score).band)}
@@ -83,12 +88,15 @@ export default function LessonBrief({ competency, score = 0, answered = false, o
         />
       </div>
 
-      {/* mascot line */}
-      <div className="mt-5 flex items-center gap-3 px-1">
-        <Mascot size={48} float />
-        <p className="text-sm text-ink/70">{tt('brief.ready')}</p>
-      </div>
-
+      {/* Teacher Gabay tutor card */}
+      <section className="lesson-brief-tutor" aria-label={tt('brief.ready')}>
+        <div className="lesson-brief-tutor-mascot">
+          <Mascot size={72} float />
+        </div>
+        <div className="lesson-brief-tutor-message">
+          <SpeechBubble>{tt('brief.ready')}</SpeechBubble>
+        </div>
+      </section>
       {/* entry buttons (inline so nothing is hidden) */}
       <div className="mt-6 grid gap-3">
         <Button color="mint" className="text-lg" onClick={onEnter}>

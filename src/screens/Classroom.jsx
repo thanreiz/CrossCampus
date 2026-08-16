@@ -6,13 +6,17 @@ import { checkAnswer, choiceOptions } from '../lib/check.js'
 import { speak, stopSpeaking, pauseSpeaking, resumeSpeaking, isSpeechSupported } from '../lib/speech.js'
 import { askTeacherGabay, SOURCE } from '../lib/tutor.js'
 import { LANGS, answerHint, speechLang } from '../lib/lang.js'
-import { makeT, localize } from '../lib/i18n.js'
+import { makeT, localize, localizeChoice } from '../lib/i18n.js'
 import { feedbackFor, vibrateCorrect, vibrateWrong } from '../lib/feedback.js'
 import { recordAttempt } from '../lib/history.js'
-import { topicFull } from '../lib/topics.js'
-import { EarIcon, PlayCircleIcon, PauseCircleIcon, RaiseHandIcon } from '../ui/Icons.jsx'
+import { topicTitleLocalized } from '../lib/topics.js'
+import { EarIcon, PlayCircleIcon, PauseCircleIcon, RaiseHandIcon, LightbulbIcon } from '../ui/Icons.jsx'
 import StepScaffold from '../ui/StepScaffold.jsx'
+import { ChoiceVisual, QuestionVisual } from '../ui/LearningVisual.jsx'
+import { visualKeyForCompetency } from '../lib/visual-assets.js'
+import { lessonTeaching } from '../lib/lesson-teaching.js'
 import { sfx } from '../lib/sound.js'
+import './Classroom.css'
 import {
   createRecognizer,
   isRecognitionSupported,
@@ -37,8 +41,17 @@ function plain(s) {
   return String(s ?? '').replace(/\*\*/g, '')
 }
 
+function uniqueIncorrectAnswers(answers = []) {
+  const byQuestion = new Map()
+  answers.forEach((answer) => {
+    byQuestion.set(answer.q, answer)
+  })
+  return [...byQuestion.values()].filter((answer) => !answer.correct)
+}
+
 export default function Classroom({ competency, questions, questionSource = 'bundled', score, answered = false, online, lang = 'taglish', onLang, onAnswered, onExit }) {
   const c = useMemo(() => ({ ...competency, items: questions?.length ? questions : competency.items }), [competency, questions])
+  const teaching = useMemo(() => lessonTeaching(c), [c])
   const tt = makeT(lang)
   const [tab, setTab] = useState('explain')
 
@@ -69,6 +82,8 @@ export default function Classroom({ competency, questions, questionSource = 'bun
 
   const item = c.items[idx]
   const itemOptions = choiceOptions(item)
+  const completionIncorrectAnswers = useMemo(() => uniqueIncorrectAnswers(answers), [answers])
+  const completionCorrectCount = Math.max(0, c.items.length - completionIncorrectAnswers.length)
 
   useEffect(() => {
     setStepsDone(!(item?.steps?.length > 0))
@@ -76,13 +91,13 @@ export default function Classroom({ competency, questions, questionSource = 'bun
 
   // What Teacher Gabay "says" — drives both the bubble and voice-out.
   const bubble = useMemo(() => {
-    if (tab === 'explain') return localize(c.explanation, lang)
-    if (tab === 'example') return localize(c.worked_example, lang)
-    if (done) return tt('class.bubble.done', { correct: correctCount, total: c.items.length })
+    if (tab === 'explain') return tt('class.bubble.explain')
+    if (tab === 'example') return localize(teaching.example.teacherLine, lang)
+    if (done) return tt('class.bubble.done', { correct: completionCorrectCount, total: c.items.length })
     if (result !== null && fb) return fb.ok ? fb.headline : `${fb.headline} ${plain(fb.body)}`
     return tt('class.bubble.intro', { n: idx + 1, total: c.items.length })
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [tab, lang, c, done, result, fb, idx, correctCount])
+  }, [tab, lang, c, teaching, done, result, fb, idx, completionCorrectCount])
 
   // Auto read aloud whenever Gabay's line changes (voice-out, works offline).
   useEffect(() => {
@@ -245,67 +260,108 @@ export default function Classroom({ competency, questions, questionSource = 'bun
 
   useEffect(() => () => recRef.current?.stop(), [])
 
+  const lessonTitle = topicTitleLocalized(c.ref, c.competency, lang)
+  const lessonSupport = localize(c.competency, lang)
+
   return (
-    <div className="gb-shell relative flex min-h-screen flex-col bg-cream px-4 pb-6 pt-4">
-      {/* top bar — hide the Online label while answering so it isn't distracting */}
-      <div className="mb-3 flex items-center justify-between gap-2">
-        <button className="gb-chip bg-white text-base" onClick={onExit}>{tt('common.exit')}</button>
-        <div className="flex items-center gap-2">
-          {tab !== 'practice' && <OnlineBadge online={online} />}
-          <RefBadge refId={c.ref} domain={c.domain} />
-        </div>
+    <div className="classroom-page gb-shell relative flex min-h-screen flex-col bg-cream">
+      <header className="classroom-header flex items-center justify-between gap-3">
+        <button className="classroom-exit gb-chip bg-white" onClick={onExit}>
+          <span aria-hidden="true">&larr;</span>
+          {tt('common.exit')}
+        </button>
+        <OnlineBadge online={online} className="classroom-online" />
+      </header>
+
+      <div className="classroom-heading">
+        <RefBadge refId={c.ref} domain={tt(`domain.${c.domain}`)} />
+        <h1 className="classroom-title font-display font-extrabold leading-tight">{lessonTitle}</h1>
+        {lessonSupport && lessonSupport !== lessonTitle && (
+          <p className="classroom-support font-bold text-ink/70">{lessonSupport}</p>
+        )}
       </div>
 
-      {/* full child-friendly topic title */}
-      <h1 className="mb-2 font-display text-xl font-extrabold leading-tight">{topicFull(c.ref, c.competency, c.domain)}</h1>
-      {/* CHALKBOARD */}
-      <div className={`rounded-card border-[2.5px] border-outline bg-[#27433b] p-4 text-cream shadow-hard ${result === false ? 'answer-shake' : ''}`}>
-        <div className="mb-3 flex flex-wrap gap-2">
-          {TABS.map((t) => (
-            <button
-              key={t.key}
-              onClick={() => setTab(t.key)}
-              className={`rounded-full border-2 border-cream/70 px-3.5 py-1.5 text-sm font-bold ${
-                tab === t.key ? 'bg-yellow text-ink' : 'text-cream'
-              }`}
-            >
-              {tt(t.tkey)}
-            </button>
-          ))}
-        </div>
+      <nav className="classroom-tabs" role="tablist" aria-label="Lesson sections">
+        {TABS.map((t) => (
+          <button
+            key={t.key}
+            type="button"
+            role="tab"
+            aria-selected={tab === t.key}
+            onClick={() => setTab(t.key)}
+            className={tab === t.key ? 'is-active' : ''}
+          >
+            {tt(t.tkey)}
+          </button>
+        ))}
+      </nav>
 
+      <main
+        className={`classroom-panel ${done ? 'classroom-results-panel' : ''} ${result === false ? 'answer-shake' : ''}`}
+        role="tabpanel"
+        aria-label={tt(TABS.find((entry) => entry.key === tab)?.tkey)}
+      >
         {tab === 'explain' && (
-          <>
-            <div className="mb-3 flex gap-2">
+          <section className="classroom-explanation">
+            <div className="classroom-key-heading">
+              <LightbulbIcon size={28} />
+              <h2 className="font-display font-extrabold">{tt('class.keyIdea')}</h2>
+            </div>
+            <div className="classroom-lang-switch" role="group" aria-label="Language">
               {LANGS.map((l) => (
                 <button
                   key={l.key}
+                  type="button"
                   onClick={() => onLang?.(l.key)}
-                  className={`rounded-full border-2 border-cream/60 px-3 py-1 text-sm font-bold ${
-                    lang === l.key ? 'bg-mint text-ink' : 'text-cream'
-                  }`}
+                  aria-pressed={lang === l.key}
+                  className={lang === l.key ? 'is-active' : ''}
                 >
                   {l.label}
                 </button>
               ))}
             </div>
-            <p className="font-display text-lg leading-relaxed">{localize(c.explanation, lang)}</p>
-          </>
+            <p>{localize(teaching.explanation, lang)}</p>
+          </section>
         )}
 
         {tab === 'example' && (
-          <>
-            {c.visual && <div className="lesson-visual mb-4 overflow-hidden rounded-card bg-white p-3 text-ink" dangerouslySetInnerHTML={{ __html: c.visual }} />}
-            <p className="font-display text-lg leading-relaxed">{localize(c.worked_example, lang)}</p>
-          </>
+          <section className="classroom-example">
+            {c.visual && (
+              <div
+                className="lesson-visual mb-4 overflow-hidden rounded-card bg-white p-3 text-ink"
+                dangerouslySetInnerHTML={{ __html: c.visual }}
+              />
+            )}
+            <QuestionVisual
+              question={localize(teaching.example.prompt, lang)}
+              assetKey={visualKeyForCompetency(c)}
+              dark
+              className="mb-4"
+            />
+            <div className="rounded-card border-2 border-cream/60 bg-white/10 p-3">
+              <p className="font-display text-lg font-bold leading-relaxed">{localize(teaching.example.prompt, lang)}</p>
+              <ol className="mt-3 grid gap-2">
+                {teaching.example.steps.map((step, stepIndex) => (
+                  <li key={stepIndex} className="flex items-start gap-2 text-base leading-relaxed">
+                    <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-yellow font-extrabold text-ink">
+                      {stepIndex + 1}
+                    </span>
+                    <span>{localize(step, lang)}</span>
+                  </li>
+                ))}
+              </ol>
+              <p className="mt-3 rounded-card bg-mint p-3 font-display text-lg font-extrabold text-ink">
+                {localize(teaching.example.answer, lang)}
+              </p>
+            </div>
+          </section>
         )}
 
         {tab === 'practice' &&
           (done ? (
-            <Summary answers={answers} correctCount={correctCount} total={c.items.length} lang={lang} />
+            <Summary incorrectAnswers={completionIncorrectAnswers} correctCount={completionCorrectCount} total={c.items.length} lang={lang} />
           ) : (
-            <div>
-              {/* immediate feedback banner at the TOP of the question */}
+            <section className="classroom-practice">
               {result !== null && fb && (
                 <div className={`mb-3 rounded-card border-2 p-3 ${fb.ok ? 'border-mint bg-mint/20' : 'border-yellow bg-yellow/20'}`}>
                   <p className="font-display text-base font-extrabold text-cream">{fb.headline}</p>
@@ -316,50 +372,94 @@ export default function Classroom({ competency, questions, questionSource = 'bun
                   )}
                 </div>
               )}
-              <p className="text-sm text-cream/70">
-                {tt('common.question')} {idx + 1} / {c.items.length}
-              </p>
-              <p className="mt-1 font-display text-xl font-bold leading-snug">{localize(item.q, lang)}</p>
+
+              <div className="classroom-question-meta">
+                <p>{tt('common.question')} {idx + 1} / {c.items.length}</p>
+                <span
+                  className="classroom-question-progress"
+                  role="progressbar"
+                  aria-label={`${tt('common.question')} ${idx + 1} / ${c.items.length}`}
+                  aria-valuemin="1"
+                  aria-valuemax={c.items.length}
+                  aria-valuenow={idx + 1}
+                >
+                  {Array.from({ length: c.items.length }, (_, dotIndex) => (
+                    <span key={dotIndex} className={dotIndex <= idx ? 'is-complete' : ''} aria-hidden="true" />
+                  ))}
+                </span>
+              </div>
+
+              <p className="classroom-question-text font-display">{localize(item.q, lang)}</p>
+              <QuestionVisual question={localize(item.q, lang)} dark />
+
               {item.steps?.length > 0 && !stepsDone && (
                 <div className="mt-3 rounded-card border-2 border-cream/50 bg-white/10 p-3">
                   <p className="text-sm font-extrabold text-cream">{tt('class.steps')}</p>
                 </div>
               )}
-              {itemOptions && (
-                <div className="mt-3 flex flex-wrap gap-2">
-                  {itemOptions.map((opt) => (
-                    <button
-                      key={opt}
-                      onClick={() => {
-                        if (result === null) {
-                          setInput(opt)
-                          setNudge(null)
-                        }
-                      }}
-                      className={`rounded-full border-2 border-cream/60 px-4 py-1.5 text-base font-bold ${
-                        input === opt ? 'bg-sky text-ink' : 'text-cream'
-                      }`}
-                    >
-                      {opt}
-                    </button>
-                  ))}
-                </div>
-              )}
-            </div>
+            </section>
           ))}
-      </div>
+      </main>
 
-      {/* TEACHER + speech bubble */}
-      <div className="mt-5 flex items-end gap-3">
-        <div className={`${avatarState} flex w-[35%] min-w-[112px] items-end justify-center`}>
-          <Mascot size={142} />
+      {tab === 'practice' && !done && stepsDone && (
+        <section className="classroom-answer-card" aria-label={itemOptions ? tt('class.pickAnswer') : answerHint(lang)}>
+          <p className="classroom-answer-heading">{itemOptions ? tt('class.pickAnswer') : answerHint(lang)}</p>
+          {itemOptions ? (
+            <div className="classroom-choice-list" role="radiogroup" aria-label={tt('class.pickAnswer')}>
+              {itemOptions.map((opt) => (
+                <button
+                  key={opt}
+                  type="button"
+                  role="radio"
+                  aria-checked={input === opt}
+                  disabled={result !== null}
+                  onClick={() => {
+                    if (result === null) {
+                      setInput(opt)
+                      setNudge(null)
+                    }
+                  }}
+                  className={input === opt ? 'is-selected' : ''}
+                >
+                  <span className="classroom-choice-radio" aria-hidden="true" />
+                  <span className="classroom-choice-content">
+                    <ChoiceVisual value={opt} />
+                    <span>{localizeChoice(opt, lang)}</span>
+                  </span>
+                </button>
+              ))}
+            </div>
+          ) : (
+            <input
+              ref={inputRef}
+              value={input}
+              onChange={(e) => {
+                setInput(e.target.value)
+                if (nudge) setNudge(null)
+              }}
+              onKeyDown={(e) => e.key === 'Enter' && (result === null ? submit() : next())}
+              disabled={result !== null}
+              placeholder={tt('common.answerPlaceholder')}
+              inputMode="decimal"
+              pattern="[0-9.]*"
+              type="text"
+              className="classroom-answer-input"
+            />
+          )}
+          {nudge && <p className="classroom-answer-nudge">{tt('common.' + nudge)}</p>}
+        </section>
+      )}
+
+      <section className="classroom-tutor">
+        <div className={`classroom-mascot ${avatarState}`}>
+          <Mascot size={104} />
         </div>
-        <div className="flex-1">
+        <div className="classroom-tutor-bubble">
           <SpeechBubble speaking>
-            {result !== null && item.solution ? localize(item.solution, lang) : result === false ? tt('classroom.tryAgain') : bubble}
+            {done ? bubble : result !== null && item.solution ? localize(item.solution, lang) : result === false ? tt('classroom.tryAgain') : bubble}
           </SpeechBubble>
         </div>
-      </div>
+      </section>
 
       {showCorrectOverlay && (
         <div className="pointer-events-none fixed inset-0 z-[80] flex items-center justify-center bg-mint/90 px-6 text-center">
@@ -367,42 +467,47 @@ export default function Classroom({ competency, questions, questionSource = 'bun
         </div>
       )}
 
-      {/* voice controls — listen again (ear) / pause-resume (play-pause circle) /
-          raise hand (person). Stop removed: pause/play already covers it. */}
       {isSpeechSupported() && (
-        <div className="mt-2 flex flex-wrap items-center gap-2">
+        <div className="classroom-voice-controls">
           <button
-            className="flex h-12 w-12 items-center justify-center rounded-full border-[2.5px] border-outline bg-white shadow-hard-sm active:translate-y-[1px]"
-            onClick={() => { setPaused(false); speak(bubble, { lang }) }}
+            className="classroom-voice-action"
+            onClick={() => {
+              setPaused(false)
+              speak(bubble, { lang })
+            }}
             aria-label={tt('class.listenAgain')}
             title={tt('class.listenAgain')}
           >
-            <EarIcon size={26} />
+            <span className="classroom-control-icon"><EarIcon size={26} /></span>
+            <span>{tt('class.listenAgain')}</span>
           </button>
           <button
-            className="flex h-12 w-12 items-center justify-center rounded-full border-[2.5px] border-outline bg-white shadow-hard-sm active:translate-y-[1px]"
+            className="classroom-voice-action"
             onClick={togglePause}
             aria-label={paused ? tt('class.play') : tt('class.pause')}
             title={paused ? tt('class.play') : tt('class.pause')}
           >
-            {paused ? <PlayCircleIcon size={28} /> : <PauseCircleIcon size={28} />}
+            <span className="classroom-control-icon">
+              {paused ? <PlayCircleIcon size={28} /> : <PauseCircleIcon size={28} />}
+            </span>
+            <span>{paused ? tt('class.play') : tt('class.pause')}</span>
           </button>
           <button
-            className="flex h-12 items-center gap-2 rounded-full border-[2.5px] border-outline bg-lavender px-3 shadow-hard-sm active:translate-y-[1px]"
+            className="classroom-ask-teacher bg-lavender"
             onClick={() => setAskOpen((v) => !v)}
+            aria-expanded={askOpen}
             aria-label={tt('class.raiseHand')}
             title={tt('class.raiseHand')}
           >
             <RaiseHandIcon size={28} />
-            <span className="pr-1 text-sm font-bold">{tt('class.raiseHand')}</span>
+            <span>{tt('class.raiseHand')}</span>
           </button>
         </div>
       )}
 
-      {/* ASK PANEL — live Teacher Gabay tutor */}
       {askOpen && (
-        <div className="gb-card bg-white gb-pop mt-3 p-3">
-          <div className="flex items-center gap-2">
+        <div className="classroom-ask-panel gb-card bg-white gb-pop">
+          <div className="classroom-ask-row flex items-center gap-2">
             <input
               value={question}
               onChange={(e) => setQuestion(e.target.value)}
@@ -424,12 +529,8 @@ export default function Classroom({ competency, questions, questionSource = 'bun
               {thinking ? '...' : tt('class.ask')}
             </Button>
           </div>
-          {transcribing && (
-            <p className="mt-2 text-sm font-bold text-ink/60">{tt('class.listening')}</p>
-          )}
-          {!online && (
-            <p className="mt-2 text-sm text-ink/60">{tt('class.offlineNote')}</p>
-          )}
+          {transcribing && <p className="mt-2 text-sm font-bold text-ink/60">{tt('class.listening')}</p>}
+          {!online && <p className="mt-2 text-sm text-ink/60">{tt('class.offlineNote')}</p>}
           {reply && (
             <div className="mt-3 rounded-card border-[2.5px] border-outline bg-cream p-3">
               <p className="mb-1 text-xs font-bold text-ink/60">
@@ -451,123 +552,106 @@ export default function Classroom({ competency, questions, questionSource = 'bun
         </div>
       )}
 
-      {/* mastery */}
-      {answered && <div className="mt-4 flex items-center gap-2">
-        <span className="text-sm font-bold text-ink/70">{tt('common.mastery')}</span>
-        <MasteryBar score={score} />
-        <span className="text-sm font-bold">{Math.round((score ?? 0) * 100)}%</span>
-      </div>}
+      {answered && (
+        <div className={`classroom-mastery ${done ? 'is-results' : ''}`}>
+          <div className="classroom-mastery-heading">
+            <span>{tt('common.mastery')}</span>
+            <strong>{Math.round((score ?? 0) * 100)}%</strong>
+          </div>
+          <MasteryBar score={score} />
+        </div>
+      )}
 
-      {/* DESK BAR */}
-      <div className="mt-auto pt-5">
+      <div className="classroom-actions">
         {tab !== 'practice' ? (
-          <Button color="yellow" className="w-full text-lg" onClick={() => setTab('practice')}>{tt('class.startPractice')} &rarr;</Button>
+          <Button color="yellow" className="classroom-start-practice w-full" onClick={() => setTab('practice')}>
+            {tt('class.startPractice')} &rarr;
+          </Button>
         ) : done ? (
-          <div className="flex gap-2">
+          <div className="classroom-results-actions">
             <Button color="white" className="flex-1 text-lg" onClick={restart}>{tt('class.repeat')}</Button>
             <Button color="mint" className="flex-1 text-lg" onClick={onExit}>{tt('common.done')}</Button>
           </div>
         ) : !stepsDone ? (
           <StepScaffold item={item} lang={lang} tt={tt} onComplete={() => setStepsDone(true)} />
+        ) : result === null ? (
+          <Button
+            color="yellow"
+            className="classroom-submit-answer w-full disabled:opacity-50"
+            onClick={submit}
+            disabled={!input.trim()}
+          >
+            {tt('class.answer')} &rarr;
+          </Button>
+        ) : feedbackReady ? (
+          result ? (
+            <Button ref={actionRef} color="sky" className="classroom-submit-answer w-full" onClick={next}>
+              {idx + 1 >= c.items.length ? tt('common.finish') : tt('common.next')} &rarr;
+            </Button>
+          ) : (
+            <Button ref={actionRef} color="rose" className="classroom-submit-answer w-full" onClick={tryAgain}>
+              {tt('classroom.retry')}
+            </Button>
+          )
         ) : (
-          <div className="gb-card bg-white p-3">
-            <p className="mb-1.5 px-1 text-sm font-bold text-ink/60">
-              {itemOptions ? tt('class.pickAnswer') : answerHint(lang)}
-            </p>
-            <div className="flex items-center gap-2">
-              {!itemOptions && (
-                <input
-                  ref={inputRef}
-                  value={input}
-                  onChange={(e) => {
-                    setInput(e.target.value)
-                    if (nudge) setNudge(null)
-                  }}
-                  onKeyDown={(e) => e.key === 'Enter' && (result === null ? submit() : next())}
-                  disabled={result !== null}
-                  placeholder={tt('common.answerPlaceholder')}
-                  inputMode="decimal"
-                  pattern="[0-9.]*"
-                  type="text"
-                  className="min-w-0 flex-1 rounded-full border-[2.5px] border-outline px-4 py-3 text-lg font-bold outline-none focus:bg-cream disabled:opacity-80"
-                />
-              )}
-              {result === null ? (
-                <Button
-                  color="mint"
-                  className={`text-lg disabled:opacity-50 ${itemOptions ? 'w-full' : ''}`}
-                  onClick={submit}
-                  disabled={!input.trim()}
-                >
-                  {tt('class.answer')}
-                </Button>
-              ) : feedbackReady ? (
-                result ? (
-                  <Button ref={actionRef} color="sky" className={`text-lg ${itemOptions ? 'w-full' : ''}`} onClick={next}>
-                    {idx + 1 >= c.items.length ? tt('common.finish') : tt('common.next')} →
-                  </Button>
-                ) : (
-                  <Button ref={actionRef} color="rose" className={`text-lg ${itemOptions ? 'w-full' : ''}`} onClick={tryAgain}>
-                    {tt('classroom.retry')}
-                  </Button>
-                )
-              ) : (
-                <span className="gb-chip bg-yellow">{tt('classroom.readSolution')}</span>
-              )}
-            </div>
-            {nudge && (
-              <p className="mt-2 px-1 text-sm font-extrabold text-[#c0414b]">{tt('common.' + nudge)}</p>
-            )}
-          </div>
+          <span className="classroom-read-solution gb-chip bg-yellow">{tt('classroom.readSolution')}</span>
         )}
       </div>
     </div>
   )
 }
 
-// Score summary: which were correct / wrong, with correct answer + explanation.
-function Summary({ answers, correctCount, total, lang = 'taglish' }) {
+// Shared lesson-completion summary. Uses the existing session answer log so every
+// lesson and question count renders the same responsive results layout.
+function Summary({ incorrectAnswers, correctCount, total, lang = 'taglish' }) {
   const tt = makeT(lang)
-  const wrong = answers.filter((a) => !a.correct)
+  const incorrectCount = Math.max(0, total - correctCount)
   return (
-    <div>
-      <div className="text-center">
-        <p className="font-display text-2xl font-extrabold">{tt('summary.done')}</p>
-        <p className="mt-1 text-lg">
-          {tt('summary.scoreLine', { correct: correctCount, total })}
-        </p>
-        <div className="mt-2 flex justify-center gap-2 text-sm font-bold">
-          <span className="gb-chip bg-mint text-ink">{tt('common.correct')}: {correctCount}</span>
-          <span className="gb-chip bg-rose text-ink">{tt('common.wrong')}: {total - correctCount}</span>
-        </div>
-      </div>
-      {wrong.length > 0 && (
-        <div className="mt-4">
-          <p className="mb-2 text-sm font-extrabold text-cream/80">{tt('class.reviewMissed')}</p>
-          <div className="flex flex-col gap-2">
-            {wrong.map((a, i) => (
-              <div key={i} className="rounded-card border-2 border-cream/40 bg-cream p-3 text-ink">
-                <p className="text-sm font-bold">
-                  <span className="text-ink/60">{tt('common.question')}:</span> {a.q}
-                </p>
-                <p className="mt-1 text-sm font-bold">
-                  <span className="text-ink/60">{tt('common.yourAnswer')}:</span>{' '}
-                  <span className="text-rose-700">{a.your || '—'}</span>
-                </p>
-                <p className="mt-1 text-sm font-bold">
-                  <span className="text-ink/60">{tt('common.correctAnswer')}:</span>{' '}
-                  <span className="text-green-700">{a.answer}</span>
-                </p>
-                {a.solution && (
-                  <p className="mt-1 text-sm">
-                    <span className="font-bold text-ink/60">{tt('common.explanation')}:</span> <RichText>{a.solution}</RichText>
-                  </p>
-                )}
-              </div>
-            ))}
+    <div className="classroom-results">
+      <section className="classroom-results-hero">
+        <span className="classroom-results-check" aria-hidden="true">&#10003;</span>
+        <div className="classroom-results-score">
+          <h2>{tt('summary.done')}</h2>
+          <p>{tt('summary.scoreLine', { correct: correctCount, total })}</p>
+          <div className="classroom-results-counts">
+            <span className="bg-mint">{tt('common.correct')}: {correctCount}</span>
+            <span className="bg-rose">{tt('common.wrong')}: {incorrectCount}</span>
           </div>
         </div>
-      )}
+      </section>
+
+      <div className="classroom-results-review-heading">
+        <h3>{tt('class.reviewMissed')}</h3>
+      </div>
+
+      <div className="classroom-results-list">
+        {incorrectAnswers.map((answer, answerIndex) => (
+          <article key={answerIndex} className="classroom-result-card">
+            <div className="classroom-result-question">
+              <span className="classroom-result-number">{answerIndex + 1}</span>
+              <p>{answer.q}</p>
+            </div>
+            <div className="classroom-result-comparison">
+              <div>
+                <span>{tt('common.yourAnswer')}</span>
+                <strong className={answer.correct ? 'is-correct' : 'is-wrong'}>
+                  {answer.your ? localizeChoice(answer.your, lang) : '—'}
+                </strong>
+              </div>
+              <div>
+                <span>{tt('common.correctAnswer')}</span>
+                <strong className="is-correct">{localizeChoice(answer.answer, lang)}</strong>
+              </div>
+            </div>
+            {answer.solution && (
+              <div className="classroom-result-explanation">
+                <span>{tt('common.explanation')}</span>
+                <RichText>{answer.solution}</RichText>
+              </div>
+            )}
+          </article>
+        ))}
+      </div>
     </div>
   )
 }

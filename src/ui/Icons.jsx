@@ -58,3 +58,13 @@ export function RaiseHandIcon({ size = 24, className = '' }) {
     </svg>
   )
 }
+
+export function LightbulbIcon({ size = 24, className = '' }) {
+  return (
+    <svg viewBox="0 0 24 24" width={size} height={size} className={className} aria-hidden="true">
+      <path d="M8.2 14.2a6 6 0 1 1 7.6 0c-1.1.8-1.5 1.7-1.6 2.8H9.8c-.1-1.1-.5-2-1.6-2.8Z" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+      <path d="M9.7 20h4.6M10 17h4" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+      <path d="M12 1V0M4.2 4.2l-.8-.8M19.8 4.2l.8-.8M2 11H1M23 11h-1" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
+    </svg>
+  )
+}

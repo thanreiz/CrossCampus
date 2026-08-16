@@ -1,0 +1,296 @@
+{
+  "1MG-Ia-1": {
+    "explanation": {
+      "en": "A 2D shape is flat. We identify it by counting its sides and corners, not by its size, color, or direction.",
+      "fil": "Ang hugis na 2D ay patag. Nakikilala natin ito sa pagbilang ng mga gilid at sulok, hindi sa laki, kulay, o pagkakaharap nito.",
+      "taglish": "Flat ang 2D shape. Makikilala natin ito by counting its sides and corners, hindi sa size, color, o direction nito."
+    },
+    "worked_example": {
+      "en": "A square has four equal sides and four right angles.",
+      "fil": "Ang parisukat ay may apat na magkakapantay na gilid at apat na tamang anggulo.",
+      "taglish": "Ang square ay may four equal sides at four right angles."
+    },
+    "worked_example_prompt": {
+      "en": "Which shape has four equal sides and four right angles?",
+      "fil": "Anong hugis ang may apat na magkakapantay na gilid at apat na tamang anggulo?",
+      "taglish": "Anong shape ang may four equal sides at four right angles?"
+    },
+    "worked_example_steps": [
+      {
+        "en": "Count the outside edges. There are four sides.",
+        "fil": "Bilangin ang mga gilid sa labas. May apat na gilid.",
+        "taglish": "Count the outside edges. May four sides."
+      },
+      {
+        "en": "Check the sides and corners. All sides are equal and all four corners are right angles.",
+        "fil": "Suriin ang mga gilid at sulok. Magkakapantay ang lahat ng gilid at tamang anggulo ang apat na sulok.",
+        "taglish": "Check the sides and corners. Equal ang lahat ng sides at right angles ang four corners."
+      }
+    ],
+    "worked_example_answer": {
+      "en": "The shape is a square.",
+      "fil": "Ang hugis ay parisukat.",
+      "taglish": "Square ang hugis."
+    },
+    "example_visual": "square",
+    "item_overrides": {
+      "0": {
+        "q": {
+          "en": "Which shape has four equal sides and four right angles?",
+          "fil": "Anong hugis ang may apat na magkakapantay na gilid at apat na tamang anggulo?",
+          "taglish": "Anong shape ang may four equal sides at four right angles?"
+        },
+        "solution": {
+          "en": "A square has four equal sides and four right angles.",
+          "fil": "Parisukat ang sagot dahil mayroon itong apat na magkakapantay na gilid at apat na tamang anggulo.",
+          "taglish": "Square ang sagot because it has four equal sides and four right angles."
+        }
+      },
+      "1": {
+        "q": {
+          "en": "How many sides and corners does the triangular banderitas have?",
+          "fil": "Ilang gilid at sulok mayroon ang tatsulok na banderitas?",
+          "taglish": "Ilang sides at corners mayroon ang triangular na banderitas?"
+        },
+        "solution": {
+          "en": "A triangle has 3 sides and 3 corners.",
+          "fil": "May 3 gilid at 3 sulok ang tatsulok.",
+          "taglish": "May 3 sides at 3 corners ang triangle."
+        }
+      },
+      "2": {
+        "q": {
+          "en": "Which basic shape looks like the front of a classroom door?",
+          "fil": "Anong pangunahing hugis ang kahawig ng harap ng pinto ng silid-aralan?",
+          "taglish": "Anong basic shape ang kamukha ng harap ng classroom door?"
+        },
+        "solution": {
+          "en": "The front of a classroom door is shaped like a rectangle.",
+          "fil": "Ang harap ng pinto ng silid-aralan ay hugis parihaba.",
+          "taglish": "Rectangle ang shape ng harap ng classroom door."
+        }
+      },
+      "3": {
+        "q": {
+          "en": "A square is turned so it looks like a diamond. Is it still a square?",
+          "fil": "Inikot ang isang parisukat kaya mukha itong diyamante. Parisukat pa rin ba ito?",
+          "taglish": "Inikot ang square kaya mukha itong diamond. Square pa rin ba ito?"
+        },
+        "solution": {
+          "en": "True. Turning a square does not change its four equal sides and four right angles.",
+          "fil": "Tama. Hindi nababago ng pag-ikot ang apat na magkakapantay na gilid at apat na tamang anggulo ng parisukat.",
+          "taglish": "Tama. Hindi nagbabago ang four equal sides at four right angles kapag inikot ang square."
+        }
+      },
+      "4": {
+        "q": {
+          "en": "Which shape is round and has no corners?",
+          "fil": "Aling hugis ang bilog at walang sulok?",
+          "taglish": "Aling shape ang round at walang corners?"
+        },
+        "answer": "circle",
+        "type": "mcq",
+        "options": ["square", "triangle", "rectangle", "circle"],
+        "solution": {
+          "en": "A circle is round and has no corners.",
+          "fil": "Bilog ang sagot dahil ito ay paikot at walang sulok.",
+          "taglish": "Circle ang sagot because it is round and has no corners."
+        }
+      }
+    }
+  },
+  "1MG-Ia-2": {
+    "explanation": {
+      "en": "We compare 2D shapes by checking how many sides and corners they have and whether their sides are straight, curved, equal, or different.",
+      "fil": "Inihahambing natin ang mga hugis na 2D sa dami ng gilid at sulok at kung ang mga gilid ay tuwid, kurbado, magkakapantay, o magkakaiba.",
+      "taglish": "We compare 2D shapes by checking the number of sides and corners at kung straight, curved, equal, o different ang sides."
+    },
+    "worked_example": {
+      "en": "A triangle has three corners, while a square has four.",
+      "fil": "May tatlong sulok ang tatsulok, samantalang may apat ang parisukat.",
+      "taglish": "May three corners ang triangle, while may four ang square."
+    },
+    "worked_example_prompt": {
+      "en": "Which has fewer corners: a triangle or a square?",
+      "fil": "Alin ang may mas kaunting sulok: tatsulok o parisukat?",
+      "taglish": "Alin ang may fewer corners: triangle o square?"
+    },
+    "worked_example_steps": [
+      {
+        "en": "Count the triangle's corners: 3.",
+        "fil": "Bilangin ang mga sulok ng tatsulok: 3.",
+        "taglish": "Count the triangle's corners: 3."
+      },
+      {
+        "en": "Count the square's corners: 4. Since 3 is less than 4, the triangle has fewer corners.",
+        "fil": "Bilangin ang mga sulok ng parisukat: 4. Dahil mas kaunti ang 3 kaysa 4, mas kaunti ang sulok ng tatsulok.",
+        "taglish": "Count the square's corners: 4. Since mas kaunti ang 3 kaysa 4, triangle ang may fewer corners."
+      }
+    ],
+    "worked_example_answer": {
+      "en": "The triangle has fewer corners.",
+      "fil": "Mas kaunti ang sulok ng tatsulok.",
+      "taglish": "Triangle ang may fewer corners."
+    },
+    "example_visual": "triangle",
+    "item_overrides": {
+      "0": {
+        "q": { "en": "Which shape has no corners?", "fil": "Aling hugis ang walang sulok?", "taglish": "Aling shape ang walang corners?" },
+        "answer": "circle",
+        "options": ["square", "triangle", "rectangle", "circle"],
+        "solution": { "en": "A circle has no corners.", "fil": "Walang sulok ang bilog.", "taglish": "Walang corners ang circle." }
+      },
+      "1": {
+        "q": { "en": "Which has fewer corners: a triangle or a square?", "fil": "Alin ang may mas kaunting sulok: tatsulok o parisukat?", "taglish": "Alin ang may fewer corners: triangle o square?" },
+        "answer": "triangle",
+        "options": ["square", "triangle", "rectangle", "circle"],
+        "solution": { "en": "A triangle has 3 corners; a square has 4. The triangle has fewer.", "fil": "May 3 sulok ang tatsulok at 4 ang parisukat. Mas kaunti ang sulok ng tatsulok.", "taglish": "May 3 corners ang triangle at 4 ang square, so triangle ang may fewer." }
+      },
+      "2": {
+        "q": { "en": "How many corners do both a rectangle and a square have?", "fil": "Ilang sulok mayroon ang parihaba at parisukat?", "taglish": "Ilang corners mayroon ang rectangle at square?" },
+        "answer": "4",
+        "options": ["2", "3", "4", "6"],
+        "solution": { "en": "Both shapes have 4 corners.", "fil": "Parehong may 4 na sulok ang dalawang hugis.", "taglish": "Both shapes have 4 corners." }
+      },
+      "3": {
+        "q": { "en": "Every square has four equal sides. True or false?", "fil": "Ang bawat parisukat ay may apat na magkakapantay na gilid. Tama o mali?", "taglish": "Every square has four equal sides. Tama o mali?" },
+        "answer": "True",
+        "options": ["True", "False"],
+        "solution": { "en": "True. Four equal sides are a defining feature of a square.", "fil": "Tama. Ang apat na magkakapantay na gilid ay mahalagang katangian ng parisukat.", "taglish": "Tama. Defining feature ng square ang four equal sides." }
+      },
+      "4": {
+        "q": { "en": "Which shape has four sides, but usually has two long sides and two short sides?", "fil": "Aling hugis ang may apat na gilid ngunit karaniwang may dalawang mahabang gilid at dalawang maikling gilid?", "taglish": "Aling shape ang may four sides pero usually may two long at two short sides?" },
+        "answer": "rectangle",
+        "options": ["square", "triangle", "rectangle", "circle"],
+        "solution": { "en": "A rectangle has two pairs of equal opposite sides.", "fil": "Ang parihaba ay may dalawang pares ng magkakapantay na magkaharap na gilid.", "taglish": "A rectangle has two pairs of equal opposite sides." }
+      }
+    }
+  },
+  "1MG-Ia-3": {
+    "explanation": {
+      "en": "Big shapes can be made from smaller shapes. Turn or slide the pieces until matching straight sides touch. The outside edges tell you which new shape was formed.",
+      "fil": "Maaaring bumuo ng malaking hugis mula sa maliliit na hugis. Iikot o iusog ang mga piraso hanggang magdikit ang magkatugmang tuwid na gilid. Ang mga gilid sa labas ang magsasabi kung anong bagong hugis ang nabuo.",
+      "taglish": "Puwedeng gumawa ng malaking shape mula sa smaller shapes. I-turn o i-slide ang pieces hanggang magdikit ang matching straight sides. Tingnan ang outside edges para malaman ang bagong shape."
+    },
+    "worked_example": {
+      "en": "Join two equal right triangles along their longest sides. The joined side goes inside, while the four outside sides are equal and make four square corners. The new shape is a square.",
+      "fil": "Pagdugtungin ang dalawang magkaparehong tatsulok na may tamang anggulo sa kanilang pinakamahabang gilid. Mapupunta sa loob ang pinagdugtong na gilid. Ang apat na gilid sa labas ay magkakapantay at bumubuo ng parisukat.",
+      "taglish": "I-join ang two equal right triangles sa longest sides nila. Mapupunta sa loob ang joined side, habang equal ang four outside sides at may four square corners. Square ang bagong shape."
+    },
+    "worked_example_prompt": {
+      "en": "What shape is made when two equal right triangles are joined along their longest sides?",
+      "fil": "Anong hugis ang nabubuo kapag pinagdugtong ang dalawang magkaparehong tatsulok na may tamang anggulo sa kanilang pinakamahabang gilid?",
+      "taglish": "Anong shape ang mabubuo kapag i-join ang two equal right triangles sa longest sides nila?"
+    },
+    "worked_example_steps": [
+      {
+        "en": "Place the triangles so their longest sides touch. That joined side is now inside the new shape.",
+        "fil": "Ilagay ang mga tatsulok na magkadikit ang kanilang pinakamahabang gilid. Nasa loob na ng bagong hugis ang pinagdugtong na gilid.",
+        "taglish": "Place the triangles so magdikit ang longest sides. Nasa inside na ng new shape ang joined side."
+      },
+      {
+        "en": "Trace the outside: there are four equal sides and four square corners.",
+        "fil": "Sundan ang gilid sa labas: may apat na magkakapantay na gilid at apat na tamang anggulo.",
+        "taglish": "Trace the outside: may four equal sides at four square corners."
+      }
+    ],
+    "worked_example_answer": {
+      "en": "The two triangles form a square.",
+      "fil": "Ang dalawang tatsulok ay bumubuo ng parisukat.",
+      "taglish": "The two triangles form a square."
+    },
+    "example_visual": "twoTrianglesSquare",
+    "item_overrides": {
+      "0": {
+        "q": {
+          "en": "Two equal right triangles are joined along their longest sides. Which shape do they form?",
+          "fil": "Pinagdugtong ang dalawang magkaparehong tatsulok na may tamang anggulo sa kanilang pinakamahabang gilid. Anong hugis ang nabuo?",
+          "taglish": "I-join ang two equal right triangles sa longest sides nila. Anong shape ang nabuo?"
+        },
+        "answer": "square",
+        "type": "mcq",
+        "options": ["square", "rectangle", "triangle", "circle"],
+        "solution": {
+          "en": "The longest sides meet inside. The four equal outside sides and four square corners form a square.",
+          "fil": "Nagtagpo sa loob ang pinakamahabang mga gilid. Ang apat na magkakapantay na gilid sa labas at apat na tamang anggulo ay bumubuo ng parisukat.",
+          "taglish": "Nag-meet sa loob ang longest sides. The four equal outside sides and four square corners form a square."
+        }
+      },
+      "1": {
+        "q": {
+          "en": "A rectangle is cut from one corner to the opposite corner. Which two shapes are made?",
+          "fil": "Hinati ang parihaba mula sa isang sulok hanggang sa katapat na sulok. Anong dalawang hugis ang nabuo?",
+          "taglish": "A rectangle is cut from one corner to the opposite corner. Anong two shapes ang nabuo?"
+        },
+        "answer": "two triangles",
+        "type": "mcq",
+        "options": ["two triangles", "two squares", "one circle", "one triangle"],
+        "solution": {
+          "en": "A diagonal cut divides the rectangle into two triangles.",
+          "fil": "Ang pahilis na hati ay naghahati sa parihaba upang maging dalawang tatsulok.",
+          "taglish": "The diagonal cut divides the rectangle into two triangles."
+        }
+      },
+      "2": {
+        "q": {
+          "en": "Which shapes can make a simple bahay-kubo picture?",
+          "fil": "Aling mga hugis ang maaaring bumuo ng simpleng larawan ng bahay-kubo?",
+          "taglish": "Aling shapes ang puwedeng gumawa ng simple bahay-kubo picture?"
+        },
+        "answer": "rectangle body and triangle roof",
+        "type": "mcq",
+        "options": ["rectangle body and triangle roof", "square body and circle roof", "triangle body and rectangle roof", "circle body and square roof"],
+        "solution": {
+          "en": "Use a rectangle for the body and a triangle for the roof.",
+          "fil": "Gumamit ng parihaba para sa katawan ng bahay at tatsulok para sa bubong.",
+          "taglish": "Use a rectangle for the body at triangle for the roof."
+        }
+      },
+      "3": {
+        "q": {
+          "en": "Look at the composite figure made of one square and two triangles. How many shapes are used?",
+          "fil": "Tingnan ang pinagsamang hugis na binuo ng isang parisukat at dalawang tatsulok. Ilang hugis ang ginamit?",
+          "taglish": "Look at the composite figure made of one square and two triangles. Ilang shapes ang ginamit?"
+        },
+        "answer": "3",
+        "type": "mcq",
+        "options": ["1", "2", "3", "4"],
+        "solution": {
+          "en": "Count the parts: 1 square + 2 triangles = 3 shapes.",
+          "fil": "Bilangin ang mga bahagi: 1 parisukat + 2 tatsulok = 3 hugis.",
+          "taglish": "Count the parts: 1 square + 2 triangles = 3 shapes."
+        }
+      },
+      "4": {
+        "q": {
+          "en": "The composite figure shows three component shapes. True or false?",
+          "fil": "May tatlong bahaging hugis ang pinagsamang larawan. Tama o mali?",
+          "taglish": "The composite figure has three component shapes. Tama o mali?"
+        },
+        "answer": "True",
+        "type": "true_false",
+        "options": ["True", "False"],
+        "solution": {
+          "en": "True. There is one square and two triangles, for 3 shapes in all.",
+          "fil": "Tama. May isang parisukat at dalawang tatsulok, kaya 3 hugis lahat.",
+          "taglish": "Tama. May one square at two triangles, so 3 shapes in all."
+        }
+      },
+      "5": {
+        "q": {
+          "en": "Two equal squares are joined side by side. Which new shape do they form?",
+          "fil": "Pinagdikit nang magkatabi ang dalawang magkaparehong parisukat. Anong bagong hugis ang nabuo?",
+          "taglish": "Two equal squares are joined side by side. Anong new shape ang nabuo?"
+        },
+        "answer": "rectangle",
+        "type": "mcq",
+        "options": ["square", "triangle", "rectangle", "circle"],
+        "solution": {
+          "en": "The outside boundary has two long sides and two short sides, so it is a rectangle.",
+          "fil": "May dalawang mahabang gilid at dalawang maikling gilid ang hugis sa labas, kaya ito ay parihaba.",
+          "taglish": "The outside has two long sides at two short sides, so rectangle ito."
+        }
+      }
+    }
+  }
+}

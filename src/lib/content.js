@@ -1,6 +1,8 @@
 // Vite serves JSON imports as JavaScript modules in both development and builds.
 // Adding a native JSON MIME assertion breaks the development server because the
 // transformed response is JavaScript, not application/json.
+import { applyCurriculumOverrides } from './curriculum-overrides.js'
+
 const loaders = {
   1: () => import('../curriculum/grade1.json'),
   2: () => import('../curriculum/grade2.json'),
@@ -17,8 +19,9 @@ export async function loadContentByGrade(grade) {
   if (!loaders[key]) return []
   if (!cache.has(key)) {
     cache.set(key, loaders[key]().then((module) => {
-      cache.set(key, module.default)
-      return module.default
+      const curriculum = applyCurriculumOverrides(module.default)
+      cache.set(key, curriculum)
+      return curriculum
     }))
   }
   return await cache.get(key)

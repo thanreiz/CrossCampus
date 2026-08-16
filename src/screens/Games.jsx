@@ -2,15 +2,17 @@ import { useEffect, useRef, useState } from 'react'
 import { get, set } from 'idb-keyval'
 import { Card, Button, Doodles, RefBadge, MasteryBar, RichText } from '../ui/Primitives.jsx'
 import { Mascot } from '../ui/Mascot.jsx'
-import { TopicVisual } from '../ui/Visuals.jsx'
 import OnlineBadge from '../ui/OnlineBadge.jsx'
 import { checkAnswer, choiceOptions } from '../lib/check.js'
 import { feedbackFor, vibrateCorrect, vibrateWrong } from '../lib/feedback.js'
 import { recordAttempt } from '../lib/history.js'
-import { makeT, localize } from '../lib/i18n.js'
+import { makeT, localize, localizeChoice } from '../lib/i18n.js'
 import { sfx, playButtonSfx } from '../lib/sound.js'
 import StepScaffold from '../ui/StepScaffold.jsx'
 import { prepareQuestionSession } from '../lib/question-session.js'
+import { ChoiceVisual, QuestionVisual } from '../ui/LearningVisual.jsx'
+import { GameIcon } from '../ui/BottomNav.jsx'
+import './Games.css'
 
 const COUNT_OPTIONS = [5, 10, 15, 20]
 
@@ -21,6 +23,7 @@ const GAMES = [
     accent: '#f7d26a',
     awning: ['bg-rose', 'bg-white', 'bg-yellow', 'bg-white', 'bg-rose'],
     Icon: ShopIcon,
+    image: '/game-store.png',
     badgeKeys: ['number', 'percent', 'ratio'],
     gameTag: 'store',
   },
@@ -30,6 +33,7 @@ const GAMES = [
     accent: '#bfe8cf',
     awning: ['bg-mint', 'bg-white', 'bg-yellow', 'bg-white', 'bg-mint'],
     Icon: GardenIcon,
+    image: '/game-garden.png',
     badgeKeys: ['geometry', 'area', 'perimeter'],
     gameTag: 'garden',
   },
@@ -39,6 +43,7 @@ const GAMES = [
     accent: '#bfe2f7',
     awning: ['bg-sky', 'bg-white', 'bg-peach', 'bg-white', 'bg-sky'],
     Icon: HouseIcon,
+    image: '/game-house.png',
     badgeKeys: ['geometry', 'angles', 'volume'],
     gameTag: 'house',
   },
@@ -48,6 +53,7 @@ const GAMES = [
     accent: '#ddd0f5',
     awning: ['bg-lavender', 'bg-white', 'bg-rose', 'bg-white', 'bg-lavender'],
     Icon: FiestaIcon,
+    image: '/game-fiesta.png',
     badgeKeys: ['data', 'stats', 'probability'],
     gameTag: 'fiesta',
   },
@@ -186,14 +192,21 @@ export default function Games({ online = true, grade = 6, competencies = [], mas
   // ---- Game picker ----
   if (!game) {
     return (
-      <div className="gb-shell relative min-h-screen px-5 pb-28 pt-6">
+      <div className="games-picker-page gb-shell relative min-h-screen px-5">
         <Doodles />
         <Header online={online} tt={tt} />
-        <div className="relative z-10 mt-5">
-          <h1 className="font-display text-3xl font-extrabold">{tt('games.pick')}</h1>
-          <p className="mt-1 text-base font-bold text-ink/70">{tt('games.pickSub')}</p>
+
+        <div className="games-picker-intro relative z-10">
+          <h1 className="games-picker-title font-display font-extrabold">{tt('games.pick')}</h1>
+          <p className="games-picker-description font-bold text-ink/70">{tt('games.pickSub')}</p>
         </div>
-        <div className="relative z-10 mt-4 grid grid-cols-1 gap-3">
+
+        <aside className="games-picker-note relative z-10" role="note">
+          <span className="games-picker-note-icon" aria-hidden="true"><GameIcon /></span>
+          <p>{tt('games.pickNote')}</p>
+        </aside>
+
+        <div className="games-picker-grid relative z-10">
           {GAMES.map((g) => (
             <button
               key={g.key}
@@ -201,23 +214,23 @@ export default function Games({ online = true, grade = 6, competencies = [], mas
                 playButtonSfx()
                 setGameKey(g.key)
               }}
-              className={`flex items-center gap-4 rounded-card border-[2.5px] border-outline ${g.outer} p-4 text-left shadow-hard active:translate-y-0.5`}
+              className={`game-picker-card rounded-card border-outline ${g.outer} text-left`}
             >
-              <span className="flex h-16 w-16 shrink-0 items-center justify-center rounded-card border-[2.5px] border-outline bg-white">
-                <g.Icon />
+              <span className="game-picker-icon bg-cream">
+                <img src={g.image} alt="" aria-hidden="true" />
               </span>
-              <span className="min-w-0">
-                <span className="block font-display text-xl font-extrabold leading-tight">{tt(`games.${g.key}.name`)}</span>
-                <span className="mt-1 block text-sm font-bold text-ink/70">{tt(`games.${g.key}.tagline`)}</span>
-                <GameBadges game={g} tt={tt} className="mt-2" />
+              <span className="game-picker-copy min-w-0">
+                <span className="game-picker-name block font-display font-extrabold leading-tight">{tt(`games.${g.key}.name`)}</span>
+                <span className="game-picker-tagline block font-bold text-ink/70">{tt(`games.${g.key}.tagline`)}</span>
+                <GameBadges game={g} tt={tt} className="game-picker-badges" />
               </span>
+              <span className="game-picker-arrow bg-white" aria-hidden="true">&rarr;</span>
             </button>
           ))}
         </div>
       </div>
     )
   }
-
   if (generating) {
     return (
       <div className="gb-shell relative flex min-h-screen flex-col items-center justify-center px-6 pb-28 text-center">
@@ -321,11 +334,11 @@ export default function Games({ online = true, grade = 6, competencies = [], mas
                   </p>
                   <p className="mt-1 text-base font-bold">
                     <span className="text-ink/60">{tt('common.yourAnswer')}:</span>{' '}
-                    <span className="text-rose-700">{a.your || '—'}</span>
+                    <span className="text-rose-700">{a.your ? localizeChoice(a.your, lang) : '—'}</span>
                   </p>
                   <p className="mt-1 text-base font-bold">
                     <span className="text-ink/60">{tt('common.correctAnswer')}:</span>{' '}
-                    <span className="text-green-700">{a.answer}</span>
+                    <span className="text-green-700">{localizeChoice(a.answer, lang)}</span>
                   </p>
                   {a.solution && (
                     <p className="mt-1 text-base">
@@ -355,7 +368,7 @@ export default function Games({ online = true, grade = 6, competencies = [], mas
       <Header online={online} tt={tt} />
 
       <div className="relative z-10 mt-4 flex items-center justify-between gap-2">
-        <RefBadge refId={round.ref} domain={round.domain || 'Number and Algebra'} />
+        <RefBadge refId={round.ref} domain={tt(`domain.${round.domain || 'Number and Algebra'}`)} />
         <span className="gb-chip bg-yellow shadow-hard-sm text-sm">{tt('games.coins')} {coins}</span>
       </div>
       <Card color="cream" className={`gb-pop mt-4 overflow-hidden p-0 ${result === false ? 'answer-shake' : ''}`}>
@@ -387,7 +400,7 @@ export default function Games({ online = true, grade = 6, competencies = [], mas
             <p className="mt-2 rounded-2xl border-2 border-outline bg-white p-3 text-xl font-extrabold leading-snug">
               {localize(round.q, lang)}
             </p>
-            <TopicVisual refId={round.ref} q={localize(round.q, lang)} />
+            <QuestionVisual question={localize(round.q, lang)} />
           </div>
 
           {!stepsDone ? (
@@ -417,9 +430,10 @@ export default function Games({ online = true, grade = 6, competencies = [], mas
                       playButtonSfx()
                       setInput(opt)
                     }}
-                    className={`gb-chip text-base ${input === opt ? 'bg-sky shadow-hard-sm' : 'bg-white'}`}
-                  >
-                    {opt}
+                  className={`gb-chip text-base ${input === opt ? 'bg-sky shadow-hard-sm' : 'bg-white'}`}
+                >
+                    <ChoiceVisual value={opt} />
+                      {localizeChoice(opt, lang)}
                   </button>
                 ))}
               </div>
@@ -459,8 +473,8 @@ export default function Games({ online = true, grade = 6, competencies = [], mas
 // Single Online label only — no duplicate at the bottom.
 function Header({ online = true, tt }) {
   return (
-    <div className="relative z-10 flex items-center justify-between gap-2">
-      <div className="flex min-w-0 items-center gap-2">
+    <div className="games-header relative z-10 flex items-center justify-between gap-2">
+      <div className="games-header-brand flex min-w-0 items-center gap-2">
         <Mascot size={32} />
         <span className="font-display text-xl font-extrabold">{tt('games.title')}</span>
       </div>

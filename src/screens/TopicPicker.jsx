@@ -3,9 +3,11 @@ import { Card, Chip, Doodles, MasteryBar, Button } from '../ui/Primitives.jsx'
 import { Mascot } from '../ui/Mascot.jsx'
 import OnlineBadge from '../ui/OnlineBadge.jsx'
 import { hasAnswered, masteryColor } from '../lib/mastery.js'
-import { topicIcon, topicTitle } from '../lib/topics.js'
+import { topicIcon, topicTitle, topicTitleLocalized } from '../lib/topics.js'
 import { makeT } from '../lib/i18n.js'
 import { difficultyFor } from '../lib/difficulty.js'
+import { LightbulbIcon } from '../ui/Icons.jsx'
+import './TopicPicker.css'
 
 const ICON_BG = ['bg-mint', 'bg-sky', 'bg-rose', 'bg-peach', 'bg-yellow', 'bg-lavender']
 const ALL = '__all__'
@@ -41,7 +43,7 @@ export default function TopicPicker({
   const shown = useMemo(() => {
     const query = search.trim().toLowerCase()
     const list = competencies.filter((c) => {
-      const title = topicTitle(c.ref, c.competency).toLowerCase()
+      const title = `${topicTitle(c.ref, c.competency)} ${topicTitleLocalized(c.ref, c.competency, lang)}`.toLowerCase()
       const practiceMatch = mode !== 'practice' || (answered.has(c.ref) && (mastery[c.ref] ?? 0) < 0.8)
       return practiceMatch &&
         (difficulty === ALL || difficultyFor(c.competency) === difficulty) &&
@@ -49,7 +51,7 @@ export default function TopicPicker({
     })
     if (mode === 'practice') list.sort((a, b) => (due[a.ref] ?? Infinity) - (due[b.ref] ?? Infinity))
     return list
-  }, [answered, competencies, difficulty, due, mastery, mode, search])
+  }, [answered, competencies, difficulty, due, lang, mastery, mode, search])
 
   const groups = useMemo(() => {
     const byDomain = new Map()
@@ -74,23 +76,30 @@ export default function TopicPicker({
   const noPracticeDue = mode === 'practice' && !search.trim() && shown.length === 0
 
   return (
-    <div className="gb-shell relative flex min-h-screen flex-col px-5 pb-28 pt-6">
+    <div className={'gb-shell topic-picker-page relative flex min-h-screen flex-col px-5 pb-28 pt-6 ' + (mode === 'practice' ? 'topic-picker-practice' : '')}>
       <Doodles />
-      <div className="mb-4 flex items-center justify-between">
-        <button className="gb-chip bg-white" onClick={onBack}>{tt('common.back')}</button>
-        <div className="flex items-center gap-2">
+      <div className="topic-picker-header mb-4 flex items-center justify-between">
+        <button className="gb-chip topic-picker-back bg-white" onClick={onBack}>{tt('common.back')}</button>
+        <div className="topic-picker-brand flex items-center gap-2">
           <OnlineBadge online={online} />
           <Mascot size={36} />
           <span className="font-display text-xl font-extrabold">Gabay</span>
         </div>
       </div>
 
-      <h1 className="font-display text-3xl font-extrabold leading-tight">
+      <h1 className="topic-picker-title font-display text-3xl font-extrabold leading-tight">
         {tt(mode === 'practice' ? 'topics.practiceHeading' : 'topics.heading')}
       </h1>
-      <p className="mb-4 text-base font-bold text-ink/70">
+      <p className="topic-picker-subtitle mb-4 text-base font-bold text-ink/70">
         {tt(mode === 'practice' ? 'topics.practiceSub' : 'topics.sub')}
       </p>
+
+      {mode === 'practice' && (
+        <aside className="topic-picker-tip">
+          <LightbulbIcon className="topic-picker-tip-icon" />
+          <span>{tt('topics.practiceTip')}</span>
+        </aside>
+      )}
 
       <input
         value={search}
@@ -99,22 +108,22 @@ export default function TopicPicker({
         type="search"
         placeholder={tt('topics.search')}
         aria-label={tt('topics.search')}
-        className="relative z-10 mb-4 min-h-[50px] rounded-full border-[2.5px] border-outline bg-white px-5 text-base font-bold outline-none focus:bg-yellow/20"
+        className="topic-picker-search relative z-10 mb-4 min-h-[50px] rounded-full border-[2.5px] border-outline bg-white px-5 text-base font-bold outline-none focus:bg-yellow/20"
       />
 
-      <div className="mb-5 flex flex-wrap gap-2">
+      <div className="topic-picker-filters mb-5 flex flex-wrap gap-2">
         {DIFFICULTIES.map((value) => (
-          <Chip key={value} color={value === 'madali' ? 'mint' : value === 'katamtaman' ? 'yellow' : 'peach'} active={difficulty === value} onClick={() => setDifficulty(value)}>
+          <Chip className="topic-picker-filter" key={value} color={value === 'madali' ? 'mint' : value === 'katamtaman' ? 'yellow' : 'peach'} active={difficulty === value} onClick={() => setDifficulty(value)}>
             {value === ALL ? tt('topics.all') : tt(`difficulty.${value}`)}
           </Chip>
         ))}
       </div>
 
       {noPracticeDue ? (
-        <Card color="cream" className="gb-pop p-6 text-center">
-          <Mascot size={120} float className="mx-auto" />
-          <p className="mt-3 font-display text-xl font-extrabold">{tt('topics.nothingDue')}</p>
-          <Button color="mint" className="mt-4 w-full" onClick={onBrowse}>{tt('topics.browseNew')}</Button>
+        <Card color="cream" className="topic-picker-empty gb-pop p-6 text-center">
+          <div className="topic-picker-empty-art"><Mascot size={120} float className="topic-picker-empty-mascot mx-auto" /></div>
+          <p className="topic-picker-empty-message mt-3 font-display text-xl font-extrabold">{tt('topics.nothingDue')}</p>
+          <Button color="mint" className="topic-picker-empty-cta mt-4 w-full" onClick={onBrowse}>{tt('topics.browseNew')}</Button>
         </Card>
       ) : shown.length === 0 ? (
         <Card color="cream" className="p-6 text-center font-extrabold">{tt('topics.noResults')}</Card>
@@ -168,7 +177,7 @@ export default function TopicPicker({
                               {topicIcon(c.ref)}
                             </span>
                             <span className="min-w-0 flex-1">
-                              <span className="block font-display text-base font-bold leading-tight">{topicTitle(c.ref, c.competency)}</span>
+                              <span className="block font-display text-base font-bold leading-tight">{topicTitleLocalized(c.ref, c.competency, lang)}</span>
                               <span className="mt-1 flex flex-wrap items-center gap-1.5">
                                 <span className={`rounded-full px-2 py-0.5 text-[11px] font-extrabold ${DIFFICULTY_COLOR[lessonDifficulty] ?? 'bg-white'}`}>
                                   {tt(`difficulty.${lessonDifficulty}`)}

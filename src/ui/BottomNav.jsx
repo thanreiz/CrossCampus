@@ -57,7 +57,7 @@ function PencilIcon() {
     </svg>
   )
 }
-function GameIcon() {
+export function GameIcon() {
   return (
     <svg viewBox="0 0 24 24" width="26" height="26" aria-hidden="true">
       <rect x="3" y="8" width="18" height="10" rx="5" fill="none" stroke="#1C1410" strokeWidth="2.2" />

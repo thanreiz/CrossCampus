@@ -341,36 +341,59 @@
       "garden",
       "house"
     ],
-    "explanation": {
-      "en": "Compose and decompose triangles, squares, and rectangles.",
-      "fil": "Compose and decompose triangles, squares, and rectangles.",
-      "taglish": "Compose and decompose triangles, squares, and rectangles."
+  "explanation": {
+    "en": "Big shapes can be made from smaller shapes. Turn or slide the pieces until matching straight sides touch. The outside edges tell you which new shape was formed.",
+    "fil": "Maaaring bumuo ng malaking hugis mula sa maliliit na hugis. Iikot o iusog ang mga piraso hanggang magdikit ang magkatugmang tuwid na gilid. Ang mga gilid sa labas ang magsasabi kung anong bagong hugis ang nabuo.",
+    "taglish": "Puwedeng gumawa ng malaking shape mula sa smaller shapes. I-turn o i-slide ang pieces hanggang magdikit ang matching straight sides. Tingnan ang outside edges para malaman ang bagong shape."
+  },
+  "worked_example": {
+    "en": "Join two equal right triangles along their longest sides. The joined side goes inside, while the four outside sides are equal and make four square corners. The new shape is a square.",
+    "fil": "Pagdugtungin ang dalawang magkaparehong right triangle sa kanilang pinakamahabang gilid. Mapupunta sa loob ang pinagdugtong na gilid, habang ang apat na gilid sa labas ay magkakapantay at bumubuo ng apat na square corner. Ang bagong hugis ay square.",
+    "taglish": "I-join ang two equal right triangles sa longest sides nila. Mapupunta sa loob ang joined side, habang equal ang four outside sides at may four square corners. Square ang bagong shape."
+  },
+  "worked_example_prompt": {
+    "en": "What shape is made when two equal right triangles are joined along their longest sides?",
+    "fil": "Anong hugis ang nabubuo kapag pinagdugtong ang dalawang magkaparehong right triangle sa kanilang pinakamahabang gilid?",
+    "taglish": "Anong shape ang mabubuo kapag i-join ang two equal right triangles sa longest sides nila?"
+  },
+  "worked_example_steps": [
+    {
+      "en": "Place the triangles so their longest sides touch. That joined side is now inside the new shape.",
+      "fil": "Ilagay ang mga triangle na magkadikit ang kanilang pinakamahabang gilid. Nasa loob na ng bagong hugis ang pinagdugtong na gilid.",
+      "taglish": "Place the triangles so magdikit ang longest sides. Nasa inside na ng new shape ang joined side."
     },
-    "worked_example": {
-      "en": "Two equal triangles are joined along matching sides. Name one shape they can form.",
-      "fil": "Two equal triangles are joined along matching sides. Name one shape they can form.",
-      "taglish": "Two equal triangles are joined along matching sides. Name one shape they can form."
-    },
+    {
+      "en": "Trace the outside: there are four equal sides and four square corners.",
+      "fil": "Sundan ang gilid sa labas: may apat na magkakapantay na gilid at apat na square corner.",
+      "taglish": "Trace the outside: may four equal sides at four square corners."
+    }
+  ],
+  "worked_example_answer": {
+    "en": "The two triangles form a square.",
+    "fil": "Ang dalawang triangle ay bumubuo ng square.",
+    "taglish": "The two triangles form a square."
+  },
+  "example_visual": "twoTrianglesSquare",
     "items": [
       {
         "q": {
-          "en": "Two equal triangles are joined along matching sides. Name one shape they can form.",
-          "fil": "Two equal triangles are joined along matching sides. Name one shape they can form.",
-          "taglish": "Two equal triangles are joined along matching sides. Name one shape they can form."
-        },
-        "answer": "A square or rectangle, depending on the triangles and arrangement",
+        "en": "Two equal right triangles are joined along their longest sides. Which shape do they form?",
+        "fil": "Pinagdugtong ang dalawang magkaparehong right triangle sa kanilang pinakamahabang gilid. Anong hugis ang nabuo?",
+        "taglish": "I-join ang two equal right triangles sa longest sides nila. Anong shape ang nabuo?"
+      },
+      "answer": "square",
         "type": "mcq",
         "options": [
-          "triangle",
-          "rectangle",
-          "circle",
-          "A square or rectangle, depending on the triangles and arrangement"
-        ],
-        "solution": {
-          "en": "Answer: A square or rectangle, depending on the triangles and arrangement",
-          "fil": "Answer: A square or rectangle, depending on the triangles and arrangement",
-          "taglish": "Answer: A square or rectangle, depending on the triangles and arrangement"
-        },
+        "square",
+        "rectangle",
+        "triangle",
+        "circle"
+      ],
+      "solution": {
+        "en": "The longest sides meet inside. The four equal outside sides and four square corners form a square.",
+        "fil": "Nagtagpo sa loob ang pinakamahabang mga gilid. Ang apat na magkakapantay na gilid sa labas at apat na square corner ay bumubuo ng square.",
+        "taglish": "Nag-meet sa loob ang longest sides. The four equal outside sides and four square corners form a square."
+      },
         "source": {
           "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
           "ref": "1MG-Ia-3",

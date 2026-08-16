@@ -25,6 +25,11 @@ export const STRINGS = {
     taglish: 'Grades 1–6 Math · Multilingual · Offline-first',
   },
   'splash.offline': { en: '100% OFFLINE LEARNING', fil: '100% OFFLINE NA PAG-AARAL', taglish: '100% OFFLINE LEARNING' },
+  'splash.tagline': {
+    en: 'Your friendly Math tutor!',
+    fil: 'Ang iyong kaibigang tutor sa Math!',
+    taglish: 'Ang iyong kaibigang tutor sa Math!',
+  },
 
   // ---- shared / nav ----
   'common.back': { en: 'Back', fil: 'Bumalik', taglish: 'Bumalik' },
@@ -32,6 +37,7 @@ export const STRINGS = {
   'common.online': { en: 'Online', fil: 'Online', taglish: 'Online' },
   'common.offline': { en: 'Offline', fil: 'Offline', taglish: 'Offline' },
   'common.language': { en: 'Language', fil: 'Wika', taglish: 'Wika' },
+  'home.destinations': { en: 'Destinations', fil: 'Mga pupuntahan', taglish: 'Mga pupuntahan' },
   'common.mastery': { en: 'Mastery', fil: 'Kahusayan', taglish: 'Mastery' },
   'common.question': { en: 'Question', fil: 'Tanong', taglish: 'Tanong' },
   'common.yourAnswer': { en: 'Your answer', fil: 'Sagot mo', taglish: 'Sagot mo' },
@@ -143,6 +149,11 @@ export const STRINGS = {
     taglish: 'Magaling! Wala pang dapat pag-aralan. Subukan ang bagong aralin!',
   },
   'topics.browseNew': { en: 'Browse new lessons', fil: 'Tingnan ang bagong aralin', taglish: 'Browse new lessons' },
+  'topics.practiceTip': {
+    en: 'Keep practicing to master each topic.',
+    fil: 'Magpatuloy sa pag-practice para ma-master ang bawat topic.',
+    taglish: 'Magpatuloy sa pag-practice para ma-master ang bawat topic.',
+  },
   'difficulty.madali': { en: 'Easy', fil: 'Madali', taglish: 'Madali' },
   'difficulty.katamtaman': { en: 'Medium', fil: 'Katamtaman', taglish: 'Katamtaman' },
   'difficulty.mahirap': { en: 'Hard', fil: 'Mahirap', taglish: 'Mahirap' },
@@ -153,6 +164,7 @@ export const STRINGS = {
 
   // ---- Lesson Brief ----
   'brief.contentStandard': { en: 'Content Standard', fil: 'Pamantayang Nilalaman', taglish: 'Content Standard' },
+  'brief.lessonGoal': { en: 'Lesson goal', fil: 'Layunin ng aralin', taglish: 'Lesson goal' },
   'brief.whatYouDo': { en: 'What you will do', fil: 'Ang gagawin mo', taglish: 'Ang gagawin mo' },
   'brief.task.understand': {
     en: 'Understand the lesson: {topic}.',
@@ -207,6 +219,7 @@ export const STRINGS = {
   'class.source.online': { en: 'Teacher Gabay (online)', fil: 'Teacher Gabay (online)', taglish: 'Teacher Gabay (online)' },
   'class.source.cached': { en: 'Cached explanation', fil: 'Naka-cache na paliwanag', taglish: 'Naka-cache na paliwanag' },
   'class.reviewMissed': { en: "Let's review what we missed:", fil: 'Balikan natin ang mga namali:', taglish: 'Balikan natin ang mga namali:' },
+  'class.keyIdea': { en: 'Key idea', fil: 'Pangunahing Ideya', taglish: 'Key Idea' },
   'class.steps': { en: 'Solve step by step', fil: 'Sagutan nang hakbang-hakbang', taglish: 'Solve step by step' },
   'class.stepCounter': { en: 'Step {step} / {total}', fil: 'Hakbang {step} / {total}', taglish: 'Hakbang {step} / {total}' },
   'classroom.tryAgain': {
@@ -218,6 +231,11 @@ export const STRINGS = {
   'classroom.retry': { en: 'Try again', fil: 'Subukan ulit', taglish: 'Subukan ulit' },
   'classroom.readSolution': { en: 'Read Nova’s explanation…', fil: 'Basahin ang paliwanag ni Nova…', taglish: 'Basahin ang explanation ni Nova…' },
   // dynamic teacher lines ({n}=number, {total}=total)
+  'class.bubble.explain': {
+    en: 'Look at the key idea first. Then open the example to see it in action.',
+    fil: 'Basahin muna ang mahalagang ideya. Pagkatapos, buksan ang halimbawa upang makita kung paano ito ginagamit.',
+    taglish: 'Read the key idea first. Then open the example para makita kung paano ito ginagamit.',
+  },
   'class.bubble.intro': {
     en: 'Question {n} of {total}: Write your answer below. You can do it!',
     fil: 'Tanong {n} sa {total}: Isulat ang sagot sa baba. Kaya mo ’yan!',
@@ -295,6 +313,11 @@ export const STRINGS = {
     en: 'Each game practices a different part of the curriculum.',
     fil: 'Bawat laro ay para sa ibang bahagi ng kurikulum.',
     taglish: 'Bawat game ay para sa ibang bahagi ng curriculum.',
+  },
+  'games.pickNote': {
+    en: 'Choose a game and practice through play.',
+    fil: 'Pumili ng laro at magsanay sa paglalaro.',
+    taglish: 'Pumili ng game at magsanay sa paglalaro.',
   },
   'games.chooseAnother': { en: 'Choose another game', fil: 'Pumili ng ibang laro', taglish: 'Pumili ng ibang game' },
   'games.summary.perfect': { en: 'Perfect run. You cleared every question.', fil: 'Perfect run. Nasagot mo lahat nang tama.', taglish: 'Perfect run. Nasagot mo lahat nang tama.' },
@@ -436,4 +459,55 @@ export function localize(value, lang = DEFAULT_LANG) {
   if (typeof value === 'string') return value
   if (typeof value === 'object') return value[lang] ?? value[DEFAULT_LANG] ?? value.en ?? ''
   return String(value)
+}
+
+const MATH_CHOICE_LABELS = Object.freeze({
+  square: Object.freeze({ en: 'square', fil: 'parisukat', taglish: 'square' }),
+  triangle: Object.freeze({ en: 'triangle', fil: 'tatsulok', taglish: 'triangle' }),
+  rectangle: Object.freeze({ en: 'rectangle', fil: 'parihaba', taglish: 'rectangle' }),
+  circle: Object.freeze({ en: 'circle', fil: 'bilog', taglish: 'circle' }),
+  True: Object.freeze({ en: 'True', fil: 'Tama', taglish: 'Tama' }),
+  False: Object.freeze({ en: 'False', fil: 'Mali', taglish: 'Mali' }),
+  '3 sides and 3 corners': Object.freeze({
+    en: '3 sides and 3 corners',
+    fil: '3 gilid at 3 sulok',
+    taglish: '3 sides at 3 corners',
+  }),
+  'two triangles': Object.freeze({ en: 'two triangles', fil: 'dalawang tatsulok', taglish: 'two triangles' }),
+  'two squares': Object.freeze({ en: 'two squares', fil: 'dalawang parisukat', taglish: 'two squares' }),
+  'one circle': Object.freeze({ en: 'one circle', fil: 'isang bilog', taglish: 'one circle' }),
+  'one triangle': Object.freeze({ en: 'one triangle', fil: 'isang tatsulok', taglish: 'one triangle' }),
+  'rectangle body and triangle roof': Object.freeze({
+    en: 'rectangle body and triangle roof',
+    fil: 'parihabang katawan at tatsulok na bubong',
+    taglish: 'rectangle body at triangle roof',
+  }),
+  'square body and circle roof': Object.freeze({
+    en: 'square body and circle roof',
+    fil: 'parisukat na katawan at bilog na bubong',
+    taglish: 'square body at circle roof',
+  }),
+  'triangle body and rectangle roof': Object.freeze({
+    en: 'triangle body and rectangle roof',
+    fil: 'tatsulok na katawan at parihabang bubong',
+    taglish: 'triangle body at rectangle roof',
+  }),
+  'circle body and square roof': Object.freeze({
+    en: 'circle body and square roof',
+    fil: 'bilog na katawan at parisukat na bubong',
+    taglish: 'circle body at square roof',
+  }),
+  'first garden row': Object.freeze({ en: 'first garden row', fil: 'unang hanay sa hardin', taglish: 'first garden row' }),
+  'second garden row': Object.freeze({ en: 'second garden row', fil: 'ikalawang hanay sa hardin', taglish: 'second garden row' }),
+  'same length': Object.freeze({ en: 'same length', fil: 'magkapantay ang haba', taglish: 'same length' }),
+  'not enough information': Object.freeze({ en: 'not enough information', fil: 'kulang ang impormasyon', taglish: 'kulang ang information' }),
+})
+
+// Choice values stay language-neutral for answer checking and persistence. Only
+// their player-facing labels are translated here.
+export function localizeChoice(value, lang = DEFAULT_LANG) {
+  const normalized = String(value ?? '')
+  const paperClips = normalized.match(/^(\d+) paper clips$/)
+  if (paperClips && lang === 'fil') return `${paperClips[1]} paper clip`
+  return localize(MATH_CHOICE_LABELS[normalized] ?? normalized, lang)
 }

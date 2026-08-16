@@ -5,7 +5,7 @@ import OnlineBadge from '../ui/OnlineBadge.jsx'
 import { checkAnswer, choiceOptions } from '../lib/check.js'
 import { speak, stopSpeaking, pauseSpeaking, resumeSpeaking, isSpeechSupported } from '../lib/speech.js'
 import { askTeacherGabay, SOURCE } from '../lib/tutor.js'
-import { answerHint, speechLang } from '../lib/lang.js'
+import { LANGS, answerHint, speechLang } from '../lib/lang.js'
 import { makeT, localize, localizeChoice } from '../lib/i18n.js'
 import { feedbackFor, vibrateCorrect, vibrateWrong } from '../lib/feedback.js'
 import { recordAttempt } from '../lib/history.js'
@@ -44,9 +44,9 @@ function plain(s) {
 function uniqueIncorrectAnswers(answers = []) {
   const byQuestion = new Map()
   answers.forEach((answer) => {
-    if (!answer.correct) byQuestion.set(answer.q, answer)
+    byQuestion.set(answer.q, answer)
   })
-  return [...byQuestion.values()]
+  return [...byQuestion.values()].filter((answer) => !answer.correct)
 }
 
 export default function Classroom({ competency, questions, questionSource = 'bundled', score, answered = false, online, lang = 'taglish', onLang, onAnswered, onExit }) {
@@ -306,6 +306,19 @@ export default function Classroom({ competency, questions, questionSource = 'bun
             <div className="classroom-key-heading">
               <LightbulbIcon size={28} />
               <h2 className="font-display font-extrabold">Key idea</h2>
+            </div>
+            <div className="classroom-lang-switch" role="group" aria-label="Language">
+              {LANGS.map((l) => (
+                <button
+                  key={l.key}
+                  type="button"
+                  onClick={() => onLang?.(l.key)}
+                  aria-pressed={lang === l.key}
+                  className={lang === l.key ? 'is-active' : ''}
+                >
+                  {l.label}
+                </button>
+              ))}
             </div>
             <p>{localize(teaching.explanation, lang)}</p>
           </section>

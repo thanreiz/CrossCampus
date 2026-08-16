@@ -113,6 +113,29 @@
   font-size: 1.65rem;
 }
 
+.classroom-page .classroom-lang-switch {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.85rem;
+}
+
+.classroom-page .classroom-lang-switch button {
+  padding: 0.35rem 0.9rem;
+  border: 2px solid rgb(251 241 218 / 60%);
+  border-radius: 999px;
+  color: #fbf1da;
+  font-family: "Baloo 2", system-ui, sans-serif;
+  font-size: 0.85rem;
+  font-weight: 800;
+}
+
+.classroom-page .classroom-lang-switch button.is-active {
+  border-color: #8fd9b6;
+  background: #8fd9b6;
+  color: #1c1410;
+}
+
 .classroom-page .classroom-explanation > p {
   margin: 1rem 0 0;
   font-size: clamp(1.05rem, 4.5vw, 1.25rem);

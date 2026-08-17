@@ -32,8 +32,8 @@ Gabay is a mobile-first Progressive Web App that helps Grade 6 students practice
 
 | Member | Role |
 | --- | --- |
-| Alea Grasha Masiglat | UI/UX |
-| Hannah Muñoz | Backend + Asset |
+| Alea Grasha Masiglat | UI/UX + Researcher |
+| Hannah Muñoz | Backend + Asset + UI/UX |
 | Paul Henry Dacalan | Full Stack |
 | Ethan Dreiz Baltazar | Full Stack + Project Manager |
 

@@ -1,8 +1,9 @@
 import { useEffect, useRef, useState } from 'react'
 import { get, set } from 'idb-keyval'
-import { Card, Button, Doodles, RefBadge, MasteryBar, RichText } from '../ui/Primitives.jsx'
+import { Button, Doodles, RefBadge, MasteryBar, RichText } from '../ui/Primitives.jsx'
 import { Mascot } from '../ui/Mascot.jsx'
 import OnlineBadge from '../ui/OnlineBadge.jsx'
+import { LightbulbIcon } from '../ui/Icons.jsx'
 import { checkAnswer, choiceOptions } from '../lib/check.js'
 import { feedbackFor, vibrateCorrect, vibrateWrong } from '../lib/feedback.js'
 import { recordAttempt } from '../lib/history.js'
@@ -12,6 +13,7 @@ import StepScaffold from '../ui/StepScaffold.jsx'
 import { prepareQuestionSession } from '../lib/question-session.js'
 import { ChoiceVisual, QuestionVisual } from '../ui/LearningVisual.jsx'
 import { GameIcon } from '../ui/BottomNav.jsx'
+import { topicTitleLocalized } from '../lib/topics.js'
 import './Games.css'
 
 const COUNT_OPTIONS = [5, 10, 15, 20]
@@ -233,8 +235,7 @@ export default function Games({ online = true, grade = 6, competencies = [], mas
   }
   if (generating) {
     return (
-      <div className="gb-shell relative flex min-h-screen flex-col items-center justify-center px-6 pb-28 text-center">
-        <Doodles />
+      <div className={`game-generating-page game-generating-${game?.key ?? 'default'} gb-shell relative flex min-h-screen flex-col items-center justify-center px-6 pb-28 text-center`}>
         <div className="relative z-10 nova-idle"><Mascot size={132} /></div>
         <h1 className="relative z-10 mt-4 font-display text-3xl font-extrabold">{tt('questions.generating')}</h1>
         <p className="relative z-10 mt-2 font-bold text-ink/65">{tt('questions.generatingSub')}</p>
@@ -245,52 +246,70 @@ export default function Games({ online = true, grade = 6, competencies = [], mas
   // ---- Start screen ----
   if (!started) {
     return (
-      <div className="gb-shell relative min-h-screen px-5 pb-28 pt-6">
-        <Doodles />
+      <div
+        className={`game-setup-page game-setup-${game.key} gb-shell relative min-h-screen px-5 pb-28 pt-6`}
+        style={{ '--game-accent': game.accent }}
+      >
         <Header online={online} tt={tt} />
         <button
+          type="button"
           onClick={() => {
             playButtonSfx()
             backToPicker()
           }}
-          className="relative z-10 mt-4 text-sm font-extrabold text-ink/60 underline"
+          className="game-setup-back relative z-10"
         >
-          ← {tt('games.chooseAnother')}
+          <BackArrowIcon />
+          <span>{tt('games.chooseAnother')}</span>
         </button>
-        <section className={`relative z-10 mt-3 overflow-hidden rounded-card border-[2.5px] border-outline ${game.outer} p-5 shadow-hard`}>
+        <section className={`game-setup-hero relative z-10 ${game.outer}`}>
           <div
-            className="flex min-h-[180px] flex-col justify-end rounded-card border-[2.5px] border-outline p-4"
+            className="game-setup-hero-inner"
             style={{ backgroundColor: game.accent }}
           >
-            <Awning colors={game.awning} />
-            <h1 className="mt-5 font-display text-3xl font-extrabold leading-tight">{tt(`games.${game.key}.name`)}</h1>
-            <p className="mt-1 max-w-[26ch] text-base font-bold text-ink/75">{tt(`games.${game.key}.tagline`)}</p>
-            <GameBadges game={game} tt={tt} className="mt-3" />
+            <div className="game-setup-copy">
+              <h1 className="font-display">{tt(`games.${game.key}.name`)}</h1>
+              <p>{tt(`games.${game.key}.tagline`)}</p>
+            </div>
+            <div className="game-setup-artwork" aria-hidden="true">
+              <img src={game.image} alt="" />
+            </div>
+            <GameBadges game={game} tt={tt} className="game-setup-badges" />
           </div>
         </section>
 
         {/* number of questions (5–20) */}
-        <div className="mt-5">
-          <p className="mb-2 text-base font-extrabold">{tt('games.howMany')}</p>
-          <div className="flex flex-wrap gap-2">
+        <section className="game-setup-challenge relative z-10" aria-labelledby="game-challenge-title">
+          <div className="game-setup-challenge-heading">
+            <span className="game-setup-challenge-icon" aria-hidden="true"><ChallengeIcon /></span>
+            <div>
+              <h2 id="game-challenge-title" className="font-display">{tt('games.challenge')}</h2>
+              <p>{tt('games.howMany')}</p>
+            </div>
+          </div>
+          <div className="game-setup-counts" role="group" aria-label={tt('games.howMany')}>
             {COUNT_OPTIONS.map((n) => (
               <button
+                type="button"
                 key={n}
                 onClick={() => {
                   playButtonSfx()
                   setCount(n)
                 }}
-                className={`gb-btn flex-1 text-lg ${count === n ? 'bg-mint' : 'bg-white'}`}
+                aria-pressed={count === n}
+                className={count === n ? 'is-selected' : ''}
               >
                 {n}
               </button>
             ))}
           </div>
-          <p className="mt-1 text-xs font-bold text-ink/55">{tt('games.minMax')}</p>
-        </div>
+          <p className="game-setup-helper">{tt('games.minMax')}</p>
+        </section>
 
-        <Button color="mint" className="mt-5 min-h-[58px] w-full text-xl disabled:opacity-50" onClick={startGame} disabled={generating}>
-          {tt(`games.${game.key}.start`, { n: count })}
+        <Button color="white" className="game-setup-start relative z-10 disabled:opacity-50" onClick={startGame} disabled={generating}>
+          <span className="game-setup-start-icon" aria-hidden="true"><game.Icon /></span>
+          <span className="game-setup-start-label">{tt(`games.${game.key}.start`)}</span>
+          <span className="game-setup-start-arrow" aria-hidden="true"><StartArrowIcon /></span>
         </Button>
       </div>
     )
@@ -299,168 +318,141 @@ export default function Games({ online = true, grade = 6, competencies = [], mas
   // ---- Summary ----
   if (done) {
     const correct = log.filter((l) => l.correct).length
-    const wrong = log.filter((l) => !l.correct)
+    const wrong = log
+      .map((entry, index) => ({ ...entry, sessionQuestion: questions[index] }))
+      .filter((entry) => !entry.correct)
     const accuracy = log.length ? Math.round((correct / log.length) * 100) : 0
     const summaryKey = accuracy === 100 ? 'perfect' : accuracy >= 70 ? 'great' : 'practice'
+    const practicedTopics = Array.from(new Set(
+      questions.map((question) => resultTopic(question, competencies, lang)).filter(Boolean),
+    ))
     return (
-      <div className="gb-shell relative flex min-h-screen flex-col px-5 pb-28 pt-6">
-        <Doodles />
+      <div
+        className={`game-results-page game-results-${game.key} gb-shell relative flex min-h-screen flex-col px-5 pb-44 pt-6`}
+        style={{ '--game-accent': game.accent }}
+      >
         <Header online={online} tt={tt} />
-        <Card color="mint" className="gb-pop mt-6 p-6 text-center">
-          <div className="mx-auto mb-3 flex h-20 w-20 items-center justify-center rounded-card border-[2.5px] border-outline bg-white">
-            <game.Icon />
-          </div>
-          <h1 className="font-display text-3xl font-extrabold">{tt(`games.${game.key}.closed`)}</h1>
-          <p className="mt-2 text-lg font-extrabold">{tt('games.summary.' + summaryKey)}</p>
-          <p className="mt-1 text-sm font-bold text-ink/70">{tt('games.summaryPracticed', { game: tt(`games.${game.key}.name`) })}</p>
-          <GameBadges game={game} tt={tt} className="mt-3 justify-center" />
-          <p className="mt-3 text-lg font-extrabold">{tt('games.earned', { coins })}</p>
-          <div className="mt-3 grid grid-cols-4 gap-2">
-            <Stat label={tt('games.answered')} value={log.length} color="bg-sky" />
-            <Stat label={tt('common.correct')} value={correct} color="bg-mint" />
-            <Stat label={tt('common.wrong')} value={wrong.length} color="bg-rose" />
-            <Stat label={tt('games.accuracy')} value={`${accuracy}%`} color="bg-yellow" />
-          </div>
-        </Card>
 
-        {wrong.length > 0 && (
-          <div className="mt-5">
-            <p className="mb-2 text-base font-extrabold">{tt('class.reviewMissed')}</p>
-            <div className="flex flex-col gap-3">
-              {wrong.map((a, i) => (
-                <Card key={i} color="cream" className="p-4">
-                  <p className="text-base font-bold">
-                    <span className="text-ink/60">{tt('common.question')}:</span> {a.q}
-                  </p>
-                  <p className="mt-1 text-base font-bold">
-                    <span className="text-ink/60">{tt('common.yourAnswer')}:</span>{' '}
-                    <span className="text-rose-700">{a.your ? localizeChoice(a.your, lang) : '—'}</span>
-                  </p>
-                  <p className="mt-1 text-base font-bold">
-                    <span className="text-ink/60">{tt('common.correctAnswer')}:</span>{' '}
-                    <span className="text-green-700">{localizeChoice(a.answer, lang)}</span>
-                  </p>
-                  {a.solution && (
-                    <p className="mt-1 text-base">
-                      <span className="font-bold text-ink/60">{tt('common.explanation')}:</span> <RichText>{a.solution}</RichText>
-                    </p>
-                  )}
-                </Card>
-              ))}
+        <GameResultsSummary
+          game={game}
+          tt={tt}
+          summaryKey={summaryKey}
+          topics={practicedTopics}
+          coins={coins}
+          answered={log.length}
+          correct={correct}
+          wrong={wrong.length}
+          accuracy={accuracy}
+        />
+
+        <section className="game-results-review relative z-10">
+          {wrong.length > 0 ? (
+            <>
+              <div className="game-results-review-heading">
+                <h2 className="font-display">{tt('class.reviewMissed')}</h2>
+                <p>{tt('games.results.reviewSubtitle')}</p>
+              </div>
+              <div className="game-results-review-list">
+                {wrong.map((answer, index) => (
+                  <MissedAnswerCard
+                    key={`${answer.sessionQuestion?.ref ?? 'question'}-${index}`}
+                    answer={answer}
+                    topic={resultTopic(answer.sessionQuestion, competencies, lang)}
+                    lang={lang}
+                    tt={tt}
+                  />
+                ))}
+              </div>
+            </>
+          ) : (
+            <div className="game-results-perfect">
+              <ResultCheckIcon />
+              <p>{tt('games.summary.perfect')}</p>
             </div>
-          </div>
-        )}
+          )}
+        </section>
 
-        <Button color="yellow" className="mt-5 min-h-[54px] w-full text-lg" onClick={() => setStarted(false)}>
-          {tt('games.playAgain')}
-        </Button>
-        <Button color="white" className="mt-3 min-h-[54px] w-full text-lg" onClick={backToPicker}>
-          {tt('games.chooseAnother')}
-        </Button>
+        <div className="game-results-actions relative z-10">
+          <Button color="white" className="game-results-action is-primary" onClick={() => setStarted(false)}>
+            <ReplayIcon />
+            <span>{tt('games.playAgain')}</span>
+          </Button>
+          <Button color="white" className="game-results-action is-secondary" onClick={backToPicker}>
+            <GridIcon />
+            <span>{tt('games.chooseAnother')}</span>
+          </Button>
+        </div>
       </div>
     )
   }
 
   // ---- Play ----
   return (
-    <div className="gb-shell relative min-h-screen overflow-hidden px-5 pb-28 pt-6">
-      <Doodles />
+    <div
+      className={`game-play-page game-play-${game.key} gb-shell relative min-h-screen overflow-x-hidden px-5 pb-40 pt-6`}
+      style={{ '--game-accent': game.accent }}
+    >
       <Header online={online} tt={tt} />
 
-      <div className="relative z-10 mt-4 flex items-center justify-between gap-2">
+      <div className="game-play-meta relative z-10">
         <RefBadge refId={round.ref} domain={tt(`domain.${round.domain || 'Number and Algebra'}`)} />
         <span className="gb-chip bg-yellow shadow-hard-sm text-sm">{tt('games.coins')} {coins}</span>
       </div>
-      <Card color="cream" className={`gb-pop mt-4 overflow-hidden p-0 ${result === false ? 'answer-shake' : ''}`}>
-        <div className="border-b-[2.5px] border-outline bg-peach p-4">
-          <div className="flex items-center justify-between gap-3">
-            <div>
-              <p className="text-sm font-extrabold uppercase text-ink/55">{tt('common.question')} {answered + 1} / {questions.length}</p>
-              <h1 className="font-display text-2xl font-extrabold leading-tight">{round.title}</h1>
-            </div>
-            <div className={result === null ? 'nova-idle' : result ? 'nova-correct' : 'nova-wrong'}><Mascot size={64} /></div>
-          </div>
+
+      <GameQuestionCard
+        round={round}
+        game={game}
+        lang={lang}
+        tt={tt}
+        currentIndex={idx}
+        total={questions.length}
+        result={result}
+        feedback={fb}
+      />
+
+      {!stepsDone ? (
+        <div className="game-play-support relative z-10">
+          <StepScaffold item={round} lang={lang} tt={tt} onComplete={() => setStepsDone(true)} />
         </div>
+      ) : (
+        <GameAnswerCard
+          round={round}
+          options={roundOptions}
+          input={input}
+          inputRef={inputRef}
+          result={result}
+          lang={lang}
+          tt={tt}
+          onInputChange={(event) => setInput(event.target.value)}
+          onInputKeyDown={(event) => event.key === 'Enter' && result === null && submit()}
+          onOptionSelect={(option) => {
+            playButtonSfx()
+            setInput(option)
+          }}
+        >
+          {result === null ? (
+            <Button color="white" className="game-play-action is-primary" onClick={submit}>
+              {tt(`games.${game.key}.action`)}
+            </Button>
+          ) : feedbackReady ? result ? (
+            <Button color="white" className="game-play-action is-primary" onClick={nextRound}>
+              {idx + 1 >= questions.length ? tt('common.finish') : tt('common.next')} →
+            </Button>
+          ) : (
+            <Button color="rose" className="game-play-action is-retry" onClick={tryAgain}>{tt('classroom.retry')}</Button>
+          ) : <span className="game-play-reading gb-chip justify-center bg-yellow">{tt('classroom.readSolution')}</span>}
+        </GameAnswerCard>
+      )}
 
-        <div className="grid gap-4 p-4">
-          {/* immediate feedback banner */}
-          {result !== null && fb && (
-            <div className={`rounded-card border-[2.5px] border-outline p-3 ${result ? 'bg-mint' : 'bg-yellow'}`}>
-              <p className="font-display text-lg font-extrabold">{fb.headline}</p>
-              {round.solution && (
-                <p className="mt-1 text-sm font-bold">
-                  <RichText>{localize(round.solution, lang)}</RichText>
-                </p>
-              )}
-            </div>
-          )}
-
-          <div className="rounded-card border-[2.5px] border-outline bg-sky p-4">
-            <p className="text-sm font-extrabold uppercase text-ink/60">{tt(`games.${game.key}.actor`)}</p>
-            <p className="mt-2 rounded-2xl border-2 border-outline bg-white p-3 text-xl font-extrabold leading-snug">
-              {localize(round.q, lang)}
-            </p>
-            <QuestionVisual question={localize(round.q, lang)} />
+      {round?.ref && Object.prototype.hasOwnProperty.call(mastery, round.ref) && (
+        <div className="game-play-mastery relative z-10">
+          <div className="mb-1 flex justify-between text-sm font-extrabold text-ink/60">
+            <span>{tt('common.mastery')}</span>
+            <span>{Math.round(score * 100)}%</span>
           </div>
-
-          {!stepsDone ? (
-            <StepScaffold item={round} lang={lang} tt={tt} onComplete={() => setStepsDone(true)} />
-          ) : <div className="grid gap-3">
-            {!roundOptions && (
-              <input
-                ref={inputRef}
-                value={input}
-                onChange={(e) => setInput(e.target.value)}
-                onKeyDown={(e) => e.key === 'Enter' && result === null && submit()}
-                disabled={result !== null}
-                inputMode="decimal"
-                pattern="[0-9.]*"
-                type="text"
-                placeholder={tt('common.answerPlaceholder')}
-                className="min-h-[58px] rounded-full border-[2.5px] border-outline bg-white px-5 text-xl font-extrabold outline-none focus:bg-cream disabled:opacity-80"
-              />
-            )}
-
-            {roundOptions && result === null && (
-              <div className="flex flex-wrap gap-2">
-                {roundOptions.map((opt) => (
-                  <button
-                    key={opt}
-                    onClick={() => {
-                      playButtonSfx()
-                      setInput(opt)
-                    }}
-                  className={`gb-chip text-base ${input === opt ? 'bg-sky shadow-hard-sm' : 'bg-white'}`}
-                >
-                    <ChoiceVisual value={opt} />
-                      {localizeChoice(opt, lang)}
-                  </button>
-                ))}
-              </div>
-            )}
-
-            {result === null ? (
-              <Button color="mint" className="min-h-[58px] text-xl" onClick={submit}>
-                {tt(`games.${game.key}.action`)}
-              </Button>
-            ) : feedbackReady ? result ? (
-              <Button color="mint" className="min-h-[58px] text-xl" onClick={nextRound}>
-                {idx + 1 >= questions.length ? tt('common.finish') : tt('common.next')} →
-              </Button>
-            ) : (
-              <Button color="rose" className="min-h-[58px] text-xl" onClick={tryAgain}>{tt('classroom.retry')}</Button>
-            ) : <span className="gb-chip justify-center bg-yellow">{tt('classroom.readSolution')}</span>}
-          </div>}
-
-          {round?.ref && Object.prototype.hasOwnProperty.call(mastery, round.ref) && <div>
-            <div className="mb-1 flex justify-between text-sm font-extrabold text-ink/60">
-              <span>{tt('common.mastery')}</span>
-              <span>{Math.round(score * 100)}%</span>
-            </div>
-            <MasteryBar score={score} />
-          </div>}
+          <MasteryBar score={score} />
         </div>
-      </Card>
+      )}
       {showCorrectOverlay && (
         <div className="pointer-events-none fixed inset-0 z-[80] flex items-center justify-center bg-mint/90 px-6 text-center">
           <p className="nova-correct font-display text-5xl font-extrabold text-ink">{tt('classroom.correctOverlay')}</p>
@@ -495,23 +487,285 @@ function GameBadges({ game, tt, className = '' }) {
   )
 }
 
-function Stat({ label, value, color }) {
+function GameQuestionCard({ round, game, lang, tt, currentIndex, total, result, feedback }) {
+  const question = localize(round.q, lang)
+  const title = localize(round.title, lang)
+
   return (
-    <div className={`rounded-card border-[2.5px] border-outline ${color} p-2 text-center`}>
-      <p className="font-display text-2xl font-extrabold leading-none">{value}</p>
-      <p className="mt-1 text-xs font-bold text-ink/70">{label}</p>
+    <section className={`game-question-card gb-pop relative z-10 ${result === false ? 'answer-shake' : ''}`}>
+      <div className="game-question-progress">
+        <p>{tt('common.question')} {currentIndex + 1} / {total}</p>
+        <GameProgressDots currentIndex={currentIndex} total={total} tt={tt} />
+      </div>
+
+      <div className="game-question-title-row">
+        {title && (
+          <>
+            <p className="game-question-objective-label">{tt('games.learningObjective')}</p>
+            <h1>{title}</h1>
+          </>
+        )}
+      </div>
+
+      <div className="game-question-supporting">
+        <p className="game-question-actor">{tt(`games.${game.key}.actor`)}</p>
+        <div className="game-question-copy">
+          <RichText>{question}</RichText>
+        </div>
+        <QuestionVisual question={question} className="game-question-visual" />
+      </div>
+
+      {result !== null && feedback && (
+        <div className={`game-question-feedback ${result ? 'is-correct' : 'is-incorrect'}`} role="status">
+          <p className="font-display">{feedback.headline}</p>
+          {round.solution && (
+            <div>
+              <RichText>{localize(round.solution, lang)}</RichText>
+            </div>
+          )}
+        </div>
+      )}
+    </section>
+  )
+}
+
+function GameProgressDots({ currentIndex, total, tt }) {
+  return (
+    <span
+      className="game-question-dots"
+      role="progressbar"
+      aria-label={`${tt('common.question')} ${currentIndex + 1} / ${total}`}
+      aria-valuemin="1"
+      aria-valuemax={total}
+      aria-valuenow={currentIndex + 1}
+    >
+      {Array.from({ length: total }, (_, index) => (
+        <span
+          key={index}
+          className={index < currentIndex ? 'is-completed' : index === currentIndex ? 'is-current' : 'is-remaining'}
+          aria-hidden="true"
+        />
+      ))}
+    </span>
+  )
+}
+
+function GameAnswerCard({
+  round,
+  options,
+  input,
+  inputRef,
+  result,
+  lang,
+  tt,
+  onInputChange,
+  onInputKeyDown,
+  onOptionSelect,
+  children,
+}) {
+  return (
+    <section className="game-answer-card relative z-10">
+      <h2 className="font-display">{tt('class.pickAnswer')}</h2>
+
+      {!options ? (
+        <input
+          ref={inputRef}
+          value={input}
+          onChange={onInputChange}
+          onKeyDown={onInputKeyDown}
+          disabled={result !== null}
+          inputMode="decimal"
+          pattern="[0-9.]*"
+          type="text"
+          placeholder={tt('common.answerPlaceholder')}
+          className={`game-answer-input ${result === true ? 'is-correct' : result === false ? 'is-incorrect' : ''}`}
+        />
+      ) : (
+        <div className="game-answer-options">
+          {options.map((option, index) => {
+            const selected = input === option
+            const correctOption = result !== null && checkAnswer(round, option)
+            const incorrectSelection = result === false && selected && !correctOption
+
+            return (
+              <button
+                type="button"
+                key={`${String(option)}-${index}`}
+                onClick={() => onOptionSelect(option)}
+                disabled={result !== null}
+                aria-pressed={selected}
+                className={[
+                  'game-answer-option',
+                  selected ? 'is-selected' : '',
+                  correctOption ? 'is-correct' : '',
+                  incorrectSelection ? 'is-incorrect' : '',
+                ].filter(Boolean).join(' ')}
+              >
+                <span className="game-answer-marker" aria-hidden="true" />
+                <ChoiceVisual value={option} className="game-answer-visual" />
+                <span>{localizeChoice(option, lang)}</span>
+              </button>
+            )
+          })}
+        </div>
+      )}
+
+      <div className="game-answer-action">{children}</div>
+    </section>
+  )
+}
+
+function GameResultsSummary({ game, tt, summaryKey, topics, coins, answered, correct, wrong, accuracy }) {
+  const Icon = game.Icon
+
+  return (
+    <section className="game-results-summary gb-pop relative z-10">
+      <div className="game-results-icon" aria-hidden="true"><Icon /></div>
+      <h1 className="font-display">{tt(`games.${game.key}.closed`)}</h1>
+      <p className="game-results-message">{tt('games.summary.' + summaryKey)}</p>
+      <p className="game-results-practiced">{tt('games.summaryPracticed', { game: tt(`games.${game.key}.name`) })}</p>
+
+      <div className="game-results-topics">
+        {topics.map((topic) => <span key={topic}>{topic}</span>)}
+      </div>
+
+      <div className="game-results-reward">
+        <ResultCoinIcon />
+        <span>{tt('games.results.coinsEarned', { coins })}</span>
+      </div>
+
+      <div className="game-results-stats">
+        <ResultStat label={tt('games.answered')} value={answered} tone="answered" />
+        <ResultStat label={tt('common.correct')} value={correct} tone="correct" />
+        <ResultStat label={tt('common.wrong')} value={wrong} tone="wrong" />
+        <ResultStat label={tt('games.accuracy')} value={`${accuracy}%`} tone="accuracy" />
+      </div>
+    </section>
+  )
+}
+
+function ResultStat({ label, value, tone }) {
+  return (
+    <div className={`game-results-stat is-${tone}`}>
+      <p className="font-display">{value}</p>
+      <span>{label}</span>
     </div>
   )
 }
 
-// Striped awning shared by every game's start card.
-function Awning({ colors }) {
+function MissedAnswerCard({ answer, topic, lang, tt }) {
   return (
-    <div className="grid h-14 grid-cols-5 overflow-hidden rounded-t-card border-[2.5px] border-outline bg-white">
-      {colors.map((color, index) => (
-        <span key={index} className={`${color} border-r-2 border-outline last:border-r-0`} />
-      ))}
-    </div>
+    <article className="game-results-missed-card">
+      <div className="game-results-missed-top">
+        <span className="game-results-needs-review"><ResultXIcon />{tt('games.results.needsReview')}</span>
+        {topic && <span className="game-results-topic-chip">{topic}</span>}
+      </div>
+
+      <div className="game-results-missed-question">
+        <p>{tt('common.question')}</p>
+        <div><RichText>{answer.q}</RichText></div>
+      </div>
+
+      <div className="game-results-answer-rows">
+        <div className="game-results-answer-row is-user">
+          <span>{tt('common.yourAnswer')}</span>
+          <strong><ResultXIcon />{answer.your ? localizeChoice(answer.your, lang) : '—'}</strong>
+        </div>
+        <div className="game-results-answer-row is-correct">
+          <span>{tt('common.correctAnswer')}</span>
+          <strong><ResultCheckIcon />{localizeChoice(answer.answer, lang)}</strong>
+        </div>
+      </div>
+
+      {answer.solution && (
+        <div className="game-results-explanation">
+          <span aria-hidden="true"><LightbulbIcon size={28} /></span>
+          <div>
+            <p>{tt('common.explanation')}</p>
+            <div><RichText>{answer.solution}</RichText></div>
+          </div>
+        </div>
+      )}
+    </article>
+  )
+}
+
+function resultTopic(question, competencies, lang) {
+  if (!question) return ''
+  const competency = competencies.find((item) => item.ref === question.ref)
+  const competencyText = localize(competency?.competency ?? question.title, lang)
+  return topicTitleLocalized(question.ref, competencyText, lang)
+}
+
+function BackArrowIcon() {
+  return (
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M20 12H5M11 6l-6 6 6 6" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  )
+}
+
+function ChallengeIcon() {
+  return (
+    <svg viewBox="0 0 48 48" aria-hidden="true">
+      <rect x="12" y="9" width="24" height="32" rx="4" fill="#fff8e7" stroke="#1c1410" strokeWidth="3" />
+      <rect x="18" y="5" width="12" height="8" rx="3" fill="#f7d26a" stroke="#1c1410" strokeWidth="3" />
+      <path d="m18 22 3 3 6-7M18 32h12" fill="none" stroke="#1c1410" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  )
+}
+
+function StartArrowIcon() {
+  return (
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M5 12h13M13 7l5 5-5 5" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  )
+}
+
+function ResultCoinIcon() {
+  return (
+    <svg viewBox="0 0 32 32" aria-hidden="true">
+      <circle cx="16" cy="16" r="13" fill="#ffd45e" stroke="currentColor" strokeWidth="2.2" />
+      <path d="m16 8.7 2.1 4.3 4.8.7-3.5 3.4.8 4.8-4.2-2.3-4.2 2.3.8-4.8-3.5-3.4 4.8-.7Z" fill="#fff1aa" stroke="currentColor" strokeWidth="1.2" strokeLinejoin="round" />
+    </svg>
+  )
+}
+
+function ResultXIcon() {
+  return (
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" strokeWidth="2" />
+      <path d="m8.5 8.5 7 7m0-7-7 7" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+    </svg>
+  )
+}
+
+function ResultCheckIcon() {
+  return (
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" strokeWidth="2" />
+      <path d="m7.8 12.2 2.7 2.7 5.8-6" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  )
+}
+
+function ReplayIcon() {
+  return (
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M19 8.5V4l-2 2a8 8 0 1 0 2.2 8.2" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  )
+}
+
+function GridIcon() {
+  return (
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <rect x="4" y="4" width="6" height="6" rx="1.2" fill="currentColor" />
+      <rect x="14" y="4" width="6" height="6" rx="1.2" fill="currentColor" />
+      <rect x="4" y="14" width="6" height="6" rx="1.2" fill="currentColor" />
+      <rect x="14" y="14" width="6" height="6" rx="1.2" fill="currentColor" />
+    </svg>
   )
 }
 

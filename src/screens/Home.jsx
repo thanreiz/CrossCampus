@@ -38,22 +38,6 @@ export default function Home({ onPick, online = true, lang = 'taglish', studentN
           </div>
         </div>
 
-        <div className="home-language-row" aria-label={tt('common.language')}>
-          <span className="home-language-label">{tt('common.language')}</span>
-          <div className="home-language-controls">
-            {LANGS.map((language) => (
-              <button
-                key={language.key}
-                type="button"
-                onClick={() => onLang?.(language.key)}
-                aria-pressed={lang === language.key}
-                className={lang === language.key ? 'is-active' : ''}
-              >
-                {language.label}
-              </button>
-            ))}
-          </div>
-        </div>
       </section>
 
       <section className="home-destinations" aria-label={tt('home.destinations')}>

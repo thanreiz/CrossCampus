@@ -185,9 +185,7 @@
 }
 
 .profile-change-grade.gb-btn {
-  width: 100%;
   min-height: 3.2rem;
-  margin-top: 0.95rem;
   border-radius: 1rem;
   padding: 0.65rem 1rem;
   font-size: 1.05rem;
@@ -977,4 +975,91 @@
   .profile-show-more {
     transition: none;
   }
+}
+
+.profile-action-row {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 0.6rem;
+  margin-top: 0.95rem;
+  align-items: stretch;
+}
+
+.profile-change-grade.gb-btn {
+  margin-top: 0;
+}
+
+.profile-settings-btn.gb-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding-left: 0.85rem;
+  padding-right: 0.85rem;
+  white-space: nowrap;
+}
+
+.profile-settings-panel {
+  margin-top: 1rem;
+  padding: 1.1rem 1.1rem 1.25rem;
+  border: 2.5px solid var(--profile-outline, #2b1d12);
+  border-radius: 1.35rem;
+  background: #fffaf0;
+  box-shadow: 4px 5px 0 var(--profile-outline, #2b1d12);
+}
+
+.profile-settings-panel > h2 {
+  font-size: 0.85rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: rgb(58 46 42 / 60%);
+  margin-bottom: 0.9rem;
+}
+
+.profile-settings-row {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+}
+
+.profile-settings-label {
+  color: rgb(58 46 42 / 65%);
+  font-size: 0.8rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.profile-language-controls {
+  display: grid;
+  min-width: 0;
+  flex: 1;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.45rem;
+}
+
+.profile-language-controls button {
+  min-height: 2.5rem;
+  border: 2px solid var(--profile-outline, #2b1d12);
+  border-radius: 999px;
+  background: #fff;
+  padding: 0.35rem 0.4rem;
+  color: #2b1d12;
+  font-size: clamp(0.75rem, 3.4vw, 0.9rem);
+  font-weight: 900;
+  box-shadow: 0.14rem 0.2rem 0 var(--profile-outline, #2b1d12);
+  transition: transform 150ms ease, box-shadow 150ms ease, background 150ms ease;
+}
+
+.profile-language-controls button.is-active {
+  background: #f7c84e;
+}
+
+.profile-language-controls button:hover {
+  transform: translateY(-1px);
+}
+
+.profile-language-controls button:active {
+  transform: translate(0.12rem, 0.15rem);
+  box-shadow: 0 0 0 var(--profile-outline, #2b1d12);
 }

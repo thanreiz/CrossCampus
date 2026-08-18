@@ -8,6 +8,7 @@ import { hasAnswered, loadStreak, masteryColor } from '../lib/mastery.js'
 import { topicTitleLocalized } from '../lib/topics.js'
 import { clearHistory, loadHistory } from '../lib/history.js'
 import { makeT } from '../lib/i18n.js'
+import { LANGS } from '../lib/lang.js'
 import './Progress.css'
 
 const INITIAL_VISIBLE_LESSONS = 3
@@ -34,6 +35,7 @@ export default function Progress({
   const [streak, setStreak] = useState(0)
   const [expandedDomains, setExpandedDomains] = useState(new Set())
   const [revealedDomains, setRevealedDomains] = useState(new Set())
+  const [showSettings, setShowSettings] = useState(false)
 
   useEffect(() => {
     let cancelled = false
@@ -177,10 +179,38 @@ export default function Progress({
           ))}
         </div>
 
-        <Button color="white" className="profile-change-grade" onClick={onChangeGrade}>
-          {tt('profile.changeGrade')}
-        </Button>
+        <div className="profile-action-row">
+          <Button color="white" className="profile-change-grade" onClick={onChangeGrade}>
+            {tt('profile.changeGrade')}
+          </Button>
+          <Button color="white" className="profile-settings-btn" onClick={() => setShowSettings((v) => !v)} aria-expanded={showSettings}>
+            <SettingsIcon />
+            {tt('profile.settings')}
+          </Button>
+        </div>
       </section>
+
+      {showSettings && (
+        <section className="profile-settings-panel" aria-label={tt('profile.settings')}>
+          <h2>{tt('profile.settings')}</h2>
+          <div className="profile-settings-row">
+            <span className="profile-settings-label">{tt('common.language')}</span>
+            <div className="profile-language-controls">
+              {LANGS.map((language) => (
+                <button
+                  key={language.key}
+                  type="button"
+                  onClick={() => onLang?.(language.key)}
+                  aria-pressed={lang === language.key}
+                  className={lang === language.key ? 'is-active' : ''}
+                >
+                  {language.label}
+                </button>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
 
       {view === 'mastery' && next && (
         <Card color="yellow" className="profile-next-card gb-pop">
@@ -543,6 +573,15 @@ function ArrowIcon() {
   return (
     <svg viewBox="0 0 24 24" width="23" height="23" aria-hidden="true">
       <path d="M4 12h15m-5-5 5 5-5 5" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  )
+}
+
+function SettingsIcon() {
+  return (
+    <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+      <circle cx="12" cy="12" r="3" />
+      <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41" />
     </svg>
   )
 }

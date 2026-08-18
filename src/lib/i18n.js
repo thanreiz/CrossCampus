@@ -317,6 +317,7 @@ export const STRINGS = {
   'profile.overall': { en: 'Overall mastery', fil: 'Kabuuang mastery', taglish: 'Overall mastery' },
   'profile.streak': { en: '{count} days in a row', fil: '{count} araw na sunod-sunod', taglish: '{count} araw na sunod-sunod' },
   'profile.changeGrade': { en: 'Change Grade', fil: 'Baguhin ang Grade', taglish: 'Baguhin ang Grade' },
+  'profile.settings': { en: 'Settings', fil: 'Mga Setting', taglish: 'Settings' },
   'achievement.first': { en: 'First Step', fil: 'Unang Hakbang', taglish: 'Unang Hakbang' },
   'achievement.games': { en: 'Game On', fil: 'Game On', taglish: 'Game On' },
   'achievement.streak': { en: 'On a Roll', fil: 'On a Roll', taglish: 'On a Roll' },

@@ -77,10 +77,32 @@ export const STRINGS = {
   },
   'onboarding.start': { en: 'Let’s start!', fil: 'Magsimula!', taglish: 'Magsimula!' },
   'gradePicker.title': { en: 'Change grade', fil: 'Baguhin ang Grade', taglish: 'Baguhin ang Grade' },
+  'gradePicker.subtitle': {
+    en: 'Choose the grade you want to switch to.',
+    fil: 'Piliin ang grade na gusto mong lipatan.',
+    taglish: 'Piliin ang grade na gusto mong lipatan.',
+  },
+  'gradePicker.selected': { en: 'Selected', fil: 'Napili', taglish: 'Napili' },
+  'gradePicker.current': { en: 'Current grade', fil: 'Kasalukuyang grade', taglish: 'Kasalukuyang grade' },
+  'gradePicker.confirmTitle': {
+    en: 'Change to Grade {grade}?',
+    fil: 'Lumipat sa Grade {grade}?',
+    taglish: 'Change to Grade {grade}?',
+  },
   'gradePicker.confirm': {
     en: 'Your progress for this grade will be cleared. Continue?',
     fil: 'Mabubura ang iyong progress. Sige ba?',
     taglish: 'Mabubura ang iyong progress. Sige ba?',
+  },
+  'gradePicker.yesChange': {
+    en: 'Yes, change grade',
+    fil: 'Oo, palitan ang grade',
+    taglish: 'Oo, change grade',
+  },
+  'gradePicker.noKeep': {
+    en: 'No, keep Grade {grade}',
+    fil: 'Hindi, manatili sa Grade {grade}',
+    taglish: 'Hindi, keep Grade {grade}',
   },
 
   // ---- nav tabs ----
@@ -261,11 +283,28 @@ export const STRINGS = {
   'progress.avg': { en: 'Average mastery: {pct}%', fil: 'Karaniwang kahusayan: {pct}%', taglish: 'Karaniwang mastery: {pct}%' },
   'progress.tab.mastery': { en: 'Mastery', fil: 'Kahusayan', taglish: 'Mastery' },
   'progress.tab.review': { en: 'Practice', fil: 'Pagsasanay', taglish: 'Pagsasanay' },
-  'progress.nextUp': { en: 'Study this next:', fil: 'Susunod na dapat pag-aralan:', taglish: 'Susunod na dapat pag-aralan:' },
+  'progress.nextUp': { en: 'Continue learning', fil: 'Ipagpatuloy ang pag-aaral', taglish: 'Ipagpatuloy ang pag-aaral' },
   'progress.start': { en: 'Start', fil: 'Magsimula', taglish: 'Magsimula' },
+  'progress.continue': { en: 'Continue', fil: 'Magpatuloy', taglish: 'Magpatuloy' },
   'progress.sortBy': { en: 'Sort by progress', fil: 'Ayusin ayon sa progreso', taglish: 'Ayusin ayon sa progreso' },
   'progress.asc': { en: 'Ascending', fil: 'Pataas', taglish: 'Pataas' },
   'progress.desc': { en: 'Descending', fil: 'Pababa', taglish: 'Pababa' },
+  'progress.lessonsHeading': { en: 'Your lessons', fil: 'Iyong mga aralin', taglish: 'Iyong mga aralin' },
+  'progress.filterLabel': { en: 'Filter lessons by status', fil: 'Salain ang mga aralin ayon sa katayuan', taglish: 'Filter lessons ayon sa status' },
+  'progress.filter.all': { en: 'All', fil: 'Lahat', taglish: 'Lahat' },
+  'progress.filter.started': { en: 'Started', fil: 'Sinimulan', taglish: 'Sinimulan' },
+  'progress.filter.completed': { en: 'Completed', fil: 'Tapos', taglish: 'Tapos' },
+  'progress.filterEmptyTitle': { en: 'No lessons here yet', fil: 'Wala pang aralin dito', taglish: 'Wala pang aralin dito' },
+  'progress.filterEmptyBody': { en: 'Choose another filter to see more lessons.', fil: 'Pumili ng ibang filter para makita ang iba pang aralin.', taglish: 'Pumili ng ibang filter para makita ang ibang lessons.' },
+  'progress.completedCount': { en: '{completed} of {total} completed', fil: '{completed} sa {total} tapos', taglish: '{completed} sa {total} tapos' },
+  'progress.notStarted': { en: 'Not started', fil: 'Hindi pa nasisimulan', taglish: 'Hindi pa nasisimulan' },
+  'progress.lessonProgress': { en: '{pct}% complete', fil: '{pct}% tapos', taglish: '{pct}% tapos' },
+  'progress.completed': { en: 'Completed', fil: 'Tapos na', taglish: 'Tapos na' },
+  'progress.recommended': { en: 'Recommended', fil: 'Inirerekomenda', taglish: 'Inirerekomenda' },
+  'progress.reviewLesson': { en: 'Review', fil: 'Balikan', taglish: 'Balikan' },
+  'progress.showMore': { en: 'Show {count} more lessons', fil: 'Ipakita ang {count} pang aralin', taglish: 'Ipakita ang {count} pang aralin' },
+  'progress.showLess': { en: 'Show fewer lessons', fil: 'Magpakita ng mas kaunti', taglish: 'Ipakita ang mas kaunti' },
+  'progress.locked': { en: 'locked', fil: 'naka-lock', taglish: 'naka-lock' },
   'progress.empty.title': { en: 'No practice yet', fil: 'Wala pang pagsasanay', taglish: 'Wala pang pagsasanay' },
   'progress.empty.sub': {
     en: 'Answer questions in Practice or Games — your review will appear here.',
@@ -279,8 +318,8 @@ export const STRINGS = {
   'profile.streak': { en: '{count} days in a row', fil: '{count} araw na sunod-sunod', taglish: '{count} araw na sunod-sunod' },
   'profile.changeGrade': { en: 'Change Grade', fil: 'Baguhin ang Grade', taglish: 'Baguhin ang Grade' },
   'achievement.first': { en: 'First Step', fil: 'Unang Hakbang', taglish: 'Unang Hakbang' },
-  'achievement.games': { en: 'Game On', fil: 'Laban Mode', taglish: 'Laban Mode' },
-  'achievement.streak': { en: 'On a Roll', fil: 'Tuloy-Tuloy', taglish: 'Tuloy-Tuloy' },
+  'achievement.games': { en: 'Game On', fil: 'Game On', taglish: 'Game On' },
+  'achievement.streak': { en: 'On a Roll', fil: 'On a Roll', taglish: 'On a Roll' },
 
   // ---- mastery band labels (the "In Progress" change lives here) ----
   'band.red': { en: 'Just starting', fil: 'Simulan na natin', taglish: 'Simulan na natin' },
@@ -296,6 +335,8 @@ export const STRINGS = {
     taglish: 'Mag-compute ng total, discount, ratio, at percent habang nagtitinda.',
   },
   'games.howMany': { en: 'How many questions will you answer?', fil: 'Ilang tanong ang sasagutan mo?', taglish: 'Ilang tanong ang sasagutan mo?' },
+  'games.challenge': { en: 'Choose your challenge', fil: 'Piliin ang iyong hamon', taglish: 'Piliin ang iyong challenge' },
+  'games.learningObjective': { en: 'Learning objective', fil: 'Layunin sa pagkatuto', taglish: 'Layunin ng aralin' },
   'games.minMax': { en: 'Minimum 5, maximum 20 questions.', fil: 'Minimum 5, maximum 20 na tanong.', taglish: 'Minimum 5, maximum 20 na tanong.' },
   'games.startStore': { en: 'Open the Store ({n} questions)', fil: 'Simulan ang Tindahan ({n} tanong)', taglish: 'Simulan ang Tindahan ({n} tanong)' },
   'games.closed': { en: 'Store closed!', fil: 'Tindahan sarado!', taglish: 'Tindahan sarado!' },
@@ -324,6 +365,9 @@ export const STRINGS = {
   'games.summary.great': { en: 'Strong run. You are getting faster.', fil: 'Magaling. Mas mabilis ka na.', taglish: 'Strong run. Mas mabilis ka na.' },
   'games.summary.practice': { en: 'Good try. Review the missed items below.', fil: 'Good try. Balikan ang mga namali sa baba.', taglish: 'Good try. Balikan ang mga namali sa baba.' },
   'games.summaryPracticed': { en: 'You practiced: {game}', fil: 'Pinractice mo: {game}', taglish: 'Pinractice mo: {game}' },
+  'games.results.coinsEarned': { en: '+{coins} coins earned', fil: '+{coins} coins na nakuha', taglish: '+{coins} coins earned' },
+  'games.results.reviewSubtitle': { en: 'One quick review before your next round', fil: 'Isang mabilis na balik-aral bago ang susunod na round', taglish: 'Isang quick review bago ang next round' },
+  'games.results.needsReview': { en: 'Needs review', fil: 'Kailangang balikan', taglish: 'Kailangang balikan' },
   'games.badge.number': { en: 'Number & Algebra', fil: 'Number & Algebra', taglish: 'Number & Algebra' },
   'games.badge.geometry': { en: 'Geometry', fil: 'Geometry', taglish: 'Geometry' },
   'games.badge.data': { en: 'Data', fil: 'Data', taglish: 'Data' },
@@ -345,7 +389,7 @@ export const STRINGS = {
   },
   'games.store.actor': { en: 'Customer', fil: 'Suki', taglish: 'Customer' },
   'games.store.action': { en: 'Pay', fil: 'Bayaran', taglish: 'Bayaran' },
-  'games.store.start': { en: 'Open the Store ({n} questions)', fil: 'Buksan ang Tindahan ({n} tanong)', taglish: 'Buksan ang Tindahan ({n} tanong)' },
+  'games.store.start': { en: 'Open the Store', fil: 'Buksan ang Tindahan', taglish: 'Buksan ang Tindahan' },
   'games.store.closed': { en: 'Store closed!', fil: 'Tindahan sarado!', taglish: 'Tindahan sarado!' },
 
   // Garden (Measurement & Geometry — plane figures, area, perimeter)
@@ -357,7 +401,7 @@ export const STRINGS = {
   },
   'games.garden.actor': { en: 'Gardener', fil: 'Hardinero', taglish: 'Hardinero' },
   'games.garden.action': { en: 'Plant', fil: 'Itanim', taglish: 'Itanim' },
-  'games.garden.start': { en: 'Start the Garden ({n} questions)', fil: 'Simulan ang Hardin ({n} tanong)', taglish: 'Simulan ang Hardin ({n} tanong)' },
+  'games.garden.start': { en: 'Start the Garden', fil: 'Simulan ang Hardin', taglish: 'Simulan ang Hardin' },
   'games.garden.closed': { en: 'Garden grown!', fil: 'Lumago ang hardin!', taglish: 'Lumago ang hardin!' },
 
   // House Builder (Measurement & Geometry — angles, volume, capacity)
@@ -369,7 +413,7 @@ export const STRINGS = {
   },
   'games.house.actor': { en: 'Client', fil: 'Kliyente', taglish: 'Client' },
   'games.house.action': { en: 'Build', fil: 'Itayo', taglish: 'Itayo' },
-  'games.house.start': { en: 'Start Building ({n} questions)', fil: 'Simulan ang Pagtatayo ({n} tanong)', taglish: 'Simulan ang Build ({n} tanong)' },
+  'games.house.start': { en: 'Start Building', fil: 'Simulan ang Pagtatayo', taglish: 'Simulan ang Build' },
   'games.house.closed': { en: 'House finished!', fil: 'Tapos na ang bahay!', taglish: 'Tapos na ang bahay!' },
 
   // Fiesta Booth (Data & Probability — graphs, mean/median/mode, chance)
@@ -381,7 +425,7 @@ export const STRINGS = {
   },
   'games.fiesta.actor': { en: 'Visitor', fil: 'Bisita', taglish: 'Bisita' },
   'games.fiesta.action': { en: 'Answer', fil: 'Sagutin', taglish: 'Sagutin' },
-  'games.fiesta.start': { en: 'Open the Fiesta ({n} questions)', fil: 'Buksan ang Fiesta ({n} tanong)', taglish: 'Buksan ang Fiesta ({n} tanong)' },
+  'games.fiesta.start': { en: 'Open the Fiesta', fil: 'Buksan ang Fiesta', taglish: 'Buksan ang Fiesta' },
   'games.fiesta.closed': { en: 'Fiesta done!', fil: 'Tapos ang fiesta!', taglish: 'Tapos ang fiesta!' },
 
   // ---- 3D Classroom HUD ----

@@ -1,6 +1,5 @@
 import { Mascot } from '../ui/Mascot.jsx'
 import OnlineBadge from '../ui/OnlineBadge.jsx'
-import { LANGS } from '../lib/lang.js'
 import { makeT } from '../lib/i18n.js'
 import './Home.css'
 
@@ -10,7 +9,7 @@ const DESTINATIONS = [
   { key: 'games', titleKey: 'home.games.title', statusKey: 'home.games.status', ctaKey: 'home.games.cta', image: '/home-arcade.png', imageAlt: 'Mini games arcade cabinet', tone: 'rose', doodle: 'games' },
 ]
 
-export default function Home({ onPick, online = true, lang = 'taglish', onLang, studentName = '', grade = 6 }) {
+export default function Home({ onPick, online = true, lang = 'taglish', studentName = '', grade = 6 }) {
   const tt = makeT(lang)
 
   return (

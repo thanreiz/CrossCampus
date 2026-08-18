@@ -5,7 +5,7 @@ import { clearMasteryForGrade } from '../lib/mastery.js'
 import { makeT } from '../lib/i18n.js'
 import './GradePicker.css'
 
-const GRADES = [1, 2, 3, 4, 5, 6]
+const GRADES = [4, 5, 6]
 
 export default function GradePicker({ currentGrade = 6, lang = 'taglish', onDone, onBack }) {
   const tt = makeT(lang)

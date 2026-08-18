@@ -192,7 +192,6 @@ export default function App() {
         <Home
           online={online}
           lang={lang}
-          onLang={changeLang}
           studentName={studentName}
           grade={grade}
           onPick={(door) => setScreen(door === 'games' ? 'games' : 'start')}
@@ -294,6 +293,7 @@ export default function App() {
           next={next}
           onPick={goBrief}
           onChangeGrade={() => setScreen('gradePicker')}
+          onLang={changeLang}
         />
       ))
 

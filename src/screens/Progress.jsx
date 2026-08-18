@@ -23,6 +23,7 @@ export default function Progress({
   lang = 'taglish',
   onPick,
   onChangeGrade,
+  onLang,
 }) {
   const tt = makeT(lang)
   const [view, setView] = useState('mastery')

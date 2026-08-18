@@ -1,11 +1,11 @@
 // Global language preference (English / Tagalog / Taglish). The student picks
 // once; it drives lesson explanations, feedback, quizzes, and Teacher Gabay's
-// voice + reply language. Persisted offline in IndexedDB. Default Taglish.
+// voice + reply language. Persisted offline in IndexedDB. Default English.
 
 import { get, set } from 'idb-keyval'
 
 const KEY = 'pref:lang'
-export const DEFAULT_LANG = 'taglish'
+export const DEFAULT_LANG = 'en'
 
 // key must match content.json explanation.{en,fil,taglish}.
 // "fil" is kept as the storage key for backward-compat; label shown is "Tagalog".

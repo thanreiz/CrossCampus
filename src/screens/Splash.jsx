@@ -17,12 +17,6 @@ export default function Splash({ onStart, lang = 'taglish' }) {
           <span className="splash-card-sparkle" aria-hidden="true">&#10022;</span>
           <h1 id="splash-title" className="splash-title">Gabay</h1>
           <p className="splash-tagline">{tt('splash.tagline')}</p>
-          <div className="splash-divider" aria-hidden="true">
-            <span />
-            <b>&#9734;</b>
-            <span />
-          </div>
-          <p className="splash-features">{tt('splash.subtitle')}</p>
         </section>
 
         <Button color="peach" className="splash-start-button" onClick={onStart}>

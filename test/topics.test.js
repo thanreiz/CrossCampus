@@ -16,16 +16,27 @@ test('every curriculum topic has a concise one-to-three-word title', () => {
 test('representative competencies receive clear topic labels', () => {
   assert.equal(topicTitle('1MG-Ia-1', 'Identify simple 2-dimensional shapes.'), '2D Shapes')
   assert.equal(topicTitle('1NA-Id-1', 'Recognize and represent numbers up to 100 using pictorial models.'), 'Number Models')
-  assert.equal(topicTitle('6SP-IIIg-1', 'Interpret data presented in a pie graph.'), 'Pie Graphs')
+  assert.equal(topicTitle('6SP-IIIg-1', 'Interpret data presented in a pie graph.'), 'Reading Pie Graphs')
 })
 
 test('ambiguous competency wording is labeled by its primary skill', () => {
   assert.equal(topicTitle('1NA-IIc-1', 'Decompose any 2-digit number into tens and ones.'), 'Tens and Ones')
   assert.equal(topicTitle('2NA-IIIc-1', 'Illustrate division as repeated subtraction.'), 'Division')
-  assert.equal(topicTitle('4NA-IIg-1', 'Represent dissimilar fractions using models.'), 'Dissimilar Fractions')
-  assert.equal(topicTitle('5NA-IIc-1', 'Solve problems involving addition and subtraction of decimals.'), 'Decimal Operations')
+  assert.equal(topicTitle('4NA-IIg-1', 'Represent dissimilar fractions using models.'), 'Modeling Dissimilar Fractions')
+  assert.equal(topicTitle('5NA-IIc-1', 'Solve problems involving addition and subtraction of decimals.'), 'Decimal Operation Problems')
   assert.equal(topicTitle('6MG-IIIb-2', 'Approximate pi as the ratio of circumference to diameter.'), 'Understanding Pi')
-  assert.equal(topicTitle('5MG-IIIi-1', 'Solve problems involving the surface area of solid figures.'), 'Surface Area')
+  assert.equal(topicTitle('5MG-IIIi-1', 'Solve problems involving the surface area of solid figures.'), 'Surface Area Problems')
+})
+
+test('Grade 4-6 lessons have distinct titles within each category', () => {
+  const seen = new Map()
+  for (const competency of getAllContent().filter(({ ref }) => /^[456]/.test(ref))) {
+    const title = topicTitle(competency.ref, competency.competency)
+    const grade = competency.ref.match(/^\d+/)?.[0]
+    const key = `${grade}::${competency.domain}::${title}`
+    assert.ok(!seen.has(key), `${competency.ref} duplicates ${seen.get(key)} as ${title}`)
+    seen.set(key, competency.ref)
+  }
 })
 
 test('Filipino mode localizes learner-facing Grade 1 topic labels', () => {

@@ -1,603 +1,312 @@
 import { useEffect, useMemo, useState } from 'react'
-import { Button, Card, MasteryBar, RichText } from '../ui/Primitives.jsx'
+import { Button, MasteryBar } from '../ui/Primitives.jsx'
 import { Mascot } from '../ui/Mascot.jsx'
 import OnlineBadge from '../ui/OnlineBadge.jsx'
-import LessonIcon from '../ui/LessonIcon.jsx'
-import { LightbulbIcon } from '../ui/Icons.jsx'
-import { hasAnswered, loadStreak, masteryColor } from '../lib/mastery.js'
-import { topicTitleLocalized } from '../lib/topics.js'
-import { clearHistory, loadHistory } from '../lib/history.js'
-import { makeT } from '../lib/i18n.js'
+import { hasAnswered, loadStreak } from '../lib/mastery.js'
+import { loadHistory } from '../lib/history.js'
 import { LANGS } from '../lib/lang.js'
+import { makeT } from '../lib/i18n.js'
 import './Progress.css'
 
-const INITIAL_VISIBLE_LESSONS = 3
-const isLessonCompleted = (lesson) => Math.round(lesson.s * 100) >= 100
+const DOMAIN_ROWS = [
+  { key: 'measurement', label: 'Measurement & Geometry', tone: 'blue', matches: /measurement|geometry/i },
+  { key: 'number', label: 'Number & Algebra', tone: 'mint', matches: /number|algebra/i },
+  { key: 'statistics', label: 'Statistics & Probability', tone: 'purple', matches: /statistics|probability|data/i },
+]
 
-export default function Progress({
-  competencies,
-  mastery,
-  next,
-  studentName = '',
-  grade = 6,
-  online = true,
-  lang = 'taglish',
-  onPick,
-  onChangeGrade,
-  onLang,
-}) {
+const ACHIEVEMENT_DEFS = [
+  { key: 'shape', name: 'Shape Explorer', icon: 'shape', tone: 'mint', requirement: 'Complete the first Measurement & Geometry lesson.' },
+  { key: 'number', name: 'Number Ninja', icon: 'number', tone: 'sky', requirement: 'Complete the first Number & Algebra lesson.' },
+  { key: 'data', name: 'Data Detective', icon: 'data', tone: 'rose', requirement: 'Complete the first Statistics & Probability lesson.' },
+  { key: 'streak', name: 'Streak Spark', icon: 'flame', tone: 'yellow', requirement: 'Maintain a two-day learning streak.' },
+  { key: 'quiz', name: 'Quiz Whiz', icon: 'quiz', tone: 'lavender', requirement: 'Get a perfect score on one quiz.' },
+  { key: 'master', name: 'Math Master', icon: 'trophy', tone: 'gold', requirement: 'Reach 100% mastery in any subject.' },
+]
+
+export default function Progress({ competencies, mastery, studentName = '', grade = 6, online = true, lang = 'taglish', onChangeGrade, onLang }) {
   const tt = makeT(lang)
-  const [view, setView] = useState('mastery')
-  const [filter, setFilter] = useState('all')
-  const [sort, setSort] = useState('desc')
-  const [history, setHistory] = useState([])
   const [answered, setAnswered] = useState(new Set())
   const [streak, setStreak] = useState(0)
-  const [expandedDomains, setExpandedDomains] = useState(new Set())
-  const [revealedDomains, setRevealedDomains] = useState(new Set())
-  const [showSettings, setShowSettings] = useState(false)
+  const [history, setHistory] = useState([])
+  const [showAllAchievements, setShowAllAchievements] = useState(false)
+  const [revealedAchievement, setRevealedAchievement] = useState(null)
+  const [expandedPreference, setExpandedPreference] = useState(null)
+  const [pendingGrade, setPendingGrade] = useState(null)
+  const [changingGrade, setChangingGrade] = useState(false)
 
   useEffect(() => {
     let cancelled = false
     Promise.all([
-      loadHistory(),
       loadStreak(),
-      Promise.all(competencies.map(async (c) => [c.ref, await hasAnswered(c.ref, grade)])),
-    ]).then(([savedHistory, savedStreak, pairs]) => {
+      loadHistory(),
+      Promise.all(competencies.map(async (competency) => [competency.ref, await hasAnswered(competency.ref, grade)])),
+    ]).then(([savedStreak, savedHistory, pairs]) => {
       if (cancelled) return
-      setHistory(savedHistory)
       setStreak(savedStreak)
+      setHistory(savedHistory)
       setAnswered(new Set(pairs.filter(([, value]) => value).map(([ref]) => ref)))
     })
-    return () => {
-      cancelled = true
-    }
+    return () => { cancelled = true }
   }, [competencies, grade, mastery])
 
-  useEffect(() => {
-    const firstDomain = next?.domain || competencies[0]?.domain
-    setExpandedDomains(firstDomain ? new Set([firstDomain]) : new Set())
-  }, [competencies, grade, next?.domain])
-
-  useEffect(() => {
-    setRevealedDomains(new Set())
-  }, [competencies, filter, grade])
-
-  const answeredScores = competencies.filter((c) => answered.has(c.ref)).map((c) => mastery[c.ref] ?? 0)
+  const answeredScores = competencies.filter((competency) => answered.has(competency.ref)).map((competency) => mastery[competency.ref] ?? 0)
   const average = answeredScores.length ? answeredScores.reduce((sum, value) => sum + value, 0) / answeredScores.length : 0
-  const lessonItems = useMemo(
-    () => competencies.map((c) => ({ c, s: mastery[c.ref] ?? 0, answered: answered.has(c.ref) })),
-    [answered, competencies, mastery],
-  )
-  const ordered = useMemo(() => {
-    const list = lessonItems.filter((lesson) => {
-      if (filter === 'started') return lesson.s > 0 && !isLessonCompleted(lesson)
-      if (filter === 'completed') return isLessonCompleted(lesson)
-      return true
-    })
-    list.sort((a, b) => (sort === 'asc' ? a.s - b.s : b.s - a.s))
-    return list
-  }, [filter, lessonItems, sort])
-  const groups = useMemo(() => {
-    const byDomain = new Map()
-    for (const item of lessonItems) {
-      const domain = item.c.domain || 'Math Lessons'
-      if (!byDomain.has(domain)) byDomain.set(domain, { allLessons: [], lessons: [] })
-      byDomain.get(domain).allLessons.push(item)
+  const averagePct = Math.round(average * 100)
+  const lessonsStarted = answered.size
+  const lessonsInProgress = competencies.filter((competency) => answered.has(competency.ref) && (mastery[competency.ref] ?? 0) < 1).length
+  const languageLabel = LANGS.find((language) => language.key === lang)?.label ?? 'English'
+
+  const domainProgress = useMemo(() => DOMAIN_ROWS.map((row) => {
+    const lessons = competencies.filter((competency) => row.matches.test(competency.domain || ''))
+    const score = lessons.length ? lessons.reduce((sum, competency) => sum + (mastery[competency.ref] ?? 0), 0) / lessons.length : 0
+    return { ...row, score, pct: Math.round(score * 100) }
+  }), [competencies, mastery])
+
+  const achievements = useMemo(() => {
+    const firstLessonComplete = (matches) => {
+      const firstLesson = competencies.find((competency) => matches.test(competency.domain || ''))
+      return firstLesson ? Math.round((mastery[firstLesson.ref] ?? 0) * 100) >= 100 : false
     }
-    for (const item of ordered) {
-      const domain = item.c.domain || 'Math Lessons'
-      byDomain.get(domain).lessons.push(item)
+    const currentRefs = new Set(competencies.map((competency) => competency.ref))
+    const unlocked = {
+      shape: firstLessonComplete(/measurement|geometry/i),
+      number: firstLessonComplete(/number|algebra/i),
+      data: firstLessonComplete(/statistics|probability|data/i),
+      streak: streak >= 2,
+      quiz: hasPerfectQuiz(history, currentRefs),
+      master: domainProgress.some((domain) => domain.pct >= 100),
     }
-    return Array.from(byDomain, ([domain, value]) => ({ domain, ...value })).filter((group) => group.lessons.length)
-  }, [lessonItems, ordered])
+    return ACHIEVEMENT_DEFS
+      .map((achievement) => ({ ...achievement, unlocked: unlocked[achievement.key] }))
+      .sort((a, b) => Number(b.unlocked) - Number(a.unlocked))
+  }, [competencies, domainProgress, history, mastery, streak])
+  const unlockedAchievementCount = achievements.filter((achievement) => achievement.unlocked).length
+  const achievementProgress = unlockedAchievementCount / ACHIEVEMENT_DEFS.length
 
-  useEffect(() => {
-    const visibleDomains = new Set(groups.map((group) => group.domain))
-    setExpandedDomains((current) => {
-      if (Array.from(current).some((domain) => visibleDomains.has(domain))) return current
-      return groups[0]?.domain ? new Set([groups[0].domain]) : new Set()
-    })
-  }, [groups])
-
-  const achievements = [
-    { key: 'first', earned: answered.size > 0, locked: false },
-    { key: 'games', earned: false, locked: true },
-    { key: 'streak', earned: false, locked: true },
-  ]
-  const nextTitle = next ? topicTitleLocalized(next.ref, next.competency, lang) : ''
-  const nextStarted = next ? (mastery[next.ref] ?? 0) > 0 : false
-
-  async function onClear() {
-    await clearHistory()
-    setHistory([])
+  function togglePreference(section) {
+    setPendingGrade(null)
+    setExpandedPreference((current) => current === section ? null : section)
   }
 
-  function toggleDomain(domain) {
-    setExpandedDomains((current) => {
-      const nextExpanded = new Set(current)
-      if (nextExpanded.has(domain)) nextExpanded.delete(domain)
-      else nextExpanded.add(domain)
-      return nextExpanded
-    })
-  }
-
-  function toggleDomainLessons(domain) {
-    setRevealedDomains((current) => {
-      const nextRevealed = new Set(current)
-      if (nextRevealed.has(domain)) nextRevealed.delete(domain)
-      else nextRevealed.add(domain)
-      return nextRevealed
-    })
+  async function confirmGradeChange() {
+    if (pendingGrade === null || pendingGrade === grade || changingGrade) return
+    setChangingGrade(true)
+    try {
+      await onChangeGrade?.(pendingGrade)
+      setPendingGrade(null)
+      setExpandedPreference(null)
+    } finally {
+      setChangingGrade(false)
+    }
   }
 
   return (
-    <main className="profile-page gb-shell">
-      <section className="profile-summary gb-card" aria-labelledby="profile-name">
-        <div className="profile-identity-row">
-          <div className="profile-identity">
-            <div className="profile-avatar-frame">
-              <Mascot size={72} alt="Nova" />
+    <main className="profile-page profile-dashboard gb-shell">
+      <section className="profile-dashboard-hero" aria-labelledby="profile-name">
+        <div className="profile-dashboard-top">
+          <div className="profile-dashboard-identity">
+            <div className="profile-dashboard-avatar">
+              <Mascot size={76} alt="Gabay" />
             </div>
-            <div className="profile-name-block">
-              <p className="profile-eyebrow">{tt('progress.title')}</p>
-              <h1 id="profile-name">{studentName || tt('profile.learner')}</h1>
-              <span className="gb-chip profile-grade-chip">{tt('home.grade', { grade })}</span>
+            <div className="profile-dashboard-name">
+              <p>My profile</p>
+              <h1 id="profile-name">{studentName || 'Hann'}</h1>
+              <span>Grade {grade}</span>
             </div>
           </div>
-          <OnlineBadge online={online} className="profile-online-badge" />
+          <OnlineBadge online={online} className="profile-dashboard-online" />
         </div>
-
-        <div className="profile-mastery-heading">
+        <div className="profile-dashboard-mastery">
+          <p>Overall mastery</p>
+          <strong>{averagePct}%</strong>
+          <div className="profile-dashboard-overall-bar" role="progressbar" aria-label="Overall mastery" aria-valuemin="0" aria-valuemax="100" aria-valuenow={averagePct}>
+            <MasteryBar score={average} />
+          </div>
+        </div>
+      </section>
+      <section className="profile-dashboard-card profile-achievements-card" aria-labelledby="achievements-title">
+        <div className="profile-achievements-heading">
           <div>
-            <p>{tt('profile.overall')}</p>
-            <strong>{Math.round(average * 100)}%</strong>
+            <h2 id="achievements-title">Achievements</h2>
+            <p>{unlockedAchievementCount} of {ACHIEVEMENT_DEFS.length} unlocked</p>
           </div>
-          <p className="profile-streak">{tt('profile.streak', { count: streak })}</p>
+          <button type="button" onClick={() => setShowAllAchievements((showing) => !showing)} aria-expanded={showAllAchievements}>
+            {showAllAchievements ? 'Show less' : 'View all'} <AchievementChevron expanded={showAllAchievements} />
+          </button>
         </div>
-        <div
-          className="profile-overall-bar"
-          role="progressbar"
-          aria-label={tt('profile.overall')}
-          aria-valuemin="0"
-          aria-valuemax="100"
-          aria-valuenow={Math.round(average * 100)}
-        >
-          <MasteryBar score={average} />
+        <div className="profile-achievements-progress" role="progressbar" aria-label="Achievement progress" aria-valuemin="0" aria-valuemax="6" aria-valuenow={unlockedAchievementCount}>
+          <span style={{ width: `${achievementProgress * 100}%` }} />
         </div>
-
-        <div className="profile-achievements" aria-label="Achievements">
-          {achievements.map((badge) => (
-            <div
-              key={badge.key}
-              className={'profile-achievement ' + (badge.earned ? 'is-earned ' : '') + (badge.locked ? 'is-locked' : '')}
-              aria-label={tt('achievement.' + badge.key) + (badge.locked ? ', ' + tt('progress.locked') : '')}
+        <div className={'profile-achievements-grid ' + (showAllAchievements ? 'is-expanded' : 'is-collapsed')}>
+          {achievements.map((achievement, index) => (
+            <button
+              type="button"
+              key={achievement.key}
+              className={'profile-achievement-item ' + (achievement.unlocked ? 'is-unlocked ' : 'is-locked ') + (revealedAchievement === achievement.key ? 'is-revealed ' : '') + (index >= 3 ? 'is-extra' : '')}
+              onClick={() => setRevealedAchievement((current) => current === achievement.key ? null : achievement.key)}
+              title={achievement.requirement}
+              aria-label={`${achievement.name}, ${achievement.unlocked ? 'unlocked' : 'locked'}. ${achievement.requirement}`}
             >
-              {badge.locked ? <LockIcon /> : <StarIcon filled={badge.earned} />}
-              <span>{tt('achievement.' + badge.key)}</span>
-            </div>
+              <span className={'profile-achievement-badge is-' + achievement.tone}>
+                <AchievementIcon kind={achievement.icon} />
+                <span className="profile-achievement-state" aria-hidden="true">
+                  {achievement.unlocked ? <CheckIcon /> : <LockMiniIcon />}
+                </span>
+              </span>
+              <strong>{achievement.name}</strong>
+              <span className="profile-achievement-requirement">{achievement.requirement}</span>
+            </button>
           ))}
-        </div>
-
-        <div className="profile-action-row">
-          <Button color="white" className="profile-change-grade" onClick={onChangeGrade}>
-            {tt('profile.changeGrade')}
-          </Button>
-          <Button color="white" className="profile-settings-btn" onClick={() => setShowSettings((v) => !v)} aria-expanded={showSettings}>
-            <SettingsIcon />
-            {tt('profile.settings')}
-          </Button>
         </div>
       </section>
 
-      {showSettings && (
-        <section className="profile-settings-panel" aria-label={tt('profile.settings')}>
-          <h2>{tt('profile.settings')}</h2>
-          <div className="profile-settings-row">
-            <span className="profile-settings-label">{tt('common.language')}</span>
-            <div className="profile-language-controls">
-              {LANGS.map((language) => (
-                <button
-                  key={language.key}
-                  type="button"
-                  onClick={() => onLang?.(language.key)}
-                  aria-pressed={lang === language.key}
-                  className={lang === language.key ? 'is-active' : ''}
-                >
-                  {language.label}
-                </button>
-              ))}
-            </div>
+      <section className="profile-stat-grid" aria-label="Learning summary">
+        <article className="profile-stat-card is-yellow">
+          <span className="profile-stat-icon" aria-hidden="true"><FlameIcon /></span>
+          <div className="profile-stat-copy">
+            <small>Current streak</small>
+            <strong>{streak} day{streak === 1 ? '' : 's'}</strong>
+            <span>Keep it going!</span>
           </div>
-        </section>
-      )}
-
-      {view === 'mastery' && next && (
-        <Card color="yellow" className="profile-next-card gb-pop">
-          <TopicArtwork lesson={next} title={nextTitle} />
-          <div className="profile-next-main">
-            <div className="profile-next-copy">
-              <p>{tt('progress.nextUp')}</p>
-              <h2>{nextTitle}</h2>
-            </div>
-            <Button color="white" className="profile-next-button" onClick={() => onPick(next)}>
-              {tt(nextStarted ? 'progress.continue' : 'progress.start')} <ArrowIcon />
-            </Button>
+        </article>
+        <article className="profile-stat-card is-mint">
+          <span className="profile-stat-icon" aria-hidden="true"><BookIcon /></span>
+          <div className="profile-stat-copy">
+            <small>Your lessons</small>
+            <strong>{lessonsStarted} lesson{lessonsStarted === 1 ? '' : 's'}</strong>
+            <span>{lessonsInProgress} in progress</span>
           </div>
-        </Card>
-      )}
-
-      <div className="profile-view-tabs" role="tablist" aria-label={tt('progress.title')}>
-        <button type="button" role="tab" aria-selected={view === 'mastery'} onClick={() => setView('mastery')} className={view === 'mastery' ? 'is-active' : ''}>
-          {tt('progress.tab.mastery')}
+        </article>
+      </section>
+      <section className="profile-dashboard-card profile-preferences-card" aria-labelledby="preferences-title">
+        <h2 id="preferences-title">Preferences</h2>
+        <button type="button" className="profile-preference-row" onClick={() => togglePreference('grade')} aria-expanded={expandedPreference === 'grade'}>
+          <span className="profile-preference-icon is-yellow" aria-hidden="true"><CapIcon /></span>
+          <strong>Grade level</strong><span className="profile-preference-value">Grade {grade}</span><ChevronIcon expanded={expandedPreference === 'grade'} />
         </button>
-        <button type="button" role="tab" aria-selected={view === 'review'} onClick={() => setView('review')} className={view === 'review' ? 'is-active' : ''}>
-          {tt('progress.tab.review')}
-        </button>
-      </div>
-
-      {view === 'mastery' ? (
-        <section className="profile-lessons" aria-labelledby="profile-lessons-title">
-          <h2 id="profile-lessons-title">{tt('progress.lessonsHeading')}</h2>
-          <div className="profile-filter-tabs" role="group" aria-label={tt('progress.filterLabel')}>
-            {['all', 'started', 'completed'].map((value) => (
+        {expandedPreference === 'grade' && (
+          <div className="profile-option-grid is-grade" aria-label="Choose grade level">
+            {[4, 5, 6].map((optionGrade) => (
               <button
+                key={optionGrade}
                 type="button"
-                key={value}
-                aria-pressed={filter === value}
-                className={filter === value ? 'is-active' : ''}
-                onClick={() => setFilter(value)}
+                className={optionGrade === grade ? 'is-active' : ''}
+                aria-pressed={optionGrade === grade}
+                onClick={() => optionGrade !== grade && setPendingGrade(optionGrade)}
               >
-                {tt('progress.filter.' + value)}
+                <span>Grade {optionGrade}</span>{optionGrade === grade && <CheckIcon />}
               </button>
             ))}
           </div>
-          <div className="profile-sort-row">
-            <span>{tt('progress.sortBy')}</span>
-            <div className="profile-sort-buttons">
-              <button type="button" onClick={() => setSort('asc')} className={sort === 'asc' ? 'is-active' : ''}>
-                <SortArrowIcon direction="up" />
-                <span>{tt('progress.asc')}</span>
+        )}
+        <button type="button" className="profile-preference-row" onClick={() => togglePreference('language')} aria-expanded={expandedPreference === 'language'}>
+          <span className="profile-preference-icon is-mint" aria-hidden="true"><GlobeIcon /></span>
+          <strong>{tt('common.language')}</strong><span className="profile-preference-value">{languageLabel}</span><ChevronIcon expanded={expandedPreference === 'language'} />
+        </button>
+        {expandedPreference === 'language' && (
+          <div className="profile-option-grid is-language" aria-label="Choose language">
+            {LANGS.map((language) => (
+              <button key={language.key} type="button" onClick={() => onLang?.(language.key)} aria-pressed={lang === language.key} className={lang === language.key ? 'is-active' : ''}>
+                <span>{language.label}</span>{lang === language.key && <CheckIcon />}
               </button>
-              <button type="button" onClick={() => setSort('desc')} className={sort === 'desc' ? 'is-active' : ''}>
-                <span>{tt('progress.desc')}</span>
-                <SortArrowIcon direction="down" />
-              </button>
+            ))}
+          </div>
+        )}
+      </section>
+      {pendingGrade !== null && (
+        <div className="profile-confirm-backdrop" role="presentation">
+          <section className="profile-grade-confirm" role="alertdialog" aria-modal="true" aria-labelledby="profile-grade-confirm-title" aria-describedby="profile-grade-confirm-copy">
+            <span className="profile-grade-warning" aria-hidden="true"><WarningIcon /></span>
+            <h2 id="profile-grade-confirm-title">{tt('gradePicker.confirmTitle', { grade: pendingGrade })}</h2>
+            <p id="profile-grade-confirm-copy">{tt('gradePicker.confirm')}</p>
+            <div className="profile-grade-confirm-actions">
+              <Button color="mint" onClick={confirmGradeChange} disabled={changingGrade}>
+                <CheckIcon /> {tt('gradePicker.yesChange')}
+              </Button>
+              <Button color="white" onClick={() => setPendingGrade(null)} disabled={changingGrade}>
+                <XIcon /> {tt('gradePicker.noKeep', { grade })}
+              </Button>
             </div>
-          </div>
-
-          <div className="profile-domain-list">
-            {!groups.length && (
-              <Card color="cream" className="profile-filter-empty">
-                <strong>{tt('progress.filterEmptyTitle')}</strong>
-                <span>{tt('progress.filterEmptyBody')}</span>
-              </Card>
-            )}
-            {groups.map(({ domain, lessons, allLessons }) => {
-              const expanded = expandedDomains.has(domain)
-              const revealed = revealedDomains.has(domain)
-              const localizedDomain = tt('domain.' + domain)
-              const domainLabel = localizedDomain.startsWith('domain.') ? domain : localizedDomain
-              const completed = allLessons.filter(isLessonCompleted).length
-              const domainScore = allLessons.length
-                ? allLessons.reduce((sum, lesson) => sum + lesson.s, 0) / allLessons.length
-                : 0
-              const visibleLessons = revealed ? lessons : lessons.slice(0, INITIAL_VISIBLE_LESSONS)
-              const hiddenCount = Math.max(0, lessons.length - INITIAL_VISIBLE_LESSONS)
-
-              return (
-                <article key={domain} className={'profile-domain-card ' + (expanded ? 'is-expanded' : '')}>
-                  <button type="button" className="profile-domain-toggle" onClick={() => toggleDomain(domain)} aria-expanded={expanded}>
-                    <DomainArtwork domain={domain} />
-                    <span className="profile-domain-copy">
-                      <strong>{domainLabel}</strong>
-                      <small>{tt('progress.completedCount', { completed, total: allLessons.length })}</small>
-                      <span
-                        className="profile-domain-progress"
-                        role="progressbar"
-                        aria-label={domainLabel + ' ' + tt('common.mastery')}
-                        aria-valuemin="0"
-                        aria-valuemax="100"
-                        aria-valuenow={Math.round(domainScore * 100)}
-                      >
-                        <MasteryBar score={domainScore} />
-                      </span>
-                    </span>
-                    <ChevronIcon expanded={expanded} />
-                  </button>
-
-                  {expanded && (
-                    <div className="profile-domain-lessons">
-                      {visibleLessons.map(({ c, s }) => {
-                        const color = masteryColor(s)
-                        const recommended = next?.ref === c.ref
-                        const completedLesson = isLessonCompleted({ s })
-                        const startedLesson = s > 0 && !completedLesson
-                        const pct = Math.round(s * 100)
-                        const lessonTitle = topicTitleLocalized(c.ref, c.competency, lang)
-                        const actionLabel = recommended
-                          ? tt(startedLesson ? 'progress.continue' : 'progress.start')
-                          : tt(completedLesson ? 'progress.reviewLesson' : startedLesson ? 'progress.continue' : 'progress.start')
-                        return (
-                          <button
-                            type="button"
-                            key={c.ref}
-                            className={'profile-lesson-row ' + (recommended ? 'is-recommended ' : '') + (completedLesson ? 'is-completed' : '')}
-                            onClick={() => onPick(c)}
-                          >
-                            <LessonArtwork lesson={c} title={lessonTitle} />
-                            <span className="profile-lesson-copy">
-                              <strong>{lessonTitle}</strong>
-                              {recommended && <span className="profile-recommended-chip">{tt('progress.recommended')}</span>}
-                              {!recommended && (
-                                <small>
-                                  {completedLesson
-                                    ? tt('progress.completed')
-                                    : startedLesson
-                                      ? tt('progress.lessonProgress', { pct })
-                                      : tt('progress.notStarted')}
-                                </small>
-                              )}
-                              {s > 0 && (
-                                <span
-                                  className="profile-lesson-progress"
-                                  role="progressbar"
-                                  aria-label={lessonTitle + ' ' + tt('common.mastery')}
-                                  aria-valuemin="0"
-                                  aria-valuemax="100"
-                                  aria-valuenow={pct}
-                                >
-                                  <MasteryBar score={s} />
-                                  <b>{pct}%</b>
-                                </span>
-                              )}
-                            </span>
-                            <span className={'profile-lesson-action ' + (recommended ? 'is-primary' : '')}>
-                              {actionLabel}
-                            </span>
-                            {s > 0 && <span className={'profile-band-dot ' + color.bg} aria-hidden="true" />}
-                          </button>
-                        )
-                      })}
-                      {lessons.length > INITIAL_VISIBLE_LESSONS && (
-                        <button
-                          type="button"
-                          className="profile-show-more"
-                          aria-expanded={revealed}
-                          onClick={() => toggleDomainLessons(domain)}
-                        >
-                          {revealed ? tt('progress.showLess') : tt('progress.showMore', { count: hiddenCount })}
-                          <ChevronIcon expanded={revealed} />
-                        </button>
-                      )}
-                    </div>
-                  )}
-                </article>
-              )
-            })}
-          </div>
-        </section>
-      ) : (
-        <ReviewList history={history} competencies={competencies} onClear={onClear} tt={tt} />
+          </section>
+        </div>
       )}
     </main>
   )
 }
 
-function ReviewList({ history, competencies = [], onClear, tt }) {
-  if (!history.length) {
-    return (
-      <Card color="cream" className="profile-empty-review gb-pop">
-        <p>{tt('progress.empty.title')}</p>
-        <span>{tt('progress.empty.sub')}</span>
-      </Card>
-    )
-  }
-  const competencyByRef = new Map(competencies.map((competency) => [competency.ref, competency]))
-
-  return (
-    <section className="profile-review-list">
-      <div className="profile-review-heading">
-        <span>{tt('progress.yourAnswers')}</span>
-        <button type="button" onClick={onClear}>{tt('progress.clear')}</button>
-      </div>
-      {history.map((h, i) => {
-        const domain = competencyByRef.get(h.ref)?.domain || reviewDomainFromRef(h.ref)
-        const translatedDomain = tt('domain.' + domain)
-        const category = translatedDomain.startsWith('domain.') ? domain : translatedDomain
-
-        return (
-          <Card
-            key={h.ref + '-' + i}
-            color="cream"
-            className={'profile-review-card ' + (h.correct ? 'is-correct' : 'is-incorrect')}
-          >
-            <div className="profile-review-meta">
-              <span className="profile-review-category">
-                <ReviewCategoryIcon />
-                <span>{category}</span>
-              </span>
-              <span className="profile-review-result">
-                <ReviewResultIcon correct={h.correct} />
-                <span>{h.correct ? tt('common.correct') : tt('common.wrong')}</span>
-              </span>
-            </div>
-
-            <div className="profile-review-question">
-              <span>{tt('common.question')}</span>
-              <p><RichText>{h.q}</RichText></p>
-            </div>
-
-            <div className="profile-review-divider" aria-hidden="true" />
-
-            <div className="profile-review-answers">
-              <div className="profile-review-answer-panel">
-                <span>{tt('common.yourAnswer')}</span>
-                <p><RichText>{h.your || '—'}</RichText></p>
-              </div>
-              <div className="profile-review-answer-panel">
-                <span>{tt('common.correctAnswer')}</span>
-                <p><RichText>{h.answer}</RichText></p>
-              </div>
-            </div>
-
-            {h.feedback && (
-              <div className="profile-review-feedback">
-                <span className="profile-review-feedback-icon" aria-hidden="true">
-                  <LightbulbIcon size={23} />
-                </span>
-                <div>
-                  <span>{tt('common.feedback')}</span>
-                  <p><RichText>{h.feedback}</RichText></p>
-                </div>
-              </div>
-            )}
-          </Card>
-        )
-      })}
-    </section>
-  )
+function FlameIcon() {
+  return <svg viewBox="0 0 48 56" width="42" height="46" aria-hidden="true"><path d="M27 3c3 10-2 13 5 20 4-4 4-8 3-11 8 7 11 16 9 25-2 10-10 16-20 16S5 46 4 36C3 26 9 18 16 10c0 8 3 11 5 13 5-7 5-13 6-20Z" fill="#ff6a2a" stroke="#1c1410" strokeWidth="2.5" strokeLinejoin="round" /><path d="M24 27c5 6 8 10 6 16-1 4-4 7-8 7-5 0-8-4-8-9 0-4 3-8 7-12 0 4 1 5 3 7 2-3 1-6 0-9Z" fill="#ffe783" /></svg>
 }
 
-function reviewDomainFromRef(ref = '') {
-  if (/^\d*MG/i.test(ref)) return 'Measurement and Geometry'
-  if (/^\d*SP/i.test(ref)) return 'Statistics and Probability'
-  return 'Number and Algebra'
+function BookIcon() {
+  return <svg viewBox="0 0 56 48" width="48" height="42" aria-hidden="true"><path d="M4 7h19c4 0 6 2 6 5v30c-2-3-5-4-9-4H4V7Z" fill="#fff" stroke="#1c1410" strokeWidth="2.5" strokeLinejoin="round" /><path d="M52 7H33c-4 0-6 2-6 5v30c2-3 5-4 9-4h16V7Z" fill="#fff" stroke="#1c1410" strokeWidth="2.5" strokeLinejoin="round" /><path d="M4 11H1v32h19c4 0 6 1 8 3 2-2 4-3 8-3h19V11h-3" fill="none" stroke="#2584ea" strokeWidth="3" strokeLinejoin="round" /></svg>
 }
 
-function ReviewCategoryIcon() {
-  return (
-    <svg viewBox="0 0 20 20" width="16" height="16" aria-hidden="true">
-      <rect x="4" y="3" width="12" height="14" rx="1.5" fill="none" stroke="currentColor" strokeWidth="1.8" />
-      <path d="M7 6h6M7 9h6" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
-    </svg>
-  )
+function CapIcon() {
+  return <svg viewBox="0 0 48 38" width="34" height="28" aria-hidden="true"><path d="m3 13 21-10 21 10-21 10L3 13Z" fill="#1c1410" stroke="#1c1410" strokeWidth="2" strokeLinejoin="round" /><path d="M12 18v9c7 6 17 6 24 0v-9" fill="#1c1410" stroke="#1c1410" strokeWidth="2" strokeLinejoin="round" /><path d="M44 14v12" stroke="#1c1410" strokeWidth="2.5" strokeLinecap="round" /><circle cx="44" cy="28" r="2.5" fill="#f7d26a" stroke="#1c1410" strokeWidth="1.5" /></svg>
 }
 
-function ReviewResultIcon({ correct }) {
-  return (
-    <svg viewBox="0 0 20 20" width="17" height="17" aria-hidden="true">
-      <circle cx="10" cy="10" r="7.5" fill="none" stroke="currentColor" strokeWidth="1.7" />
-      {correct
-        ? <path d="m6.5 10 2.2 2.2 4.8-5" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
-        : <path d="m7.3 7.3 5.4 5.4m0-5.4-5.4 5.4" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />}
-    </svg>
-  )
-}
-
-function TopicArtwork({ lesson, title }) {
-  return (
-    <div className="profile-topic-art" aria-hidden="true">
-      <LessonIcon
-        refId={lesson.ref}
-        title={title}
-        competency={lesson.competency}
-        domain={lesson.domain}
-        size={52}
-      />
-    </div>
-  )
-}
-
-function DomainArtwork({ domain = '' }) {
-  return <span className="profile-domain-art" aria-hidden="true"><DomainGlyph domain={domain} size={42} /></span>
-}
-
-function LessonArtwork({ lesson, title }) {
-  const palette = /SP|DP/.test(lesson.ref) ? 'rose' : /MG/.test(lesson.ref) ? 'mint' : 'yellow'
-  return (
-    <span className={'profile-lesson-art is-' + palette} aria-hidden="true">
-      <LessonIcon
-        refId={lesson.ref}
-        title={title}
-        competency={lesson.competency}
-        domain={lesson.domain}
-        size={28}
-      />
-    </span>
-  )
-}
-
-function DomainGlyph({ domain = '', size = 36 }) {
-  if (/probability|statistics|data/i.test(domain)) {
-    return (
-      <svg viewBox="0 0 48 48" width={size} height={size}>
-        <path d="M9 38V25h7v13M21 38V13h7v25M33 38V20h7v18" fill="none" stroke="currentColor" strokeWidth="4" strokeLinejoin="round" />
-        <path d="M6 39h36" stroke="currentColor" strokeWidth="3" strokeLinecap="round" />
-      </svg>
-    )
-  }
-  if (/measurement|geometry/i.test(domain)) {
-    return (
-      <svg viewBox="0 0 48 48" width={size} height={size}>
-        <path d="M8 39 23 9l17 30Z" fill="none" stroke="currentColor" strokeWidth="4" strokeLinejoin="round" />
-        <path d="m15 33 15-1-9-11Z" fill="none" stroke="currentColor" strokeWidth="3" strokeLinejoin="round" />
-      </svg>
-    )
-  }
-  return (
-    <svg viewBox="0 0 48 48" width={size} height={size}>
-      <path d="M9 18h30M9 31h30M19 9l-4 30M33 9l-4 30" fill="none" stroke="currentColor" strokeWidth="4" strokeLinecap="round" />
-    </svg>
-  )
-}
-
-function StarIcon({ filled = false }) {
-  return (
-    <svg viewBox="0 0 32 32" width="27" height="27" aria-hidden="true">
-      <path d="m16 3 3.8 8 8.7 1.1-6.4 6 1.7 8.6-7.8-4.2-7.8 4.2 1.7-8.6-6.4-6 8.7-1.1Z" fill={filled ? '#1c1410' : 'none'} stroke="#1c1410" strokeWidth="2.5" strokeLinejoin="round" />
-    </svg>
-  )
-}
-
-function LockIcon() {
-  return (
-    <svg viewBox="0 0 32 32" width="27" height="27" aria-hidden="true">
-      <rect x="7" y="14" width="18" height="14" rx="3" fill="#8b8175" stroke="#1c1410" strokeWidth="2.5" />
-      <path d="M11 14V10a5 5 0 0 1 10 0v4" fill="none" stroke="#1c1410" strokeWidth="2.5" strokeLinecap="round" />
-      <circle cx="16" cy="20" r="1.7" fill="#fff" />
-      <path d="M16 21v3" stroke="#fff" strokeWidth="2" strokeLinecap="round" />
-    </svg>
-  )
+function GlobeIcon() {
+  return <svg viewBox="0 0 24 24" width="27" height="27" aria-hidden="true" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="9" /><path d="M3 12h18M12 3c3 3 4 6 4 9s-1 6-4 9c-3-3-4-6-4-9s1-6 4-9Z" /></svg>
 }
 
 function ChevronIcon({ expanded = false }) {
-  return (
-    <svg viewBox="0 0 24 24" width="28" height="28" className={'profile-chevron ' + (expanded ? 'is-expanded' : '')} aria-hidden="true">
-      <path d="m6 9 6 6 6-6" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
-    </svg>
-  )
+  return <svg className={expanded ? 'is-expanded' : ''} viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" fill="none" stroke="currentColor" strokeWidth="2.8" strokeLinecap="round" strokeLinejoin="round"><path d="m9 5 7 7-7 7" /></svg>
 }
 
-function ArrowIcon() {
-  return (
-    <svg viewBox="0 0 24 24" width="23" height="23" aria-hidden="true">
-      <path d="M4 12h15m-5-5 5 5-5 5" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
-    </svg>
-  )
+function CheckIcon() {
+  return <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><path d="m5 12 4 4L19 6" /></svg>
 }
 
-function SettingsIcon() {
-  return (
-    <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
-      <circle cx="12" cy="12" r="3" />
-      <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41" />
-    </svg>
-  )
+function WarningIcon() {
+  return <svg viewBox="0 0 48 48" width="46" height="46" aria-hidden="true"><path d="M24 5 44 40H4Z" fill="#ffd45e" stroke="currentColor" strokeWidth="3" strokeLinejoin="round" /><path d="M24 17v11m0 6v.5" fill="none" stroke="currentColor" strokeWidth="4" strokeLinecap="round" /></svg>
 }
 
-function SortArrowIcon({ direction = 'up' }) {
-  const down = direction === 'down'
-  return (
-    <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
-      <path
-        d={down ? 'M12 4v16m-6-6 6 6 6-6' : 'M12 20V4m-6 6 6-6 6 6'}
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="2.5"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
-  )
+function XIcon() {
+  return <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><circle cx="12" cy="12" r="10" fill="currentColor" /><path d="m8.5 8.5 7 7m0-7-7 7" fill="none" stroke="#fffdf8" strokeWidth="2.3" strokeLinecap="round" /></svg>
+}
+
+function hasPerfectQuiz(history, currentRefs) {
+  let activeRef = null
+  let correctRun = 0
+  for (const attempt of history) {
+    if (!currentRefs.has(attempt.ref)) continue
+    if (!attempt.correct) {
+      activeRef = null
+      correctRun = 0
+      continue
+    }
+    if (attempt.ref === activeRef) correctRun += 1
+    else {
+      activeRef = attempt.ref
+      correctRun = 1
+    }
+    if (correctRun >= 5) return true
+  }
+  return false
+}
+
+function AchievementChevron({ expanded = false }) {
+  return <svg className={expanded ? 'is-expanded' : ''} viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="m6 9 6 6 6-6" fill="none" stroke="currentColor" strokeWidth="2.6" strokeLinecap="round" strokeLinejoin="round" /></svg>
+}
+
+function LockMiniIcon() {
+  return <svg viewBox="0 0 24 24" width="17" height="17" aria-hidden="true"><rect x="6" y="10" width="12" height="10" rx="2" fill="currentColor" /><path d="M9 10V7.5a3 3 0 0 1 6 0V10" fill="none" stroke="currentColor" strokeWidth="2" /><circle cx="12" cy="15" r="1.2" fill="#fff" /></svg>
+}
+
+function AchievementIcon({ kind }) {
+  if (kind === 'shape') {
+    return <svg viewBox="0 0 64 64" aria-hidden="true"><path d="M10 52 29 15l19 37H10Z" fill="#fff" stroke="currentColor" strokeWidth="3" strokeLinejoin="round" /><path d="m18 46 11-21 11 21H18Z" fill="none" stroke="currentColor" strokeWidth="2.5" /><path d="M42 12h10v40H42Z" fill="#f7d26a" stroke="currentColor" strokeWidth="2.5" transform="rotate(-12 47 32)" /><path d="M46 18h6m-6 7h4m-4 7h6m-6 7h4" stroke="currentColor" strokeWidth="1.6" /></svg>
+  }
+  if (kind === 'number') {
+    return <svg viewBox="0 0 64 64" aria-hidden="true"><rect x="10" y="10" width="44" height="44" rx="8" fill="#fff" stroke="currentColor" strokeWidth="3" /><rect x="17" y="17" width="30" height="12" rx="3" fill="#a9ddf4" stroke="currentColor" strokeWidth="2" /><path d="M19 38h26M26 32v20M38 32v20" stroke="currentColor" strokeWidth="2.5" /><circle cx="21" cy="43" r="2" fill="#f7d26a" /><circle cx="33" cy="37" r="2" fill="#8fd9b6" /><circle cx="43" cy="48" r="2" fill="#f4a9bf" /></svg>
+  }
+  if (kind === 'data') {
+    return <svg viewBox="0 0 64 64" aria-hidden="true"><path d="M10 52h34M15 47V34h8v13m4 0V22h8v25m4 0V14h8v33" fill="#f7d26a" stroke="currentColor" strokeWidth="3" strokeLinejoin="round" /><circle cx="43" cy="39" r="11" fill="#fff" stroke="currentColor" strokeWidth="3" /><path d="m51 47 8 8" stroke="currentColor" strokeWidth="4" strokeLinecap="round" /></svg>
+  }
+  if (kind === 'flame') return <FlameIcon />
+  if (kind === 'quiz') {
+    return <svg viewBox="0 0 64 64" aria-hidden="true"><path d="m32 7 7 15 17 2-12 12 3 17-15-8-15 8 3-17L8 24l17-2Z" fill="#fff" stroke="currentColor" strokeWidth="3" strokeLinejoin="round" /><path d="m23 33 6 6 13-14" fill="none" stroke="#43a977" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" /></svg>
+  }
+  return <svg viewBox="0 0 64 64" aria-hidden="true"><path d="M18 11h28v13c0 11-6 19-14 19s-14-8-14-19V11Z" fill="#f7d26a" stroke="currentColor" strokeWidth="3" /><path d="M18 16H9v7c0 7 5 11 12 11m25-18h9v7c0 7-5 11-12 11M32 43v8m-10 4h20" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" /><path d="m32 17 3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1Z" fill="#fff" stroke="currentColor" strokeWidth="2" /></svg>
 }

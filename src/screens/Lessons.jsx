@@ -164,12 +164,10 @@ export default function Lessons({ competencies, mastery, next, studentName = '',
           <div className="profile-sort-row">
             <span>{tt('progress.sortBy')}</span>
             <div className="profile-sort-buttons">
-              <button type="button" onClick={() => setSort('asc')} className={sort === 'asc' ? 'is-active' : ''}>
+              <button type="button" onClick={() => setSort('asc')} className={sort === 'asc' ? 'is-active' : ''} aria-label={tt('progress.asc')}>
                 <SortArrowIcon direction="up" />
-                <span>{tt('progress.asc')}</span>
               </button>
-              <button type="button" onClick={() => setSort('desc')} className={sort === 'desc' ? 'is-active' : ''}>
-                <span>{tt('progress.desc')}</span>
+              <button type="button" onClick={() => setSort('desc')} className={sort === 'desc' ? 'is-active' : ''} aria-label={tt('progress.desc')}>
                 <SortArrowIcon direction="down" />
               </button>
             </div>

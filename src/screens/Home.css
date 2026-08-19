@@ -71,6 +71,12 @@ body:has(.home-dashboard) > #root > button[aria-pressed] { bottom: calc(5.8rem +
     right: calc((100vw - 430px) / 2 - 4rem);
   }
 }
+@media (min-width: 500px) {
+  .home-header {
+    top: -20px;
+    padding-top: calc(max(.65rem, env(safe-area-inset-top)) + 20px);
+  }
+}
 /* Keep the dynamic grade aligned beside every localized greeting; the greeting scales with translation length. */
 .home-greeting-row {
   display: flex;

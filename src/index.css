@@ -55,7 +55,7 @@ body {
 /* App is a phone-width column, centered on larger screens */
 .gb-shell {
   width: 100%;
-  max-width: 430px;
+  max-width: 440px;
   margin: 0 auto;
   min-height: 100%;
   position: relative;
@@ -75,9 +75,9 @@ body {
   }
 
   #root {
-    width: 393px;
-    height: min(852px, calc(100dvh - 96px));
-    border-radius: 36px;
+    width: 440px;
+    height: min(956px, calc(100dvh - 96px));
+    border-radius: 44px;
     overflow: hidden;
     box-shadow:
       0 24px 64px rgba(0, 0, 0, 0.30),
@@ -406,5 +406,56 @@ body {
     background-image: url('/gabay-background.webp'), url('/gabay-background.webp');
     background-position: center, center;
     background-size: auto 100%, cover;
+  }
+}
+
+/* Phone-frame context: fix vw-based widths, natural top-down flow */
+@media (min-width: 500px) {
+  /* bg-image must fill the full frame even when content is shorter */
+  .splash-page {
+    height: 100%;
+    min-height: unset;
+  }
+
+  .splash-content {
+    /* don't constrain height — let content flow naturally from top */
+    min-height: 100%;
+    height: auto;
+    padding-top: 3.5rem;
+    padding-bottom: 3rem;
+    justify-content: flex-start;
+  }
+
+  .splash-mascot-stage {
+    flex: none;
+    min-height: 14rem;
+  }
+
+  /* Fixed rem avoids circular-% issue (stage has no defined width) */
+  .splash-mascot {
+    width: 15.5rem !important;
+    max-height: unset;
+  }
+
+  .splash-info-card {
+    width: min(88%, 34rem);
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    flex-shrink: 0;
+  }
+
+  .splash-title {
+    font-size: 5rem;
+  }
+
+  .splash-tagline {
+    font-size: 1.05rem;
+    white-space: nowrap;
+    margin-top: 0.6rem;
+  }
+
+  .splash-start-button.gb-btn {
+    width: min(72%, 27rem);
+    flex-shrink: 0;
   }
 }

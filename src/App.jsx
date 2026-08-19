@@ -1,9 +1,10 @@
 import { lazy, Suspense, useEffect, useRef, useState } from 'react'
-import { get } from 'idb-keyval'
+import { get, set } from 'idb-keyval'
 import { loadContentByGrade } from './lib/content.js'
 import {
   loadDueForGrade,
   loadMasteryForGrade,
+  clearMasteryForGrade,
   migrateMastery,
   pickNext,
   recordAnswer,
@@ -13,13 +14,11 @@ import { loadLang, saveLang, DEFAULT_LANG } from './lib/lang.js'
 import { t } from './lib/i18n.js'
 import Splash from './screens/Splash.jsx'
 import Onboarding from './screens/Onboarding.jsx'
-import Home from './screens/Home.jsx'
-import StartChoice from './screens/StartChoice.jsx'
+import Lessons from './screens/Lessons.jsx'
 import TopicPicker from './screens/TopicPicker.jsx'
 import LessonBrief from './screens/LessonBrief.jsx'
 import Classroom from './screens/Classroom.jsx'
 import Progress from './screens/Progress.jsx'
-import GradePicker from './screens/GradePicker.jsx'
 import Games from './screens/Games.jsx'
 import Generating from './screens/Generating.jsx'
 import BottomNav from './ui/BottomNav.jsx'
@@ -150,13 +149,19 @@ export default function App() {
     await refreshLearning(grade)
   }
 
-  async function handleGradeChanged(nextGrade) {
+  async function handleGradeChanged(nextGrade, destination = 'home') {
     setGrade(nextGrade)
     setActive(null)
     setCurrent(null)
     const [nextContent] = await Promise.all([loadContentByGrade(nextGrade), refreshLearning(nextGrade)])
     setContent(nextContent)
-    setScreen('home')
+    setScreen(destination)
+  }
+
+  async function handleProfileGradeChanged(nextGrade) {
+    await clearMasteryForGrade(grade)
+    await set('gabay:selectedGrade', nextGrade)
+    await handleGradeChanged(nextGrade, 'progress')
   }
 
   switch (screen) {
@@ -188,30 +193,17 @@ export default function App() {
       )
 
     case 'home':
-      return withNav('lessons', (
-        <Home
-          online={online}
-          lang={lang}
-          studentName={studentName}
-          grade={grade}
-          onPick={(door) => setScreen(door === 'games' ? 'games' : 'start')}
-        />
-      ))
-
     case 'start':
       return withNav('lessons', (
-        <StartChoice
-          online={online}
+        <Lessons
           lang={lang}
-          next={current ?? next}
+          competencies={content}
           mastery={mastery}
+          next={next}
+          studentName={studentName}
           grade={grade}
-          onAuto={goBrief}
-          onBrowse={() => {
-            setTopicMode('browse')
-            setScreen('topics')
-          }}
-          onBack={() => setScreen('home')}
+          online={online}
+          onPick={goBrief}
         />
       ))
 
@@ -290,15 +282,10 @@ export default function App() {
           mastery={mastery}
           grade={grade}
           studentName={studentName}
-          next={next}
-          onPick={goBrief}
-          onChangeGrade={() => setScreen('gradePicker')}
+          onChangeGrade={handleProfileGradeChanged}
           onLang={changeLang}
         />
       ))
-
-    case 'gradePicker':
-      return <GradePicker currentGrade={grade} lang={lang} onDone={handleGradeChanged} onBack={() => setScreen('progress')} />
 
     case 'games':
       return withNav('games', (
@@ -306,6 +293,17 @@ export default function App() {
       ))
 
     default:
-      return <Home online={online} lang={lang} studentName={studentName} grade={grade} onPick={() => setScreen('start')} />
+      return withNav('lessons', (
+        <Lessons
+          lang={lang}
+          competencies={content}
+          mastery={mastery}
+          next={next}
+          studentName={studentName}
+          grade={grade}
+          online={online}
+          onPick={goBrief}
+        />
+      ))
   }
 }

@@ -536,11 +536,11 @@ export default function Classroom({ competency, questions, questionSource = 'bun
               <p className="mb-1 text-xs font-bold text-ink/60">
                 {(reply.source && tt(SOURCE_KEY[reply.source])) || ''} {reply.fromCache ? ' - cached' : ''}
               </p>
-              <p className="text-base leading-snug">{reply.text}</p>
+              <p className="text-base leading-snug">{reply.text.replace(/\*\*/g, '')}</p>
               {isSpeechSupported() && (
                 <button
                   className="mt-2 flex h-10 w-10 items-center justify-center rounded-full border-[2.5px] border-outline bg-white shadow-hard-sm"
-                  onClick={() => speak(reply.text, { lang })}
+                  onClick={() => speak(reply.text.replace(/\*\*/g, ''), { lang })}
                   aria-label={tt('class.listenAgain')}
                   title={tt('class.listenAgain')}
                 >

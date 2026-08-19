@@ -61,6 +61,37 @@ body {
   position: relative;
 }
 
+/* Phone frame mockup — desktop/tablet only */
+@media (min-width: 500px) {
+  body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 40px 0;
+  }
+
+  #root {
+    width: 393px;
+    height: 852px;
+    border-radius: 36px;
+    overflow: hidden;
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.25);
+    position: relative;
+    flex-shrink: 0;
+    transform: translateZ(0);
+  }
+
+  .gb-shell {
+    max-width: 100%;
+    height: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding-top: 14px;
+    box-sizing: border-box;
+  }
+}
+
 @keyframes gb-pop {
   0% { transform: scale(0.96); opacity: 0; }
   100% { transform: scale(1); opacity: 1; }

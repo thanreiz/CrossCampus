@@ -487,9 +487,44 @@ function GameBadges({ game, tt, className = '' }) {
   )
 }
 
+function parseStatementQuestion(text) {
+  const match = text.match(/^Is this (?:solution|statement) correct\? (.+?)\s+Proposed answer:\s+(.+)$/)
+  if (!match) return null
+  const body = match[1].replace(/\.$/, '')
+  const answer = match[2]
+  let statement = buildStatement(body, answer)
+  return { statement }
+}
+
+function buildStatement(body, answer) {
+  // "Compute [mentally]: X" → "X = answer"
+  const computeLeadMatch = body.match(/^Compute(?: mentally)?:\s*(.+)/)
+  if (computeLeadMatch) return `${computeLeadMatch[1]} = ${answer}`
+
+  // "..., compute X" embedded (e.g. "At a sari-sari store, compute ₱72.46 - ₱17.37")
+  const computeEmbedMatch = body.match(/,\s*compute\s+(.+)$/i)
+  if (computeEmbedMatch) return `${computeEmbedMatch[1]} = ${answer}`
+
+  // "Name [thing]" → "The [answer] is [thing]."
+  const nameMatch = body.match(/^Name (.+)/)
+  if (nameMatch) return `The ${answer} is ${nameMatch[1].toLowerCase().replace(/\.$/, '')}.`
+
+  // "Find/Calculate/Estimate [property]" → body = answer
+  const findMatch = body.match(/^(?:Find|Calculate|Estimate)\s+(.+)/i)
+  if (findMatch) return `${body.replace(/\.$/, '')} = ${answer}`
+
+  // "What is [X]?" / "Which [X]?" → "[Answer]" (concise)
+  const whatMatch = body.match(/(?:What|Which|How)\s+.+\?$/)
+  if (whatMatch) return answer
+
+  // Default: show answer as a statement
+  return answer
+}
+
 function GameQuestionCard({ round, game, lang, tt, currentIndex, total, result, feedback }) {
   const question = localize(round.q, lang)
   const title = localize(round.title, lang)
+  const parsed = parseStatementQuestion(question)
 
   return (
     <section className={`game-question-card gb-pop relative z-10 ${result === false ? 'answer-shake' : ''}`}>
@@ -510,7 +545,14 @@ function GameQuestionCard({ round, game, lang, tt, currentIndex, total, result, 
       <div className="game-question-supporting">
         <p className="game-question-actor">{tt(`games.${game.key}.actor`)}</p>
         <div className="game-question-copy">
-          <RichText>{question}</RichText>
+          {parsed ? (
+            <>
+              <p className="font-bold">Is this statement correct?</p>
+              <p>{parsed.statement}</p>
+            </>
+          ) : (
+            <RichText>{question}</RichText>
+          )}
         </div>
         <QuestionVisual question={question} className="game-question-visual" />
       </div>

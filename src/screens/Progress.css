@@ -1350,6 +1350,10 @@
   padding-top: 1.15rem;
 }
 
+.profile-dashboard > * {
+  flex-shrink: 0;
+}
+
 .profile-dashboard-hero,
 .profile-dashboard-card,
 .profile-stat-card {

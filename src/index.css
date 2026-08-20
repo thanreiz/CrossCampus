@@ -40,8 +40,16 @@
 
 html,
 body,
+.phone-chassis,
+.phone-screen-bezel,
 #root {
   height: 100%;
+}
+
+/* Mobile: wrappers are transparent pass-through containers */
+.phone-chassis,
+.phone-screen-bezel {
+  width: 100%;
 }
 
 /* Keep the floating sound control at the app's lower-right edge. */
@@ -107,22 +115,79 @@ body {
     justify-content: center;
     min-height: 100vh;
     padding: 48px 0;
-    /* Warm contrasting background so the phone frame shape is visible */
-    background-color: var(--gb-frame);
-    background-image: none;
+    background-color: #2a2a2e;
+    background-image:
+      radial-gradient(ellipse at 30% 20%, rgba(80, 60, 40, 0.4) 0%, transparent 55%),
+      radial-gradient(ellipse at 70% 80%, rgba(40, 60, 80, 0.3) 0%, transparent 55%);
+  }
+
+  /* Phone chassis outer shell */
+  .phone-chassis {
+    position: relative;
+    width: fit-content;
+    height: fit-content;
+    border-radius: 58px;
+    background: linear-gradient(160deg, #3a3a3e 0%, #1c1c1f 40%, #2a2a2e 100%);
+    padding: 14px 10px;
+    box-shadow:
+      0 0 0 1px rgba(255,255,255,0.08),
+      0 32px 80px rgba(0, 0, 0, 0.6),
+      0 8px 20px rgba(0, 0, 0, 0.4),
+      inset 0 1px 0 rgba(255,255,255,0.12),
+      inset 0 -1px 0 rgba(0,0,0,0.4);
+    flex-shrink: 0;
+  }
+
+  .phone-screen-bezel {
+    width: fit-content;
+    height: fit-content;
+  }
+
+  /* Side buttons */
+  .phone-chassis::before {
+    content: '';
+    position: absolute;
+    right: -4px;
+    top: 120px;
+    width: 4px;
+    height: 70px;
+    background: linear-gradient(180deg, #3a3a3e 0%, #2a2a2e 100%);
+    border-radius: 0 3px 3px 0;
+    box-shadow: 0 30px 0 #2a2a2e, 0 32px 0 #3a3a3e, 0 62px 0 #2a2a2e, 0 64px 0 #3a3a3e;
+  }
+
+  /* Volume buttons */
+  .phone-chassis::after {
+    content: '';
+    position: absolute;
+    left: -4px;
+    top: 100px;
+    width: 4px;
+    height: 40px;
+    background: linear-gradient(180deg, #3a3a3e 0%, #2a2a2e 100%);
+    border-radius: 3px 0 0 3px;
+    box-shadow: 0 52px 0 #2a2a2e, 0 54px 0 #3a3a3e, 0 95px 0 #2a2a2e, 0 97px 0 #3a3a3e;
+  }
+
+  /* Inner bezel */
+  .phone-screen-bezel {
+    border-radius: 46px;
+    overflow: hidden;
+    background: #000;
+    box-shadow:
+      inset 0 0 0 1px rgba(0,0,0,0.8),
+      0 0 0 1px rgba(255,255,255,0.04);
   }
 
   #root {
-    width: 440px;
-    height: min(956px, calc(100dvh - 96px));
-    border-radius: 44px;
+    width: 430px;
+    height: min(932px, calc(100dvh - 112px));
+    border-radius: 46px;
     overflow: hidden;
-    box-shadow:
-      0 24px 64px rgba(0, 0, 0, 0.30),
-      0 4px 12px rgba(0, 0, 0, 0.15);
     position: relative;
     flex-shrink: 0;
     transform: translateZ(0);
+    display: block;
   }
 
   .gb-shell {
@@ -130,10 +195,8 @@ body {
     height: 100%;
     overflow-y: auto;
     overflow-x: hidden;
-    /* Clear the 36px corner radius so content doesn't clip */
     padding-top: 20px;
     box-sizing: border-box;
-    /* Smooth scroll inside the frame */
     scroll-behavior: smooth;
     -webkit-overflow-scrolling: touch;
   }
@@ -502,6 +565,16 @@ body {
 body:not(:has(.splash-page)) {
   background-color: var(--gb-background);
   background-image: none;
+}
+
+/* On desktop phone-frame view, keep the dark chassis background regardless of screen */
+@media (min-width: 500px) {
+  body:not(:has(.splash-page)) {
+    background-color: #2a2a2e;
+    background-image:
+      radial-gradient(ellipse at 30% 20%, rgba(80, 60, 40, 0.4) 0%, transparent 55%),
+      radial-gradient(ellipse at 70% 80%, rgba(40, 60, 80, 0.3) 0%, transparent 55%);
+  }
 }
 
 body:not(:has(.splash-page)) .gb-shell,

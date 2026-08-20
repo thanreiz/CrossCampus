@@ -707,14 +707,18 @@ function Joystick({ onMove, label }) {
   }
 
   function start(e) {
+    // Keep joystick drags off the canvas, which would also swing the camera.
+    e.stopPropagation()
     activeRef.current = true
     e.currentTarget.setPointerCapture?.(e.pointerId)
     track(e)
   }
   function move(e) {
+    e.stopPropagation()
     if (activeRef.current) track(e)
   }
-  function end() {
+  function end(e) {
+    e?.stopPropagation()
     activeRef.current = false
     setThumb({ x: 0, y: 0 })
     onMove(0, 0)

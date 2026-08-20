@@ -267,7 +267,6 @@ export function buildClassroom({ mount, competency, onNearBoard, onInteract, the
   renderer.domElement.addEventListener('mousedown', onMouseDown)
   renderer.domElement.addEventListener('mouseup', onMouseUp)
   renderer.domElement.addEventListener('mouseleave', onMouseUp)
-  renderer.domElement.addEventListener('mousemove', onMouseMove)
   document.addEventListener('mousemove', onMouseMove)
   mount.addEventListener('pointerdown', onPointerDown, { passive: false })
   mount.addEventListener('pointermove', onPointerMove, { passive: false })
@@ -313,6 +312,7 @@ export function buildClassroom({ mount, competency, onNearBoard, onInteract, the
       }
       touchMove.set(clamp(x, -1, 1), clamp(y, -1, 1))
     },
+    getPos: () => ({ x: camera.position.x, y: camera.position.y, z: camera.position.z }),
     // Live "renovation" — recolor the room surfaces, sky, and board.
     setTheme(key) {
       const t = THEMES[key] ?? THEMES.classic
@@ -580,7 +580,6 @@ export function buildClassroom({ mount, competency, onNearBoard, onInteract, the
     renderer.domElement.removeEventListener('mousedown', onMouseDown)
     renderer.domElement.removeEventListener('mouseup', onMouseUp)
     renderer.domElement.removeEventListener('mouseleave', onMouseUp)
-    renderer.domElement.removeEventListener('mousemove', onMouseMove)
     document.removeEventListener('mousemove', onMouseMove)
     mount.removeEventListener('pointerdown', onPointerDown)
     mount.removeEventListener('pointermove', onPointerMove)

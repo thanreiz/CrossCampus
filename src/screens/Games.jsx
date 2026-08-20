@@ -18,6 +18,9 @@ import './Games.css'
 
 const COUNT_OPTIONS = [5, 10, 15, 20]
 
+const GENERATING_SUB_KEYS = ['questions.generatingSub', 'questions.generatingSub2', 'questions.generatingSub3', 'questions.generatingSub4']
+const GENERATING_SUB_STEP_MS = 3200
+
 const GAMES = [
   {
     key: 'store',
@@ -81,9 +84,20 @@ export default function Games({ online = true, grade = 6, competencies = [], mas
   const [showCorrectOverlay, setShowCorrectOverlay] = useState(false)
   const [generating, setGenerating] = useState(false)
   const [questionSource, setQuestionSource] = useState('bundled')
+  const [generatingElapsedMs, setGeneratingElapsedMs] = useState(0)
   const completionSaved = useRef(false)
   const inputRef = useRef(null)
   const startingRef = useRef(false)
+
+  // Rotate status messages and show real elapsed-time progress, since AI
+  // question generation genuinely takes several seconds.
+  useEffect(() => {
+    if (!generating) return
+    setGeneratingElapsedMs(0)
+    const start = performance.now()
+    const timer = setInterval(() => setGeneratingElapsedMs(performance.now() - start), 200)
+    return () => clearInterval(timer)
+  }, [generating])
 
   const game = GAMES.find((g) => g.key === gameKey) ?? null
   const round = questions[idx]
@@ -234,11 +248,21 @@ export default function Games({ online = true, grade = 6, competencies = [], mas
     )
   }
   if (generating) {
+    const subKey = GENERATING_SUB_KEYS[Math.min(GENERATING_SUB_KEYS.length - 1, Math.floor(generatingElapsedMs / GENERATING_SUB_STEP_MS))]
+    // Decelerating curve so the bar keeps visibly inching forward on slow AI
+    // responses instead of sitting frozen at a fixed width.
+    const progress = 12 + 83 * (1 - Math.exp(-generatingElapsedMs / 9000))
     return (
       <div className={`game-generating-page game-generating-${game?.key ?? 'default'} gb-shell relative flex min-h-screen flex-col items-center justify-center px-6 pb-28 text-center`}>
         <div className="relative z-10 nova-idle"><Mascot size={132} /></div>
         <h1 className="relative z-10 mt-4 font-display text-3xl font-extrabold">{tt('questions.generating')}</h1>
-        <p className="relative z-10 mt-2 font-bold text-ink/65">{tt('questions.generatingSub')}</p>
+        <p className="relative z-10 mt-2 font-bold text-ink/65">{tt(subKey)}</p>
+        <div className="relative z-10 mt-5 h-3 w-48 overflow-hidden rounded-full border-2 border-outline bg-white">
+          <div
+            className="h-full rounded-full bg-mint transition-[width] duration-300 ease-out"
+            style={{ width: `${progress}%` }}
+          />
+        </div>
       </div>
     )
   }

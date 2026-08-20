@@ -513,12 +513,19 @@ function buildStatement(body, answer) {
   const findMatch = body.match(/^(?:Find|Calculate|Estimate)\s+(.+)/i)
   if (findMatch) return `${body.replace(/\.$/, '')} = ${answer}`
 
-  // "What is [X]?" / "Which [X]?" → "[Answer]" (concise)
-  const whatMatch = body.match(/(?:What|Which|How)\s+.+\?$/)
+  // Question-form body (ends with "?") → answer IS the statement
+  if (body.trim().endsWith('?')) return answer
+
+  // "What is [X]?" / "Which [X]?" / "Does [X]?" → "[Answer]" (concise)
+  const whatMatch = body.match(/(?:What|Which|How|Does|Do|Is|Are|Can)\s+.+\?/)
   if (whatMatch) return answer
 
-  // Default: show answer as a statement
-  return answer
+  // Math-result verbs → body = answer
+  const mathVerbMatch = body.match(/^(?:Round|Convert|Divide|Evaluate|Reduce|Express|Rewrite)\s+.+/i)
+  if (mathVerbMatch) return `${body.replace(/[.!]$/, '')} = ${answer}`
+
+  // Default: body as context + answer as statement (always readable)
+  return `${body.replace(/[.!]$/, '')}. ${answer}`
 }
 
 function GameQuestionCard({ round, game, lang, tt, currentIndex, total, result, feedback }) {

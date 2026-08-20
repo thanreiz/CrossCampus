@@ -62,7 +62,7 @@ export default function StepScaffold({ item, lang, tt, onComplete }) {
         />
         <Button color="mint" onClick={submit} disabled={!input.trim()}>{tt('class.answer')}</Button>
       </div>
-      {wrong && <p className="mt-2 text-sm font-extrabold text-[#c0414b]">{tt('classroom.tryAgain')}</p>}
+      {wrong && <p className="mt-2 text-sm font-extrabold text-[var(--gb-danger)]">{tt('classroom.tryAgain')}</p>}
     </div>
   )
 }

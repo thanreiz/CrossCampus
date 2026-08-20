@@ -235,15 +235,15 @@ export default function Progress({ competencies, mastery, studentName = '', grad
 }
 
 function FlameIcon() {
-  return <svg viewBox="0 0 48 56" width="42" height="46" aria-hidden="true"><path d="M27 3c3 10-2 13 5 20 4-4 4-8 3-11 8 7 11 16 9 25-2 10-10 16-20 16S5 46 4 36C3 26 9 18 16 10c0 8 3 11 5 13 5-7 5-13 6-20Z" fill="#ff6a2a" stroke="#1c1410" strokeWidth="2.5" strokeLinejoin="round" /><path d="M24 27c5 6 8 10 6 16-1 4-4 7-8 7-5 0-8-4-8-9 0-4 3-8 7-12 0 4 1 5 3 7 2-3 1-6 0-9Z" fill="#ffe783" /></svg>
+  return <svg viewBox="0 0 48 56" width="42" height="46" aria-hidden="true"><path d="M27 3c3 10-2 13 5 20 4-4 4-8 3-11 8 7 11 16 9 25-2 10-10 16-20 16S5 46 4 36C3 26 9 18 16 10c0 8 3 11 5 13 5-7 5-13 6-20Z" fill="var(--gb-peach-hover)" stroke="var(--gb-outline)" strokeWidth="2.5" strokeLinejoin="round" /><path d="M24 27c5 6 8 10 6 16-1 4-4 7-8 7-5 0-8-4-8-9 0-4 3-8 7-12 0 4 1 5 3 7 2-3 1-6 0-9Z" fill="var(--gb-primary-soft)" /></svg>
 }
 
 function BookIcon() {
-  return <svg viewBox="0 0 56 48" width="48" height="42" aria-hidden="true"><path d="M4 7h19c4 0 6 2 6 5v30c-2-3-5-4-9-4H4V7Z" fill="#fff" stroke="#1c1410" strokeWidth="2.5" strokeLinejoin="round" /><path d="M52 7H33c-4 0-6 2-6 5v30c2-3 5-4 9-4h16V7Z" fill="#fff" stroke="#1c1410" strokeWidth="2.5" strokeLinejoin="round" /><path d="M4 11H1v32h19c4 0 6 1 8 3 2-2 4-3 8-3h19V11h-3" fill="none" stroke="#2584ea" strokeWidth="3" strokeLinejoin="round" /></svg>
+  return <svg viewBox="0 0 56 48" width="48" height="42" aria-hidden="true"><path d="M4 7h19c4 0 6 2 6 5v30c-2-3-5-4-9-4H4V7Z" fill="var(--gb-surface-strong)" stroke="var(--gb-outline)" strokeWidth="2.5" strokeLinejoin="round" /><path d="M52 7H33c-4 0-6 2-6 5v30c2-3 5-4 9-4h16V7Z" fill="var(--gb-surface-strong)" stroke="var(--gb-outline)" strokeWidth="2.5" strokeLinejoin="round" /><path d="M4 11H1v32h19c4 0 6 1 8 3 2-2 4-3 8-3h19V11h-3" fill="none" stroke="var(--gb-info)" strokeWidth="3" strokeLinejoin="round" /></svg>
 }
 
 function CapIcon() {
-  return <svg viewBox="0 0 48 38" width="34" height="28" aria-hidden="true"><path d="m3 13 21-10 21 10-21 10L3 13Z" fill="#1c1410" stroke="#1c1410" strokeWidth="2" strokeLinejoin="round" /><path d="M12 18v9c7 6 17 6 24 0v-9" fill="#1c1410" stroke="#1c1410" strokeWidth="2" strokeLinejoin="round" /><path d="M44 14v12" stroke="#1c1410" strokeWidth="2.5" strokeLinecap="round" /><circle cx="44" cy="28" r="2.5" fill="#f7d26a" stroke="#1c1410" strokeWidth="1.5" /></svg>
+  return <svg viewBox="0 0 48 38" width="34" height="28" aria-hidden="true"><path d="m3 13 21-10 21 10-21 10L3 13Z" fill="var(--gb-outline)" stroke="var(--gb-outline)" strokeWidth="2" strokeLinejoin="round" /><path d="M12 18v9c7 6 17 6 24 0v-9" fill="var(--gb-outline)" stroke="var(--gb-outline)" strokeWidth="2" strokeLinejoin="round" /><path d="M44 14v12" stroke="var(--gb-outline)" strokeWidth="2.5" strokeLinecap="round" /><circle cx="44" cy="28" r="2.5" fill="var(--gb-primary)" stroke="var(--gb-outline)" strokeWidth="1.5" /></svg>
 }
 
 function GlobeIcon() {
@@ -259,11 +259,11 @@ function CheckIcon() {
 }
 
 function WarningIcon() {
-  return <svg viewBox="0 0 48 48" width="46" height="46" aria-hidden="true"><path d="M24 5 44 40H4Z" fill="#ffd45e" stroke="currentColor" strokeWidth="3" strokeLinejoin="round" /><path d="M24 17v11m0 6v.5" fill="none" stroke="currentColor" strokeWidth="4" strokeLinecap="round" /></svg>
+  return <svg viewBox="0 0 48 48" width="46" height="46" aria-hidden="true"><path d="M24 5 44 40H4Z" fill="var(--gb-primary)" stroke="currentColor" strokeWidth="3" strokeLinejoin="round" /><path d="M24 17v11m0 6v.5" fill="none" stroke="currentColor" strokeWidth="4" strokeLinecap="round" /></svg>
 }
 
 function XIcon() {
-  return <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><circle cx="12" cy="12" r="10" fill="currentColor" /><path d="m8.5 8.5 7 7m0-7-7 7" fill="none" stroke="#fffdf8" strokeWidth="2.3" strokeLinecap="round" /></svg>
+  return <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><circle cx="12" cy="12" r="10" fill="currentColor" /><path d="m8.5 8.5 7 7m0-7-7 7" fill="none" stroke="var(--gb-surface)" strokeWidth="2.3" strokeLinecap="round" /></svg>
 }
 
 function hasPerfectQuiz(history, currentRefs) {
@@ -291,22 +291,22 @@ function AchievementChevron({ expanded = false }) {
 }
 
 function LockMiniIcon() {
-  return <svg viewBox="0 0 24 24" width="17" height="17" aria-hidden="true"><rect x="6" y="10" width="12" height="10" rx="2" fill="currentColor" /><path d="M9 10V7.5a3 3 0 0 1 6 0V10" fill="none" stroke="currentColor" strokeWidth="2" /><circle cx="12" cy="15" r="1.2" fill="#fff" /></svg>
+  return <svg viewBox="0 0 24 24" width="17" height="17" aria-hidden="true"><rect x="6" y="10" width="12" height="10" rx="2" fill="currentColor" /><path d="M9 10V7.5a3 3 0 0 1 6 0V10" fill="none" stroke="currentColor" strokeWidth="2" /><circle cx="12" cy="15" r="1.2" fill="var(--gb-surface-strong)" /></svg>
 }
 
 function AchievementIcon({ kind }) {
   if (kind === 'shape') {
-    return <svg viewBox="0 0 64 64" aria-hidden="true"><path d="M10 52 29 15l19 37H10Z" fill="#fff" stroke="currentColor" strokeWidth="3" strokeLinejoin="round" /><path d="m18 46 11-21 11 21H18Z" fill="none" stroke="currentColor" strokeWidth="2.5" /><path d="M42 12h10v40H42Z" fill="#f7d26a" stroke="currentColor" strokeWidth="2.5" transform="rotate(-12 47 32)" /><path d="M46 18h6m-6 7h4m-4 7h6m-6 7h4" stroke="currentColor" strokeWidth="1.6" /></svg>
+    return <svg viewBox="0 0 64 64" aria-hidden="true"><path d="M10 52 29 15l19 37H10Z" fill="var(--gb-surface-strong)" stroke="currentColor" strokeWidth="3" strokeLinejoin="round" /><path d="m18 46 11-21 11 21H18Z" fill="none" stroke="currentColor" strokeWidth="2.5" /><path d="M42 12h10v40H42Z" fill="var(--gb-primary)" stroke="currentColor" strokeWidth="2.5" transform="rotate(-12 47 32)" /><path d="M46 18h6m-6 7h4m-4 7h6m-6 7h4" stroke="currentColor" strokeWidth="1.6" /></svg>
   }
   if (kind === 'number') {
-    return <svg viewBox="0 0 64 64" aria-hidden="true"><rect x="10" y="10" width="44" height="44" rx="8" fill="#fff" stroke="currentColor" strokeWidth="3" /><rect x="17" y="17" width="30" height="12" rx="3" fill="#a9ddf4" stroke="currentColor" strokeWidth="2" /><path d="M19 38h26M26 32v20M38 32v20" stroke="currentColor" strokeWidth="2.5" /><circle cx="21" cy="43" r="2" fill="#f7d26a" /><circle cx="33" cy="37" r="2" fill="#8fd9b6" /><circle cx="43" cy="48" r="2" fill="#f4a9bf" /></svg>
+    return <svg viewBox="0 0 64 64" aria-hidden="true"><rect x="10" y="10" width="44" height="44" rx="8" fill="var(--gb-surface-strong)" stroke="currentColor" strokeWidth="3" /><rect x="17" y="17" width="30" height="12" rx="3" fill="var(--gb-sky)" stroke="currentColor" strokeWidth="2" /><path d="M19 38h26M26 32v20M38 32v20" stroke="currentColor" strokeWidth="2.5" /><circle cx="21" cy="43" r="2" fill="var(--gb-primary)" /><circle cx="33" cy="37" r="2" fill="var(--gb-secondary)" /><circle cx="43" cy="48" r="2" fill="var(--gb-rose)" /></svg>
   }
   if (kind === 'data') {
-    return <svg viewBox="0 0 64 64" aria-hidden="true"><path d="M10 52h34M15 47V34h8v13m4 0V22h8v25m4 0V14h8v33" fill="#f7d26a" stroke="currentColor" strokeWidth="3" strokeLinejoin="round" /><circle cx="43" cy="39" r="11" fill="#fff" stroke="currentColor" strokeWidth="3" /><path d="m51 47 8 8" stroke="currentColor" strokeWidth="4" strokeLinecap="round" /></svg>
+    return <svg viewBox="0 0 64 64" aria-hidden="true"><path d="M10 52h34M15 47V34h8v13m4 0V22h8v25m4 0V14h8v33" fill="var(--gb-primary)" stroke="currentColor" strokeWidth="3" strokeLinejoin="round" /><circle cx="43" cy="39" r="11" fill="var(--gb-surface-strong)" stroke="currentColor" strokeWidth="3" /><path d="m51 47 8 8" stroke="currentColor" strokeWidth="4" strokeLinecap="round" /></svg>
   }
   if (kind === 'flame') return <FlameIcon />
   if (kind === 'quiz') {
-    return <svg viewBox="0 0 64 64" aria-hidden="true"><path d="m32 7 7 15 17 2-12 12 3 17-15-8-15 8 3-17L8 24l17-2Z" fill="#fff" stroke="currentColor" strokeWidth="3" strokeLinejoin="round" /><path d="m23 33 6 6 13-14" fill="none" stroke="#43a977" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" /></svg>
+    return <svg viewBox="0 0 64 64" aria-hidden="true"><path d="m32 7 7 15 17 2-12 12 3 17-15-8-15 8 3-17L8 24l17-2Z" fill="var(--gb-surface-strong)" stroke="currentColor" strokeWidth="3" strokeLinejoin="round" /><path d="m23 33 6 6 13-14" fill="none" stroke="var(--gb-success)" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" /></svg>
   }
-  return <svg viewBox="0 0 64 64" aria-hidden="true"><path d="M18 11h28v13c0 11-6 19-14 19s-14-8-14-19V11Z" fill="#f7d26a" stroke="currentColor" strokeWidth="3" /><path d="M18 16H9v7c0 7 5 11 12 11m25-18h9v7c0 7-5 11-12 11M32 43v8m-10 4h20" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" /><path d="m32 17 3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1Z" fill="#fff" stroke="currentColor" strokeWidth="2" /></svg>
+  return <svg viewBox="0 0 64 64" aria-hidden="true"><path d="M18 11h28v13c0 11-6 19-14 19s-14-8-14-19V11Z" fill="var(--gb-primary)" stroke="currentColor" strokeWidth="3" /><path d="M18 16H9v7c0 7 5 11 12 11m25-18h9v7c0 7-5 11-12 11M32 43v8m-10 4h20" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" /><path d="m32 17 3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1Z" fill="var(--gb-surface-strong)" stroke="currentColor" strokeWidth="2" /></svg>
 }

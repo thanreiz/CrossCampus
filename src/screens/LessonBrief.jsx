@@ -1,122 +1,90 @@
-import { Card, Button, Doodles, RefBadge, MasteryBar } from '../ui/Primitives.jsx'
-import { Mascot, SpeechBubble } from '../ui/Mascot.jsx'
+import { useState } from 'react'
+import { Button, Doodles } from '../ui/Primitives.jsx'
+import { Mascot } from '../ui/Mascot.jsx'
 import OnlineBadge from '../ui/OnlineBadge.jsx'
+import SoundToggle from '../ui/SoundToggle.jsx'
 import { masteryColor } from '../lib/mastery.js'
 import { topicTitleLocalized, topicArea } from '../lib/topics.js'
 import { makeT, localize } from '../lib/i18n.js'
 import { lessonTeaching } from '../lib/lesson-teaching.js'
 import './LessonBrief.css'
 
-// Lesson brief - design basis: Stitch "Gabay - Lesson View".
-// header -> title card -> "What you will do" -> progress -> stat tiles -> sticky 2D/3D entry.
-export default function LessonBrief({ competency, score = 0, answered = false, online = true, lang = 'taglish', onEnter, onEnter3D, onBack }) {
-  const c = competency
-  const tt = makeT(lang)
-  const title = topicTitleLocalized(c.ref, c.competency, lang)
-  const teaching = lessonTeaching(c)
-  const pct = Math.round((score ?? 0) * 100)
-  const area = topicArea(c.ref, c.domain)
-  const areaLabel = tt(`domain.${area}`)
+export default function LessonBrief({ competency: c, score = 0, answered = false, online = true, lang = 'taglish', onEnter, onEnter3D, onBack }) {
+  const tt = makeT(lang), title = topicTitleLocalized(c.ref, c.competency, lang), teaching = lessonTeaching(c)
+  const pct = Math.round((score ?? 0) * 100), area = topicArea(c.ref, c.domain)
+  const tasks = [tt('brief.task.understandShort'), tt('brief.task.answerShort'), tt('brief.task.askShort')]
+  const [step, setStep] = useState(0), [furthest, setFurthest] = useState(0)
+  const [unlocked, setUnlocked] = useState(false), [direction, setDirection] = useState('forward')
 
-  const tasks = [
-    tt('brief.task.understand', { topic: title }),
-    tt('brief.task.answer'),
-    tt('brief.task.ask'),
+  const back = () => { if (step === 1) { setDirection('backward'); setStep(0) } }
+  const next = () => {
+    if (step === 0) { setDirection('forward'); setFurthest(1); setStep(1) }
+    else { setFurthest(1); setUnlocked(true) }
+  }
+  const openViewed = (target) => {
+    if (target <= furthest) { setDirection(target < step ? 'backward' : 'forward'); setStep(target) }
+  }
+  return <div className="lesson-brief-page gb-shell relative flex min-h-screen flex-col px-4 pb-28 pt-4">
+    <div className="lesson-brief-doodles"><Doodles /></div>
+    <header className="lesson-brief-header">
+      <button className="lesson-brief-header-back" onClick={onBack}>{tt('common.back')}</button>
+      <div className="lesson-brief-header-meta"><OnlineBadge online={online} /><span className="lesson-brief-brand"><Mascot size={22} />Gabay</span></div>
+    </header>
+    <main className="lesson-brief-content">
+      <div className={`lesson-brief-carousel is-step-${step + 1}`} aria-label="Lesson introduction">
+      <div key={`${step}-${lang}`} className={`lesson-brief-slide lesson-brief-slide-${step + 1} is-${direction}`}>
+        {step === 0 && <section className="lesson-brief-section" aria-labelledby="lesson-overview-title"><span className="lesson-brief-illustration" aria-hidden="true" />
+          <h2 className="lesson-brief-section-title">{tt('brief.lessonOverview')}</h2>
+          <p className="lesson-brief-domain">{tt(`domain.${c.domain}`)}</p>
+          <h1 id="lesson-overview-title" className="lesson-brief-title">{title}</h1>
+          <p className="lesson-brief-explanation">{localize(teaching.explanation, lang)}</p>
+          <div className="lesson-brief-standard"><span className="lesson-brief-check" aria-hidden="true">{'\u2713'}</span><div><p className="font-extrabold">{lang === 'en' ? tt('brief.contentStandard') : tt('brief.lessonGoal')}</p><p>{lang === 'en' ? c.content_standard : localize(teaching.example.prompt, lang)}</p></div></div>
+        </section>}
+        {step === 1 && <section className="lesson-brief-section" aria-labelledby="lesson-tasks-title"><span className="lesson-brief-illustration" aria-hidden="true" />
+          <h2 id="lesson-tasks-title" className="lesson-brief-section-title">{tt('brief.whatYouDo')}</h2>
+          <p className="lesson-brief-domain lesson-brief-steps-label">{tt('brief.lessonSteps')}</p>
+          <ol className="lesson-brief-task-list">{tasks.map((task, index) => <li key={index}><span className="lesson-brief-task-number">{index + 1}</span><span>{task}</span></li>)}</ol>
+          <div className="lesson-brief-learning-tip"><span className="lesson-brief-learning-tip-icon" aria-hidden="true">i</span><div><h3>{tt('brief.learningTip')}</h3><p>{tt('brief.learningTipText')}</p></div></div>
+        </section>}
+      </div>
+      <nav className="lesson-brief-nav" aria-label="Lesson introduction steps">
+        <button type="button" className="lesson-brief-nav-button" onClick={back} disabled={!step}><span aria-hidden="true">&larr;</span><span>{tt('common.back')}</span></button>
+        <div className="lesson-brief-dots">{[0,1].map((dot) => <button key={dot} type="button" className={`${dot === step ? 'is-active' : ''} ${dot <= furthest ? 'is-viewed' : 'is-locked'}`} disabled={dot > furthest} aria-label={`Section ${dot + 1}`} aria-current={dot === step ? 'step' : undefined} onClick={() => openViewed(dot)} />)}</div>
+        <button type="button" className="lesson-brief-nav-button is-next" onClick={next} disabled={step === 1 && unlocked}><span>{step === 1 ? tt('common.done') : tt('common.next')}</span><span aria-hidden="true">&rarr;</span></button>
+      </nav>
+      </div>
+      <ProgressSummary answered={answered} pct={pct} questions={c.items.length} category={tt(`domain.${area}`)} level={tt(`band.${masteryColor(score).band}`)} title={tt('brief.yourProgress')} labels={{ mastery: tt('common.mastery'), questions: tt('brief.questions'), category: tt('brief.category'), level: tt('brief.level') }} />
+      <section className={`lesson-brief-entry ${unlocked ? 'is-unlocked' : 'is-locked'}`} aria-live="polite">
+      <div className="lesson-brief-mode-grid">
+        <Button color="mint" className="lesson-brief-mode-button" onClick={onEnter} disabled={!unlocked}>{!unlocked && <span className="lesson-brief-lock" aria-hidden="true" />}{tt('brief.enter2d')}</Button>
+        <Button color="sky" className="lesson-brief-mode-button" onClick={onEnter3D} disabled={!unlocked}>{!unlocked && <span className="lesson-brief-lock" aria-hidden="true" />}{tt('brief.enter3d')}</Button>
+      </div>
+    </section>
+      <SoundToggle className="lesson-brief-page-sound" />
+    </main>
+  </div>
+}
+function ProgressSummary({ answered, pct, questions, category, level, title, labels }) {
+  const metrics = [
+    { accent: 'mint', icon: 'M', value: answered ? `${pct}%` : '\u2014', label: labels.mastery },
+    { accent: 'yellow', icon: '?', value: String(questions), label: labels.questions },
+    { accent: 'blue', icon: '#', value: category, label: labels.category },
+    { accent: 'pink', icon: 'L', value: level, label: labels.level },
   ]
-
   return (
-    <div className="lesson-brief-page gb-shell relative flex min-h-screen flex-col px-5 pb-28 pt-6">
-      <div className="lesson-brief-doodles"><Doodles /></div>
-
-      {/* header */}
-      <div className="mb-4 flex items-center justify-between">
-        <button className="gb-chip bg-white" onClick={onBack}>
-          {tt('common.back')}
-        </button>
-        <div className="flex items-center gap-2">
-          <OnlineBadge online={online} />
-          <Mascot size={36} />
-          <span className="font-display text-xl font-extrabold">Gabay</span>
-        </div>
+    <section className="lesson-brief-progress-summary" aria-labelledby="lesson-progress-title">
+      <h2 id="lesson-progress-title">{title}</h2>
+      <div className="lesson-brief-progress-metrics">
+        {metrics.map((metric) => (
+          <div key={metric.label} className={`lesson-brief-progress-metric is-${metric.accent}`}>
+            <span className="lesson-brief-progress-icon" aria-hidden="true">{metric.icon}</span>
+            <span className="lesson-brief-progress-copy">
+              <strong>{metric.value}</strong>
+              <small>{metric.label}</small>
+            </span>
+          </div>
+        ))}
       </div>
-
-      {/* title card */}
-      <Card color="cream" className="gb-pop p-5">
-        <RefBadge refId={c.ref} domain={tt(`domain.${c.domain}`)} />
-        <h1 className="mt-3 font-display text-3xl font-extrabold leading-tight">{title}</h1>
-        <p className="mt-2 text-sm font-bold leading-relaxed text-ink/70">{localize(teaching.explanation, lang)}</p>
-
-        <div className="mt-3 rounded-card border-[2.5px] border-outline bg-white p-3 text-sm">
-          <p className="font-bold text-ink/70">{lang === 'en' ? tt('brief.contentStandard') : tt('brief.lessonGoal')}</p>
-          <p className="text-ink/80">{lang === 'en' ? c.content_standard : localize(teaching.example.prompt, lang)}</p>
-        </div>
-      </Card>
-
-      {/* "What you will do" */}
-      <Card color="peach" className="gb-pop mt-4 p-5">
-        <span className="gb-chip bg-white shadow-hard-sm text-xs">{tt('brief.whatYouDo')}</span>
-        <ol className="mt-3 grid gap-2">
-          {tasks.map((t, i) => (
-            <li key={i} className="grid grid-cols-[2rem_1fr] items-start gap-3 rounded-card bg-white/35 p-2.5">
-              <span className="flex h-8 w-8 items-center justify-center rounded-full border-[2.5px] border-outline bg-yellow text-sm font-extrabold leading-none shadow-hard-sm tabular-nums">
-                {i + 1}
-              </span>
-              <span className="pt-1 text-sm font-bold leading-snug">{t}</span>
-            </li>
-          ))}
-        </ol>
-      </Card>
-
-      {/* lesson progress */}
-      {answered && <div className="mt-5">
-        <div className="mb-1 flex items-center justify-between text-sm font-bold">
-          <span>{tt('brief.lessonProgress')}</span>
-          <span className="text-ink/70">{pct}%</span>
-        </div>
-        <MasteryBar score={score} />
-      </div>}
-
-      {/* stat tiles */}
-      <div className="mt-4 grid grid-cols-2 gap-3">
-        <StatTile color="mint" big={answered ? `${pct}%` : '—'} label={tt('common.mastery')} />
-        <StatTile color="yellow" big={String(c.items.length)} label={tt('brief.questions')} />
-        <StatTile color="sky" big={area.split(' ').filter((w) => !/^(and|&)$/i.test(w)).map((w) => w[0].toUpperCase()).join('')} label={areaLabel} />
-        <StatTile
-          color={masteryColor(score).bg.replace('bg-', '')}
-          big={tt('band.' + masteryColor(score).band)}
-          label={tt('brief.level')}
-        />
-      </div>
-
-      {/* Teacher Gabay tutor card */}
-      <section className="lesson-brief-tutor" aria-label={tt('brief.ready')}>
-        <div className="lesson-brief-tutor-mascot">
-          <Mascot size={72} float />
-        </div>
-        <div className="lesson-brief-tutor-message">
-          <SpeechBubble>{tt('brief.ready')}</SpeechBubble>
-        </div>
-      </section>
-      {/* entry buttons (inline so nothing is hidden) */}
-      <div className="mt-6 grid gap-3">
-        <Button color="mint" className="text-lg" onClick={onEnter}>
-          {tt('brief.enter2d')} &rarr;
-        </Button>
-        <Button color="sky" className="text-lg" onClick={onEnter3D}>
-          {tt('brief.enter3d')} &rarr;
-        </Button>
-      </div>
-    </div>
+    </section>
   )
 }
-
-function StatTile({ color, big, label }) {
-  return (
-    <Card color={color} className="p-4 text-center">
-      <p className="font-display text-2xl font-extrabold leading-none">{big}</p>
-      <p className="mt-1 text-xs font-bold text-ink/70">{label}</p>
-    </Card>
-  )
-}
-
-

@@ -4,15 +4,15 @@ export default {
   theme: {
     extend: {
       colors: {
-        cream: '#FBF1DA',
-        mint: '#8FD9B6',
-        sky: '#A9D8F0',
-        rose: '#F4C3D0',
-        peach: '#F4A87C',
-        yellow: '#F7D26A',
-        lavender: '#CDBCEC',
-        ink: '#3A2E2A',
-        outline: '#1C1410',
+        cream: 'var(--gb-background)',
+        mint: 'var(--gb-secondary)',
+        sky: 'var(--gb-sky)',
+        rose: 'var(--gb-rose)',
+        peach: 'var(--gb-peach)',
+        yellow: 'var(--gb-primary)',
+        lavender: 'var(--gb-lavender)',
+        ink: 'var(--gb-ink)',
+        outline: 'var(--gb-outline)',
       },
       fontFamily: {
         display: ['"Baloo 2"', 'Fredoka', 'system-ui', 'sans-serif'],
@@ -22,9 +22,9 @@ export default {
         card: '24px',
       },
       boxShadow: {
-        hard: '4px 4px 0 0 #1C1410',
-        'hard-sm': '2px 2px 0 0 #1C1410',
-        'hard-lg': '6px 6px 0 0 #1C1410',
+        hard: '4px 4px 0 0 var(--gb-outline)',
+        'hard-sm': '2px 2px 0 0 var(--gb-outline)',
+        'hard-lg': '6px 6px 0 0 var(--gb-outline)',
       },
       borderWidth: {
         2.5: '2.5px',

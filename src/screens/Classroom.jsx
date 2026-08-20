@@ -47,11 +47,25 @@ function uniqueIncorrectAnswers(answers = []) {
   return [...byQuestion.values()].filter((answer) => !answer.correct)
 }
 
+function LockIcon() {
+  return (
+    <svg className="classroom-tab-lock" viewBox="0 0 20 20" aria-hidden="true">
+      <rect x="4" y="8" width="12" height="9" rx="2" fill="currentColor" />
+      <path d="M7 8V6a3 3 0 0 1 6 0v2" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+    </svg>
+  )
+}
+
 export default function Classroom({ competency, questions, questionSource = 'bundled', score, answered = false, online, lang = 'taglish', onLang, onAnswered, onExit }) {
   const c = useMemo(() => ({ ...competency, items: questions?.length ? questions : competency.items }), [competency, questions])
   const teaching = useMemo(() => lessonTeaching(c), [c])
   const tt = makeT(lang)
   const [tab, setTab] = useState('explain')
+  const [unlockedStep, setUnlockedStep] = useState(0)
+  const [explanationComplete, setExplanationComplete] = useState(false)
+  const [exampleComplete, setExampleComplete] = useState(false)
+  const [teacherOpen, setTeacherOpen] = useState(false)
+  const [mascotPressed, setMascotPressed] = useState(false)
 
   const [idx, setIdx] = useState(0)
   const [input, setInput] = useState('')
@@ -68,6 +82,9 @@ export default function Classroom({ competency, questions, questionSource = 'bun
   const [stepsDone, setStepsDone] = useState(!(c.items[0]?.steps?.length > 0))
   const inputRef = useRef(null)
   const actionRef = useRef(null)
+  const panelRef = useRef(null)
+  const contentEndRef = useRef(null)
+  const teacherZoneRef = useRef(null)
 
   // --- Teacher Gabay live tutor ---
   const [askOpen, setAskOpen] = useState(false)
@@ -87,6 +104,62 @@ export default function Classroom({ competency, questions, questionSource = 'bun
     setStepsDone(!(item?.steps?.length > 0))
   }, [item])
 
+  useEffect(() => {
+    setTab('explain')
+    setUnlockedStep(0)
+    setExplanationComplete(false)
+    setExampleComplete(false)
+    setTeacherOpen(false)
+    setAskOpen(false)
+  }, [c.ref])
+
+  useEffect(() => {
+    if (tab === 'practice') return undefined
+    const target = contentEndRef.current
+    if (!target) return undefined
+
+    const markComplete = () => {
+      if (tab === 'explain') setExplanationComplete(true)
+      if (tab === 'example') setExampleComplete(true)
+    }
+
+    if (typeof IntersectionObserver === 'undefined') {
+      markComplete()
+      return undefined
+    }
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) markComplete()
+      },
+      { threshold: 1, rootMargin: '0px 0px -4% 0px' },
+    )
+    observer.observe(target)
+    return () => observer.disconnect()
+  }, [tab])
+
+  useEffect(() => {
+    if (!teacherOpen) return undefined
+    const onPointerDown = (event) => {
+      if (!teacherZoneRef.current?.contains(event.target)) {
+        setTeacherOpen(false)
+        setAskOpen(false)
+      }
+    }
+    const onKeyDown = (event) => {
+      if (event.key === 'Escape') {
+        setTeacherOpen(false)
+        setAskOpen(false)
+      }
+    }
+    document.addEventListener('pointerdown', onPointerDown)
+    document.addEventListener('keydown', onKeyDown)
+    return () => {
+      document.removeEventListener('pointerdown', onPointerDown)
+      document.removeEventListener('keydown', onKeyDown)
+    }
+  }, [teacherOpen])
+
   // What Teacher Gabay "says" — drives both the bubble and voice-out.
   const bubble = useMemo(() => {
     if (tab === 'explain') return tt('class.bubble.explain')
@@ -97,6 +170,9 @@ export default function Classroom({ competency, questions, questionSource = 'bun
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [tab, lang, c, teaching, done, result, fb, idx, completionCorrectCount])
 
+  const practiceGuidance = tt('class.bubble.practiceHelp', { n: idx + 1, total: c.items.length })
+  const teacherDialogue = reply?.text ? plain(reply.text) : tab === 'practice' ? practiceGuidance : bubble
+
   // Auto read aloud whenever Gabay's line changes (voice-out, works offline).
   useEffect(() => {
     setPaused(false)
@@ -104,6 +180,41 @@ export default function Classroom({ competency, questions, questionSource = 'bun
     return () => stopSpeaking()
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [bubble])
+
+  function selectLessonTab(nextTab, index) {
+    if (index > unlockedStep) return
+    setTab(nextTab)
+    setAskOpen(false)
+    setReply(null)
+    setTeacherOpen(false)
+    window.setTimeout(() => {
+      panelRef.current?.scrollIntoView({
+        behavior: window.matchMedia?.('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth',
+        block: 'start',
+      })
+    }, 0)
+  }
+
+  function advanceLesson(nextTab, index) {
+    setUnlockedStep((current) => Math.max(current, index))
+    setTab(nextTab)
+    setAskOpen(false)
+    setReply(null)
+    setTeacherOpen(false)
+    window.setTimeout(() => {
+      panelRef.current?.scrollIntoView({
+        behavior: window.matchMedia?.('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth',
+        block: 'start',
+      })
+    }, 0)
+  }
+
+  function toggleTeacher() {
+    setMascotPressed(true)
+    window.setTimeout(() => setMascotPressed(false), 360)
+    setTeacherOpen((current) => !current)
+    if (teacherOpen) setAskOpen(false)
+  }
 
   async function submit() {
     if (result !== null) return
@@ -262,7 +373,7 @@ export default function Classroom({ competency, questions, questionSource = 'bun
   const lessonSupport = localize(c.competency, lang)
 
   return (
-    <div className="classroom-page gb-shell relative flex min-h-screen flex-col bg-cream">
+    <div className={`classroom-page gb-shell relative flex min-h-screen flex-col bg-cream ${tab === 'practice' ? 'is-practice-tab' : ''}`}>
       <header className="classroom-header flex items-center justify-between gap-3">
         <button className="classroom-exit gb-chip bg-white" onClick={onExit}>
           <span aria-hidden="true">&larr;</span>
@@ -279,22 +390,42 @@ export default function Classroom({ competency, questions, questionSource = 'bun
         )}
       </div>
 
-      <nav className="classroom-tabs" role="tablist" aria-label="Lesson sections">
-        {TABS.map((t) => (
-          <button
-            key={t.key}
-            type="button"
-            role="tab"
-            aria-selected={tab === t.key}
-            onClick={() => setTab(t.key)}
-            className={tab === t.key ? 'is-active' : ''}
-          >
-            {tt(t.tkey)}
-          </button>
-        ))}
+      <nav className="classroom-tabs" role="tablist" aria-label={tt('class.lessonSections')}>
+        {TABS.map((entry, index) => {
+          const locked = index > unlockedStep
+          const completed = index < unlockedStep || (index === 0 && explanationComplete) || (index === 1 && exampleComplete)
+          return (
+            <button
+              key={entry.key}
+              type="button"
+              role="tab"
+              aria-selected={tab === entry.key}
+              aria-disabled={locked}
+              disabled={locked}
+              title={locked ? tt('class.tabLocked') : undefined}
+              onClick={() => selectLessonTab(entry.key, index)}
+              className={`${tab === entry.key ? 'is-active' : ''} ${locked ? 'is-locked' : 'is-unlocked'} ${completed ? 'is-complete' : ''}`}
+            >
+              {tab === entry.key && !locked && <span className="classroom-tab-check" aria-hidden="true">&#10003;</span>}
+              {locked && <LockIcon />}
+              <span>{tt(entry.tkey)}</span>
+            </button>
+          )
+        })}
       </nav>
 
+      {tab === 'practice' && answered && (
+        <div className={`classroom-mastery ${done ? 'is-results' : ''}`}>
+          <div className="classroom-mastery-heading">
+            <span>{tt('common.mastery')}</span>
+            <strong>{Math.round((score ?? 0) * 100)}%</strong>
+          </div>
+          <MasteryBar score={score} />
+        </div>
+      )}
+
       <main
+        ref={panelRef}
         className={`classroom-panel ${done ? 'classroom-results-panel' : ''} ${result === false ? 'answer-shake' : ''}`}
         role="tabpanel"
         aria-label={tt(TABS.find((entry) => entry.key === tab)?.tkey)}
@@ -306,6 +437,7 @@ export default function Classroom({ competency, questions, questionSource = 'bun
               <h2 className="font-display font-extrabold">{tt('class.keyIdea')}</h2>
             </div>
             <p>{localize(teaching.explanation, lang)}</p>
+            <span ref={contentEndRef} className="classroom-content-end" aria-hidden="true" />
           </section>
         )}
 
@@ -339,6 +471,7 @@ export default function Classroom({ competency, questions, questionSource = 'bun
                 {localize(teaching.example.answer, lang)}
               </p>
             </div>
+            <span ref={contentEndRef} className="classroom-content-end" aria-hidden="true" />
           </section>
         )}
 
@@ -347,19 +480,9 @@ export default function Classroom({ competency, questions, questionSource = 'bun
             <Summary incorrectAnswers={completionIncorrectAnswers} correctCount={completionCorrectCount} total={c.items.length} lang={lang} />
           ) : (
             <section className="classroom-practice">
-              {result !== null && fb && (
-                <div className={`mb-3 rounded-card border-2 p-3 ${fb.ok ? 'border-mint bg-mint/20' : 'border-yellow bg-yellow/20'}`}>
-                  <p className="font-display text-base font-extrabold text-cream">{fb.headline}</p>
-                  {!fb.ok && (
-                    <p className="mt-1 text-sm leading-snug text-cream">
-                      <RichText className="text-cream">{fb.body}</RichText>
-                    </p>
-                  )}
-                </div>
-              )}
 
               <div className="classroom-question-meta">
-                <p>{tt('common.question')} {idx + 1} / {c.items.length}</p>
+                <span className="classroom-quick-challenge">{tt('class.quickChallenge')}</span>
                 <span
                   className="classroom-question-progress"
                   role="progressbar"
@@ -376,8 +499,18 @@ export default function Classroom({ competency, questions, questionSource = 'bun
 
               <p className="classroom-question-text font-display">{localize(item.q, lang)}</p>
               <QuestionVisual question={localize(item.q, lang)} dark />
+              {result !== null && fb && (
+                <div className={`classroom-practice-feedback rounded-card border-2 p-3 ${fb.ok ? 'border-mint bg-mint/20' : 'border-yellow bg-yellow/20'}`}>
+                  <p className="font-display text-base font-extrabold text-cream">{fb.headline}</p>
+                  {!fb.ok && (
+                    <p className="mt-1 text-sm leading-snug text-cream">
+                      <RichText className="text-cream">{fb.body}</RichText>
+                    </p>
+                  )}
+                </div>
+              )}
 
-              {item.steps?.length > 0 && !stepsDone && (
+              {item.steps?.length > 0 && !stepsDone && !itemOptions && (
                 <div className="mt-3 rounded-card border-2 border-cream/50 bg-white/10 p-3">
                   <p className="text-sm font-extrabold text-cream">{tt('class.steps')}</p>
                 </div>
@@ -386,7 +519,7 @@ export default function Classroom({ competency, questions, questionSource = 'bun
           ))}
       </main>
 
-      {tab === 'practice' && !done && stepsDone && (
+      {tab === 'practice' && !done && (itemOptions || stepsDone) && (
         <section className="classroom-answer-card" aria-label={itemOptions ? tt('class.pickAnswer') : answerHint(lang)}>
           <p className="classroom-answer-heading">{itemOptions ? tt('class.pickAnswer') : answerHint(lang)}</p>
           {itemOptions ? (
@@ -435,109 +568,193 @@ export default function Classroom({ competency, questions, questionSource = 'bun
         </section>
       )}
 
-      <section className="classroom-tutor">
-        <div className={`classroom-mascot ${avatarState}`}>
-          <Mascot size={104} />
-        </div>
-        <div className="classroom-tutor-bubble">
-          <SpeechBubble speaking>
-            {done ? bubble : result !== null && item.solution ? localize(item.solution, lang) : result === false ? tt('classroom.tryAgain') : bubble}
-          </SpeechBubble>
-        </div>
-      </section>
-
       {showCorrectOverlay && (
         <div className="pointer-events-none fixed inset-0 z-[80] flex items-center justify-center bg-mint/90 px-6 text-center">
           <p className="nova-correct font-display text-5xl font-extrabold text-ink">{tt('classroom.correctOverlay')}</p>
         </div>
       )}
 
-      {isSpeechSupported() && (
-        <div className="classroom-voice-controls">
-          <button
-            className="classroom-voice-action"
-            onClick={() => {
-              setPaused(false)
-              speak(bubble, { lang })
-            }}
-            aria-label={tt('class.listenAgain')}
-            title={tt('class.listenAgain')}
-          >
-            <span className="classroom-control-icon"><EarIcon size={26} /></span>
-            <span>{tt('class.listenAgain')}</span>
-          </button>
-          <button
-            className="classroom-voice-action"
-            onClick={togglePause}
-            aria-label={paused ? tt('class.play') : tt('class.pause')}
-            title={paused ? tt('class.play') : tt('class.pause')}
-          >
-            <span className="classroom-control-icon">
-              {paused ? <PlayCircleIcon size={28} /> : <PauseCircleIcon size={28} />}
-            </span>
-            <span>{paused ? tt('class.play') : tt('class.pause')}</span>
-          </button>
-          <button
-            className="classroom-ask-teacher bg-lavender"
-            onClick={() => setAskOpen((v) => !v)}
-            aria-expanded={askOpen}
-            aria-label={tt('class.raiseHand')}
-            title={tt('class.raiseHand')}
-          >
-            <RaiseHandIcon size={28} />
-            <span>{tt('class.raiseHand')}</span>
-          </button>
-        </div>
-      )}
-
-      {askOpen && (
-        <div className="classroom-ask-panel gb-card bg-white gb-pop">
-          <div className="classroom-ask-row flex items-center gap-2">
-            <input
-              value={question}
-              onChange={(e) => setQuestion(e.target.value)}
-              onKeyDown={(e) => e.key === 'Enter' && askGabay()}
-              placeholder={tt('class.askPlaceholder')}
-              className="min-w-0 flex-1 rounded-full border-[2.5px] border-outline px-4 py-2 text-base font-bold outline-none focus:bg-cream"
-            />
-            {(isRecognitionSupported() || isMediaRecorderSupported()) && (
-              <button
-                onClick={toggleMic}
-                disabled={!online}
-                title={online ? tt('class.speak') : tt('class.micOfflineTitle')}
-                className={`gb-chip text-base ${listening ? 'bg-rose animate-pulse' : 'bg-rose'} disabled:opacity-40`}
-              >
-                {listening ? tt('class.micStop') : transcribing ? '...' : tt('class.mic')}
-              </button>
-            )}
-            <Button color="mint" onClick={() => askGabay()} disabled={thinking}>
-              {thinking ? '...' : tt('class.ask')}
-            </Button>
+      <section ref={teacherZoneRef} className={`classroom-teacher-zone ${teacherOpen ? 'is-open' : 'is-collapsed'}`}>
+        {tab !== 'practice' && (
+          <div className="classroom-guidance-card">
+            <p>{teacherDialogue}</p>
+            <button
+              type="button"
+              className={`classroom-floating-mascot ${mascotPressed ? 'is-pressed' : ''} ${avatarState}`}
+              onClick={toggleTeacher}
+              aria-expanded={teacherOpen}
+              aria-label={teacherOpen ? tt('class.teacherClose') : tt('class.teacherOpen')}
+              title={teacherOpen ? tt('class.teacherClose') : tt('class.teacherOpen')}
+            >
+              <span className="classroom-mascot-sparkle sparkle-one" aria-hidden="true">&#10022;</span>
+              <Mascot size={82} alt={tt('class.teacherName')} />
+              <span className="classroom-mascot-question" aria-hidden="true">?</span>
+              <span className="classroom-mascot-sparkle sparkle-two" aria-hidden="true">&#10022;</span>
+            </button>
           </div>
-          {transcribing && <p className="mt-2 text-sm font-bold text-ink/60">{tt('class.listening')}</p>}
-          {!online && <p className="mt-2 text-sm text-ink/60">{tt('class.offlineNote')}</p>}
-          {reply && (
-            <div className="mt-3 rounded-card border-[2.5px] border-outline bg-cream p-3">
-              <p className="mb-1 text-xs font-bold text-ink/60">
-                {(reply.source && tt(SOURCE_KEY[reply.source])) || ''} {reply.fromCache ? ' - cached' : ''}
-              </p>
-              <p className="text-base leading-snug">{plain(reply.text)}</p>
-              {isSpeechSupported() && (
-                <button
-                  className="mt-2 flex h-10 w-10 items-center justify-center rounded-full border-[2.5px] border-outline bg-white shadow-hard-sm"
-                  onClick={() => speak(plain(reply.text), { lang })}
-                  aria-label={tt('class.listenAgain')}
-                  title={tt('class.listenAgain')}
-                >
-                  <EarIcon size={22} />
-                </button>
-              )}
-            </div>
-          )}
-        </div>
-      )}
+        )}
 
-      {answered && (
+        {tab === 'practice' && (
+          done ? (
+            <div className="classroom-results-actions">
+              <Button color="white" className="flex-1 text-lg" onClick={restart}>{tt('class.repeat')}</Button>
+              <Button color="mint" className="flex-1 text-lg" onClick={onExit}>{tt('common.done')}</Button>
+            </div>
+          ) : !stepsDone && !itemOptions ? (
+            <StepScaffold item={item} lang={lang} tt={tt} onComplete={() => setStepsDone(true)} />
+          ) : (
+            <div className="classroom-practice-action-row">
+              {result === null ? (
+                <Button
+                  color="yellow"
+                  className="classroom-submit-answer classroom-practice-primary w-full disabled:opacity-50"
+                  onClick={submit}
+                  disabled={!input.trim()}
+                >
+                  {tt('class.answer')}
+                </Button>
+              ) : feedbackReady ? (
+                result ? (
+                  <Button ref={actionRef} color="sky" className="classroom-submit-answer classroom-practice-primary w-full" onClick={next}>
+                    {idx + 1 >= c.items.length ? tt('common.finish') : tt('common.next')} &rarr;
+                  </Button>
+                ) : (
+                  <Button ref={actionRef} color="rose" className="classroom-submit-answer classroom-practice-primary w-full" onClick={tryAgain}>
+                    {tt('classroom.retry')}
+                  </Button>
+                )
+              ) : (
+                <span className="classroom-read-solution gb-chip bg-yellow">{tt('classroom.readSolution')}</span>
+              )}
+
+              <button
+                type="button"
+                className={`classroom-practice-help-button ${mascotPressed ? 'is-pressed' : ''} ${avatarState}`}
+                onClick={toggleTeacher}
+                aria-expanded={teacherOpen}
+                aria-label={teacherOpen ? tt('class.teacherClose') : tt('class.teacherOpen')}
+                title={teacherOpen ? tt('class.teacherClose') : tt('class.teacherOpen')}
+              >
+                <Mascot size={54} alt={tt('class.teacherName')} />
+                <span className="classroom-practice-help-question" aria-hidden="true">?</span>
+              </button>
+            </div>
+          )
+        )}
+
+        {teacherOpen && (
+          <div className="classroom-teacher-dropdown" role="dialog" aria-label={tt('class.teacherPanel')}>
+            <button
+              type="button"
+              className="classroom-teacher-close"
+              onClick={() => {
+                setTeacherOpen(false)
+                setAskOpen(false)
+              }}
+              aria-label={tt('class.teacherClose')}
+            >
+              &times;
+            </button>
+
+            <div className="classroom-dropdown-message">
+              <div className="classroom-tutor-bubble">
+                <SpeechBubble speaking>{tab === 'practice' ? practiceGuidance : tt('class.helpPrompt')}</SpeechBubble>
+              </div>
+            </div>
+
+            <div className="classroom-voice-controls">
+              <button
+                type="button"
+                className="classroom-voice-action"
+                disabled={!isSpeechSupported()}
+                onClick={() => {
+                  setPaused(false)
+                  speak(teacherDialogue, { lang })
+                }}
+                aria-label={tt('class.listenAgain')}
+                title={tt('class.listenAgain')}
+              >
+                <span className="classroom-control-icon"><EarIcon size={24} /></span>
+                <span>{tt('class.listenAgain')}</span>
+              </button>
+              <button
+                type="button"
+                className="classroom-voice-action"
+                disabled={!isSpeechSupported()}
+                onClick={togglePause}
+                aria-label={paused ? tt('class.play') : tt('class.pause')}
+                title={paused ? tt('class.play') : tt('class.pause')}
+              >
+                <span className="classroom-control-icon">
+                  {paused ? <PlayCircleIcon size={26} /> : <PauseCircleIcon size={26} />}
+                </span>
+                <span>{paused ? tt('class.play') : tt('class.pause')}</span>
+              </button>
+              <button
+                type="button"
+                className="classroom-ask-teacher bg-lavender"
+                onClick={() => setAskOpen((current) => !current)}
+                aria-expanded={askOpen}
+                aria-label={tt('class.raiseHand')}
+                title={tt('class.raiseHand')}
+              >
+                <RaiseHandIcon size={24} />
+                <span>{tt('class.raiseHand')}</span>
+              </button>
+            </div>
+
+            {askOpen && (
+              <div className="classroom-ask-panel">
+                <div className="classroom-ask-row flex items-center gap-2">
+                  <input
+                    value={question}
+                    onChange={(event) => setQuestion(event.target.value)}
+                    onKeyDown={(event) => event.key === 'Enter' && askGabay()}
+                    placeholder={tt('class.askPlaceholder')}
+                    className="min-w-0 flex-1 rounded-full border-[2.5px] border-outline px-4 py-2 text-base font-bold outline-none focus:bg-cream"
+                  />
+                  {(isRecognitionSupported() || isMediaRecorderSupported()) && (
+                    <button
+                      type="button"
+                      onClick={toggleMic}
+                      disabled={!online}
+                      title={online ? tt('class.speak') : tt('class.micOfflineTitle')}
+                      className={`classroom-ask-mic gb-chip bg-rose text-base ${listening ? 'animate-pulse' : ''} disabled:opacity-40`}
+                    >
+                      {listening ? tt('class.micStop') : transcribing ? '...' : tt('class.mic')}
+                    </button>
+                  )}
+                  <Button color="mint" className="classroom-ask-submit" onClick={() => askGabay()} disabled={thinking}>
+                    {thinking ? '...' : tt('class.ask')}
+                  </Button>
+                </div>
+                {transcribing && <p className="mt-2 text-sm font-bold text-ink/60">{tt('class.listening')}</p>}
+                {!online && <p className="mt-2 text-sm text-ink/60">{tt('class.offlineNote')}</p>}
+                {reply && (
+                  <div className="mt-3 rounded-card border-[2.5px] border-outline bg-cream p-3">
+                    <p className="mb-1 text-xs font-bold text-ink/60">
+                      {(reply.source && tt(SOURCE_KEY[reply.source])) || ''} {reply.fromCache ? ' - cached' : ''}
+                    </p>
+                    <p className="text-base leading-snug">{plain(reply.text)}</p>
+                    {isSpeechSupported() && (
+                      <button
+                        type="button"
+                        className="mt-2 flex h-10 w-10 items-center justify-center rounded-full border-[2.5px] border-outline bg-white shadow-hard-sm"
+                        onClick={() => speak(plain(reply.text), { lang })}
+                        aria-label={tt('class.listenAgain')}
+                        title={tt('class.listenAgain')}
+                      >
+                        <EarIcon size={22} />
+                      </button>
+                    )}
+                  </div>
+                )}
+              </div>
+            )}
+          </div>
+        )}
+      </section>
+      {tab !== 'practice' && answered && (
         <div className={`classroom-mastery ${done ? 'is-results' : ''}`}>
           <div className="classroom-mastery-heading">
             <span>{tt('common.mastery')}</span>
@@ -547,41 +764,29 @@ export default function Classroom({ competency, questions, questionSource = 'bun
         </div>
       )}
 
-      <div className="classroom-actions">
-        {tab !== 'practice' ? (
-          <Button color="yellow" className="classroom-start-practice w-full" onClick={() => setTab('practice')}>
-            {tt('class.startPractice')} &rarr;
-          </Button>
-        ) : done ? (
-          <div className="classroom-results-actions">
-            <Button color="white" className="flex-1 text-lg" onClick={restart}>{tt('class.repeat')}</Button>
-            <Button color="mint" className="flex-1 text-lg" onClick={onExit}>{tt('common.done')}</Button>
-          </div>
-        ) : !stepsDone ? (
-          <StepScaffold item={item} lang={lang} tt={tt} onComplete={() => setStepsDone(true)} />
-        ) : result === null ? (
-          <Button
-            color="yellow"
-            className="classroom-submit-answer w-full disabled:opacity-50"
-            onClick={submit}
-            disabled={!input.trim()}
-          >
-            {tt('class.answer')} &rarr;
-          </Button>
-        ) : feedbackReady ? (
-          result ? (
-            <Button ref={actionRef} color="sky" className="classroom-submit-answer w-full" onClick={next}>
-              {idx + 1 >= c.items.length ? tt('common.finish') : tt('common.next')} &rarr;
+      {tab !== 'practice' && (
+        <div className="classroom-actions">
+          {tab === 'explain' ? (
+            <Button
+              color="yellow"
+              className="classroom-next-step w-full"
+              onClick={() => advanceLesson('example', 1)}
+              disabled={!explanationComplete}
+            >
+              {tt('common.next')} &rarr;
             </Button>
           ) : (
-            <Button ref={actionRef} color="rose" className="classroom-submit-answer w-full" onClick={tryAgain}>
-              {tt('classroom.retry')}
+            <Button
+              color="yellow"
+              className="classroom-next-step w-full"
+              onClick={() => advanceLesson('practice', 2)}
+              disabled={!exampleComplete}
+            >
+              {tt('class.readyPractice')} &rarr;
             </Button>
-          )
-        ) : (
-          <span className="classroom-read-solution gb-chip bg-yellow">{tt('classroom.readSolution')}</span>
-        )}
-      </div>
+          )}
+        </div>
+      )}
     </div>
   )
 }

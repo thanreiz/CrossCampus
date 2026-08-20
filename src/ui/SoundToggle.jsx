@@ -3,7 +3,7 @@
 import { useEffect, useState } from 'react'
 import { isMuted, loadSoundPrefs, toggleMute, sfx } from '../lib/sound.js'
 
-export default function SoundToggle() {
+export default function SoundToggle({ embedded = false, className = '' }) {
   const [muted, setMuted] = useState(isMuted())
 
   useEffect(() => {
@@ -27,7 +27,7 @@ export default function SoundToggle() {
       onClick={onClick}
       aria-label={muted ? 'Buksan ang tunog' : 'Patayin ang tunog'}
       aria-pressed={muted}
-      className="fixed bottom-[88px] right-3 z-50 flex h-11 w-11 items-center justify-center rounded-full border-[2.5px] border-outline bg-white shadow-hard-sm active:translate-y-0.5"
+      className={`${embedded ? 'relative flex h-8 w-8 shrink-0' : 'app-sound-toggle fixed z-50 flex h-11 w-11'} ${className} items-center justify-center rounded-full border-[2.5px] border-outline bg-white shadow-hard-sm active:translate-y-0.5`}
     >
       {muted ? <MutedIcon /> : <SoundIcon />}
     </button>
@@ -37,8 +37,8 @@ export default function SoundToggle() {
 function SoundIcon() {
   return (
     <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
-      <path d="M4 9 h3 l4 -3 v12 l-4 -3 H4 Z" fill="#1C1410" stroke="#1C1410" strokeWidth="1.6" strokeLinejoin="round" />
-      <path d="M15 9 a4 4 0 0 1 0 6 M17.5 7 a7 7 0 0 1 0 10" fill="none" stroke="#1C1410" strokeWidth="2" strokeLinecap="round" />
+      <path d="M4 9 h3 l4 -3 v12 l-4 -3 H4 Z" fill="var(--gb-outline)" stroke="var(--gb-outline)" strokeWidth="1.6" strokeLinejoin="round" />
+      <path d="M15 9 a4 4 0 0 1 0 6 M17.5 7 a7 7 0 0 1 0 10" fill="none" stroke="var(--gb-outline)" strokeWidth="2" strokeLinecap="round" />
     </svg>
   )
 }
@@ -46,8 +46,8 @@ function SoundIcon() {
 function MutedIcon() {
   return (
     <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
-      <path d="M4 9 h3 l4 -3 v12 l-4 -3 H4 Z" fill="#1C1410" stroke="#1C1410" strokeWidth="1.6" strokeLinejoin="round" />
-      <path d="M15 9 l5 6 M20 9 l-5 6" fill="none" stroke="#1C1410" strokeWidth="2" strokeLinecap="round" />
+      <path d="M4 9 h3 l4 -3 v12 l-4 -3 H4 Z" fill="var(--gb-outline)" stroke="var(--gb-outline)" strokeWidth="1.6" strokeLinejoin="round" />
+      <path d="M15 9 l5 6 M20 9 l-5 6" fill="none" stroke="var(--gb-outline)" strokeWidth="2" strokeLinecap="round" />
     </svg>
   )
 }

@@ -31,9 +31,9 @@
         "type": "mcq",
         "options": [
           "1/2",
-          "triangle",
-          "rectangle",
-          "circle"
+          "5/6",
+          "7/10",
+          "6/8"
         ],
         "solution": {
           "en": "Answer: 1/2",
@@ -77,33 +77,6 @@
       },
       {
         "q": {
-          "en": "Draw and label a circle, half-circle, and quarter-circle. (Diagram description: three blank frames.)",
-          "fil": "Draw and label a circle, half-circle, and quarter-circle. (Diagram description: three blank frames.)",
-          "taglish": "Draw and label a circle, half-circle, and quarter-circle. (Diagram description: three blank frames.)"
-        },
-        "answer": "Correctly labeled drawings",
-        "type": "mcq",
-        "options": [
-          "rectangle",
-          "circle",
-          "Correctly labeled drawings",
-          "triangle"
-        ],
-        "solution": {
-          "en": "Answer: Correctly labeled drawings",
-          "fil": "Answer: Correctly labeled drawings",
-          "taglish": "Answer: Correctly labeled drawings"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "2MG-Ia-1",
-          "path": "Grade-2/Semester-1/Quizzes/Quiz-01-Describe-Circles-Half-Circles-And-Quarter-Circles.md",
-          "item": 3,
-          "original_type": "multiple-choice"
-        }
-      },
-      {
-        "q": {
           "en": "Combine two half-circles. What shape is formed?",
           "fil": "Combine two half-circles. What shape is formed?",
           "taglish": "Combine two half-circles. What shape is formed?"
@@ -112,9 +85,9 @@
         "type": "mcq",
         "options": [
           "one whole circle",
-          "1/2",
-          "4",
-          "Correctly labeled drawings"
+          "reflection or flip",
+          "6:30 a.m.",
+          "10:15 a.m."
         ],
         "solution": {
           "en": "Answer: one whole circle",
@@ -216,9 +189,9 @@
         "type": "mcq",
         "options": [
           "1/2",
-          "triangle",
-          "rectangle",
-          "circle"
+          "2/3",
+          "7/8",
+          "5/6"
         ],
         "solution": {
           "en": "Answer: 1/2",
@@ -262,33 +235,6 @@
       },
       {
         "q": {
-          "en": "Draw and label a circle, half-circle, and quarter-circle. (Diagram description: three blank frames.)",
-          "fil": "Draw and label a circle, half-circle, and quarter-circle. (Diagram description: three blank frames.)",
-          "taglish": "Draw and label a circle, half-circle, and quarter-circle. (Diagram description: three blank frames.)"
-        },
-        "answer": "Correctly labeled drawings",
-        "type": "mcq",
-        "options": [
-          "rectangle",
-          "circle",
-          "Correctly labeled drawings",
-          "triangle"
-        ],
-        "solution": {
-          "en": "Answer: Correctly labeled drawings",
-          "fil": "Answer: Correctly labeled drawings",
-          "taglish": "Answer: Correctly labeled drawings"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "2MG-Ia-2",
-          "path": "Grade-2/Semester-1/Quizzes/Quiz-02-Compose-And-Decompose-Composite-Figures-Made-Up-Of.md",
-          "item": 3,
-          "original_type": "multiple-choice"
-        }
-      },
-      {
-        "q": {
           "en": "Combine two half-circles. What shape is formed?",
           "fil": "Combine two half-circles. What shape is formed?",
           "taglish": "Combine two half-circles. What shape is formed?"
@@ -297,9 +243,9 @@
         "type": "mcq",
         "options": [
           "one whole circle",
-          "1/2",
-          "4",
-          "Correctly labeled drawings"
+          "9:45 a.m.",
+          "9:00 a.m.",
+          "4/6, 4/6, 5/6"
         ],
         "solution": {
           "en": "Answer: one whole circle",
@@ -401,9 +347,8 @@
         "type": "mcq",
         "options": [
           "rotation",
-          "translation",
-          "translation or slide",
-          "reflection"
+          "reflection or flip",
+          "translation or slide"
         ],
         "solution": {
           "en": "Answer: translation or slide",
@@ -428,9 +373,8 @@
         "type": "mcq",
         "options": [
           "translation",
-          "translation or slide",
-          "rotation",
-          "reflection"
+          "reflection or flip",
+          "rotation"
         ],
         "solution": {
           "en": "Answer: rotation",
@@ -456,7 +400,6 @@
         "options": [
           "translation",
           "reflection or flip",
-          "reflection",
           "rotation"
         ],
         "solution": {
@@ -523,33 +466,6 @@
           "item": 8,
           "original_type": "true-false"
         }
-      },
-      {
-        "q": {
-          "en": "A figure is moved without turning or flipping. Name the transformation. Explain why your answer is reasonable.",
-          "fil": "A figure is moved without turning or flipping. Name the transformation. Explain why your answer is reasonable.",
-          "taglish": "A figure is moved without turning or flipping. Name the transformation. Explain why your answer is reasonable."
-        },
-        "answer": "translation or slide",
-        "type": "mcq",
-        "options": [
-          "rotation",
-          "reflection or flip",
-          "The completed half must be a mirror image at equal distances from the line",
-          "translation or slide"
-        ],
-        "solution": {
-          "en": "Answer: translation or slide",
-          "fil": "Answer: translation or slide",
-          "taglish": "Answer: translation or slide"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "2MG-Ib-1",
-          "path": "Grade-2/Semester-1/Activity-Sheets/Activity-Sheet-03-Draw-The-Effect-Of-A-One-Direction-Multi-Step-Slide.md",
-          "item": 9,
-          "original_type": "activity"
-        }
       }
     ],
     "source_trace": {
@@ -591,10 +507,10 @@
         "answer": "536, 537",
         "type": "mcq",
         "options": [
-          "1072",
+          "539, 537",
           "536, 537",
-          "537",
-          "535"
+          "536, 540",
+          "546, 547"
         ],
         "solution": {
           "en": "Answer: 536, 537",
@@ -618,9 +534,9 @@
         "answer": "935, 945",
         "type": "mcq",
         "options": [
-          "936",
-          "934",
-          "1870",
+          "933, 945",
+          "935, 943",
+          "938, 948",
           "935, 945"
         ],
         "solution": {
@@ -645,9 +561,9 @@
         "answer": "196, 206",
         "type": "mcq",
         "options": [
-          "197",
-          "195",
-          "392",
+          "196, 204",
+          "199, 209",
+          "199, 206",
           "196, 206"
         ],
         "solution": {
@@ -757,20 +673,20 @@
       },
       {
         "q": {
-          "en": "Is this solution correct? Continue the count: 380, 382, 384, __, __. Proposed answer: 386, 388",
-          "fil": "Is this solution correct? Continue the count: 380, 382, 384, __, __. Proposed answer: 386, 388",
-          "taglish": "Is this solution correct? Continue the count: 380, 382, 384, __, __. Proposed answer: 386, 388"
+          "en": "Is this solution correct? Continue the count: 380, 382, 384, __, __. Proposed answer: 386, 398",
+          "fil": "Is this solution correct? Continue the count: 380, 382, 384, __, __. Proposed answer: 386, 398",
+          "taglish": "Is this solution correct? Continue the count: 380, 382, 384, __, __. Proposed answer: 386, 398"
         },
-        "answer": "True",
+        "answer": "False",
         "type": "true_false",
         "options": [
           "True",
           "False"
         ],
         "solution": {
-          "en": "Answer: True",
-          "fil": "Answer: True",
-          "taglish": "Answer: True"
+          "en": "Answer: False",
+          "fil": "Answer: False",
+          "taglish": "Answer: False"
         },
         "source": {
           "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
@@ -1041,20 +957,20 @@
       },
       {
         "q": {
-          "en": "Is this solution correct? Write the numeral for: three hundred forty-two. Proposed answer: 342",
-          "fil": "Is this solution correct? Write the numeral for: three hundred forty-two. Proposed answer: 342",
-          "taglish": "Is this solution correct? Write the numeral for: three hundred forty-two. Proposed answer: 342"
+          "en": "Is this solution correct? Write the numeral for: three hundred forty-two. Proposed answer: 352",
+          "fil": "Is this solution correct? Write the numeral for: three hundred forty-two. Proposed answer: 352",
+          "taglish": "Is this solution correct? Write the numeral for: three hundred forty-two. Proposed answer: 352"
         },
-        "answer": "True",
+        "answer": "False",
         "type": "true_false",
         "options": [
           "True",
           "False"
         ],
         "solution": {
-          "en": "Answer: True",
-          "fil": "Answer: True",
-          "taglish": "Answer: True"
+          "en": "Answer: False",
+          "fil": "Answer: False",
+          "taglish": "Answer: False"
         },
         "source": {
           "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
@@ -1220,20 +1136,20 @@
       },
       {
         "q": {
-          "en": "Is this solution correct? Write the numeral for: three hundred forty-two. Proposed answer: 342",
-          "fil": "Is this solution correct? Write the numeral for: three hundred forty-two. Proposed answer: 342",
-          "taglish": "Is this solution correct? Write the numeral for: three hundred forty-two. Proposed answer: 342"
+          "en": "Is this solution correct? Write the numeral for: three hundred forty-two. Proposed answer: 352",
+          "fil": "Is this solution correct? Write the numeral for: three hundred forty-two. Proposed answer: 352",
+          "taglish": "Is this solution correct? Write the numeral for: three hundred forty-two. Proposed answer: 352"
         },
-        "answer": "True",
+        "answer": "False",
         "type": "true_false",
         "options": [
           "True",
           "False"
         ],
         "solution": {
-          "en": "Answer: True",
-          "fil": "Answer: True",
-          "taglish": "Answer: True"
+          "en": "Answer: False",
+          "fil": "Answer: False",
+          "taglish": "Answer: False"
         },
         "source": {
           "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
@@ -1304,10 +1220,10 @@
         "answer": "273, 278",
         "type": "mcq",
         "options": [
-          "546",
+          "275, 278",
           "273, 278",
-          "274",
-          "272"
+          "273, 280",
+          "271, 276"
         ],
         "solution": {
           "en": "Answer: 273, 278",
@@ -1332,9 +1248,9 @@
         "type": "mcq",
         "options": [
           "276, 277",
-          "277",
-          "275",
-          "552"
+          "275, 277",
+          "276, 276",
+          "278, 279"
         ],
         "solution": {
           "en": "Answer: 276, 277",
@@ -1359,9 +1275,9 @@
         "type": "mcq",
         "options": [
           "86, 88",
-          "87",
-          "85",
-          "172"
+          "86, 87",
+          "88, 90",
+          "88, 88"
         ],
         "solution": {
           "en": "Answer: 86, 88",
@@ -1470,20 +1386,20 @@
       },
       {
         "q": {
-          "en": "Is this solution correct? Continue the count: 631, 633, 635, __, __. Proposed answer: 637, 639",
-          "fil": "Is this solution correct? Continue the count: 631, 633, 635, __, __. Proposed answer: 637, 639",
-          "taglish": "Is this solution correct? Continue the count: 631, 633, 635, __, __. Proposed answer: 637, 639"
+          "en": "Is this solution correct? Continue the count: 631, 633, 635, __, __. Proposed answer: 637, 649",
+          "fil": "Is this solution correct? Continue the count: 631, 633, 635, __, __. Proposed answer: 637, 649",
+          "taglish": "Is this solution correct? Continue the count: 631, 633, 635, __, __. Proposed answer: 637, 649"
         },
-        "answer": "True",
+        "answer": "False",
         "type": "true_false",
         "options": [
           "True",
           "False"
         ],
         "solution": {
-          "en": "Answer: True",
-          "fil": "Answer: True",
-          "taglish": "Answer: True"
+          "en": "Answer: False",
+          "fil": "Answer: False",
+          "taglish": "Answer: False"
         },
         "source": {
           "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
@@ -1659,10 +1575,10 @@
         "answer": "372, 450, 605, 740",
         "type": "mcq",
         "options": [
-          "744",
+          "372, 450, 605, 743",
           "372, 450, 605, 740",
-          "373",
-          "371"
+          "382, 460, 615, 750",
+          "382, 450, 605, 740"
         ],
         "solution": {
           "en": "Answer: 372, 450, 605, 740",
@@ -1686,10 +1602,10 @@
         "answer": "265, 440, 513, 895",
         "type": "mcq",
         "options": [
-          "264",
-          "530",
+          "265, 440, 516, 895",
+          "265, 440, 513, 898",
           "265, 440, 513, 895",
-          "266"
+          "275, 450, 523, 905"
         ],
         "solution": {
           "en": "Answer: 265, 440, 513, 895",
@@ -1714,9 +1630,9 @@
         "type": "mcq",
         "options": [
           "172, 362, 365, 403",
-          "173",
-          "171",
-          "344"
+          "172, 365, 365, 403",
+          "172, 362, 368, 403",
+          "172, 362, 365, 406"
         ],
         "solution": {
           "en": "Answer: 172, 362, 365, 403",
@@ -2014,10 +1930,10 @@
         "answer": "14th",
         "type": "mcq",
         "options": [
-          "None of these",
+          "15th",
           "14th",
-          "A different value",
-          "Cannot be determined"
+          "13th",
+          "16th"
         ],
         "solution": {
           "en": "Answer: 14th",
@@ -2041,10 +1957,10 @@
         "answer": "19th",
         "type": "mcq",
         "options": [
-          "Cannot be determined",
-          "None of these",
+          "20th",
+          "18th",
           "19th",
-          "A different value"
+          "21th"
         ],
         "solution": {
           "en": "Answer: 19th",
@@ -2069,9 +1985,9 @@
         "type": "mcq",
         "options": [
           "9th",
-          "A different value",
-          "Cannot be determined",
-          "None of these"
+          "10th",
+          "8th",
+          "11th"
         ],
         "solution": {
           "en": "Answer: 9th",
@@ -2192,20 +2108,20 @@
       },
       {
         "q": {
-          "en": "Is this solution correct? In a school parade, Ana is in position 7. Write her position as an ordinal number. Proposed answer: 7th",
-          "fil": "Is this solution correct? In a school parade, Ana is in position 7. Write her position as an ordinal number. Proposed answer: 7th",
-          "taglish": "Is this solution correct? In a school parade, Ana is in position 7. Write her position as an ordinal number. Proposed answer: 7th"
+          "en": "Is this solution correct? In a school parade, Ana is in position 7. Write her position as an ordinal number. Proposed answer: 8th",
+          "fil": "Is this solution correct? In a school parade, Ana is in position 7. Write her position as an ordinal number. Proposed answer: 8th",
+          "taglish": "Is this solution correct? In a school parade, Ana is in position 7. Write her position as an ordinal number. Proposed answer: 8th"
         },
-        "answer": "True",
+        "answer": "False",
         "type": "true_false",
         "options": [
           "True",
           "False"
         ],
         "solution": {
-          "en": "Answer: True",
-          "fil": "Answer: True",
-          "taglish": "Answer: True"
+          "en": "Answer: False",
+          "fil": "Answer: False",
+          "taglish": "Answer: False"
         },
         "source": {
           "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
@@ -2239,33 +2155,6 @@
           "ref": "2NA-Ig-1",
           "path": "Grade-2/Semester-1/Activity-Sheets/Activity-Sheet-09-The-Position-Of-Objects-Using-Ordinal-Numbers-Up-To.md",
           "item": 8,
-          "original_type": "activity"
-        }
-      },
-      {
-        "q": {
-          "en": "In a school parade, Ana is in position 14. Write her position as an ordinal number. Explain why your answer is reasonable.",
-          "fil": "In a school parade, Ana is in position 14. Write her position as an ordinal number. Explain why your answer is reasonable.",
-          "taglish": "In a school parade, Ana is in position 14. Write her position as an ordinal number. Explain why your answer is reasonable."
-        },
-        "answer": "14th",
-        "type": "mcq",
-        "options": [
-          "19th",
-          "9th",
-          "1st",
-          "14th"
-        ],
-        "solution": {
-          "en": "Answer: 14th",
-          "fil": "Answer: 14th",
-          "taglish": "Answer: 14th"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "2NA-Ig-1",
-          "path": "Grade-2/Semester-1/Activity-Sheets/Activity-Sheet-09-The-Position-Of-Objects-Using-Ordinal-Numbers-Up-To.md",
-          "item": 9,
           "original_type": "activity"
         }
       },
@@ -2529,20 +2418,20 @@
       },
       {
         "q": {
-          "en": "Is this solution correct? A barangay record shows 200. What is the value of its tens digit? Proposed answer: 0",
-          "fil": "Is this solution correct? A barangay record shows 200. What is the value of its tens digit? Proposed answer: 0",
-          "taglish": "Is this solution correct? A barangay record shows 200. What is the value of its tens digit? Proposed answer: 0"
+          "en": "Is this solution correct? A barangay record shows 200. What is the value of its tens digit? Proposed answer: 1",
+          "fil": "Is this solution correct? A barangay record shows 200. What is the value of its tens digit? Proposed answer: 1",
+          "taglish": "Is this solution correct? A barangay record shows 200. What is the value of its tens digit? Proposed answer: 1"
         },
-        "answer": "True",
+        "answer": "False",
         "type": "true_false",
         "options": [
           "True",
           "False"
         ],
         "solution": {
-          "en": "Answer: True",
-          "fil": "Answer: True",
-          "taglish": "Answer: True"
+          "en": "Answer: False",
+          "fil": "Answer: False",
+          "taglish": "Answer: False"
         },
         "source": {
           "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
@@ -4138,10 +4027,10 @@
         "answer": "₱150",
         "type": "mcq",
         "options": [
-          "300",
+          "₱300",
           "₱150",
-          "151",
-          "149"
+          "₱151",
+          "₱149"
         ],
         "solution": {
           "en": "Answer: ₱150",
@@ -4166,9 +4055,9 @@
         "type": "mcq",
         "options": [
           "₱350",
-          "351",
-          "349",
-          "700"
+          "₱351",
+          "₱349",
+          "₱700"
         ],
         "solution": {
           "en": "Answer: ₱350",
@@ -4192,10 +4081,10 @@
         "answer": "₱100",
         "type": "mcq",
         "options": [
-          "200",
+          "₱200",
           "₱100",
-          "101",
-          "99"
+          "₱101",
+          "₱99"
         ],
         "solution": {
           "en": "Answer: ₱100",
@@ -4304,20 +4193,20 @@
       },
       {
         "q": {
-          "en": "Is this solution correct? A learner has 6 Philippine ₱5 coins/bills. What is the total value? Proposed answer: ₱30",
-          "fil": "Is this solution correct? A learner has 6 Philippine ₱5 coins/bills. What is the total value? Proposed answer: ₱30",
-          "taglish": "Is this solution correct? A learner has 6 Philippine ₱5 coins/bills. What is the total value? Proposed answer: ₱30"
+          "en": "Is this solution correct? A learner has 6 Philippine ₱5 coins/bills. What is the total value? Proposed answer: ₱32",
+          "fil": "Is this solution correct? A learner has 6 Philippine ₱5 coins/bills. What is the total value? Proposed answer: ₱32",
+          "taglish": "Is this solution correct? A learner has 6 Philippine ₱5 coins/bills. What is the total value? Proposed answer: ₱32"
         },
-        "answer": "True",
+        "answer": "False",
         "type": "true_false",
         "options": [
           "True",
           "False"
         ],
         "solution": {
-          "en": "Answer: True",
-          "fil": "Answer: True",
-          "taglish": "Answer: True"
+          "en": "Answer: False",
+          "fil": "Answer: False",
+          "taglish": "Answer: False"
         },
         "source": {
           "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
@@ -4473,9 +4362,9 @@
         "type": "mcq",
         "options": [
           "₱40",
-          "41",
-          "39",
-          "80"
+          "₱41",
+          "₱39",
+          "₱80"
         ],
         "solution": {
           "en": "Answer: ₱40",
@@ -4499,10 +4388,10 @@
         "answer": "₱20",
         "type": "mcq",
         "options": [
-          "19",
-          "40",
+          "₱19",
+          "₱40",
           "₱20",
-          "21"
+          "₱21"
         ],
         "solution": {
           "en": "Answer: ₱20",
@@ -4527,9 +4416,9 @@
         "type": "mcq",
         "options": [
           "₱60",
-          "61",
-          "59",
-          "120"
+          "₱61",
+          "₱59",
+          "₱120"
         ],
         "solution": {
           "en": "Answer: ₱60",
@@ -5389,9 +5278,9 @@
       },
       {
         "q": {
-          "en": "A school garden row is 4 m long and another is 9 m long. What is their total length? Explain why your answer is reasonable.",
-          "fil": "A school garden row is 4 m long and another is 9 m long. What is their total length? Explain why your answer is reasonable.",
-          "taglish": "A school garden row is 4 m long and another is 9 m long. What is their total length? Explain why your answer is reasonable."
+          "en": "A school garden row is 4 m long and another is 9 m long. What is their total length?",
+          "fil": "A school garden row is 4 m long and another is 9 m long. What is their total length?",
+          "taglish": "A school garden row is 4 m long and another is 9 m long. What is their total length?"
         },
         "answer": "13 m",
         "type": "mcq",
@@ -5412,33 +5301,6 @@
           "path": "Grade-2/Semester-2/Activity-Sheets/Activity-Sheet-01-Measure-And-Compare-Lengths-Of-Objects-In-Meters.md",
           "item": 9,
           "original_type": "activity"
-        }
-      },
-      {
-        "q": {
-          "en": "A school garden row is 4 m long and another is 9 m long. What is their total length?",
-          "fil": "A school garden row is 4 m long and another is 9 m long. What is their total length?",
-          "taglish": "A school garden row is 4 m long and another is 9 m long. What is their total length?"
-        },
-        "answer": "13 m",
-        "type": "mcq",
-        "options": [
-          "12 m",
-          "13 m",
-          "21 m",
-          "20 m"
-        ],
-        "solution": {
-          "en": "Answer: 13 m",
-          "fil": "Answer: 13 m",
-          "taglish": "Answer: 13 m"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "2MG-IIa-1",
-          "path": "Grade-2/Semester-2/Quizzes/Quiz-01-Measure-And-Compare-Lengths-Of-Objects-In-Meters.md",
-          "item": 11,
-          "original_type": "computation"
         }
       },
       {
@@ -5738,9 +5600,9 @@
       },
       {
         "q": {
-          "en": "A school garden row is 7 m long and another is 5 m long. What is their total length? Explain why your answer is reasonable.",
-          "fil": "A school garden row is 7 m long and another is 5 m long. What is their total length? Explain why your answer is reasonable.",
-          "taglish": "A school garden row is 7 m long and another is 5 m long. What is their total length? Explain why your answer is reasonable."
+          "en": "A school garden row is 7 m long and another is 5 m long. What is their total length?",
+          "fil": "A school garden row is 7 m long and another is 5 m long. What is their total length?",
+          "taglish": "A school garden row is 7 m long and another is 5 m long. What is their total length?"
         },
         "answer": "12 m",
         "type": "mcq",
@@ -6087,33 +5949,6 @@
       },
       {
         "q": {
-          "en": "A school garden row is 7 m long and another is 5 m long. What is their total length? Explain why your answer is reasonable.",
-          "fil": "A school garden row is 7 m long and another is 5 m long. What is their total length? Explain why your answer is reasonable.",
-          "taglish": "A school garden row is 7 m long and another is 5 m long. What is their total length? Explain why your answer is reasonable."
-        },
-        "answer": "12 m",
-        "type": "mcq",
-        "options": [
-          "17 m",
-          "15 m",
-          "14 m",
-          "12 m"
-        ],
-        "solution": {
-          "en": "Answer: 12 m",
-          "fil": "Answer: 12 m",
-          "taglish": "Answer: 12 m"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "2MG-IIb-1",
-          "path": "Grade-2/Semester-2/Activity-Sheets/Activity-Sheet-03-Length-Using-Meters-Or-Centimeters-And-Distance-Using.md",
-          "item": 9,
-          "original_type": "activity"
-        }
-      },
-      {
-        "q": {
           "en": "A school garden row is 12 m long and another is 6 m long. What is their total length?",
           "fil": "A school garden row is 12 m long and another is 6 m long. What is their total length?",
           "taglish": "A school garden row is 12 m long and another is 6 m long. What is their total length?"
@@ -6411,20 +6246,20 @@
       },
       {
         "q": {
-          "en": "Is this solution correct? A school garden row is 14 m long and another is 2 m long. What is their total length? Proposed answer: 16 m",
-          "fil": "Is this solution correct? A school garden row is 14 m long and another is 2 m long. What is their total length? Proposed answer: 16 m",
-          "taglish": "Is this solution correct? A school garden row is 14 m long and another is 2 m long. What is their total length? Proposed answer: 16 m"
+          "en": "Is this solution correct? A school garden row is 14 m long and another is 2 m long. What is their total length? Proposed answer: 18 m",
+          "fil": "Is this solution correct? A school garden row is 14 m long and another is 2 m long. What is their total length? Proposed answer: 18 m",
+          "taglish": "Is this solution correct? A school garden row is 14 m long and another is 2 m long. What is their total length? Proposed answer: 18 m"
         },
-        "answer": "True",
+        "answer": "False",
         "type": "true_false",
         "options": [
           "True",
           "False"
         ],
         "solution": {
-          "en": "Answer: True",
-          "fil": "Answer: True",
-          "taglish": "Answer: True"
+          "en": "Answer: False",
+          "fil": "Answer: False",
+          "taglish": "Answer: False"
         },
         "source": {
           "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
@@ -6463,9 +6298,9 @@
       },
       {
         "q": {
-          "en": "A school garden row is 4 m long and another is 4 m long. What is their total length? Explain why your answer is reasonable.",
-          "fil": "A school garden row is 4 m long and another is 4 m long. What is their total length? Explain why your answer is reasonable.",
-          "taglish": "A school garden row is 4 m long and another is 4 m long. What is their total length? Explain why your answer is reasonable."
+          "en": "A school garden row is 4 m long and another is 4 m long. What is their total length?",
+          "fil": "A school garden row is 4 m long and another is 4 m long. What is their total length?",
+          "taglish": "A school garden row is 4 m long and another is 4 m long. What is their total length?"
         },
         "answer": "8 m",
         "type": "mcq",
@@ -6513,33 +6348,6 @@
           "path": "Grade-2/Semester-2/Activity-Sheets/Activity-Sheet-04-Problems-Involving-Length-And-Distance.md",
           "item": 10,
           "original_type": "activity"
-        }
-      },
-      {
-        "q": {
-          "en": "A school garden row is 4 m long and another is 4 m long. What is their total length?",
-          "fil": "A school garden row is 4 m long and another is 4 m long. What is their total length?",
-          "taglish": "A school garden row is 4 m long and another is 4 m long. What is their total length?"
-        },
-        "answer": "8 m",
-        "type": "mcq",
-        "options": [
-          "16 m",
-          "8 m",
-          "11 m",
-          "7 m"
-        ],
-        "solution": {
-          "en": "Answer: 8 m",
-          "fil": "Answer: 8 m",
-          "taglish": "Answer: 8 m"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "2MG-IIb-2",
-          "path": "Grade-2/Semester-2/Quizzes/Quiz-04-Problems-Involving-Length-And-Distance.md",
-          "item": 11,
-          "original_type": "computation"
         }
       },
       {
@@ -6802,20 +6610,20 @@
       },
       {
         "q": {
-          "en": "Is this solution correct? A class prepared 412 materials for the family merienda and used 271. How many remain? Proposed answer: 141",
-          "fil": "Is this solution correct? A class prepared 412 materials for the family merienda and used 271. How many remain? Proposed answer: 141",
-          "taglish": "Is this solution correct? A class prepared 412 materials for the family merienda and used 271. How many remain? Proposed answer: 141"
+          "en": "Is this solution correct? A class prepared 412 materials for the family merienda and used 271. How many remain? Proposed answer: 151",
+          "fil": "Is this solution correct? A class prepared 412 materials for the family merienda and used 271. How many remain? Proposed answer: 151",
+          "taglish": "Is this solution correct? A class prepared 412 materials for the family merienda and used 271. How many remain? Proposed answer: 151"
         },
-        "answer": "True",
+        "answer": "False",
         "type": "true_false",
         "options": [
           "True",
           "False"
         ],
         "solution": {
-          "en": "Answer: True",
-          "fil": "Answer: True",
-          "taglish": "Answer: True"
+          "en": "Answer: False",
+          "fil": "Answer: False",
+          "taglish": "Answer: False"
         },
         "source": {
           "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
@@ -7512,20 +7320,20 @@
       },
       {
         "q": {
-          "en": "Is this solution correct? A class prepared 659 materials for the palaro ng paaralan and used 492. How many remain? Proposed answer: 167",
-          "fil": "Is this solution correct? A class prepared 659 materials for the palaro ng paaralan and used 492. How many remain? Proposed answer: 167",
-          "taglish": "Is this solution correct? A class prepared 659 materials for the palaro ng paaralan and used 492. How many remain? Proposed answer: 167"
+          "en": "Is this solution correct? A class prepared 659 materials for the palaro ng paaralan and used 492. How many remain? Proposed answer: 177",
+          "fil": "Is this solution correct? A class prepared 659 materials for the palaro ng paaralan and used 492. How many remain? Proposed answer: 177",
+          "taglish": "Is this solution correct? A class prepared 659 materials for the palaro ng paaralan and used 492. How many remain? Proposed answer: 177"
         },
-        "answer": "True",
+        "answer": "False",
         "type": "true_false",
         "options": [
           "True",
           "False"
         ],
         "solution": {
-          "en": "Answer: True",
-          "fil": "Answer: True",
-          "taglish": "Answer: True"
+          "en": "Answer: False",
+          "fil": "Answer: False",
+          "taglish": "Answer: False"
         },
         "source": {
           "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
@@ -8222,20 +8030,20 @@
       },
       {
         "q": {
-          "en": "Is this solution correct? A class prepared 500 materials for the sari-sari store and used 490. How many remain? Proposed answer: 10",
-          "fil": "Is this solution correct? A class prepared 500 materials for the sari-sari store and used 490. How many remain? Proposed answer: 10",
-          "taglish": "Is this solution correct? A class prepared 500 materials for the sari-sari store and used 490. How many remain? Proposed answer: 10"
+          "en": "Is this solution correct? A class prepared 500 materials for the sari-sari store and used 490. How many remain? Proposed answer: 12",
+          "fil": "Is this solution correct? A class prepared 500 materials for the sari-sari store and used 490. How many remain? Proposed answer: 12",
+          "taglish": "Is this solution correct? A class prepared 500 materials for the sari-sari store and used 490. How many remain? Proposed answer: 12"
         },
-        "answer": "True",
+        "answer": "False",
         "type": "true_false",
         "options": [
           "True",
           "False"
         ],
         "solution": {
-          "en": "Answer: True",
-          "fil": "Answer: True",
-          "taglish": "Answer: True"
+          "en": "Answer: False",
+          "fil": "Answer: False",
+          "taglish": "Answer: False"
         },
         "source": {
           "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
@@ -8411,10 +8219,10 @@
         "answer": "19, 21",
         "type": "mcq",
         "options": [
-          "38",
+          "20, 22",
           "19, 21",
-          "20",
-          "18"
+          "20, 21",
+          "19, 22"
         ],
         "solution": {
           "en": "Answer: 19, 21",
@@ -8438,10 +8246,10 @@
         "answer": "56, 65",
         "type": "mcq",
         "options": [
-          "112",
+          "56, 75",
           "56, 65",
-          "57",
-          "55"
+          "57, 66",
+          "57, 65"
         ],
         "solution": {
           "en": "Answer: 56, 65",
@@ -8718,10 +8526,10 @@
         "answer": "40, 45",
         "type": "mcq",
         "options": [
-          "80",
+          "38, 43",
           "40, 45",
-          "41",
-          "39"
+          "38, 45",
+          "40, 43"
         ],
         "solution": {
           "en": "Answer: 40, 45",
@@ -8746,9 +8554,9 @@
         "type": "mcq",
         "options": [
           "26, 30",
-          "27",
-          "25",
-          "52"
+          "28, 32",
+          "28, 30",
+          "26, 32"
         ],
         "solution": {
           "en": "Answer: 26, 30",
@@ -8773,9 +8581,9 @@
         "type": "mcq",
         "options": [
           "15, 18",
-          "16",
-          "14",
-          "30"
+          "17, 18",
+          "15, 20",
+          "13, 16"
         ],
         "solution": {
           "en": "Answer: 15, 18",
@@ -8884,20 +8692,20 @@
       },
       {
         "q": {
-          "en": "Is this solution correct? Continue the barangay house-number pattern: 18, 27, 36, 45, __, __. Proposed answer: 54, 63",
-          "fil": "Is this solution correct? Continue the barangay house-number pattern: 18, 27, 36, 45, __, __. Proposed answer: 54, 63",
-          "taglish": "Is this solution correct? Continue the barangay house-number pattern: 18, 27, 36, 45, __, __. Proposed answer: 54, 63"
+          "en": "Is this solution correct? Continue the barangay house-number pattern: 18, 27, 36, 45, __, __. Proposed answer: 54, 65",
+          "fil": "Is this solution correct? Continue the barangay house-number pattern: 18, 27, 36, 45, __, __. Proposed answer: 54, 65",
+          "taglish": "Is this solution correct? Continue the barangay house-number pattern: 18, 27, 36, 45, __, __. Proposed answer: 54, 65"
         },
-        "answer": "True",
+        "answer": "False",
         "type": "true_false",
         "options": [
           "True",
           "False"
         ],
         "solution": {
-          "en": "Answer: True",
-          "fil": "Answer: True",
-          "taglish": "Answer: True"
+          "en": "Answer: False",
+          "fil": "Answer: False",
+          "taglish": "Answer: False"
         },
         "source": {
           "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
@@ -9066,191 +8874,6 @@
     "items": [
       {
         "q": {
-          "en": "Which option correctly presents mango=7, banana=2, papaya=11, and guava=11 in a labeled table or graph?",
-          "fil": "Which option correctly presents mango=7, banana=2, papaya=11, and guava=11 in a labeled table or graph?",
-          "taglish": "Which option correctly presents mango=7, banana=2, papaya=11, and guava=11 in a labeled table or graph?"
-        },
-        "answer": "Correct display with values 7, 2, 11, 11 and complete labels",
-        "type": "mcq",
-        "options": [
-          "Correct display with values 8, 8, 4, 4 and complete labels",
-          "Correct display with values 2, 5, 12, 12 and complete labels",
-          "Correct display with values 5, 2, 9, 4 and complete labels",
-          "Correct display with values 7, 2, 11, 11 and complete labels"
-        ],
-        "solution": {
-          "en": "Answer: Correct display with values 7, 2, 11, 11 and complete labels",
-          "fil": "Answer: Correct display with values 7, 2, 11, 11 and complete labels",
-          "taglish": "Answer: Correct display with values 7, 2, 11, 11 and complete labels"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "2SP-IIh-1",
-          "path": "Grade-2/Semester-2/Quizzes/Quiz-12-Raw-Data-Or-Data-In-Tabular-Form-In-A-Pictograph-With.md",
-          "item": 1,
-          "original_type": "multiple-choice"
-        }
-      },
-      {
-        "q": {
-          "en": "Which option correctly presents mango=8, banana=8, papaya=4, and guava=4 in a labeled table or graph?",
-          "fil": "Which option correctly presents mango=8, banana=8, papaya=4, and guava=4 in a labeled table or graph?",
-          "taglish": "Which option correctly presents mango=8, banana=8, papaya=4, and guava=4 in a labeled table or graph?"
-        },
-        "answer": "Correct display with values 8, 8, 4, 4 and complete labels",
-        "type": "mcq",
-        "options": [
-          "Correct display with values 2, 5, 12, 12 and complete labels",
-          "Correct display with values 5, 2, 9, 4 and complete labels",
-          "Correct display with values 8, 8, 4, 4 and complete labels",
-          "Correct display with values 7, 2, 11, 11 and complete labels"
-        ],
-        "solution": {
-          "en": "Answer: Correct display with values 8, 8, 4, 4 and complete labels",
-          "fil": "Answer: Correct display with values 8, 8, 4, 4 and complete labels",
-          "taglish": "Answer: Correct display with values 8, 8, 4, 4 and complete labels"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "2SP-IIh-1",
-          "path": "Grade-2/Semester-2/Quizzes/Quiz-12-Raw-Data-Or-Data-In-Tabular-Form-In-A-Pictograph-With.md",
-          "item": 2,
-          "original_type": "multiple-choice"
-        }
-      },
-      {
-        "q": {
-          "en": "Which option correctly presents mango=2, banana=5, papaya=12, and guava=12 in a labeled table or graph?",
-          "fil": "Which option correctly presents mango=2, banana=5, papaya=12, and guava=12 in a labeled table or graph?",
-          "taglish": "Which option correctly presents mango=2, banana=5, papaya=12, and guava=12 in a labeled table or graph?"
-        },
-        "answer": "Correct display with values 2, 5, 12, 12 and complete labels",
-        "type": "mcq",
-        "options": [
-          "Correct display with values 5, 2, 9, 4 and complete labels",
-          "Correct display with values 2, 5, 12, 12 and complete labels",
-          "Correct display with values 7, 2, 11, 11 and complete labels",
-          "Correct display with values 8, 8, 4, 4 and complete labels"
-        ],
-        "solution": {
-          "en": "Answer: Correct display with values 2, 5, 12, 12 and complete labels",
-          "fil": "Answer: Correct display with values 2, 5, 12, 12 and complete labels",
-          "taglish": "Answer: Correct display with values 2, 5, 12, 12 and complete labels"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "2SP-IIh-1",
-          "path": "Grade-2/Semester-2/Quizzes/Quiz-12-Raw-Data-Or-Data-In-Tabular-Form-In-A-Pictograph-With.md",
-          "item": 3,
-          "original_type": "multiple-choice"
-        }
-      },
-      {
-        "q": {
-          "en": "Which option correctly presents mango=5, banana=2, papaya=9, and guava=4 in a labeled table or graph?",
-          "fil": "Which option correctly presents mango=5, banana=2, papaya=9, and guava=4 in a labeled table or graph?",
-          "taglish": "Which option correctly presents mango=5, banana=2, papaya=9, and guava=4 in a labeled table or graph?"
-        },
-        "answer": "Correct display with values 5, 2, 9, 4 and complete labels",
-        "type": "mcq",
-        "options": [
-          "Correct display with values 5, 2, 9, 4 and complete labels",
-          "Correct display with values 12, 9, 2, 11 and complete labels",
-          "Correct display with values 6, 5, 5, 6 and complete labels",
-          "Correct display with values 3, 9, 7, 11 and complete labels"
-        ],
-        "solution": {
-          "en": "Answer: Correct display with values 5, 2, 9, 4 and complete labels",
-          "fil": "Answer: Correct display with values 5, 2, 9, 4 and complete labels",
-          "taglish": "Answer: Correct display with values 5, 2, 9, 4 and complete labels"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "2SP-IIh-1",
-          "path": "Grade-2/Semester-2/Quizzes/Quiz-12-Raw-Data-Or-Data-In-Tabular-Form-In-A-Pictograph-With.md",
-          "item": 4,
-          "original_type": "identification"
-        }
-      },
-      {
-        "q": {
-          "en": "Which option correctly presents mango=12, banana=9, papaya=2, and guava=11 in a labeled table or graph?",
-          "fil": "Which option correctly presents mango=12, banana=9, papaya=2, and guava=11 in a labeled table or graph?",
-          "taglish": "Which option correctly presents mango=12, banana=9, papaya=2, and guava=11 in a labeled table or graph?"
-        },
-        "answer": "Correct display with values 12, 9, 2, 11 and complete labels",
-        "type": "mcq",
-        "options": [
-          "Correct display with values 5, 2, 9, 4 and complete labels",
-          "Correct display with values 6, 5, 5, 6 and complete labels",
-          "Correct display with values 3, 9, 7, 11 and complete labels",
-          "Correct display with values 12, 9, 2, 11 and complete labels"
-        ],
-        "solution": {
-          "en": "Answer: Correct display with values 12, 9, 2, 11 and complete labels",
-          "fil": "Answer: Correct display with values 12, 9, 2, 11 and complete labels",
-          "taglish": "Answer: Correct display with values 12, 9, 2, 11 and complete labels"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "2SP-IIh-1",
-          "path": "Grade-2/Semester-2/Quizzes/Quiz-12-Raw-Data-Or-Data-In-Tabular-Form-In-A-Pictograph-With.md",
-          "item": 5,
-          "original_type": "identification"
-        }
-      },
-      {
-        "q": {
-          "en": "Which option correctly presents mango=5, banana=9, papaya=3, and guava=9 in a labeled table or graph?",
-          "fil": "Which option correctly presents mango=5, banana=9, papaya=3, and guava=9 in a labeled table or graph?",
-          "taglish": "Which option correctly presents mango=5, banana=9, papaya=3, and guava=9 in a labeled table or graph?"
-        },
-        "answer": "Correct display with values 5, 9, 3, 9 and complete labels",
-        "type": "matching",
-        "options": [
-          "Correct display with values 7, 12, 4, 9 and complete labels",
-          "Correct display with values 5, 9, 3, 9 and complete labels"
-        ],
-        "solution": {
-          "en": "Answer: Correct display with values 5, 9, 3, 9 and complete labels",
-          "fil": "Answer: Correct display with values 5, 9, 3, 9 and complete labels",
-          "taglish": "Answer: Correct display with values 5, 9, 3, 9 and complete labels"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "2SP-IIh-1",
-          "path": "Grade-2/Semester-2/Quizzes/Quiz-12-Raw-Data-Or-Data-In-Tabular-Form-In-A-Pictograph-With.md",
-          "item": 6,
-          "original_type": "matching"
-        }
-      },
-      {
-        "q": {
-          "en": "Which option correctly presents mango=7, banana=12, papaya=4, and guava=9 in a labeled table or graph?",
-          "fil": "Which option correctly presents mango=7, banana=12, papaya=4, and guava=9 in a labeled table or graph?",
-          "taglish": "Which option correctly presents mango=7, banana=12, papaya=4, and guava=9 in a labeled table or graph?"
-        },
-        "answer": "Correct display with values 7, 12, 4, 9 and complete labels",
-        "type": "matching",
-        "options": [
-          "Correct display with values 7, 12, 4, 9 and complete labels",
-          "Correct display with values 5, 9, 3, 9 and complete labels"
-        ],
-        "solution": {
-          "en": "Answer: Correct display with values 7, 12, 4, 9 and complete labels",
-          "fil": "Answer: Correct display with values 7, 12, 4, 9 and complete labels",
-          "taglish": "Answer: Correct display with values 7, 12, 4, 9 and complete labels"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "2SP-IIh-1",
-          "path": "Grade-2/Semester-2/Quizzes/Quiz-12-Raw-Data-Or-Data-In-Tabular-Form-In-A-Pictograph-With.md",
-          "item": 7,
-          "original_type": "matching"
-        }
-      },
-      {
-        "q": {
           "en": "Is this solution correct? Present mango=6, banana=5, papaya=5, and guava=6 in a labeled table or graph. Proposed answer: Correct display with values 6, 5, 5, 6 and complete labels",
           "fil": "Is this solution correct? Present mango=6, banana=5, papaya=5, and guava=6 in a labeled table or graph. Proposed answer: Correct display with values 6, 5, 5, 6 and complete labels",
           "taglish": "Is this solution correct? Present mango=6, banana=5, papaya=5, and guava=6 in a labeled table or graph. Proposed answer: Correct display with values 6, 5, 5, 6 and complete labels"
@@ -9272,168 +8895,6 @@
           "path": "Grade-2/Semester-2/Quizzes/Quiz-12-Raw-Data-Or-Data-In-Tabular-Form-In-A-Pictograph-With.md",
           "item": 8,
           "original_type": "true-false"
-        }
-      },
-      {
-        "q": {
-          "en": "Which option correctly presents mango=6, banana=5, papaya=5, and guava=6 in a labeled table or graph?",
-          "fil": "Which option correctly presents mango=6, banana=5, papaya=5, and guava=6 in a labeled table or graph?",
-          "taglish": "Which option correctly presents mango=6, banana=5, papaya=5, and guava=6 in a labeled table or graph?"
-        },
-        "answer": "Correct display with values 6, 5, 5, 6 and complete labels",
-        "type": "mcq",
-        "options": [
-          "Correct display with values 6, 5, 5, 6 and complete labels",
-          "Correct display with values 7, 2, 11, 11 and complete labels",
-          "Correct display with values 8, 8, 4, 4 and complete labels",
-          "Correct display with values 2, 5, 12, 12 and complete labels"
-        ],
-        "solution": {
-          "en": "Answer: Correct display with values 6, 5, 5, 6 and complete labels",
-          "fil": "Answer: Correct display with values 6, 5, 5, 6 and complete labels",
-          "taglish": "Answer: Correct display with values 6, 5, 5, 6 and complete labels"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "2SP-IIh-1",
-          "path": "Grade-2/Semester-2/Activity-Sheets/Activity-Sheet-12-Raw-Data-Or-Data-In-Tabular-Form-In-A-Pictograph-With.md",
-          "item": 8,
-          "original_type": "activity"
-        }
-      },
-      {
-        "q": {
-          "en": "Which option correctly presents mango=3, banana=9, papaya=7, and guava=11 in a labeled table or graph? Explain why your answer is reasonable.",
-          "fil": "Which option correctly presents mango=3, banana=9, papaya=7, and guava=11 in a labeled table or graph? Explain why your answer is reasonable.",
-          "taglish": "Which option correctly presents mango=3, banana=9, papaya=7, and guava=11 in a labeled table or graph? Explain why your answer is reasonable."
-        },
-        "answer": "Correct display with values 3, 9, 7, 11 and complete labels",
-        "type": "mcq",
-        "options": [
-          "Correct display with values 7, 2, 11, 11 and complete labels",
-          "Correct display with values 8, 8, 4, 4 and complete labels",
-          "Correct display with values 2, 5, 12, 12 and complete labels",
-          "Correct display with values 3, 9, 7, 11 and complete labels"
-        ],
-        "solution": {
-          "en": "Answer: Correct display with values 3, 9, 7, 11 and complete labels",
-          "fil": "Answer: Correct display with values 3, 9, 7, 11 and complete labels",
-          "taglish": "Answer: Correct display with values 3, 9, 7, 11 and complete labels"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "2SP-IIh-1",
-          "path": "Grade-2/Semester-2/Activity-Sheets/Activity-Sheet-12-Raw-Data-Or-Data-In-Tabular-Form-In-A-Pictograph-With.md",
-          "item": 9,
-          "original_type": "activity"
-        }
-      },
-      {
-        "q": {
-          "en": "Which option correctly presents mango=7, banana=8, papaya=8, and guava=8 in a labeled table or graph?",
-          "fil": "Which option correctly presents mango=7, banana=8, papaya=8, and guava=8 in a labeled table or graph?",
-          "taglish": "Which option correctly presents mango=7, banana=8, papaya=8, and guava=8 in a labeled table or graph?"
-        },
-        "answer": "Correct display with values 7, 8, 8, 8 and complete labels",
-        "type": "mcq",
-        "options": [
-          "Correct display with values 8, 8, 4, 4 and complete labels",
-          "Correct display with values 2, 5, 12, 12 and complete labels",
-          "Correct display with values 7, 8, 8, 8 and complete labels",
-          "Correct display with values 7, 2, 11, 11 and complete labels"
-        ],
-        "solution": {
-          "en": "Answer: Correct display with values 7, 8, 8, 8 and complete labels",
-          "fil": "Answer: Correct display with values 7, 8, 8, 8 and complete labels",
-          "taglish": "Answer: Correct display with values 7, 8, 8, 8 and complete labels"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "2SP-IIh-1",
-          "path": "Grade-2/Semester-2/Activity-Sheets/Activity-Sheet-12-Raw-Data-Or-Data-In-Tabular-Form-In-A-Pictograph-With.md",
-          "item": 10,
-          "original_type": "activity"
-        }
-      },
-      {
-        "q": {
-          "en": "Which option correctly presents mango=3, banana=9, papaya=7, and guava=11 in a labeled table or graph?",
-          "fil": "Which option correctly presents mango=3, banana=9, papaya=7, and guava=11 in a labeled table or graph?",
-          "taglish": "Which option correctly presents mango=3, banana=9, papaya=7, and guava=11 in a labeled table or graph?"
-        },
-        "answer": "Correct display with values 3, 9, 7, 11 and complete labels",
-        "type": "mcq",
-        "options": [
-          "Correct display with values 6, 5, 5, 6 and complete labels",
-          "Correct display with values 3, 9, 7, 11 and complete labels",
-          "Correct display with values 5, 2, 9, 4 and complete labels",
-          "Correct display with values 12, 9, 2, 11 and complete labels"
-        ],
-        "solution": {
-          "en": "Answer: Correct display with values 3, 9, 7, 11 and complete labels",
-          "fil": "Answer: Correct display with values 3, 9, 7, 11 and complete labels",
-          "taglish": "Answer: Correct display with values 3, 9, 7, 11 and complete labels"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "2SP-IIh-1",
-          "path": "Grade-2/Semester-2/Quizzes/Quiz-12-Raw-Data-Or-Data-In-Tabular-Form-In-A-Pictograph-With.md",
-          "item": 11,
-          "original_type": "computation"
-        }
-      },
-      {
-        "q": {
-          "en": "Which option correctly presents mango=10, banana=6, papaya=4, and guava=11 in a labeled table or graph?",
-          "fil": "Which option correctly presents mango=10, banana=6, papaya=4, and guava=11 in a labeled table or graph?",
-          "taglish": "Which option correctly presents mango=10, banana=6, papaya=4, and guava=11 in a labeled table or graph?"
-        },
-        "answer": "Correct display with values 10, 6, 4, 11 and complete labels",
-        "type": "mcq",
-        "options": [
-          "Correct display with values 2, 5, 12, 12 and complete labels",
-          "Correct display with values 10, 6, 4, 11 and complete labels",
-          "Correct display with values 7, 2, 11, 11 and complete labels",
-          "Correct display with values 8, 8, 4, 4 and complete labels"
-        ],
-        "solution": {
-          "en": "Answer: Correct display with values 10, 6, 4, 11 and complete labels",
-          "fil": "Answer: Correct display with values 10, 6, 4, 11 and complete labels",
-          "taglish": "Answer: Correct display with values 10, 6, 4, 11 and complete labels"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "2SP-IIh-1",
-          "path": "Grade-2/Semester-2/Activity-Sheets/Activity-Sheet-12-Raw-Data-Or-Data-In-Tabular-Form-In-A-Pictograph-With.md",
-          "item": 11,
-          "original_type": "activity"
-        }
-      },
-      {
-        "q": {
-          "en": "Which option correctly presents mango=12, banana=5, papaya=2, and guava=7 in a labeled table or graph?",
-          "fil": "Which option correctly presents mango=12, banana=5, papaya=2, and guava=7 in a labeled table or graph?",
-          "taglish": "Which option correctly presents mango=12, banana=5, papaya=2, and guava=7 in a labeled table or graph?"
-        },
-        "answer": "Correct display with values 12, 5, 2, 7 and complete labels",
-        "type": "mcq",
-        "options": [
-          "Correct display with values 12, 5, 2, 7 and complete labels",
-          "Correct display with values 7, 2, 11, 11 and complete labels",
-          "Correct display with values 8, 8, 4, 4 and complete labels",
-          "Correct display with values 2, 5, 12, 12 and complete labels"
-        ],
-        "solution": {
-          "en": "Answer: Correct display with values 12, 5, 2, 7 and complete labels",
-          "fil": "Answer: Correct display with values 12, 5, 2, 7 and complete labels",
-          "taglish": "Answer: Correct display with values 12, 5, 2, 7 and complete labels"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "2SP-IIh-1",
-          "path": "Grade-2/Semester-2/Activity-Sheets/Activity-Sheet-12-Raw-Data-Or-Data-In-Tabular-Form-In-A-Pictograph-With.md",
-          "item": 12,
-          "original_type": "activity"
         }
       }
     ],
@@ -9654,9 +9115,9 @@
       },
       {
         "q": {
-          "en": "A class survey recorded mango=4, banana=2, papaya=3, and guava=11. Which fruit has the greatest count? Explain why your answer is reasonable.",
-          "fil": "A class survey recorded mango=4, banana=2, papaya=3, and guava=11. Which fruit has the greatest count? Explain why your answer is reasonable.",
-          "taglish": "A class survey recorded mango=4, banana=2, papaya=3, and guava=11. Which fruit has the greatest count? Explain why your answer is reasonable."
+          "en": "A class survey recorded mango=4, banana=2, papaya=3, and guava=11. Which fruit has the greatest count?",
+          "fil": "A class survey recorded mango=4, banana=2, papaya=3, and guava=11. Which fruit has the greatest count?",
+          "taglish": "A class survey recorded mango=4, banana=2, papaya=3, and guava=11. Which fruit has the greatest count?"
         },
         "answer": "guava",
         "type": "mcq",
@@ -9704,33 +9165,6 @@
           "path": "Grade-2/Semester-2/Activity-Sheets/Activity-Sheet-13-Data-In-Tabular-Form-And-In-A-Pictograph-With-Or.md",
           "item": 10,
           "original_type": "activity"
-        }
-      },
-      {
-        "q": {
-          "en": "A class survey recorded mango=4, banana=2, papaya=3, and guava=11. Which fruit has the greatest count?",
-          "fil": "A class survey recorded mango=4, banana=2, papaya=3, and guava=11. Which fruit has the greatest count?",
-          "taglish": "A class survey recorded mango=4, banana=2, papaya=3, and guava=11. Which fruit has the greatest count?"
-        },
-        "answer": "guava",
-        "type": "mcq",
-        "options": [
-          "mango",
-          "guava",
-          "papaya",
-          "banana"
-        ],
-        "solution": {
-          "en": "Answer: guava",
-          "fil": "Answer: guava",
-          "taglish": "Answer: guava"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "2SP-IIh-2",
-          "path": "Grade-2/Semester-2/Quizzes/Quiz-13-Data-In-Tabular-Form-And-In-A-Pictograph-With-Or.md",
-          "item": 11,
-          "original_type": "computation"
         }
       },
       {
@@ -9966,20 +9400,20 @@
       },
       {
         "q": {
-          "en": "Is this solution correct? At the rice farm, one group recorded 144 items and another recorded 215. How many altogether? Proposed answer: 359",
-          "fil": "Is this solution correct? At the rice farm, one group recorded 144 items and another recorded 215. How many altogether? Proposed answer: 359",
-          "taglish": "Is this solution correct? At the rice farm, one group recorded 144 items and another recorded 215. How many altogether? Proposed answer: 359"
+          "en": "Is this solution correct? At the rice farm, one group recorded 144 items and another recorded 215. How many altogether? Proposed answer: 369",
+          "fil": "Is this solution correct? At the rice farm, one group recorded 144 items and another recorded 215. How many altogether? Proposed answer: 369",
+          "taglish": "Is this solution correct? At the rice farm, one group recorded 144 items and another recorded 215. How many altogether? Proposed answer: 369"
         },
-        "answer": "True",
+        "answer": "False",
         "type": "true_false",
         "options": [
           "True",
           "False"
         ],
         "solution": {
-          "en": "Answer: True",
-          "fil": "Answer: True",
-          "taglish": "Answer: True"
+          "en": "Answer: False",
+          "fil": "Answer: False",
+          "taglish": "Answer: False"
         },
         "source": {
           "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
@@ -10296,20 +9730,20 @@
       },
       {
         "q": {
-          "en": "Is this solution correct? There are 8 equal trays with 6 items each for the town fiesta. Find the total. Proposed answer: 48",
-          "fil": "Is this solution correct? There are 8 equal trays with 6 items each for the town fiesta. Find the total. Proposed answer: 48",
-          "taglish": "Is this solution correct? There are 8 equal trays with 6 items each for the town fiesta. Find the total. Proposed answer: 48"
+          "en": "Is this solution correct? There are 8 equal trays with 6 items each for the town fiesta. Find the total. Proposed answer: 50",
+          "fil": "Is this solution correct? There are 8 equal trays with 6 items each for the town fiesta. Find the total. Proposed answer: 50",
+          "taglish": "Is this solution correct? There are 8 equal trays with 6 items each for the town fiesta. Find the total. Proposed answer: 50"
         },
-        "answer": "True",
+        "answer": "False",
         "type": "true_false",
         "options": [
           "True",
           "False"
         ],
         "solution": {
-          "en": "Answer: True",
-          "fil": "Answer: True",
-          "taglish": "Answer: True"
+          "en": "Answer: False",
+          "fil": "Answer: False",
+          "taglish": "Answer: False"
         },
         "source": {
           "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
@@ -10605,20 +10039,20 @@
       },
       {
         "q": {
-          "en": "Is this solution correct? There are 2 equal trays with 3 items each for the rice farm. Find the total. Proposed answer: 6",
-          "fil": "Is this solution correct? There are 2 equal trays with 3 items each for the rice farm. Find the total. Proposed answer: 6",
-          "taglish": "Is this solution correct? There are 2 equal trays with 3 items each for the rice farm. Find the total. Proposed answer: 6"
+          "en": "Is this solution correct? There are 2 equal trays with 3 items each for the rice farm. Find the total. Proposed answer: 7",
+          "fil": "Is this solution correct? There are 2 equal trays with 3 items each for the rice farm. Find the total. Proposed answer: 7",
+          "taglish": "Is this solution correct? There are 2 equal trays with 3 items each for the rice farm. Find the total. Proposed answer: 7"
         },
-        "answer": "True",
+        "answer": "False",
         "type": "true_false",
         "options": [
           "True",
           "False"
         ],
         "solution": {
-          "en": "Answer: True",
-          "fil": "Answer: True",
-          "taglish": "Answer: True"
+          "en": "Answer: False",
+          "fil": "Answer: False",
+          "taglish": "Answer: False"
         },
         "source": {
           "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
@@ -10939,20 +10373,20 @@
       },
       {
         "q": {
-          "en": "Is this solution correct? There are 6 equal trays with 3 items each for the town fiesta. Find the total. Proposed answer: 18",
-          "fil": "Is this solution correct? There are 6 equal trays with 3 items each for the town fiesta. Find the total. Proposed answer: 18",
-          "taglish": "Is this solution correct? There are 6 equal trays with 3 items each for the town fiesta. Find the total. Proposed answer: 18"
+          "en": "Is this solution correct? There are 6 equal trays with 3 items each for the town fiesta. Find the total. Proposed answer: 20",
+          "fil": "Is this solution correct? There are 6 equal trays with 3 items each for the town fiesta. Find the total. Proposed answer: 20",
+          "taglish": "Is this solution correct? There are 6 equal trays with 3 items each for the town fiesta. Find the total. Proposed answer: 20"
         },
-        "answer": "True",
+        "answer": "False",
         "type": "true_false",
         "options": [
           "True",
           "False"
         ],
         "solution": {
-          "en": "Answer: True",
-          "fil": "Answer: True",
-          "taglish": "Answer: True"
+          "en": "Answer: False",
+          "fil": "Answer: False",
+          "taglish": "Answer: False"
         },
         "source": {
           "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
@@ -11603,20 +11037,20 @@
       },
       {
         "q": {
-          "en": "Is this solution correct? The family merienda shares 72 items equally among 9 groups. How many per group? Proposed answer: 8",
-          "fil": "Is this solution correct? The family merienda shares 72 items equally among 9 groups. How many per group? Proposed answer: 8",
-          "taglish": "Is this solution correct? The family merienda shares 72 items equally among 9 groups. How many per group? Proposed answer: 8"
+          "en": "Is this solution correct? The family merienda shares 72 items equally among 9 groups. How many per group? Proposed answer: 9",
+          "fil": "Is this solution correct? The family merienda shares 72 items equally among 9 groups. How many per group? Proposed answer: 9",
+          "taglish": "Is this solution correct? The family merienda shares 72 items equally among 9 groups. How many per group? Proposed answer: 9"
         },
-        "answer": "True",
+        "answer": "False",
         "type": "true_false",
         "options": [
           "True",
           "False"
         ],
         "solution": {
-          "en": "Answer: True",
-          "fil": "Answer: True",
-          "taglish": "Answer: True"
+          "en": "Answer: False",
+          "fil": "Answer: False",
+          "taglish": "Answer: False"
         },
         "source": {
           "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
@@ -13189,9 +12623,9 @@
         "answer": "3/4",
         "type": "mcq",
         "options": [
-          "A different value",
-          "Cannot be determined",
-          "None of these",
+          "4/5",
+          "4/4",
+          "3/5",
           "3/4"
         ],
         "solution": {
@@ -13216,10 +12650,10 @@
         "answer": "6/8",
         "type": "mcq",
         "options": [
-          "None of these",
+          "7/9",
           "6/8",
-          "A different value",
-          "Cannot be determined"
+          "7/8",
+          "6/9"
         ],
         "solution": {
           "en": "Answer: 6/8",
@@ -13244,9 +12678,9 @@
         "type": "mcq",
         "options": [
           "1/5",
-          "A different value",
-          "Cannot be determined",
-          "None of these"
+          "2/6",
+          "2/5",
+          "1/6"
         ],
         "solution": {
           "en": "Answer: 1/5",
@@ -13503,9 +12937,9 @@
         "type": "mcq",
         "options": [
           "5/6",
-          "A different value",
-          "Cannot be determined",
-          "None of these"
+          "6/7",
+          "6/6",
+          "5/7"
         ],
         "solution": {
           "en": "Answer: 5/6",
@@ -13530,9 +12964,9 @@
         "type": "mcq",
         "options": [
           "1/2",
-          "A different value",
-          "Cannot be determined",
-          "None of these"
+          "2/3",
+          "2/2",
+          "1/3"
         ],
         "solution": {
           "en": "Answer: 1/2",
@@ -13557,9 +12991,9 @@
         "type": "mcq",
         "options": [
           "2/8",
-          "A different value",
-          "Cannot be determined",
-          "None of these"
+          "3/9",
+          "3/8",
+          "2/9"
         ],
         "solution": {
           "en": "Answer: 2/8",
@@ -13815,9 +13249,9 @@
         "answer": "5/8, 7/8, 7/8",
         "type": "mcq",
         "options": [
-          "A different value",
-          "Cannot be determined",
-          "None of these",
+          "6/9, 8/9, 8/9",
+          "6/8, 7/8, 7/8",
+          "5/9, 7/8, 7/8",
           "5/8, 7/8, 7/8"
         ],
         "solution": {
@@ -13842,10 +13276,10 @@
         "answer": "4/6, 4/6, 5/6",
         "type": "mcq",
         "options": [
-          "Cannot be determined",
-          "None of these",
+          "5/7, 5/7, 6/7",
+          "5/6, 4/6, 5/6",
           "4/6, 4/6, 5/6",
-          "A different value"
+          "4/7, 4/6, 5/6"
         ],
         "solution": {
           "en": "Answer: 4/6, 4/6, 5/6",
@@ -13870,9 +13304,9 @@
         "type": "mcq",
         "options": [
           "1/2, 1/2, 1/2",
-          "A different value",
-          "Cannot be determined",
-          "None of these"
+          "2/3, 2/3, 2/3",
+          "2/2, 1/2, 1/2",
+          "1/3, 1/2, 1/2"
         ],
         "solution": {
           "en": "Answer: 1/2, 1/2, 1/2",
@@ -13981,20 +13415,20 @@
       },
       {
         "q": {
-          "en": "Is this solution correct? Order these equal-sized bibingka portions from smallest to largest: 2/4, 3/4, 1/4. Proposed answer: 1/4, 2/4, 3/4",
-          "fil": "Is this solution correct? Order these equal-sized bibingka portions from smallest to largest: 2/4, 3/4, 1/4. Proposed answer: 1/4, 2/4, 3/4",
-          "taglish": "Is this solution correct? Order these equal-sized bibingka portions from smallest to largest: 2/4, 3/4, 1/4. Proposed answer: 1/4, 2/4, 3/4"
+          "en": "Is this solution correct? Order these equal-sized bibingka portions from smallest to largest: 2/4, 3/4, 1/4. Proposed answer: 1/4, 2/4, 3/5",
+          "fil": "Is this solution correct? Order these equal-sized bibingka portions from smallest to largest: 2/4, 3/4, 1/4. Proposed answer: 1/4, 2/4, 3/5",
+          "taglish": "Is this solution correct? Order these equal-sized bibingka portions from smallest to largest: 2/4, 3/4, 1/4. Proposed answer: 1/4, 2/4, 3/5"
         },
-        "answer": "True",
+        "answer": "False",
         "type": "true_false",
         "options": [
           "True",
           "False"
         ],
         "solution": {
-          "en": "Answer: True",
-          "fil": "Answer: True",
-          "taglish": "Answer: True"
+          "en": "Answer: False",
+          "fil": "Answer: False",
+          "taglish": "Answer: False"
         },
         "source": {
           "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
@@ -14149,9 +13583,9 @@
         "answer": "1/3",
         "type": "mcq",
         "options": [
-          "A different value",
-          "Cannot be determined",
-          "None of these",
+          "2/4",
+          "2/3",
+          "1/4",
           "1/3"
         ],
         "solution": {
@@ -14176,9 +13610,9 @@
         "answer": "1/8",
         "type": "mcq",
         "options": [
-          "A different value",
-          "Cannot be determined",
-          "None of these",
+          "2/9",
+          "2/8",
+          "1/9",
           "1/8"
         ],
         "solution": {
@@ -14203,9 +13637,9 @@
         "answer": "3/5",
         "type": "mcq",
         "options": [
-          "A different value",
-          "Cannot be determined",
-          "None of these",
+          "4/6",
+          "4/5",
+          "3/6",
           "3/5"
         ],
         "solution": {
@@ -14269,20 +13703,20 @@
       },
       {
         "q": {
-          "en": "Is this solution correct? A bibingka is cut into 4 equal parts. 2 part(s) are marked. Write the fraction. (Diagram description: circle divided into 4 equal parts with 2 shaded.) Proposed answer: 2/4",
-          "fil": "Is this solution correct? A bibingka is cut into 4 equal parts. 2 part(s) are marked. Write the fraction. (Diagram description: circle divided into 4 equal parts with 2 shaded.) Proposed answer: 2/4",
-          "taglish": "Is this solution correct? A bibingka is cut into 4 equal parts. 2 part(s) are marked. Write the fraction. (Diagram description: circle divided into 4 equal parts with 2 shaded.) Proposed answer: 2/4"
+          "en": "Is this solution correct? A bibingka is cut into 4 equal parts. 2 part(s) are marked. Write the fraction. (Diagram description: circle divided into 4 equal parts with 2 shaded.) Proposed answer: 2/5",
+          "fil": "Is this solution correct? A bibingka is cut into 4 equal parts. 2 part(s) are marked. Write the fraction. (Diagram description: circle divided into 4 equal parts with 2 shaded.) Proposed answer: 2/5",
+          "taglish": "Is this solution correct? A bibingka is cut into 4 equal parts. 2 part(s) are marked. Write the fraction. (Diagram description: circle divided into 4 equal parts with 2 shaded.) Proposed answer: 2/5"
         },
-        "answer": "True",
+        "answer": "False",
         "type": "true_false",
         "options": [
           "True",
           "False"
         ],
         "solution": {
-          "en": "Answer: True",
-          "fil": "Answer: True",
-          "taglish": "Answer: True"
+          "en": "Answer: False",
+          "fil": "Answer: False",
+          "taglish": "Answer: False"
         },
         "source": {
           "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
@@ -14437,9 +13871,9 @@
         "answer": "3/5",
         "type": "mcq",
         "options": [
-          "A different value",
-          "Cannot be determined",
-          "None of these",
+          "4/6",
+          "4/5",
+          "3/6",
           "3/5"
         ],
         "solution": {
@@ -14465,9 +13899,9 @@
         "type": "mcq",
         "options": [
           "1/5",
-          "A different value",
-          "Cannot be determined",
-          "None of these"
+          "2/6",
+          "2/5",
+          "1/6"
         ],
         "solution": {
           "en": "Answer: 1/5",
@@ -14491,10 +13925,10 @@
         "answer": "2/5",
         "type": "mcq",
         "options": [
-          "None of these",
+          "3/6",
           "2/5",
-          "A different value",
-          "Cannot be determined"
+          "3/5",
+          "2/6"
         ],
         "solution": {
           "en": "Answer: 2/5",
@@ -14603,20 +14037,20 @@
       },
       {
         "q": {
-          "en": "Is this solution correct? A bibingka is cut into 8 equal parts. 5 part(s) are marked. Write the fraction. (Diagram description: circle divided into 8 equal parts with 5 shaded.) Proposed answer: 5/8",
-          "fil": "Is this solution correct? A bibingka is cut into 8 equal parts. 5 part(s) are marked. Write the fraction. (Diagram description: circle divided into 8 equal parts with 5 shaded.) Proposed answer: 5/8",
-          "taglish": "Is this solution correct? A bibingka is cut into 8 equal parts. 5 part(s) are marked. Write the fraction. (Diagram description: circle divided into 8 equal parts with 5 shaded.) Proposed answer: 5/8"
+          "en": "Is this solution correct? A bibingka is cut into 8 equal parts. 5 part(s) are marked. Write the fraction. (Diagram description: circle divided into 8 equal parts with 5 shaded.) Proposed answer: 5/9",
+          "fil": "Is this solution correct? A bibingka is cut into 8 equal parts. 5 part(s) are marked. Write the fraction. (Diagram description: circle divided into 8 equal parts with 5 shaded.) Proposed answer: 5/9",
+          "taglish": "Is this solution correct? A bibingka is cut into 8 equal parts. 5 part(s) are marked. Write the fraction. (Diagram description: circle divided into 8 equal parts with 5 shaded.) Proposed answer: 5/9"
         },
-        "answer": "True",
+        "answer": "False",
         "type": "true_false",
         "options": [
           "True",
           "False"
         ],
         "solution": {
-          "en": "Answer: True",
-          "fil": "Answer: True",
-          "taglish": "Answer: True"
+          "en": "Answer: False",
+          "fil": "Answer: False",
+          "taglish": "Answer: False"
         },
         "source": {
           "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
@@ -14751,9 +14185,9 @@
         "type": "mcq",
         "options": [
           "2/4, 3/4, 3/4",
-          "A different value",
-          "Cannot be determined",
-          "None of these"
+          "3/5, 4/5, 4/5",
+          "3/4, 3/4, 3/4",
+          "2/5, 3/4, 3/4"
         ],
         "solution": {
           "en": "Answer: 2/4, 3/4, 3/4",
@@ -14777,10 +14211,10 @@
         "answer": "2/5, 2/5, 3/5",
         "type": "mcq",
         "options": [
-          "Cannot be determined",
-          "None of these",
+          "3/6, 3/6, 4/6",
+          "3/5, 2/5, 3/5",
           "2/5, 2/5, 3/5",
-          "A different value"
+          "2/6, 2/5, 3/5"
         ],
         "solution": {
           "en": "Answer: 2/5, 2/5, 3/5",
@@ -14805,9 +14239,9 @@
         "type": "mcq",
         "options": [
           "2/4, 3/4, 3/4",
-          "A different value",
-          "Cannot be determined",
-          "None of these"
+          "3/5, 4/5, 4/5",
+          "3/4, 3/4, 3/4",
+          "2/5, 3/4, 3/4"
         ],
         "solution": {
           "en": "Answer: 2/4, 3/4, 3/4",
@@ -14916,20 +14350,20 @@
       },
       {
         "q": {
-          "en": "Is this solution correct? Order these equal-sized bibingka portions from smallest to largest: 5/8, 6/8, 2/8. Proposed answer: 2/8, 5/8, 6/8",
-          "fil": "Is this solution correct? Order these equal-sized bibingka portions from smallest to largest: 5/8, 6/8, 2/8. Proposed answer: 2/8, 5/8, 6/8",
-          "taglish": "Is this solution correct? Order these equal-sized bibingka portions from smallest to largest: 5/8, 6/8, 2/8. Proposed answer: 2/8, 5/8, 6/8"
+          "en": "Is this solution correct? Order these equal-sized bibingka portions from smallest to largest: 5/8, 6/8, 2/8. Proposed answer: 2/8, 5/8, 6/9",
+          "fil": "Is this solution correct? Order these equal-sized bibingka portions from smallest to largest: 5/8, 6/8, 2/8. Proposed answer: 2/8, 5/8, 6/9",
+          "taglish": "Is this solution correct? Order these equal-sized bibingka portions from smallest to largest: 5/8, 6/8, 2/8. Proposed answer: 2/8, 5/8, 6/9"
         },
-        "answer": "True",
+        "answer": "False",
         "type": "true_false",
         "options": [
           "True",
           "False"
         ],
         "solution": {
-          "en": "Answer: True",
-          "fil": "Answer: True",
-          "taglish": "Answer: True"
+          "en": "Answer: False",
+          "fil": "Answer: False",
+          "taglish": "Answer: False"
         },
         "source": {
           "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
@@ -15107,9 +14541,9 @@
         "type": "mcq",
         "options": [
           "Wednesday",
-          "A different value",
-          "Cannot be determined",
-          "None of these"
+          "Friday",
+          "Saturday",
+          "Tuesday"
         ],
         "solution": {
           "en": "Answer: Wednesday",
@@ -15190,10 +14624,10 @@
         "answer": "7:45 a.m.",
         "type": "mcq",
         "options": [
-          "None of these",
+          "8:46 a.m.",
           "7:45 a.m.",
-          "A different value",
-          "Cannot be determined"
+          "8:45 a.m.",
+          "7:46 a.m."
         ],
         "solution": {
           "en": "Answer: 7:45 a.m.",
@@ -15217,10 +14651,10 @@
         "answer": "7:45 a.m.",
         "type": "mcq",
         "options": [
-          "None of these",
+          "8:46 a.m.",
           "7:45 a.m.",
-          "A different value",
-          "Cannot be determined"
+          "8:45 a.m.",
+          "7:46 a.m."
         ],
         "solution": {
           "en": "Answer: 7:45 a.m.",
@@ -15244,10 +14678,10 @@
         "answer": "10:15 a.m.",
         "type": "mcq",
         "options": [
-          "Cannot be determined",
-          "None of these",
+          "11:16 a.m.",
+          "11:15 a.m.",
           "10:15 a.m.",
-          "A different value"
+          "10:16 a.m."
         ],
         "solution": {
           "en": "Answer: 10:15 a.m.",
@@ -15368,20 +14802,20 @@
       },
       {
         "q": {
-          "en": "Is this solution correct? A barangay program starts at 6:45 a.m. and lasts 30 minutes. What time does it end? Proposed answer: 7:15 a.m.",
-          "fil": "Is this solution correct? A barangay program starts at 6:45 a.m. and lasts 30 minutes. What time does it end? Proposed answer: 7:15 a.m.",
-          "taglish": "Is this solution correct? A barangay program starts at 6:45 a.m. and lasts 30 minutes. What time does it end? Proposed answer: 7:15 a.m."
+          "en": "Is this solution correct? A barangay program starts at 6:45 a.m. and lasts 30 minutes. What time does it end? Proposed answer: 7:17 a.m.",
+          "fil": "Is this solution correct? A barangay program starts at 6:45 a.m. and lasts 30 minutes. What time does it end? Proposed answer: 7:17 a.m.",
+          "taglish": "Is this solution correct? A barangay program starts at 6:45 a.m. and lasts 30 minutes. What time does it end? Proposed answer: 7:17 a.m."
         },
-        "answer": "True",
+        "answer": "False",
         "type": "true_false",
         "options": [
           "True",
           "False"
         ],
         "solution": {
-          "en": "Answer: True",
-          "fil": "Answer: True",
-          "taglish": "Answer: True"
+          "en": "Answer: False",
+          "fil": "Answer: False",
+          "taglish": "Answer: False"
         },
         "source": {
           "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
@@ -15420,9 +14854,9 @@
       },
       {
         "q": {
-          "en": "A barangay program starts at 10:00 a.m. and lasts 15 minutes. What time does it end? Explain why your answer is reasonable.",
-          "fil": "A barangay program starts at 10:00 a.m. and lasts 15 minutes. What time does it end? Explain why your answer is reasonable.",
-          "taglish": "A barangay program starts at 10:00 a.m. and lasts 15 minutes. What time does it end? Explain why your answer is reasonable."
+          "en": "A barangay program starts at 10:00 a.m. and lasts 15 minutes. What time does it end?",
+          "fil": "A barangay program starts at 10:00 a.m. and lasts 15 minutes. What time does it end?",
+          "taglish": "A barangay program starts at 10:00 a.m. and lasts 15 minutes. What time does it end?"
         },
         "answer": "10:15 a.m.",
         "type": "mcq",
@@ -15470,33 +14904,6 @@
           "path": "Grade-2/Semester-3/Activity-Sheets/Activity-Sheet-16-Time-In-Hours-And-Minutes-With-A-M-And-P-M-Using-An.md",
           "item": 10,
           "original_type": "activity"
-        }
-      },
-      {
-        "q": {
-          "en": "A barangay program starts at 10:00 a.m. and lasts 15 minutes. What time does it end?",
-          "fil": "A barangay program starts at 10:00 a.m. and lasts 15 minutes. What time does it end?",
-          "taglish": "A barangay program starts at 10:00 a.m. and lasts 15 minutes. What time does it end?"
-        },
-        "answer": "10:15 a.m.",
-        "type": "mcq",
-        "options": [
-          "7:15 a.m.",
-          "10:15 a.m.",
-          "9:30 a.m.",
-          "9:00 a.m."
-        ],
-        "solution": {
-          "en": "Answer: 10:15 a.m.",
-          "fil": "Answer: 10:15 a.m.",
-          "taglish": "Answer: 10:15 a.m."
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "2MG-IIIh-1",
-          "path": "Grade-2/Semester-3/Quizzes/Quiz-16-Time-In-Hours-And-Minutes-With-A-M-And-P-M-Using-An.md",
-          "item": 11,
-          "original_type": "computation"
         }
       },
       {
@@ -15594,9 +15001,9 @@
         "answer": "11:00 a.m.",
         "type": "mcq",
         "options": [
-          "A different value",
-          "Cannot be determined",
-          "None of these",
+          "6:45 a.m.",
+          "12:00 a.m.",
+          "7:15 a.m.",
           "11:00 a.m."
         ],
         "solution": {
@@ -15621,9 +15028,9 @@
         "answer": "7:00 a.m.",
         "type": "mcq",
         "options": [
-          "A different value",
-          "Cannot be determined",
-          "None of these",
+          "9:00 a.m.",
+          "8:00 a.m.",
+          "9:45 a.m.",
           "7:00 a.m."
         ],
         "solution": {
@@ -15649,9 +15056,9 @@
         "type": "mcq",
         "options": [
           "8:45 a.m.",
-          "A different value",
-          "Cannot be determined",
-          "None of these"
+          "9:46 a.m.",
+          "9:45 a.m.",
+          "8:46 a.m."
         ],
         "solution": {
           "en": "Answer: 8:45 a.m.",
@@ -15772,20 +15179,20 @@
       },
       {
         "q": {
-          "en": "Is this solution correct? A barangay program starts at 6:45 a.m. and lasts 30 minutes. What time does it end? Proposed answer: 7:15 a.m.",
-          "fil": "Is this solution correct? A barangay program starts at 6:45 a.m. and lasts 30 minutes. What time does it end? Proposed answer: 7:15 a.m.",
-          "taglish": "Is this solution correct? A barangay program starts at 6:45 a.m. and lasts 30 minutes. What time does it end? Proposed answer: 7:15 a.m."
+          "en": "Is this solution correct? A barangay program starts at 6:45 a.m. and lasts 30 minutes. What time does it end? Proposed answer: 7:17 a.m.",
+          "fil": "Is this solution correct? A barangay program starts at 6:45 a.m. and lasts 30 minutes. What time does it end? Proposed answer: 7:17 a.m.",
+          "taglish": "Is this solution correct? A barangay program starts at 6:45 a.m. and lasts 30 minutes. What time does it end? Proposed answer: 7:17 a.m."
         },
-        "answer": "True",
+        "answer": "False",
         "type": "true_false",
         "options": [
           "True",
           "False"
         ],
         "solution": {
-          "en": "Answer: True",
-          "fil": "Answer: True",
-          "taglish": "Answer: True"
+          "en": "Answer: False",
+          "fil": "Answer: False",
+          "taglish": "Answer: False"
         },
         "source": {
           "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
@@ -15824,9 +15231,9 @@
       },
       {
         "q": {
-          "en": "A barangay program starts at 10:00 a.m. and lasts 60 minutes. What time does it end? Explain why your answer is reasonable.",
-          "fil": "A barangay program starts at 10:00 a.m. and lasts 60 minutes. What time does it end? Explain why your answer is reasonable.",
-          "taglish": "A barangay program starts at 10:00 a.m. and lasts 60 minutes. What time does it end? Explain why your answer is reasonable."
+          "en": "A barangay program starts at 10:00 a.m. and lasts 60 minutes. What time does it end?",
+          "fil": "A barangay program starts at 10:00 a.m. and lasts 60 minutes. What time does it end?",
+          "taglish": "A barangay program starts at 10:00 a.m. and lasts 60 minutes. What time does it end?"
         },
         "answer": "11:00 a.m.",
         "type": "mcq",
@@ -15874,33 +15281,6 @@
           "path": "Grade-2/Semester-3/Activity-Sheets/Activity-Sheet-17-Problems-Involving-Elapsed-Time.md",
           "item": 10,
           "original_type": "activity"
-        }
-      },
-      {
-        "q": {
-          "en": "A barangay program starts at 10:00 a.m. and lasts 60 minutes. What time does it end?",
-          "fil": "A barangay program starts at 10:00 a.m. and lasts 60 minutes. What time does it end?",
-          "taglish": "A barangay program starts at 10:00 a.m. and lasts 60 minutes. What time does it end?"
-        },
-        "answer": "11:00 a.m.",
-        "type": "mcq",
-        "options": [
-          "7:15 a.m.",
-          "11:00 a.m.",
-          "11:15 a.m.",
-          "9:45 a.m."
-        ],
-        "solution": {
-          "en": "Answer: 11:00 a.m.",
-          "fil": "Answer: 11:00 a.m.",
-          "taglish": "Answer: 11:00 a.m."
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "2MG-IIIi-1",
-          "path": "Grade-2/Semester-3/Quizzes/Quiz-17-Problems-Involving-Elapsed-Time.md",
-          "item": 11,
-          "original_type": "computation"
         }
       },
       {
@@ -16045,33 +15425,6 @@
       },
       {
         "q": {
-          "en": "Name one classroom object with a flat surface.",
-          "fil": "Name one classroom object with a flat surface.",
-          "taglish": "Name one classroom object with a flat surface."
-        },
-        "answer": "Answers vary; e.g., tabletop or book cover",
-        "type": "mcq",
-        "options": [
-          "parallel lines",
-          "intersecting lines",
-          "curved lines",
-          "Answers vary; e.g., tabletop or book cover"
-        ],
-        "solution": {
-          "en": "Answer: Answers vary; e.g., tabletop or book cover",
-          "fil": "Answer: Answers vary; e.g., tabletop or book cover",
-          "taglish": "Answer: Answers vary; e.g., tabletop or book cover"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "2MG-IIIi-2",
-          "path": "Grade-2/Semester-3/Quizzes/Quiz-18-Explain-The-Difference-Between-Straight-And-Curved.md",
-          "item": 3,
-          "original_type": "multiple-choice"
-        }
-      },
-      {
-        "q": {
           "en": "Explain one difference between a straight line and a curved line.",
           "fil": "Explain one difference between a straight line and a curved line.",
           "taglish": "Explain one difference between a straight line and a curved line."
@@ -16082,7 +15435,7 @@
           "A straight line does not bend; a curved line bends",
           "straight line",
           "curved surface",
-          "Answers vary; e.g., tabletop or book cover"
+          "7:15 a.m."
         ],
         "solution": {
           "en": "Answer: A straight line does not bend; a curved line bends",
@@ -16120,33 +15473,6 @@
           "path": "Grade-2/Semester-3/Quizzes/Quiz-18-Explain-The-Difference-Between-Straight-And-Curved.md",
           "item": 8,
           "original_type": "true-false"
-        }
-      },
-      {
-        "q": {
-          "en": "Is the edge of a ruler best modeled by a straight or curved line? Explain why your answer is reasonable.",
-          "fil": "Is the edge of a ruler best modeled by a straight or curved line? Explain why your answer is reasonable.",
-          "taglish": "Is the edge of a ruler best modeled by a straight or curved line? Explain why your answer is reasonable."
-        },
-        "answer": "straight line",
-        "type": "mcq",
-        "options": [
-          "curved surface",
-          "Answers vary; e.g., tabletop or book cover",
-          "A straight line does not bend; a curved line bends",
-          "straight line"
-        ],
-        "solution": {
-          "en": "Answer: straight line",
-          "fil": "Answer: straight line",
-          "taglish": "Answer: straight line"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "2MG-IIIi-2",
-          "path": "Grade-2/Semester-3/Activity-Sheets/Activity-Sheet-18-Explain-The-Difference-Between-Straight-And-Curved.md",
-          "item": 9,
-          "original_type": "activity"
         }
       }
     ],
@@ -16420,9 +15746,9 @@
       },
       {
         "q": {
-          "en": "A rectangular fiesta booth is 10 m by 8 m. Find its perimeter. Explain why your answer is reasonable.",
-          "fil": "A rectangular fiesta booth is 10 m by 8 m. Find its perimeter. Explain why your answer is reasonable.",
-          "taglish": "A rectangular fiesta booth is 10 m by 8 m. Find its perimeter. Explain why your answer is reasonable."
+          "en": "A rectangular fiesta booth is 10 m by 8 m. Find its perimeter.",
+          "fil": "A rectangular fiesta booth is 10 m by 8 m. Find its perimeter.",
+          "taglish": "A rectangular fiesta booth is 10 m by 8 m. Find its perimeter."
         },
         "answer": "36 m",
         "type": "mcq",
@@ -16718,20 +16044,20 @@
       },
       {
         "q": {
-          "en": "Is this solution correct? A rectangular fiesta booth is 11 m by 2 m. Find its perimeter. Proposed answer: 26 m",
-          "fil": "Is this solution correct? A rectangular fiesta booth is 11 m by 2 m. Find its perimeter. Proposed answer: 26 m",
-          "taglish": "Is this solution correct? A rectangular fiesta booth is 11 m by 2 m. Find its perimeter. Proposed answer: 26 m"
+          "en": "Is this solution correct? A rectangular fiesta booth is 11 m by 2 m. Find its perimeter. Proposed answer: 28 m",
+          "fil": "Is this solution correct? A rectangular fiesta booth is 11 m by 2 m. Find its perimeter. Proposed answer: 28 m",
+          "taglish": "Is this solution correct? A rectangular fiesta booth is 11 m by 2 m. Find its perimeter. Proposed answer: 28 m"
         },
-        "answer": "True",
+        "answer": "False",
         "type": "true_false",
         "options": [
           "True",
           "False"
         ],
         "solution": {
-          "en": "Answer: True",
-          "fil": "Answer: True",
-          "taglish": "Answer: True"
+          "en": "Answer: False",
+          "fil": "Answer: False",
+          "taglish": "Answer: False"
         },
         "source": {
           "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
@@ -16770,9 +16096,9 @@
       },
       {
         "q": {
-          "en": "A rectangular fiesta booth is 13 m by 5 m. Find its perimeter. Explain why your answer is reasonable.",
-          "fil": "A rectangular fiesta booth is 13 m by 5 m. Find its perimeter. Explain why your answer is reasonable.",
-          "taglish": "A rectangular fiesta booth is 13 m by 5 m. Find its perimeter. Explain why your answer is reasonable."
+          "en": "A rectangular fiesta booth is 13 m by 5 m. Find its perimeter.",
+          "fil": "A rectangular fiesta booth is 13 m by 5 m. Find its perimeter.",
+          "taglish": "A rectangular fiesta booth is 13 m by 5 m. Find its perimeter."
         },
         "answer": "36 m",
         "type": "mcq",
@@ -16820,33 +16146,6 @@
           "path": "Grade-2/Semester-3/Activity-Sheets/Activity-Sheet-20-The-Perimeter-Of-Triangles-Squares-And-Rectangles.md",
           "item": 10,
           "original_type": "activity"
-        }
-      },
-      {
-        "q": {
-          "en": "A rectangular fiesta booth is 13 m by 5 m. Find its perimeter.",
-          "fil": "A rectangular fiesta booth is 13 m by 5 m. Find its perimeter.",
-          "taglish": "A rectangular fiesta booth is 13 m by 5 m. Find its perimeter."
-        },
-        "answer": "36 m",
-        "type": "mcq",
-        "options": [
-          "26 m",
-          "36 m",
-          "28 m",
-          "44 m"
-        ],
-        "solution": {
-          "en": "Answer: 36 m",
-          "fil": "Answer: 36 m",
-          "taglish": "Answer: 36 m"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "2MG-IIIj-1",
-          "path": "Grade-2/Semester-3/Quizzes/Quiz-20-The-Perimeter-Of-Triangles-Squares-And-Rectangles.md",
-          "item": 11,
-          "original_type": "computation"
         }
       },
       {
@@ -17147,9 +16446,9 @@
       },
       {
         "q": {
-          "en": "A rectangular fiesta booth is 7 m by 6 m. Find its perimeter. Explain why your answer is reasonable.",
-          "fil": "A rectangular fiesta booth is 7 m by 6 m. Find its perimeter. Explain why your answer is reasonable.",
-          "taglish": "A rectangular fiesta booth is 7 m by 6 m. Find its perimeter. Explain why your answer is reasonable."
+          "en": "A rectangular fiesta booth is 7 m by 6 m. Find its perimeter.",
+          "fil": "A rectangular fiesta booth is 7 m by 6 m. Find its perimeter.",
+          "taglish": "A rectangular fiesta booth is 7 m by 6 m. Find its perimeter."
         },
         "answer": "26 m",
         "type": "mcq",
@@ -17197,33 +16496,6 @@
           "path": "Grade-2/Semester-3/Activity-Sheets/Activity-Sheet-21-Problems-Involving-The-Perimeter-Of-Triangles-Squares.md",
           "item": 10,
           "original_type": "activity"
-        }
-      },
-      {
-        "q": {
-          "en": "A rectangular fiesta booth is 7 m by 6 m. Find its perimeter.",
-          "fil": "A rectangular fiesta booth is 7 m by 6 m. Find its perimeter.",
-          "taglish": "A rectangular fiesta booth is 7 m by 6 m. Find its perimeter."
-        },
-        "answer": "26 m",
-        "type": "mcq",
-        "options": [
-          "48 m",
-          "26 m",
-          "32 m",
-          "18 m"
-        ],
-        "solution": {
-          "en": "Answer: 26 m",
-          "fil": "Answer: 26 m",
-          "taglish": "Answer: 26 m"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "2MG-IIIj-2",
-          "path": "Grade-2/Semester-3/Quizzes/Quiz-21-Problems-Involving-The-Perimeter-Of-Triangles-Squares.md",
-          "item": 11,
-          "original_type": "computation"
         }
       },
       {

@@ -3,10 +3,9 @@
 // transformed response is JavaScript, not application/json.
 import { applyCurriculumOverrides } from './curriculum-overrides.js'
 
+// Grades 4-6 only. Listing grades 1-3 here would let a stale stored grade pull
+// out-of-scope curriculum into the bundle on demand.
 const loaders = {
-  1: () => import('../curriculum/grade1.json'),
-  2: () => import('../curriculum/grade2.json'),
-  3: () => import('../curriculum/grade3.json'),
   4: () => import('../curriculum/grade4.json'),
   5: () => import('../curriculum/grade5.json'),
   6: () => import('../curriculum/grade6.json'),

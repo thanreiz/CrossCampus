@@ -1,9 +1,10 @@
 import { get, set } from 'idb-keyval'
 import { isLearnerFacingQuestion } from './question-quality.js'
+import { API_BASE } from './api-base.js'
 
 export const ROTATION_VERSION = 'v1'
 export const QUESTION_TIMEOUT_MS = 25_000
-export const QUESTION_API_BASE = (import.meta.env?.VITE_QUESTION_API_BASE ?? '').replace(/\/$/, '')
+export const QUESTION_API_BASE = API_BASE
 
 const defaultStore = { get, set }
 

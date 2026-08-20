@@ -30,10 +30,8 @@
         "answer": "Yes",
         "type": "mcq",
         "options": [
-          "Cannot be determined",
-          "None of these",
-          "Yes",
-          "A different value"
+          "No",
+          "Yes"
         ],
         "solution": {
           "en": "Answer: Yes",
@@ -57,10 +55,8 @@
         "answer": "Yes",
         "type": "mcq",
         "options": [
-          "Cannot be determined",
-          "None of these",
-          "Yes",
-          "A different value"
+          "No",
+          "Yes"
         ],
         "solution": {
           "en": "Answer: Yes",
@@ -84,10 +80,8 @@
         "answer": "Yes",
         "type": "mcq",
         "options": [
-          "Cannot be determined",
-          "None of these",
-          "Yes",
-          "A different value"
+          "No",
+          "Yes"
         ],
         "solution": {
           "en": "Answer: Yes",
@@ -167,10 +161,8 @@
         "answer": "Yes",
         "type": "mcq",
         "options": [
-          "Cannot be determined",
-          "None of these",
-          "Yes",
-          "A different value"
+          "No",
+          "Yes"
         ],
         "solution": {
           "en": "Answer: Yes",
@@ -194,10 +186,8 @@
         "answer": "Yes",
         "type": "mcq",
         "options": [
-          "Cannot be determined",
-          "None of these",
-          "Yes",
-          "A different value"
+          "No",
+          "Yes"
         ],
         "solution": {
           "en": "Answer: Yes",
@@ -221,10 +211,8 @@
         "answer": "Yes",
         "type": "mcq",
         "options": [
-          "Cannot be determined",
-          "None of these",
-          "Yes",
-          "A different value"
+          "No",
+          "Yes"
         ],
         "solution": {
           "en": "Answer: Yes",
@@ -305,9 +293,8 @@
         "type": "mcq",
         "options": [
           "rotation",
-          "translation",
-          "translation or slide",
-          "reflection"
+          "reflection or flip",
+          "translation or slide"
         ],
         "solution": {
           "en": "Answer: translation or slide",
@@ -332,9 +319,8 @@
         "type": "mcq",
         "options": [
           "translation",
-          "translation or slide",
-          "rotation",
-          "reflection"
+          "reflection or flip",
+          "rotation"
         ],
         "solution": {
           "en": "Answer: rotation",
@@ -360,7 +346,6 @@
         "options": [
           "translation",
           "reflection or flip",
-          "reflection",
           "rotation"
         ],
         "solution": {
@@ -427,33 +412,6 @@
           "item": 8,
           "original_type": "true-false"
         }
-      },
-      {
-        "q": {
-          "en": "A figure is moved without turning or flipping. Name the transformation. Explain why your answer is reasonable.",
-          "fil": "A figure is moved without turning or flipping. Name the transformation. Explain why your answer is reasonable.",
-          "taglish": "A figure is moved without turning or flipping. Name the transformation. Explain why your answer is reasonable."
-        },
-        "answer": "translation or slide",
-        "type": "mcq",
-        "options": [
-          "rotation",
-          "reflection or flip",
-          "The completed half must be a mirror image at equal distances from the line",
-          "translation or slide"
-        ],
-        "solution": {
-          "en": "Answer: translation or slide",
-          "fil": "Answer: translation or slide",
-          "taglish": "Answer: translation or slide"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "6MG-Ib-1",
-          "path": "Grade-6/Semester-1/Activity-Sheets/Activity-Sheet-03-Resulting-Images-Of-Shapes-That-Undergo-Translation.md",
-          "item": 9,
-          "original_type": "activity"
-        }
       }
     ],
     "source_trace": {
@@ -495,9 +453,9 @@
         "answer": "₱29.99",
         "type": "mcq",
         "options": [
-          "30.99",
-          "28.99",
-          "59.98",
+          "₱30.99",
+          "₱28.99",
+          "₱59.98",
           "₱29.99"
         ],
         "solution": {
@@ -522,9 +480,9 @@
         "answer": "₱37.97",
         "type": "mcq",
         "options": [
-          "38.97",
-          "36.97",
-          "75.94",
+          "₱38.97",
+          "₱36.97",
+          "₱75.94",
           "₱37.97"
         ],
         "solution": {
@@ -549,10 +507,10 @@
         "answer": "₱62.33",
         "type": "mcq",
         "options": [
-          "61.33",
-          "124.66",
+          "₱61.33",
+          "₱124.66",
           "₱62.33",
-          "63.33"
+          "₱63.33"
         ],
         "solution": {
           "en": "Answer: ₱62.33",
@@ -851,9 +809,9 @@
         "type": "mcq",
         "options": [
           "₱15.38",
-          "16.38",
-          "14.38",
-          "30.76"
+          "₱16.38",
+          "₱14.38",
+          "₱30.76"
         ],
         "solution": {
           "en": "Answer: ₱15.38",
@@ -877,10 +835,10 @@
         "answer": "₱68.58",
         "type": "mcq",
         "options": [
-          "67.58",
-          "137.16",
+          "₱67.58",
+          "₱137.16",
           "₱68.58",
-          "69.58"
+          "₱69.58"
         ],
         "solution": {
           "en": "Answer: ₱68.58",
@@ -905,9 +863,9 @@
         "type": "mcq",
         "options": [
           "₱2.83",
-          "3.83",
-          "1.83",
-          "5.66"
+          "₱3.83",
+          "₱1.83",
+          "₱5.66"
         ],
         "solution": {
           "en": "Answer: ₱2.83",
@@ -1016,20 +974,20 @@
       },
       {
         "q": {
-          "en": "Is this solution correct? At a sari-sari store, compute ₱40.17 - ₱29.48. Proposed answer: ₱10.69",
-          "fil": "Is this solution correct? At a sari-sari store, compute ₱40.17 - ₱29.48. Proposed answer: ₱10.69",
-          "taglish": "Is this solution correct? At a sari-sari store, compute ₱40.17 - ₱29.48. Proposed answer: ₱10.69"
+          "en": "Is this solution correct? At a sari-sari store, compute ₱40.17 - ₱29.48. Proposed answer: ₱12.69",
+          "fil": "Is this solution correct? At a sari-sari store, compute ₱40.17 - ₱29.48. Proposed answer: ₱12.69",
+          "taglish": "Is this solution correct? At a sari-sari store, compute ₱40.17 - ₱29.48. Proposed answer: ₱12.69"
         },
-        "answer": "True",
+        "answer": "False",
         "type": "true_false",
         "options": [
           "True",
           "False"
         ],
         "solution": {
-          "en": "Answer: True",
-          "fil": "Answer: True",
-          "taglish": "Answer: True"
+          "en": "Answer: False",
+          "fil": "Answer: False",
+          "taglish": "Answer: False"
         },
         "source": {
           "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
@@ -1205,9 +1163,9 @@
         "answer": "7.946",
         "type": "mcq",
         "options": [
-          "8.95",
-          "6.95",
-          "15.89",
+          "8.950",
+          "6.950",
+          "15.890",
           "7.946"
         ],
         "solution": {
@@ -1260,9 +1218,9 @@
         "type": "mcq",
         "options": [
           "0.7122",
-          "1.71",
-          "0",
-          "1.42"
+          "1.7100",
+          "0.0000",
+          "1.4200"
         ],
         "solution": {
           "en": "Answer: 0.7122",
@@ -1371,20 +1329,20 @@
       },
       {
         "q": {
-          "en": "Is this solution correct? Compute mentally: 26.17 × 10. Proposed answer: 261.7",
-          "fil": "Is this solution correct? Compute mentally: 26.17 × 10. Proposed answer: 261.7",
-          "taglish": "Is this solution correct? Compute mentally: 26.17 × 10. Proposed answer: 261.7"
+          "en": "Is this solution correct? Compute mentally: 26.17 × 10. Proposed answer: 271.7",
+          "fil": "Is this solution correct? Compute mentally: 26.17 × 10. Proposed answer: 271.7",
+          "taglish": "Is this solution correct? Compute mentally: 26.17 × 10. Proposed answer: 271.7"
         },
-        "answer": "True",
+        "answer": "False",
         "type": "true_false",
         "options": [
           "True",
           "False"
         ],
         "solution": {
-          "en": "Answer: True",
-          "fil": "Answer: True",
-          "taglish": "Answer: True"
+          "en": "Answer: False",
+          "fil": "Answer: False",
+          "taglish": "Answer: False"
         },
         "source": {
           "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
@@ -1560,9 +1518,9 @@
         "answer": "₱32.23",
         "type": "mcq",
         "options": [
-          "33.23",
-          "31.23",
-          "64.46",
+          "₱33.23",
+          "₱31.23",
+          "₱64.46",
           "₱32.23"
         ],
         "solution": {
@@ -1587,10 +1545,10 @@
         "answer": "₱11.36",
         "type": "mcq",
         "options": [
-          "10.36",
-          "22.72",
+          "₱10.36",
+          "₱22.72",
           "₱11.36",
-          "12.36"
+          "₱12.36"
         ],
         "solution": {
           "en": "Answer: ₱11.36",
@@ -1614,9 +1572,9 @@
         "answer": "₱55.24",
         "type": "mcq",
         "options": [
-          "56.24",
-          "54.24",
-          "110.48",
+          "₱56.24",
+          "₱54.24",
+          "₱110.48",
           "₱55.24"
         ],
         "solution": {
@@ -1915,9 +1873,9 @@
         "answer": "0.1111…",
         "type": "mcq",
         "options": [
-          "A different value",
-          "Cannot be determined",
-          "None of these",
+          "1.1111…",
+          "2.1111…",
+          "3.1111…",
           "0.1111…"
         ],
         "solution": {
@@ -1943,9 +1901,9 @@
         "type": "mcq",
         "options": [
           "0.3333…",
-          "A different value",
-          "Cannot be determined",
-          "None of these"
+          "1.3333…",
+          "2.3333…",
+          "3.3333…"
         ],
         "solution": {
           "en": "Answer: 0.3333…",
@@ -1962,20 +1920,20 @@
       },
       {
         "q": {
-          "en": "Is this solution correct? Write 1 ÷ 3 as a repeating decimal using an ellipsis. Proposed answer: 0.3333…",
-          "fil": "Is this solution correct? Write 1 ÷ 3 as a repeating decimal using an ellipsis. Proposed answer: 0.3333…",
-          "taglish": "Is this solution correct? Write 1 ÷ 3 as a repeating decimal using an ellipsis. Proposed answer: 0.3333…"
+          "en": "Is this solution correct? Write 1 ÷ 3 as a repeating decimal using an ellipsis. Proposed answer: 1.3333…",
+          "fil": "Is this solution correct? Write 1 ÷ 3 as a repeating decimal using an ellipsis. Proposed answer: 1.3333…",
+          "taglish": "Is this solution correct? Write 1 ÷ 3 as a repeating decimal using an ellipsis. Proposed answer: 1.3333…"
         },
-        "answer": "True",
+        "answer": "False",
         "type": "true_false",
         "options": [
           "True",
           "False"
         ],
         "solution": {
-          "en": "Answer: True",
-          "fil": "Answer: True",
-          "taglish": "Answer: True"
+          "en": "Answer: False",
+          "fil": "Answer: False",
+          "taglish": "Answer: False"
         },
         "source": {
           "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
@@ -2026,9 +1984,9 @@
         "type": "mcq",
         "options": [
           "6.4596",
-          "7.46",
-          "5.46",
-          "12.92"
+          "7.4600",
+          "5.4600",
+          "12.9200"
         ],
         "solution": {
           "en": "Answer: 6.4596",
@@ -2053,9 +2011,9 @@
         "type": "mcq",
         "options": [
           "52.794",
-          "53.79",
-          "51.79",
-          "105.59"
+          "53.790",
+          "51.790",
+          "105.590"
         ],
         "solution": {
           "en": "Answer: 52.794",
@@ -2079,10 +2037,10 @@
         "answer": "0.47028",
         "type": "mcq",
         "options": [
-          "0",
-          "0.94",
+          "0.00000",
+          "0.94000",
           "0.47028",
-          "1.47"
+          "1.47000"
         ],
         "solution": {
           "en": "Answer: 0.47028",
@@ -2381,9 +2339,9 @@
         "type": "mcq",
         "options": [
           "₱48.06",
-          "49.06",
-          "47.06",
-          "96.12"
+          "₱49.06",
+          "₱47.06",
+          "₱96.12"
         ],
         "solution": {
           "en": "Answer: ₱48.06",
@@ -2408,9 +2366,9 @@
         "type": "mcq",
         "options": [
           "₱47.20",
-          "48.2",
-          "46.2",
-          "94.4"
+          "₱48.20",
+          "₱46.20",
+          "₱94.40"
         ],
         "solution": {
           "en": "Answer: ₱47.20",
@@ -2434,10 +2392,10 @@
         "answer": "₱53.01",
         "type": "mcq",
         "options": [
-          "52.01",
-          "106.02",
+          "₱52.01",
+          "₱106.02",
           "₱53.01",
-          "54.01"
+          "₱54.01"
         ],
         "solution": {
           "en": "Answer: ₱53.01",
@@ -2735,9 +2693,9 @@
         "answer": "1 1/3",
         "type": "mcq",
         "options": [
-          "2",
-          "0",
           "2 2/5",
+          "3 1/4",
+          "50.24 m²",
           "1 1/3"
         ],
         "solution": {
@@ -2762,10 +2720,10 @@
         "answer": "2 2/5",
         "type": "mcq",
         "options": [
-          "1",
-          "4",
+          "2 2/4",
+          "0 0/3",
           "2 2/5",
-          "3"
+          "0 2/5"
         ],
         "solution": {
           "en": "Answer: 2 2/5",
@@ -2790,9 +2748,9 @@
         "type": "mcq",
         "options": [
           "3 1/4",
-          "4",
-          "2",
-          "6"
+          "4 1/4",
+          "3 2/4",
+          "3 1/5"
         ],
         "solution": {
           "en": "Answer: 3 1/4",
@@ -3069,9 +3027,9 @@
         "answer": "3 2/3",
         "type": "mcq",
         "options": [
-          "4",
-          "2",
-          "6",
+          "3 2/4",
+          "5 4/5",
+          "5 2/3",
           "3 2/3"
         ],
         "solution": {
@@ -3096,10 +3054,10 @@
         "answer": "2 1/2",
         "type": "mcq",
         "options": [
-          "4",
+          "2 3/2",
           "2 1/2",
-          "3",
-          "1"
+          "2 1/4",
+          "12 11/12"
         ],
         "solution": {
           "en": "Answer: 2 1/2",
@@ -3125,8 +3083,8 @@
         "options": [
           "3 2/3",
           "1 4/5",
-          "0",
-          "2"
+          "2 1/2",
+          "12.56 m²"
         ],
         "solution": {
           "en": "Answer: 1 4/5",
@@ -3235,20 +3193,20 @@
       },
       {
         "q": {
-          "en": "Is this solution correct? Rewrite 19/6 as a mixed number. Proposed answer: 3 1/6",
-          "fil": "Is this solution correct? Rewrite 19/6 as a mixed number. Proposed answer: 3 1/6",
-          "taglish": "Is this solution correct? Rewrite 19/6 as a mixed number. Proposed answer: 3 1/6"
+          "en": "Is this solution correct? Rewrite 19/6 as a mixed number. Proposed answer: 3 1/7",
+          "fil": "Is this solution correct? Rewrite 19/6 as a mixed number. Proposed answer: 3 1/7",
+          "taglish": "Is this solution correct? Rewrite 19/6 as a mixed number. Proposed answer: 3 1/7"
         },
-        "answer": "True",
+        "answer": "False",
         "type": "true_false",
         "options": [
           "True",
           "False"
         ],
         "solution": {
-          "en": "Answer: True",
-          "fil": "Answer: True",
-          "taglish": "Answer: True"
+          "en": "Answer: False",
+          "fil": "Answer: False",
+          "taglish": "Answer: False"
         },
         "source": {
           "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
@@ -3424,9 +3382,9 @@
         "answer": "3 2/3",
         "type": "mcq",
         "options": [
-          "4",
-          "2",
-          "6",
+          "3 4/3",
+          "3 2/5",
+          "13 12/13",
           "3 2/3"
         ],
         "solution": {
@@ -3452,9 +3410,9 @@
         "type": "mcq",
         "options": [
           "3 7/10",
-          "4",
-          "2",
-          "6"
+          "5 7/10",
+          "3 9/10",
+          "3 7/12"
         ],
         "solution": {
           "en": "Answer: 3 7/10",
@@ -3480,8 +3438,8 @@
         "options": [
           "3 2/3",
           "1 3/6",
-          "2",
-          "0"
+          "3 7/10",
+          "3 1/6"
         ],
         "solution": {
           "en": "Answer: 1 3/6",
@@ -3734,9 +3692,9 @@
         "type": "mcq",
         "options": [
           "3 1/6",
-          "4",
-          "2",
-          "6"
+          "5 3/8",
+          "5 1/6",
+          "3 3/6"
         ],
         "solution": {
           "en": "Answer: 3 1/6",
@@ -3760,9 +3718,9 @@
         "answer": "2 2/6",
         "type": "mcq",
         "options": [
-          "3",
-          "1",
-          "4",
+          "2 3/6",
+          "2 2/7",
+          "4 4/8",
           "2 2/6"
         ],
         "solution": {
@@ -3787,10 +3745,10 @@
         "answer": "2 4/6",
         "type": "mcq",
         "options": [
-          "4",
+          "2 4/7",
           "2 4/6",
-          "3",
-          "1"
+          "4 6/8",
+          "4 4/6"
         ],
         "solution": {
           "en": "Answer: 2 4/6",
@@ -3899,20 +3857,20 @@
       },
       {
         "q": {
-          "en": "Is this solution correct? Rewrite 8/3 as a mixed number. Proposed answer: 2 2/3",
-          "fil": "Is this solution correct? Rewrite 8/3 as a mixed number. Proposed answer: 2 2/3",
-          "taglish": "Is this solution correct? Rewrite 8/3 as a mixed number. Proposed answer: 2 2/3"
+          "en": "Is this solution correct? Rewrite 8/3 as a mixed number. Proposed answer: 2 2/4",
+          "fil": "Is this solution correct? Rewrite 8/3 as a mixed number. Proposed answer: 2 2/4",
+          "taglish": "Is this solution correct? Rewrite 8/3 as a mixed number. Proposed answer: 2 2/4"
         },
-        "answer": "True",
+        "answer": "False",
         "type": "true_false",
         "options": [
           "True",
           "False"
         ],
         "solution": {
-          "en": "Answer: True",
-          "fil": "Answer: True",
-          "taglish": "Answer: True"
+          "en": "Answer: False",
+          "fil": "Answer: False",
+          "taglish": "Answer: False"
         },
         "source": {
           "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
@@ -4021,7 +3979,7 @@
     "ref": "6NA-Ii-1",
     "domain": "Number and Algebra",
     "content_standard": "Operations with decimals and fractions, and ratios.",
-    "competency": "Describe the relationship between quantities using ratio for: a. part-whole relationships b. part-part relationships.\".",
+    "competency": "Describe the relationship between quantities using ratio for: a. part-whole relationships b. part-part relationships.",
     "performance_standard": "Use decimals, fractions, and ratios to solve multi-step financial and quantitative problems.",
     "game_tags": [
       "store"
@@ -4047,9 +4005,9 @@
         "type": "mcq",
         "options": [
           "3:3",
-          "A different value",
-          "Cannot be determined",
-          "None of these"
+          "4:4",
+          "4:3",
+          "3:4"
         ],
         "solution": {
           "en": "Answer: 3:3",
@@ -4073,10 +4031,10 @@
         "answer": "6:6",
         "type": "mcq",
         "options": [
-          "None of these",
+          "7:7",
           "6:6",
-          "A different value",
-          "Cannot be determined"
+          "7:6",
+          "6:7"
         ],
         "solution": {
           "en": "Answer: 6:6",
@@ -4100,10 +4058,10 @@
         "answer": "6:5",
         "type": "mcq",
         "options": [
-          "None of these",
+          "7:6",
           "6:5",
-          "A different value",
-          "Cannot be determined"
+          "7:5",
+          "6:6"
         ],
         "solution": {
           "en": "Answer: 6:5",
@@ -4401,9 +4359,9 @@
         "answer": "4:4",
         "type": "mcq",
         "options": [
-          "A different value",
-          "Cannot be determined",
-          "None of these",
+          "5:5",
+          "5:4",
+          "4:5",
           "4:4"
         ],
         "solution": {
@@ -4429,9 +4387,9 @@
         "type": "mcq",
         "options": [
           "6:7",
-          "A different value",
-          "Cannot be determined",
-          "None of these"
+          "7:8",
+          "7:7",
+          "6:8"
         ],
         "solution": {
           "en": "Answer: 6:7",
@@ -4455,10 +4413,10 @@
         "answer": "5:6",
         "type": "mcq",
         "options": [
-          "Cannot be determined",
-          "None of these",
+          "6:7",
+          "6:6",
           "5:6",
-          "A different value"
+          "5:7"
         ],
         "solution": {
           "en": "Answer: 5:6",
@@ -4542,20 +4500,20 @@
       },
       {
         "q": {
-          "en": "Is this solution correct? A garden has 4 rows of pechay and 3 rows of eggplant. Write the pechay-to-eggplant ratio. Proposed answer: 4:3",
-          "fil": "Is this solution correct? A garden has 4 rows of pechay and 3 rows of eggplant. Write the pechay-to-eggplant ratio. Proposed answer: 4:3",
-          "taglish": "Is this solution correct? A garden has 4 rows of pechay and 3 rows of eggplant. Write the pechay-to-eggplant ratio. Proposed answer: 4:3"
+          "en": "Is this solution correct? A garden has 4 rows of pechay and 3 rows of eggplant. Write the pechay-to-eggplant ratio. Proposed answer: 4:4",
+          "fil": "Is this solution correct? A garden has 4 rows of pechay and 3 rows of eggplant. Write the pechay-to-eggplant ratio. Proposed answer: 4:4",
+          "taglish": "Is this solution correct? A garden has 4 rows of pechay and 3 rows of eggplant. Write the pechay-to-eggplant ratio. Proposed answer: 4:4"
         },
-        "answer": "True",
+        "answer": "False",
         "type": "true_false",
         "options": [
           "True",
           "False"
         ],
         "solution": {
-          "en": "Answer: True",
-          "fil": "Answer: True",
-          "taglish": "Answer: True"
+          "en": "Answer: False",
+          "fil": "Answer: False",
+          "taglish": "Answer: False"
         },
         "source": {
           "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
@@ -4710,10 +4668,10 @@
         "answer": "2:2",
         "type": "mcq",
         "options": [
-          "None of these",
+          "3:3",
           "2:2",
-          "A different value",
-          "Cannot be determined"
+          "3:2",
+          "2:3"
         ],
         "solution": {
           "en": "Answer: 2:2",
@@ -4737,10 +4695,10 @@
         "answer": "2:3",
         "type": "mcq",
         "options": [
-          "None of these",
+          "3:4",
           "2:3",
-          "A different value",
-          "Cannot be determined"
+          "3:3",
+          "2:4"
         ],
         "solution": {
           "en": "Answer: 2:3",
@@ -4764,9 +4722,9 @@
         "answer": "5:4",
         "type": "mcq",
         "options": [
-          "A different value",
-          "Cannot be determined",
-          "None of these",
+          "6:5",
+          "6:4",
+          "5:5",
           "5:4"
         ],
         "solution": {
@@ -4876,20 +4834,20 @@
       },
       {
         "q": {
-          "en": "Is this solution correct? A garden has 6 rows of pechay and 5 rows of eggplant. Write the pechay-to-eggplant ratio. Proposed answer: 6:5",
-          "fil": "Is this solution correct? A garden has 6 rows of pechay and 5 rows of eggplant. Write the pechay-to-eggplant ratio. Proposed answer: 6:5",
-          "taglish": "Is this solution correct? A garden has 6 rows of pechay and 5 rows of eggplant. Write the pechay-to-eggplant ratio. Proposed answer: 6:5"
+          "en": "Is this solution correct? A garden has 6 rows of pechay and 5 rows of eggplant. Write the pechay-to-eggplant ratio. Proposed answer: 6:6",
+          "fil": "Is this solution correct? A garden has 6 rows of pechay and 5 rows of eggplant. Write the pechay-to-eggplant ratio. Proposed answer: 6:6",
+          "taglish": "Is this solution correct? A garden has 6 rows of pechay and 5 rows of eggplant. Write the pechay-to-eggplant ratio. Proposed answer: 6:6"
         },
-        "answer": "True",
+        "answer": "False",
         "type": "true_false",
         "options": [
           "True",
           "False"
         ],
         "solution": {
-          "en": "Answer: True",
-          "fil": "Answer: True",
-          "taglish": "Answer: True"
+          "en": "Answer: False",
+          "fil": "Answer: False",
+          "taglish": "Answer: False"
         },
         "source": {
           "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
@@ -5065,9 +5023,9 @@
         "answer": "4:4",
         "type": "mcq",
         "options": [
-          "A different value",
-          "Cannot be determined",
-          "None of these",
+          "5:5",
+          "5:4",
+          "4:5",
           "4:4"
         ],
         "solution": {
@@ -5092,10 +5050,10 @@
         "answer": "5:6",
         "type": "mcq",
         "options": [
-          "Cannot be determined",
-          "None of these",
+          "6:7",
+          "6:6",
           "5:6",
-          "A different value"
+          "5:7"
         ],
         "solution": {
           "en": "Answer: 5:6",
@@ -5119,9 +5077,9 @@
         "answer": "5:3",
         "type": "mcq",
         "options": [
-          "A different value",
-          "Cannot be determined",
-          "None of these",
+          "6:4",
+          "6:3",
+          "5:4",
           "5:3"
         ],
         "solution": {
@@ -5231,20 +5189,20 @@
       },
       {
         "q": {
-          "en": "Is this solution correct? A garden has 4 rows of pechay and 3 rows of eggplant. Write the pechay-to-eggplant ratio. Proposed answer: 4:3",
-          "fil": "Is this solution correct? A garden has 4 rows of pechay and 3 rows of eggplant. Write the pechay-to-eggplant ratio. Proposed answer: 4:3",
-          "taglish": "Is this solution correct? A garden has 4 rows of pechay and 3 rows of eggplant. Write the pechay-to-eggplant ratio. Proposed answer: 4:3"
+          "en": "Is this solution correct? A garden has 4 rows of pechay and 3 rows of eggplant. Write the pechay-to-eggplant ratio. Proposed answer: 4:4",
+          "fil": "Is this solution correct? A garden has 4 rows of pechay and 3 rows of eggplant. Write the pechay-to-eggplant ratio. Proposed answer: 4:4",
+          "taglish": "Is this solution correct? A garden has 4 rows of pechay and 3 rows of eggplant. Write the pechay-to-eggplant ratio. Proposed answer: 4:4"
         },
-        "answer": "True",
+        "answer": "False",
         "type": "true_false",
         "options": [
           "True",
           "False"
         ],
         "solution": {
-          "en": "Answer: True",
-          "fil": "Answer: True",
-          "taglish": "Answer: True"
+          "en": "Answer: False",
+          "fil": "Answer: False",
+          "taglish": "Answer: False"
         },
         "source": {
           "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
@@ -5775,10 +5733,10 @@
         "answer": "1:6",
         "type": "mcq",
         "options": [
-          "None of these",
+          "2:7",
           "1:6",
-          "A different value",
-          "Cannot be determined"
+          "2:6",
+          "1:7"
         ],
         "solution": {
           "en": "Answer: 1:6",
@@ -5802,10 +5760,10 @@
         "answer": "3:4",
         "type": "mcq",
         "options": [
-          "Cannot be determined",
-          "None of these",
+          "4:5",
+          "4:4",
           "3:4",
-          "A different value"
+          "3:5"
         ],
         "solution": {
           "en": "Answer: 3:4",
@@ -5829,10 +5787,10 @@
         "answer": "2:3",
         "type": "mcq",
         "options": [
-          "None of these",
+          "3:4",
           "2:3",
-          "A different value",
-          "Cannot be determined"
+          "3:3",
+          "2:4"
         ],
         "solution": {
           "en": "Answer: 2:3",
@@ -6444,9 +6402,9 @@
         "type": "mcq",
         "options": [
           "1/4 and 0.25",
-          "A different value",
-          "Cannot be determined",
-          "None of these"
+          "2/5 and 1.25",
+          "2/4 and 0.25",
+          "1/5 and 0.25"
         ],
         "solution": {
           "en": "Answer: 1/4 and 0.25",
@@ -6470,10 +6428,10 @@
         "answer": "1/2 and 0.50",
         "type": "mcq",
         "options": [
-          "None of these",
+          "2/3 and 1.5",
           "1/2 and 0.50",
-          "A different value",
-          "Cannot be determined"
+          "2/2 and 0.50",
+          "1/3 and 0.50"
         ],
         "solution": {
           "en": "Answer: 1/2 and 0.50",
@@ -6497,10 +6455,10 @@
         "answer": "3/4 and 0.75",
         "type": "mcq",
         "options": [
-          "None of these",
+          "4/5 and 1.75",
           "3/4 and 0.75",
-          "A different value",
-          "Cannot be determined"
+          "4/4 and 0.75",
+          "3/5 and 0.75"
         ],
         "solution": {
           "en": "Answer: 3/4 and 0.75",
@@ -6565,33 +6523,6 @@
           "path": "Grade-6/Semester-2/Quizzes/Quiz-04-Explain-The-Relationships-Between-Percentages.md",
           "item": 8,
           "original_type": "true-false"
-        }
-      },
-      {
-        "q": {
-          "en": "Express 25% as a fraction in simplest form and as a decimal. Explain why your answer is reasonable.",
-          "fil": "Express 25% as a fraction in simplest form and as a decimal. Explain why your answer is reasonable.",
-          "taglish": "Express 25% as a fraction in simplest form and as a decimal. Explain why your answer is reasonable."
-        },
-        "answer": "1/4 and 0.25",
-        "type": "mcq",
-        "options": [
-          "1/2 and 0.50",
-          "3/4 and 0.75",
-          "1/5 and 0.20",
-          "1/4 and 0.25"
-        ],
-        "solution": {
-          "en": "Answer: 1/4 and 0.25",
-          "fil": "Answer: 1/4 and 0.25",
-          "taglish": "Answer: 1/4 and 0.25"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "6NA-IIc-1",
-          "path": "Grade-6/Semester-2/Activity-Sheets/Activity-Sheet-04-Explain-The-Relationships-Between-Percentages.md",
-          "item": 9,
-          "original_type": "activity"
         }
       }
     ],
@@ -6635,9 +6566,9 @@
         "type": "mcq",
         "options": [
           "1/4 and 0.25",
-          "A different value",
-          "Cannot be determined",
-          "None of these"
+          "2/5 and 1.25",
+          "2/4 and 0.25",
+          "1/5 and 0.25"
         ],
         "solution": {
           "en": "Answer: 1/4 and 0.25",
@@ -6661,10 +6592,10 @@
         "answer": "1/2 and 0.50",
         "type": "mcq",
         "options": [
-          "None of these",
+          "2/3 and 1.5",
           "1/2 and 0.50",
-          "A different value",
-          "Cannot be determined"
+          "2/2 and 0.50",
+          "1/3 and 0.50"
         ],
         "solution": {
           "en": "Answer: 1/2 and 0.50",
@@ -6688,10 +6619,10 @@
         "answer": "3/4 and 0.75",
         "type": "mcq",
         "options": [
-          "None of these",
+          "4/5 and 1.75",
           "3/4 and 0.75",
-          "A different value",
-          "Cannot be determined"
+          "4/4 and 0.75",
+          "3/5 and 0.75"
         ],
         "solution": {
           "en": "Answer: 3/4 and 0.75",
@@ -6757,33 +6688,6 @@
           "item": 8,
           "original_type": "true-false"
         }
-      },
-      {
-        "q": {
-          "en": "Express 25% as a fraction in simplest form and as a decimal. Explain why your answer is reasonable.",
-          "fil": "Express 25% as a fraction in simplest form and as a decimal. Explain why your answer is reasonable.",
-          "taglish": "Express 25% as a fraction in simplest form and as a decimal. Explain why your answer is reasonable."
-        },
-        "answer": "1/4 and 0.25",
-        "type": "mcq",
-        "options": [
-          "1/2 and 0.50",
-          "3/4 and 0.75",
-          "1/5 and 0.20",
-          "1/4 and 0.25"
-        ],
-        "solution": {
-          "en": "Answer: 1/4 and 0.25",
-          "fil": "Answer: 1/4 and 0.25",
-          "taglish": "Answer: 1/4 and 0.25"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "6NA-IIc-2",
-          "path": "Grade-6/Semester-2/Activity-Sheets/Activity-Sheet-05-Explain-The-Uses-Of-Percentages.md",
-          "item": 9,
-          "original_type": "activity"
-        }
       }
     ],
     "source_trace": {
@@ -6825,9 +6729,9 @@
         "answer": "2^4",
         "type": "mcq",
         "options": [
-          "A different value",
-          "Cannot be determined",
-          "None of these",
+          "3^5",
+          "3^4",
+          "2^5",
           "2^4"
         ],
         "solution": {
@@ -6853,9 +6757,9 @@
         "type": "mcq",
         "options": [
           "4^3",
-          "A different value",
-          "Cannot be determined",
-          "None of these"
+          "5^4",
+          "5^3",
+          "4^4"
         ],
         "solution": {
           "en": "Answer: 4^3",
@@ -7001,9 +6905,9 @@
       },
       {
         "q": {
-          "en": "Write 4 × 4 in exponential form. Explain why your answer is reasonable.",
-          "fil": "Write 4 × 4 in exponential form. Explain why your answer is reasonable.",
-          "taglish": "Write 4 × 4 in exponential form. Explain why your answer is reasonable."
+          "en": "Write 4 × 4 in exponential form.",
+          "fil": "Write 4 × 4 in exponential form.",
+          "taglish": "Write 4 × 4 in exponential form."
         },
         "answer": "4^2",
         "type": "mcq",
@@ -7553,20 +7457,20 @@
       },
       {
         "q": {
-          "en": "Is this solution correct? Evaluate using GEMDAS: 4^2 + 5 × 2. Proposed answer: 26",
-          "fil": "Is this solution correct? Evaluate using GEMDAS: 4^2 + 5 × 2. Proposed answer: 26",
-          "taglish": "Is this solution correct? Evaluate using GEMDAS: 4^2 + 5 × 2. Proposed answer: 26"
+          "en": "Is this solution correct? Evaluate using GEMDAS: 4^2 + 5 × 2. Proposed answer: 28",
+          "fil": "Is this solution correct? Evaluate using GEMDAS: 4^2 + 5 × 2. Proposed answer: 28",
+          "taglish": "Is this solution correct? Evaluate using GEMDAS: 4^2 + 5 × 2. Proposed answer: 28"
         },
-        "answer": "True",
+        "answer": "False",
         "type": "true_false",
         "options": [
           "True",
           "False"
         ],
         "solution": {
-          "en": "Answer: True",
-          "fil": "Answer: True",
-          "taglish": "Answer: True"
+          "en": "Answer: False",
+          "fil": "Answer: False",
+          "taglish": "Answer: False"
         },
         "source": {
           "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
@@ -7743,10 +7647,10 @@
         "answer": "L",
         "type": "mcq",
         "options": [
-          "None of these",
+          "tricycle",
           "L",
-          "A different value",
-          "Cannot be determined"
+          "144 m²",
+          "reflection or flip"
         ],
         "solution": {
           "en": "Answer: L",
@@ -7827,9 +7731,9 @@
         "answer": "6,000 cm³",
         "type": "mcq",
         "options": [
-          "6001",
-          "5999",
-          "12000",
+          "7,1 cm³",
+          "7,000 cm³",
+          "6,1 cm³",
           "6,000 cm³"
         ],
         "solution": {
@@ -7854,10 +7758,10 @@
         "answer": "1,000 cm³",
         "type": "mcq",
         "options": [
-          "2000",
+          "1,2 cm³",
           "1,000 cm³",
-          "1001",
-          "999"
+          "11,10 cm³",
+          "11,000 cm³"
         ],
         "solution": {
           "en": "Answer: 1,000 cm³",
@@ -7881,9 +7785,9 @@
         "answer": "9,000 cm³",
         "type": "mcq",
         "options": [
-          "9001",
-          "8999",
-          "18000",
+          "9,1 cm³",
+          "11,2 cm³",
+          "11,000 cm³",
           "9,000 cm³"
         ],
         "solution": {
@@ -7980,9 +7884,9 @@
       },
       {
         "q": {
-          "en": "Convert 8 L to cubic centimeters. Explain why your answer is reasonable.",
-          "fil": "Convert 8 L to cubic centimeters. Explain why your answer is reasonable.",
-          "taglish": "Convert 8 L to cubic centimeters. Explain why your answer is reasonable."
+          "en": "Convert 8 L to cubic centimeters.",
+          "fil": "Convert 8 L to cubic centimeters.",
+          "taglish": "Convert 8 L to cubic centimeters."
         },
         "answer": "8,000 cm³",
         "type": "mcq",
@@ -8003,33 +7907,6 @@
           "path": "Grade-6/Semester-2/Activity-Sheets/Activity-Sheet-10-Cu-Cm-To-L-And-Vice-Versa.md",
           "item": 9,
           "original_type": "activity"
-        }
-      },
-      {
-        "q": {
-          "en": "Convert 8 L to cubic centimeters.",
-          "fil": "Convert 8 L to cubic centimeters.",
-          "taglish": "Convert 8 L to cubic centimeters."
-        },
-        "answer": "8,000 cm³",
-        "type": "mcq",
-        "options": [
-          "2,000 cm³",
-          "8,000 cm³",
-          "1,000 cm³",
-          "5,000 cm³"
-        ],
-        "solution": {
-          "en": "Answer: 8,000 cm³",
-          "fil": "Answer: 8,000 cm³",
-          "taglish": "Answer: 8,000 cm³"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "6MG-IIf-2",
-          "path": "Grade-6/Semester-2/Quizzes/Quiz-10-Cu-Cm-To-L-And-Vice-Versa.md",
-          "item": 11,
-          "original_type": "computation"
         }
       }
     ],
@@ -8073,10 +7950,10 @@
         "answer": "84 unit cubes",
         "type": "mcq",
         "options": [
-          "168",
+          "83 unit cubes",
           "84 unit cubes",
-          "85",
-          "83"
+          "82 unit cubes",
+          "85 unit cubes"
         ],
         "solution": {
           "en": "Answer: 84 unit cubes",
@@ -8100,10 +7977,10 @@
         "answer": "120 unit cubes",
         "type": "mcq",
         "options": [
-          "119",
-          "240",
+          "121 unit cubes",
+          "122 unit cubes",
           "120 unit cubes",
-          "121"
+          "130 unit cubes"
         ],
         "solution": {
           "en": "Answer: 120 unit cubes",
@@ -8128,9 +8005,9 @@
         "type": "mcq",
         "options": [
           "72 unit cubes",
-          "73",
-          "71",
-          "144"
+          "74 unit cubes",
+          "82 unit cubes",
+          "71 unit cubes"
         ],
         "solution": {
           "en": "Answer: 72 unit cubes",
@@ -8251,20 +8128,20 @@
       },
       {
         "q": {
-          "en": "Is this solution correct? A box model is 3 unit cubes long, 5 unit cubes wide, and 6 unit cubes high. Estimate its volume in unit cubes. Proposed answer: 90 unit cubes",
-          "fil": "Is this solution correct? A box model is 3 unit cubes long, 5 unit cubes wide, and 6 unit cubes high. Estimate its volume in unit cubes. Proposed answer: 90 unit cubes",
-          "taglish": "Is this solution correct? A box model is 3 unit cubes long, 5 unit cubes wide, and 6 unit cubes high. Estimate its volume in unit cubes. Proposed answer: 90 unit cubes"
+          "en": "Is this solution correct? A box model is 3 unit cubes long, 5 unit cubes wide, and 6 unit cubes high. Estimate its volume in unit cubes. Proposed answer: 92 unit cubes",
+          "fil": "Is this solution correct? A box model is 3 unit cubes long, 5 unit cubes wide, and 6 unit cubes high. Estimate its volume in unit cubes. Proposed answer: 92 unit cubes",
+          "taglish": "Is this solution correct? A box model is 3 unit cubes long, 5 unit cubes wide, and 6 unit cubes high. Estimate its volume in unit cubes. Proposed answer: 92 unit cubes"
         },
-        "answer": "True",
+        "answer": "False",
         "type": "true_false",
         "options": [
           "True",
           "False"
         ],
         "solution": {
-          "en": "Answer: True",
-          "fil": "Answer: True",
-          "taglish": "Answer: True"
+          "en": "Answer: False",
+          "fil": "Answer: False",
+          "taglish": "Answer: False"
         },
         "source": {
           "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
@@ -8303,9 +8180,9 @@
       },
       {
         "q": {
-          "en": "A box model is 2 unit cubes long, 6 unit cubes wide, and 2 unit cubes high. Estimate its volume in unit cubes. Explain why your answer is reasonable.",
-          "fil": "A box model is 2 unit cubes long, 6 unit cubes wide, and 2 unit cubes high. Estimate its volume in unit cubes. Explain why your answer is reasonable.",
-          "taglish": "A box model is 2 unit cubes long, 6 unit cubes wide, and 2 unit cubes high. Estimate its volume in unit cubes. Explain why your answer is reasonable."
+          "en": "A box model is 2 unit cubes long, 6 unit cubes wide, and 2 unit cubes high. Estimate its volume in unit cubes.",
+          "fil": "A box model is 2 unit cubes long, 6 unit cubes wide, and 2 unit cubes high. Estimate its volume in unit cubes.",
+          "taglish": "A box model is 2 unit cubes long, 6 unit cubes wide, and 2 unit cubes high. Estimate its volume in unit cubes."
         },
         "answer": "24 unit cubes",
         "type": "mcq",
@@ -8353,33 +8230,6 @@
           "path": "Grade-6/Semester-2/Activity-Sheets/Activity-Sheet-11-The-Volume-Of-A-Cube-And-Of-A-Rectangular-Prism-Using.md",
           "item": 10,
           "original_type": "activity"
-        }
-      },
-      {
-        "q": {
-          "en": "A box model is 2 unit cubes long, 6 unit cubes wide, and 2 unit cubes high. Estimate its volume in unit cubes.",
-          "fil": "A box model is 2 unit cubes long, 6 unit cubes wide, and 2 unit cubes high. Estimate its volume in unit cubes.",
-          "taglish": "A box model is 2 unit cubes long, 6 unit cubes wide, and 2 unit cubes high. Estimate its volume in unit cubes."
-        },
-        "answer": "24 unit cubes",
-        "type": "mcq",
-        "options": [
-          "90 unit cubes",
-          "24 unit cubes",
-          "54 unit cubes",
-          "144 unit cubes"
-        ],
-        "solution": {
-          "en": "Answer: 24 unit cubes",
-          "fil": "Answer: 24 unit cubes",
-          "taglish": "Answer: 24 unit cubes"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "6MG-IIg-1",
-          "path": "Grade-6/Semester-2/Quizzes/Quiz-11-The-Volume-Of-A-Cube-And-Of-A-Rectangular-Prism-Using.md",
-          "item": 11,
-          "original_type": "computation"
         }
       },
       {
@@ -8477,10 +8327,10 @@
         "answer": "120 unit cubes",
         "type": "mcq",
         "options": [
-          "119",
-          "240",
+          "119 unit cubes",
+          "118 unit cubes",
           "120 unit cubes",
-          "121"
+          "121 unit cubes"
         ],
         "solution": {
           "en": "Answer: 120 unit cubes",
@@ -8504,10 +8354,10 @@
         "answer": "16 unit cubes",
         "type": "mcq",
         "options": [
-          "32",
+          "18 unit cubes",
           "16 unit cubes",
-          "17",
-          "15"
+          "26 unit cubes",
+          "15 unit cubes"
         ],
         "solution": {
           "en": "Answer: 16 unit cubes",
@@ -8531,10 +8381,10 @@
         "answer": "84 unit cubes",
         "type": "mcq",
         "options": [
-          "168",
+          "85 unit cubes",
           "84 unit cubes",
-          "85",
-          "83"
+          "86 unit cubes",
+          "94 unit cubes"
         ],
         "solution": {
           "en": "Answer: 84 unit cubes",
@@ -8707,9 +8557,9 @@
       },
       {
         "q": {
-          "en": "A box model is 8 unit cubes long, 7 unit cubes wide, and 3 unit cubes high. Estimate its volume in unit cubes. Explain why your answer is reasonable.",
-          "fil": "A box model is 8 unit cubes long, 7 unit cubes wide, and 3 unit cubes high. Estimate its volume in unit cubes. Explain why your answer is reasonable.",
-          "taglish": "A box model is 8 unit cubes long, 7 unit cubes wide, and 3 unit cubes high. Estimate its volume in unit cubes. Explain why your answer is reasonable."
+          "en": "A box model is 8 unit cubes long, 7 unit cubes wide, and 3 unit cubes high. Estimate its volume in unit cubes.",
+          "fil": "A box model is 8 unit cubes long, 7 unit cubes wide, and 3 unit cubes high. Estimate its volume in unit cubes.",
+          "taglish": "A box model is 8 unit cubes long, 7 unit cubes wide, and 3 unit cubes high. Estimate its volume in unit cubes."
         },
         "answer": "168 unit cubes",
         "type": "mcq",
@@ -8757,33 +8607,6 @@
           "path": "Grade-6/Semester-2/Activity-Sheets/Activity-Sheet-12-Problems-Involving-Volumes-Of-Cubes-And-Rectangular.md",
           "item": 10,
           "original_type": "activity"
-        }
-      },
-      {
-        "q": {
-          "en": "A box model is 8 unit cubes long, 7 unit cubes wide, and 3 unit cubes high. Estimate its volume in unit cubes.",
-          "fil": "A box model is 8 unit cubes long, 7 unit cubes wide, and 3 unit cubes high. Estimate its volume in unit cubes.",
-          "taglish": "A box model is 8 unit cubes long, 7 unit cubes wide, and 3 unit cubes high. Estimate its volume in unit cubes."
-        },
-        "answer": "168 unit cubes",
-        "type": "mcq",
-        "options": [
-          "196 unit cubes",
-          "168 unit cubes",
-          "98 unit cubes",
-          "40 unit cubes"
-        ],
-        "solution": {
-          "en": "Answer: 168 unit cubes",
-          "fil": "Answer: 168 unit cubes",
-          "taglish": "Answer: 168 unit cubes"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "6MG-IIg-2",
-          "path": "Grade-6/Semester-2/Quizzes/Quiz-12-Problems-Involving-Volumes-Of-Cubes-And-Rectangular.md",
-          "item": 11,
-          "original_type": "computation"
         }
       },
       {
@@ -9059,20 +8882,20 @@
       },
       {
         "q": {
-          "en": "Is this solution correct? A family has 15 L of water and adds 7 L. What is the total capacity? Proposed answer: 22 L",
-          "fil": "Is this solution correct? A family has 15 L of water and adds 7 L. What is the total capacity? Proposed answer: 22 L",
-          "taglish": "Is this solution correct? A family has 15 L of water and adds 7 L. What is the total capacity? Proposed answer: 22 L"
+          "en": "Is this solution correct? A family has 15 L of water and adds 7 L. What is the total capacity? Proposed answer: 24 L",
+          "fil": "Is this solution correct? A family has 15 L of water and adds 7 L. What is the total capacity? Proposed answer: 24 L",
+          "taglish": "Is this solution correct? A family has 15 L of water and adds 7 L. What is the total capacity? Proposed answer: 24 L"
         },
-        "answer": "True",
+        "answer": "False",
         "type": "true_false",
         "options": [
           "True",
           "False"
         ],
         "solution": {
-          "en": "Answer: True",
-          "fil": "Answer: True",
-          "taglish": "Answer: True"
+          "en": "Answer: False",
+          "fil": "Answer: False",
+          "taglish": "Answer: False"
         },
         "source": {
           "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
@@ -9111,9 +8934,9 @@
       },
       {
         "q": {
-          "en": "A family has 4 L of water and adds 8 L. What is the total capacity? Explain why your answer is reasonable.",
-          "fil": "A family has 4 L of water and adds 8 L. What is the total capacity? Explain why your answer is reasonable.",
-          "taglish": "A family has 4 L of water and adds 8 L. What is the total capacity? Explain why your answer is reasonable."
+          "en": "A family has 4 L of water and adds 8 L. What is the total capacity?",
+          "fil": "A family has 4 L of water and adds 8 L. What is the total capacity?",
+          "taglish": "A family has 4 L of water and adds 8 L. What is the total capacity?"
         },
         "answer": "12 L",
         "type": "mcq",
@@ -9161,33 +8984,6 @@
           "path": "Grade-6/Semester-2/Activity-Sheets/Activity-Sheet-13-Problems-Involving-Capacity.md",
           "item": 10,
           "original_type": "activity"
-        }
-      },
-      {
-        "q": {
-          "en": "A family has 4 L of water and adds 8 L. What is the total capacity?",
-          "fil": "A family has 4 L of water and adds 8 L. What is the total capacity?",
-          "taglish": "A family has 4 L of water and adds 8 L. What is the total capacity?"
-        },
-        "answer": "12 L",
-        "type": "mcq",
-        "options": [
-          "22 L",
-          "12 L",
-          "11 L",
-          "24 L"
-        ],
-        "solution": {
-          "en": "Answer: 12 L",
-          "fil": "Answer: 12 L",
-          "taglish": "Answer: 12 L"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "6MG-IIg-3",
-          "path": "Grade-6/Semester-2/Quizzes/Quiz-13-Problems-Involving-Capacity.md",
-          "item": 11,
-          "original_type": "computation"
         }
       },
       {
@@ -9285,10 +9081,10 @@
         "answer": "70,000 cm²",
         "type": "mcq",
         "options": [
-          "69999",
-          "140000",
+          "71,000 cm²",
+          "70,1 cm²",
           "70,000 cm²",
-          "70001"
+          "72,2 cm²"
         ],
         "solution": {
           "en": "Answer: 70,000 cm²",
@@ -9312,9 +9108,9 @@
         "answer": "20,000 cm²",
         "type": "mcq",
         "options": [
-          "20001",
-          "19999",
-          "40000",
+          "21,1 cm²",
+          "21,000 cm²",
+          "20,1 cm²",
           "20,000 cm²"
         ],
         "solution": {
@@ -9339,9 +9135,9 @@
         "answer": "60,000 cm²",
         "type": "mcq",
         "options": [
-          "60001",
-          "59999",
-          "120000",
+          "58,000 cm²",
+          "61,1 cm²",
+          "61,000 cm²",
           "60,000 cm²"
         ],
         "solution": {
@@ -9460,33 +9256,6 @@
           "item": 8,
           "original_type": "true-false"
         }
-      },
-      {
-        "q": {
-          "en": "Convert 6 m² to square centimeters. Explain why your answer is reasonable.",
-          "fil": "Convert 6 m² to square centimeters. Explain why your answer is reasonable.",
-          "taglish": "Convert 6 m² to square centimeters. Explain why your answer is reasonable."
-        },
-        "answer": "60,000 cm²",
-        "type": "mcq",
-        "options": [
-          "70,000 cm²",
-          "20,000 cm²",
-          "30,000 cm²",
-          "60,000 cm²"
-        ],
-        "solution": {
-          "en": "Answer: 60,000 cm²",
-          "fil": "Answer: 60,000 cm²",
-          "taglish": "Answer: 60,000 cm²"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "6MG-IIi-1",
-          "path": "Grade-6/Semester-2/Activity-Sheets/Activity-Sheet-14-Sq-Cm-To-Sq-M-And-Vice-Versa.md",
-          "item": 9,
-          "original_type": "activity"
-        }
       }
     ],
     "source_trace": {
@@ -9529,10 +9298,10 @@
         "answer": "96 m²",
         "type": "mcq",
         "options": [
-          "192",
+          "97 m²",
           "96 m²",
-          "97",
-          "95"
+          "98 m²",
+          "106 m²"
         ],
         "solution": {
           "en": "Answer: 96 m²",
@@ -9556,10 +9325,10 @@
         "answer": "120 m²",
         "type": "mcq",
         "options": [
-          "119",
-          "240",
+          "118 m²",
+          "121 m²",
           "120 m²",
-          "121"
+          "122 m²"
         ],
         "solution": {
           "en": "Answer: 120 m²",
@@ -9584,9 +9353,9 @@
         "type": "mcq",
         "options": [
           "50 m²",
-          "51",
-          "49",
-          "100"
+          "49 m²",
+          "48 m²",
+          "51 m²"
         ],
         "solution": {
           "en": "Answer: 50 m²",
@@ -9759,9 +9528,9 @@
       },
       {
         "q": {
-          "en": "A composite garden is a 6 m by 10 m rectangle joined to a triangle with base 6 m and height 20 m. Find the total area. Explain why your answer is reasonable.",
-          "fil": "A composite garden is a 6 m by 10 m rectangle joined to a triangle with base 6 m and height 20 m. Find the total area. Explain why your answer is reasonable.",
-          "taglish": "A composite garden is a 6 m by 10 m rectangle joined to a triangle with base 6 m and height 20 m. Find the total area. Explain why your answer is reasonable."
+          "en": "A composite garden is a 6 m by 10 m rectangle joined to a triangle with base 6 m and height 20 m. Find the total area.",
+          "fil": "A composite garden is a 6 m by 10 m rectangle joined to a triangle with base 6 m and height 20 m. Find the total area.",
+          "taglish": "A composite garden is a 6 m by 10 m rectangle joined to a triangle with base 6 m and height 20 m. Find the total area."
         },
         "answer": "120 m²",
         "type": "mcq",
@@ -9809,33 +9578,6 @@
           "path": "Grade-6/Semester-2/Activity-Sheets/Activity-Sheet-15-The-Area-In-Sq-M-Or-Sq-Cm-Of-Composite-Figures.md",
           "item": 10,
           "original_type": "activity"
-        }
-      },
-      {
-        "q": {
-          "en": "A composite garden is a 6 m by 10 m rectangle joined to a triangle with base 6 m and height 20 m. Find the total area.",
-          "fil": "A composite garden is a 6 m by 10 m rectangle joined to a triangle with base 6 m and height 20 m. Find the total area.",
-          "taglish": "A composite garden is a 6 m by 10 m rectangle joined to a triangle with base 6 m and height 20 m. Find the total area."
-        },
-        "answer": "120 m²",
-        "type": "mcq",
-        "options": [
-          "144 m²",
-          "120 m²",
-          "80 m²",
-          "84 m²"
-        ],
-        "solution": {
-          "en": "Answer: 120 m²",
-          "fil": "Answer: 120 m²",
-          "taglish": "Answer: 120 m²"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "6MG-IIi-2",
-          "path": "Grade-6/Semester-2/Quizzes/Quiz-15-The-Area-In-Sq-M-Or-Sq-Cm-Of-Composite-Figures.md",
-          "item": 11,
-          "original_type": "computation"
         }
       },
       {
@@ -9933,10 +9675,9 @@
         "answer": "perimeter = 24 m; area = 27 m²",
         "type": "mcq",
         "options": [
-          "None of these",
           "perimeter = 24 m; area = 27 m²",
-          "A different value",
-          "Cannot be determined"
+          "perimeter = 25 m; area = 28 m²",
+          "perimeter = 25 m; area = 27 m²"
         ],
         "solution": {
           "en": "Answer: perimeter = 24 m; area = 27 m²",
@@ -9960,10 +9701,9 @@
         "answer": "perimeter = 26 m; area = 22 m²",
         "type": "mcq",
         "options": [
-          "Cannot be determined",
-          "None of these",
+          "perimeter = 27 m; area = 23 m²",
           "perimeter = 26 m; area = 22 m²",
-          "A different value"
+          "perimeter = 27 m; area = 22 m²"
         ],
         "solution": {
           "en": "Answer: perimeter = 26 m; area = 22 m²",
@@ -9987,10 +9727,9 @@
         "answer": "perimeter = 34 m; area = 66 m²",
         "type": "mcq",
         "options": [
-          "None of these",
           "perimeter = 34 m; area = 66 m²",
-          "A different value",
-          "Cannot be determined"
+          "perimeter = 35 m; area = 67 m²",
+          "perimeter = 35 m; area = 66 m²"
         ],
         "solution": {
           "en": "Answer: perimeter = 34 m; area = 66 m²",
@@ -10163,9 +9902,9 @@
       },
       {
         "q": {
-          "en": "A rectangular fiesta booth is 14 m by 9 m. Find both its perimeter and area. Explain why your answer is reasonable.",
-          "fil": "A rectangular fiesta booth is 14 m by 9 m. Find both its perimeter and area. Explain why your answer is reasonable.",
-          "taglish": "A rectangular fiesta booth is 14 m by 9 m. Find both its perimeter and area. Explain why your answer is reasonable."
+          "en": "A rectangular fiesta booth is 14 m by 9 m. Find both its perimeter and area.",
+          "fil": "A rectangular fiesta booth is 14 m by 9 m. Find both its perimeter and area.",
+          "taglish": "A rectangular fiesta booth is 14 m by 9 m. Find both its perimeter and area."
         },
         "answer": "perimeter = 46 m; area = 126 m²",
         "type": "mcq",
@@ -10213,33 +9952,6 @@
           "path": "Grade-6/Semester-2/Activity-Sheets/Activity-Sheet-16-Problems-Involving-The-Perimeter-And-Area-Of-Triangles.md",
           "item": 10,
           "original_type": "activity"
-        }
-      },
-      {
-        "q": {
-          "en": "A rectangular fiesta booth is 14 m by 9 m. Find both its perimeter and area.",
-          "fil": "A rectangular fiesta booth is 14 m by 9 m. Find both its perimeter and area.",
-          "taglish": "A rectangular fiesta booth is 14 m by 9 m. Find both its perimeter and area."
-        },
-        "answer": "perimeter = 46 m; area = 126 m²",
-        "type": "mcq",
-        "options": [
-          "perimeter = 34 m; area = 52 m²",
-          "perimeter = 46 m; area = 126 m²",
-          "perimeter = 34 m; area = 42 m²",
-          "perimeter = 30 m; area = 50 m²"
-        ],
-        "solution": {
-          "en": "Answer: perimeter = 46 m; area = 126 m²",
-          "fil": "Answer: perimeter = 46 m; area = 126 m²",
-          "taglish": "Answer: perimeter = 46 m; area = 126 m²"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "6MG-IIj-1",
-          "path": "Grade-6/Semester-2/Quizzes/Quiz-16-Problems-Involving-The-Perimeter-And-Area-Of-Triangles.md",
-          "item": 11,
-          "original_type": "computation"
         }
       },
       {
@@ -10337,10 +10049,10 @@
         "answer": "A circle of radius 10 cm with labeled center and radius",
         "type": "mcq",
         "options": [
-          "Cannot be determined",
-          "None of these",
+          "A circle of radius 11 cm with labeled center and radius",
+          "A circle of radius 9 cm with labeled center and radius",
           "A circle of radius 10 cm with labeled center and radius",
-          "A different value"
+          "A circle of radius 12 cm with labeled center and radius"
         ],
         "solution": {
           "en": "Answer: A circle of radius 10 cm with labeled center and radius",
@@ -10364,10 +10076,10 @@
         "answer": "A circle of radius 8 cm with labeled center and radius",
         "type": "mcq",
         "options": [
-          "Cannot be determined",
-          "None of these",
+          "A circle of radius 9 cm with labeled center and radius",
+          "A circle of radius 7 cm with labeled center and radius",
           "A circle of radius 8 cm with labeled center and radius",
-          "A different value"
+          "A circle of radius 10 cm with labeled center and radius"
         ],
         "solution": {
           "en": "Answer: A circle of radius 8 cm with labeled center and radius",
@@ -10391,9 +10103,9 @@
         "answer": "A circle of radius 6 cm with labeled center and radius",
         "type": "mcq",
         "options": [
-          "A different value",
-          "Cannot be determined",
-          "None of these",
+          "A circle of radius 7 cm with labeled center and radius",
+          "A circle of radius 5 cm with labeled center and radius",
+          "A circle of radius 8 cm with labeled center and radius",
           "A circle of radius 6 cm with labeled center and radius"
         ],
         "solution": {
@@ -10461,20 +10173,20 @@
       },
       {
         "q": {
-          "en": "Is this solution correct? Use a compass to draw a circle with radius 10 cm. Label its center and one radius. (Diagram description: compass construction space.) Proposed answer: A circle of radius 10 cm with labeled center and radius",
-          "fil": "Is this solution correct? Use a compass to draw a circle with radius 10 cm. Label its center and one radius. (Diagram description: compass construction space.) Proposed answer: A circle of radius 10 cm with labeled center and radius",
-          "taglish": "Is this solution correct? Use a compass to draw a circle with radius 10 cm. Label its center and one radius. (Diagram description: compass construction space.) Proposed answer: A circle of radius 10 cm with labeled center and radius"
+          "en": "Is this solution correct? Use a compass to draw a circle with radius 10 cm. Label its center and one radius. (Diagram description: compass construction space.) Proposed answer: A circle of radius 12 cm with labeled center and radius",
+          "fil": "Is this solution correct? Use a compass to draw a circle with radius 10 cm. Label its center and one radius. (Diagram description: compass construction space.) Proposed answer: A circle of radius 12 cm with labeled center and radius",
+          "taglish": "Is this solution correct? Use a compass to draw a circle with radius 10 cm. Label its center and one radius. (Diagram description: compass construction space.) Proposed answer: A circle of radius 12 cm with labeled center and radius"
         },
-        "answer": "True",
+        "answer": "False",
         "type": "true_false",
         "options": [
           "True",
           "False"
         ],
         "solution": {
-          "en": "Answer: True",
-          "fil": "Answer: True",
-          "taglish": "Answer: True"
+          "en": "Answer: False",
+          "fil": "Answer: False",
+          "taglish": "Answer: False"
         },
         "source": {
           "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
@@ -10526,9 +10238,9 @@
         "type": "mcq",
         "options": [
           "radius",
-          "A different value",
-          "Cannot be determined",
-          "None of these"
+          "32 unit cubes",
+          "96 m²",
+          "jeepney"
         ],
         "solution": {
           "en": "Answer: radius",
@@ -10663,10 +10375,10 @@
         "answer": "31.40 m",
         "type": "mcq",
         "options": [
-          "62.8",
+          "62.80",
           "31.40 m",
-          "32.4",
-          "30.4"
+          "32.40",
+          "30.40"
         ],
         "solution": {
           "en": "Answer: 31.40 m",
@@ -10787,33 +10499,6 @@
       },
       {
         "q": {
-          "en": "Using π = 3.14, find the circumference of a circular garden with radius 9 m. Explain why your answer is reasonable.",
-          "fil": "Using π = 3.14, find the circumference of a circular garden with radius 9 m. Explain why your answer is reasonable.",
-          "taglish": "Using π = 3.14, find the circumference of a circular garden with radius 9 m. Explain why your answer is reasonable."
-        },
-        "answer": "56.52 m",
-        "type": "mcq",
-        "options": [
-          "25.12 m",
-          "50.24 m",
-          "31.40 m",
-          "56.52 m"
-        ],
-        "solution": {
-          "en": "Answer: 56.52 m",
-          "fil": "Answer: 56.52 m",
-          "taglish": "Answer: 56.52 m"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "6MG-IIIb-1",
-          "path": "Grade-6/Semester-3/Activity-Sheets/Activity-Sheet-03-Measure-The-Circumference-Of-Circles-Using-Appropriate.md",
-          "item": 9,
-          "original_type": "activity"
-        }
-      },
-      {
-        "q": {
           "en": "Using π = 3.14, find the circumference of a circular garden with radius 7 m.",
           "fil": "Using π = 3.14, find the circumference of a circular garden with radius 7 m.",
           "taglish": "Using π = 3.14, find the circumference of a circular garden with radius 7 m."
@@ -10900,20 +10585,20 @@
       },
       {
         "q": {
-          "en": "Is this solution correct? A circle has circumference 31.4 cm and diameter 10 cm. Approximate C ÷ d. Proposed answer: 3.14",
-          "fil": "Is this solution correct? A circle has circumference 31.4 cm and diameter 10 cm. Approximate C ÷ d. Proposed answer: 3.14",
-          "taglish": "Is this solution correct? A circle has circumference 31.4 cm and diameter 10 cm. Approximate C ÷ d. Proposed answer: 3.14"
+          "en": "Is this solution correct? A circle has circumference 31.4 cm and diameter 10 cm. Approximate C ÷ d. Proposed answer: 4.14",
+          "fil": "Is this solution correct? A circle has circumference 31.4 cm and diameter 10 cm. Approximate C ÷ d. Proposed answer: 4.14",
+          "taglish": "Is this solution correct? A circle has circumference 31.4 cm and diameter 10 cm. Approximate C ÷ d. Proposed answer: 4.14"
         },
-        "answer": "True",
+        "answer": "False",
         "type": "true_false",
         "options": [
           "True",
           "False"
         ],
         "solution": {
-          "en": "Answer: True",
-          "fil": "Answer: True",
-          "taglish": "Answer: True"
+          "en": "Answer: False",
+          "fil": "Answer: False",
+          "taglish": "Answer: False"
         },
         "source": {
           "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
@@ -11090,10 +10775,10 @@
         "answer": "50.24 m²",
         "type": "mcq",
         "options": [
-          "49.24",
-          "100.48",
+          "52.24 m²",
+          "60.24 m²",
           "50.24 m²",
-          "51.24"
+          "49.24 m²"
         ],
         "solution": {
           "en": "Answer: 50.24 m²",
@@ -11117,9 +10802,9 @@
         "answer": "200.96 m²",
         "type": "mcq",
         "options": [
-          "201.96",
-          "199.96",
-          "401.92",
+          "198.96 m²",
+          "201.96 m²",
+          "202.96 m²",
           "200.96 m²"
         ],
         "solution": {
@@ -11144,9 +10829,9 @@
         "answer": "452.16 m²",
         "type": "mcq",
         "options": [
-          "453.16",
-          "451.16",
-          "904.32",
+          "451.16 m²",
+          "450.16 m²",
+          "453.16 m²",
           "452.16 m²"
         ],
         "solution": {
@@ -11270,33 +10955,6 @@
       },
       {
         "q": {
-          "en": "Using π = 3.14, find the area of a circular garden with radius 6 m. Explain why your answer is reasonable.",
-          "fil": "Using π = 3.14, find the area of a circular garden with radius 6 m. Explain why your answer is reasonable.",
-          "taglish": "Using π = 3.14, find the area of a circular garden with radius 6 m. Explain why your answer is reasonable."
-        },
-        "answer": "113.04 m²",
-        "type": "mcq",
-        "options": [
-          "50.24 m²",
-          "200.96 m²",
-          "452.16 m²",
-          "113.04 m²"
-        ],
-        "solution": {
-          "en": "Answer: 113.04 m²",
-          "fil": "Answer: 113.04 m²",
-          "taglish": "Answer: 113.04 m²"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "6MG-IIIc-2",
-          "path": "Grade-6/Semester-3/Activity-Sheets/Activity-Sheet-06-The-Area-Of-A-Circle-Leading-To-The-Formula-A-R-2.md",
-          "item": 9,
-          "original_type": "activity"
-        }
-      },
-      {
-        "q": {
           "en": "Using π = 3.14, find the area of a circular garden with radius 10 m.",
           "fil": "Using π = 3.14, find the area of a circular garden with radius 10 m.",
           "taglish": "Using π = 3.14, find the area of a circular garden with radius 10 m."
@@ -11363,10 +11021,10 @@
         "answer": "254.34 m²",
         "type": "mcq",
         "options": [
-          "508.68",
+          "252.34 m²",
           "254.34 m²",
-          "255.34",
-          "253.34"
+          "255.34 m²",
+          "12.56 m²"
         ],
         "solution": {
           "en": "Answer: 254.34 m²",
@@ -11390,10 +11048,10 @@
         "answer": "50.24 m²",
         "type": "mcq",
         "options": [
-          "49.24",
-          "100.48",
+          "52.24 m²",
+          "60.24 m²",
           "50.24 m²",
-          "51.24"
+          "49.24 m²"
         ],
         "solution": {
           "en": "Answer: 50.24 m²",
@@ -11464,20 +11122,20 @@
       },
       {
         "q": {
-          "en": "Is this solution correct? Using π = 3.14, find the area of a circular garden with radius 9 m. Proposed answer: 254.34 m²",
-          "fil": "Is this solution correct? Using π = 3.14, find the area of a circular garden with radius 9 m. Proposed answer: 254.34 m²",
-          "taglish": "Is this solution correct? Using π = 3.14, find the area of a circular garden with radius 9 m. Proposed answer: 254.34 m²"
+          "en": "Is this solution correct? Using π = 3.14, find the area of a circular garden with radius 9 m. Proposed answer: 264.34 m²",
+          "fil": "Is this solution correct? Using π = 3.14, find the area of a circular garden with radius 9 m. Proposed answer: 264.34 m²",
+          "taglish": "Is this solution correct? Using π = 3.14, find the area of a circular garden with radius 9 m. Proposed answer: 264.34 m²"
         },
-        "answer": "True",
+        "answer": "False",
         "type": "true_false",
         "options": [
           "True",
           "False"
         ],
         "solution": {
-          "en": "Answer: True",
-          "fil": "Answer: True",
-          "taglish": "Answer: True"
+          "en": "Answer: False",
+          "fil": "Answer: False",
+          "taglish": "Answer: False"
         },
         "source": {
           "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
@@ -11485,33 +11143,6 @@
           "path": "Grade-6/Semester-3/Quizzes/Quiz-07-The-Area-Of-A-Circle-Using-The-Formula.md",
           "item": 8,
           "original_type": "true-false"
-        }
-      },
-      {
-        "q": {
-          "en": "Using π = 3.14, find the area of a circular garden with radius 9 m. Explain why your answer is reasonable.",
-          "fil": "Using π = 3.14, find the area of a circular garden with radius 9 m. Explain why your answer is reasonable.",
-          "taglish": "Using π = 3.14, find the area of a circular garden with radius 9 m. Explain why your answer is reasonable."
-        },
-        "answer": "254.34 m²",
-        "type": "mcq",
-        "options": [
-          "50.24 m²",
-          "12.56 m²",
-          "28.26 m²",
-          "254.34 m²"
-        ],
-        "solution": {
-          "en": "Answer: 254.34 m²",
-          "fil": "Answer: 254.34 m²",
-          "taglish": "Answer: 254.34 m²"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "6MG-IIId-1",
-          "path": "Grade-6/Semester-3/Activity-Sheets/Activity-Sheet-07-The-Area-Of-A-Circle-Using-The-Formula.md",
-          "item": 9,
-          "original_type": "activity"
         }
       }
     ],
@@ -11555,10 +11186,10 @@
         "answer": "120 m²",
         "type": "mcq",
         "options": [
-          "119",
-          "240",
+          "130 m²",
+          "119 m²",
           "120 m²",
-          "121"
+          "118 m²"
         ],
         "solution": {
           "en": "Answer: 120 m²",
@@ -11582,9 +11213,9 @@
         "answer": "36 m²",
         "type": "mcq",
         "options": [
-          "37",
-          "35",
-          "72",
+          "35 m²",
+          "34 m²",
+          "37 m²",
           "36 m²"
         ],
         "solution": {
@@ -11610,9 +11241,9 @@
         "type": "mcq",
         "options": [
           "16 m²",
-          "17",
-          "15",
-          "32"
+          "14 m²",
+          "17 m²",
+          "18 m²"
         ],
         "solution": {
           "en": "Answer: 16 m²",
@@ -11708,20 +11339,20 @@
       },
       {
         "q": {
-          "en": "Is this solution correct? A composite garden is a 2 m by 3 m rectangle joined to a triangle with base 2 m and height 6 m. Find the total area. Proposed answer: 12 m²",
-          "fil": "Is this solution correct? A composite garden is a 2 m by 3 m rectangle joined to a triangle with base 2 m and height 6 m. Find the total area. Proposed answer: 12 m²",
-          "taglish": "Is this solution correct? A composite garden is a 2 m by 3 m rectangle joined to a triangle with base 2 m and height 6 m. Find the total area. Proposed answer: 12 m²"
+          "en": "Is this solution correct? A composite garden is a 2 m by 3 m rectangle joined to a triangle with base 2 m and height 6 m. Find the total area. Proposed answer: 14 m²",
+          "fil": "Is this solution correct? A composite garden is a 2 m by 3 m rectangle joined to a triangle with base 2 m and height 6 m. Find the total area. Proposed answer: 14 m²",
+          "taglish": "Is this solution correct? A composite garden is a 2 m by 3 m rectangle joined to a triangle with base 2 m and height 6 m. Find the total area. Proposed answer: 14 m²"
         },
-        "answer": "True",
+        "answer": "False",
         "type": "true_false",
         "options": [
           "True",
           "False"
         ],
         "solution": {
-          "en": "Answer: True",
-          "fil": "Answer: True",
-          "taglish": "Answer: True"
+          "en": "Answer: False",
+          "fil": "Answer: False",
+          "taglish": "Answer: False"
         },
         "source": {
           "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
@@ -11755,33 +11386,6 @@
           "ref": "6MG-IIId-2",
           "path": "Grade-6/Semester-3/Activity-Sheets/Activity-Sheet-08-The-Area-Of-Composite-Figures-Composed-Of-Any-Two-Or.md",
           "item": 8,
-          "original_type": "activity"
-        }
-      },
-      {
-        "q": {
-          "en": "A composite garden is a 2 m by 4 m rectangle joined to a triangle with base 2 m and height 8 m. Find the total area. Explain why your answer is reasonable.",
-          "fil": "A composite garden is a 2 m by 4 m rectangle joined to a triangle with base 2 m and height 8 m. Find the total area. Explain why your answer is reasonable.",
-          "taglish": "A composite garden is a 2 m by 4 m rectangle joined to a triangle with base 2 m and height 8 m. Find the total area. Explain why your answer is reasonable."
-        },
-        "answer": "16 m²",
-        "type": "mcq",
-        "options": [
-          "120 m²",
-          "36 m²",
-          "66 m²",
-          "16 m²"
-        ],
-        "solution": {
-          "en": "Answer: 16 m²",
-          "fil": "Answer: 16 m²",
-          "taglish": "Answer: 16 m²"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "6MG-IIId-2",
-          "path": "Grade-6/Semester-3/Activity-Sheets/Activity-Sheet-08-The-Area-Of-Composite-Figures-Composed-Of-Any-Two-Or.md",
-          "item": 9,
           "original_type": "activity"
         }
       },
@@ -12031,33 +11635,6 @@
       },
       {
         "q": {
-          "en": "Using π = 3.14, find the circumference of a circular garden with radius 8 m. Explain why your answer is reasonable.",
-          "fil": "Using π = 3.14, find the circumference of a circular garden with radius 8 m. Explain why your answer is reasonable.",
-          "taglish": "Using π = 3.14, find the circumference of a circular garden with radius 8 m. Explain why your answer is reasonable."
-        },
-        "answer": "50.24 m",
-        "type": "mcq",
-        "options": [
-          "37.68 m",
-          "75.36 m",
-          "69.08 m",
-          "50.24 m"
-        ],
-        "solution": {
-          "en": "Answer: 50.24 m",
-          "fil": "Answer: 50.24 m",
-          "taglish": "Answer: 50.24 m"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "6MG-IIId-3",
-          "path": "Grade-6/Semester-3/Activity-Sheets/Activity-Sheet-09-Problems-Involving-Circumference-And-Area-Of-Circles.md",
-          "item": 9,
-          "original_type": "activity"
-        }
-      },
-      {
-        "q": {
           "en": "Using π = 3.14, find the circumference of a circular garden with radius 10 m.",
           "fil": "Using π = 3.14, find the circumference of a circular garden with radius 10 m.",
           "taglish": "Using π = 3.14, find the circumference of a circular garden with radius 10 m."
@@ -12150,9 +11727,9 @@
         "answer": "90°",
         "type": "mcq",
         "options": [
-          "A different value",
-          "Cannot be determined",
-          "None of these",
+          "88°",
+          "91°",
+          "92°",
           "90°"
         ],
         "solution": {
@@ -12177,10 +11754,10 @@
         "answer": "180°",
         "type": "mcq",
         "options": [
-          "None of these",
+          "182°",
           "180°",
-          "A different value",
-          "Cannot be determined"
+          "190°",
+          "179°"
         ],
         "solution": {
           "en": "Answer: 180°",
@@ -12251,20 +11828,20 @@
       },
       {
         "q": {
-          "en": "Is this solution correct? A pie graph category represents 40% of the data. Find its central angle. Proposed answer: 144°",
-          "fil": "Is this solution correct? A pie graph category represents 40% of the data. Find its central angle. Proposed answer: 144°",
-          "taglish": "Is this solution correct? A pie graph category represents 40% of the data. Find its central angle. Proposed answer: 144°"
+          "en": "Is this solution correct? A pie graph category represents 40% of the data. Find its central angle. Proposed answer: 154°",
+          "fil": "Is this solution correct? A pie graph category represents 40% of the data. Find its central angle. Proposed answer: 154°",
+          "taglish": "Is this solution correct? A pie graph category represents 40% of the data. Find its central angle. Proposed answer: 154°"
         },
-        "answer": "True",
+        "answer": "False",
         "type": "true_false",
         "options": [
           "True",
           "False"
         ],
         "solution": {
-          "en": "Answer: True",
-          "fil": "Answer: True",
-          "taglish": "Answer: True"
+          "en": "Answer: False",
+          "fil": "Answer: False",
+          "taglish": "Answer: False"
         },
         "source": {
           "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
@@ -12298,33 +11875,6 @@
           "ref": "6SP-IIIf-1",
           "path": "Grade-6/Semester-3/Activity-Sheets/Activity-Sheet-10-The-Angle-Measures-And-Or-Percentages-Based-On-The.md",
           "item": 8,
-          "original_type": "activity"
-        }
-      },
-      {
-        "q": {
-          "en": "A pie graph category represents 50% of the data. Find its central angle. Explain why your answer is reasonable.",
-          "fil": "A pie graph category represents 50% of the data. Find its central angle. Explain why your answer is reasonable.",
-          "taglish": "A pie graph category represents 50% of the data. Find its central angle. Explain why your answer is reasonable."
-        },
-        "answer": "180°",
-        "type": "mcq",
-        "options": [
-          "90°",
-          "36°",
-          "72°",
-          "180°"
-        ],
-        "solution": {
-          "en": "Answer: 180°",
-          "fil": "Answer: 180°",
-          "taglish": "Answer: 180°"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "6SP-IIIf-1",
-          "path": "Grade-6/Semester-3/Activity-Sheets/Activity-Sheet-10-The-Angle-Measures-And-Or-Percentages-Based-On-The.md",
-          "item": 9,
           "original_type": "activity"
         }
       }
@@ -12368,7 +11918,7 @@
         "answer": "180°, 90°, 90°",
         "type": "mcq",
         "options": [
-          "True",
+          "50.24 m²",
           "178°, 90°, 90°",
           "179°, 90°, 90°",
           "180°, 90°, 90°"
@@ -12681,9 +12231,9 @@
       },
       {
         "q": {
-          "en": "A pie graph shows walking=11, jeepney=12, bicycle=11, tricycle=7 learners. Which category has the largest sector? Explain why your answer is reasonable.",
-          "fil": "A pie graph shows walking=11, jeepney=12, bicycle=11, tricycle=7 learners. Which category has the largest sector? Explain why your answer is reasonable.",
-          "taglish": "A pie graph shows walking=11, jeepney=12, bicycle=11, tricycle=7 learners. Which category has the largest sector? Explain why your answer is reasonable."
+          "en": "A pie graph shows walking=11, jeepney=12, bicycle=11, tricycle=7 learners. Which category has the largest sector?",
+          "fil": "A pie graph shows walking=11, jeepney=12, bicycle=11, tricycle=7 learners. Which category has the largest sector?",
+          "taglish": "A pie graph shows walking=11, jeepney=12, bicycle=11, tricycle=7 learners. Which category has the largest sector?"
         },
         "answer": "jeepney",
         "type": "mcq",
@@ -12793,191 +12343,6 @@
     "items": [
       {
         "q": {
-          "en": "Which option correctly presents mango=5, banana=3, papaya=9, and guava=2 in a labeled table or graph?",
-          "fil": "Which option correctly presents mango=5, banana=3, papaya=9, and guava=2 in a labeled table or graph?",
-          "taglish": "Which option correctly presents mango=5, banana=3, papaya=9, and guava=2 in a labeled table or graph?"
-        },
-        "answer": "Correct display with values 5, 3, 9, 2 and complete labels",
-        "type": "mcq",
-        "options": [
-          "Correct display with values 3, 8, 6, 12 and complete labels",
-          "Correct display with values 11, 2, 2, 9 and complete labels",
-          "Correct display with values 2, 9, 7, 3 and complete labels",
-          "Correct display with values 5, 3, 9, 2 and complete labels"
-        ],
-        "solution": {
-          "en": "Answer: Correct display with values 5, 3, 9, 2 and complete labels",
-          "fil": "Answer: Correct display with values 5, 3, 9, 2 and complete labels",
-          "taglish": "Answer: Correct display with values 5, 3, 9, 2 and complete labels"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "6SP-IIIg-2",
-          "path": "Grade-6/Semester-3/Quizzes/Quiz-13-Data-From-Digital-Media-That-Are-Presented-In-Tabular.md",
-          "item": 1,
-          "original_type": "multiple-choice"
-        }
-      },
-      {
-        "q": {
-          "en": "Which option correctly presents mango=3, banana=8, papaya=6, and guava=12 in a labeled table or graph?",
-          "fil": "Which option correctly presents mango=3, banana=8, papaya=6, and guava=12 in a labeled table or graph?",
-          "taglish": "Which option correctly presents mango=3, banana=8, papaya=6, and guava=12 in a labeled table or graph?"
-        },
-        "answer": "Correct display with values 3, 8, 6, 12 and complete labels",
-        "type": "mcq",
-        "options": [
-          "Correct display with values 11, 2, 2, 9 and complete labels",
-          "Correct display with values 2, 9, 7, 3 and complete labels",
-          "Correct display with values 3, 8, 6, 12 and complete labels",
-          "Correct display with values 5, 3, 9, 2 and complete labels"
-        ],
-        "solution": {
-          "en": "Answer: Correct display with values 3, 8, 6, 12 and complete labels",
-          "fil": "Answer: Correct display with values 3, 8, 6, 12 and complete labels",
-          "taglish": "Answer: Correct display with values 3, 8, 6, 12 and complete labels"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "6SP-IIIg-2",
-          "path": "Grade-6/Semester-3/Quizzes/Quiz-13-Data-From-Digital-Media-That-Are-Presented-In-Tabular.md",
-          "item": 2,
-          "original_type": "multiple-choice"
-        }
-      },
-      {
-        "q": {
-          "en": "Which option correctly presents mango=11, banana=2, papaya=2, and guava=9 in a labeled table or graph?",
-          "fil": "Which option correctly presents mango=11, banana=2, papaya=2, and guava=9 in a labeled table or graph?",
-          "taglish": "Which option correctly presents mango=11, banana=2, papaya=2, and guava=9 in a labeled table or graph?"
-        },
-        "answer": "Correct display with values 11, 2, 2, 9 and complete labels",
-        "type": "mcq",
-        "options": [
-          "Correct display with values 2, 9, 7, 3 and complete labels",
-          "Correct display with values 11, 2, 2, 9 and complete labels",
-          "Correct display with values 5, 3, 9, 2 and complete labels",
-          "Correct display with values 3, 8, 6, 12 and complete labels"
-        ],
-        "solution": {
-          "en": "Answer: Correct display with values 11, 2, 2, 9 and complete labels",
-          "fil": "Answer: Correct display with values 11, 2, 2, 9 and complete labels",
-          "taglish": "Answer: Correct display with values 11, 2, 2, 9 and complete labels"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "6SP-IIIg-2",
-          "path": "Grade-6/Semester-3/Quizzes/Quiz-13-Data-From-Digital-Media-That-Are-Presented-In-Tabular.md",
-          "item": 3,
-          "original_type": "multiple-choice"
-        }
-      },
-      {
-        "q": {
-          "en": "Which option correctly presents mango=2, banana=9, papaya=7, and guava=3 in a labeled table or graph?",
-          "fil": "Which option correctly presents mango=2, banana=9, papaya=7, and guava=3 in a labeled table or graph?",
-          "taglish": "Which option correctly presents mango=2, banana=9, papaya=7, and guava=3 in a labeled table or graph?"
-        },
-        "answer": "Correct display with values 2, 9, 7, 3 and complete labels",
-        "type": "mcq",
-        "options": [
-          "Correct display with values 2, 9, 7, 3 and complete labels",
-          "Correct display with values 7, 9, 2, 5 and complete labels",
-          "Correct display with values 4, 3, 5, 5 and complete labels",
-          "Correct display with values 6, 5, 10, 5 and complete labels"
-        ],
-        "solution": {
-          "en": "Answer: Correct display with values 2, 9, 7, 3 and complete labels",
-          "fil": "Answer: Correct display with values 2, 9, 7, 3 and complete labels",
-          "taglish": "Answer: Correct display with values 2, 9, 7, 3 and complete labels"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "6SP-IIIg-2",
-          "path": "Grade-6/Semester-3/Quizzes/Quiz-13-Data-From-Digital-Media-That-Are-Presented-In-Tabular.md",
-          "item": 4,
-          "original_type": "identification"
-        }
-      },
-      {
-        "q": {
-          "en": "Which option correctly presents mango=7, banana=9, papaya=2, and guava=5 in a labeled table or graph?",
-          "fil": "Which option correctly presents mango=7, banana=9, papaya=2, and guava=5 in a labeled table or graph?",
-          "taglish": "Which option correctly presents mango=7, banana=9, papaya=2, and guava=5 in a labeled table or graph?"
-        },
-        "answer": "Correct display with values 7, 9, 2, 5 and complete labels",
-        "type": "mcq",
-        "options": [
-          "Correct display with values 2, 9, 7, 3 and complete labels",
-          "Correct display with values 4, 3, 5, 5 and complete labels",
-          "Correct display with values 6, 5, 10, 5 and complete labels",
-          "Correct display with values 7, 9, 2, 5 and complete labels"
-        ],
-        "solution": {
-          "en": "Answer: Correct display with values 7, 9, 2, 5 and complete labels",
-          "fil": "Answer: Correct display with values 7, 9, 2, 5 and complete labels",
-          "taglish": "Answer: Correct display with values 7, 9, 2, 5 and complete labels"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "6SP-IIIg-2",
-          "path": "Grade-6/Semester-3/Quizzes/Quiz-13-Data-From-Digital-Media-That-Are-Presented-In-Tabular.md",
-          "item": 5,
-          "original_type": "identification"
-        }
-      },
-      {
-        "q": {
-          "en": "Which option correctly presents mango=9, banana=4, papaya=2, and guava=10 in a labeled table or graph?",
-          "fil": "Which option correctly presents mango=9, banana=4, papaya=2, and guava=10 in a labeled table or graph?",
-          "taglish": "Which option correctly presents mango=9, banana=4, papaya=2, and guava=10 in a labeled table or graph?"
-        },
-        "answer": "Correct display with values 9, 4, 2, 10 and complete labels",
-        "type": "matching",
-        "options": [
-          "Correct display with values 3, 10, 6, 3 and complete labels",
-          "Correct display with values 9, 4, 2, 10 and complete labels"
-        ],
-        "solution": {
-          "en": "Answer: Correct display with values 9, 4, 2, 10 and complete labels",
-          "fil": "Answer: Correct display with values 9, 4, 2, 10 and complete labels",
-          "taglish": "Answer: Correct display with values 9, 4, 2, 10 and complete labels"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "6SP-IIIg-2",
-          "path": "Grade-6/Semester-3/Quizzes/Quiz-13-Data-From-Digital-Media-That-Are-Presented-In-Tabular.md",
-          "item": 6,
-          "original_type": "matching"
-        }
-      },
-      {
-        "q": {
-          "en": "Which option correctly presents mango=3, banana=10, papaya=6, and guava=3 in a labeled table or graph?",
-          "fil": "Which option correctly presents mango=3, banana=10, papaya=6, and guava=3 in a labeled table or graph?",
-          "taglish": "Which option correctly presents mango=3, banana=10, papaya=6, and guava=3 in a labeled table or graph?"
-        },
-        "answer": "Correct display with values 3, 10, 6, 3 and complete labels",
-        "type": "matching",
-        "options": [
-          "Correct display with values 3, 10, 6, 3 and complete labels",
-          "Correct display with values 9, 4, 2, 10 and complete labels"
-        ],
-        "solution": {
-          "en": "Answer: Correct display with values 3, 10, 6, 3 and complete labels",
-          "fil": "Answer: Correct display with values 3, 10, 6, 3 and complete labels",
-          "taglish": "Answer: Correct display with values 3, 10, 6, 3 and complete labels"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "6SP-IIIg-2",
-          "path": "Grade-6/Semester-3/Quizzes/Quiz-13-Data-From-Digital-Media-That-Are-Presented-In-Tabular.md",
-          "item": 7,
-          "original_type": "matching"
-        }
-      },
-      {
-        "q": {
           "en": "Is this solution correct? Present mango=4, banana=3, papaya=5, and guava=5 in a labeled table or graph. Proposed answer: Correct display with values 4, 3, 5, 5 and complete labels",
           "fil": "Is this solution correct? Present mango=4, banana=3, papaya=5, and guava=5 in a labeled table or graph. Proposed answer: Correct display with values 4, 3, 5, 5 and complete labels",
           "taglish": "Is this solution correct? Present mango=4, banana=3, papaya=5, and guava=5 in a labeled table or graph. Proposed answer: Correct display with values 4, 3, 5, 5 and complete labels"
@@ -12999,168 +12364,6 @@
           "path": "Grade-6/Semester-3/Quizzes/Quiz-13-Data-From-Digital-Media-That-Are-Presented-In-Tabular.md",
           "item": 8,
           "original_type": "true-false"
-        }
-      },
-      {
-        "q": {
-          "en": "Which option correctly presents mango=4, banana=3, papaya=5, and guava=5 in a labeled table or graph?",
-          "fil": "Which option correctly presents mango=4, banana=3, papaya=5, and guava=5 in a labeled table or graph?",
-          "taglish": "Which option correctly presents mango=4, banana=3, papaya=5, and guava=5 in a labeled table or graph?"
-        },
-        "answer": "Correct display with values 4, 3, 5, 5 and complete labels",
-        "type": "mcq",
-        "options": [
-          "Correct display with values 4, 3, 5, 5 and complete labels",
-          "Correct display with values 5, 3, 9, 2 and complete labels",
-          "Correct display with values 3, 8, 6, 12 and complete labels",
-          "Correct display with values 11, 2, 2, 9 and complete labels"
-        ],
-        "solution": {
-          "en": "Answer: Correct display with values 4, 3, 5, 5 and complete labels",
-          "fil": "Answer: Correct display with values 4, 3, 5, 5 and complete labels",
-          "taglish": "Answer: Correct display with values 4, 3, 5, 5 and complete labels"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "6SP-IIIg-2",
-          "path": "Grade-6/Semester-3/Activity-Sheets/Activity-Sheet-13-Data-From-Digital-Media-That-Are-Presented-In-Tabular.md",
-          "item": 8,
-          "original_type": "activity"
-        }
-      },
-      {
-        "q": {
-          "en": "Which option correctly presents mango=6, banana=5, papaya=10, and guava=5 in a labeled table or graph? Explain why your answer is reasonable.",
-          "fil": "Which option correctly presents mango=6, banana=5, papaya=10, and guava=5 in a labeled table or graph? Explain why your answer is reasonable.",
-          "taglish": "Which option correctly presents mango=6, banana=5, papaya=10, and guava=5 in a labeled table or graph? Explain why your answer is reasonable."
-        },
-        "answer": "Correct display with values 6, 5, 10, 5 and complete labels",
-        "type": "mcq",
-        "options": [
-          "Correct display with values 5, 3, 9, 2 and complete labels",
-          "Correct display with values 3, 8, 6, 12 and complete labels",
-          "Correct display with values 11, 2, 2, 9 and complete labels",
-          "Correct display with values 6, 5, 10, 5 and complete labels"
-        ],
-        "solution": {
-          "en": "Answer: Correct display with values 6, 5, 10, 5 and complete labels",
-          "fil": "Answer: Correct display with values 6, 5, 10, 5 and complete labels",
-          "taglish": "Answer: Correct display with values 6, 5, 10, 5 and complete labels"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "6SP-IIIg-2",
-          "path": "Grade-6/Semester-3/Activity-Sheets/Activity-Sheet-13-Data-From-Digital-Media-That-Are-Presented-In-Tabular.md",
-          "item": 9,
-          "original_type": "activity"
-        }
-      },
-      {
-        "q": {
-          "en": "Which option correctly presents mango=3, banana=3, papaya=9, and guava=11 in a labeled table or graph?",
-          "fil": "Which option correctly presents mango=3, banana=3, papaya=9, and guava=11 in a labeled table or graph?",
-          "taglish": "Which option correctly presents mango=3, banana=3, papaya=9, and guava=11 in a labeled table or graph?"
-        },
-        "answer": "Correct display with values 3, 3, 9, 11 and complete labels",
-        "type": "mcq",
-        "options": [
-          "Correct display with values 3, 8, 6, 12 and complete labels",
-          "Correct display with values 11, 2, 2, 9 and complete labels",
-          "Correct display with values 3, 3, 9, 11 and complete labels",
-          "Correct display with values 5, 3, 9, 2 and complete labels"
-        ],
-        "solution": {
-          "en": "Answer: Correct display with values 3, 3, 9, 11 and complete labels",
-          "fil": "Answer: Correct display with values 3, 3, 9, 11 and complete labels",
-          "taglish": "Answer: Correct display with values 3, 3, 9, 11 and complete labels"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "6SP-IIIg-2",
-          "path": "Grade-6/Semester-3/Activity-Sheets/Activity-Sheet-13-Data-From-Digital-Media-That-Are-Presented-In-Tabular.md",
-          "item": 10,
-          "original_type": "activity"
-        }
-      },
-      {
-        "q": {
-          "en": "Which option correctly presents mango=6, banana=5, papaya=10, and guava=5 in a labeled table or graph?",
-          "fil": "Which option correctly presents mango=6, banana=5, papaya=10, and guava=5 in a labeled table or graph?",
-          "taglish": "Which option correctly presents mango=6, banana=5, papaya=10, and guava=5 in a labeled table or graph?"
-        },
-        "answer": "Correct display with values 6, 5, 10, 5 and complete labels",
-        "type": "mcq",
-        "options": [
-          "Correct display with values 4, 3, 5, 5 and complete labels",
-          "Correct display with values 6, 5, 10, 5 and complete labels",
-          "Correct display with values 2, 9, 7, 3 and complete labels",
-          "Correct display with values 7, 9, 2, 5 and complete labels"
-        ],
-        "solution": {
-          "en": "Answer: Correct display with values 6, 5, 10, 5 and complete labels",
-          "fil": "Answer: Correct display with values 6, 5, 10, 5 and complete labels",
-          "taglish": "Answer: Correct display with values 6, 5, 10, 5 and complete labels"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "6SP-IIIg-2",
-          "path": "Grade-6/Semester-3/Quizzes/Quiz-13-Data-From-Digital-Media-That-Are-Presented-In-Tabular.md",
-          "item": 11,
-          "original_type": "computation"
-        }
-      },
-      {
-        "q": {
-          "en": "Which option correctly presents mango=7, banana=11, papaya=6, and guava=11 in a labeled table or graph?",
-          "fil": "Which option correctly presents mango=7, banana=11, papaya=6, and guava=11 in a labeled table or graph?",
-          "taglish": "Which option correctly presents mango=7, banana=11, papaya=6, and guava=11 in a labeled table or graph?"
-        },
-        "answer": "Correct display with values 7, 11, 6, 11 and complete labels",
-        "type": "mcq",
-        "options": [
-          "Correct display with values 11, 2, 2, 9 and complete labels",
-          "Correct display with values 7, 11, 6, 11 and complete labels",
-          "Correct display with values 5, 3, 9, 2 and complete labels",
-          "Correct display with values 3, 8, 6, 12 and complete labels"
-        ],
-        "solution": {
-          "en": "Answer: Correct display with values 7, 11, 6, 11 and complete labels",
-          "fil": "Answer: Correct display with values 7, 11, 6, 11 and complete labels",
-          "taglish": "Answer: Correct display with values 7, 11, 6, 11 and complete labels"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "6SP-IIIg-2",
-          "path": "Grade-6/Semester-3/Activity-Sheets/Activity-Sheet-13-Data-From-Digital-Media-That-Are-Presented-In-Tabular.md",
-          "item": 11,
-          "original_type": "activity"
-        }
-      },
-      {
-        "q": {
-          "en": "Which option correctly presents mango=10, banana=4, papaya=5, and guava=12 in a labeled table or graph?",
-          "fil": "Which option correctly presents mango=10, banana=4, papaya=5, and guava=12 in a labeled table or graph?",
-          "taglish": "Which option correctly presents mango=10, banana=4, papaya=5, and guava=12 in a labeled table or graph?"
-        },
-        "answer": "Correct display with values 10, 4, 5, 12 and complete labels",
-        "type": "mcq",
-        "options": [
-          "Correct display with values 10, 4, 5, 12 and complete labels",
-          "Correct display with values 5, 3, 9, 2 and complete labels",
-          "Correct display with values 3, 8, 6, 12 and complete labels",
-          "Correct display with values 11, 2, 2, 9 and complete labels"
-        ],
-        "solution": {
-          "en": "Answer: Correct display with values 10, 4, 5, 12 and complete labels",
-          "fil": "Answer: Correct display with values 10, 4, 5, 12 and complete labels",
-          "taglish": "Answer: Correct display with values 10, 4, 5, 12 and complete labels"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "6SP-IIIg-2",
-          "path": "Grade-6/Semester-3/Activity-Sheets/Activity-Sheet-13-Data-From-Digital-Media-That-Are-Presented-In-Tabular.md",
-          "item": 12,
-          "original_type": "activity"
         }
       }
     ],
@@ -13437,9 +12640,9 @@
       },
       {
         "q": {
-          "en": "A pie graph shows walking=7, jeepney=9, bicycle=8, tricycle=7 learners. Which category has the largest sector? Explain why your answer is reasonable.",
-          "fil": "A pie graph shows walking=7, jeepney=9, bicycle=8, tricycle=7 learners. Which category has the largest sector? Explain why your answer is reasonable.",
-          "taglish": "A pie graph shows walking=7, jeepney=9, bicycle=8, tricycle=7 learners. Which category has the largest sector? Explain why your answer is reasonable."
+          "en": "A pie graph shows walking=7, jeepney=9, bicycle=8, tricycle=7 learners. Which category has the largest sector?",
+          "fil": "A pie graph shows walking=7, jeepney=9, bicycle=8, tricycle=7 learners. Which category has the largest sector?",
+          "taglish": "A pie graph shows walking=7, jeepney=9, bicycle=8, tricycle=7 learners. Which category has the largest sector?"
         },
         "answer": "jeepney",
         "type": "mcq",
@@ -13871,20 +13074,20 @@
       },
       {
         "q": {
-          "en": "Is this solution correct? Find the GCF of 18 and 27 for making equal relief packs. Proposed answer: 9",
-          "fil": "Is this solution correct? Find the GCF of 18 and 27 for making equal relief packs. Proposed answer: 9",
-          "taglish": "Is this solution correct? Find the GCF of 18 and 27 for making equal relief packs. Proposed answer: 9"
+          "en": "Is this solution correct? Find the GCF of 18 and 27 for making equal relief packs. Proposed answer: 10",
+          "fil": "Is this solution correct? Find the GCF of 18 and 27 for making equal relief packs. Proposed answer: 10",
+          "taglish": "Is this solution correct? Find the GCF of 18 and 27 for making equal relief packs. Proposed answer: 10"
         },
-        "answer": "True",
+        "answer": "False",
         "type": "true_false",
         "options": [
           "True",
           "False"
         ],
         "solution": {
-          "en": "Answer: True",
-          "fil": "Answer: True",
-          "taglish": "Answer: True"
+          "en": "Answer: False",
+          "fil": "Answer: False",
+          "taglish": "Answer: False"
         },
         "source": {
           "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
@@ -14117,20 +13320,20 @@
       },
       {
         "q": {
-          "en": "Is this solution correct? Find the LCM of 18 and 27 for synchronizing two barangay schedules. Proposed answer: 54",
-          "fil": "Is this solution correct? Find the LCM of 18 and 27 for synchronizing two barangay schedules. Proposed answer: 54",
-          "taglish": "Is this solution correct? Find the LCM of 18 and 27 for synchronizing two barangay schedules. Proposed answer: 54"
+          "en": "Is this solution correct? Find the LCM of 18 and 27 for synchronizing two barangay schedules. Proposed answer: 56",
+          "fil": "Is this solution correct? Find the LCM of 18 and 27 for synchronizing two barangay schedules. Proposed answer: 56",
+          "taglish": "Is this solution correct? Find the LCM of 18 and 27 for synchronizing two barangay schedules. Proposed answer: 56"
         },
-        "answer": "True",
+        "answer": "False",
         "type": "true_false",
         "options": [
           "True",
           "False"
         ],
         "solution": {
-          "en": "Answer: True",
-          "fil": "Answer: True",
-          "taglish": "Answer: True"
+          "en": "Answer: False",
+          "fil": "Answer: False",
+          "taglish": "Answer: False"
         },
         "source": {
           "package": "DepEd-MATATAG-Mathematics-Grades-1-6",

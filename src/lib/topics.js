@@ -1,4 +1,4 @@
-// Compact, learner-facing labels shared by every Grade 1–6 screen. The full
+// Compact, learner-facing labels shared by every Grade 4–6 screen. The full
 // competency remains visible beneath these labels and is still used in search.
 
 // Some competencies mention a supporting operation after the main skill

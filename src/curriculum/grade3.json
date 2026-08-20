@@ -31,9 +31,9 @@
         "answer": "10 m²",
         "type": "mcq",
         "options": [
-          "11",
-          "9",
-          "20",
+          "9 m²",
+          "8 m²",
+          "11 m²",
           "10 m²"
         ],
         "solution": {
@@ -58,10 +58,10 @@
         "answer": "70 m²",
         "type": "mcq",
         "options": [
-          "140",
+          "71 m²",
           "70 m²",
-          "71",
-          "69"
+          "72 m²",
+          "80 m²"
         ],
         "solution": {
           "en": "Answer: 70 m²",
@@ -85,10 +85,10 @@
         "answer": "20 m²",
         "type": "mcq",
         "options": [
-          "19",
-          "40",
+          "22 m²",
+          "30 m²",
           "20 m²",
-          "21"
+          "19 m²"
         ],
         "solution": {
           "en": "Answer: 20 m²",
@@ -209,20 +209,20 @@
       },
       {
         "q": {
-          "en": "Is this solution correct? A rectangular seedbed is 4 m long and 10 m wide. Find its area. Proposed answer: 40 m²",
-          "fil": "Is this solution correct? A rectangular seedbed is 4 m long and 10 m wide. Find its area. Proposed answer: 40 m²",
-          "taglish": "Is this solution correct? A rectangular seedbed is 4 m long and 10 m wide. Find its area. Proposed answer: 40 m²"
+          "en": "Is this solution correct? A rectangular seedbed is 4 m long and 10 m wide. Find its area. Proposed answer: 42 m²",
+          "fil": "Is this solution correct? A rectangular seedbed is 4 m long and 10 m wide. Find its area. Proposed answer: 42 m²",
+          "taglish": "Is this solution correct? A rectangular seedbed is 4 m long and 10 m wide. Find its area. Proposed answer: 42 m²"
         },
-        "answer": "True",
+        "answer": "False",
         "type": "true_false",
         "options": [
           "True",
           "False"
         ],
         "solution": {
-          "en": "Answer: True",
-          "fil": "Answer: True",
-          "taglish": "Answer: True"
+          "en": "Answer: False",
+          "fil": "Answer: False",
+          "taglish": "Answer: False"
         },
         "source": {
           "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
@@ -261,9 +261,9 @@
       },
       {
         "q": {
-          "en": "A rectangular seedbed is 4 m long and 3 m wide. Find its area. Explain why your answer is reasonable.",
-          "fil": "A rectangular seedbed is 4 m long and 3 m wide. Find its area. Explain why your answer is reasonable.",
-          "taglish": "A rectangular seedbed is 4 m long and 3 m wide. Find its area. Explain why your answer is reasonable."
+          "en": "A rectangular seedbed is 4 m long and 3 m wide. Find its area.",
+          "fil": "A rectangular seedbed is 4 m long and 3 m wide. Find its area.",
+          "taglish": "A rectangular seedbed is 4 m long and 3 m wide. Find its area."
         },
         "answer": "12 m²",
         "type": "mcq",
@@ -311,33 +311,6 @@
           "path": "Grade-3/Semester-1/Activity-Sheets/Activity-Sheet-01-Estimate-The-Area-Of-A-Square-Or-Rectangle-Using.md",
           "item": 10,
           "original_type": "activity"
-        }
-      },
-      {
-        "q": {
-          "en": "A rectangular seedbed is 4 m long and 3 m wide. Find its area.",
-          "fil": "A rectangular seedbed is 4 m long and 3 m wide. Find its area.",
-          "taglish": "A rectangular seedbed is 4 m long and 3 m wide. Find its area."
-        },
-        "answer": "12 m²",
-        "type": "mcq",
-        "options": [
-          "40 m²",
-          "12 m²",
-          "90 m²",
-          "16 m²"
-        ],
-        "solution": {
-          "en": "Answer: 12 m²",
-          "fil": "Answer: 12 m²",
-          "taglish": "Answer: 12 m²"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "3MG-Ia-1",
-          "path": "Grade-3/Semester-1/Quizzes/Quiz-01-Estimate-The-Area-Of-A-Square-Or-Rectangle-Using.md",
-          "item": 11,
-          "original_type": "computation"
         }
       },
       {
@@ -435,10 +408,10 @@
         "answer": "20 m²",
         "type": "mcq",
         "options": [
-          "19",
-          "40",
+          "30 m²",
+          "19 m²",
           "20 m²",
-          "21"
+          "18 m²"
         ],
         "solution": {
           "en": "Answer: 20 m²",
@@ -462,10 +435,10 @@
         "answer": "70 m²",
         "type": "mcq",
         "options": [
-          "140",
+          "72 m²",
           "70 m²",
-          "71",
-          "69"
+          "80 m²",
+          "69 m²"
         ],
         "solution": {
           "en": "Answer: 70 m²",
@@ -489,9 +462,9 @@
         "answer": "30 m²",
         "type": "mcq",
         "options": [
-          "31",
-          "29",
-          "60",
+          "31 m²",
+          "32 m²",
+          "40 m²",
           "30 m²"
         ],
         "solution": {
@@ -665,9 +638,9 @@
       },
       {
         "q": {
-          "en": "A rectangular seedbed is 5 m long and 7 m wide. Find its area. Explain why your answer is reasonable.",
-          "fil": "A rectangular seedbed is 5 m long and 7 m wide. Find its area. Explain why your answer is reasonable.",
-          "taglish": "A rectangular seedbed is 5 m long and 7 m wide. Find its area. Explain why your answer is reasonable."
+          "en": "A rectangular seedbed is 5 m long and 7 m wide. Find its area.",
+          "fil": "A rectangular seedbed is 5 m long and 7 m wide. Find its area.",
+          "taglish": "A rectangular seedbed is 5 m long and 7 m wide. Find its area."
         },
         "answer": "35 m²",
         "type": "mcq",
@@ -813,9 +786,9 @@
         "type": "mcq",
         "options": [
           "50 m²",
-          "51",
-          "49",
-          "100"
+          "51 m²",
+          "52 m²",
+          "60 m²"
         ],
         "solution": {
           "en": "Answer: 50 m²",
@@ -839,10 +812,10 @@
         "answer": "24 m²",
         "type": "mcq",
         "options": [
-          "23",
-          "48",
+          "23 m²",
+          "22 m²",
           "24 m²",
-          "25"
+          "25 m²"
         ],
         "solution": {
           "en": "Answer: 24 m²",
@@ -867,9 +840,9 @@
         "type": "mcq",
         "options": [
           "50 m²",
-          "51",
-          "49",
-          "100"
+          "60 m²",
+          "49 m²",
+          "48 m²"
         ],
         "solution": {
           "en": "Answer: 50 m²",
@@ -1017,9 +990,9 @@
       },
       {
         "q": {
-          "en": "A rectangular seedbed is 9 m long and 5 m wide. Find its area. Explain why your answer is reasonable.",
-          "fil": "A rectangular seedbed is 9 m long and 5 m wide. Find its area. Explain why your answer is reasonable.",
-          "taglish": "A rectangular seedbed is 9 m long and 5 m wide. Find its area. Explain why your answer is reasonable."
+          "en": "A rectangular seedbed is 9 m long and 5 m wide. Find its area.",
+          "fil": "A rectangular seedbed is 9 m long and 5 m wide. Find its area.",
+          "taglish": "A rectangular seedbed is 9 m long and 5 m wide. Find its area."
         },
         "answer": "45 m²",
         "type": "mcq",
@@ -1040,33 +1013,6 @@
           "path": "Grade-3/Semester-1/Activity-Sheets/Activity-Sheet-03-The-Areas-Of-Squares-And-Rectangles-In-Sq-Cm-And-Sq-M.md",
           "item": 9,
           "original_type": "activity"
-        }
-      },
-      {
-        "q": {
-          "en": "A rectangular seedbed is 9 m long and 5 m wide. Find its area.",
-          "fil": "A rectangular seedbed is 9 m long and 5 m wide. Find its area.",
-          "taglish": "A rectangular seedbed is 9 m long and 5 m wide. Find its area."
-        },
-        "answer": "45 m²",
-        "type": "mcq",
-        "options": [
-          "8 m²",
-          "45 m²",
-          "54 m²",
-          "6 m²"
-        ],
-        "solution": {
-          "en": "Answer: 45 m²",
-          "fil": "Answer: 45 m²",
-          "taglish": "Answer: 45 m²"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "3MG-Ib-1",
-          "path": "Grade-3/Semester-1/Quizzes/Quiz-03-The-Areas-Of-Squares-And-Rectangles-In-Sq-Cm-And-Sq-M.md",
-          "item": 11,
-          "original_type": "computation"
         }
       },
       {
@@ -1164,10 +1110,10 @@
         "answer": "8 m²",
         "type": "mcq",
         "options": [
-          "7",
-          "16",
+          "9 m²",
+          "10 m²",
           "8 m²",
-          "9"
+          "18 m²"
         ],
         "solution": {
           "en": "Answer: 8 m²",
@@ -1191,9 +1137,9 @@
         "answer": "40 m²",
         "type": "mcq",
         "options": [
-          "41",
-          "39",
-          "80",
+          "50 m²",
+          "39 m²",
+          "38 m²",
           "40 m²"
         ],
         "solution": {
@@ -1218,10 +1164,10 @@
         "answer": "80 m²",
         "type": "mcq",
         "options": [
-          "160",
+          "79 m²",
           "80 m²",
-          "81",
-          "79"
+          "78 m²",
+          "81 m²"
         ],
         "solution": {
           "en": "Answer: 80 m²",
@@ -1342,20 +1288,20 @@
       },
       {
         "q": {
-          "en": "Is this solution correct? A rectangular seedbed is 9 m long and 9 m wide. Find its area. Proposed answer: 81 m²",
-          "fil": "Is this solution correct? A rectangular seedbed is 9 m long and 9 m wide. Find its area. Proposed answer: 81 m²",
-          "taglish": "Is this solution correct? A rectangular seedbed is 9 m long and 9 m wide. Find its area. Proposed answer: 81 m²"
+          "en": "Is this solution correct? A rectangular seedbed is 9 m long and 9 m wide. Find its area. Proposed answer: 83 m²",
+          "fil": "Is this solution correct? A rectangular seedbed is 9 m long and 9 m wide. Find its area. Proposed answer: 83 m²",
+          "taglish": "Is this solution correct? A rectangular seedbed is 9 m long and 9 m wide. Find its area. Proposed answer: 83 m²"
         },
-        "answer": "True",
+        "answer": "False",
         "type": "true_false",
         "options": [
           "True",
           "False"
         ],
         "solution": {
-          "en": "Answer: True",
-          "fil": "Answer: True",
-          "taglish": "Answer: True"
+          "en": "Answer: False",
+          "fil": "Answer: False",
+          "taglish": "Answer: False"
         },
         "source": {
           "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
@@ -1394,9 +1340,9 @@
       },
       {
         "q": {
-          "en": "A rectangular seedbed is 5 m long and 5 m wide. Find its area. Explain why your answer is reasonable.",
-          "fil": "A rectangular seedbed is 5 m long and 5 m wide. Find its area. Explain why your answer is reasonable.",
-          "taglish": "A rectangular seedbed is 5 m long and 5 m wide. Find its area. Explain why your answer is reasonable."
+          "en": "A rectangular seedbed is 5 m long and 5 m wide. Find its area.",
+          "fil": "A rectangular seedbed is 5 m long and 5 m wide. Find its area.",
+          "taglish": "A rectangular seedbed is 5 m long and 5 m wide. Find its area."
         },
         "answer": "25 m²",
         "type": "mcq",
@@ -1444,33 +1390,6 @@
           "path": "Grade-3/Semester-1/Activity-Sheets/Activity-Sheet-04-Problems-Involving-Areas-Of-Squares-And-Rectangles.md",
           "item": 10,
           "original_type": "activity"
-        }
-      },
-      {
-        "q": {
-          "en": "A rectangular seedbed is 5 m long and 5 m wide. Find its area.",
-          "fil": "A rectangular seedbed is 5 m long and 5 m wide. Find its area.",
-          "taglish": "A rectangular seedbed is 5 m long and 5 m wide. Find its area."
-        },
-        "answer": "25 m²",
-        "type": "mcq",
-        "options": [
-          "81 m²",
-          "25 m²",
-          "36 m²",
-          "18 m²"
-        ],
-        "solution": {
-          "en": "Answer: 25 m²",
-          "fil": "Answer: 25 m²",
-          "taglish": "Answer: 25 m²"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "3MG-Ib-2",
-          "path": "Grade-3/Semester-1/Quizzes/Quiz-04-Problems-Involving-Areas-Of-Squares-And-Rectangles.md",
-          "item": 11,
-          "original_type": "computation"
         }
       },
       {
@@ -1664,33 +1583,6 @@
           "item": 8,
           "original_type": "true-false"
         }
-      },
-      {
-        "q": {
-          "en": "What do we call two lines that meet to form a right angle? Explain why your answer is reasonable.",
-          "fil": "What do we call two lines that meet to form a right angle? Explain why your answer is reasonable.",
-          "taglish": "What do we call two lines that meet to form a right angle? Explain why your answer is reasonable."
-        },
-        "answer": "perpendicular lines",
-        "type": "mcq",
-        "options": [
-          "parallel lines",
-          "2",
-          "A ray with endpoint B extending through C",
-          "perpendicular lines"
-        ],
-        "solution": {
-          "en": "Answer: perpendicular lines",
-          "fil": "Answer: perpendicular lines",
-          "taglish": "Answer: perpendicular lines"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "3MG-Ib-3",
-          "path": "Grade-3/Semester-1/Activity-Sheets/Activity-Sheet-05-Recognize-Using-Models-And-Draw-A-Point-Line-Line.md",
-          "item": 9,
-          "original_type": "activity"
-        }
       }
     ],
     "source_trace": {
@@ -1828,33 +1720,6 @@
           "path": "Grade-3/Semester-1/Quizzes/Quiz-06-Draw-Parallel-Intersecting-And-Perpendicular-Lines.md",
           "item": 8,
           "original_type": "true-false"
-        }
-      },
-      {
-        "q": {
-          "en": "What do we call two lines that meet to form a right angle? Explain why your answer is reasonable.",
-          "fil": "What do we call two lines that meet to form a right angle? Explain why your answer is reasonable.",
-          "taglish": "What do we call two lines that meet to form a right angle? Explain why your answer is reasonable."
-        },
-        "answer": "perpendicular lines",
-        "type": "mcq",
-        "options": [
-          "parallel lines",
-          "2",
-          "A ray with endpoint B extending through C",
-          "perpendicular lines"
-        ],
-        "solution": {
-          "en": "Answer: perpendicular lines",
-          "fil": "Answer: perpendicular lines",
-          "taglish": "Answer: perpendicular lines"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "3MG-Ic-1",
-          "path": "Grade-3/Semester-1/Activity-Sheets/Activity-Sheet-06-Draw-Parallel-Intersecting-And-Perpendicular-Lines.md",
-          "item": 9,
-          "original_type": "activity"
         }
       }
     ],
@@ -1994,33 +1859,6 @@
           "item": 8,
           "original_type": "true-false"
         }
-      },
-      {
-        "q": {
-          "en": "What do we call two lines that meet to form a right angle? Explain why your answer is reasonable.",
-          "fil": "What do we call two lines that meet to form a right angle? Explain why your answer is reasonable.",
-          "taglish": "What do we call two lines that meet to form a right angle? Explain why your answer is reasonable."
-        },
-        "answer": "perpendicular lines",
-        "type": "mcq",
-        "options": [
-          "parallel lines",
-          "2",
-          "A ray with endpoint B extending through C",
-          "perpendicular lines"
-        ],
-        "solution": {
-          "en": "Answer: perpendicular lines",
-          "fil": "Answer: perpendicular lines",
-          "taglish": "Answer: perpendicular lines"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "3MG-Ic-2",
-          "path": "Grade-3/Semester-1/Activity-Sheets/Activity-Sheet-07-Draw-Line-Segments-Of-Equal-Length-Using-A-Ruler.md",
-          "item": 9,
-          "original_type": "activity"
-        }
       }
     ],
     "source_trace": {
@@ -2089,10 +1927,10 @@
         "answer": "1,205",
         "type": "mcq",
         "options": [
-          "2410",
+          "4,205",
           "1,205",
-          "1206",
-          "1204"
+          "1,208",
+          "11,215"
         ],
         "solution": {
           "en": "Answer: 1,205",
@@ -2116,10 +1954,10 @@
         "answer": "10,000",
         "type": "mcq",
         "options": [
-          "20000",
+          "10,2",
           "10,000",
-          "10001",
-          "9999"
+          "8,000",
+          "13,3"
         ],
         "solution": {
           "en": "Answer: 10,000",
@@ -2314,10 +2152,10 @@
         "answer": "1,205",
         "type": "mcq",
         "options": [
-          "2410",
+          "1,203",
           "1,205",
-          "1206",
-          "1204"
+          "4,208",
+          "4,205"
         ],
         "solution": {
           "en": "Answer: 1,205",
@@ -2341,10 +2179,10 @@
         "answer": "10,000",
         "type": "mcq",
         "options": [
-          "20000",
+          "10,3",
           "10,000",
-          "10001",
-          "9999"
+          "20,10",
+          "20,000"
         ],
         "solution": {
           "en": "Answer: 10,000",
@@ -2512,10 +2350,10 @@
         "answer": "43rd",
         "type": "mcq",
         "options": [
-          "Cannot be determined",
-          "None of these",
+          "44rd",
+          "42rd",
           "43rd",
-          "A different value"
+          "45rd"
         ],
         "solution": {
           "en": "Answer: 43rd",
@@ -2539,10 +2377,10 @@
         "answer": "22nd",
         "type": "mcq",
         "options": [
-          "None of these",
+          "23nd",
           "22nd",
-          "A different value",
-          "Cannot be determined"
+          "21nd",
+          "24nd"
         ],
         "solution": {
           "en": "Answer: 22nd",
@@ -2566,10 +2404,10 @@
         "answer": "17th",
         "type": "mcq",
         "options": [
-          "None of these",
+          "18th",
           "17th",
-          "A different value",
-          "Cannot be determined"
+          "16th",
+          "19th"
         ],
         "solution": {
           "en": "Answer: 17th",
@@ -2742,9 +2580,9 @@
       },
       {
         "q": {
-          "en": "In a school parade, Ana is in position 99. Write her position as an ordinal number. Explain why your answer is reasonable.",
-          "fil": "In a school parade, Ana is in position 99. Write her position as an ordinal number. Explain why your answer is reasonable.",
-          "taglish": "In a school parade, Ana is in position 99. Write her position as an ordinal number. Explain why your answer is reasonable."
+          "en": "In a school parade, Ana is in position 99. Write her position as an ordinal number.",
+          "fil": "In a school parade, Ana is in position 99. Write her position as an ordinal number.",
+          "taglish": "In a school parade, Ana is in position 99. Write her position as an ordinal number."
         },
         "answer": "99th",
         "type": "mcq",
@@ -2792,33 +2630,6 @@
           "path": "Grade-3/Semester-1/Activity-Sheets/Activity-Sheet-10-The-Position-Of-Objects-Using-Ordinal-Numbers-Up-To.md",
           "item": 10,
           "original_type": "activity"
-        }
-      },
-      {
-        "q": {
-          "en": "In a school parade, Ana is in position 99. Write her position as an ordinal number.",
-          "fil": "In a school parade, Ana is in position 99. Write her position as an ordinal number.",
-          "taglish": "In a school parade, Ana is in position 99. Write her position as an ordinal number."
-        },
-        "answer": "99th",
-        "type": "mcq",
-        "options": [
-          "87th",
-          "99th",
-          "94th",
-          "47th"
-        ],
-        "solution": {
-          "en": "Answer: 99th",
-          "fil": "Answer: 99th",
-          "taglish": "Answer: 99th"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "3NA-If-1",
-          "path": "Grade-3/Semester-1/Quizzes/Quiz-10-The-Position-Of-Objects-Using-Ordinal-Numbers-Up-To.md",
-          "item": 11,
-          "original_type": "computation"
         }
       },
       {
@@ -3081,20 +2892,20 @@
       },
       {
         "q": {
-          "en": "Is this solution correct? A barangay record shows 6,035. What is the value of its tens digit? Proposed answer: 30",
-          "fil": "Is this solution correct? A barangay record shows 6,035. What is the value of its tens digit? Proposed answer: 30",
-          "taglish": "Is this solution correct? A barangay record shows 6,035. What is the value of its tens digit? Proposed answer: 30"
+          "en": "Is this solution correct? A barangay record shows 6,035. What is the value of its tens digit? Proposed answer: 32",
+          "fil": "Is this solution correct? A barangay record shows 6,035. What is the value of its tens digit? Proposed answer: 32",
+          "taglish": "Is this solution correct? A barangay record shows 6,035. What is the value of its tens digit? Proposed answer: 32"
         },
-        "answer": "True",
+        "answer": "False",
         "type": "true_false",
         "options": [
           "True",
           "False"
         ],
         "solution": {
-          "en": "Answer: True",
-          "fil": "Answer: True",
-          "taglish": "Answer: True"
+          "en": "Answer: False",
+          "fil": "Answer: False",
+          "taglish": "Answer: False"
         },
         "source": {
           "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
@@ -3436,20 +3247,20 @@
       },
       {
         "q": {
-          "en": "Is this solution correct? Round the market count 9496 to the nearest 10. Proposed answer: 9500",
-          "fil": "Is this solution correct? Round the market count 9496 to the nearest 10. Proposed answer: 9500",
-          "taglish": "Is this solution correct? Round the market count 9496 to the nearest 10. Proposed answer: 9500"
+          "en": "Is this solution correct? Round the market count 9496 to the nearest 10. Proposed answer: 9600",
+          "fil": "Is this solution correct? Round the market count 9496 to the nearest 10. Proposed answer: 9600",
+          "taglish": "Is this solution correct? Round the market count 9496 to the nearest 10. Proposed answer: 9600"
         },
-        "answer": "True",
+        "answer": "False",
         "type": "true_false",
         "options": [
           "True",
           "False"
         ],
         "solution": {
-          "en": "Answer: True",
-          "fil": "Answer: True",
-          "taglish": "Answer: True"
+          "en": "Answer: False",
+          "fil": "Answer: False",
+          "taglish": "Answer: False"
         },
         "source": {
           "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
@@ -3625,10 +3436,10 @@
         "answer": "9,532 > 6,866",
         "type": "mcq",
         "options": [
-          "9533",
-          "9531",
-          "19064",
-          "9,532 > 6,866"
+          "9,532 > 9,866",
+          "9,532 > 16,866",
+          "9,532 > 6,866",
+          "9,532 < 6,866"
         ],
         "solution": {
           "en": "Answer: 9,532 > 6,866",
@@ -3653,9 +3464,9 @@
         "type": "mcq",
         "options": [
           "1,692 < 6,812",
-          "1693",
-          "1691",
-          "3384"
+          "11,692 < 6,812",
+          "1,692 < 1692",
+          "1,692 > 6,812"
         ],
         "solution": {
           "en": "Answer: 1,692 < 6,812",
@@ -3680,9 +3491,9 @@
         "type": "mcq",
         "options": [
           "9,849 > 6,520",
-          "9850",
-          "9848",
-          "19698"
+          "9,849 > 16,520",
+          "9,849 > 9849",
+          "9,849 < 6,520"
         ],
         "solution": {
           "en": "Answer: 9,849 > 6,520",
@@ -3707,9 +3518,9 @@
         "type": "mcq",
         "options": [
           "9,764 > 8,657",
-          "8,299 > 7,393",
-          "9,488 > 6,917",
-          "5,747 < 5,829"
+          "9,764 > 10,657",
+          "7,764 > 8,657",
+          "9,764 < 8,657"
         ],
         "solution": {
           "en": "Answer: 9,764 > 8,657",
@@ -3733,10 +3544,10 @@
         "answer": "8,299 > 7,393",
         "type": "mcq",
         "options": [
-          "9,764 > 8,657",
-          "9,488 > 6,917",
-          "5,747 < 5,829",
-          "8,299 > 7,393"
+          "8,299 > 8,393",
+          "7,299 > 7,393",
+          "8,299 > 7,393",
+          "8,299 < 7,393"
         ],
         "solution": {
           "en": "Answer: 8,299 > 7,393",
@@ -3803,20 +3614,20 @@
       },
       {
         "q": {
-          "en": "Is this solution correct? Compare the school enrollment figures 9,488 and 6,917 using <, >, or =. Proposed answer: 9,488 > 6,917",
-          "fil": "Is this solution correct? Compare the school enrollment figures 9,488 and 6,917 using <, >, or =. Proposed answer: 9,488 > 6,917",
-          "taglish": "Is this solution correct? Compare the school enrollment figures 9,488 and 6,917 using <, >, or =. Proposed answer: 9,488 > 6,917"
+          "en": "Is this solution correct? Compare the school enrollment figures 9,488 and 6,917 using <, >, or =. Proposed answer: 9,488 < 6,927",
+          "fil": "Is this solution correct? Compare the school enrollment figures 9,488 and 6,917 using <, >, or =. Proposed answer: 9,488 < 6,927",
+          "taglish": "Is this solution correct? Compare the school enrollment figures 9,488 and 6,917 using <, >, or =. Proposed answer: 9,488 < 6,927"
         },
-        "answer": "True",
+        "answer": "False",
         "type": "true_false",
         "options": [
           "True",
           "False"
         ],
         "solution": {
-          "en": "Answer: True",
-          "fil": "Answer: True",
-          "taglish": "Answer: True"
+          "en": "Answer: False",
+          "fil": "Answer: False",
+          "taglish": "Answer: False"
         },
         "source": {
           "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
@@ -3836,9 +3647,9 @@
         "type": "mcq",
         "options": [
           "9,488 > 6,917",
-          "9,532 > 6,866",
-          "1,692 < 6,812",
-          "9,849 > 6,520"
+          "9,488 > 9,917",
+          "9,488 > 16,917",
+          "9,488 < 6,917"
         ],
         "solution": {
           "en": "Answer: 9,488 > 6,917",
@@ -3855,17 +3666,17 @@
       },
       {
         "q": {
-          "en": "Compare the school enrollment figures 5,747 and 5,829 using <, >, or =. Explain why your answer is reasonable.",
-          "fil": "Compare the school enrollment figures 5,747 and 5,829 using <, >, or =. Explain why your answer is reasonable.",
-          "taglish": "Compare the school enrollment figures 5,747 and 5,829 using <, >, or =. Explain why your answer is reasonable."
+          "en": "Compare the school enrollment figures 5,747 and 5,829 using <, >, or =.",
+          "fil": "Compare the school enrollment figures 5,747 and 5,829 using <, >, or =.",
+          "taglish": "Compare the school enrollment figures 5,747 and 5,829 using <, >, or =."
         },
         "answer": "5,747 < 5,829",
         "type": "mcq",
         "options": [
-          "9,532 > 6,866",
-          "1,692 < 6,812",
-          "9,849 > 6,520",
-          "5,747 < 5,829"
+          "6,747 < 5,829",
+          "5,747 < 4,829",
+          "5,747 < 5,829",
+          "5,747 > 5,829"
         ],
         "solution": {
           "en": "Answer: 5,747 < 5,829",
@@ -3889,10 +3700,10 @@
         "answer": "5,795 > 2,157",
         "type": "mcq",
         "options": [
-          "1,692 < 6,812",
-          "9,849 > 6,520",
+          "5,795 > 12,157",
           "5,795 > 2,157",
-          "9,532 > 6,866"
+          "5,795 > 5795",
+          "5,795 < 2,157"
         ],
         "solution": {
           "en": "Answer: 5,795 > 2,157",
@@ -3909,33 +3720,6 @@
       },
       {
         "q": {
-          "en": "Compare the school enrollment figures 5,747 and 5,829 using <, >, or =.",
-          "fil": "Compare the school enrollment figures 5,747 and 5,829 using <, >, or =.",
-          "taglish": "Compare the school enrollment figures 5,747 and 5,829 using <, >, or =."
-        },
-        "answer": "5,747 < 5,829",
-        "type": "mcq",
-        "options": [
-          "9,488 > 6,917",
-          "5,747 < 5,829",
-          "9,764 > 8,657",
-          "8,299 > 7,393"
-        ],
-        "solution": {
-          "en": "Answer: 5,747 < 5,829",
-          "fil": "Answer: 5,747 < 5,829",
-          "taglish": "Answer: 5,747 < 5,829"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "3NA-Ii-2",
-          "path": "Grade-3/Semester-1/Quizzes/Quiz-13-Numbers-Up-To-10-000-Using-The-Symbols-And.md",
-          "item": 11,
-          "original_type": "computation"
-        }
-      },
-      {
-        "q": {
           "en": "Compare the school enrollment figures 4,575 and 2,698 using <, >, or =.",
           "fil": "Compare the school enrollment figures 4,575 and 2,698 using <, >, or =.",
           "taglish": "Compare the school enrollment figures 4,575 and 2,698 using <, >, or =."
@@ -3943,10 +3727,10 @@
         "answer": "4,575 > 2,698",
         "type": "mcq",
         "options": [
-          "9,849 > 6,520",
           "4,575 > 2,698",
-          "9,532 > 6,866",
-          "1,692 < 6,812"
+          "4,575 > 4,698",
+          "2,575 > 2,698",
+          "4,575 < 2,698"
         ],
         "solution": {
           "en": "Answer: 4,575 > 2,698",
@@ -3971,9 +3755,9 @@
         "type": "mcq",
         "options": [
           "9,489 > 3,037",
-          "9,532 > 6,866",
-          "1,692 < 6,812",
-          "9,849 > 6,520"
+          "9,489 > 13,037",
+          "9,489 > 9489",
+          "9,489 < 3,037"
         ],
         "solution": {
           "en": "Answer: 9,489 > 3,037",
@@ -4028,9 +3812,9 @@
         "answer": "196, 2,044, 5,801, 8,180",
         "type": "mcq",
         "options": [
-          "197",
-          "195",
-          "392",
+          "196, 2,044, 5,803, 8,180",
+          "196, 2,044, 5,801, 10,180",
+          "196, 2,044, 5,801, 8,182",
           "196, 2,044, 5,801, 8,180"
         ],
         "solution": {
@@ -4055,10 +3839,10 @@
         "answer": "1,782, 1,950, 5,174, 5,852",
         "type": "mcq",
         "options": [
-          "1781",
-          "3564",
+          "0,782, 1,950, 5,174, 5,852",
+          "1,781, 1,950, 5,174, 5,852",
           "1,782, 1,950, 5,174, 5,852",
-          "1783"
+          "1,782, 0,950, 5,174, 5,852"
         ],
         "solution": {
           "en": "Answer: 1,782, 1,950, 5,174, 5,852",
@@ -4082,10 +3866,10 @@
         "answer": "1,649, 2,574, 7,977, 9,803",
         "type": "mcq",
         "options": [
-          "1648",
-          "3298",
+          "4,649, 2,574, 7,977, 9,803",
+          "1,652, 2,574, 7,977, 9,803",
           "1,649, 2,574, 7,977, 9,803",
-          "1650"
+          "1,649, 5,574, 7,977, 9,803"
         ],
         "solution": {
           "en": "Answer: 1,649, 2,574, 7,977, 9,803",
@@ -4194,20 +3978,20 @@
       },
       {
         "q": {
-          "en": "Is this solution correct? Order these barangay counts from smallest to largest: 4,933, 5,257, 1,553, 4,129. Proposed answer: 1,553, 4,129, 4,933, 5,257",
-          "fil": "Is this solution correct? Order these barangay counts from smallest to largest: 4,933, 5,257, 1,553, 4,129. Proposed answer: 1,553, 4,129, 4,933, 5,257",
-          "taglish": "Is this solution correct? Order these barangay counts from smallest to largest: 4,933, 5,257, 1,553, 4,129. Proposed answer: 1,553, 4,129, 4,933, 5,257"
+          "en": "Is this solution correct? Order these barangay counts from smallest to largest: 4,933, 5,257, 1,553, 4,129. Proposed answer: 1,553, 4,129, 4,933, 5,267",
+          "fil": "Is this solution correct? Order these barangay counts from smallest to largest: 4,933, 5,257, 1,553, 4,129. Proposed answer: 1,553, 4,129, 4,933, 5,267",
+          "taglish": "Is this solution correct? Order these barangay counts from smallest to largest: 4,933, 5,257, 1,553, 4,129. Proposed answer: 1,553, 4,129, 4,933, 5,267"
         },
-        "answer": "True",
+        "answer": "False",
         "type": "true_false",
         "options": [
           "True",
           "False"
         ],
         "solution": {
-          "en": "Answer: True",
-          "fil": "Answer: True",
-          "taglish": "Answer: True"
+          "en": "Answer: False",
+          "fil": "Answer: False",
+          "taglish": "Answer: False"
         },
         "source": {
           "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
@@ -4613,9 +4397,9 @@
       },
       {
         "q": {
-          "en": "A market basket has 14 kg of rice and 6 kg of vegetables. What is the total mass? Explain why your answer is reasonable.",
-          "fil": "A market basket has 14 kg of rice and 6 kg of vegetables. What is the total mass? Explain why your answer is reasonable.",
-          "taglish": "A market basket has 14 kg of rice and 6 kg of vegetables. What is the total mass? Explain why your answer is reasonable."
+          "en": "A market basket has 14 kg of rice and 6 kg of vegetables. What is the total mass?",
+          "fil": "A market basket has 14 kg of rice and 6 kg of vegetables. What is the total mass?",
+          "taglish": "A market basket has 14 kg of rice and 6 kg of vegetables. What is the total mass?"
         },
         "answer": "20 kg",
         "type": "mcq",
@@ -4663,33 +4447,6 @@
           "path": "Grade-3/Semester-2/Activity-Sheets/Activity-Sheet-01-Measure-Mass-In-Grams.md",
           "item": 10,
           "original_type": "activity"
-        }
-      },
-      {
-        "q": {
-          "en": "A market basket has 14 kg of rice and 6 kg of vegetables. What is the total mass?",
-          "fil": "A market basket has 14 kg of rice and 6 kg of vegetables. What is the total mass?",
-          "taglish": "A market basket has 14 kg of rice and 6 kg of vegetables. What is the total mass?"
-        },
-        "answer": "20 kg",
-        "type": "mcq",
-        "options": [
-          "15 kg",
-          "20 kg",
-          "12 kg",
-          "8 kg"
-        ],
-        "solution": {
-          "en": "Answer: 20 kg",
-          "fil": "Answer: 20 kg",
-          "taglish": "Answer: 20 kg"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "3MG-IIa-1",
-          "path": "Grade-3/Semester-2/Quizzes/Quiz-01-Measure-Mass-In-Grams.md",
-          "item": 11,
-          "original_type": "computation"
         }
       },
       {
@@ -4984,33 +4741,6 @@
           "ref": "3MG-IIa-2",
           "path": "Grade-3/Semester-2/Activity-Sheets/Activity-Sheet-02-Mass-Of-An-Object-Using-Grams-Kilograms-And-Or.md",
           "item": 8,
-          "original_type": "activity"
-        }
-      },
-      {
-        "q": {
-          "en": "A market basket has 7 kg of rice and 8 kg of vegetables. What is the total mass? Explain why your answer is reasonable.",
-          "fil": "A market basket has 7 kg of rice and 8 kg of vegetables. What is the total mass? Explain why your answer is reasonable.",
-          "taglish": "A market basket has 7 kg of rice and 8 kg of vegetables. What is the total mass? Explain why your answer is reasonable."
-        },
-        "answer": "15 kg",
-        "type": "mcq",
-        "options": [
-          "21 kg",
-          "9 kg",
-          "10 kg",
-          "15 kg"
-        ],
-        "solution": {
-          "en": "Answer: 15 kg",
-          "fil": "Answer: 15 kg",
-          "taglish": "Answer: 15 kg"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "3MG-IIa-2",
-          "path": "Grade-3/Semester-2/Activity-Sheets/Activity-Sheet-02-Mass-Of-An-Object-Using-Grams-Kilograms-And-Or.md",
-          "item": 9,
           "original_type": "activity"
         }
       },
@@ -5313,20 +5043,20 @@
       },
       {
         "q": {
-          "en": "Is this solution correct? A market basket has 8 kg of rice and 6 kg of vegetables. What is the total mass? Proposed answer: 14 kg",
-          "fil": "Is this solution correct? A market basket has 8 kg of rice and 6 kg of vegetables. What is the total mass? Proposed answer: 14 kg",
-          "taglish": "Is this solution correct? A market basket has 8 kg of rice and 6 kg of vegetables. What is the total mass? Proposed answer: 14 kg"
+          "en": "Is this solution correct? A market basket has 8 kg of rice and 6 kg of vegetables. What is the total mass? Proposed answer: 16 kg",
+          "fil": "Is this solution correct? A market basket has 8 kg of rice and 6 kg of vegetables. What is the total mass? Proposed answer: 16 kg",
+          "taglish": "Is this solution correct? A market basket has 8 kg of rice and 6 kg of vegetables. What is the total mass? Proposed answer: 16 kg"
         },
-        "answer": "True",
+        "answer": "False",
         "type": "true_false",
         "options": [
           "True",
           "False"
         ],
         "solution": {
-          "en": "Answer: True",
-          "fil": "Answer: True",
-          "taglish": "Answer: True"
+          "en": "Answer: False",
+          "fil": "Answer: False",
+          "taglish": "Answer: False"
         },
         "source": {
           "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
@@ -5365,9 +5095,9 @@
       },
       {
         "q": {
-          "en": "A market basket has 4 kg of rice and 9 kg of vegetables. What is the total mass? Explain why your answer is reasonable.",
-          "fil": "A market basket has 4 kg of rice and 9 kg of vegetables. What is the total mass? Explain why your answer is reasonable.",
-          "taglish": "A market basket has 4 kg of rice and 9 kg of vegetables. What is the total mass? Explain why your answer is reasonable."
+          "en": "A market basket has 4 kg of rice and 9 kg of vegetables. What is the total mass?",
+          "fil": "A market basket has 4 kg of rice and 9 kg of vegetables. What is the total mass?",
+          "taglish": "A market basket has 4 kg of rice and 9 kg of vegetables. What is the total mass?"
         },
         "answer": "13 kg",
         "type": "mcq",
@@ -5689,20 +5419,20 @@
       },
       {
         "q": {
-          "en": "Is this solution correct? A family has 9 L of water and adds 9 L. What is the total capacity? Proposed answer: 18 L",
-          "fil": "Is this solution correct? A family has 9 L of water and adds 9 L. What is the total capacity? Proposed answer: 18 L",
-          "taglish": "Is this solution correct? A family has 9 L of water and adds 9 L. What is the total capacity? Proposed answer: 18 L"
+          "en": "Is this solution correct? A family has 9 L of water and adds 9 L. What is the total capacity? Proposed answer: 20 L",
+          "fil": "Is this solution correct? A family has 9 L of water and adds 9 L. What is the total capacity? Proposed answer: 20 L",
+          "taglish": "Is this solution correct? A family has 9 L of water and adds 9 L. What is the total capacity? Proposed answer: 20 L"
         },
-        "answer": "True",
+        "answer": "False",
         "type": "true_false",
         "options": [
           "True",
           "False"
         ],
         "solution": {
-          "en": "Answer: True",
-          "fil": "Answer: True",
-          "taglish": "Answer: True"
+          "en": "Answer: False",
+          "fil": "Answer: False",
+          "taglish": "Answer: False"
         },
         "source": {
           "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
@@ -5741,9 +5471,9 @@
       },
       {
         "q": {
-          "en": "A family has 9 L of water and adds 2 L. What is the total capacity? Explain why your answer is reasonable.",
-          "fil": "A family has 9 L of water and adds 2 L. What is the total capacity? Explain why your answer is reasonable.",
-          "taglish": "A family has 9 L of water and adds 2 L. What is the total capacity? Explain why your answer is reasonable."
+          "en": "A family has 9 L of water and adds 2 L. What is the total capacity?",
+          "fil": "A family has 9 L of water and adds 2 L. What is the total capacity?",
+          "taglish": "A family has 9 L of water and adds 2 L. What is the total capacity?"
         },
         "answer": "11 L",
         "type": "mcq",
@@ -5791,33 +5521,6 @@
           "path": "Grade-3/Semester-2/Activity-Sheets/Activity-Sheet-04-Measure-Capacity-In-Liters.md",
           "item": 10,
           "original_type": "activity"
-        }
-      },
-      {
-        "q": {
-          "en": "A family has 9 L of water and adds 2 L. What is the total capacity?",
-          "fil": "A family has 9 L of water and adds 2 L. What is the total capacity?",
-          "taglish": "A family has 9 L of water and adds 2 L. What is the total capacity?"
-        },
-        "answer": "11 L",
-        "type": "mcq",
-        "options": [
-          "18 L",
-          "11 L",
-          "14 L",
-          "8 L"
-        ],
-        "solution": {
-          "en": "Answer: 11 L",
-          "fil": "Answer: 11 L",
-          "taglish": "Answer: 11 L"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "3MG-IIb-1",
-          "path": "Grade-3/Semester-2/Quizzes/Quiz-04-Measure-Capacity-In-Liters.md",
-          "item": 11,
-          "original_type": "computation"
         }
       },
       {
@@ -6117,9 +5820,9 @@
       },
       {
         "q": {
-          "en": "A family has 7 L of water and adds 7 L. What is the total capacity? Explain why your answer is reasonable.",
-          "fil": "A family has 7 L of water and adds 7 L. What is the total capacity? Explain why your answer is reasonable.",
-          "taglish": "A family has 7 L of water and adds 7 L. What is the total capacity? Explain why your answer is reasonable."
+          "en": "A family has 7 L of water and adds 7 L. What is the total capacity?",
+          "fil": "A family has 7 L of water and adds 7 L. What is the total capacity?",
+          "taglish": "A family has 7 L of water and adds 7 L. What is the total capacity?"
         },
         "answer": "14 L",
         "type": "mcq",
@@ -6167,33 +5870,6 @@
           "path": "Grade-3/Semester-2/Activity-Sheets/Activity-Sheet-05-Capacity-Using-Liters-And-Or-Milliliters.md",
           "item": 10,
           "original_type": "activity"
-        }
-      },
-      {
-        "q": {
-          "en": "A family has 7 L of water and adds 7 L. What is the total capacity?",
-          "fil": "A family has 7 L of water and adds 7 L. What is the total capacity?",
-          "taglish": "A family has 7 L of water and adds 7 L. What is the total capacity?"
-        },
-        "answer": "14 L",
-        "type": "mcq",
-        "options": [
-          "18 L",
-          "14 L",
-          "15 L",
-          "8 L"
-        ],
-        "solution": {
-          "en": "Answer: 14 L",
-          "fil": "Answer: 14 L",
-          "taglish": "Answer: 14 L"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "3MG-IIb-2",
-          "path": "Grade-3/Semester-2/Quizzes/Quiz-05-Capacity-Using-Liters-And-Or-Milliliters.md",
-          "item": 11,
-          "original_type": "computation"
         }
       },
       {
@@ -6263,10 +5939,10 @@
         "answer": "3,694 < 5,598",
         "type": "mcq",
         "options": [
-          "7388",
           "3,694 < 5,598",
-          "3695",
-          "3693"
+          "5,694 < 5,598",
+          "3,694 < 3,598",
+          "3,694 > 5,598"
         ],
         "solution": {
           "en": "Answer: 3,694 < 5,598",
@@ -6290,10 +5966,10 @@
         "answer": "5,132 > 194",
         "type": "mcq",
         "options": [
-          "10264",
           "5,132 > 194",
-          "5133",
-          "5131"
+          "5,132 > 5132",
+          "5,132 > 5133",
+          "5,132 < 194"
         ],
         "solution": {
           "en": "Answer: 5,132 > 194",
@@ -6317,10 +5993,10 @@
         "answer": "8,193 > 8,061",
         "type": "mcq",
         "options": [
-          "8194",
-          "8192",
-          "16386",
-          "8,193 > 8,061"
+          "8,193 > 9,061",
+          "7,193 > 8,061",
+          "8,193 > 8,061",
+          "8,193 < 8,061"
         ],
         "solution": {
           "en": "Answer: 8,193 > 8,061",
@@ -6345,9 +6021,9 @@
         "type": "mcq",
         "options": [
           "1,065 < 9,449",
-          "5,798 > 885",
-          "8,375 > 4,343",
-          "6,346 < 8,031"
+          "11,065 < 9,449",
+          "1,065 < 1065",
+          "1,065 > 9,449"
         ],
         "solution": {
           "en": "Answer: 1,065 < 9,449",
@@ -6371,10 +6047,10 @@
         "answer": "5,798 > 885",
         "type": "mcq",
         "options": [
-          "1,065 < 9,449",
-          "8,375 > 4,343",
-          "6,346 < 8,031",
-          "5,798 > 885"
+          "5,798 > 5798",
+          "5,798 > 5799",
+          "5,798 > 885",
+          "5,798 < 885"
         ],
         "solution": {
           "en": "Answer: 5,798 > 885",
@@ -6474,9 +6150,9 @@
         "type": "mcq",
         "options": [
           "8,375 > 4,343",
-          "3,694 < 5,598",
-          "5,132 > 194",
-          "8,193 > 8,061"
+          "8,375 > 14,343",
+          "8,375 > 8375",
+          "8,375 < 4,343"
         ],
         "solution": {
           "en": "Answer: 8,375 > 4,343",
@@ -6493,17 +6169,17 @@
       },
       {
         "q": {
-          "en": "Compare the school enrollment figures 6,346 and 8,031 using <, >, or =. Explain why your answer is reasonable.",
-          "fil": "Compare the school enrollment figures 6,346 and 8,031 using <, >, or =. Explain why your answer is reasonable.",
-          "taglish": "Compare the school enrollment figures 6,346 and 8,031 using <, >, or =. Explain why your answer is reasonable."
+          "en": "Compare the school enrollment figures 6,346 and 8,031 using <, >, or =.",
+          "fil": "Compare the school enrollment figures 6,346 and 8,031 using <, >, or =.",
+          "taglish": "Compare the school enrollment figures 6,346 and 8,031 using <, >, or =."
         },
         "answer": "6,346 < 8,031",
         "type": "mcq",
         "options": [
-          "3,694 < 5,598",
-          "5,132 > 194",
-          "8,193 > 8,061",
-          "6,346 < 8,031"
+          "7,347 < 9,32",
+          "6,346 < 8,32",
+          "6,346 < 8,031",
+          "6,346 > 8,031"
         ],
         "solution": {
           "en": "Answer: 6,346 < 8,031",
@@ -6527,10 +6203,10 @@
         "answer": "1,751 < 8,655",
         "type": "mcq",
         "options": [
-          "5,132 > 194",
-          "8,193 > 8,061",
+          "11,751 < 8,655",
           "1,751 < 8,655",
-          "3,694 < 5,598"
+          "1,751 < 1751",
+          "1,751 > 8,655"
         ],
         "solution": {
           "en": "Answer: 1,751 < 8,655",
@@ -6547,33 +6223,6 @@
       },
       {
         "q": {
-          "en": "Compare the school enrollment figures 6,346 and 8,031 using <, >, or =.",
-          "fil": "Compare the school enrollment figures 6,346 and 8,031 using <, >, or =.",
-          "taglish": "Compare the school enrollment figures 6,346 and 8,031 using <, >, or =."
-        },
-        "answer": "6,346 < 8,031",
-        "type": "mcq",
-        "options": [
-          "8,375 > 4,343",
-          "6,346 < 8,031",
-          "1,065 < 9,449",
-          "5,798 > 885"
-        ],
-        "solution": {
-          "en": "Answer: 6,346 < 8,031",
-          "fil": "Answer: 6,346 < 8,031",
-          "taglish": "Answer: 6,346 < 8,031"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "3MG-IIb-3",
-          "path": "Grade-3/Semester-2/Quizzes/Quiz-06-Capacities-Of-Two-Containers.md",
-          "item": 11,
-          "original_type": "computation"
-        }
-      },
-      {
-        "q": {
           "en": "Compare the school enrollment figures 5,489 and 9,760 using <, >, or =.",
           "fil": "Compare the school enrollment figures 5,489 and 9,760 using <, >, or =.",
           "taglish": "Compare the school enrollment figures 5,489 and 9,760 using <, >, or =."
@@ -6581,10 +6230,10 @@
         "answer": "5,489 < 9,760",
         "type": "mcq",
         "options": [
-          "8,193 > 8,061",
           "5,489 < 9,760",
-          "3,694 < 5,598",
-          "5,132 > 194"
+          "15,489 < 9,760",
+          "5,489 < 5489",
+          "5,489 > 9,760"
         ],
         "solution": {
           "en": "Answer: 5,489 < 9,760",
@@ -6609,9 +6258,9 @@
         "type": "mcq",
         "options": [
           "4,658 > 1,022",
-          "3,694 < 5,598",
-          "5,132 > 194",
-          "8,193 > 8,061"
+          "4,658 > 11,022",
+          "4,658 > 4658",
+          "4,658 < 1,022"
         ],
         "solution": {
           "en": "Answer: 4,658 > 1,022",
@@ -6666,9 +6315,9 @@
         "answer": "₱163",
         "type": "mcq",
         "options": [
-          "164",
-          "162",
-          "326",
+          "₱164",
+          "₱162",
+          "₱326",
           "₱163"
         ],
         "solution": {
@@ -6694,9 +6343,9 @@
         "type": "mcq",
         "options": [
           "₱111",
-          "112",
-          "110",
-          "222"
+          "₱112",
+          "₱110",
+          "₱222"
         ],
         "solution": {
           "en": "Answer: ₱111",
@@ -6720,10 +6369,10 @@
         "answer": "₱152",
         "type": "mcq",
         "options": [
-          "151",
-          "304",
+          "₱151",
+          "₱304",
           "₱152",
-          "153"
+          "₱153"
         ],
         "solution": {
           "en": "Answer: ₱152",
@@ -8607,20 +8256,20 @@
       },
       {
         "q": {
-          "en": "Is this solution correct? A class prepared 7920 materials for the barangay health center and used 4912. How many remain? Proposed answer: 3008",
-          "fil": "Is this solution correct? A class prepared 7920 materials for the barangay health center and used 4912. How many remain? Proposed answer: 3008",
-          "taglish": "Is this solution correct? A class prepared 7920 materials for the barangay health center and used 4912. How many remain? Proposed answer: 3008"
+          "en": "Is this solution correct? A class prepared 7920 materials for the barangay health center and used 4912. How many remain? Proposed answer: 3108",
+          "fil": "Is this solution correct? A class prepared 7920 materials for the barangay health center and used 4912. How many remain? Proposed answer: 3108",
+          "taglish": "Is this solution correct? A class prepared 7920 materials for the barangay health center and used 4912. How many remain? Proposed answer: 3108"
         },
-        "answer": "True",
+        "answer": "False",
         "type": "true_false",
         "options": [
           "True",
           "False"
         ],
         "solution": {
-          "en": "Answer: True",
-          "fil": "Answer: True",
-          "taglish": "Answer: True"
+          "en": "Answer: False",
+          "fil": "Answer: False",
+          "taglish": "Answer: False"
         },
         "source": {
           "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
@@ -9152,9 +8801,9 @@
         "type": "mcq",
         "options": [
           "₱332",
-          "333",
-          "331",
-          "664"
+          "₱333",
+          "₱331",
+          "₱664"
         ],
         "solution": {
           "en": "Answer: ₱332",
@@ -9179,9 +8828,9 @@
         "type": "mcq",
         "options": [
           "₱197",
-          "198",
-          "196",
-          "394"
+          "₱198",
+          "₱196",
+          "₱394"
         ],
         "solution": {
           "en": "Answer: ₱197",
@@ -9206,9 +8855,9 @@
         "type": "mcq",
         "options": [
           "₱48",
-          "49",
-          "47",
-          "96"
+          "₱49",
+          "₱47",
+          "₱96"
         ],
         "solution": {
           "en": "Answer: ₱48",
@@ -9506,10 +9155,10 @@
         "answer": "5/8",
         "type": "mcq",
         "options": [
-          "equally likely",
+          "1/2",
           "5/8",
-          "impossible",
-          "certain"
+          "4/7",
+          "11/10"
         ],
         "solution": {
           "en": "Answer: 5/8",
@@ -9534,9 +9183,9 @@
         "type": "mcq",
         "options": [
           "1/2",
-          "impossible",
-          "certain",
-          "equally likely"
+          "4/7",
+          "5/8",
+          "5/7"
         ],
         "solution": {
           "en": "Answer: 1/2",
@@ -9560,9 +9209,9 @@
         "answer": "4/7",
         "type": "mcq",
         "options": [
-          "impossible",
-          "certain",
-          "equally likely",
+          "5/8",
+          "1/2",
+          "13/8",
           "4/7"
         ],
         "solution": {
@@ -9808,191 +9457,6 @@
     "items": [
       {
         "q": {
-          "en": "Which option correctly presents mango=9, banana=7, papaya=7, and guava=3 in a labeled table or graph?",
-          "fil": "Which option correctly presents mango=9, banana=7, papaya=7, and guava=3 in a labeled table or graph?",
-          "taglish": "Which option correctly presents mango=9, banana=7, papaya=7, and guava=3 in a labeled table or graph?"
-        },
-        "answer": "Correct display with values 9, 7, 7, 3 and complete labels",
-        "type": "mcq",
-        "options": [
-          "Correct display with values 11, 3, 9, 6 and complete labels",
-          "Correct display with values 7, 2, 2, 2 and complete labels",
-          "Correct display with values 7, 7, 11, 8 and complete labels",
-          "Correct display with values 9, 7, 7, 3 and complete labels"
-        ],
-        "solution": {
-          "en": "Answer: Correct display with values 9, 7, 7, 3 and complete labels",
-          "fil": "Answer: Correct display with values 9, 7, 7, 3 and complete labels",
-          "taglish": "Answer: Correct display with values 9, 7, 7, 3 and complete labels"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "3SP-IIi-1",
-          "path": "Grade-3/Semester-2/Quizzes/Quiz-16-Data-In-Tables-And-Single-Bar-Graphs.md",
-          "item": 1,
-          "original_type": "multiple-choice"
-        }
-      },
-      {
-        "q": {
-          "en": "Which option correctly presents mango=11, banana=3, papaya=9, and guava=6 in a labeled table or graph?",
-          "fil": "Which option correctly presents mango=11, banana=3, papaya=9, and guava=6 in a labeled table or graph?",
-          "taglish": "Which option correctly presents mango=11, banana=3, papaya=9, and guava=6 in a labeled table or graph?"
-        },
-        "answer": "Correct display with values 11, 3, 9, 6 and complete labels",
-        "type": "mcq",
-        "options": [
-          "Correct display with values 7, 2, 2, 2 and complete labels",
-          "Correct display with values 7, 7, 11, 8 and complete labels",
-          "Correct display with values 11, 3, 9, 6 and complete labels",
-          "Correct display with values 9, 7, 7, 3 and complete labels"
-        ],
-        "solution": {
-          "en": "Answer: Correct display with values 11, 3, 9, 6 and complete labels",
-          "fil": "Answer: Correct display with values 11, 3, 9, 6 and complete labels",
-          "taglish": "Answer: Correct display with values 11, 3, 9, 6 and complete labels"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "3SP-IIi-1",
-          "path": "Grade-3/Semester-2/Quizzes/Quiz-16-Data-In-Tables-And-Single-Bar-Graphs.md",
-          "item": 2,
-          "original_type": "multiple-choice"
-        }
-      },
-      {
-        "q": {
-          "en": "Which option correctly presents mango=7, banana=2, papaya=2, and guava=2 in a labeled table or graph?",
-          "fil": "Which option correctly presents mango=7, banana=2, papaya=2, and guava=2 in a labeled table or graph?",
-          "taglish": "Which option correctly presents mango=7, banana=2, papaya=2, and guava=2 in a labeled table or graph?"
-        },
-        "answer": "Correct display with values 7, 2, 2, 2 and complete labels",
-        "type": "mcq",
-        "options": [
-          "Correct display with values 7, 7, 11, 8 and complete labels",
-          "Correct display with values 7, 2, 2, 2 and complete labels",
-          "Correct display with values 9, 7, 7, 3 and complete labels",
-          "Correct display with values 11, 3, 9, 6 and complete labels"
-        ],
-        "solution": {
-          "en": "Answer: Correct display with values 7, 2, 2, 2 and complete labels",
-          "fil": "Answer: Correct display with values 7, 2, 2, 2 and complete labels",
-          "taglish": "Answer: Correct display with values 7, 2, 2, 2 and complete labels"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "3SP-IIi-1",
-          "path": "Grade-3/Semester-2/Quizzes/Quiz-16-Data-In-Tables-And-Single-Bar-Graphs.md",
-          "item": 3,
-          "original_type": "multiple-choice"
-        }
-      },
-      {
-        "q": {
-          "en": "Which option correctly presents mango=7, banana=7, papaya=11, and guava=8 in a labeled table or graph?",
-          "fil": "Which option correctly presents mango=7, banana=7, papaya=11, and guava=8 in a labeled table or graph?",
-          "taglish": "Which option correctly presents mango=7, banana=7, papaya=11, and guava=8 in a labeled table or graph?"
-        },
-        "answer": "Correct display with values 7, 7, 11, 8 and complete labels",
-        "type": "mcq",
-        "options": [
-          "Correct display with values 7, 7, 11, 8 and complete labels",
-          "Correct display with values 8, 9, 4, 7 and complete labels",
-          "Correct display with values 5, 12, 2, 8 and complete labels",
-          "Correct display with values 5, 9, 11, 5 and complete labels"
-        ],
-        "solution": {
-          "en": "Answer: Correct display with values 7, 7, 11, 8 and complete labels",
-          "fil": "Answer: Correct display with values 7, 7, 11, 8 and complete labels",
-          "taglish": "Answer: Correct display with values 7, 7, 11, 8 and complete labels"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "3SP-IIi-1",
-          "path": "Grade-3/Semester-2/Quizzes/Quiz-16-Data-In-Tables-And-Single-Bar-Graphs.md",
-          "item": 4,
-          "original_type": "identification"
-        }
-      },
-      {
-        "q": {
-          "en": "Which option correctly presents mango=8, banana=9, papaya=4, and guava=7 in a labeled table or graph?",
-          "fil": "Which option correctly presents mango=8, banana=9, papaya=4, and guava=7 in a labeled table or graph?",
-          "taglish": "Which option correctly presents mango=8, banana=9, papaya=4, and guava=7 in a labeled table or graph?"
-        },
-        "answer": "Correct display with values 8, 9, 4, 7 and complete labels",
-        "type": "mcq",
-        "options": [
-          "Correct display with values 7, 7, 11, 8 and complete labels",
-          "Correct display with values 5, 12, 2, 8 and complete labels",
-          "Correct display with values 5, 9, 11, 5 and complete labels",
-          "Correct display with values 8, 9, 4, 7 and complete labels"
-        ],
-        "solution": {
-          "en": "Answer: Correct display with values 8, 9, 4, 7 and complete labels",
-          "fil": "Answer: Correct display with values 8, 9, 4, 7 and complete labels",
-          "taglish": "Answer: Correct display with values 8, 9, 4, 7 and complete labels"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "3SP-IIi-1",
-          "path": "Grade-3/Semester-2/Quizzes/Quiz-16-Data-In-Tables-And-Single-Bar-Graphs.md",
-          "item": 5,
-          "original_type": "identification"
-        }
-      },
-      {
-        "q": {
-          "en": "Which option correctly presents mango=4, banana=7, papaya=10, and guava=2 in a labeled table or graph?",
-          "fil": "Which option correctly presents mango=4, banana=7, papaya=10, and guava=2 in a labeled table or graph?",
-          "taglish": "Which option correctly presents mango=4, banana=7, papaya=10, and guava=2 in a labeled table or graph?"
-        },
-        "answer": "Correct display with values 4, 7, 10, 2 and complete labels",
-        "type": "matching",
-        "options": [
-          "Correct display with values 3, 8, 2, 8 and complete labels",
-          "Correct display with values 4, 7, 10, 2 and complete labels"
-        ],
-        "solution": {
-          "en": "Answer: Correct display with values 4, 7, 10, 2 and complete labels",
-          "fil": "Answer: Correct display with values 4, 7, 10, 2 and complete labels",
-          "taglish": "Answer: Correct display with values 4, 7, 10, 2 and complete labels"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "3SP-IIi-1",
-          "path": "Grade-3/Semester-2/Quizzes/Quiz-16-Data-In-Tables-And-Single-Bar-Graphs.md",
-          "item": 6,
-          "original_type": "matching"
-        }
-      },
-      {
-        "q": {
-          "en": "Which option correctly presents mango=3, banana=8, papaya=2, and guava=8 in a labeled table or graph?",
-          "fil": "Which option correctly presents mango=3, banana=8, papaya=2, and guava=8 in a labeled table or graph?",
-          "taglish": "Which option correctly presents mango=3, banana=8, papaya=2, and guava=8 in a labeled table or graph?"
-        },
-        "answer": "Correct display with values 3, 8, 2, 8 and complete labels",
-        "type": "matching",
-        "options": [
-          "Correct display with values 3, 8, 2, 8 and complete labels",
-          "Correct display with values 4, 7, 10, 2 and complete labels"
-        ],
-        "solution": {
-          "en": "Answer: Correct display with values 3, 8, 2, 8 and complete labels",
-          "fil": "Answer: Correct display with values 3, 8, 2, 8 and complete labels",
-          "taglish": "Answer: Correct display with values 3, 8, 2, 8 and complete labels"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "3SP-IIi-1",
-          "path": "Grade-3/Semester-2/Quizzes/Quiz-16-Data-In-Tables-And-Single-Bar-Graphs.md",
-          "item": 7,
-          "original_type": "matching"
-        }
-      },
-      {
-        "q": {
           "en": "Is this solution correct? Present mango=5, banana=12, papaya=2, and guava=8 in a labeled table or graph. Proposed answer: Correct display with values 5, 12, 2, 8 and complete labels",
           "fil": "Is this solution correct? Present mango=5, banana=12, papaya=2, and guava=8 in a labeled table or graph. Proposed answer: Correct display with values 5, 12, 2, 8 and complete labels",
           "taglish": "Is this solution correct? Present mango=5, banana=12, papaya=2, and guava=8 in a labeled table or graph. Proposed answer: Correct display with values 5, 12, 2, 8 and complete labels"
@@ -10014,168 +9478,6 @@
           "path": "Grade-3/Semester-2/Quizzes/Quiz-16-Data-In-Tables-And-Single-Bar-Graphs.md",
           "item": 8,
           "original_type": "true-false"
-        }
-      },
-      {
-        "q": {
-          "en": "Which option correctly presents mango=5, banana=12, papaya=2, and guava=8 in a labeled table or graph?",
-          "fil": "Which option correctly presents mango=5, banana=12, papaya=2, and guava=8 in a labeled table or graph?",
-          "taglish": "Which option correctly presents mango=5, banana=12, papaya=2, and guava=8 in a labeled table or graph?"
-        },
-        "answer": "Correct display with values 5, 12, 2, 8 and complete labels",
-        "type": "mcq",
-        "options": [
-          "Correct display with values 5, 12, 2, 8 and complete labels",
-          "Correct display with values 9, 7, 7, 3 and complete labels",
-          "Correct display with values 11, 3, 9, 6 and complete labels",
-          "Correct display with values 7, 2, 2, 2 and complete labels"
-        ],
-        "solution": {
-          "en": "Answer: Correct display with values 5, 12, 2, 8 and complete labels",
-          "fil": "Answer: Correct display with values 5, 12, 2, 8 and complete labels",
-          "taglish": "Answer: Correct display with values 5, 12, 2, 8 and complete labels"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "3SP-IIi-1",
-          "path": "Grade-3/Semester-2/Activity-Sheets/Activity-Sheet-16-Data-In-Tables-And-Single-Bar-Graphs.md",
-          "item": 8,
-          "original_type": "activity"
-        }
-      },
-      {
-        "q": {
-          "en": "Which option correctly presents mango=5, banana=9, papaya=11, and guava=5 in a labeled table or graph? Explain why your answer is reasonable.",
-          "fil": "Which option correctly presents mango=5, banana=9, papaya=11, and guava=5 in a labeled table or graph? Explain why your answer is reasonable.",
-          "taglish": "Which option correctly presents mango=5, banana=9, papaya=11, and guava=5 in a labeled table or graph? Explain why your answer is reasonable."
-        },
-        "answer": "Correct display with values 5, 9, 11, 5 and complete labels",
-        "type": "mcq",
-        "options": [
-          "Correct display with values 9, 7, 7, 3 and complete labels",
-          "Correct display with values 11, 3, 9, 6 and complete labels",
-          "Correct display with values 7, 2, 2, 2 and complete labels",
-          "Correct display with values 5, 9, 11, 5 and complete labels"
-        ],
-        "solution": {
-          "en": "Answer: Correct display with values 5, 9, 11, 5 and complete labels",
-          "fil": "Answer: Correct display with values 5, 9, 11, 5 and complete labels",
-          "taglish": "Answer: Correct display with values 5, 9, 11, 5 and complete labels"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "3SP-IIi-1",
-          "path": "Grade-3/Semester-2/Activity-Sheets/Activity-Sheet-16-Data-In-Tables-And-Single-Bar-Graphs.md",
-          "item": 9,
-          "original_type": "activity"
-        }
-      },
-      {
-        "q": {
-          "en": "Which option correctly presents mango=2, banana=2, papaya=4, and guava=7 in a labeled table or graph?",
-          "fil": "Which option correctly presents mango=2, banana=2, papaya=4, and guava=7 in a labeled table or graph?",
-          "taglish": "Which option correctly presents mango=2, banana=2, papaya=4, and guava=7 in a labeled table or graph?"
-        },
-        "answer": "Correct display with values 2, 2, 4, 7 and complete labels",
-        "type": "mcq",
-        "options": [
-          "Correct display with values 11, 3, 9, 6 and complete labels",
-          "Correct display with values 7, 2, 2, 2 and complete labels",
-          "Correct display with values 2, 2, 4, 7 and complete labels",
-          "Correct display with values 9, 7, 7, 3 and complete labels"
-        ],
-        "solution": {
-          "en": "Answer: Correct display with values 2, 2, 4, 7 and complete labels",
-          "fil": "Answer: Correct display with values 2, 2, 4, 7 and complete labels",
-          "taglish": "Answer: Correct display with values 2, 2, 4, 7 and complete labels"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "3SP-IIi-1",
-          "path": "Grade-3/Semester-2/Activity-Sheets/Activity-Sheet-16-Data-In-Tables-And-Single-Bar-Graphs.md",
-          "item": 10,
-          "original_type": "activity"
-        }
-      },
-      {
-        "q": {
-          "en": "Which option correctly presents mango=5, banana=9, papaya=11, and guava=5 in a labeled table or graph?",
-          "fil": "Which option correctly presents mango=5, banana=9, papaya=11, and guava=5 in a labeled table or graph?",
-          "taglish": "Which option correctly presents mango=5, banana=9, papaya=11, and guava=5 in a labeled table or graph?"
-        },
-        "answer": "Correct display with values 5, 9, 11, 5 and complete labels",
-        "type": "mcq",
-        "options": [
-          "Correct display with values 5, 12, 2, 8 and complete labels",
-          "Correct display with values 5, 9, 11, 5 and complete labels",
-          "Correct display with values 7, 7, 11, 8 and complete labels",
-          "Correct display with values 8, 9, 4, 7 and complete labels"
-        ],
-        "solution": {
-          "en": "Answer: Correct display with values 5, 9, 11, 5 and complete labels",
-          "fil": "Answer: Correct display with values 5, 9, 11, 5 and complete labels",
-          "taglish": "Answer: Correct display with values 5, 9, 11, 5 and complete labels"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "3SP-IIi-1",
-          "path": "Grade-3/Semester-2/Quizzes/Quiz-16-Data-In-Tables-And-Single-Bar-Graphs.md",
-          "item": 11,
-          "original_type": "computation"
-        }
-      },
-      {
-        "q": {
-          "en": "Which option correctly presents mango=4, banana=3, papaya=2, and guava=3 in a labeled table or graph?",
-          "fil": "Which option correctly presents mango=4, banana=3, papaya=2, and guava=3 in a labeled table or graph?",
-          "taglish": "Which option correctly presents mango=4, banana=3, papaya=2, and guava=3 in a labeled table or graph?"
-        },
-        "answer": "Correct display with values 4, 3, 2, 3 and complete labels",
-        "type": "mcq",
-        "options": [
-          "Correct display with values 7, 2, 2, 2 and complete labels",
-          "Correct display with values 4, 3, 2, 3 and complete labels",
-          "Correct display with values 9, 7, 7, 3 and complete labels",
-          "Correct display with values 11, 3, 9, 6 and complete labels"
-        ],
-        "solution": {
-          "en": "Answer: Correct display with values 4, 3, 2, 3 and complete labels",
-          "fil": "Answer: Correct display with values 4, 3, 2, 3 and complete labels",
-          "taglish": "Answer: Correct display with values 4, 3, 2, 3 and complete labels"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "3SP-IIi-1",
-          "path": "Grade-3/Semester-2/Activity-Sheets/Activity-Sheet-16-Data-In-Tables-And-Single-Bar-Graphs.md",
-          "item": 11,
-          "original_type": "activity"
-        }
-      },
-      {
-        "q": {
-          "en": "Which option correctly presents mango=11, banana=9, papaya=3, and guava=2 in a labeled table or graph?",
-          "fil": "Which option correctly presents mango=11, banana=9, papaya=3, and guava=2 in a labeled table or graph?",
-          "taglish": "Which option correctly presents mango=11, banana=9, papaya=3, and guava=2 in a labeled table or graph?"
-        },
-        "answer": "Correct display with values 11, 9, 3, 2 and complete labels",
-        "type": "mcq",
-        "options": [
-          "Correct display with values 11, 9, 3, 2 and complete labels",
-          "Correct display with values 9, 7, 7, 3 and complete labels",
-          "Correct display with values 11, 3, 9, 6 and complete labels",
-          "Correct display with values 7, 2, 2, 2 and complete labels"
-        ],
-        "solution": {
-          "en": "Answer: Correct display with values 11, 9, 3, 2 and complete labels",
-          "fil": "Answer: Correct display with values 11, 9, 3, 2 and complete labels",
-          "taglish": "Answer: Correct display with values 11, 9, 3, 2 and complete labels"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "3SP-IIi-1",
-          "path": "Grade-3/Semester-2/Activity-Sheets/Activity-Sheet-16-Data-In-Tables-And-Single-Bar-Graphs.md",
-          "item": 12,
-          "original_type": "activity"
         }
       }
     ],
@@ -10344,9 +9646,9 @@
       },
       {
         "q": {
-          "en": "A class survey recorded mango=10, banana=8, papaya=4, and guava=4. Which fruit has the greatest count? Explain why your answer is reasonable.",
-          "fil": "A class survey recorded mango=10, banana=8, papaya=4, and guava=4. Which fruit has the greatest count? Explain why your answer is reasonable.",
-          "taglish": "A class survey recorded mango=10, banana=8, papaya=4, and guava=4. Which fruit has the greatest count? Explain why your answer is reasonable."
+          "en": "A class survey recorded mango=10, banana=8, papaya=4, and guava=4. Which fruit has the greatest count?",
+          "fil": "A class survey recorded mango=10, banana=8, papaya=4, and guava=4. Which fruit has the greatest count?",
+          "taglish": "A class survey recorded mango=10, banana=8, papaya=4, and guava=4. Which fruit has the greatest count?"
         },
         "answer": "mango",
         "type": "mcq",
@@ -10483,205 +9785,20 @@
     "items": [
       {
         "q": {
-          "en": "Which option correctly presents mango=11, banana=11, papaya=2, and guava=12 in a labeled table or graph?",
-          "fil": "Which option correctly presents mango=11, banana=11, papaya=2, and guava=12 in a labeled table or graph?",
-          "taglish": "Which option correctly presents mango=11, banana=11, papaya=2, and guava=12 in a labeled table or graph?"
+          "en": "Is this solution correct? Present mango=4, banana=11, papaya=2, and guava=5 in a labeled table or graph. Proposed answer: Correct display with values 4, 11, 2, 6 and complete labels",
+          "fil": "Is this solution correct? Present mango=4, banana=11, papaya=2, and guava=5 in a labeled table or graph. Proposed answer: Correct display with values 4, 11, 2, 6 and complete labels",
+          "taglish": "Is this solution correct? Present mango=4, banana=11, papaya=2, and guava=5 in a labeled table or graph. Proposed answer: Correct display with values 4, 11, 2, 6 and complete labels"
         },
-        "answer": "Correct display with values 11, 11, 2, 12 and complete labels",
-        "type": "mcq",
-        "options": [
-          "Correct display with values 2, 9, 4, 8 and complete labels",
-          "Correct display with values 7, 2, 3, 3 and complete labels",
-          "Correct display with values 10, 12, 12, 5 and complete labels",
-          "Correct display with values 11, 11, 2, 12 and complete labels"
-        ],
-        "solution": {
-          "en": "Answer: Correct display with values 11, 11, 2, 12 and complete labels",
-          "fil": "Answer: Correct display with values 11, 11, 2, 12 and complete labels",
-          "taglish": "Answer: Correct display with values 11, 11, 2, 12 and complete labels"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "3SP-IIj-1",
-          "path": "Grade-3/Semester-2/Quizzes/Quiz-18-Problems-Using-Data-Presented-In-A-Single-Bar-Graph.md",
-          "item": 1,
-          "original_type": "multiple-choice"
-        }
-      },
-      {
-        "q": {
-          "en": "Which option correctly presents mango=2, banana=9, papaya=4, and guava=8 in a labeled table or graph?",
-          "fil": "Which option correctly presents mango=2, banana=9, papaya=4, and guava=8 in a labeled table or graph?",
-          "taglish": "Which option correctly presents mango=2, banana=9, papaya=4, and guava=8 in a labeled table or graph?"
-        },
-        "answer": "Correct display with values 2, 9, 4, 8 and complete labels",
-        "type": "mcq",
-        "options": [
-          "Correct display with values 7, 2, 3, 3 and complete labels",
-          "Correct display with values 10, 12, 12, 5 and complete labels",
-          "Correct display with values 2, 9, 4, 8 and complete labels",
-          "Correct display with values 11, 11, 2, 12 and complete labels"
-        ],
-        "solution": {
-          "en": "Answer: Correct display with values 2, 9, 4, 8 and complete labels",
-          "fil": "Answer: Correct display with values 2, 9, 4, 8 and complete labels",
-          "taglish": "Answer: Correct display with values 2, 9, 4, 8 and complete labels"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "3SP-IIj-1",
-          "path": "Grade-3/Semester-2/Quizzes/Quiz-18-Problems-Using-Data-Presented-In-A-Single-Bar-Graph.md",
-          "item": 2,
-          "original_type": "multiple-choice"
-        }
-      },
-      {
-        "q": {
-          "en": "Which option correctly presents mango=7, banana=2, papaya=3, and guava=3 in a labeled table or graph?",
-          "fil": "Which option correctly presents mango=7, banana=2, papaya=3, and guava=3 in a labeled table or graph?",
-          "taglish": "Which option correctly presents mango=7, banana=2, papaya=3, and guava=3 in a labeled table or graph?"
-        },
-        "answer": "Correct display with values 7, 2, 3, 3 and complete labels",
-        "type": "mcq",
-        "options": [
-          "Correct display with values 10, 12, 12, 5 and complete labels",
-          "Correct display with values 7, 2, 3, 3 and complete labels",
-          "Correct display with values 11, 11, 2, 12 and complete labels",
-          "Correct display with values 2, 9, 4, 8 and complete labels"
-        ],
-        "solution": {
-          "en": "Answer: Correct display with values 7, 2, 3, 3 and complete labels",
-          "fil": "Answer: Correct display with values 7, 2, 3, 3 and complete labels",
-          "taglish": "Answer: Correct display with values 7, 2, 3, 3 and complete labels"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "3SP-IIj-1",
-          "path": "Grade-3/Semester-2/Quizzes/Quiz-18-Problems-Using-Data-Presented-In-A-Single-Bar-Graph.md",
-          "item": 3,
-          "original_type": "multiple-choice"
-        }
-      },
-      {
-        "q": {
-          "en": "Which option correctly presents mango=10, banana=12, papaya=12, and guava=5 in a labeled table or graph?",
-          "fil": "Which option correctly presents mango=10, banana=12, papaya=12, and guava=5 in a labeled table or graph?",
-          "taglish": "Which option correctly presents mango=10, banana=12, papaya=12, and guava=5 in a labeled table or graph?"
-        },
-        "answer": "Correct display with values 10, 12, 12, 5 and complete labels",
-        "type": "mcq",
-        "options": [
-          "Correct display with values 10, 12, 12, 5 and complete labels",
-          "Correct display with values 8, 7, 3, 4 and complete labels",
-          "Correct display with values 4, 11, 2, 5 and complete labels",
-          "Correct display with values 12, 6, 6, 10 and complete labels"
-        ],
-        "solution": {
-          "en": "Answer: Correct display with values 10, 12, 12, 5 and complete labels",
-          "fil": "Answer: Correct display with values 10, 12, 12, 5 and complete labels",
-          "taglish": "Answer: Correct display with values 10, 12, 12, 5 and complete labels"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "3SP-IIj-1",
-          "path": "Grade-3/Semester-2/Quizzes/Quiz-18-Problems-Using-Data-Presented-In-A-Single-Bar-Graph.md",
-          "item": 4,
-          "original_type": "identification"
-        }
-      },
-      {
-        "q": {
-          "en": "Which option correctly presents mango=8, banana=7, papaya=3, and guava=4 in a labeled table or graph?",
-          "fil": "Which option correctly presents mango=8, banana=7, papaya=3, and guava=4 in a labeled table or graph?",
-          "taglish": "Which option correctly presents mango=8, banana=7, papaya=3, and guava=4 in a labeled table or graph?"
-        },
-        "answer": "Correct display with values 8, 7, 3, 4 and complete labels",
-        "type": "mcq",
-        "options": [
-          "Correct display with values 10, 12, 12, 5 and complete labels",
-          "Correct display with values 4, 11, 2, 5 and complete labels",
-          "Correct display with values 12, 6, 6, 10 and complete labels",
-          "Correct display with values 8, 7, 3, 4 and complete labels"
-        ],
-        "solution": {
-          "en": "Answer: Correct display with values 8, 7, 3, 4 and complete labels",
-          "fil": "Answer: Correct display with values 8, 7, 3, 4 and complete labels",
-          "taglish": "Answer: Correct display with values 8, 7, 3, 4 and complete labels"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "3SP-IIj-1",
-          "path": "Grade-3/Semester-2/Quizzes/Quiz-18-Problems-Using-Data-Presented-In-A-Single-Bar-Graph.md",
-          "item": 5,
-          "original_type": "identification"
-        }
-      },
-      {
-        "q": {
-          "en": "Which option correctly presents mango=10, banana=11, papaya=4, and guava=8 in a labeled table or graph?",
-          "fil": "Which option correctly presents mango=10, banana=11, papaya=4, and guava=8 in a labeled table or graph?",
-          "taglish": "Which option correctly presents mango=10, banana=11, papaya=4, and guava=8 in a labeled table or graph?"
-        },
-        "answer": "Correct display with values 10, 11, 4, 8 and complete labels",
-        "type": "matching",
-        "options": [
-          "Correct display with values 5, 8, 7, 5 and complete labels",
-          "Correct display with values 10, 11, 4, 8 and complete labels"
-        ],
-        "solution": {
-          "en": "Answer: Correct display with values 10, 11, 4, 8 and complete labels",
-          "fil": "Answer: Correct display with values 10, 11, 4, 8 and complete labels",
-          "taglish": "Answer: Correct display with values 10, 11, 4, 8 and complete labels"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "3SP-IIj-1",
-          "path": "Grade-3/Semester-2/Quizzes/Quiz-18-Problems-Using-Data-Presented-In-A-Single-Bar-Graph.md",
-          "item": 6,
-          "original_type": "matching"
-        }
-      },
-      {
-        "q": {
-          "en": "Which option correctly presents mango=5, banana=8, papaya=7, and guava=5 in a labeled table or graph?",
-          "fil": "Which option correctly presents mango=5, banana=8, papaya=7, and guava=5 in a labeled table or graph?",
-          "taglish": "Which option correctly presents mango=5, banana=8, papaya=7, and guava=5 in a labeled table or graph?"
-        },
-        "answer": "Correct display with values 5, 8, 7, 5 and complete labels",
-        "type": "matching",
-        "options": [
-          "Correct display with values 5, 8, 7, 5 and complete labels",
-          "Correct display with values 10, 11, 4, 8 and complete labels"
-        ],
-        "solution": {
-          "en": "Answer: Correct display with values 5, 8, 7, 5 and complete labels",
-          "fil": "Answer: Correct display with values 5, 8, 7, 5 and complete labels",
-          "taglish": "Answer: Correct display with values 5, 8, 7, 5 and complete labels"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "3SP-IIj-1",
-          "path": "Grade-3/Semester-2/Quizzes/Quiz-18-Problems-Using-Data-Presented-In-A-Single-Bar-Graph.md",
-          "item": 7,
-          "original_type": "matching"
-        }
-      },
-      {
-        "q": {
-          "en": "Is this solution correct? Present mango=4, banana=11, papaya=2, and guava=5 in a labeled table or graph. Proposed answer: Correct display with values 4, 11, 2, 5 and complete labels",
-          "fil": "Is this solution correct? Present mango=4, banana=11, papaya=2, and guava=5 in a labeled table or graph. Proposed answer: Correct display with values 4, 11, 2, 5 and complete labels",
-          "taglish": "Is this solution correct? Present mango=4, banana=11, papaya=2, and guava=5 in a labeled table or graph. Proposed answer: Correct display with values 4, 11, 2, 5 and complete labels"
-        },
-        "answer": "True",
+        "answer": "False",
         "type": "true_false",
         "options": [
           "True",
           "False"
         ],
         "solution": {
-          "en": "Answer: True",
-          "fil": "Answer: True",
-          "taglish": "Answer: True"
+          "en": "Answer: False",
+          "fil": "Answer: False",
+          "taglish": "Answer: False"
         },
         "source": {
           "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
@@ -10689,168 +9806,6 @@
           "path": "Grade-3/Semester-2/Quizzes/Quiz-18-Problems-Using-Data-Presented-In-A-Single-Bar-Graph.md",
           "item": 8,
           "original_type": "true-false"
-        }
-      },
-      {
-        "q": {
-          "en": "Which option correctly presents mango=4, banana=11, papaya=2, and guava=5 in a labeled table or graph?",
-          "fil": "Which option correctly presents mango=4, banana=11, papaya=2, and guava=5 in a labeled table or graph?",
-          "taglish": "Which option correctly presents mango=4, banana=11, papaya=2, and guava=5 in a labeled table or graph?"
-        },
-        "answer": "Correct display with values 4, 11, 2, 5 and complete labels",
-        "type": "mcq",
-        "options": [
-          "Correct display with values 4, 11, 2, 5 and complete labels",
-          "Correct display with values 11, 11, 2, 12 and complete labels",
-          "Correct display with values 2, 9, 4, 8 and complete labels",
-          "Correct display with values 7, 2, 3, 3 and complete labels"
-        ],
-        "solution": {
-          "en": "Answer: Correct display with values 4, 11, 2, 5 and complete labels",
-          "fil": "Answer: Correct display with values 4, 11, 2, 5 and complete labels",
-          "taglish": "Answer: Correct display with values 4, 11, 2, 5 and complete labels"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "3SP-IIj-1",
-          "path": "Grade-3/Semester-2/Activity-Sheets/Activity-Sheet-18-Problems-Using-Data-Presented-In-A-Single-Bar-Graph.md",
-          "item": 8,
-          "original_type": "activity"
-        }
-      },
-      {
-        "q": {
-          "en": "Which option correctly presents mango=12, banana=6, papaya=6, and guava=10 in a labeled table or graph? Explain why your answer is reasonable.",
-          "fil": "Which option correctly presents mango=12, banana=6, papaya=6, and guava=10 in a labeled table or graph? Explain why your answer is reasonable.",
-          "taglish": "Which option correctly presents mango=12, banana=6, papaya=6, and guava=10 in a labeled table or graph? Explain why your answer is reasonable."
-        },
-        "answer": "Correct display with values 12, 6, 6, 10 and complete labels",
-        "type": "mcq",
-        "options": [
-          "Correct display with values 11, 11, 2, 12 and complete labels",
-          "Correct display with values 2, 9, 4, 8 and complete labels",
-          "Correct display with values 7, 2, 3, 3 and complete labels",
-          "Correct display with values 12, 6, 6, 10 and complete labels"
-        ],
-        "solution": {
-          "en": "Answer: Correct display with values 12, 6, 6, 10 and complete labels",
-          "fil": "Answer: Correct display with values 12, 6, 6, 10 and complete labels",
-          "taglish": "Answer: Correct display with values 12, 6, 6, 10 and complete labels"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "3SP-IIj-1",
-          "path": "Grade-3/Semester-2/Activity-Sheets/Activity-Sheet-18-Problems-Using-Data-Presented-In-A-Single-Bar-Graph.md",
-          "item": 9,
-          "original_type": "activity"
-        }
-      },
-      {
-        "q": {
-          "en": "Which option correctly presents mango=9, banana=4, papaya=3, and guava=4 in a labeled table or graph?",
-          "fil": "Which option correctly presents mango=9, banana=4, papaya=3, and guava=4 in a labeled table or graph?",
-          "taglish": "Which option correctly presents mango=9, banana=4, papaya=3, and guava=4 in a labeled table or graph?"
-        },
-        "answer": "Correct display with values 9, 4, 3, 4 and complete labels",
-        "type": "mcq",
-        "options": [
-          "Correct display with values 2, 9, 4, 8 and complete labels",
-          "Correct display with values 7, 2, 3, 3 and complete labels",
-          "Correct display with values 9, 4, 3, 4 and complete labels",
-          "Correct display with values 11, 11, 2, 12 and complete labels"
-        ],
-        "solution": {
-          "en": "Answer: Correct display with values 9, 4, 3, 4 and complete labels",
-          "fil": "Answer: Correct display with values 9, 4, 3, 4 and complete labels",
-          "taglish": "Answer: Correct display with values 9, 4, 3, 4 and complete labels"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "3SP-IIj-1",
-          "path": "Grade-3/Semester-2/Activity-Sheets/Activity-Sheet-18-Problems-Using-Data-Presented-In-A-Single-Bar-Graph.md",
-          "item": 10,
-          "original_type": "activity"
-        }
-      },
-      {
-        "q": {
-          "en": "Which option correctly presents mango=12, banana=6, papaya=6, and guava=10 in a labeled table or graph?",
-          "fil": "Which option correctly presents mango=12, banana=6, papaya=6, and guava=10 in a labeled table or graph?",
-          "taglish": "Which option correctly presents mango=12, banana=6, papaya=6, and guava=10 in a labeled table or graph?"
-        },
-        "answer": "Correct display with values 12, 6, 6, 10 and complete labels",
-        "type": "mcq",
-        "options": [
-          "Correct display with values 4, 11, 2, 5 and complete labels",
-          "Correct display with values 12, 6, 6, 10 and complete labels",
-          "Correct display with values 10, 12, 12, 5 and complete labels",
-          "Correct display with values 8, 7, 3, 4 and complete labels"
-        ],
-        "solution": {
-          "en": "Answer: Correct display with values 12, 6, 6, 10 and complete labels",
-          "fil": "Answer: Correct display with values 12, 6, 6, 10 and complete labels",
-          "taglish": "Answer: Correct display with values 12, 6, 6, 10 and complete labels"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "3SP-IIj-1",
-          "path": "Grade-3/Semester-2/Quizzes/Quiz-18-Problems-Using-Data-Presented-In-A-Single-Bar-Graph.md",
-          "item": 11,
-          "original_type": "computation"
-        }
-      },
-      {
-        "q": {
-          "en": "Which option correctly presents mango=7, banana=2, papaya=6, and guava=6 in a labeled table or graph?",
-          "fil": "Which option correctly presents mango=7, banana=2, papaya=6, and guava=6 in a labeled table or graph?",
-          "taglish": "Which option correctly presents mango=7, banana=2, papaya=6, and guava=6 in a labeled table or graph?"
-        },
-        "answer": "Correct display with values 7, 2, 6, 6 and complete labels",
-        "type": "mcq",
-        "options": [
-          "Correct display with values 7, 2, 3, 3 and complete labels",
-          "Correct display with values 7, 2, 6, 6 and complete labels",
-          "Correct display with values 11, 11, 2, 12 and complete labels",
-          "Correct display with values 2, 9, 4, 8 and complete labels"
-        ],
-        "solution": {
-          "en": "Answer: Correct display with values 7, 2, 6, 6 and complete labels",
-          "fil": "Answer: Correct display with values 7, 2, 6, 6 and complete labels",
-          "taglish": "Answer: Correct display with values 7, 2, 6, 6 and complete labels"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "3SP-IIj-1",
-          "path": "Grade-3/Semester-2/Activity-Sheets/Activity-Sheet-18-Problems-Using-Data-Presented-In-A-Single-Bar-Graph.md",
-          "item": 11,
-          "original_type": "activity"
-        }
-      },
-      {
-        "q": {
-          "en": "Which option correctly presents mango=5, banana=12, papaya=4, and guava=5 in a labeled table or graph?",
-          "fil": "Which option correctly presents mango=5, banana=12, papaya=4, and guava=5 in a labeled table or graph?",
-          "taglish": "Which option correctly presents mango=5, banana=12, papaya=4, and guava=5 in a labeled table or graph?"
-        },
-        "answer": "Correct display with values 5, 12, 4, 5 and complete labels",
-        "type": "mcq",
-        "options": [
-          "Correct display with values 5, 12, 4, 5 and complete labels",
-          "Correct display with values 11, 11, 2, 12 and complete labels",
-          "Correct display with values 2, 9, 4, 8 and complete labels",
-          "Correct display with values 7, 2, 3, 3 and complete labels"
-        ],
-        "solution": {
-          "en": "Answer: Correct display with values 5, 12, 4, 5 and complete labels",
-          "fil": "Answer: Correct display with values 5, 12, 4, 5 and complete labels",
-          "taglish": "Answer: Correct display with values 5, 12, 4, 5 and complete labels"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "3SP-IIj-1",
-          "path": "Grade-3/Semester-2/Activity-Sheets/Activity-Sheet-18-Problems-Using-Data-Presented-In-A-Single-Bar-Graph.md",
-          "item": 12,
-          "original_type": "activity"
         }
       }
     ],
@@ -10893,10 +9848,10 @@
         "answer": "4/9",
         "type": "mcq",
         "options": [
-          "certain",
-          "equally likely",
+          "5/8",
+          "2/3",
           "4/9",
-          "impossible"
+          "3/8"
         ],
         "solution": {
           "en": "Answer: 4/9",
@@ -10920,10 +9875,10 @@
         "answer": "5/8",
         "type": "mcq",
         "options": [
-          "equally likely",
+          "2/3",
           "5/8",
-          "impossible",
-          "certain"
+          "4/9",
+          "3/5"
         ],
         "solution": {
           "en": "Answer: 5/8",
@@ -10948,9 +9903,9 @@
         "type": "mcq",
         "options": [
           "2/3",
-          "impossible",
-          "certain",
-          "equally likely"
+          "4/9",
+          "5/8",
+          "6/8"
         ],
         "solution": {
           "en": "Answer: 2/3",
@@ -11393,20 +10348,20 @@
       },
       {
         "q": {
-          "en": "Is this solution correct? There are 5 equal trays with 8 items each for the town fiesta. Find the total. Proposed answer: 40",
-          "fil": "Is this solution correct? There are 5 equal trays with 8 items each for the town fiesta. Find the total. Proposed answer: 40",
-          "taglish": "Is this solution correct? There are 5 equal trays with 8 items each for the town fiesta. Find the total. Proposed answer: 40"
+          "en": "Is this solution correct? There are 5 equal trays with 8 items each for the town fiesta. Find the total. Proposed answer: 42",
+          "fil": "Is this solution correct? There are 5 equal trays with 8 items each for the town fiesta. Find the total. Proposed answer: 42",
+          "taglish": "Is this solution correct? There are 5 equal trays with 8 items each for the town fiesta. Find the total. Proposed answer: 42"
         },
-        "answer": "True",
+        "answer": "False",
         "type": "true_false",
         "options": [
           "True",
           "False"
         ],
         "solution": {
-          "en": "Answer: True",
-          "fil": "Answer: True",
-          "taglish": "Answer: True"
+          "en": "Answer: False",
+          "fil": "Answer: False",
+          "taglish": "Answer: False"
         },
         "source": {
           "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
@@ -12412,20 +11367,20 @@
       },
       {
         "q": {
-          "en": "Is this solution correct? There are 3 equal trays with 9 items each for the coastal clean-up. Find the total. Proposed answer: 27",
-          "fil": "Is this solution correct? There are 3 equal trays with 9 items each for the coastal clean-up. Find the total. Proposed answer: 27",
-          "taglish": "Is this solution correct? There are 3 equal trays with 9 items each for the coastal clean-up. Find the total. Proposed answer: 27"
+          "en": "Is this solution correct? There are 3 equal trays with 9 items each for the coastal clean-up. Find the total. Proposed answer: 29",
+          "fil": "Is this solution correct? There are 3 equal trays with 9 items each for the coastal clean-up. Find the total. Proposed answer: 29",
+          "taglish": "Is this solution correct? There are 3 equal trays with 9 items each for the coastal clean-up. Find the total. Proposed answer: 29"
         },
-        "answer": "True",
+        "answer": "False",
         "type": "true_false",
         "options": [
           "True",
           "False"
         ],
         "solution": {
-          "en": "Answer: True",
-          "fil": "Answer: True",
-          "taglish": "Answer: True"
+          "en": "Answer: False",
+          "fil": "Answer: False",
+          "taglish": "Answer: False"
         },
         "source": {
           "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
@@ -12935,10 +11890,10 @@
         "answer": "31, 37",
         "type": "mcq",
         "options": [
-          "30",
-          "62",
+          "30, 36",
+          "30, 37",
           "31, 37",
-          "32"
+          "31, 36"
         ],
         "solution": {
           "en": "Answer: 31, 37",
@@ -12962,9 +11917,9 @@
         "answer": "25, 27",
         "type": "mcq",
         "options": [
-          "26",
-          "24",
-          "50",
+          "26, 28",
+          "26, 27",
+          "25, 28",
           "25, 27"
         ],
         "solution": {
@@ -12989,9 +11944,9 @@
         "answer": "43, 50",
         "type": "mcq",
         "options": [
-          "44",
-          "42",
-          "86",
+          "44, 50",
+          "43, 51",
+          "42, 49",
           "43, 50"
         ],
         "solution": {
@@ -13101,20 +12056,20 @@
       },
       {
         "q": {
-          "en": "Is this solution correct? Continue the barangay house-number pattern: 13, 18, 23, 28, __, __. Proposed answer: 33, 38",
-          "fil": "Is this solution correct? Continue the barangay house-number pattern: 13, 18, 23, 28, __, __. Proposed answer: 33, 38",
-          "taglish": "Is this solution correct? Continue the barangay house-number pattern: 13, 18, 23, 28, __, __. Proposed answer: 33, 38"
+          "en": "Is this solution correct? Continue the barangay house-number pattern: 13, 18, 23, 28, __, __. Proposed answer: 33, 40",
+          "fil": "Is this solution correct? Continue the barangay house-number pattern: 13, 18, 23, 28, __, __. Proposed answer: 33, 40",
+          "taglish": "Is this solution correct? Continue the barangay house-number pattern: 13, 18, 23, 28, __, __. Proposed answer: 33, 40"
         },
-        "answer": "True",
+        "answer": "False",
         "type": "true_false",
         "options": [
           "True",
           "False"
         ],
         "solution": {
-          "en": "Answer: True",
-          "fil": "Answer: True",
-          "taglish": "Answer: True"
+          "en": "Answer: False",
+          "fil": "Answer: False",
+          "taglish": "Answer: False"
         },
         "source": {
           "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
@@ -13290,10 +12245,10 @@
         "answer": "36, 44",
         "type": "mcq",
         "options": [
-          "35",
-          "72",
+          "39, 47",
+          "39, 44",
           "36, 44",
-          "37"
+          "36, 47"
         ],
         "solution": {
           "en": "Answer: 36, 44",
@@ -13318,9 +12273,9 @@
         "type": "mcq",
         "options": [
           "38, 46",
-          "39",
-          "37",
-          "76"
+          "38, 44",
+          "41, 49",
+          "41, 46"
         ],
         "solution": {
           "en": "Answer: 38, 46",
@@ -13344,10 +12299,10 @@
         "answer": "32, 35",
         "type": "mcq",
         "options": [
-          "64",
+          "30, 35",
           "32, 35",
-          "33",
-          "31"
+          "32, 33",
+          "35, 38"
         ],
         "solution": {
           "en": "Answer: 32, 35",
@@ -15548,20 +14503,20 @@
       },
       {
         "q": {
-          "en": "Is this solution correct? The town fiesta shares 60 items equally among 6 groups. How many per group? Proposed answer: 10",
-          "fil": "Is this solution correct? The town fiesta shares 60 items equally among 6 groups. How many per group? Proposed answer: 10",
-          "taglish": "Is this solution correct? The town fiesta shares 60 items equally among 6 groups. How many per group? Proposed answer: 10"
+          "en": "Is this solution correct? The town fiesta shares 60 items equally among 6 groups. How many per group? Proposed answer: 12",
+          "fil": "Is this solution correct? The town fiesta shares 60 items equally among 6 groups. How many per group? Proposed answer: 12",
+          "taglish": "Is this solution correct? The town fiesta shares 60 items equally among 6 groups. How many per group? Proposed answer: 12"
         },
-        "answer": "True",
+        "answer": "False",
         "type": "true_false",
         "options": [
           "True",
           "False"
         ],
         "solution": {
-          "en": "Answer: True",
-          "fil": "Answer: True",
-          "taglish": "Answer: True"
+          "en": "Answer: False",
+          "fil": "Answer: False",
+          "taglish": "Answer: False"
         },
         "source": {
           "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
@@ -15738,9 +14693,9 @@
         "type": "mcq",
         "options": [
           "2/4",
-          "A different value",
-          "Cannot be determined",
-          "None of these"
+          "3/5",
+          "3/4",
+          "2/5"
         ],
         "solution": {
           "en": "Answer: 2/4",
@@ -15765,9 +14720,9 @@
         "type": "mcq",
         "options": [
           "5/6",
-          "A different value",
-          "Cannot be determined",
-          "None of these"
+          "6/7",
+          "6/6",
+          "5/7"
         ],
         "solution": {
           "en": "Answer: 5/6",
@@ -15791,9 +14746,9 @@
         "answer": "3/4",
         "type": "mcq",
         "options": [
-          "A different value",
-          "Cannot be determined",
-          "None of these",
+          "4/5",
+          "4/4",
+          "3/5",
           "3/4"
         ],
         "solution": {
@@ -16427,9 +15382,8 @@
         "type": "mcq",
         "options": [
           "rotation",
-          "translation",
-          "translation or slide",
-          "reflection"
+          "reflection or flip",
+          "translation or slide"
         ],
         "solution": {
           "en": "Answer: translation or slide",
@@ -16454,9 +15408,8 @@
         "type": "mcq",
         "options": [
           "translation",
-          "translation or slide",
-          "rotation",
-          "reflection"
+          "reflection or flip",
+          "rotation"
         ],
         "solution": {
           "en": "Answer: rotation",
@@ -16482,7 +15435,6 @@
         "options": [
           "translation",
           "reflection or flip",
-          "reflection",
           "rotation"
         ],
         "solution": {
@@ -16548,33 +15500,6 @@
           "path": "Grade-3/Semester-3/Quizzes/Quiz-16-Draw-The-Effect-Of-A-Two-Direction-Multi-Step-Slide.md",
           "item": 8,
           "original_type": "true-false"
-        }
-      },
-      {
-        "q": {
-          "en": "A figure is moved without turning or flipping. Name the transformation. Explain why your answer is reasonable.",
-          "fil": "A figure is moved without turning or flipping. Name the transformation. Explain why your answer is reasonable.",
-          "taglish": "A figure is moved without turning or flipping. Name the transformation. Explain why your answer is reasonable."
-        },
-        "answer": "translation or slide",
-        "type": "mcq",
-        "options": [
-          "rotation",
-          "reflection or flip",
-          "The completed half must be a mirror image at equal distances from the line",
-          "translation or slide"
-        ],
-        "solution": {
-          "en": "Answer: translation or slide",
-          "fil": "Answer: translation or slide",
-          "taglish": "Answer: translation or slide"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "3MG-IIIi-1",
-          "path": "Grade-3/Semester-3/Activity-Sheets/Activity-Sheet-16-Draw-The-Effect-Of-A-Two-Direction-Multi-Step-Slide.md",
-          "item": 9,
-          "original_type": "activity"
         }
       }
     ],
@@ -16618,9 +15543,8 @@
         "type": "mcq",
         "options": [
           "rotation",
-          "translation",
-          "translation or slide",
-          "reflection"
+          "reflection or flip",
+          "translation or slide"
         ],
         "solution": {
           "en": "Answer: translation or slide",
@@ -16645,9 +15569,8 @@
         "type": "mcq",
         "options": [
           "translation",
-          "translation or slide",
-          "rotation",
-          "reflection"
+          "reflection or flip",
+          "rotation"
         ],
         "solution": {
           "en": "Answer: rotation",
@@ -16673,7 +15596,6 @@
         "options": [
           "translation",
           "reflection or flip",
-          "reflection",
           "rotation"
         ],
         "solution": {
@@ -16739,33 +15661,6 @@
           "path": "Grade-3/Semester-3/Quizzes/Quiz-17-Shapes-Or-Figures-That-Show-Line-Symmetry-By-Drawing.md",
           "item": 8,
           "original_type": "true-false"
-        }
-      },
-      {
-        "q": {
-          "en": "A figure is moved without turning or flipping. Name the transformation. Explain why your answer is reasonable.",
-          "fil": "A figure is moved without turning or flipping. Name the transformation. Explain why your answer is reasonable.",
-          "taglish": "A figure is moved without turning or flipping. Name the transformation. Explain why your answer is reasonable."
-        },
-        "answer": "translation or slide",
-        "type": "mcq",
-        "options": [
-          "rotation",
-          "reflection or flip",
-          "The completed half must be a mirror image at equal distances from the line",
-          "translation or slide"
-        ],
-        "solution": {
-          "en": "Answer: translation or slide",
-          "fil": "Answer: translation or slide",
-          "taglish": "Answer: translation or slide"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "3MG-IIIj-1",
-          "path": "Grade-3/Semester-3/Activity-Sheets/Activity-Sheet-17-Shapes-Or-Figures-That-Show-Line-Symmetry-By-Drawing.md",
-          "item": 9,
-          "original_type": "activity"
         }
       }
     ],
@@ -16809,9 +15704,8 @@
         "type": "mcq",
         "options": [
           "rotation",
-          "translation",
-          "translation or slide",
-          "reflection"
+          "reflection or flip",
+          "translation or slide"
         ],
         "solution": {
           "en": "Answer: translation or slide",
@@ -16836,9 +15730,8 @@
         "type": "mcq",
         "options": [
           "translation",
-          "translation or slide",
-          "rotation",
-          "reflection"
+          "reflection or flip",
+          "rotation"
         ],
         "solution": {
           "en": "Answer: rotation",
@@ -16864,7 +15757,6 @@
         "options": [
           "translation",
           "reflection or flip",
-          "reflection",
           "rotation"
         ],
         "solution": {
@@ -16930,33 +15822,6 @@
           "path": "Grade-3/Semester-3/Quizzes/Quiz-18-A-Figure-That-Is-Symmetric-With-Respect-To-A-Line.md",
           "item": 8,
           "original_type": "true-false"
-        }
-      },
-      {
-        "q": {
-          "en": "A figure is moved without turning or flipping. Name the transformation. Explain why your answer is reasonable.",
-          "fil": "A figure is moved without turning or flipping. Name the transformation. Explain why your answer is reasonable.",
-          "taglish": "A figure is moved without turning or flipping. Name the transformation. Explain why your answer is reasonable."
-        },
-        "answer": "translation or slide",
-        "type": "mcq",
-        "options": [
-          "rotation",
-          "reflection or flip",
-          "The completed half must be a mirror image at equal distances from the line",
-          "translation or slide"
-        ],
-        "solution": {
-          "en": "Answer: translation or slide",
-          "fil": "Answer: translation or slide",
-          "taglish": "Answer: translation or slide"
-        },
-        "source": {
-          "package": "DepEd-MATATAG-Mathematics-Grades-1-6",
-          "ref": "3MG-IIIj-2",
-          "path": "Grade-3/Semester-3/Activity-Sheets/Activity-Sheet-18-A-Figure-That-Is-Symmetric-With-Respect-To-A-Line.md",
-          "item": 9,
-          "original_type": "activity"
         }
       }
     ],

@@ -224,7 +224,8 @@ export default async function handler(req, res) {
     if (!validateGeneratedQuestions(questions, body)) throw new Error('deterministic_validation_failed')
     if (!(await verify(ai, body, questions))) throw new Error('verification_failed')
     return res.status(200).json({ source: 'ai', questions })
-  } catch {
+  } catch (err) {
+    console.error('question generation failed:', err)
     return res.status(502).json({ error: 'generation_failed' })
   }
 }

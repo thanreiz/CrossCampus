@@ -3,8 +3,8 @@ import { set } from 'idb-keyval'
 import { Button, Card, Doodles } from '../ui/Primitives.jsx'
 import { Mascot } from '../ui/Mascot.jsx'
 import { makeT } from '../lib/i18n.js'
+import { GRADES } from '../lib/grades.js'
 
-const GRADES = [4, 5, 6]
 
 export default function Onboarding({ lang = 'taglish', onDone }) {
   const tt = makeT(lang)
@@ -35,7 +35,7 @@ export default function Onboarding({ lang = 'taglish', onDone }) {
         {step === 1 && (
           <>
             <h1 className="font-display text-3xl font-extrabold">{tt('onboarding.grade')}</h1>
-            <div className="mt-5 grid grid-cols-1 gap-3">
+            <div className="mt-5 grid grid-cols-2 gap-3">
               {GRADES.map((value) => (
                 <button
                   key={value}

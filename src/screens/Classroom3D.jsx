@@ -216,12 +216,13 @@ export default function Classroom3D({ competency, questions, questionSource = 'b
       </div>
 
 
-      {/* full child-friendly topic title */}
-      <div className="pointer-events-none absolute left-1/2 top-3 -translate-x-1/2 px-2 text-center">
-        <span className="gb-chip bg-white/90 text-xs">{topicFull(c.ref, c.competency, c.domain, lang)}</span>
+      {/* full child-friendly topic title — sits BELOW the HUD row, which it
+          used to overlap and clip on every viewport */}
+      <div className="pointer-events-none absolute left-1/2 top-16 w-[min(80%,320px)] -translate-x-1/2 px-2 text-center">
+        <span className="gb-chip inline-block max-w-full truncate bg-white/90 text-xs">{topicFull(c.ref, c.competency, c.domain, lang)}</span>
       </div>
 
-      <div className="absolute right-3 top-20 grid gap-2">
+      <div className="absolute right-3 top-28 z-30 grid gap-2">
         <button
           className="gb-chip min-h-[44px] min-w-[44px] bg-white text-xl shadow-hard-sm"
           onClick={() => sceneRef.current?.zoom(-8)}
@@ -266,8 +267,8 @@ export default function Classroom3D({ competency, questions, questionSource = 'b
       </div>
       {/* hint */}
       {ready && !modal && !done && (
-        <div className="pointer-events-none absolute bottom-28 left-1/2 -translate-x-1/2 text-center">
-          <p className="gb-chip bg-yellow shadow-hard-sm">
+        <div className="pointer-events-none absolute bottom-44 left-4 right-4 text-center">
+          <p className="gb-chip inline-block bg-yellow shadow-hard-sm">
             {hasAnsweredOnce ? (atBoard ? tt('3d.hintAtBoard') : tt('3d.hintMove')) : tt('3d.firstAnswerHint')}
           </p>
         </div>
@@ -282,14 +283,14 @@ export default function Classroom3D({ competency, questions, questionSource = 'b
       )}
 
       {ready && !modal && !done && (
-        <div className="pointer-events-none absolute bottom-44 right-3 flex w-28 justify-center">
+        <div className="pointer-events-none absolute bottom-60 right-3 flex w-28 justify-center">
           <Mascot size={104} className="drop-shadow-xl" />
         </div>
       )}
 
       {/* answer trigger when near board */}
       {ready && atBoard && !modal && !done && (
-        <div className="absolute bottom-10 left-1/2 -translate-x-1/2">
+        <div className="absolute bottom-10 right-4">
           <Button color="mint" className="min-h-[56px] px-8 text-xl" onClick={openBoard}>
             {tt('3d.answerBoard')}
           </Button>
@@ -298,7 +299,7 @@ export default function Classroom3D({ competency, questions, questionSource = 'b
 
       {/* look hint (right side) — drag the right half of the screen to look around */}
       {ready && !modal && (
-        <div className="pointer-events-none absolute bottom-8 right-6 max-w-[120px] text-right text-xs font-bold text-cream/70">
+        <div className="pointer-events-none absolute bottom-60 left-4 max-w-[45%] rounded-2xl bg-[rgba(0,0,0,0.62)] px-3 py-2 text-left text-xs font-bold leading-snug text-white">
           {tt('3d.lookHint')}
         </div>
       )}
@@ -336,7 +337,7 @@ export default function Classroom3D({ competency, questions, questionSource = 'b
       )}
 
       {ready && coachStep && !done && (
-        <div className="pointer-events-none absolute left-1/2 top-24 z-20 w-[min(90%,360px)] -translate-x-1/2">
+        <div className="pointer-events-none absolute left-3 right-20 top-28 z-20">
           <div className="gb-card gb-pop bg-white p-4 text-center font-extrabold">
             {tt(coachStep === 1 ? '3d.coach.move' : '3d.coach.board')}
           </div>

@@ -49,7 +49,7 @@ export default function LessonBrief({ competency: c, score = 0, answered = false
       </div>
       <nav className="lesson-brief-nav" aria-label="Lesson introduction steps">
         <button type="button" className="lesson-brief-nav-button" onClick={back} disabled={!step}><span aria-hidden="true">&larr;</span><span>{tt('common.back')}</span></button>
-        <div className="lesson-brief-dots">{[0,1].map((dot) => <button key={dot} type="button" className={`${dot === step ? 'is-active' : ''} ${dot <= furthest ? 'is-viewed' : 'is-locked'}`} disabled={dot > furthest} aria-label={`Section ${dot + 1}`} aria-current={dot === step ? 'step' : undefined} onClick={() => openViewed(dot)} />)}</div>
+        <div className="lesson-brief-dots">{[0,1].map((dot) => <button key={dot} type="button" className={`${dot === step ? 'is-active' : ''} ${dot <= furthest ? 'is-viewed' : 'is-locked'}`} disabled={dot > furthest} aria-label={tt('brief.section', { number: dot + 1 })} aria-current={dot === step ? 'step' : undefined} onClick={() => openViewed(dot)} />)}</div>
         <button type="button" className="lesson-brief-nav-button is-next" onClick={next} disabled={step === 1 && unlocked}><span>{step === 1 ? tt('common.done') : tt('common.next')}</span><span aria-hidden="true">&rarr;</span></button>
       </nav>
       </div>
@@ -60,7 +60,7 @@ export default function LessonBrief({ competency: c, score = 0, answered = false
         <Button color="sky" className="lesson-brief-mode-button" onClick={onEnter3D} disabled={!unlocked}>{!unlocked && <span className="lesson-brief-lock" aria-hidden="true" />}{tt('brief.enter3d')}</Button>
       </div>
     </section>
-      <SoundToggle className="lesson-brief-page-sound" />
+      <SoundToggle className="lesson-brief-page-sound" lang={lang} />
     </main>
   </div>
 }

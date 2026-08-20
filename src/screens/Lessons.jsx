@@ -6,11 +6,11 @@ import OnlineBadge from '../ui/OnlineBadge.jsx'
 import { hasAnswered, masteryColor } from '../lib/mastery.js'
 import { topicTitleLocalized } from '../lib/topics.js'
 import { makeT } from '../lib/i18n.js'
+import { isLessonCompleted, isLessonInProgress } from '../lib/progress.js'
 import './Home.css'
 import './Progress.css'
 
 const INITIAL_VISIBLE_LESSONS = 3
-const isLessonCompleted = (lesson) => Math.round(lesson.s * 100) >= 100
 
 export default function Lessons({ competencies, mastery, next, studentName = '', grade = 6, online = true, lang = 'taglish', onPick }) {
   const tt = makeT(lang)
@@ -51,8 +51,8 @@ export default function Lessons({ competencies, mastery, next, studentName = '',
 
   const ordered = useMemo(() => {
     const list = lessonItems.filter((lesson) => {
-      if (filter === 'started') return lesson.s > 0 && !isLessonCompleted(lesson)
-      if (filter === 'completed') return isLessonCompleted(lesson)
+      if (filter === 'started') return isLessonInProgress(lesson.answered, lesson.s)
+      if (filter === 'completed') return isLessonCompleted(lesson.s)
       return true
     })
     list.sort((a, b) => (sort === 'asc' ? a.s - b.s : b.s - a.s))
@@ -186,7 +186,7 @@ export default function Lessons({ competencies, mastery, next, studentName = '',
             const revealed = revealedDomains.has(domain)
             const localizedDomain = tt('domain.' + domain)
             const domainLabel = localizedDomain.startsWith('domain.') ? domain : localizedDomain
-            const completed = allLessons.filter(isLessonCompleted).length
+            const completed = allLessons.filter((lesson) => isLessonCompleted(lesson.s)).length
             const domainScore = allLessons.length
               ? allLessons.reduce((sum, lesson) => sum + lesson.s, 0) / allLessons.length
               : 0
@@ -229,11 +229,13 @@ export default function Lessons({ competencies, mastery, next, studentName = '',
 
                 {expanded && (
                   <div className="profile-domain-lessons">
-                    {visibleLessons.map(({ c, s }) => {
+                    {visibleLessons.map(({ c, s, answered: lessonAnswered }) => {
                       const color = masteryColor(s)
                       const recommended = next?.ref === c.ref
-                      const completedLesson = isLessonCompleted({ s })
-                      const startedLesson = s > 0 && !completedLesson
+                      const completedLesson = isLessonCompleted(s)
+                      // History-backed, so a wrong answer no longer flips a
+                      // lesson back to "Not started".
+                      const startedLesson = isLessonInProgress(lessonAnswered, s)
                       const pct = Math.round(s * 100)
                       const lessonTitle = topicTitleLocalized(c.ref, c.competency, lang)
                       const actionLabel = recommended

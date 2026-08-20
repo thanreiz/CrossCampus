@@ -10,6 +10,7 @@
 
 import { get, set } from 'idb-keyval'
 import { speechLang, DEFAULT_LANG } from './lang.js'
+import { apiUrl } from './api-base.js'
 
 // ---------------------------------------------------------------------------
 // speechSynthesis floor (offline, on-device). Voice follows the chosen language.
@@ -132,7 +133,7 @@ async function speakCloud(text, lang, gen) {
   if (typeof navigator !== 'undefined' && navigator.onLine === false) return false
 
   try {
-    const res = await fetch('/api/tts', {
+    const res = await fetch(apiUrl('/api/tts'), {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ text, lang }),

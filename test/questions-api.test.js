@@ -3,7 +3,7 @@ import assert from 'node:assert/strict'
 import { allowedOrigin, validateGeneratedQuestions, validateRequest } from '../api/questions.js'
 
 const request = {
-  mode: 'quiz', grade: 1, count: 5, language: 'taglish', refs: ['1MG-Ia-1'], mastery: { '1MG-Ia-1': 0.25 },
+  mode: 'quiz', grade: 4, count: 5, language: 'taglish', refs: ['4MG-Ia-1'], mastery: { '4MG-Ia-1': 0.25 },
 }
 
 test('question API accepts only the documented request contract', () => {
@@ -16,7 +16,7 @@ test('question API accepts only the documented request contract', () => {
 
 test('server deterministic validation enforces complete unique batches', () => {
   const questions = Array.from({ length: 5 }, (_, index) => ({
-    ref: '1MG-Ia-1', type: 'mcq', answer: 'square', options: ['circle', 'square', 'triangle', 'rectangle'],
+    ref: '4MG-Ia-1', type: 'mcq', answer: 'square', options: ['circle', 'square', 'triangle', 'rectangle'],
     q: { en: `Question ${index}`, fil: `Tanong ${index}`, taglish: `Question ${index}` },
     solution: { en: 'It is a square.', fil: 'Ito ay parisukat.', taglish: 'Square ito.' },
   }))
@@ -27,7 +27,7 @@ test('server deterministic validation enforces complete unique batches', () => {
 
 test('server rejects questions that quiz learners about curriculum metadata', () => {
   const questions = Array.from({ length: 5 }, (_, index) => ({
-    ref: '1MG-Ia-1', type: 'mcq', answer: 'square', options: ['circle', 'square', 'triangle', 'rectangle'],
+    ref: '4MG-Ia-1', type: 'mcq', answer: 'square', options: ['circle', 'square', 'triangle', 'rectangle'],
     q: { en: `Shape question ${index}`, fil: `Tanong sa hugis ${index}`, taglish: `Shape question ${index}` },
     solution: { en: 'It is a square.', fil: 'Ito ay parisukat.', taglish: 'Square ito.' },
   }))

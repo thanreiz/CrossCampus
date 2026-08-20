@@ -14,7 +14,10 @@
 // Unset creds -> 501 so the client uses speechSynthesis.
 
 import textToSpeech from '@google-cloud/text-to-speech'
+import { guard, parseBody } from './_shared.js'
 
+const RATE_LIMIT = Number(process.env.TTS_RATE_LIMIT || 30)
+const MAX_BODY_BYTES = 4_000
 const VOICE = process.env.TTS_VOICE || 'fil-PH-Wavenet-A'
 const LANG = process.env.TTS_LANG || 'fil-PH'
 const EN_VOICE = process.env.TTS_VOICE_EN || 'en-US-Neural2-F'
@@ -49,25 +52,22 @@ function ttsClient() {
 }
 
 export default async function handler(req, res) {
-  if (req.method !== 'POST') {
-    res.setHeader('Allow', 'POST')
-    return res.status(405).json({ error: 'Method Not Allowed' })
-  }
+  // Synthesis is billed per character, so this endpoint needs the same
+  // origin + rate-limit floor as the rest. It previously had none.
+  if (await guard(req, res, { bucket: 'tts', limit: RATE_LIMIT, maxBytes: MAX_BODY_BYTES })) return
 
   const client = ttsClient()
   // Not configured — signal client to fall back to speechSynthesis.
   if (!client) return res.status(501).json({ error: 'tts_unconfigured' })
 
-  let body = req.body
-  if (typeof body === 'string') {
-    try {
-      body = JSON.parse(body)
-    } catch {
-      body = {}
-    }
-  }
+  const { body, error: parseError } = parseBody(req, MAX_BODY_BYTES)
+  if (parseError) return res.status(parseError === 'invalid_json' ? 400 : 413).json({ error: parseError })
+
   const text = (body?.text || '').toString().trim()
   if (!text) return res.status(400).json({ error: 'no_text' })
+  if (body?.lang !== undefined && !['en', 'fil', 'taglish'].includes(body.lang)) {
+    return res.status(400).json({ error: 'invalid_language' })
+  }
   // Gabay lines are short; cap hard to guard cost/latency.
   const clipped = text.slice(0, 800)
   const { name, languageCode } = voiceFor(body?.lang)
@@ -82,7 +82,7 @@ export default async function handler(req, res) {
     res.setHeader('Content-Type', 'audio/mpeg')
     res.setHeader('Cache-Control', 'public, max-age=86400')
     return res.status(200).send(buf)
-  } catch (err) {
-    return res.status(502).json({ error: 'tts_failed', detail: String(err?.message || err) })
+  } catch {
+    return res.status(502).json({ error: 'tts_failed' })
   }
 }

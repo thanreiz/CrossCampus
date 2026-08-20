@@ -16,6 +16,7 @@ import { ChoiceVisual, QuestionVisual } from '../ui/LearningVisual.jsx'
 import { visualKeyForCompetency } from '../lib/visual-assets.js'
 import { lessonTeaching } from '../lib/lesson-teaching.js'
 import { sfx } from '../lib/sound.js'
+import { stripMarkdown } from '../lib/strip-markdown.js'
 import './Classroom.css'
 import {
   createRecognizer,
@@ -36,10 +37,7 @@ const TABS = [
   { key: 'practice', tkey: 'class.tab.practice' },
 ]
 
-// Strip **bold** markup before reading text aloud.
-function plain(s) {
-  return String(s ?? '').replace(/\*\*/g, '')
-}
+const plain = stripMarkdown
 
 function uniqueIncorrectAnswers(answers = []) {
   const byQuestion = new Map()
@@ -523,11 +521,11 @@ export default function Classroom({ competency, questions, questionSource = 'bun
               <p className="mb-1 text-xs font-bold text-ink/60">
                 {(reply.source && tt(SOURCE_KEY[reply.source])) || ''} {reply.fromCache ? ' - cached' : ''}
               </p>
-              <p className="text-base leading-snug">{reply.text.replace(/\*\*/g, '')}</p>
+              <p className="text-base leading-snug">{plain(reply.text)}</p>
               {isSpeechSupported() && (
                 <button
                   className="mt-2 flex h-10 w-10 items-center justify-center rounded-full border-[2.5px] border-outline bg-white shadow-hard-sm"
-                  onClick={() => speak(reply.text.replace(/\*\*/g, ''), { lang })}
+                  onClick={() => speak(plain(reply.text), { lang })}
                   aria-label={tt('class.listenAgain')}
                   title={tt('class.listenAgain')}
                 >

@@ -3,7 +3,7 @@ import { isLearnerFacingQuestion } from './question-quality.js'
 import { API_BASE } from './api-base.js'
 
 export const ROTATION_VERSION = 'v1'
-export const QUESTION_TIMEOUT_MS = 25_000
+export const QUESTION_TIMEOUT_MS = 90_000
 export const QUESTION_API_BASE = API_BASE
 
 const defaultStore = { get, set }
@@ -102,14 +102,14 @@ export function validateQuestionBatch(value, count, allowedRefs) {
   return true
 }
 
-async function requestAiBatch({ mode, grade, count, language, refs, mastery, fetchImpl, timeoutMs }) {
+async function requestAiBatch({ mode, grade, count, language, refs, mastery, theme, fetchImpl, timeoutMs }) {
   const controller = new AbortController()
   const timer = setTimeout(() => controller.abort(), timeoutMs)
   try {
     const response = await fetchImpl(`${QUESTION_API_BASE}/api/questions`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ mode, grade, count, language, refs, mastery }),
+      body: JSON.stringify({ mode, grade, count, language, refs, mastery, ...(theme ? { theme } : {}) }),
       signal: controller.signal,
     })
     if (!response.ok) throw new Error(`Question service returned ${response.status}`)
@@ -141,7 +141,7 @@ export async function prepareQuestionSession({
 
   if (connectivity && typeof fetchImpl === 'function') {
     try {
-      const questions = await requestAiBatch({ mode, grade, count, language, refs, mastery: relevantMastery, fetchImpl, timeoutMs })
+      const questions = await requestAiBatch({ mode, grade, count, language, refs, mastery: relevantMastery, theme: scope.game, fetchImpl, timeoutMs })
       const details = new Map(competencies.map((competency) => [competency.ref, competency]))
       return {
         source: 'ai',

@@ -72,7 +72,7 @@
   padding: 1.05rem;
   border-width: 2.5px;
   border-radius: 1.35rem;
-  box-shadow: 7px 8px 0 #3a2418;
+  box-shadow: 7px 8px 0 var(--gb-ink);
 }
 
 .start-choice-page .start-choice-card + .start-choice-card {
@@ -83,12 +83,12 @@
   min-height: 1.6rem;
   padding: 0.2rem 0.65rem;
   border-width: 2px;
-  color: #177f76;
-  box-shadow: 0 2px 0 #3a2418;
+  color: var(--gb-secondary-dark);
+  box-shadow: 0 2px 0 var(--gb-ink);
 }
 
 .start-choice-page .start-choice-card--browse .start-choice-step {
-  color: #347ca6;
+  color: var(--gb-info);
 }
 
 .start-choice-page .start-choice-card-title {
@@ -106,7 +106,7 @@
   padding: 0.85rem 1rem;
   border-width: 2.5px;
   border-radius: 0.85rem;
-  box-shadow: 0 3px 0 #3a2418;
+  box-shadow: 0 3px 0 var(--gb-ink);
 }
 
 .start-choice-page .start-choice-action.gb-btn {
@@ -116,13 +116,13 @@
   border-width: 2.5px;
   border-radius: 999px;
   font-size: 1rem;
-  box-shadow: 0 6px 0 #3a2418;
+  box-shadow: 0 6px 0 var(--gb-ink);
   transition: transform 120ms ease, box-shadow 120ms ease;
 }
 
 .start-choice-page .start-choice-action.gb-btn:active {
   transform: translateY(4px);
-  box-shadow: 0 2px 0 #3a2418;
+  box-shadow: 0 2px 0 var(--gb-ink);
 }
 
 .start-choice-page .start-choice-action--browse {

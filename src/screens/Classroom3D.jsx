@@ -188,7 +188,7 @@ export default function Classroom3D({ competency, questions, questionSource = 'b
 
   if (sceneError) {
     return (
-      <main className="flex min-h-[100dvh] items-center justify-center bg-[#27433b] p-5">
+      <main className="flex min-h-[100dvh] items-center justify-center bg-[var(--gb-secondary-dark)] p-5">
         <section className="gb-card max-w-md bg-cream p-6 text-center">
           <Mascot className="mx-auto h-28 w-28" />
           <h1 className="mt-3 font-display text-2xl">{tt('3d.unavailable.title')}</h1>
@@ -203,7 +203,7 @@ export default function Classroom3D({ competency, questions, questionSource = 'b
   }
 
   return (
-    <div className="relative h-[100dvh] w-full overflow-hidden bg-[#27433b]">
+    <div className="relative h-[100dvh] w-full overflow-hidden bg-[var(--gb-secondary-dark)]">
       {/* Three.js canvas mounts here */}
       <div ref={mountRef} className="absolute inset-0" />
       {/* top HUD */}
@@ -425,7 +425,7 @@ export default function Classroom3D({ competency, questions, questionSource = 'b
             </div>
 
             {nudge && (
-              <p className="mt-2 px-1 text-sm font-extrabold text-[#c0414b]">{tt('common.' + nudge)}</p>
+              <p className="mt-2 px-1 text-sm font-extrabold text-[var(--gb-danger)]">{tt('common.' + nudge)}</p>
             )}
 
           </div>

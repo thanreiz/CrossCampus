@@ -1,4 +1,4 @@
-﻿// Neo-brutalist building blocks: thick outlines, hard offset shadows, pills.
+// Neo-brutalist building blocks: thick outlines, hard offset shadows, pills.
 import { topicArea } from '../lib/topics.js'
 import { masteryColor } from '../lib/mastery.js'
 import { playButtonSfx } from '../lib/sound.js'
@@ -115,8 +115,8 @@ export function Sparkle({ size = 20, className = '' }) {
     <svg viewBox="0 0 24 24" width={size} height={size} className={className} aria-hidden="true">
       <path
         d="M12 2 L14 9 L21 12 L14 15 L12 22 L10 15 L3 12 L10 9 Z"
-        fill="#F7D26A"
-        stroke="#1C1410"
+        fill="var(--gb-primary)"
+        stroke="var(--gb-outline)"
         strokeWidth="1.5"
         strokeLinejoin="round"
       />
@@ -129,8 +129,8 @@ export function Cloud({ size = 40, className = '' }) {
     <svg viewBox="0 0 64 40" width={size} height={size} className={className} aria-hidden="true">
       <path
         d="M16 32 a12 12 0 0 1 2-23 a14 14 0 0 1 27 3 a10 10 0 0 1 1 20 Z"
-        fill="#ffffff"
-        stroke="#1C1410"
+        fill="var(--gb-surface-strong)"
+        stroke="var(--gb-outline)"
         strokeWidth="2.5"
         strokeLinejoin="round"
       />
@@ -141,9 +141,9 @@ export function Cloud({ size = 40, className = '' }) {
 export function Plant({ size = 28, className = '' }) {
   return (
     <svg viewBox="0 0 32 40" width={size} height={size} className={className} aria-hidden="true">
-      <path d="M16 38 V20" stroke="#1C1410" strokeWidth="2.5" strokeLinecap="round" />
-      <path d="M16 24 C8 22 6 14 10 10 C16 12 18 18 16 24 Z" fill="#8FD9B6" stroke="#1C1410" strokeWidth="2" strokeLinejoin="round" />
-      <path d="M16 20 C24 18 26 10 22 6 C16 8 14 14 16 20 Z" fill="#8FD9B6" stroke="#1C1410" strokeWidth="2" strokeLinejoin="round" />
+      <path d="M16 38 V20" stroke="var(--gb-outline)" strokeWidth="2.5" strokeLinecap="round" />
+      <path d="M16 24 C8 22 6 14 10 10 C16 12 18 18 16 24 Z" fill="var(--gb-secondary)" stroke="var(--gb-outline)" strokeWidth="2" strokeLinejoin="round" />
+      <path d="M16 20 C24 18 26 10 22 6 C16 8 14 14 16 20 Z" fill="var(--gb-secondary)" stroke="var(--gb-outline)" strokeWidth="2" strokeLinejoin="round" />
     </svg>
   )
 }

@@ -22,7 +22,7 @@ const GAMES = [
   {
     key: 'store',
     outer: 'bg-peach',
-    accent: '#f7d26a',
+    accent: 'var(--gb-primary)',
     awning: ['bg-rose', 'bg-white', 'bg-yellow', 'bg-white', 'bg-rose'],
     Icon: ShopIcon,
     image: '/game-store.png',
@@ -32,7 +32,7 @@ const GAMES = [
   {
     key: 'garden',
     outer: 'bg-mint',
-    accent: '#bfe8cf',
+    accent: 'var(--gb-secondary-soft)',
     awning: ['bg-mint', 'bg-white', 'bg-yellow', 'bg-white', 'bg-mint'],
     Icon: GardenIcon,
     image: '/game-garden.png',
@@ -42,7 +42,7 @@ const GAMES = [
   {
     key: 'house',
     outer: 'bg-sky',
-    accent: '#bfe2f7',
+    accent: 'var(--gb-sky)',
     awning: ['bg-sky', 'bg-white', 'bg-peach', 'bg-white', 'bg-sky'],
     Icon: HouseIcon,
     image: '/game-house.png',
@@ -52,7 +52,7 @@ const GAMES = [
   {
     key: 'fiesta',
     outer: 'bg-lavender',
-    accent: '#ddd0f5',
+    accent: 'var(--gb-lavender-soft)',
     awning: ['bg-lavender', 'bg-white', 'bg-rose', 'bg-white', 'bg-lavender'],
     Icon: FiestaIcon,
     image: '/game-fiesta.png',
@@ -395,10 +395,33 @@ export default function Games({ online = true, grade = 6, competencies = [], mas
       <Header online={online} tt={tt} />
 
       <div className="game-play-meta relative z-10">
+        <button
+          type="button"
+          className="game-play-back"
+          onClick={() => {
+            playButtonSfx()
+            backToPicker()
+          }}
+          aria-label={tt('common.back')}
+          title={tt('common.back')}
+        >
+          <BackArrowIcon />
+          <span>{tt('common.back')}</span>
+        </button>
         <RefBadge refId={round.ref} domain={tt(`domain.${round.domain || 'Number and Algebra'}`)} />
-        <span className="gb-chip bg-yellow shadow-hard-sm text-sm">{tt('games.coins')} {coins}</span>
+        <span className="game-play-meta-spacer" aria-hidden="true" />
+        <span className="game-play-coins gb-chip bg-yellow shadow-hard-sm text-sm">{tt('games.coins')} {coins}</span>
       </div>
 
+      {round?.ref && Object.prototype.hasOwnProperty.call(mastery, round.ref) && (
+        <div className="game-play-mastery relative z-10">
+          <div className="mb-1 flex justify-between text-sm font-extrabold text-ink/60">
+            <span>{tt('common.mastery')}</span>
+            <span>{Math.round(score * 100)}%</span>
+          </div>
+          <MasteryBar score={score} />
+        </div>
+      )}
       <GameQuestionCard
         round={round}
         game={game}
@@ -444,15 +467,7 @@ export default function Games({ online = true, grade = 6, competencies = [], mas
         </GameAnswerCard>
       )}
 
-      {round?.ref && Object.prototype.hasOwnProperty.call(mastery, round.ref) && (
-        <div className="game-play-mastery relative z-10">
-          <div className="mb-1 flex justify-between text-sm font-extrabold text-ink/60">
-            <span>{tt('common.mastery')}</span>
-            <span>{Math.round(score * 100)}%</span>
-          </div>
-          <MasteryBar score={score} />
-        </div>
-      )}
+
       {showCorrectOverlay && (
         <div className="pointer-events-none fixed inset-0 z-[80] flex items-center justify-center bg-mint/90 px-6 text-center">
           <p className="nova-correct font-display text-5xl font-extrabold text-ink">{tt('classroom.correctOverlay')}</p>
@@ -537,7 +552,6 @@ function GameQuestionCard({ round, game, lang, tt, currentIndex, total, result, 
     <section className={`game-question-card gb-pop relative z-10 ${result === false ? 'answer-shake' : ''}`}>
       <div className="game-question-progress">
         <p>{tt('common.question')} {currentIndex + 1} / {total}</p>
-        <GameProgressDots currentIndex={currentIndex} total={total} tt={tt} />
       </div>
 
       <div className="game-question-title-row">
@@ -575,27 +589,6 @@ function GameQuestionCard({ round, game, lang, tt, currentIndex, total, result, 
         </div>
       )}
     </section>
-  )
-}
-
-function GameProgressDots({ currentIndex, total, tt }) {
-  return (
-    <span
-      className="game-question-dots"
-      role="progressbar"
-      aria-label={`${tt('common.question')} ${currentIndex + 1} / ${total}`}
-      aria-valuemin="1"
-      aria-valuemax={total}
-      aria-valuenow={currentIndex + 1}
-    >
-      {Array.from({ length: total }, (_, index) => (
-        <span
-          key={index}
-          className={index < currentIndex ? 'is-completed' : index === currentIndex ? 'is-current' : 'is-remaining'}
-          aria-hidden="true"
-        />
-      ))}
-    </span>
   )
 }
 
@@ -757,12 +750,13 @@ function BackArrowIcon() {
 function ChallengeIcon() {
   return (
     <svg viewBox="0 0 48 48" aria-hidden="true">
-      <rect x="12" y="9" width="24" height="32" rx="4" fill="#fff8e7" stroke="#1c1410" strokeWidth="3" />
-      <rect x="18" y="5" width="12" height="8" rx="3" fill="#f7d26a" stroke="#1c1410" strokeWidth="3" />
-      <path d="m18 22 3 3 6-7M18 32h12" fill="none" stroke="#1c1410" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
+      <rect x="12" y="9" width="24" height="32" rx="4" fill="var(--gb-surface)" stroke="var(--gb-outline)" strokeWidth="3" />
+      <rect x="18" y="5" width="12" height="8" rx="3" fill="var(--gb-primary)" stroke="var(--gb-outline)" strokeWidth="3" />
+      <path d="m18 22 3 3 6-7M18 32h12" fill="none" stroke="var(--gb-outline)" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
   )
 }
+
 
 function StartArrowIcon() {
   return (
@@ -771,12 +765,11 @@ function StartArrowIcon() {
     </svg>
   )
 }
-
 function ResultCoinIcon() {
   return (
     <svg viewBox="0 0 32 32" aria-hidden="true">
-      <circle cx="16" cy="16" r="13" fill="#ffd45e" stroke="currentColor" strokeWidth="2.2" />
-      <path d="m16 8.7 2.1 4.3 4.8.7-3.5 3.4.8 4.8-4.2-2.3-4.2 2.3.8-4.8-3.5-3.4 4.8-.7Z" fill="#fff1aa" stroke="currentColor" strokeWidth="1.2" strokeLinejoin="round" />
+      <circle cx="16" cy="16" r="13" fill="var(--gb-primary)" stroke="currentColor" strokeWidth="2.2" />
+      <path d="m16 8.7 2.1 4.3 4.8.7-3.5 3.4.8 4.8-4.2-2.3-4.2 2.3.8-4.8-3.5-3.4 4.8-.7Z" fill="var(--gb-primary-soft)" stroke="currentColor" strokeWidth="1.2" strokeLinejoin="round" />
     </svg>
   )
 }
@@ -821,9 +814,9 @@ function GridIcon() {
 function ShopIcon() {
   return (
     <svg viewBox="0 0 80 80" width="50" height="50" aria-hidden="true">
-      <path d="M12 30 L17 14 h46 l5 16 Z" fill="#F4A87C" stroke="#1C1410" strokeWidth="4" strokeLinejoin="round" />
-      <rect x="18" y="30" width="44" height="34" rx="3" fill="#A9D8F0" stroke="#1C1410" strokeWidth="4" />
-      <rect x="32" y="42" width="16" height="22" fill="#fff" stroke="#1C1410" strokeWidth="4" />
+      <path d="M12 30 L17 14 h46 l5 16 Z" fill="var(--gb-peach)" stroke="var(--gb-outline)" strokeWidth="4" strokeLinejoin="round" />
+      <rect x="18" y="30" width="44" height="34" rx="3" fill="var(--gb-sky)" stroke="var(--gb-outline)" strokeWidth="4" />
+      <rect x="32" y="42" width="16" height="22" fill="var(--gb-surface-strong)" stroke="var(--gb-outline)" strokeWidth="4" />
     </svg>
   )
 }
@@ -831,10 +824,10 @@ function ShopIcon() {
 function GardenIcon() {
   return (
     <svg viewBox="0 0 80 80" width="50" height="50" aria-hidden="true">
-      <path d="M40 46 V66" stroke="#1C1410" strokeWidth="4" strokeLinecap="round" />
-      <path d="M40 50 C24 46 20 30 30 22 C44 26 48 42 40 50 Z" fill="#8FD9B6" stroke="#1C1410" strokeWidth="4" strokeLinejoin="round" />
-      <path d="M40 42 C56 38 60 22 50 14 C36 18 32 34 40 42 Z" fill="#8FD9B6" stroke="#1C1410" strokeWidth="4" strokeLinejoin="round" />
-      <path d="M24 66 h32 l-4 8 H28 Z" fill="#F4A87C" stroke="#1C1410" strokeWidth="4" strokeLinejoin="round" />
+      <path d="M40 46 V66" stroke="var(--gb-outline)" strokeWidth="4" strokeLinecap="round" />
+      <path d="M40 50 C24 46 20 30 30 22 C44 26 48 42 40 50 Z" fill="var(--gb-secondary)" stroke="var(--gb-outline)" strokeWidth="4" strokeLinejoin="round" />
+      <path d="M40 42 C56 38 60 22 50 14 C36 18 32 34 40 42 Z" fill="var(--gb-secondary)" stroke="var(--gb-outline)" strokeWidth="4" strokeLinejoin="round" />
+      <path d="M24 66 h32 l-4 8 H28 Z" fill="var(--gb-peach)" stroke="var(--gb-outline)" strokeWidth="4" strokeLinejoin="round" />
     </svg>
   )
 }
@@ -842,9 +835,9 @@ function GardenIcon() {
 function HouseIcon() {
   return (
     <svg viewBox="0 0 80 80" width="50" height="50" aria-hidden="true">
-      <path d="M12 38 L40 14 L68 38 Z" fill="#F4A87C" stroke="#1C1410" strokeWidth="4" strokeLinejoin="round" />
-      <rect x="20" y="38" width="40" height="28" fill="#A9D8F0" stroke="#1C1410" strokeWidth="4" />
-      <rect x="34" y="48" width="12" height="18" fill="#fff" stroke="#1C1410" strokeWidth="4" />
+      <path d="M12 38 L40 14 L68 38 Z" fill="var(--gb-peach)" stroke="var(--gb-outline)" strokeWidth="4" strokeLinejoin="round" />
+      <rect x="20" y="38" width="40" height="28" fill="var(--gb-sky)" stroke="var(--gb-outline)" strokeWidth="4" />
+      <rect x="34" y="48" width="12" height="18" fill="var(--gb-surface-strong)" stroke="var(--gb-outline)" strokeWidth="4" />
     </svg>
   )
 }
@@ -852,9 +845,9 @@ function HouseIcon() {
 function FiestaIcon() {
   return (
     <svg viewBox="0 0 80 80" width="50" height="50" aria-hidden="true">
-      <circle cx="40" cy="42" r="22" fill="#fff" stroke="#1C1410" strokeWidth="4" />
-      <path d="M40 42 L40 20 A22 22 0 0 1 61 44 Z" fill="#C9B6F0" stroke="#1C1410" strokeWidth="4" strokeLinejoin="round" />
-      <path d="M40 42 L61 44 A22 22 0 0 1 28 61 Z" fill="#F7D26A" stroke="#1C1410" strokeWidth="4" strokeLinejoin="round" />
+      <circle cx="40" cy="42" r="22" fill="var(--gb-surface-strong)" stroke="var(--gb-outline)" strokeWidth="4" />
+      <path d="M40 42 L40 20 A22 22 0 0 1 61 44 Z" fill="var(--gb-lavender)" stroke="var(--gb-outline)" strokeWidth="4" strokeLinejoin="round" />
+      <path d="M40 42 L61 44 A22 22 0 0 1 28 61 Z" fill="var(--gb-primary)" stroke="var(--gb-outline)" strokeWidth="4" strokeLinejoin="round" />
     </svg>
   )
 }

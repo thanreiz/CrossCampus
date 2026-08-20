@@ -41,7 +41,7 @@ function IconPaths({ kind }) {
   if (kind === 'fraction') return <><circle cx="24" cy="24" r="16" {...line} /><path d="M24 8v32M24 24h16" {...line} /><path d="M24 24 35 13" {...line} /></>
   if (kind === 'multiplication') return <><path d="m15 15 18 18m0-18L15 33" {...line} /><circle cx="9" cy="9" r="2" fill="currentColor" /><circle cx="39" cy="39" r="2" fill="currentColor" /></>
   if (kind === 'division') return <><path d="M10 24h28" {...line} /><circle cx="24" cy="12" r="3" fill="currentColor" /><circle cx="24" cy="36" r="3" fill="currentColor" /></>
-  if (kind === 'ratio') return <><path d="M8 35h32M13 35l8-20 6 20M35 35l-8-20" {...line} /><path d="M9 15h30" {...line} /><circle cx="9" cy="15" r="3" fill="#f4c3d0" /><circle cx="39" cy="15" r="3" fill="#8fd9b6" /></>
+  if (kind === 'ratio') return <><path d="M8 35h32M13 35l8-20 6 20M35 35l-8-20" {...line} /><path d="M9 15h30" {...line} /><circle cx="9" cy="15" r="3" fill="var(--gb-rose)" /><circle cx="39" cy="15" r="3" fill="var(--gb-secondary)" /></>
   if (kind === 'statistics') return <><path d="M9 39V26h7v13M21 39V13h7v26M33 39V20h7v19M6 39h36" {...line} /></>
   if (kind === 'measurement') return <><path d="m9 34 25-25 7 7-25 25Z" {...line} /><path d="m16 31 4 4m0-8 4 4m0-8 4 4m0-8 4 4" {...line} /></>
   if (kind === 'geometry') return <><path d="M8 39 23 9l17 30Z" {...line} /><path d="m15 33 15-1-9-11Z" {...line} /></>

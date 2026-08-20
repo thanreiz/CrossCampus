@@ -1,8 +1,8 @@
-// Shared line icons in the app's bold-outline style (ink #1C1410, ~2.2 stroke).
+// Shared line icons in the app's bold-outline style (ink var(--gb-outline), ~2.2 stroke).
 // Used by the Classroom voice controls so the buttons read as friendly glyphs
 // instead of text. Each icon is sized via the `size` prop (default 24).
 
-const INK = '#1C1410'
+const INK = 'var(--gb-outline)'
 
 // Ear with three sound curves — replaces the "Listen again" text button.
 export function EarIcon({ size = 24, className = '' }) {

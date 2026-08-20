@@ -103,11 +103,11 @@ export default function App() {
     else if (key === 'profile') setScreen('progress')
   }
 
-  function withNav(activeKey, node) {
+  function withNav(activeKey, node, showSound = true) {
     return (
       <>
         {node}
-        <SoundToggle />
+        {showSound && <SoundToggle />}
         <BottomNav active={activeKey} onNav={navTo} lang={lang} />
       </>
     )
@@ -235,7 +235,7 @@ export default function App() {
           onEnter3D={() => enterClassroom('3d')}
           onBack={() => setScreen('topics')}
         />
-      ))
+      ), false)
 
     case 'classroom':
       return (
@@ -255,7 +255,7 @@ export default function App() {
 
     case 'classroom3d':
       return (
-        <Suspense fallback={<div className="flex min-h-screen items-center justify-center bg-[#27433b] font-display text-xl text-cream">{t('3d.preparing', lang)}</div>}>
+        <Suspense fallback={<div className="flex min-h-screen items-center justify-center bg-[var(--gb-secondary-dark)] font-display text-xl text-cream">{t('3d.preparing', lang)}</div>}>
           <Classroom3D
             competency={active}
             questions={questionSession?.questions}

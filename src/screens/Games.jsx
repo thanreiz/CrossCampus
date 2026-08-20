@@ -528,8 +528,12 @@ function buildStatement(body, answer) {
   const findMatch = body.match(/^(?:Find|Calculate|Estimate)\s+(.+)/i)
   if (findMatch) return `${body.replace(/\.$/, '')} = ${answer}`
 
-  // Question-form body (ends with "?") → answer IS the statement
-  if (body.trim().endsWith('?')) return answer
+  // Question-form body (ends with "?") → drop only the trailing question, keep any leading context
+  if (body.trim().endsWith('?')) {
+    const sentences = body.trim().split(/(?<=[.!?])\s+/)
+    const context = sentences.slice(0, -1).join(' ')
+    return context ? `${context} ${answer}` : answer
+  }
 
   // "What is [X]?" / "Which [X]?" / "Does [X]?" → "[Answer]" (concise)
   const whatMatch = body.match(/(?:What|Which|How|Does|Do|Is|Are|Can)\s+.+\?/)

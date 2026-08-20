@@ -231,9 +231,14 @@ export default async function handler(req, res) {
   if (!ai) return res.status(503).json({ error: 'question_service_unconfigured' })
 
   try {
+    const generateStart = Date.now()
     const questions = await generate(ai, body)
+    console.log(`generate() took ${Date.now() - generateStart}ms`)
     if (!validateGeneratedQuestions(questions, body)) throw new Error('deterministic_validation_failed')
-    if (!(await verify(ai, body, questions))) throw new Error('verification_failed')
+    const verifyStart = Date.now()
+    const verified = await verify(ai, body, questions)
+    console.log(`verify() took ${Date.now() - verifyStart}ms`)
+    if (!verified) throw new Error('verification_failed')
     return res.status(200).json({ source: 'ai', questions })
   } catch (err) {
     console.error('question generation failed:', err)

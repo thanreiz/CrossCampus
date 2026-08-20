@@ -517,7 +517,38 @@ body:not(:has(.splash-page)) .game-results-page,
 body:not(:has(.splash-page)) .game-play-page,
 body:not(:has(.splash-page)) .classroom-page {
   background-color: var(--gb-background) !important;
-  background-image: none !important;
+  /* faint drifting doodles (cloud, sparkle, plus, leaf, dice) echoing the splash artwork, at low opacity */
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="340" height="340" viewBox="0 0 340 340"><g fill="none" stroke-linecap="round" stroke-linejoin="round"><g stroke="%23a9d8f0" stroke-width="3" opacity="0.55"><ellipse cx="40" cy="72" rx="14" ry="10"/><ellipse cx="56" cy="65" rx="19" ry="14"/><ellipse cx="74" cy="72" rx="13" ry="9"/></g><path d="M230 30 L236 46 L252 52 L236 58 L230 74 L224 58 L208 52 L224 46 Z" stroke="%23f4a87c" stroke-width="3" opacity="0.5"/><path d="M182 254 L186 263 L195 267 L186 271 L182 280 L178 271 L169 267 L178 263 Z" stroke="%23f7d26a" stroke-width="3" opacity="0.55"/><path d="M120 150 L120 172 M109 161 L131 161" stroke="%23f4c3d0" stroke-width="5" opacity="0.55"/><g stroke="%238fd9b6" stroke-width="3" opacity="0.55"><path d="M270 188 Q290 160 310 188 Q290 216 270 188 Z"/><path d="M290 188 L290 206"/></g><g stroke="%23c8b89a" stroke-width="3" opacity="0.5"><rect x="58" y="228" width="30" height="30" rx="7"/><circle cx="73" cy="243" r="2.5" fill="%23c8b89a" stroke="none"/></g></g></svg>') !important;
+  background-repeat: repeat !important;
+  background-size: 340px 340px !important;
+  background-position: 0 0;
+  animation: gb-doodles-drift 140s linear infinite;
+}
+
+@keyframes gb-doodles-drift {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 340px 340px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body:not(:has(.splash-page)) .gb-shell,
+  body:not(:has(.splash-page)) .home-dashboard,
+  body:not(:has(.splash-page)) .profile-page,
+  body:not(:has(.splash-page)) .topic-picker-page,
+  body:not(:has(.splash-page)) .lesson-brief-page,
+  body:not(:has(.splash-page)) .start-choice-page,
+  body:not(:has(.splash-page)) .games-picker-page,
+  body:not(:has(.splash-page)) .game-generating-page,
+  body:not(:has(.splash-page)) .game-setup-page,
+  body:not(:has(.splash-page)) .game-results-page,
+  body:not(:has(.splash-page)) .game-play-page,
+  body:not(:has(.splash-page)) .classroom-page {
+    animation: none;
+  }
 }
 
 /* Page-level artwork and generated patterns only; foreground cards remain. */

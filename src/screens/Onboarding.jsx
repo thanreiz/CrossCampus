@@ -35,7 +35,7 @@ export default function Onboarding({ lang = 'taglish', onDone }) {
         {step === 1 && (
           <>
             <h1 className="font-display text-3xl font-extrabold">{tt('onboarding.grade')}</h1>
-            <div className="mt-5 grid grid-cols-2 gap-3">
+            <div className="mt-5 grid grid-cols-1 gap-3">
               {GRADES.map((value) => (
                 <button
                   key={value}

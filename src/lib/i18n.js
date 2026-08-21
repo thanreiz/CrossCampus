@@ -26,9 +26,9 @@ export const STRINGS = {
   },
   'splash.offline': { en: '100% OFFLINE LEARNING', fil: '100% OFFLINE NA PAG-AARAL', taglish: '100% OFFLINE LEARNING' },
   'splash.tagline': {
-    en: 'Your offline-first learning companion',
-    fil: 'Ang iyong kasama sa pag-aaral kahit offline',
-    taglish: 'Ang offline-first mong learning companion',
+    en: 'Your offline AI Math Companion',
+    fil: 'Ang iyong AI na kasama sa Math, kahit offline',
+    taglish: 'Ang offline AI Math companion mo',
   },
 
   // ---- shared / nav ----

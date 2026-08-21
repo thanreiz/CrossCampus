@@ -365,6 +365,11 @@ body {
   font-size: clamp(0.95rem, 4vw, 1.4rem);
   font-weight: 900;
   line-height: 1.25;
+  /* Tagalog/Taglish taglines run longer than English — wrap inside the card
+     instead of spilling past its rounded border. */
+  max-width: 100%;
+  text-wrap: balance;
+  overflow-wrap: break-word;
 }
 
 .splash-divider {
@@ -551,7 +556,6 @@ body {
 
   .splash-tagline {
     font-size: 1.05rem;
-    white-space: nowrap;
     margin-top: 0.6rem;
   }
 

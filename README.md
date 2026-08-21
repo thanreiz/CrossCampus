@@ -21,9 +21,24 @@
   <img alt="Vercel" src="https://img.shields.io/badge/Vercel-Deployed-000000?style=flat-square&logo=vercel&logoColor=white" />
 </p>
 
-> Offline-first AI study companion for Filipino Grade 4–6 learners, built by **Team CrossCampus**.
+<p align="center">
+  <img alt="DepEd MATATAG" src="https://img.shields.io/badge/DepEd-MATATAG_aligned-2E7D5B?style=flat-square" />
+  <img alt="Competencies" src="https://img.shields.io/badge/Competencies-155-F7D26A?style=flat-square&labelColor=1C1410" />
+  <img alt="Practice items" src="https://img.shields.io/badge/Bundled_items-~1%2C570-F4A87C?style=flat-square&labelColor=1C1410" />
+  <img alt="Precached" src="https://img.shields.io/badge/Precached-117_entries-8FD9B6?style=flat-square&labelColor=1C1410" />
+  <img alt="Languages" src="https://img.shields.io/badge/UI-Taglish_%7C_Tagalog_%7C_English-A9D8F0?style=flat-square&labelColor=1C1410" />
+  <img alt="Games" src="https://img.shields.io/badge/Mini--games-4-F4C3D0?style=flat-square&labelColor=1C1410" />
+  <img alt="Room themes" src="https://img.shields.io/badge/3D_room_themes-5-C6E6FF?style=flat-square&labelColor=1C1410" />
+  <img alt="Tests" src="https://img.shields.io/badge/node_--test-65_passing-6DA544?style=flat-square&labelColor=1C1410" />
+  <img alt="Web Audio" src="https://img.shields.io/badge/Web_Audio-Procedural_SFX-E4B7FF?style=flat-square&labelColor=1C1410" />
+  <img alt="No accounts" src="https://img.shields.io/badge/No_accounts-No_client_API_keys-9AA0A6?style=flat-square&labelColor=1C1410" />
+</p>
+
+> **Your offline AI Math Companion** — built for Filipino Grade 4–6 learners by **Team CrossCampus**.
 
 **Live app:** https://gabay-sage.vercel.app
+
+**Jump to:** [Architecture and diagrams](#system-architecture) · [Feature set](#current-feature-set) · [Demo flow](#demo-flow) · [Tech stack](#tech-stack) · [Project map](#project-map) · [Run locally](#run-locally) · [Assets and logos](#visual-identity-and-assets) · [Roadmap](#future-plan-and-scaling)
 
 Gabay is a mobile-first Progressive Web App that helps Grade 4–6 students practice Mathematics with Teacher Gabay, a friendly tutor mascot. The app combines curriculum-grounded lessons, AI-generated adaptive practice sessions, adaptive mastery tracking, multilingual UI, on-device and cloud AI tutoring, voice support, a 2D tutor classroom, a themeable textured 3D classroom simulation, ambient music/SFX, and four curriculum mini-games.
 
@@ -59,6 +74,157 @@ Gabay is designed to keep the core learning experience — and as much of the AI
 - **AI can work offline too:** on capable Chrome builds, Teacher Gabay answers questions fully on-device via Gemini Nano — no network required.
 - **No cloud lock-in for studying:** cloud Gemini tutoring, adaptive question generation, Gemini transcription, and Google Cloud TTS are online upgrades, not requirements for learning.
 - **Graceful fallback:** when online APIs (or Nano) are unavailable, learners get bundled question rotations, typed answers, cached explanations, and browser speech synthesis where supported.
+- **Survives an offline reload:** Workbox serves the precached shell for navigation requests, so refreshing (or reopening) the installed app with no network shows Gabay, not the browser's error page.
+- **Honest connectivity detection:** the app trusts a real request to `api/ping.js`, not `navigator.onLine`, so a throttled or captive-portal connection is treated as offline instead of pretending to be online.
+- **Fails fast, not slow:** before committing to the 90s AI question-generation window, a 3s reachability check decides whether to even try — a dropped connection drops straight to bundled questions instead of stalling the loading screen.
+
+## System Architecture
+
+Everything inside the outlined **Learner device** box runs on the learner's device and keeps working with no network. Everything outside it is an optional upgrade.
+
+```mermaid
+flowchart TB
+  subgraph device["Learner device"]
+    subgraph shell["PWA shell - precached by Workbox"]
+      UI["React 19 screens<br/>Splash, Onboarding, Home, Topics,<br/>LessonBrief, Classroom 2D, Classroom 3D,<br/>Games, Progress"]
+      THREE["Three.js classroom<br/>5 room themes, bundled textures"]
+      AUDIO["Web Audio engine<br/>procedural music and SFX"]
+    end
+    subgraph logic["Local learning logic"]
+      CHECK["check.js - answer checking"]
+      FEED["feedback.js - localized feedback + haptics"]
+      MASTERY["mastery.js - mastery + spaced repetition"]
+      SESSION["question-session.js - batch + fallback"]
+      TUTOR["tutor.js - tiered tutor chain"]
+      I18N["lang.js / i18n.js - Taglish, Tagalog, English"]
+    end
+    subgraph data["Bundled + local data"]
+      CURR["curriculum/grade4-6.json<br/>155 competencies, ~1,570 items"]
+      IDB["IndexedDB via idb-keyval<br/>mastery, history, prefs, caches"]
+    end
+    NANO["Gemini Nano<br/>Chrome Prompt API, on-device"]
+  end
+
+  subgraph vercel["Vercel Functions - optional"]
+    PING["api/ping.js - 204 probe"]
+    QAPI["api/questions.js - generate + verify"]
+    TAPI["api/tutor.js - tutor"]
+    STT["api/transcribe.js"]
+    TTS["api/tts.js"]
+    GUARD["api/_shared.js - CORS, size cap, rate limit"]
+  end
+
+  subgraph google["Google AI - optional"]
+    GEM["Gemini 2.5 Flash / Pro"]
+    VERTEX["Vertex AI"]
+    GTTS["Cloud Text-to-Speech"]
+  end
+
+  UI --> logic
+  THREE --> CHECK
+  UI --> AUDIO
+  logic --> data
+  SESSION -->|"3s ping pre-flight"| PING
+  SESSION -->|"90s window, else bundled"| QAPI
+  TUTOR -->|"tier 1"| NANO
+  TUTOR -->|"tier 2"| TAPI
+  TUTOR -->|"tier 3: cached reply"| IDB
+  UI -->|"poll every 8s"| PING
+  QAPI --- GUARD
+  TAPI --- GUARD
+  QAPI --> GEM
+  TAPI --> VERTEX
+  STT --> GEM
+  TTS --> GTTS
+
+  style device fill:#FFFDF5,stroke:#1C1410,stroke-width:2px
+```
+
+### Teacher Gabay tutor fallback chain
+
+Three tiers, tried in order. The learner never sees a dead end.
+
+```mermaid
+flowchart LR
+  Q["Learner asks a question"] --> C{"Cached reply for<br/>this ref + language?"}
+  C -->|yes| HIT["Serve cached answer"]
+  C -->|no| N{"Gemini Nano<br/>available on device?"}
+  N -->|yes| NANO["On-device answer,<br/>no network at all"] --> SAVE["Cache in IndexedDB,<br/>strip markdown, read aloud"]
+  N -->|no| O{"api/tutor.js<br/>reachable?"}
+  O -->|yes| CLOUD["Vertex / Gemini answer"] --> SAVE
+  O -->|no| BUNDLE["Bundled curriculum explanation"]
+```
+
+### Adaptive question session
+
+```mermaid
+sequenceDiagram
+  participant L as Learner
+  participant S as question-session.js
+  participant P as api/ping.js
+  participant Q as api/questions.js
+  participant G as Gemini
+  participant I as IndexedDB
+
+  L->>S: Open a lesson or game
+  S->>S: Build bundled pool for grade + scope
+  S->>P: Reachability check, 3s budget
+  alt Reachable
+    S->>Q: Request batch: grade, refs, mastery, theme, language
+    Q->>G: Generate curriculum-grounded batch
+    G-->>Q: Candidate questions
+    Q->>G: Independent verification pass
+    G-->>Q: Verdict per item
+    Q-->>S: Verified batch, or error
+  else Not reachable or timed out
+    S->>I: Read rotation cursor
+    I-->>S: Last-served queue
+    S->>S: Rotate bundled batch
+  end
+  S-->>L: Question set, never an error screen
+  L->>S: Answer
+  S->>I: Update mastery, dueAt, history, streak
+```
+
+### Screen flow
+
+```mermaid
+flowchart TD
+  SPLASH["Splash"] --> ONB{"First run?"}
+  ONB -->|yes| ONBOARD["Onboarding<br/>grade 4/5/6 + name"] --> HOME
+  ONB -->|no| HOME["Home"]
+  HOME --> START["Lessons / StartChoice"]
+  HOME --> GAMES["Games<br/>Store, Garden, House, Fiesta"]
+  HOME --> PROG["Progress<br/>mastery, review, grade switch, language"]
+  START --> TOPICS["TopicPicker<br/>browse, search, filter"]
+  TOPICS --> BRIEF["LessonBrief"]
+  BRIEF --> GEN["Generating"]
+  GEN --> C2D["Classroom 2D"]
+  BRIEF --> C3D["Classroom 3D"]
+  C3D -.->|"WebGL unavailable"| C2D
+  C2D --> PROG
+  C3D --> PROG
+  GAMES --> GEN
+```
+
+### Local storage map
+
+All learner state lives in IndexedDB through `idb-keyval` - no accounts, no server-side profile.
+
+| Key | Holds |
+| --- | --- |
+| `gabay:studentName` | Learner name from onboarding |
+| `gabay:selectedGrade` | Active grade (4, 5, or 6) |
+| `gabay:mastery` | Per-competency mastery, scoped per grade |
+| `gabay:dueAt` | Spaced-repetition due times per competency |
+| `gabay:history` | Recent attempt history for review |
+| `gabay:streak`, `gabay:lastAnswerDate` | Daily practice streak |
+| `gabay:gamesPlayed` | Mini-game play counts |
+| `gabay:question-rotation:<version>:<grade>:<mode>:<scope>` | Bundled-question rotation cursor |
+| `tutor:<ref>:<lang>:<hash>` | Cached Teacher Gabay replies for offline re-reading |
+| `pref:lang`, `pref:theme3d` | Language and 3D room theme |
+| `sound:muted`, `sound:music` | Audio preferences |
+| `gabay:3d-coached` | Whether the 3D board hint has been shown |
 
 ## How It Works
 
@@ -67,6 +233,7 @@ Gabay uses a local-first learning loop with layered, optional online AI support.
 1. **Load the app shell**
    - Vite builds the React app into static assets.
    - Workbox precaches the app shell, curriculum content, icons, textures, sound effects, and bundled chunks.
+   - `navigateFallback: index.html` (with `/api/*` denylisted) makes offline navigations and hard refreshes resolve from the precache.
    - After the first load, the core learning flow can reopen even with no network.
 
 2. **Onboard once**
@@ -85,6 +252,7 @@ Gabay uses a local-first learning loop with layered, optional online AI support.
 
 5. **Get a fresh practice session**
    - Entering a lesson shows a short `Generating` screen while `src/lib/question-session.js` requests an AI-generated, curriculum-grounded question batch from `api/questions.js` (Gemini generates, then an independent Gemini pass verifies every item before it's used).
+   - A 3s ping check (`REACHABILITY_TIMEOUT_MS`) runs first, so the app only commits to the 90s generation window when the network is actually reachable.
    - If generation, verification, or the network fails, the session falls back instantly to a locally rotated batch from the bundled curriculum — the learner never sees an error.
 
 6. **Answer and get feedback**
@@ -131,6 +299,7 @@ Gabay uses a local-first learning loop with layered, optional online AI support.
 ### Global Language System
 
 - Student chooses once: **Taglish**, **Tagalog**, or **English**.
+- Every localized string lives in one table (`src/lib/i18n.js`), including the splash tagline — *Your offline AI Math Companion* / *Ang iyong AI na kasama sa Math, kahit offline* / *Ang offline AI Math companion mo*.
 - Preference persists offline in IndexedDB.
 - Language drives:
   - navigation labels
@@ -214,11 +383,32 @@ Gabay uses a local-first learning loop with layered, optional online AI support.
 - A handful of recorded samples (`public/sfx/button1-5.wav`, one nav-tap song clip `miraclei.mp3`) are decoded once through the same shared `AudioContext` and layered on top.
 - Mute and music-on/off preferences persist in IndexedDB; a floating toggle (`src/ui/SoundToggle.jsx`) is reachable from every tabbed screen.
 
+### Connectivity Awareness
+
+- **Real probe, not `navigator.onLine`:** `api/ping.js` is a 204 no-op Function that the app shell polls every 8 seconds (4s timeout per probe). `navigator.onLine` and the `online`/`offline` events only report OS-level link state, so a throttled connection, captive portal, or DevTools "Offline" preset never flipped the banner. Gabay now trusts an actual request.
+- **Online badge reflects reality:** `src/ui/OnlineBadge.jsx` is driven by that probe result, plus an immediate re-probe on the browser's `online` event and an immediate offline flip on `offline`.
+- **Fast pre-flight before slow work:** `src/lib/question-session.js` re-checks reachability with a 3s ping (`REACHABILITY_TIMEOUT_MS`) right before committing to the 90s AI-generation timeout (`QUESTION_TIMEOUT_MS`). Without it, a session started within 8s of losing signal would sit on the loading screen for the full window before falling back.
+- **Bundled fallback stays instant:** any probe failure, timeout, or API error routes straight to the locally rotated question pool.
+
+```mermaid
+stateDiagram-v2
+  [*] --> Probing
+  Probing --> Online: ping returns 204
+  Probing --> Offline: timeout, error, or non-2xx
+  Online --> Probing: every 8s
+  Offline --> Probing: every 8s
+  Offline --> Probing: browser fires online
+  Online --> Offline: browser fires offline
+  Online: Online - AI question batches, cloud tutor, cloud TTS and STT
+  Offline: Offline - bundled questions, Nano or cached tutor, browser speech
+```
+
 ### Offline-First PWA
 
 - Vite + Workbox through `vite-plugin-pwa`.
 - App shell and bundled assets are precached.
 - Latest verified build precached 117 entries, including sound effects, visual aids, and the textured 3D assets.
+- `navigateFallback: index.html` with `navigateFallbackDenylist: [/^\/api\//]` — an offline reload or reopen resolves the cached shell instead of the browser's error page, while `/api/*` requests are never answered from the precache.
 - Service worker auto-refreshes installed app bundles.
 - No accounts required.
 - No client-side API keys.
@@ -259,6 +449,7 @@ Gabay uses a local-first learning loop with layered, optional online AI support.
 - Gemini Flash audio transcription
 - Google Cloud Text-to-Speech
 - Vercel API routes generally
+- The `api/ping.js` reachability probe (its failure is exactly how the app learns it is offline)
 - First-time loading before the service worker has cached the app
 
 ## Tech Stack
@@ -266,7 +457,8 @@ Gabay uses a local-first learning loop with layered, optional online AI support.
 | Layer | Technology |
 | --- | --- |
 | Frontend | React 19, Vite 6, Tailwind CSS |
-| PWA | vite-plugin-pwa, Workbox (117 precached entries) |
+| PWA | vite-plugin-pwa, Workbox (117 precached entries, `navigateFallback` to the cached shell) |
+| Connectivity | `api/ping.js` 204 probe polled every 8s, plus a 3s pre-flight check before AI generation |
 | Local Storage | IndexedDB through idb-keyval |
 | Audio | Web Audio API — procedural music/SFX plus a few bundled samples |
 | 3D | Three.js, procedural geometry, bundled textures, 5 selectable room themes |
@@ -306,7 +498,7 @@ src/
     mastery.js                IndexedDB mastery + spaced repetition, per grade
     progress.js               shared started/in-progress/completed vocabulary
     question-quality.js       learner-facing question validation rules
-    question-session.js       AI batch request + verified bundled-rotation fallback
+    question-session.js       AI batch + 3s reachability pre-flight + bundled fallback
     sound.js                  procedural music/SFX + bundled sample playback
     speech.js                 online/offline voice-out
     strip-markdown.js         plain-text cleanup for AI replies
@@ -341,6 +533,7 @@ src/
     StepScaffold.jsx        guided multi-step answer flow
 api/
   _shared.js               CORS, origin allow-list, body size, rate limiting
+  ping.js                  204 no-op reachability probe (real online/offline signal)
   tutor.js                 Gemini/Vertex tutor endpoint
   questions.js              adaptive question generation + verification endpoint
   transcribe.js             Gemini Flash transcription endpoint
@@ -407,7 +600,7 @@ Teacher Gabay's tutor tries on-device Gemini Nano — Chrome's Prompt API (`wind
 npm test
 ```
 
-Runs Node's built-in test runner (`node --test`) over `test/*.test.js`: content-loader and curriculum integrity, question-quality and question-session logic, mastery/history/progress vocabulary, topic and shape mapping, markdown stripping, lesson-teaching rules, and request validation for the `tutor` and `questions` API routes.
+Runs Node's built-in test runner (`node --test`) over 13 files in `test/` — 65 tests, all passing on the current tree: content-loader and curriculum integrity, question-quality and question-session logic, mastery/history/progress vocabulary, topic and shape mapping, markdown stripping, lesson-teaching rules, and request validation for the `tutor` and `questions` API routes.
 
 ## Grade 1–6 curriculum import
 
@@ -479,6 +672,7 @@ VITE_QUESTION_API_BASE=
 - **Voice input transcription:** Gemini API audio understanding through `api/transcribe.js`; default model is `gemini-2.5-flash`, configurable with `STT_MODEL`.
 - **Voice output:** Google Cloud Text-to-Speech through `api/tts.js`; default Filipino voice is `fil-PH-Wavenet-A`, configurable with `TTS_VOICE`.
 - **Offline fallback:** on-device Gemini Nano, browser `speechSynthesis`, typed answers, bundled content, and local answer checking keep the core app usable without any cloud APIs.
+- **Reachability probe (no AI):** `api/ping.js` returns `204` and nothing else. It exists so the client can tell "really online" from "browser says online", and it is the cheapest call in the app.
 
 Do not commit real service account keys.
 
@@ -536,7 +730,8 @@ Try Gabay with one real learner and one real weak-signal scenario.
 
 - **Impact:** built for Filipino learners with unreliable connectivity.
 - **Curriculum depth:** 155 Grade 4–6 competencies across three domains, plus term resource packets.
-- **Offline reliability:** local content, local checking, local mastery, cached app shell.
+- **Offline reliability:** local content, local checking, local mastery, cached app shell that survives a reload with no network.
+- **Honest connectivity:** a real probe decides online vs. offline, so a throttled or captive-portal network degrades gracefully instead of hanging.
 - **AI with graceful fallback:** on-device Gemini Nano, then cloud Gemini/TTS/STT when available, typed/offline flows otherwise.
 - **Verified AI content:** adaptive question batches are independently re-checked by a second AI pass before learners ever see them.
 - **Multimodal experience:** 2D tutor, themeable 3D classroom, voice, sound design, and game-based practice.
@@ -546,7 +741,8 @@ Try Gabay with one real learner and one real weak-signal scenario.
 
 Built and deployed:
 
-- Offline PWA shell (117 precached entries)
+- Offline PWA shell (117 precached entries, cached-shell fallback on offline reload)
+- Real reachability detection through `api/ping.js`, with a fast pre-flight before AI generation
 - Onboarding with grade selection and global language picker
 - 155 Grade 4–6 competencies across three domains
 - 2D Teacher Gabay classroom with guided multi-step answering
@@ -565,20 +761,134 @@ Built and deployed:
 
 Final polish before judging:
 
-- Add screenshots or a demo GIF.
+- Add in-app screenshots or a demo GIF (`node scripts/shoot.mjs` walks the running preview build with Playwright).
 - Run a full demo on the exact phone/laptop used for judging.
 - Test mic permission and Taglish transcription on the demo device.
 
-## Visual Identity
+## Visual Identity and Assets
+
+Every image, texture, and sound in Gabay is bundled and precached - nothing loads from a CDN, so the look and feel survives airplane mode. All artwork is original project work by Team CrossCampus.
+
+### Logos and app icons
 
 <p align="center">
-  <img src="public/pwa-192x192.png" alt="Gabay app icon" width="96" />
-  <img src="public/maskable-512x512.png" alt="Gabay maskable icon" width="96" />
+  <img src="public/mascot.svg" alt="Teacher Gabay mascot" height="96" />
+  <img src="src/assets/nova.png" alt="Nova mascot render" height="96" />
+  <img src="public/pwa-192x192.png" alt="Gabay app icon 192" height="96" />
+  <img src="public/pwa-512x512.png" alt="Gabay app icon 512" height="96" />
+  <img src="public/maskable-512x512.png" alt="Gabay maskable icon" height="96" />
+  <img src="public/favicon.svg" alt="Gabay favicon" height="96" />
 </p>
+
+| Asset | File | Used for |
+| --- | --- | --- |
+| Mascot (vector) | `public/mascot.svg` | Teacher Gabay in speech bubbles and headers |
+| Mascot (raster) | `src/assets/nova.png`, `src/assets/nova-clean.png` | `src/ui/Mascot.jsx` renders and splash art |
+| Browser icon | `public/nova.png`, `public/favicon.svg` | `index.html` favicon |
+| App icons | `public/pwa-192x192.png`, `public/pwa-512x512.png` | PWA manifest, installed home-screen icon |
+| Maskable icon | `public/maskable-512x512.png` | Android adaptive-icon safe zone |
+| Social card | `public/og.png` | Open Graph and Twitter card |
+
+Regenerate the icon set from source art with `npm run icons` (`scripts/generate-icons.mjs`, backed by sharp).
+
+### Home and game artwork
+
+<p align="center">
+  <img src="public/home-book.png" alt="Lessons card art" height="110" />
+  <img src="public/home-star.png" alt="Classroom card art" height="110" />
+  <img src="public/home-arcade.png" alt="Games card art" height="110" />
+  <img src="public/home-greeting-hero.png" alt="Home greeting hero art" height="110" />
+</p>
+
+<p align="center">
+  <img src="public/game-store.png" alt="Store game art" height="110" />
+  <img src="public/game-garden.png" alt="Garden game art" height="110" />
+  <img src="public/game-house.png" alt="House Builder game art" height="110" />
+  <img src="public/game-fiesta.png" alt="Fiesta game art" height="110" />
+</p>
+
+| Art | File | Where it appears |
+| --- | --- | --- |
+| Lessons card | `public/home-book.png` | Home hub, Lessons tile |
+| Classroom card | `public/home-star.png` | Home hub, Teacher Gabay tile |
+| Games card | `public/home-arcade.png` | Home hub, Games tile |
+| Greeting hero | `public/home-greeting-hero.png` | Home header background (`src/screens/Home.css`) |
+| Store / Tindahan | `public/game-store.png` | Games grid (`src/screens/Games.jsx`) |
+| Garden / Hardin | `public/game-garden.png` | Games grid |
+| House Builder / Bahay | `public/game-house.png` | Games grid |
+| Fiesta Booth | `public/game-fiesta.png` | Games grid |
+| Splash and app background | `public/gabay-background.webp` | App backdrop (`src/index.css`) |
+| Drifting doodles | `public/doodles/bg-tile.png` | Animated background tile, cropped from the splash art |
+| Empty-review overlay | `public/review-empty-overlay.png` | TopicPicker empty state |
+
+### 3D classroom textures
+
+<p align="center">
+  <img src="textures/chalkboard-green.png" alt="Chalkboard texture" height="84" />
+  <img src="textures/wall-plaster-cream.png" alt="Cream plaster wall texture" height="84" />
+  <img src="textures/floor-wood-planks.png" alt="Wood plank floor texture" height="84" />
+  <img src="textures/rug-warm.png" alt="Warm rug texture" height="84" />
+  <img src="textures/corkboard.png" alt="Corkboard texture" height="84" />
+  <img src="textures/window-city.png" alt="Window view texture" height="84" />
+</p>
+
+<p align="center">
+  <img src="textures/poster-fractions.png" alt="Fractions poster" height="84" />
+  <img src="textures/poster-geometry-shapes.png" alt="Geometry shapes poster" height="84" />
+  <img src="textures/poster-multiplication.png" alt="Multiplication poster" height="84" />
+  <img src="textures/poster-number-line.png" alt="Number line poster" height="84" />
+  <img src="textures/poster-motivational.png" alt="Motivational poster" height="84" />
+</p>
+
+20 textures in `textures/` - seamless walls, wainscot, trim, two floor types, ceiling, chalkboard slate, corkboard, upholstery, rug, window view, and five classroom posters. Pixel sizes, tileability, and the intended surface for each file are documented in [`textures/README.md`](textures/README.md). They are imported through `src/three/textures.js` so the bundler fingerprints and precaches them.
+
+### Illustrated learning visuals
+
+<p align="center">
+  <img src="public/ui-assets/sari-sari-store.png" alt="Sari-sari store illustration" height="92" />
+  <img src="public/ui-assets/jeepney.png" alt="Jeepney illustration" height="92" />
+  <img src="public/ui-assets/bilao.png" alt="Bilao illustration" height="92" />
+  <img src="public/ui-assets/banderitas-triangle.png" alt="Banderitas triangle illustration" height="92" />
+  <img src="public/ui-assets/monkey-helper.png" alt="Monkey helper character" height="92" />
+  <img src="public/ui-assets/wooden-block.png" alt="Wooden block manipulative" height="92" />
+</p>
+
+<p align="center">
+  <img src="public/ui-assets/visual-number-line.svg" alt="Number line model" height="72" />
+  <img src="public/ui-assets/visual-fraction-circle.svg" alt="Fraction circle model" height="72" />
+  <img src="public/ui-assets/visual-area-grid.svg" alt="Area grid model" height="72" />
+  <img src="public/ui-assets/visual-bar-graph.svg" alt="Bar graph model" height="72" />
+  <img src="public/ui-assets/visual-clock.svg" alt="Clock model" height="72" />
+  <img src="public/ui-assets/solid-cube.svg" alt="Cube solid" height="72" />
+  <img src="public/ui-assets/solid-cylinder.svg" alt="Cylinder solid" height="72" />
+  <img src="public/ui-assets/shape-triangle.svg" alt="Triangle shape" height="72" />
+</p>
+
+65 assets in `public/ui-assets/` - 21 PNG illustrations of Filipino-context objects and 44 exact SVG math models (shapes, solids, number lines, fraction circles, clocks, money, graphs, arrays, symmetry). They are text-free and answer-free on purpose: the app composes them in code through `src/lib/visual-assets.js` and `src/ui/LearningVisual.jsx` so quantities and fractions stay mathematically exact and every label stays localizable. Per-file intended uses are in [`public/ui-assets/README.md`](public/ui-assets/README.md).
+
+### Sound
+
+`public/sfx/` ships five recorded button taps (`button1-5.wav`) and one nav-tap clip (`miraclei.mp3`). Everything else - background music plus the correct, wrong, coin, click, and finish cues - is synthesized live from Web Audio oscillators in `src/lib/sound.js`, so most of the sound design costs zero bytes and is offline by construction.
+
+### Asset inventory
+
+| Group | Count | Location |
+| --- | --- | --- |
+| Logos, icons, screen art | 17 images | `public/*.png`, `*.svg`, `*.webp` |
+| Mascot renders | 2 | `src/assets/` |
+| Illustrated learning visuals | 65 (21 PNG + 44 SVG) | `public/ui-assets/` |
+| 3D classroom textures and posters | 20 PNG | `textures/` |
+| Recorded audio | 6 files | `public/sfx/` |
+| Procedural audio | 0 files, generated at runtime | `src/lib/sound.js` |
+| Decorative doodle tile | 1 | `public/doodles/` |
+
+### Design language
 
 - **Mascot:** Teacher Gabay, a friendly star guide for math practice.
 - **Classroom style:** warm low-poly classroom with real bundled textures, in five selectable color themes.
 - **UI style:** soft neo-brutal cards, pastel colors, bold outlines, and large tap targets.
+- **Brand colors:** `#F7D26A` amber primary, `#1C1410` ink, `#8FD9B6` mint, `#A9D8F0` sky, `#F4C3D0` rose.
+- **Tagline:** *Your offline AI Math Companion.*
 - **Demo line:** On-device AI when nothing else works. Online AI when available. Offline learning always.
 
 ## References and Citations

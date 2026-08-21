@@ -88,6 +88,11 @@
 .classroom-page .classroom-panel {
   position: relative;
   z-index: 1;
+  /* The page is a flex column, so a panel left at the default `flex: 0 1 auto`
+     gets shrunk when the tutor drawer or feedback pushes the column past the
+     viewport — and with overflow hidden that silently cut the question in half.
+     The question must always be readable in full. */
+  flex-shrink: 0;
   margin-top: 1.35rem;
   padding: 1.3rem;
   overflow-wrap: anywhere;
@@ -1416,7 +1421,10 @@
   position: relative;
   margin-top: 1.15rem;
   padding: 1.05rem 1.1rem 1.15rem;
-  overflow: hidden;
+  /* Was `overflow: hidden` for the corner doodles below. Those are positioned
+     inside the padding box and never overflow, so hiding overflow bought
+     nothing and cost a clipped question. */
+  overflow: visible;
   border-color: var(--gb-outline);
   background:
     radial-gradient(circle at 86% 72%, rgb(143 217 182 / 12%) 0 2px, transparent 2.5px),
@@ -1483,16 +1491,22 @@
 
 .classroom-page.is-practice-tab .classroom-question-text {
   margin-top: 0.8rem;
-  padding-right: 0.35rem;
+  /* The bottom padding absorbs fractional line-height rounding, which would
+     otherwise trip the scrollbar by a stray pixel or two. */
+  padding: 0 0.35rem 0.25rem 0;
   font-size: clamp(1.18rem, 4.8vw, 1.5rem);
   line-height: 1.38;
+  /* No inner scroller and no height cap: the board grows to fit the whole
+     question and the page scrolls. A nested scroll region just hid the tail of
+     the text behind an edge the learner had no reason to suspect. */
 }
 
 .classroom-page.is-practice-tab .classroom-answer-card {
   position: relative;
   margin-top: 1rem;
   padding: 1rem 0.9rem 0.9rem;
-  overflow: hidden;
+  /* Answer choices must never be clipped either. */
+  overflow: visible;
   border-color: var(--gb-outline);
   background: rgb(255 250 240 / 92%);
   box-shadow: 4px 5px 0 var(--gb-outline);

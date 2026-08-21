@@ -1,6 +1,6 @@
 import { del, get, set } from 'idb-keyval'
+import { DEFAULT_GRADE } from './grades.js'
 
-const DEFAULT_GRADE = 6
 const DEFAULT = 0
 
 const masteryKey = (grade = DEFAULT_GRADE) => `gabay:mastery:g${grade}`
@@ -102,15 +102,12 @@ export function masteryBand(score) {
   return 'red'
 }
 
-const BAND_LABEL = { red: 'Simulan na natin', orange: 'Kaya pa', green: 'Mabuti' }
+// Band labels live in i18n.js under 'band.{red|orange|green}' — a second,
+// hardcoded-Filipino copy here rendered the same text in English mode.
 const BAND_BG = { red: 'bg-rose', orange: 'bg-peach', green: 'bg-mint' }
 const BAND_FILL = { red: 'bg-rose', orange: 'bg-[#f7b955]', green: 'bg-mint' }
 
-export function masteryLabel(score) {
-  return BAND_LABEL[masteryBand(score)]
-}
-
 export function masteryColor(score) {
   const band = masteryBand(score)
-  return { band, label: BAND_LABEL[band], bg: BAND_BG[band], fill: BAND_FILL[band] }
+  return { band, bg: BAND_BG[band], fill: BAND_FILL[band] }
 }

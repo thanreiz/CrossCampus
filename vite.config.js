@@ -11,7 +11,7 @@ export default defineConfig({
       includeAssets: ['nova.png', 'favicon.svg', 'mascot.svg', 'pwa-192x192.png', 'pwa-512x512.png', 'maskable-512x512.png'],
       workbox: {
         cleanupOutdatedCaches: true,
-        globPatterns: ['**/*.{js,css,html,json,png,svg}'],
+        globPatterns: ['**/*.{js,css,html,json,png,svg,webp,wav,mp3,webmanifest}'],
         maximumFileSizeToCacheInBytes: 4 * 1024 * 1024,
       },
       manifest: {

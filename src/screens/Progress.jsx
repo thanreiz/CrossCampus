@@ -7,6 +7,8 @@ import { loadHistory } from '../lib/history.js'
 import { LANGS } from '../lib/lang.js'
 import { makeT } from '../lib/i18n.js'
 import './Progress.css'
+import { isLessonCompleted, isLessonInProgress } from '../lib/progress.js'
+import { GRADES } from '../lib/grades.js'
 
 const DOMAIN_ROWS = [
   { key: 'measurement', label: 'Measurement & Geometry', tone: 'blue', matches: /measurement|geometry/i },
@@ -15,12 +17,13 @@ const DOMAIN_ROWS = [
 ]
 
 const ACHIEVEMENT_DEFS = [
-  { key: 'shape', name: 'Shape Explorer', icon: 'shape', tone: 'mint', requirement: 'Complete the first Measurement & Geometry lesson.' },
-  { key: 'number', name: 'Number Ninja', icon: 'number', tone: 'sky', requirement: 'Complete the first Number & Algebra lesson.' },
-  { key: 'data', name: 'Data Detective', icon: 'data', tone: 'rose', requirement: 'Complete the first Statistics & Probability lesson.' },
-  { key: 'streak', name: 'Streak Spark', icon: 'flame', tone: 'yellow', requirement: 'Maintain a two-day learning streak.' },
-  { key: 'quiz', name: 'Quiz Whiz', icon: 'quiz', tone: 'lavender', requirement: 'Get a perfect score on one quiz.' },
-  { key: 'master', name: 'Math Master', icon: 'trophy', tone: 'gold', requirement: 'Reach 100% mastery in any subject.' },
+  // Names and requirements resolve through i18n at render time.
+  { key: 'shape', icon: 'shape', tone: 'mint' },
+  { key: 'number', icon: 'number', tone: 'sky' },
+  { key: 'data', icon: 'data', tone: 'rose' },
+  { key: 'streak', icon: 'flame', tone: 'yellow' },
+  { key: 'quiz', icon: 'quiz', tone: 'lavender' },
+  { key: 'master', icon: 'trophy', tone: 'gold' },
 ]
 
 export default function Progress({ competencies, mastery, studentName = '', grade = 6, online = true, lang = 'taglish', onChangeGrade, onLang }) {
@@ -53,7 +56,7 @@ export default function Progress({ competencies, mastery, studentName = '', grad
   const average = answeredScores.length ? answeredScores.reduce((sum, value) => sum + value, 0) / answeredScores.length : 0
   const averagePct = Math.round(average * 100)
   const lessonsStarted = answered.size
-  const lessonsInProgress = competencies.filter((competency) => answered.has(competency.ref) && (mastery[competency.ref] ?? 0) < 1).length
+  const lessonsInProgress = competencies.filter((competency) => isLessonInProgress(answered.has(competency.ref), mastery[competency.ref] ?? 0)).length
   const languageLabel = LANGS.find((language) => language.key === lang)?.label ?? 'English'
 
   const domainProgress = useMemo(() => DOMAIN_ROWS.map((row) => {
@@ -63,10 +66,11 @@ export default function Progress({ competencies, mastery, studentName = '', grad
   }), [competencies, mastery])
 
   const achievements = useMemo(() => {
-    const firstLessonComplete = (matches) => {
-      const firstLesson = competencies.find((competency) => matches.test(competency.domain || ''))
-      return firstLesson ? Math.round((mastery[firstLesson.ref] ?? 0) * 100) >= 100 : false
-    }
+    // "Complete the first lesson in this domain" means ANY lesson in it — the
+    // old version only checked the single first competency, so finishing any
+    // other lesson in the domain never unlocked the badge.
+    const firstLessonComplete = (matches) =>
+      competencies.some((competency) => matches.test(competency.domain || '') && isLessonCompleted(mastery[competency.ref] ?? 0))
     const currentRefs = new Set(competencies.map((competency) => competency.ref))
     const unlocked = {
       shape: firstLessonComplete(/measurement|geometry/i),
@@ -109,17 +113,17 @@ export default function Progress({ competencies, mastery, studentName = '', grad
               <Mascot size={76} alt="Gabay" />
             </div>
             <div className="profile-dashboard-name">
-              <p>My profile</p>
+              <p>{tt('profile.myProfile')}</p>
               <h1 id="profile-name">{studentName || 'Hann'}</h1>
-              <span>Grade {grade}</span>
+              <span>{tt('onboarding.gradeLabel', { grade })}</span>
             </div>
           </div>
           <OnlineBadge online={online} className="profile-dashboard-online" />
         </div>
         <div className="profile-dashboard-mastery">
-          <p>Overall mastery</p>
+          <p>{tt('profile.overall')}</p>
           <strong>{averagePct}%</strong>
-          <div className="profile-dashboard-overall-bar" role="progressbar" aria-label="Overall mastery" aria-valuemin="0" aria-valuemax="100" aria-valuenow={averagePct}>
+          <div className="profile-dashboard-overall-bar" role="progressbar" aria-label={tt('profile.overall')} aria-valuemin="0" aria-valuemax="100" aria-valuenow={averagePct}>
             <MasteryBar score={average} />
           </div>
         </div>
@@ -127,14 +131,14 @@ export default function Progress({ competencies, mastery, studentName = '', grad
       <section className="profile-dashboard-card profile-achievements-card" aria-labelledby="achievements-title">
         <div className="profile-achievements-heading">
           <div>
-            <h2 id="achievements-title">Achievements</h2>
-            <p>{unlockedAchievementCount} of {ACHIEVEMENT_DEFS.length} unlocked</p>
+            <h2 id="achievements-title">{tt('profile.achievements')}</h2>
+            <p>{tt('profile.achievementsUnlocked', { count: unlockedAchievementCount, total: ACHIEVEMENT_DEFS.length })}</p>
           </div>
           <button type="button" onClick={() => setShowAllAchievements((showing) => !showing)} aria-expanded={showAllAchievements}>
-            {showAllAchievements ? 'Show less' : 'View all'} <AchievementChevron expanded={showAllAchievements} />
+            {tt(showAllAchievements ? 'profile.showLess' : 'profile.viewAll')} <AchievementChevron expanded={showAllAchievements} />
           </button>
         </div>
-        <div className="profile-achievements-progress" role="progressbar" aria-label="Achievement progress" aria-valuemin="0" aria-valuemax="6" aria-valuenow={unlockedAchievementCount}>
+        <div className="profile-achievements-progress" role="progressbar" aria-label={tt('profile.achievementProgress')} aria-valuemin="0" aria-valuemax="6" aria-valuenow={unlockedAchievementCount}>
           <span style={{ width: `${achievementProgress * 100}%` }} />
         </div>
         <div className={'profile-achievements-grid ' + (showAllAchievements ? 'is-expanded' : 'is-collapsed')}>
@@ -144,8 +148,8 @@ export default function Progress({ competencies, mastery, studentName = '', grad
               key={achievement.key}
               className={'profile-achievement-item ' + (achievement.unlocked ? 'is-unlocked ' : 'is-locked ') + (revealedAchievement === achievement.key ? 'is-revealed ' : '') + (index >= 3 ? 'is-extra' : '')}
               onClick={() => setRevealedAchievement((current) => current === achievement.key ? null : achievement.key)}
-              title={achievement.requirement}
-              aria-label={`${achievement.name}, ${achievement.unlocked ? 'unlocked' : 'locked'}. ${achievement.requirement}`}
+              title={tt(`achievement.${achievement.key}.req`)}
+              aria-label={`${tt(`achievement.${achievement.key}.name`)}, ${tt(achievement.unlocked ? 'profile.unlocked' : 'progress.locked')}. ${tt(`achievement.${achievement.key}.req`)}`}
             >
               <span className={'profile-achievement-badge is-' + achievement.tone}>
                 <AchievementIcon kind={achievement.icon} />
@@ -153,40 +157,40 @@ export default function Progress({ competencies, mastery, studentName = '', grad
                   {achievement.unlocked ? <CheckIcon /> : <LockMiniIcon />}
                 </span>
               </span>
-              <strong>{achievement.name}</strong>
-              <span className="profile-achievement-requirement">{achievement.requirement}</span>
+              <strong>{tt(`achievement.${achievement.key}.name`)}</strong>
+              <span className="profile-achievement-requirement">{tt(`achievement.${achievement.key}.req`)}</span>
             </button>
           ))}
         </div>
       </section>
 
-      <section className="profile-stat-grid" aria-label="Learning summary">
+      <section className="profile-stat-grid" aria-label={tt('profile.learningSummary')}>
         <article className="profile-stat-card is-yellow">
           <span className="profile-stat-icon" aria-hidden="true"><FlameIcon /></span>
           <div className="profile-stat-copy">
-            <small>Current streak</small>
-            <strong>{streak} day{streak === 1 ? '' : 's'}</strong>
-            <span>Keep it going!</span>
+            <small>{tt('profile.currentStreak')}</small>
+            <strong>{tt(streak === 1 ? 'profile.dayCount' : 'profile.dayCountPlural', { count: streak })}</strong>
+            <span>{tt('profile.keepGoing')}</span>
           </div>
         </article>
         <article className="profile-stat-card is-mint">
           <span className="profile-stat-icon" aria-hidden="true"><BookIcon /></span>
           <div className="profile-stat-copy">
-            <small>Your lessons</small>
-            <strong>{lessonsStarted} lesson{lessonsStarted === 1 ? '' : 's'}</strong>
-            <span>{lessonsInProgress} in progress</span>
+            <small>{tt('progress.lessonsHeading')}</small>
+            <strong>{tt(lessonsStarted === 1 ? 'profile.lessonCount' : 'profile.lessonCountPlural', { count: lessonsStarted })}</strong>
+            <span>{tt('profile.inProgress', { count: lessonsInProgress })}</span>
           </div>
         </article>
       </section>
       <section className="profile-dashboard-card profile-preferences-card" aria-labelledby="preferences-title">
-        <h2 id="preferences-title">Preferences</h2>
+        <h2 id="preferences-title">{tt('profile.preferences')}</h2>
         <button type="button" className="profile-preference-row" onClick={() => togglePreference('grade')} aria-expanded={expandedPreference === 'grade'}>
           <span className="profile-preference-icon is-yellow" aria-hidden="true"><CapIcon /></span>
-          <strong>Grade level</strong><span className="profile-preference-value">Grade {grade}</span><ChevronIcon expanded={expandedPreference === 'grade'} />
+          <strong>{tt('profile.gradeLevel')}</strong><span className="profile-preference-value">{tt('onboarding.gradeLabel', { grade })}</span><ChevronIcon expanded={expandedPreference === 'grade'} />
         </button>
         {expandedPreference === 'grade' && (
-          <div className="profile-option-grid is-grade" aria-label="Choose grade level">
-            {[4, 5, 6].map((optionGrade) => (
+          <div className="profile-option-grid is-grade" aria-label={tt('profile.chooseGrade')}>
+            {GRADES.map((optionGrade) => (
               <button
                 key={optionGrade}
                 type="button"
@@ -194,7 +198,7 @@ export default function Progress({ competencies, mastery, studentName = '', grad
                 aria-pressed={optionGrade === grade}
                 onClick={() => optionGrade !== grade && setPendingGrade(optionGrade)}
               >
-                <span>Grade {optionGrade}</span>{optionGrade === grade && <CheckIcon />}
+                <span>{tt('onboarding.gradeLabel', { grade: optionGrade })}</span>{optionGrade === grade && <CheckIcon />}
               </button>
             ))}
           </div>
@@ -204,7 +208,7 @@ export default function Progress({ competencies, mastery, studentName = '', grad
           <strong>{tt('common.language')}</strong><span className="profile-preference-value">{languageLabel}</span><ChevronIcon expanded={expandedPreference === 'language'} />
         </button>
         {expandedPreference === 'language' && (
-          <div className="profile-option-grid is-language" aria-label="Choose language">
+          <div className="profile-option-grid is-language" aria-label={tt('profile.chooseLanguage')}>
             {LANGS.map((language) => (
               <button key={language.key} type="button" onClick={() => onLang?.(language.key)} aria-pressed={lang === language.key} className={lang === language.key ? 'is-active' : ''}>
                 <span>{language.label}</span>{lang === language.key && <CheckIcon />}

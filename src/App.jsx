@@ -25,6 +25,7 @@ import BottomNav from './ui/BottomNav.jsx'
 import SoundToggle from './ui/SoundToggle.jsx'
 import { loadSoundPrefs, pauseBgm, primeAudio, resumeBgm, startBgm } from './lib/sound.js'
 import { prepareQuestionSession } from './lib/question-session.js'
+import { DEFAULT_GRADE, isSupportedGrade } from './lib/grades.js'
 
 const Classroom3D = lazy(() => import('./screens/Classroom3D.jsx'))
 
@@ -62,7 +63,11 @@ export default function App() {
         get('gabay:selectedGrade'),
         get('gabay:studentName'),
       ])
-      const initialGrade = Number(savedGrade) || 6
+      // A learner onboarded before the scope narrowed to Grades 4-6 can still
+      // have 1-3 stored; fall back rather than loading an empty catalog.
+      const storedGrade = Number(savedGrade)
+      const initialGrade = isSupportedGrade(storedGrade) ? storedGrade : DEFAULT_GRADE
+      if (storedGrade !== initialGrade) await set('gabay:selectedGrade', initialGrade)
       setLangState(savedLang)
       setGrade(initialGrade)
       setStudentName(savedName ?? '')
@@ -107,7 +112,7 @@ export default function App() {
     return (
       <>
         {node}
-        {showSound && <SoundToggle />}
+        {showSound && <SoundToggle lang={lang} />}
         <BottomNav active={activeKey} onNav={navTo} lang={lang} />
       </>
     )

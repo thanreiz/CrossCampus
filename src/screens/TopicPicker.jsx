@@ -8,6 +8,7 @@ import { makeT } from '../lib/i18n.js'
 import { difficultyFor } from '../lib/difficulty.js'
 import { LightbulbIcon } from '../ui/Icons.jsx'
 import './TopicPicker.css'
+import { isLessonStarted, summarizeLessons } from '../lib/progress.js'
 
 const ICON_BG = ['bg-mint', 'bg-sky', 'bg-rose', 'bg-peach', 'bg-yellow', 'bg-lavender']
 const ALL = '__all__'
@@ -131,10 +132,18 @@ export default function TopicPicker({
         <div className="flex flex-col gap-4">
           {groups.map((group, groupIndex) => {
             const isOpen = searching || openDomains.has(group.name)
-            const completed = group.lessons.filter((lesson) => answered.has(lesson.ref)).length
-            const average = completed
-              ? group.lessons.reduce((sum, lesson) => sum + (answered.has(lesson.ref) ? mastery[lesson.ref] ?? 0 : 0), 0) / completed
-              : 0
+            // "completed" means 100% mastery — answering once only makes a
+            // lesson started. These used to be the same number here, which is
+            // why Practice reported lessons Lessons still called Not started.
+            const groupSummary = summarizeLessons(
+              group.lessons.map((lesson) => ({
+                answered: answered.has(lesson.ref),
+                score: mastery[lesson.ref] ?? 0,
+              })),
+            )
+            const completed = groupSummary.completed
+            const started = groupSummary.started
+            const average = groupSummary.averageStartedMastery
             return (
               <Card key={group.name} className="gb-pop overflow-hidden p-0">
                 <button
@@ -148,21 +157,22 @@ export default function TopicPicker({
                     <span className="min-w-0">
                       <span className="block font-display text-xl font-extrabold leading-tight">{tt(`domain.${group.name}`)}</span>
                       <span className="mt-1 block text-sm font-bold text-ink/65">
-                        {tt('topics.lessonCount', { count: group.lessons.length })} · {tt('topics.completedCount', { count: completed })}
+                        {tt(group.lessons.length === 1 ? 'topics.lessonCountOne' : 'topics.lessonCount', { count: group.lessons.length })} · {tt('topics.completedCount', { count: completed })}
+                        {started > completed && <> · {tt('topics.startedCount', { count: started - completed })}</>}
                       </span>
                     </span>
                     <span className={`gb-chip shrink-0 ${isOpen ? 'bg-white' : 'bg-yellow'} shadow-hard-sm text-xs`}>
                       {tt(isOpen ? 'topics.hideLessons' : 'topics.showLessons')}
                     </span>
                   </span>
-                  {completed > 0 && <span className="mt-3 block"><MasteryBar score={average} /></span>}
+                  {started > 0 && <span className="mt-3 block"><MasteryBar score={average} /></span>}
                 </button>
 
                 {isOpen && (
                   <div id={`topic-group-${groupIndex}`} className="border-t-[2.5px] border-outline bg-cream/50 p-3">
                     <div className="overflow-hidden rounded-2xl border-[2.5px] border-outline bg-white">
                       {group.lessons.map((c, lessonIndex) => {
-                        const isAnswered = answered.has(c.ref)
+                        const isAnswered = isLessonStarted(answered.has(c.ref), mastery[c.ref] ?? 0)
                         const score = mastery[c.ref] ?? 0
                         const color = masteryColor(score)
                         const lessonDifficulty = difficultyFor(c.competency)

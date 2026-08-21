@@ -1,6 +1,7 @@
 import { get, set } from 'idb-keyval'
 import { getContentByRef } from './content.js'
 import { LANG_NAME, DEFAULT_LANG } from './lang.js'
+import { apiUrl } from './api-base.js'
 
 // Teacher Gabay tutor — best-available-first fallback chain (build plan §8):
 //   1. on-device Gemini Nano (works OFFLINE on capable laptops)
@@ -68,10 +69,13 @@ export async function askTeacherGabay(question, ref, lang = DEFAULT_LANG) {
   // 2. Online — Vertex/Gemini via proxy
   if (navigator.onLine) {
     try {
-      const res = await fetch('/api/tutor', {
+      const res = await fetch(apiUrl('/api/tutor'), {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ question, ref, system: sysPrompt }),
+        // Only ref + lang go over the wire. The server builds the system
+        // prompt itself from the bundled curriculum — a client-supplied
+        // systemInstruction would make /api/tutor an open Gemini proxy.
+        body: JSON.stringify({ question, ref, lang }),
       })
       if (res.ok) {
         const data = await res.json()

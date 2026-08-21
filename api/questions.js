@@ -1,10 +1,13 @@
 import { GoogleGenAI, Type } from '@google/genai'
 import { getAllContent } from '../src/lib/content-catalog.js'
 import { isLearnerFacingQuestion } from '../src/lib/question-quality.js'
+import { allowedOrigin, guard, parseBody } from './_shared.js'
+import { isSupportedGrade } from '../src/lib/grades.js'
 
 const MODEL = process.env.QUESTION_MODEL || 'gemini-2.5-flash'
 const LOCATION = process.env.GCP_LOCATION || 'us-central1'
 const MAX_BODY_BYTES = 24_000
+const RATE_LIMIT = Number(process.env.QUESTION_RATE_LIMIT || 8)
 const ALLOWED_FIELDS = new Set(['mode', 'grade', 'count', 'language', 'refs', 'mastery', 'theme'])
 const THEME_SCENARIOS = {
   store: 'a small neighborhood sari-sari store where the learner is buying, selling, pricing goods, or making change',
@@ -12,7 +15,6 @@ const THEME_SCENARIOS = {
   house: 'building or furnishing a house room by room, working with angles, volume, and capacity',
   fiesta: 'a community fiesta with food stalls, games, and activities involving data, statistics, and chance',
 }
-const rateLimits = new Map()
 const catalog = getAllContent()
 const catalogByRef = new Map(catalog.map((competency) => [competency.ref, competency]))
 
@@ -69,7 +71,7 @@ export function validateRequest(body) {
   if (!body || typeof body !== 'object' || Array.isArray(body)) return 'invalid_body'
   if (Object.keys(body).some((key) => !ALLOWED_FIELDS.has(key))) return 'unknown_field'
   if (!['quiz', 'game'].includes(body.mode)) return 'invalid_mode'
-  if (!Number.isInteger(body.grade) || body.grade < 1 || body.grade > 6) return 'invalid_grade'
+  if (!isSupportedGrade(body.grade)) return 'invalid_grade'
   if (!Number.isInteger(body.count) || body.count < 5 || body.count > 20) return 'invalid_count'
   if (!['en', 'fil', 'taglish'].includes(body.language)) return 'invalid_language'
   if (body.theme !== undefined && !Object.hasOwn(THEME_SCENARIOS, body.theme)) return 'invalid_theme'
@@ -163,65 +165,15 @@ async function verify(ai, request, questions) {
   return verdict.accepted === true && verdict.results?.length === request.count && verdict.results.every((item) => Object.values(item).every(Boolean))
 }
 
-export function allowedOrigin(origin) {
-  if (!origin) return true
-  const configured = (process.env.QUESTION_CORS_ORIGINS || 'https://gabay-sage.vercel.app').split(',').map((value) => value.trim())
-  return configured.includes(origin)
-    || /^https:\/\/[a-z0-9-]+\.openai\.site$/i.test(origin)
-    || /^https:\/\/gabay(?:-[a-z0-9-]+)?\.vercel\.app$/i.test(origin)
-}
-
-function cors(req, res) {
-  const origin = req.headers.origin
-  if (origin && allowedOrigin(origin)) res.setHeader('Access-Control-Allow-Origin', origin)
-  res.setHeader('Vary', 'Origin')
-  res.setHeader('Access-Control-Allow-Headers', 'Content-Type')
-  res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS')
-}
-
-async function durableRateLimit(ip) {
-  const url = process.env.UPSTASH_REDIS_REST_URL || process.env.KV_REST_API_URL
-  const token = process.env.UPSTASH_REDIS_REST_TOKEN || process.env.KV_REST_API_TOKEN
-  if (!url || !token) return null
-  const key = `gabay:questions:rate:${Math.floor(Date.now() / 60_000)}:${ip}`
-  const response = await fetch(`${url.replace(/\/$/, '')}/pipeline`, {
-    method: 'POST',
-    headers: { Authorization: `Bearer ${token}`, 'Content-Type': 'application/json' },
-    body: JSON.stringify([['INCR', key], ['EXPIRE', key, 65, 'NX']]),
-  })
-  if (!response.ok) throw new Error('rate_limit_store_unavailable')
-  const result = await response.json()
-  return Number(result?.[0]?.result) <= Number(process.env.QUESTION_RATE_LIMIT || 8)
-}
-
-async function withinRateLimit(ip) {
-  const durable = await durableRateLimit(ip)
-  if (durable !== null) return durable
-  const now = Date.now()
-  const previous = rateLimits.get(ip)
-  const entry = !previous || now >= previous.resetAt ? { count: 0, resetAt: now + 60_000 } : previous
-  entry.count += 1
-  rateLimits.set(ip, entry)
-  return entry.count <= Number(process.env.QUESTION_RATE_LIMIT || 8)
-}
+// CORS, origin allow-listing, and rate limiting now live in ./_shared.js so
+// every endpoint enforces the same floor. Re-exported for the existing tests.
+export { allowedOrigin }
 
 export default async function handler(req, res) {
-  cors(req, res)
-  if (req.method === 'OPTIONS') return res.status(204).end()
-  if (req.method !== 'POST') { res.setHeader('Allow', 'POST'); return res.status(405).json({ error: 'method_not_allowed' }) }
-  if (!allowedOrigin(req.headers.origin)) return res.status(403).json({ error: 'origin_not_allowed' })
-  const length = Number(req.headers['content-length'] || 0)
-  if (length > MAX_BODY_BYTES) return res.status(413).json({ error: 'payload_too_large' })
-  const ip = String(req.headers['x-forwarded-for'] || req.socket?.remoteAddress || 'unknown').split(',')[0].trim()
-  try {
-    if (!(await withinRateLimit(ip))) return res.status(429).json({ error: 'rate_limited' })
-  } catch {
-    return res.status(503).json({ error: 'rate_limit_unavailable' })
-  }
+  if (await guard(req, res, { bucket: 'questions', limit: RATE_LIMIT, maxBytes: MAX_BODY_BYTES })) return
 
-  let body = req.body
-  try { if (typeof body === 'string') body = JSON.parse(body) } catch { return res.status(400).json({ error: 'invalid_json' }) }
-  if (JSON.stringify(body ?? {}).length > MAX_BODY_BYTES) return res.status(413).json({ error: 'payload_too_large' })
+  const { body, error: parseError } = parseBody(req, MAX_BODY_BYTES)
+  if (parseError) return res.status(parseError === 'invalid_json' ? 400 : 413).json({ error: parseError })
   const error = validateRequest(body)
   if (error) return res.status(400).json({ error })
   const ai = client()

@@ -3,6 +3,8 @@
 //   2. fallback -> browser SpeechRecognition (Web Speech API)
 //   3. floor -> the student just types (handled by the caller)
 
+import { apiUrl } from './api-base.js'
+
 export function isRecognitionSupported() {
   return (
     typeof window !== 'undefined' &&
@@ -98,7 +100,7 @@ export function createGeminiRecorder({ onResult, onError, onEnd, onStart, maxMs 
       const audio = await blobToBase64(blob)
       const controller = new AbortController()
       timeout = setTimeout(() => controller.abort(), 20000)
-      const res = await fetch('/api/transcribe', {
+      const res = await fetch(apiUrl('/api/transcribe'), {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ audio, mimeType }),

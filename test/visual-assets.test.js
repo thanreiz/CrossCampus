@@ -12,7 +12,7 @@ test('shape and solid choices resolve to centralized visual assets', () => {
   assert.equal(visualForChoice('not a shape'), null)
 })
 
-test('familiar Grade 1-3 contexts resolve without guessing the answer', () => {
+test('familiar Filipino contexts resolve without guessing the answer', () => {
   assert.equal(
     visualForQuestion('Which basic shape best models the face of a classroom door?'),
     VISUAL_ASSETS.classroomDoor,
@@ -43,8 +43,8 @@ test('every registered UI visual exists under public', async () => {
   )
 })
 
-test('every Grade 1-3 competency has an example visual', async () => {
-  for (const grade of [1, 2, 3]) {
+test('every in-scope competency has an example visual', async () => {
+  for (const grade of [4, 5, 6]) {
     const curriculum = (await import(`../src/curriculum/grade${grade}.json`, { with: { type: 'json' } })).default
     for (const competency of curriculum) {
       const key = visualKeyForCompetency(competency)

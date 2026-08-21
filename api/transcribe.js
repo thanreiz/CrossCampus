@@ -11,10 +11,17 @@
 //              plenty for transcription; no need for 2.5-pro here).
 
 import { GoogleGenAI } from '@google/genai'
+import { guard, parseBody } from './_shared.js'
 
 const LOCATION = process.env.GCP_LOCATION || 'us-central1'
 // Flash, not pro — transcription is not a reasoning task; flash is ~25x cheaper.
 const MODEL = process.env.STT_MODEL || 'gemini-2.5-flash'
+const RATE_LIMIT = Number(process.env.STT_RATE_LIMIT || 10)
+// Base64 audio is bulky but a clip is short. ~1.5 MB of base64 is roughly a
+// minute of webm/opus — well past any real question, and a hard ceiling on
+// what a single caller can push into a billed multimodal model.
+const MAX_BODY_BYTES = 1_500_000
+const ALLOWED_MIME = new Set(['audio/webm', 'audio/ogg', 'audio/mp4', 'audio/mpeg', 'audio/wav'])
 
 const PROMPT =
   'Transcribe this audio verbatim. The speaker is a Filipino Grade 6 student ' +
@@ -47,22 +54,18 @@ function genaiClient() {
 }
 
 export default async function handler(req, res) {
-  if (req.method !== 'POST') {
-    res.setHeader('Allow', 'POST')
-    return res.status(405).json({ error: 'Method Not Allowed' })
-  }
+  // Multimodal transcription is billed per request and this endpoint used to
+  // have no rate limit and no size cap at all.
+  if (await guard(req, res, { bucket: 'transcribe', limit: RATE_LIMIT, maxBytes: MAX_BODY_BYTES })) return
 
-  let body = req.body
-  if (typeof body === 'string') {
-    try {
-      body = JSON.parse(body)
-    } catch {
-      body = {}
-    }
-  }
-  const { audio = '', mimeType = 'audio/webm' } = body || {}
+  const { body, error: parseError } = parseBody(req, MAX_BODY_BYTES)
+  if (parseError) return res.status(parseError === 'invalid_json' ? 400 : 413).json({ error: parseError })
 
-  if (!audio) return res.status(400).json({ error: 'no_audio' })
+  const { audio = '', mimeType = 'audio/webm' } = body
+
+  if (typeof audio !== 'string' || !audio) return res.status(400).json({ error: 'no_audio' })
+  if (!/^[A-Za-z0-9+/]+={0,2}$/.test(audio)) return res.status(400).json({ error: 'invalid_audio' })
+  if (!ALLOWED_MIME.has(mimeType)) return res.status(400).json({ error: 'invalid_mime_type' })
 
   const ai = genaiClient()
   // No creds — signal the client to fall back to Web Speech / typing.
@@ -84,9 +87,7 @@ export default async function handler(req, res) {
     })
     const text = (result?.text ?? '').trim()
     return res.status(200).json({ text, source: 'gemini' })
-  } catch (err) {
-    return res
-      .status(502)
-      .json({ error: 'stt_failed', detail: String(err?.message || err) })
+  } catch {
+    return res.status(502).json({ error: 'stt_failed' })
   }
 }

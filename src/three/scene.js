@@ -253,6 +253,11 @@ export function buildClassroom({ mount, competency, onNearBoard, onInteract, the
     window.setTimeout(resize, 400)
   }
 
+  // The mount can be laid out after boot (lazy screen, phone frame), so watch
+  // the element itself instead of relying on window resize events alone.
+  const mountObserver = typeof ResizeObserver === 'function' ? new ResizeObserver(() => resize()) : null
+  mountObserver?.observe(mount)
+
   window.addEventListener('keydown', onKeyDown)
   window.addEventListener('keyup', onKeyUp)
   window.addEventListener('resize', onResize)
@@ -262,7 +267,6 @@ export function buildClassroom({ mount, competency, onNearBoard, onInteract, the
   renderer.domElement.addEventListener('mousedown', onMouseDown)
   renderer.domElement.addEventListener('mouseup', onMouseUp)
   renderer.domElement.addEventListener('mouseleave', onMouseUp)
-  renderer.domElement.addEventListener('mousemove', onMouseMove)
   document.addEventListener('mousemove', onMouseMove)
   mount.addEventListener('pointerdown', onPointerDown, { passive: false })
   mount.addEventListener('pointermove', onPointerMove, { passive: false })
@@ -308,6 +312,7 @@ export function buildClassroom({ mount, competency, onNearBoard, onInteract, the
       }
       touchMove.set(clamp(x, -1, 1), clamp(y, -1, 1))
     },
+    getPos: () => ({ x: camera.position.x, y: camera.position.y, z: camera.position.z }),
     // Live "renovation" — recolor the room surfaces, sky, and board.
     setTheme(key) {
       const t = THEMES[key] ?? THEMES.classic
@@ -416,7 +421,9 @@ export function buildClassroom({ mount, competency, onNearBoard, onInteract, the
 
   function buildStudentArea() {
     const colors = [PALETTE.mint, PALETTE.sky, PALETTE.rose, PALETTE.peach]
-    const xs = [-2.45, 0, 2.45]
+    // Two columns with a clear centre aisle: the walk to the board must stay
+    // wide enough for a young player on a thumbstick.
+    const xs = [-2.6, 2.6]
     const zs = [-2.55, -0.8, 0.95, 2.7]
     zs.forEach((z, row) => {
       xs.forEach((x, col) => {
@@ -537,7 +544,9 @@ export function buildClassroom({ mount, competency, onNearBoard, onInteract, the
   function updateNearBoard() {
     const dx = camera.position.x - BOARD_POS.x
     const dz = camera.position.z - BOARD_POS.z
-    const near = Math.hypot(dx, dz) <= 2.15 && Math.abs(camera.position.x) <= 3.3
+    // Reach the zone from anywhere in front of the teacher's desk, which blocks
+    // the last stretch of the centre aisle.
+    const near = Math.hypot(dx, dz) <= 2.9 && Math.abs(camera.position.x) <= 3.3
     if (near !== nearBoard) {
       nearBoard = near
       onNearBoard?.(near)
@@ -545,14 +554,21 @@ export function buildClassroom({ mount, competency, onNearBoard, onInteract, the
   }
 
   function resize() {
-    const width = mount.clientWidth || window.innerWidth || 360
-    const height = mount.clientHeight || window.innerHeight || 640
+    // Always follow the mount box: the app runs inside a fixed phone frame on
+    // desktop, so window dimensions would render a canvas wider than the frame.
+    const box = mount.getBoundingClientRect()
+    const width = Math.round(box.width) || mount.clientWidth || window.innerWidth || 360
+    const height = Math.round(box.height) || mount.clientHeight || window.innerHeight || 640
     camera.aspect = width / height
     camera.updateProjectionMatrix()
     renderer.setSize(width, height, true)
+    renderer.domElement.style.display = 'block'
+    renderer.domElement.style.width = '100%'
+    renderer.domElement.style.height = '100%'
   }
 
   function dispose() {
+    mountObserver?.disconnect()
     cancelAnimationFrame(raf)
     window.clearTimeout(flashTimer)
     window.removeEventListener('keydown', onKeyDown)
@@ -564,7 +580,6 @@ export function buildClassroom({ mount, competency, onNearBoard, onInteract, the
     renderer.domElement.removeEventListener('mousedown', onMouseDown)
     renderer.domElement.removeEventListener('mouseup', onMouseUp)
     renderer.domElement.removeEventListener('mouseleave', onMouseUp)
-    renderer.domElement.removeEventListener('mousemove', onMouseMove)
     document.removeEventListener('mousemove', onMouseMove)
     mount.removeEventListener('pointerdown', onPointerDown)
     mount.removeEventListener('pointermove', onPointerMove)

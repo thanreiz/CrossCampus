@@ -469,14 +469,6 @@ export const STRINGS = {
   '3d.theme': { en: 'Theme', fil: 'Tema', taglish: 'Tema' },
   '3d.changeRoom': { en: 'Change the room', fil: 'Palitan ang klase', taglish: 'Palitan ang klase' },
   '3d.answerBoard': { en: 'Answer', fil: 'Sagutin', taglish: 'Sagutin' },
-  '3d.hintAtBoard': { en: 'Tap Answer or press E / F', fil: 'I-tap ang Sagutin o pindutin ang E / F', taglish: 'Tap Sagutin o pindutin ang E / F' },
-  '3d.firstAnswerHint': { en: 'Go near the board to answer.', fil: 'Lumapit sa pisara para sumagot.', taglish: 'Lumapit sa pisara para sumagot.' },
-  '3d.hintMove': {
-    en: 'Joystick to move · WASD on keyboard · scroll to zoom',
-    fil: 'Joystick para gumalaw · WASD sa keyboard · scroll para mag-zoom',
-    taglish: 'Joystick para gumalaw · WASD sa keyboard · scroll para mag-zoom',
-  },
-  '3d.lookHint': { en: 'Drag the right side to look around', fil: 'I-drag ang kanang bahagi para tumingin sa paligid', taglish: 'I-drag ang kanang bahagi para tumingin sa paligid' },
   '3d.zoomIn': { en: 'Zoom in', fil: 'Zoom in', taglish: 'Zoom in' },
   '3d.zoomOut': { en: 'Zoom out', fil: 'Zoom out', taglish: 'Zoom out' },
   '3d.board.correct': { en: 'Correct!', fil: 'Tama!', taglish: 'Tama!' },
@@ -490,15 +482,17 @@ export const STRINGS = {
   '3d.intro.s3': { en: 'Type your answer, then send.', fil: 'Isulat ang sagot, tapos ipasa.', taglish: 'I-type ang sagot mo, tapos send.' },
   '3d.intro.go': { en: "Got it!", fil: 'Sige!', taglish: 'Sige!' },
   '3d.coach.move': {
-    en: 'Use WASD or the arrow keys to move.',
-    fil: 'Gamitin ang WASD o arrow keys para gumalaw.',
-    taglish: 'Gamitin ang WASD o arrow keys para gumalaw.',
+    en: 'Drag the yellow joystick to walk.',
+    fil: 'I-drag ang dilaw na joystick para maglakad.',
+    taglish: 'I-drag ang dilaw na joystick para maglakad.',
   },
   '3d.coach.board': {
     en: 'Walk closer to the board to see the lesson.',
     fil: 'Lumapit sa pisara para makita ang aralin.',
     taglish: 'Lumapit sa pisara para makita ang aralin.',
   },
+  '3d.move': { en: 'Move', fil: 'Galaw', taglish: 'Galaw' },
+  '3d.help': { en: 'Help', fil: 'Tulong', taglish: 'Tulong' },
   '3d.joystick': { en: 'Movement joystick', fil: 'Joystick para gumalaw', taglish: 'Joystick para gumalaw' },
 
   // ---- 3D renovation theme names ----

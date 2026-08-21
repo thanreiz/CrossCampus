@@ -74,7 +74,8 @@ function aiQuestion(index = 0) {
 test('online sessions send the adaptive request and do not write AI questions to rotation state', async () => {
   const store = memoryStore()
   let request
-  const fetchImpl = async (_url, init) => {
+  const fetchImpl = async (url, init) => {
+    if (url.endsWith('/api/ping')) return { ok: true }
     request = JSON.parse(init.body)
     return { ok: true, json: async () => ({ source: 'ai', questions: Array.from({ length: 5 }, (_, index) => aiQuestion(index)) }) }
   }
@@ -96,7 +97,7 @@ test('HTTP errors, malformed batches, and timeouts fall back to bundled question
   for (const fetchImpl of cases) {
     const session = await prepareQuestionSession({
       grade: 2, mode: 'quiz', scope: { key: `fallback:${Math.random()}`, refs: ['2NA-Ia-1'] }, count: 5,
-      language: 'en', connectivity: true, competencies, fetchImpl, store: memoryStore(), timeoutMs: 5,
+      language: 'en', connectivity: true, competencies, fetchImpl, store: memoryStore(), timeoutMs: 5, reachabilityTimeoutMs: 5,
     })
     assert.equal(session.source, 'bundled')
     assert.equal(session.fallback, true)

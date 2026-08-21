@@ -1,10 +1,24 @@
 import { get, set } from 'idb-keyval'
 import { isLearnerFacingQuestion } from './question-quality.js'
-import { API_BASE } from './api-base.js'
+import { API_BASE, apiUrl } from './api-base.js'
 
 export const ROTATION_VERSION = 'v1'
 export const QUESTION_TIMEOUT_MS = 90_000
+// The `connectivity` flag is only as fresh as the app's last periodic probe
+// (up to 8s stale). Re-check right before committing to the 90s AI timeout,
+// so a session started right after going offline fails fast into the
+// bundled pool instead of sitting on the generating screen.
+export const REACHABILITY_TIMEOUT_MS = 3_000
 export const QUESTION_API_BASE = API_BASE
+
+async function isReachable(fetchImpl, timeoutMs) {
+  try {
+    const res = await fetchImpl(apiUrl('/api/ping'), { cache: 'no-store', signal: AbortSignal.timeout(timeoutMs) })
+    return res.ok
+  } catch {
+    return false
+  }
+}
 
 const defaultStore = { get, set }
 
@@ -134,12 +148,13 @@ export async function prepareQuestionSession({
   store = defaultStore,
   random = Math.random,
   timeoutMs = QUESTION_TIMEOUT_MS,
+  reachabilityTimeoutMs = REACHABILITY_TIMEOUT_MS,
 }) {
   const pool = bundledPool(competencies, scope)
   const refs = [...new Set(pool.map((question) => question.ref))]
   const relevantMastery = Object.fromEntries(refs.map((ref) => [ref, Number(mastery[ref] ?? 0)]))
 
-  if (connectivity && typeof fetchImpl === 'function') {
+  if (connectivity && typeof fetchImpl === 'function' && (await isReachable(fetchImpl, reachabilityTimeoutMs))) {
     try {
       const questions = await requestAiBatch({ mode, grade, count, language, refs, mastery: relevantMastery, theme: scope.game, fetchImpl, timeoutMs })
       const details = new Map(competencies.map((competency) => [competency.ref, competency]))

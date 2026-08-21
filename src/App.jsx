@@ -26,6 +26,7 @@ import SoundToggle from './ui/SoundToggle.jsx'
 import { loadSoundPrefs, pauseBgm, primeAudio, resumeBgm, startBgm } from './lib/sound.js'
 import { prepareQuestionSession } from './lib/question-session.js'
 import { DEFAULT_GRADE, isSupportedGrade } from './lib/grades.js'
+import { apiUrl } from './lib/api-base.js'
 
 const Classroom3D = lazy(() => import('./screens/Classroom3D.jsx'))
 
@@ -84,12 +85,27 @@ export default function App() {
   }, [])
 
   useEffect(() => {
-    const on = () => setOnline(true)
+    let cancelled = false
+    // navigator.onLine and the online/offline events only reflect the OS-level
+    // network state — DevTools' Network throttling "Offline" preset blocks
+    // requests without flipping either, so poll a no-op endpoint to catch that.
+    async function probe() {
+      try {
+        const res = await fetch(apiUrl('/api/ping'), { cache: 'no-store', signal: AbortSignal.timeout(4000) })
+        if (!cancelled) setOnline(res.ok)
+      } catch {
+        if (!cancelled) setOnline(false)
+      }
+    }
     const off = () => setOnline(false)
-    window.addEventListener('online', on)
+    window.addEventListener('online', probe)
     window.addEventListener('offline', off)
+    probe()
+    const interval = setInterval(probe, 8000)
     return () => {
-      window.removeEventListener('online', on)
+      cancelled = true
+      clearInterval(interval)
+      window.removeEventListener('online', probe)
       window.removeEventListener('offline', off)
     }
   }, [])

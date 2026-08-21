@@ -13,6 +13,10 @@ export default defineConfig({
         cleanupOutdatedCaches: true,
         globPatterns: ['**/*.{js,css,html,json,png,svg,webp,wav,mp3,webmanifest}'],
         maximumFileSizeToCacheInBytes: 4 * 1024 * 1024,
+        // Without this, a reload while offline never reaches the precached
+        // shell — the navigation request just falls through to the network.
+        navigateFallback: 'index.html',
+        navigateFallbackDenylist: [/^\/api\//],
       },
       manifest: {
         name: 'Gabay',
